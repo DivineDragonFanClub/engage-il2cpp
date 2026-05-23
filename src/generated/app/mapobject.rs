@@ -2,42 +2,32 @@
 
 #[cfg(feature = "app-mapobject-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
+    use crate::{
+        system::{
+            collections::generic::list_1::{IList_1, List_1},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-    use crate::system::collections::generic::list_1::{IList_1, List_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_Pair.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject.Pair")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_State.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject.State")]
     #[parent(crate::system::object::Object)]
-    pub struct MapObject_Pair {
-        #[rename(name = "src")]
-        pub src: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "dst")]
-        pub dst: crate::unity_engine::gameobject::GameObject,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject.RigidInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapObject_RigidInfo {
-        #[rename(name = "transform")]
-        pub transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "position")]
-        pub position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "scale")]
-        pub scale: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "rotation")]
-        pub rotation: crate::unity_engine::quaternion::Quaternion,
-        #[rename(name = "rigidbody")]
-        pub rigidbody: crate::unity_engine::rigidbody::Rigidbody,
+    pub struct MapObject_State {
+        #[rename(name = "対象オブジェクト")]
+        pub 対象オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "エフェクト")]
+        pub エフェクト: crate::unity_engine::gameobject::GameObject,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject.md"))]
@@ -84,9 +74,7 @@ mod __types {
         #[rename(name = "m_MapSoundLabel")]
         pub m_map_sound_label: crate::root::mapsoundlabel::MapSoundLabel,
         #[rename(name = "m_LightmapPairs")]
-        pub m_lightmap_pairs: crate::system::collections::generic::list_1::List_1<
-            crate::app::mapobject::MapObject_Pair,
-        >,
+        pub m_lightmap_pairs: crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject_Pair>,
         #[rename(name = "m_LightmapScale")]
         pub m_lightmap_scale: crate::app::mapobject::MapObject_LightmapScales,
         #[rename(name = "m_ViewDistance")]
@@ -126,23 +114,16 @@ mod __types {
         pub version: i32,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_LightmapScales.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Lods.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapObject_LightmapScales {
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapObject_Lods {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MapObject_LightmapScales {
+    impl ::unity2::ClassIdentity for MapObject_Lods {
+        const NAME: &'static str = "MapObject.Lods";
         const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapObject.LightmapScales";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -151,106 +132,55 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MapObject_LightmapScales {
+    impl ::unity2::IlType for MapObject_Lods {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    impl MapObject_LightmapScales {
-        pub fn 通常() -> Self {
+    impl MapObject_Lods {
+        pub fn 切替早() -> Self {
             Self { value: 0 }
         }
 
-        pub fn なし() -> Self {
+        pub fn 切替中() -> Self {
             Self { value: 1 }
         }
 
-        pub fn 遠景x0125() -> Self {
+        pub fn 切替遅() -> Self {
             Self { value: 2 }
         }
 
-        pub fn 縮小x05() -> Self {
+        pub fn 切替早_cull() -> Self {
             Self { value: 3 }
         }
-
-        pub fn 拡大x2() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn 極大x4() -> Self {
-            Self { value: 5 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Actions.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapObject_Actions {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapObject_Actions {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapObject.Actions";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapObject_Actions {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapObject_Actions {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn idle() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn done() -> Self {
-            Self { value: 2 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_DitherManager.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject.DitherManager")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapObject_DitherManager {
+        #[rename(name = "m_Pairs")]
+        pub m_pairs: crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject_DitherPair>,
+        #[rename(name = "m_Renderers")]
+        pub m_renderers: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::unity_engine::renderer::Renderer,
+            crate::app::mapobject::MapObject_DitherPair,
+        >,
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: f32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Kinds.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapObject_Kinds {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapObject_Kinds {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapObject.Kinds";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -261,10 +191,7 @@ mod __types {
 
     impl ::unity2::IlType for MapObject_Kinds {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -322,22 +249,108 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_DitherManager.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject.DitherManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapObject_DitherManager {
-        #[rename(name = "m_Pairs")]
-        pub m_pairs: crate::system::collections::generic::list_1::List_1<
-            crate::app::mapobject::MapObject_DitherPair,
-        >,
-        #[rename(name = "m_Renderers")]
-        pub m_renderers: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::unity_engine::renderer::Renderer,
-            crate::app::mapobject::MapObject_DitherPair,
-        >,
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: f32,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Actions.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapObject_Actions {
+        pub value: i32,
     }
+
+    impl ::unity2::ClassIdentity for MapObject_Actions {
+        const NAME: &'static str = "MapObject.Actions";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapObject_Actions {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapObject_Actions {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn idle() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn done() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_Pair.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject.Pair")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapObject_Pair {
+        #[rename(name = "src")]
+        pub src: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "dst")]
+        pub dst: crate::unity_engine::gameobject::GameObject,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_LightmapScales.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapObject_LightmapScales {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapObject_LightmapScales {
+        const NAME: &'static str = "MapObject.LightmapScales";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapObject_LightmapScales {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapObject_LightmapScales {
+        pub fn 通常() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn なし() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn 遠景x0125() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn 縮小x05() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn 拡大x2() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn 極大x4() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidList.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject.RigidList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject_RigidInfo >)]
+    pub struct MapObject_RigidList {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_DitherPair.md"))]
     #[::unity2::class(namespace = "App", name = "MapObject.DitherPair")]
@@ -355,90 +368,32 @@ mod __types {
         pub m_alpha: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidList.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject.RigidList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject_RigidInfo >)]
-    pub struct MapObject_RigidList {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_State.md"))]
-    #[::unity2::class(namespace = "App", name = "MapObject.State")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "MapObject.RigidInfo")]
     #[parent(crate::system::object::Object)]
-    pub struct MapObject_State {
-        #[rename(name = "対象オブジェクト")]
-        pub 対象オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "エフェクト")]
-        pub エフェクト: crate::unity_engine::gameobject::GameObject,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Lods.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapObject_Lods {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapObject_Lods {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapObject.Lods";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapObject_Lods {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapObject_Lods {
-        pub fn 切替早() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn 切替中() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn 切替遅() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn 切替早_cull() -> Self {
-            Self { value: 3 }
-        }
+    pub struct MapObject_RigidInfo {
+        #[rename(name = "transform")]
+        pub transform: crate::unity_engine::transform::Transform,
+        #[rename(name = "position")]
+        pub position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "scale")]
+        pub scale: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "rotation")]
+        pub rotation: crate::unity_engine::quaternion::Quaternion,
+        #[rename(name = "rigidbody")]
+        pub rigidbody: crate::unity_engine::rigidbody::Rigidbody,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_BakeTypes.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapObject_BakeTypes {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapObject_BakeTypes {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapObject.BakeTypes";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -449,10 +404,7 @@ mod __types {
 
     impl ::unity2::IlType for MapObject_BakeTypes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -485,18 +437,49 @@ pub use __types::*;
 #[cfg(feature = "app-mapobject")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapObject_Pair_unity2_raw {
+mod __MapObject_State_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_State as ::unity2::ClassIdentity>::class(),
+                "SetActive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_State as ::unity2::ClassIdentity>::NAME,
+                        "SetActive",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_active(this: MapObject_State, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject_State, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
+        inner(this, enable, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_Pair as ::unity2::ClassIdentity>::class(),
+                <MapObject_State as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -506,143 +489,57 @@ mod __MapObject_Pair_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_Pair as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_State as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(this: MapObject_Pair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapObject_Pair, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: MapObject_State, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject_State, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapobject")]
-pub trait IMapObject_PairMethods: IMapObject_Pair {
+pub trait IMapObject_StateMethods: IMapObject_State {
+    #[doc = "`SetActive(bool)` overload"]
+    fn set_active(self, enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MapObject_State as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_State_unity2_raw::set_active(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
+        }
+    }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapObject_Pair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_Pair_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver = <MapObject_State as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_State_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapobject")]
-impl<__T: IMapObject_Pair> IMapObject_PairMethods for __T {}
+impl<__T: IMapObject_State> IMapObject_StateMethods for __T {}
 
 #[cfg(feature = "app-mapobject")]
-impl MapObject_Pair {
+impl MapObject_State {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_Pair),
+                ::core::stringify!(MapObject_State),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapObject_PairMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapObject_RigidInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_RigidInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_RigidInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapObject_RigidInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_RigidInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-pub trait IMapObject_RigidInfoMethods: IMapObject_RigidInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapObject_RigidInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_RigidInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapobject")]
-impl<__T: IMapObject_RigidInfo> IMapObject_RigidInfoMethods for __T {}
-
-#[cfg(feature = "app-mapobject")]
-impl MapObject_RigidInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_RigidInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapObject_RigidInfoMethods>::ctor(this);
+        <Self as IMapObject_StateMethods>::ctor(this);
         this
     }
 }
@@ -656,9 +553,7 @@ mod __MapObject_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_map_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -671,83 +566,53 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "get_MapMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "get_MapMaterial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_map_material(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapmaterial::MapMaterial {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapmaterial::MapMaterial = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_map_material::get_offset() as isize),
-        );
+    pub unsafe fn get_map_material(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapmaterial::MapMaterial {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::app::mapmaterial::MapMaterial =
+            ::core::mem::transmute(__lookup_get_map_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn awake(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_start_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -760,41 +625,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetStartAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetStartAction",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_start_action(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapobject::MapObject_Actions {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapobject::MapObject_Actions = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_start_action::get_offset() as isize),
-        );
+    pub unsafe fn get_start_action(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapobject::MapObject_Actions {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::app::mapobject::MapObject_Actions =
+            ::core::mem::transmute(__lookup_get_start_action::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_start_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -807,39 +658,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetStartState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetStartState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_start_state(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_start_state(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_start_state::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_start_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_start_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -852,39 +691,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetStartBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetStartBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_start_break(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_start_break(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_start_break::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_start_break::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_dither_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -897,81 +724,53 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "CanDitherAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "CanDitherAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_dither_alpha(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn can_dither_alpha(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_dither_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_can_dither_alpha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_terrain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -984,183 +783,108 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetTerrain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetTerrain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_terrain(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::terraindata_2::TerrainData_2 {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::terraindata_2::TerrainData_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_terrain::get_offset() as isize),
-        );
+    pub unsafe fn get_terrain(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::terraindata_2::TerrainData_2 {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::app::terraindata_2::TerrainData_2 =
+            ::core::mem::transmute(__lookup_get_terrain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_sound {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "PlaySound",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "PlaySound", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlaySound",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlaySound",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_sound(
-        this: MapObject,
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_sound::get_offset() as isize),
-        );
+    pub unsafe fn play_sound(this: MapObject, label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_sound::get_method_info().method_ptr);
         inner(this, label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "GetState",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "GetState", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_state(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_state(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_state::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "GetAction",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "GetAction", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetAction",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_action(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapobject::MapObject_Actions {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapobject::MapObject_Actions = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_action::get_offset() as isize),
-        );
+    pub unsafe fn get_action(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapobject::MapObject_Actions {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::app::mapobject::MapObject_Actions =
+            ::core::mem::transmute(__lookup_get_action::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1174,18 +898,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayEffect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_effect(
@@ -1193,26 +914,16 @@ mod __MapObject_unity2_raw {
         original: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_effect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_effect::get_method_info().method_ptr);
         inner(this, original, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reverse_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapobject::MapObject_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapobject::MapObject_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "GetReverseValue",
@@ -1224,43 +935,28 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetReverseValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetReverseValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reverse_value(
-        kind: crate::app::mapobject::MapObject_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::mapobject::MapObject_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reverse_value::get_offset() as isize),
-        );
+    pub unsafe fn get_reverse_value(kind: crate::app::mapobject::MapObject_Kinds, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::app::mapobject::MapObject_Kinds, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_reverse_value::get_method_info().method_ptr);
         inner(kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_action_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapobject::MapObject_Actions as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapobject::MapObject_Actions as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "GetActionValue",
@@ -1272,68 +968,45 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetActionValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetActionValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_action_value(
-        action: crate::app::mapobject::MapObject_Actions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::mapobject::MapObject_Actions,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_action_value::get_offset() as isize),
-        );
+    pub unsafe fn get_action_value(action: crate::app::mapobject::MapObject_Actions, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::app::mapobject::MapObject_Actions, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_action_value::get_method_info().method_ptr);
         inner(action, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapobject::MapObject_Actions as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "SetAction",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "SetAction", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetAction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_action(
@@ -1342,27 +1015,16 @@ mod __MapObject_unity2_raw {
         update: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::app::mapobject::MapObject_Actions,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_action::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::app::mapobject::MapObject_Actions, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_action::get_method_info().method_ptr);
         inner(this, action, update, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_action_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "PlayActionAlpha",
@@ -1374,42 +1036,28 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayActionAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayActionAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_action_alpha(
-        this: MapObject,
-        alpha: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_action_alpha(this: MapObject, alpha: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_action_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_action_alpha::get_method_info().method_ptr);
         inner(this, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_action_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "SetActionAlpha",
@@ -1421,44 +1069,28 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetActionAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetActionAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_action_alpha(
-        this: MapObject,
-        alpha: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_action_alpha(this: MapObject, alpha: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_action_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_action_alpha::get_method_info().method_ptr);
         inner(this, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_elapsed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "AddElapsed",
@@ -1470,43 +1102,28 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "AddElapsed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "AddElapsed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_elapsed(
-        this: MapObject,
-        elapsed: *mut f32,
-        time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn add_elapsed(this: MapObject, elapsed: *mut f32, time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, *mut f32, f32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_elapsed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_elapsed::get_method_info().method_ptr);
         inner(this, elapsed, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_action_alpha_coroutine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "ActionAlphaCoroutine",
@@ -1518,18 +1135,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "ActionAlphaCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "ActionAlphaCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn action_alpha_coroutine(
@@ -1537,24 +1151,15 @@ mod __MapObject_unity2_raw {
         alpha: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MapObject,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_action_alpha_coroutine::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, f32, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_action_alpha_coroutine::get_method_info().method_ptr);
         inner(this, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapobject::MapObject_Actions as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1570,18 +1175,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "ChangeAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "ChangeAction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_action(
@@ -1590,72 +1192,43 @@ mod __MapObject_unity2_raw {
         update: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::app::mapobject::MapObject_Actions,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_action::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::app::mapobject::MapObject_Actions, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_action::get_method_info().method_ptr);
         inner(this, action, update, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "IsPlaying",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "IsPlaying", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "IsPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "IsPlaying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_playing(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_playing::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_playing::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_action_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapobject::MapObject_Actions as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapobject::MapObject_Actions as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "GetActionAlpha",
@@ -1667,18 +1240,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetActionAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetActionAlpha",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_action_alpha(
@@ -1686,66 +1256,42 @@ mod __MapObject_unity2_raw {
         action: crate::app::mapobject::MapObject_Actions,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::app::mapobject::MapObject_Actions,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_action_alpha::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::app::mapobject::MapObject_Actions, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_action_alpha::get_method_info().method_ptr);
         inner(this, action, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_skip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "IsSkip",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "IsSkip", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "IsSkip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "IsSkip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_skip(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_skip::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_skip::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_action_skip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -1758,41 +1304,28 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "IsActionSkip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "IsActionSkip",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_action_skip(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_action_skip(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_action_skip::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_action_skip::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapobject::MapObject_Actions as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapobject::MapObject_Actions as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "PlayAction",
@@ -1804,18 +1337,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayAction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_action(
@@ -1823,26 +1353,16 @@ mod __MapObject_unity2_raw {
         action: crate::app::mapobject::MapObject_Actions,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::app::mapobject::MapObject_Actions,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_action::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::app::mapobject::MapObject_Actions, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_action::get_method_info().method_ptr);
         inner(this, action, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_endurance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "PlayEndurance",
@@ -1854,40 +1374,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayEndurance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayEndurance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_endurance(
-        this: MapObject,
-        ratio: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_endurance(this: MapObject, ratio: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_endurance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_endurance::get_method_info().method_ptr);
         inner(this, ratio, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_state_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -1900,141 +1407,83 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetStateCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetStateCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_state_count(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_state_count(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_state_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_state_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_state_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "GetState",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "GetState", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_state_2(
-        this: MapObject,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapobject::MapObject_State {
-        let inner: extern "C" fn(
-            MapObject,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapobject::MapObject_State = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_state_2::get_offset() as isize),
-        );
+    pub unsafe fn get_state_2(this: MapObject, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapobject::MapObject_State {
+        let inner: extern "C" fn(MapObject, i32, ::unity2::OptionalMethod) -> crate::app::mapobject::MapObject_State =
+            ::core::mem::transmute(__lookup_get_state_2::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "SetState",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "SetState", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_state(
-        this: MapObject,
-        index: i32,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_state(this: MapObject, index: i32, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_state::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_state::get_method_info().method_ptr);
         inner(this, index, enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "ChangeState",
@@ -2046,87 +1495,54 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "ChangeState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "ChangeState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn change_state(
-        this: MapObject,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn change_state(this: MapObject, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change_state::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_change_state::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "PlayState",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "PlayState", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_state(
-        this: MapObject,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_state(this: MapObject, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_state::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_state::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -2142,18 +1558,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderAlpha",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_alpha(
@@ -2162,26 +1575,19 @@ mod __MapObject_unity2_raw {
         alpha: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::unity_engine::renderer::Renderer,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_alpha::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::unity_engine::renderer::Renderer, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_render_alpha::get_method_info().method_ptr);
         inner(this, render, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_renders_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::renderer::Renderer> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "SetRendersAlpha",
@@ -2193,18 +1599,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetRendersAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetRendersAlpha",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_renders_alpha(
@@ -2213,25 +1616,15 @@ mod __MapObject_unity2_raw {
         alpha: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::Array<crate::unity_engine::renderer::Renderer>,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_renders_alpha::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, ::unity2::Array<crate::unity_engine::renderer::Renderer>, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_renders_alpha::get_method_info().method_ptr);
         inner(this, renders, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2244,39 +1637,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "CommitAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "CommitAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit_alpha(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn commit_alpha(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_commit_alpha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_effect_root {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2289,41 +1670,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetEffectRoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetEffectRoot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_effect_root(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_effect_root::get_offset() as isize),
-        );
+    pub unsafe fn get_effect_root(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_effect_root::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2336,39 +1703,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "UpdateAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "UpdateAction",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_action(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_action(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_action::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_action::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_lightmap {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2381,39 +1736,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "ApplyLightmap",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "ApplyLightmap",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn apply_lightmap(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn apply_lightmap(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_apply_lightmap::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_apply_lightmap::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_preview {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2426,39 +1769,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "ApplyPreview",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "ApplyPreview",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn apply_preview(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn apply_preview(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_apply_preview::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_apply_preview::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_breakable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2471,85 +1802,58 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "CanBreakable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "CanBreakable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_breakable(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn can_breakable(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_breakable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_can_breakable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_broken {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "IsBroken",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "IsBroken", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "IsBroken",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "IsBroken",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_broken(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_broken(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_broken::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_broken::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_game_objects_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::gameobject::GameObject> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "SetGameObjectsActive",
@@ -2561,18 +1865,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetGameObjectsActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetGameObjectsActive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_game_objects_active(
@@ -2581,99 +1882,60 @@ mod __MapObject_unity2_raw {
         enabled: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_game_objects_active::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, ::unity2::Array<crate::unity_engine::gameobject::GameObject>, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_game_objects_active::get_method_info().method_ptr);
         inner(this, objects, enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "SetBreak",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "SetBreak", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_break(
-        this: MapObject,
-        enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_break(this: MapObject, enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_break::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_break::get_method_info().method_ptr);
         inner(this, enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "PlayBreak",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "PlayBreak", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayBreak",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_break(
@@ -2682,25 +1944,15 @@ mod __MapObject_unity2_raw {
         pow: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_break::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::unity_engine::vector3::Vector3, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_break::get_method_info().method_ptr);
         inner(this, hit, pow, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_destructoni_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2713,41 +1965,28 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetDestructoniAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetDestructoniAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_destructoni_alpha(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_destructoni_alpha(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_destructoni_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_destructoni_alpha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_destructoni_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "SetDestructoniAlpha",
@@ -2759,40 +1998,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetDestructoniAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetDestructoniAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_destructoni_alpha(
-        this: MapObject,
-        alpha: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_destructoni_alpha(this: MapObject, alpha: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_destructoni_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_destructoni_alpha::get_method_info().method_ptr);
         inner(this, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_break_coroutine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2805,41 +2031,30 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "BreakCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "BreakCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn break_coroutine(
         this: MapObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_break_coroutine::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_break_coroutine::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -2852,39 +2067,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "ResumeBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "ResumeBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn resume_break(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn resume_break(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resume_break::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_resume_break::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_view {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -2900,18 +2103,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "UpdateView",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "UpdateView",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_view(
@@ -2920,25 +2120,15 @@ mod __MapObject_unity2_raw {
         speed: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::unity_engine::camera::Camera,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_view::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::unity_engine::camera::Camera, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_view::get_method_info().method_ptr);
         inner(this, camera, speed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
@@ -2954,18 +2144,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_transform(
@@ -2979,22 +2166,15 @@ mod __MapObject_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::unity_engine::transform::Transform,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_transform::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_try_get_transform::get_method_info().method_ptr);
         inner(this, name, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "GetTransform",
@@ -3006,18 +2186,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_transform(
@@ -3025,24 +2202,15 @@ mod __MapObject_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_transform::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_transform::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rotate_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -3055,113 +2223,70 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetRotateTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetRotateTransform",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rotate_transform(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rotate_transform::get_offset() as isize),
-        );
+    pub unsafe fn get_rotate_transform(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_rotate_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "Rotation",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "Rotation", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "Rotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "Rotation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rotation(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rotation::get_offset() as isize),
-        );
+    pub unsafe fn rotation(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_rotation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rotation_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "Rotation",
-                1,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "Rotation", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "Rotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "Rotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rotation_2(
@@ -3169,24 +2294,15 @@ mod __MapObject_unity2_raw {
         rotation: crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rotation_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_rotation_2::get_method_info().method_ptr);
         inner(this, rotation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rotation_coroutine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -3202,18 +2318,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "RotationCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "RotationCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rotation_coroutine(
@@ -3227,47 +2340,32 @@ mod __MapObject_unity2_raw {
             crate::unity_engine::quaternion::Quaternion,
             f32,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rotation_coroutine::get_offset() as isize),
-        );
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_rotation_coroutine::get_method_info().method_ptr);
         inner(this, rotation, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rotation_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "Rotation",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "Rotation", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "Rotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "Rotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rotation_3(
@@ -3276,25 +2374,15 @@ mod __MapObject_unity2_raw {
         time: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::unity_engine::quaternion::Quaternion,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rotation_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::unity_engine::quaternion::Quaternion, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_rotation_3::get_method_info().method_ptr);
         inner(this, rotation, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_launch_point {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -3307,41 +2395,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetLaunchPoint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetLaunchPoint",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_launch_point(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_launch_point::get_offset() as isize),
-        );
+    pub unsafe fn get_launch_point(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_launch_point::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_launch_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -3354,82 +2428,53 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetLaunchTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetLaunchTransform",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_launch_transform(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_launch_transform::get_offset() as isize),
-        );
+    pub unsafe fn get_launch_transform(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_launch_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_bmap_view {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "IsBmapView",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "IsBmapView", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "IsBmapView",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "IsBmapView",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_bmap_view(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_bmap_view::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_bmap_view::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shoot_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -3442,41 +2487,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "GetShootTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "GetShootTransform",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_shoot_transform(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shoot_transform::get_offset() as isize),
-        );
+    pub unsafe fn get_shoot_transform(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_shoot_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_shoot_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::effectsequence::EffectSequence as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3490,18 +2521,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayShootImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayShootImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_shoot_impl(
@@ -3509,169 +2537,96 @@ mod __MapObject_unity2_raw {
         effect: crate::app::effectsequence::EffectSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::app::effectsequence::EffectSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_shoot_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, crate::app::effectsequence::EffectSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_shoot_impl::get_method_info().method_ptr);
         inner(this, effect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_shoot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "PlayShoot",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "PlayShoot", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayShoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayShoot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_shoot(
-        this: MapObject,
-        item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_shoot::get_offset() as isize),
-        );
+    pub unsafe fn play_shoot(this: MapObject, item: crate::app::unititem::UnitItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_shoot::get_method_info().method_ptr);
         inner(this, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_shoot_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "PlayShoot",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "PlayShoot", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "PlayShoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "PlayShoot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_shoot_2(
-        this: MapObject,
-        effect: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_shoot_2::get_offset() as isize),
-        );
+    pub unsafe fn play_shoot_2(this: MapObject, effect: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_shoot_2::get_method_info().method_ptr);
         inner(this, effect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_shoot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "StopShoot",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "StopShoot", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "StopShoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "StopShoot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_shoot(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop_shoot(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_shoot::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop_shoot::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_serialize_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -3684,41 +2639,28 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "get_SerializeKey",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "get_SerializeKey",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_serialize_key(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_serialize_key(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_serialize_key::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_serialize_key::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_serialize_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "set_SerializeKey",
@@ -3730,45 +2672,28 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "set_SerializeKey",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "set_SerializeKey",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_serialize_key(
-        this: MapObject,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_serialize_key::get_offset() as isize),
-        );
+    pub unsafe fn set_serialize_key(this: MapObject, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_serialize_key::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_has_collider {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "HasCollider",
@@ -3780,40 +2705,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "HasCollider",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "HasCollider",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn has_collider(
-        this: MapObject,
-        layer: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn has_collider(this: MapObject, layer: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapObject, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_has_collider::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_has_collider::get_method_info().method_ptr);
         inner(this, layer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_serialize_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
@@ -3826,39 +2738,27 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "CalcSerializeKey",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "CalcSerializeKey",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_serialize_key(
-        this: MapObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn calc_serialize_key(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_serialize_key::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_serialize_key::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -3874,18 +2774,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "FindMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "FindMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_material(
@@ -3899,20 +2796,14 @@ mod __MapObject_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_material::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_find_material::get_method_info().method_ptr);
         inner(this, material, property, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_add_material_node {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapmaterial::MapMaterial_Kinds as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -3929,18 +2820,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "TryAddMaterialNode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "TryAddMaterialNode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_add_material_node(
@@ -3956,20 +2844,14 @@ mod __MapObject_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::app::mapmaterial::MapMaterial_Node = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_add_material_node::get_offset() as isize),
-        );
+        ) -> crate::app::mapmaterial::MapMaterial_Node = ::core::mem::transmute(__lookup_try_add_material_node::get_method_info().method_ptr);
         inner(this, kind, material, property, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_material_float {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -3986,18 +2868,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetMaterialFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetMaterialFloat",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_material_float(
@@ -4007,26 +2886,15 @@ mod __MapObject_unity2_raw {
         value: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            MapObject,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_material_float::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject, ::unity2::Il2CppString, ::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_set_material_float::get_method_info().method_ptr);
         inner(this, material, property, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_material_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -4043,18 +2911,15 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "SetMaterialColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "SetMaterialColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_material_color(
@@ -4070,72 +2935,42 @@ mod __MapObject_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_material_color::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(__lookup_set_material_color::get_method_info().method_ptr);
         inner(this, material, property, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), "Serialize", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn serialize(
-        this: MapObject,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+    pub unsafe fn serialize(this: MapObject, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject as ::unity2::ClassIdentity>::class(),
                 "Deserialize",
@@ -4147,76 +2982,46 @@ mod __MapObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deserialize(
-        this: MapObject,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapObject,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deserialize::get_offset() as isize),
-        );
+    pub unsafe fn deserialize(this: MapObject, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapObject as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapObject, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -4224,27 +3029,15 @@ mod __MapObject_unity2_raw {
 #[cfg(feature = "app-mapobject")]
 impl MapObject {
     #[doc = "`GetReverseValue(crate::app::mapobject::MapObject_Kinds)` overload"]
-    pub fn get_reverse_value(
-        kind: impl ::core::convert::Into<crate::app::mapobject::MapObject_Kinds>,
-    ) -> i32 {
-        unsafe {
-            __MapObject_unity2_raw::get_reverse_value(
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_reverse_value(kind: impl ::core::convert::Into<crate::app::mapobject::MapObject_Kinds>) -> i32 {
+        unsafe { __MapObject_unity2_raw::get_reverse_value(::core::convert::Into::into(kind), ::core::option::Option::None) }
     }
+
     #[doc = "`GetActionValue(crate::app::mapobject::MapObject_Actions)` overload"]
-    pub fn get_action_value(
-        action: impl ::core::convert::Into<crate::app::mapobject::MapObject_Actions>,
-    ) -> i32 {
-        unsafe {
-            __MapObject_unity2_raw::get_action_value(
-                ::core::convert::Into::into(action),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_action_value(action: impl ::core::convert::Into<crate::app::mapobject::MapObject_Actions>) -> i32 {
+        unsafe { __MapObject_unity2_raw::get_action_value(::core::convert::Into::into(action), ::core::option::Option::None) }
     }
+
     #[doc = "`IsBmapView()` overload"]
     pub fn is_bmap_view() -> bool {
         unsafe { __MapObject_unity2_raw::is_bmap_view(::core::option::Option::None) }
@@ -4256,120 +3049,85 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`get_MapMaterial()` overload"]
     fn get_map_material(self) -> crate::app::mapmaterial::MapMaterial {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_map_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetStartAction()` overload"]
     fn get_start_action(self) -> crate::app::mapobject::MapObject_Actions {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_start_action(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetStartState()` overload"]
     fn get_start_state(self) -> i32 {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_start_state(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetStartBreak()` overload"]
     fn get_start_break(self) -> bool {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_start_break(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CanDitherAlpha()` overload"]
     fn can_dither_alpha(self) -> bool {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::can_dither_alpha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetTerrain()` overload"]
     fn get_terrain(self) -> crate::app::terraindata_2::TerrainData_2 {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_terrain(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlaySound(::unity2::Il2CppString)` overload"]
     fn play_sound(self, label: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_sound(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_sound(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)
         }
     }
     #[doc = "`GetState()` overload"]
     fn get_state(self) -> i32 {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_state(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAction()` overload"]
     fn get_action(self) -> crate::app::mapobject::MapObject_Actions {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_action(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayEffect(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn play_effect(
-        self,
-        original: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn play_effect(self, original: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_effect(
-                __receiver,
-                ::core::convert::Into::into(original),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_effect(__receiver, ::core::convert::Into::into(original), ::core::option::Option::None)
         }
     }
     #[doc = "`SetAction(crate::app::mapobject::MapObject_Actions, bool)` overload"]
@@ -4379,9 +3137,7 @@ pub trait IMapObjectMethods: IMapObject {
         update: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::set_action(
                 __receiver,
                 ::core::convert::Into::into(action),
@@ -4393,35 +3149,21 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`PlayActionAlpha(f32)` overload"]
     fn play_action_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_action_alpha(
-                __receiver,
-                ::core::convert::Into::into(alpha),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_action_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::option::Option::None)
         }
     }
     #[doc = "`SetActionAlpha(f32)` overload"]
     fn set_action_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::set_action_alpha(
-                __receiver,
-                ::core::convert::Into::into(alpha),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::set_action_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::option::Option::None)
         }
     }
     #[doc = "`AddElapsed(*mutf32, f32)` overload"]
     fn add_elapsed(self, time: impl ::core::convert::Into<f32>) -> (bool, f32) {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
             let __ret = {
                 __MapObject_unity2_raw::add_elapsed(
@@ -4435,19 +3177,10 @@ pub trait IMapObjectMethods: IMapObject {
         }
     }
     #[doc = "`ActionAlphaCoroutine(f32)` overload"]
-    fn action_alpha_coroutine(
-        self,
-        alpha: impl ::core::convert::Into<f32>,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
+    fn action_alpha_coroutine(self, alpha: impl ::core::convert::Into<f32>) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::action_alpha_coroutine(
-                __receiver,
-                ::core::convert::Into::into(alpha),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::action_alpha_coroutine(__receiver, ::core::convert::Into::into(alpha), ::core::option::Option::None)
         }
     }
     #[doc = "`ChangeAction(crate::app::mapobject::MapObject_Actions, bool)` overload"]
@@ -4457,9 +3190,7 @@ pub trait IMapObjectMethods: IMapObject {
         update: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::change_action(
                 __receiver,
                 ::core::convert::Into::into(action),
@@ -4471,110 +3202,63 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`IsPlaying()` overload"]
     fn is_playing(self) -> bool {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::is_playing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetActionAlpha(crate::app::mapobject::MapObject_Actions)` overload"]
-    fn get_action_alpha(
-        self,
-        action: impl ::core::convert::Into<crate::app::mapobject::MapObject_Actions>,
-    ) -> f32 {
+    fn get_action_alpha(self, action: impl ::core::convert::Into<crate::app::mapobject::MapObject_Actions>) -> f32 {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::get_action_alpha(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::get_action_alpha(__receiver, ::core::convert::Into::into(action), ::core::option::Option::None)
         }
     }
     #[doc = "`IsSkip()` overload"]
     fn is_skip(self) -> bool {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::is_skip(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsActionSkip()` overload"]
     fn is_action_skip(self) -> bool {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::is_action_skip(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayAction(crate::app::mapobject::MapObject_Actions)` overload"]
-    fn play_action(
-        self,
-        action: impl ::core::convert::Into<crate::app::mapobject::MapObject_Actions>,
-    ) -> () {
+    fn play_action(self, action: impl ::core::convert::Into<crate::app::mapobject::MapObject_Actions>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_action(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_action(__receiver, ::core::convert::Into::into(action), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayEndurance(f32)` overload"]
     fn play_endurance(self, ratio: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_endurance(
-                __receiver,
-                ::core::convert::Into::into(ratio),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_endurance(__receiver, ::core::convert::Into::into(ratio), ::core::option::Option::None)
         }
     }
     #[doc = "`GetStateCount()` overload"]
     fn get_state_count(self) -> i32 {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_state_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetState(i32)` overload"]
-    fn get_state_2(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapobject::MapObject_State {
+    fn get_state_2(self, index: impl ::core::convert::Into<i32>) -> crate::app::mapobject::MapObject_State {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::get_state_2(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::get_state_2(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`SetState(i32, bool)` overload"]
-    fn set_state(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        enable: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_state(self, index: impl ::core::convert::Into<i32>, enable: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::set_state(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -4586,27 +3270,15 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`ChangeState(i32)` overload"]
     fn change_state(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::change_state(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::change_state(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayState(i32)` overload"]
     fn play_state(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_state(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_state(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`SetRenderAlpha(crate::unity_engine::renderer::Renderer, f32)` overload"]
@@ -4616,9 +3288,7 @@ pub trait IMapObjectMethods: IMapObject {
         alpha: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::set_render_alpha(
                 __receiver,
                 ::core::convert::Into::into(render),
@@ -4634,9 +3304,7 @@ pub trait IMapObjectMethods: IMapObject {
         alpha: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::set_renders_alpha(
                 __receiver,
                 ::core::convert::Into::into(renders),
@@ -4648,78 +3316,60 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`CommitAlpha()` overload"]
     fn commit_alpha(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::commit_alpha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetEffectRoot()` overload"]
     fn get_effect_root(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_effect_root(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateAction()` overload"]
     fn update_action(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::update_action(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ApplyLightmap()` overload"]
     fn apply_lightmap(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::apply_lightmap(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ApplyPreview()` overload"]
     fn apply_preview(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::apply_preview(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CanBreakable()` overload"]
     fn can_breakable(self) -> bool {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::can_breakable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsBroken()` overload"]
     fn is_broken(self) -> bool {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::is_broken(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetGameObjectsActive(::unity2::Array<crate::unity_engine::gameobject::GameObject>, bool)` overload"]
     fn set_game_objects_active(
         self,
-        objects: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        >,
+        objects: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::gameobject::GameObject>>,
         enabled: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::set_game_objects_active(
                 __receiver,
                 ::core::convert::Into::into(objects),
@@ -4731,26 +3381,14 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`SetBreak(bool)` overload"]
     fn set_break(self, enabled: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::set_break(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::set_break(__receiver, ::core::convert::Into::into(enabled), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayBreak(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    fn play_break(
-        self,
-        hit: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        pow: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn play_break(self, hit: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>, pow: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::play_break(
                 __receiver,
                 ::core::convert::Into::into(hit),
@@ -4762,53 +3400,35 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`GetDestructoniAlpha()` overload"]
     fn get_destructoni_alpha(self) -> f32 {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_destructoni_alpha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetDestructoniAlpha(f32)` overload"]
     fn set_destructoni_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::set_destructoni_alpha(
-                __receiver,
-                ::core::convert::Into::into(alpha),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::set_destructoni_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::option::Option::None)
         }
     }
     #[doc = "`BreakCoroutine()` overload"]
     fn break_coroutine(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::break_coroutine(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ResumeBreak()` overload"]
     fn resume_break(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::resume_break(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateView(crate::unity_engine::camera::Camera, f32)` overload"]
-    fn update_view(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        speed: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn update_view(self, camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>, speed: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::update_view(
                 __receiver,
                 ::core::convert::Into::into(camera),
@@ -4818,16 +3438,10 @@ pub trait IMapObjectMethods: IMapObject {
         }
     }
     #[doc = "`TryGetTransform(::unity2::Il2CppString, *mutcrate::unity_engine::transform::Transform)` overload"]
-    fn try_get_transform(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, crate::unity_engine::transform::Transform) {
+    fn try_get_transform(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, crate::unity_engine::transform::Transform) {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::transform::Transform>::uninit();
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::transform::Transform>::uninit();
             let __ret = {
                 __MapObject_unity2_raw::try_get_transform(
                     __receiver,
@@ -4840,53 +3454,31 @@ pub trait IMapObjectMethods: IMapObject {
         }
     }
     #[doc = "`GetTransform(::unity2::Il2CppString)` overload"]
-    fn get_transform(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::transform::Transform {
+    fn get_transform(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::get_transform(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::get_transform(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`GetRotateTransform()` overload"]
     fn get_rotate_transform(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_rotate_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Rotation()` overload"]
     fn rotation(self) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::rotation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Rotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    fn rotation_2(
-        self,
-        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> () {
+    fn rotation_2(self, rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::rotation_2(
-                __receiver,
-                ::core::convert::Into::into(rotation),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::rotation_2(__receiver, ::core::convert::Into::into(rotation), ::core::option::Option::None)
         }
     }
     #[doc = "`RotationCoroutine(crate::unity_engine::quaternion::Quaternion, f32)` overload"]
@@ -4896,9 +3488,7 @@ pub trait IMapObjectMethods: IMapObject {
         time: impl ::core::convert::Into<f32>,
     ) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::rotation_coroutine(
                 __receiver,
                 ::core::convert::Into::into(rotation),
@@ -4914,9 +3504,7 @@ pub trait IMapObjectMethods: IMapObject {
         time: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::rotation_3(
                 __receiver,
                 ::core::convert::Into::into(rotation),
@@ -4928,122 +3516,77 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`GetLaunchPoint()` overload"]
     fn get_launch_point(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_launch_point(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetLaunchTransform()` overload"]
     fn get_launch_transform(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_launch_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetShootTransform()` overload"]
     fn get_shoot_transform(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_shoot_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayShootImpl(crate::app::effectsequence::EffectSequence)` overload"]
-    fn play_shoot_impl(
-        self,
-        effect: impl ::core::convert::Into<crate::app::effectsequence::EffectSequence>,
-    ) -> () {
+    fn play_shoot_impl(self, effect: impl ::core::convert::Into<crate::app::effectsequence::EffectSequence>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_shoot_impl(
-                __receiver,
-                ::core::convert::Into::into(effect),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_shoot_impl(__receiver, ::core::convert::Into::into(effect), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayShoot(crate::app::unititem::UnitItem)` overload"]
     fn play_shoot(self, item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_shoot(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_shoot(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayShoot(::unity2::Il2CppString)` overload"]
     fn play_shoot_2(self, effect: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::play_shoot_2(
-                __receiver,
-                ::core::convert::Into::into(effect),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::play_shoot_2(__receiver, ::core::convert::Into::into(effect), ::core::option::Option::None)
         }
     }
     #[doc = "`StopShoot()` overload"]
     fn stop_shoot(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::stop_shoot(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SerializeKey()` overload"]
     fn get_serialize_key(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::get_serialize_key(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SerializeKey(::unity2::Il2CppString)` overload"]
     fn set_serialize_key(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::set_serialize_key(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::set_serialize_key(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`HasCollider(i32)` overload"]
     fn has_collider(self, layer: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::has_collider(
-                __receiver,
-                ::core::convert::Into::into(layer),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::has_collider(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
         }
     }
     #[doc = "`CalcSerializeKey()` overload"]
     fn calc_serialize_key(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::calc_serialize_key(__receiver, ::core::option::Option::None)
         }
     }
@@ -5054,9 +3597,7 @@ pub trait IMapObjectMethods: IMapObject {
         property: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::find_material(
                 __receiver,
                 ::core::convert::Into::into(material),
@@ -5073,9 +3614,7 @@ pub trait IMapObjectMethods: IMapObject {
         property: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::app::mapmaterial::MapMaterial_Node {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::try_add_material_node(
                 __receiver,
                 ::core::convert::Into::into(kind),
@@ -5093,9 +3632,7 @@ pub trait IMapObjectMethods: IMapObject {
         value: impl ::core::convert::Into<f32>,
     ) -> f32 {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::set_material_float(
                 __receiver,
                 ::core::convert::Into::into(material),
@@ -5113,9 +3650,7 @@ pub trait IMapObjectMethods: IMapObject {
         color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::set_material_color(
                 __receiver,
                 ::core::convert::Into::into(material),
@@ -5128,35 +3663,21 @@ pub trait IMapObjectMethods: IMapObject {
     #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
     fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
     fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_unity2_raw::deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -5169,13 +3690,8 @@ impl<__T: IMapObject> IMapObjectMethods for __T {}
 impl MapObject {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapObject), ::core::stringify!(new),));
         <Self as IMapObjectMethods>::ctor(this);
         this
     }
@@ -5190,9 +3706,7 @@ mod __MapObject_DitherManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -5206,18 +3720,15 @@ mod __MapObject_DitherManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
@@ -5225,24 +3736,15 @@ mod __MapObject_DitherManager_unity2_raw {
         root: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject_DitherManager,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject_DitherManager, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject_DitherManager as ::unity2::ClassIdentity>::class(),
@@ -5255,41 +3757,28 @@ mod __MapObject_DitherManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
-                    "CommitAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
+                        "CommitAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit_alpha(
-        this: MapObject_DitherManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn commit_alpha(this: MapObject_DitherManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject_DitherManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_commit_alpha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject_DitherManager as ::unity2::ClassIdentity>::class(),
                 "SetAlpha",
@@ -5301,40 +3790,27 @@ mod __MapObject_DitherManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
-                    "SetAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
+                        "SetAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_alpha(
-        this: MapObject_DitherManager,
-        alpha: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_alpha(this: MapObject_DitherManager, alpha: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject_DitherManager, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_alpha::get_method_info().method_ptr);
         inner(this, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject_DitherManager as ::unity2::ClassIdentity>::class(),
@@ -5347,39 +3823,27 @@ mod __MapObject_DitherManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
-                    "GetAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
+                        "GetAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alpha(
-        this: MapObject_DitherManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_alpha(this: MapObject_DitherManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapObject_DitherManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_alpha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -5395,18 +3859,15 @@ mod __MapObject_DitherManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderAlpha",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_alpha(
@@ -5415,26 +3876,19 @@ mod __MapObject_DitherManager_unity2_raw {
         alpha: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject_DitherManager,
-            crate::unity_engine::renderer::Renderer,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_alpha::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject_DitherManager, crate::unity_engine::renderer::Renderer, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_render_alpha::get_method_info().method_ptr);
         inner(this, render, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_renders_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::renderer::Renderer> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject_DitherManager as ::unity2::ClassIdentity>::class(),
                 "SetRendersAlpha",
@@ -5446,18 +3900,15 @@ mod __MapObject_DitherManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
-                    "SetRendersAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
+                        "SetRendersAlpha",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_renders_alpha(
@@ -5471,20 +3922,14 @@ mod __MapObject_DitherManager_unity2_raw {
             ::unity2::Array<crate::unity_engine::renderer::Renderer>,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_renders_alpha::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_renders_alpha::get_method_info().method_ptr);
         inner(this, renders, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject_DitherManager as ::unity2::ClassIdentity>::class(),
@@ -5497,30 +3942,20 @@ mod __MapObject_DitherManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapObject_DitherManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapObject_DitherManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject_DitherManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -5528,60 +3963,35 @@ mod __MapObject_DitherManager_unity2_raw {
 #[cfg(feature = "app-mapobject")]
 pub trait IMapObject_DitherManagerMethods: IMapObject_DitherManager {
     #[doc = "`Setup(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn setup(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn setup(self, root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
             let __receiver =
-                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapObject_DitherManager_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
+                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_DitherManager_unity2_raw::setup(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
         }
     }
     #[doc = "`CommitAlpha()` overload"]
     fn commit_alpha(self) -> () {
         unsafe {
             let __receiver =
-                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapObject_DitherManager_unity2_raw::commit_alpha(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_DitherManager_unity2_raw::commit_alpha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetAlpha(f32)` overload"]
     fn set_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapObject_DitherManager_unity2_raw::set_alpha(
-                __receiver,
-                ::core::convert::Into::into(alpha),
-                ::core::option::Option::None,
-            )
+                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_DitherManager_unity2_raw::set_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::option::Option::None)
         }
     }
     #[doc = "`GetAlpha()` overload"]
     fn get_alpha(self) -> f32 {
         unsafe {
             let __receiver =
-                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapObject_DitherManager_unity2_raw::get_alpha(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_DitherManager_unity2_raw::get_alpha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetRenderAlpha(crate::unity_engine::renderer::Renderer, f32)` overload"]
@@ -5592,9 +4002,7 @@ pub trait IMapObject_DitherManagerMethods: IMapObject_DitherManager {
     ) -> () {
         unsafe {
             let __receiver =
-                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_DitherManager_unity2_raw::set_render_alpha(
                 __receiver,
                 ::core::convert::Into::into(render),
@@ -5611,9 +4019,7 @@ pub trait IMapObject_DitherManagerMethods: IMapObject_DitherManager {
     ) -> () {
         unsafe {
             let __receiver =
-                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_DitherManager_unity2_raw::set_renders_alpha(
                 __receiver,
                 ::core::convert::Into::into(renders),
@@ -5626,9 +4032,7 @@ pub trait IMapObject_DitherManagerMethods: IMapObject_DitherManager {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapObject_DitherManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_DitherManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -5656,73 +4060,17 @@ impl MapObject_DitherManager {
 #[cfg(feature = "app-mapobject")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapObject_DitherPair_unity2_raw {
+mod __MapObject_Pair_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapobject::MapObject_DitherManager as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                <MapObject_Pair as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapObject_DitherPair,
-        maanger: crate::app::mapobject::MapObject_DitherManager,
-        render: crate::unity_engine::renderer::Renderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapObject_DitherPair,
-            crate::app::mapobject::MapObject_DitherManager,
-            crate::unity_engine::renderer::Renderer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, maanger, render, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
-                "CommitAlpha",
                 0,
                 param_types,
                 false,
@@ -5731,200 +4079,50 @@ mod __MapObject_DitherPair_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
-                    "CommitAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_Pair as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit_alpha(
-        this: MapObject_DitherPair,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_DitherPair, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_alpha::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
-                "SetAlpha",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
-                    "SetAlpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_alpha(
-        this: MapObject_DitherPair,
-        alpha: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_DitherPair, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_alpha::get_offset() as isize),
-            );
-        inner(this, alpha, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
-                "GetAlpha",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
-                    "GetAlpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_alpha(
-        this: MapObject_DitherPair,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(MapObject_DitherPair, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alpha::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: MapObject_Pair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject_Pair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapobject")]
-pub trait IMapObject_DitherPairMethods: IMapObject_DitherPair {
-    #[doc = "`.ctor(crate::app::mapobject::MapObject_DitherManager, crate::unity_engine::renderer::Renderer)` overload"]
-    fn ctor(
-        self,
-        maanger: impl ::core::convert::Into<crate::app::mapobject::MapObject_DitherManager>,
-        render: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
-    ) -> () {
+pub trait IMapObject_PairMethods: IMapObject_Pair {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_DitherPair_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(maanger),
-                ::core::convert::Into::into(render),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CommitAlpha()` overload"]
-    fn commit_alpha(self) -> () {
-        unsafe {
-            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_DitherPair_unity2_raw::commit_alpha(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetAlpha(f32)` overload"]
-    fn set_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_DitherPair_unity2_raw::set_alpha(
-                __receiver,
-                ::core::convert::Into::into(alpha),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetAlpha()` overload"]
-    fn get_alpha(self) -> f32 {
-        unsafe {
-            let __receiver = <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_DitherPair_unity2_raw::get_alpha(__receiver, ::core::option::Option::None)
+            let __receiver = <MapObject_Pair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_Pair_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapobject")]
-impl<__T: IMapObject_DitherPair> IMapObject_DitherPairMethods for __T {}
+impl<__T: IMapObject_Pair> IMapObject_PairMethods for __T {}
 
 #[cfg(feature = "app-mapobject")]
-impl MapObject_DitherPair {
-    #[doc = "`.ctor(crate::app::mapobject::MapObject_DitherManager, crate::unity_engine::renderer::Renderer)` — overload selector"]
-    pub fn new(
-        maanger: crate::app::mapobject::MapObject_DitherManager,
-        render: crate::unity_engine::renderer::Renderer,
-    ) -> Self {
+impl MapObject_Pair {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_DitherPair),
+                ::core::stringify!(MapObject_Pair),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapObject_DitherPairMethods>::ctor(this, maanger, render);
+        <Self as IMapObject_PairMethods>::ctor(this);
         this
     }
 }
@@ -5938,13 +4136,9 @@ mod __MapObject_RigidList_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::gameobject::GameObject,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::gameobject::GameObject> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject_RigidList as ::unity2::ClassIdentity>::class(),
                 "Add",
@@ -5956,18 +4150,15 @@ mod __MapObject_RigidList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
@@ -5975,24 +4166,15 @@ mod __MapObject_RigidList_unity2_raw {
         objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject_RigidList,
-            ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject_RigidList, ::unity2::Array<crate::unity_engine::gameobject::GameObject>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, objects, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -6006,18 +4188,15 @@ mod __MapObject_RigidList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_2(
@@ -6025,26 +4204,16 @@ mod __MapObject_RigidList_unity2_raw {
         go: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject_RigidList,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject_RigidList, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
         inner(this, go, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject_RigidList as ::unity2::ClassIdentity>::class(),
                 "SetBreak",
@@ -6056,40 +4225,27 @@ mod __MapObject_RigidList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
-                    "SetBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
+                        "SetBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_break(
-        this: MapObject_RigidList,
-        enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_break(this: MapObject_RigidList, enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject_RigidList, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_break::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_break::get_method_info().method_ptr);
         inner(this, enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_explosion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -6105,18 +4261,15 @@ mod __MapObject_RigidList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
-                    "Explosion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
+                        "Explosion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn explosion(
@@ -6125,25 +4278,15 @@ mod __MapObject_RigidList_unity2_raw {
         pow: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapObject_RigidList,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_explosion::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapObject_RigidList, crate::unity_engine::vector3::Vector3, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_explosion::get_method_info().method_ptr);
         inner(this, hit, pow, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapObject_RigidList as ::unity2::ClassIdentity>::class(),
@@ -6156,30 +4299,20 @@ mod __MapObject_RigidList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_RigidList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapObject_RigidList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapObject_RigidList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapObject_RigidList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -6187,62 +4320,30 @@ mod __MapObject_RigidList_unity2_raw {
 #[cfg(feature = "app-mapobject")]
 pub trait IMapObject_RigidListMethods: IMapObject_RigidList {
     #[doc = "`Add(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"]
-    fn add(
-        self,
-        objects: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        >,
-    ) -> () {
+    fn add(self, objects: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::gameobject::GameObject>>) -> () {
         unsafe {
-            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_RigidList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(objects),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_RigidList_unity2_raw::add(__receiver, ::core::convert::Into::into(objects), ::core::option::Option::None)
         }
     }
     #[doc = "`Add(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn add_2(
-        self,
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn add_2(self, go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_RigidList_unity2_raw::add_2(
-                __receiver,
-                ::core::convert::Into::into(go),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_RigidList_unity2_raw::add_2(__receiver, ::core::convert::Into::into(go), ::core::option::Option::None)
         }
     }
     #[doc = "`SetBreak(bool)` overload"]
     fn set_break(self, enabled: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_RigidList_unity2_raw::set_break(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_RigidList_unity2_raw::set_break(__receiver, ::core::convert::Into::into(enabled), ::core::option::Option::None)
         }
     }
     #[doc = "`Explosion(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    fn explosion(
-        self,
-        hit: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        pow: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn explosion(self, hit: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>, pow: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_RigidList_unity2_raw::explosion(
                 __receiver,
                 ::core::convert::Into::into(hit),
@@ -6254,9 +4355,7 @@ pub trait IMapObject_RigidListMethods: IMapObject_RigidList {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapObject_RigidList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapObject_RigidList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -6284,20 +4383,95 @@ impl MapObject_RigidList {
 #[cfg(feature = "app-mapobject")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapObject_State_unity2_raw {
+mod __MapObject_DitherPair_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_active {
+    pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::mapobject::MapObject_DitherManager as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_State as ::unity2::ClassIdentity>::class(),
-                "SetActive",
+                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapObject_DitherPair,
+        maanger: crate::app::mapobject::MapObject_DitherManager,
+        render: crate::unity_engine::renderer::Renderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapObject_DitherPair,
+            crate::app::mapobject::MapObject_DitherManager,
+            crate::unity_engine::renderer::Renderer,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, maanger, render, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                "CommitAlpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
+                        "CommitAlpha",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit_alpha(this: MapObject_DitherPair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject_DitherPair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_alpha::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                "SetAlpha",
                 1,
                 param_types,
                 false,
@@ -6306,43 +4480,134 @@ mod __MapObject_State_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_State as ::unity2::ClassIdentity>::NAME,
-                    "SetActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
+                        "SetAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+    }
+    pub unsafe fn set_alpha(this: MapObject_DitherPair, alpha: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject_DitherPair, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_alpha::get_method_info().method_ptr);
+        inner(this, alpha, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapObject_DitherPair as ::unity2::ClassIdentity>::class(),
+                "GetAlpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_DitherPair as ::unity2::ClassIdentity>::NAME,
+                        "GetAlpha",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn set_active(
-        this: MapObject_State,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_State, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_active::get_offset() as isize),
-            );
-        inner(this, enable, __unity2_method_info)
+    pub unsafe fn get_alpha(this: MapObject_DitherPair, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapObject_DitherPair, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_alpha::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
+}
+
+#[cfg(feature = "app-mapobject")]
+pub trait IMapObject_DitherPairMethods: IMapObject_DitherPair {
+    #[doc = "`.ctor(crate::app::mapobject::MapObject_DitherManager, crate::unity_engine::renderer::Renderer)` overload"]
+    fn ctor(
+        self,
+        maanger: impl ::core::convert::Into<crate::app::mapobject::MapObject_DitherManager>,
+        render: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_DitherPair_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(maanger),
+                ::core::convert::Into::into(render),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CommitAlpha()` overload"]
+    fn commit_alpha(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_DitherPair_unity2_raw::commit_alpha(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetAlpha(f32)` overload"]
+    fn set_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_DitherPair_unity2_raw::set_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetAlpha()` overload"]
+    fn get_alpha(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <MapObject_DitherPair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_DitherPair_unity2_raw::get_alpha(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+impl<__T: IMapObject_DitherPair> IMapObject_DitherPairMethods for __T {}
+
+#[cfg(feature = "app-mapobject")]
+impl MapObject_DitherPair {
+    #[doc = "`.ctor(crate::app::mapobject::MapObject_DitherManager, crate::unity_engine::renderer::Renderer)` — overload selector"]
+    pub fn new(maanger: crate::app::mapobject::MapObject_DitherManager, render: crate::unity_engine::renderer::Renderer) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapObject_DitherPair),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapObject_DitherPairMethods>::ctor(this, maanger, render);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapObject_RigidInfo_unity2_raw {
+    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapObject_State as ::unity2::ClassIdentity>::class(),
+                <MapObject_RigidInfo as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -6352,75 +4617,50 @@ mod __MapObject_State_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapObject_State as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapObject_RigidInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapObject_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapObject_State, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: MapObject_RigidInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapObject_RigidInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapobject")]
-pub trait IMapObject_StateMethods: IMapObject_State {
-    #[doc = "`SetActive(bool)` overload"]
-    fn set_active(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <MapObject_State as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_State_unity2_raw::set_active(
-                __receiver,
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
+pub trait IMapObject_RigidInfoMethods: IMapObject_RigidInfo {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapObject_State as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapObject_State_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver = <MapObject_RigidInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapObject_RigidInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapobject")]
-impl<__T: IMapObject_State> IMapObject_StateMethods for __T {}
+impl<__T: IMapObject_RigidInfo> IMapObject_RigidInfoMethods for __T {}
 
 #[cfg(feature = "app-mapobject")]
-impl MapObject_State {
+impl MapObject_RigidInfo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_State),
+                ::core::stringify!(MapObject_RigidInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapObject_StateMethods>::ctor(this);
+        <Self as IMapObject_RigidInfoMethods>::ctor(this);
         this
     }
 }
@@ -6428,54 +4668,31 @@ impl MapObject_State {
 #[cfg(feature = "app-mapobject")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapObject;
-    pub use super::IMapObjectMethods;
-    pub use super::IMapObject_DitherManager;
-    pub use super::IMapObject_DitherManagerMethods;
-    pub use super::IMapObject_DitherPair;
-    pub use super::IMapObject_DitherPairMethods;
-    pub use super::IMapObject_Pair;
-    pub use super::IMapObject_PairMethods;
-    pub use super::IMapObject_RigidInfo;
-    pub use super::IMapObject_RigidInfoMethods;
-    pub use super::IMapObject_RigidList;
-    pub use super::IMapObject_RigidListMethods;
-    pub use super::IMapObject_State;
-    pub use super::IMapObject_StateMethods;
-    pub use super::MapObject;
-    pub use super::MapObject_Actions;
-    pub use super::MapObject_BakeTypes;
-    pub use super::MapObject_DitherManager;
-    pub use super::MapObject_DitherPair;
-    pub use super::MapObject_Kinds;
-    pub use super::MapObject_LightmapScales;
-    pub use super::MapObject_Lods;
-    pub use super::MapObject_Pair;
-    pub use super::MapObject_RigidInfo;
-    pub use super::MapObject_RigidList;
-    pub use super::MapObject_State;
-    pub use crate::system::collections::generic::list_1::IList_1;
+    pub use super::{
+        IMapObject, IMapObjectMethods, IMapObject_DitherManager, IMapObject_DitherManagerMethods, IMapObject_DitherPair,
+        IMapObject_DitherPairMethods, IMapObject_Pair, IMapObject_PairMethods, IMapObject_RigidInfo, IMapObject_RigidInfoMethods,
+        IMapObject_RigidList, IMapObject_RigidListMethods, IMapObject_State, IMapObject_StateMethods, MapObject, MapObject_Actions,
+        MapObject_BakeTypes, MapObject_DitherManager, MapObject_DitherPair, MapObject_Kinds, MapObject_LightmapScales, MapObject_Lods,
+        MapObject_Pair, MapObject_RigidInfo, MapObject_RigidList, MapObject_State,
+    };
     #[cfg(feature = "system-collections-generic-list_1")]
     pub use crate::system::collections::generic::list_1::IList_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{collections::generic::list_1::IList_1, object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-signalargsreaderwriter_attackrange-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/signalargsreaderwriter_attackrange/SignalArgsReaderWriter_AttackRange.md"))]
     #[::unity2::class(namespace = "Combat", name = "SignalArgsReaderWriter_AttackRange")]
@@ -25,13 +25,9 @@ mod __SignalArgsReaderWriter_AttackRange_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_attack_far_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_AttackRange as ::unity2::ClassIdentity>::class(),
                 "AttackFarRange",
@@ -43,44 +39,29 @@ mod __SignalArgsReaderWriter_AttackRange_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_AttackRange as ::unity2::ClassIdentity>::NAME,
-                    "AttackFarRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_AttackRange as ::unity2::ClassIdentity>::NAME,
+                        "AttackFarRange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn attack_far_range(
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_attack_far_range::get_offset() as isize),
-        );
+    pub unsafe fn attack_far_range(ev: crate::unity_engine::animationevent::AnimationEvent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_attack_far_range::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_attack_far_range_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -94,18 +75,15 @@ mod __SignalArgsReaderWriter_AttackRange_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_AttackRange as ::unity2::ClassIdentity>::NAME,
-                    "AttackFarRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_AttackRange as ::unity2::ClassIdentity>::NAME,
+                        "AttackFarRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn attack_far_range_2(
@@ -113,28 +91,17 @@ mod __SignalArgsReaderWriter_AttackRange_unity2_raw {
         value: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_attack_far_range_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_attack_far_range_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_attack_near_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_AttackRange as ::unity2::ClassIdentity>::class(),
                 "AttackNearRange",
@@ -146,32 +113,20 @@ mod __SignalArgsReaderWriter_AttackRange_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_AttackRange as ::unity2::ClassIdentity>::NAME,
-                    "AttackNearRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_AttackRange as ::unity2::ClassIdentity>::NAME,
+                        "AttackNearRange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn attack_near_range(
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_attack_near_range::get_offset() as isize),
-        );
+    pub unsafe fn attack_near_range(ev: crate::unity_engine::animationevent::AnimationEvent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_attack_near_range::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
 }
@@ -179,16 +134,10 @@ mod __SignalArgsReaderWriter_AttackRange_unity2_raw {
 #[cfg(feature = "combat-signalargsreaderwriter_attackrange")]
 impl SignalArgsReaderWriter_AttackRange {
     #[doc = "`AttackFarRange(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn attack_far_range(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> f32 {
-        unsafe {
-            __SignalArgsReaderWriter_AttackRange_unity2_raw::attack_far_range(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn attack_far_range(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> f32 {
+        unsafe { __SignalArgsReaderWriter_AttackRange_unity2_raw::attack_far_range(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`AttackFarRange(crate::unity_engine::animationevent::AnimationEvent, f32)` overload"]
     pub fn attack_far_range_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -202,24 +151,17 @@ impl SignalArgsReaderWriter_AttackRange {
             )
         }
     }
+
     #[doc = "`AttackNearRange(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn attack_near_range(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> f32 {
-        unsafe {
-            __SignalArgsReaderWriter_AttackRange_unity2_raw::attack_near_range(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn attack_near_range(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> f32 {
+        unsafe { __SignalArgsReaderWriter_AttackRange_unity2_raw::attack_near_range(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "combat-signalargsreaderwriter_attackrange")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISignalArgsReaderWriter_AttackRange;
-    pub use super::SignalArgsReaderWriter_AttackRange;
+    pub use super::{ISignalArgsReaderWriter_AttackRange, SignalArgsReaderWriter_AttackRange};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

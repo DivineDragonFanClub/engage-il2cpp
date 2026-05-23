@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-generic-ienumerator_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ienumerator_1/IEnumerator_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "IEnumerator`1")]
@@ -25,7 +25,5 @@ impl<T0: ::unity2::ClassIdentity> IEnumerator_1<T0> {
 #[cfg(feature = "system-collections-generic-ienumerator_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IEnumerator_1;
-    pub use super::IIEnumerator_1;
-    pub use super::IIEnumerator_1Methods;
+    pub use super::{IEnumerator_1, IIEnumerator_1, IIEnumerator_1Methods};
 }

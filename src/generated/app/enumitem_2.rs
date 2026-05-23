@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-enumitem_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::instanceitem_1::{IInstanceItem_1, InstanceItem_1};
-    use crate::app::menuitem::{IMenuItem, MenuItem};
-    use crate::app::paramitem::{IParamItem, ParamItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            instanceitem_1::{IInstanceItem_1, InstanceItem_1},
+            menuitem::{IMenuItem, MenuItem},
+            paramitem::{IParamItem, ParamItem},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/enumitem_2/EnumItem_2.md"))]
     #[::unity2::class(namespace = "App", name = "EnumItem`2")]
@@ -54,13 +58,8 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1> {
     #[doc = "`.ctor(T0)` — overload selector"]
     pub fn new(instance: T0) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EnumItem_2),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(EnumItem_2), ::core::stringify!(new),));
         <Self as IEnumItem_2Methods<T0, T1>>::ctor(this, instance);
         this
     }
@@ -69,20 +68,21 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1
 #[cfg(feature = "app-enumitem_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EnumItem_2;
-    pub use super::IEnumItem_2;
-    pub use super::IEnumItem_2Methods;
-    pub use crate::app::instanceitem_1::IInstanceItem_1;
+    pub use super::{EnumItem_2, IEnumItem_2, IEnumItem_2Methods};
     #[cfg(feature = "app-instanceitem_1")]
     pub use crate::app::instanceitem_1::IInstanceItem_1Methods;
-    pub use crate::app::instanceitem_1::InstanceItem_1;
-    pub use crate::app::menuitem::IMenuItem;
     #[cfg(feature = "app-menuitem")]
     pub use crate::app::menuitem::IMenuItemMethods;
-    pub use crate::app::paramitem::IParamItem;
     #[cfg(feature = "app-paramitem")]
     pub use crate::app::paramitem::IParamItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            instanceitem_1::{IInstanceItem_1, InstanceItem_1},
+            menuitem::IMenuItem,
+            paramitem::IParamItem,
+        },
+        system::object::IObject,
+    };
 }

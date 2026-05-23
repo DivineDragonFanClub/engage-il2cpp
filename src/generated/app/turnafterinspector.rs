@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-turnafterinspector-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::mapinspector::{IMapInspector, MapInspector};
-    use crate::app::scriptutil::{IScriptUtil, ScriptUtil};
-    use crate::app::turncommoninspector::{ITurnCommonInspector, TurnCommonInspector};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            mapinspector::{IMapInspector, MapInspector},
+            scriptutil::{IScriptUtil, ScriptUtil},
+            turncommoninspector::{ITurnCommonInspector, TurnCommonInspector},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/turnafterinspector/TurnAfterInspector.md"))]
     #[::unity2::class(namespace = "App", name = "TurnAfterInspector")]
@@ -28,13 +32,9 @@ mod __TurnAfterInspector_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TurnAfterInspector as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -46,18 +46,15 @@ mod __TurnAfterInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TurnAfterInspector as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TurnAfterInspector as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -69,11 +66,7 @@ mod __TurnAfterInspector_unity2_raw {
             TurnAfterInspector,
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, args, __unity2_method_info)
     }
 }
@@ -81,21 +74,10 @@ mod __TurnAfterInspector_unity2_raw {
 #[cfg(feature = "app-turnafterinspector")]
 pub trait ITurnAfterInspectorMethods: ITurnAfterInspector {
     #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(
-        self,
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
+    fn ctor(self, args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
         unsafe {
-            let __receiver = <TurnAfterInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TurnAfterInspector_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TurnAfterInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TurnAfterInspector_unity2_raw::ctor(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
 }
@@ -122,19 +104,17 @@ impl TurnAfterInspector {
 #[cfg(feature = "app-turnafterinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITurnAfterInspector;
-    pub use super::ITurnAfterInspectorMethods;
-    pub use super::TurnAfterInspector;
-    pub use crate::app::mapinspector::IMapInspector;
+    pub use super::{ITurnAfterInspector, ITurnAfterInspectorMethods, TurnAfterInspector};
     #[cfg(feature = "app-mapinspector")]
     pub use crate::app::mapinspector::IMapInspectorMethods;
-    pub use crate::app::scriptutil::IScriptUtil;
     #[cfg(feature = "app-scriptutil")]
     pub use crate::app::scriptutil::IScriptUtilMethods;
-    pub use crate::app::turncommoninspector::ITurnCommonInspector;
     #[cfg(feature = "app-turncommoninspector")]
     pub use crate::app::turncommoninspector::ITurnCommonInspectorMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapinspector::IMapInspector, scriptutil::IScriptUtil, turncommoninspector::ITurnCommonInspector},
+        system::object::IObject,
+    };
 }

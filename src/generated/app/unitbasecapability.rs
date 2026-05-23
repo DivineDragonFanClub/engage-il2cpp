@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-unitbasecapability-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::capabilitybase_1::{CapabilityBase_1, ICapabilityBase_1};
-    use crate::app::capabilitydefinition::{CapabilityDefinition, ICapabilityDefinition};
-    use crate::app::capabilitysbyte::{CapabilitySbyte, ICapabilitySbyte};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            capabilitybase_1::{CapabilityBase_1, ICapabilityBase_1},
+            capabilitydefinition::{CapabilityDefinition, ICapabilityDefinition},
+            capabilitysbyte::{CapabilitySbyte, ICapabilitySbyte},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitbasecapability/UnitBaseCapability.md"))]
     #[::unity2::class(namespace = "App", name = "UnitBaseCapability")]
@@ -28,11 +32,42 @@ mod __UnitBaseCapability_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitBaseCapability as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitBaseCapability as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set(this: UnitBaseCapability, i: i32, v: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitBaseCapability, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
+        inner(this, i, v, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -46,65 +81,15 @@ mod __UnitBaseCapability_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitBaseCapability as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitBaseCapability as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set(
-        this: UnitBaseCapability,
-        i: i32,
-        v: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitBaseCapability, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set::get_offset() as isize),
-            );
-        inner(this, i, v, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitBaseCapability as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitBaseCapability as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_2(
@@ -118,20 +103,14 @@ mod __UnitBaseCapability_unity2_raw {
             crate::app::capabilitydefinition::CapabilityDefinition_Type,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_2::get_method_info().method_ptr);
         inner(this, t, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitBaseCapability as ::unity2::ClassIdentity>::class(),
@@ -144,30 +123,20 @@ mod __UnitBaseCapability_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitBaseCapability as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitBaseCapability as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: UnitBaseCapability,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: UnitBaseCapability, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitBaseCapability, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -177,9 +146,7 @@ pub trait IUnitBaseCapabilityMethods: IUnitBaseCapability {
     #[doc = "`Set(i32, i32)` overload"]
     fn set(self, i: impl ::core::convert::Into<i32>, v: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <UnitBaseCapability as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitBaseCapability as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitBaseCapability_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(i),
@@ -195,9 +162,7 @@ pub trait IUnitBaseCapabilityMethods: IUnitBaseCapability {
         v: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitBaseCapability as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitBaseCapability as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitBaseCapability_unity2_raw::set_2(
                 __receiver,
                 ::core::convert::Into::into(t),
@@ -209,9 +174,7 @@ pub trait IUnitBaseCapabilityMethods: IUnitBaseCapability {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <UnitBaseCapability as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitBaseCapability as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitBaseCapability_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -239,19 +202,17 @@ impl UnitBaseCapability {
 #[cfg(feature = "app-unitbasecapability")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnitBaseCapability;
-    pub use super::IUnitBaseCapabilityMethods;
-    pub use super::UnitBaseCapability;
-    pub use crate::app::capabilitybase_1::ICapabilityBase_1;
+    pub use super::{IUnitBaseCapability, IUnitBaseCapabilityMethods, UnitBaseCapability};
     #[cfg(feature = "app-capabilitybase_1")]
     pub use crate::app::capabilitybase_1::ICapabilityBase_1Methods;
-    pub use crate::app::capabilitydefinition::ICapabilityDefinition;
     #[cfg(feature = "app-capabilitydefinition")]
     pub use crate::app::capabilitydefinition::ICapabilityDefinitionMethods;
-    pub use crate::app::capabilitysbyte::ICapabilitySbyte;
     #[cfg(feature = "app-capabilitysbyte")]
     pub use crate::app::capabilitysbyte::ICapabilitySbyteMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{capabilitybase_1::ICapabilityBase_1, capabilitydefinition::ICapabilityDefinition, capabilitysbyte::ICapabilitySbyte},
+        system::object::IObject,
+    };
 }

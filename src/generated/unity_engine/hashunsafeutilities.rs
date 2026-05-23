@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-hashunsafeutilities-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/hashunsafeutilities/HashUnsafeUtilities.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "HashUnsafeUtilities")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-hashunsafeutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HashUnsafeUtilities;
-    pub use super::IHashUnsafeUtilities;
+    pub use super::{HashUnsafeUtilities, IHashUnsafeUtilities};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

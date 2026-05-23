@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-scriptoptions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/scriptoptions/ScriptOptions.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "ScriptOptions")]
@@ -25,75 +25,49 @@ mod __ScriptOptions_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptOptions as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptOptions as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: ScriptOptions, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptoptions :: ScriptOptions as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptOptions as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::scriptoptions::ScriptOptions as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptOptions as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -101,24 +75,15 @@ mod __ScriptOptions_unity2_raw {
         defaults: crate::moon_sharp::interpreter::scriptoptions::ScriptOptions,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            crate::moon_sharp::interpreter::scriptoptions::ScriptOptions,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScriptOptions, crate::moon_sharp::interpreter::scriptoptions::ScriptOptions, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, defaults, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_script_loader {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -131,35 +96,32 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_ScriptLoader",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_ScriptLoader",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_script_loader(
         this: ScriptOptions,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader {
-        let inner : extern "C" fn (ScriptOptions , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: loaders :: iscriptloader :: IScriptLoader = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_script_loader :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader =
+            ::core::mem::transmute(__lookup_get_script_loader::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_script_loader {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: loaders :: iscriptloader :: IScriptLoader as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_ScriptLoader",
@@ -171,18 +133,15 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_ScriptLoader",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_ScriptLoader",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_script_loader(
@@ -194,20 +153,14 @@ mod __ScriptOptions_unity2_raw {
             ScriptOptions,
             crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_script_loader::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_script_loader::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_print {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -220,43 +173,32 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_DebugPrint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_DebugPrint",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_debug_print(
         this: ScriptOptions,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::action_1::Action_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::action_1::Action_1<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_debug_print::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> crate::system::action_1::Action_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_debug_print::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_debug_print {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_DebugPrint",
@@ -268,18 +210,15 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_DebugPrint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_DebugPrint",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_debug_print(
@@ -287,24 +226,15 @@ mod __ScriptOptions_unity2_raw {
         value: crate::system::action_1::Action_1<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            crate::system::action_1::Action_1<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_debug_print::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScriptOptions, crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_debug_print::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -317,18 +247,15 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_DebugInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_DebugInput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_debug_input(
@@ -338,28 +265,17 @@ mod __ScriptOptions_unity2_raw {
         let inner: extern "C" fn(
             ScriptOptions,
             ::unity2::OptionalMethod,
-        ) -> crate::system::func_2::Func_2<
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_debug_input::get_offset() as isize),
-        );
+        ) -> crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_debug_input::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_debug_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::func_2::Func_2<
-                    ::unity2::Il2CppString,
-                    ::unity2::Il2CppString,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_DebugInput",
@@ -371,18 +287,15 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_DebugInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_DebugInput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_debug_input(
@@ -394,20 +307,14 @@ mod __ScriptOptions_unity2_raw {
             ScriptOptions,
             crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_debug_input::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_debug_input::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_use_lua_error_locations {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -420,41 +327,28 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_UseLuaErrorLocations",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_UseLuaErrorLocations",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_use_lua_error_locations(
-        this: ScriptOptions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_use_lua_error_locations(this: ScriptOptions, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_use_lua_error_locations::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_use_lua_error_locations::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_use_lua_error_locations {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_UseLuaErrorLocations",
@@ -466,40 +360,27 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_UseLuaErrorLocations",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_UseLuaErrorLocations",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_use_lua_error_locations(
-        this: ScriptOptions,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_use_lua_error_locations(this: ScriptOptions, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptOptions, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_use_lua_error_locations::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_use_lua_error_locations::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_colon_operator_clr_callback_behaviour {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -512,35 +393,35 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_ColonOperatorClrCallbackBehaviour",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_ColonOperatorClrCallbackBehaviour",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_colon_operator_clr_callback_behaviour(
         this: ScriptOptions,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour {
-        let inner : extern "C" fn (ScriptOptions , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: colonoperatorbehaviour :: ColonOperatorBehaviour = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_colon_operator_clr_callback_behaviour :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScriptOptions,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour =
+            ::core::mem::transmute(__lookup_get_colon_operator_clr_callback_behaviour::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_colon_operator_clr_callback_behaviour {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: colonoperatorbehaviour :: ColonOperatorBehaviour as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_ColonOperatorClrCallbackBehaviour",
@@ -552,18 +433,15 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_ColonOperatorClrCallbackBehaviour",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_ColonOperatorClrCallbackBehaviour",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_colon_operator_clr_callback_behaviour(
@@ -575,20 +453,14 @@ mod __ScriptOptions_unity2_raw {
             ScriptOptions,
             crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_colon_operator_clr_callback_behaviour::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_colon_operator_clr_callback_behaviour::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stdin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -601,43 +473,28 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_Stdin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_Stdin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stdin(
-        this: ScriptOptions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::io::stream::Stream {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::io::stream::Stream = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stdin::get_offset() as isize),
-        );
+    pub unsafe fn get_stdin(this: ScriptOptions, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::io::stream::Stream {
+        let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> crate::system::io::stream::Stream =
+            ::core::mem::transmute(__lookup_get_stdin::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_stdin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_Stdin",
@@ -649,43 +506,27 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_Stdin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_Stdin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_stdin(
-        this: ScriptOptions,
-        value: crate::system::io::stream::Stream,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            crate::system::io::stream::Stream,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_stdin::get_offset() as isize),
-        );
+    pub unsafe fn set_stdin(this: ScriptOptions, value: crate::system::io::stream::Stream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptOptions, crate::system::io::stream::Stream, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_stdin::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stdout {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -698,43 +539,28 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_Stdout",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_Stdout",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stdout(
-        this: ScriptOptions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::io::stream::Stream {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::io::stream::Stream = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stdout::get_offset() as isize),
-        );
+    pub unsafe fn get_stdout(this: ScriptOptions, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::io::stream::Stream {
+        let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> crate::system::io::stream::Stream =
+            ::core::mem::transmute(__lookup_get_stdout::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_stdout {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_Stdout",
@@ -746,43 +572,27 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_Stdout",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_Stdout",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_stdout(
-        this: ScriptOptions,
-        value: crate::system::io::stream::Stream,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            crate::system::io::stream::Stream,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_stdout::get_offset() as isize),
-        );
+    pub unsafe fn set_stdout(this: ScriptOptions, value: crate::system::io::stream::Stream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptOptions, crate::system::io::stream::Stream, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_stdout::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stderr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -795,43 +605,28 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_Stderr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_Stderr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stderr(
-        this: ScriptOptions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::io::stream::Stream {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::io::stream::Stream = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stderr::get_offset() as isize),
-        );
+    pub unsafe fn get_stderr(this: ScriptOptions, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::io::stream::Stream {
+        let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> crate::system::io::stream::Stream =
+            ::core::mem::transmute(__lookup_get_stderr::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_stderr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::io::stream::Stream as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_Stderr",
@@ -843,43 +638,27 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_Stderr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_Stderr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_stderr(
-        this: ScriptOptions,
-        value: crate::system::io::stream::Stream,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptOptions,
-            crate::system::io::stream::Stream,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_stderr::get_offset() as isize),
-        );
+    pub unsafe fn set_stderr(this: ScriptOptions, value: crate::system::io::stream::Stream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptOptions, crate::system::io::stream::Stream, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_stderr::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_tail_call_optimization_threshold {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -892,41 +671,28 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_TailCallOptimizationThreshold",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_TailCallOptimizationThreshold",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_tail_call_optimization_threshold(
-        this: ScriptOptions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_tail_call_optimization_threshold(this: ScriptOptions, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_tail_call_optimization_threshold::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_tail_call_optimization_threshold::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_tail_call_optimization_threshold {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_TailCallOptimizationThreshold",
@@ -938,40 +704,27 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_TailCallOptimizationThreshold",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_TailCallOptimizationThreshold",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_tail_call_optimization_threshold(
-        this: ScriptOptions,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_tail_call_optimization_threshold(this: ScriptOptions, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptOptions, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_tail_call_optimization_threshold::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_tail_call_optimization_threshold::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_check_thread_access {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
@@ -984,41 +737,28 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "get_CheckThreadAccess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "get_CheckThreadAccess",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_check_thread_access(
-        this: ScriptOptions,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_check_thread_access(this: ScriptOptions, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ScriptOptions, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_check_thread_access::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_check_thread_access::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_check_thread_access {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptOptions as ::unity2::ClassIdentity>::class(),
                 "set_CheckThreadAccess",
@@ -1030,31 +770,20 @@ mod __ScriptOptions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptOptions as ::unity2::ClassIdentity>::NAME,
-                    "set_CheckThreadAccess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptOptions as ::unity2::ClassIdentity>::NAME,
+                        "set_CheckThreadAccess",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_check_thread_access(
-        this: ScriptOptions,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_check_thread_access(this: ScriptOptions, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptOptions, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_check_thread_access::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_check_thread_access::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -1064,163 +793,87 @@ pub trait IScriptOptionsMethods: IScriptOptions {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::scriptoptions::ScriptOptions)` overload"]
-    fn ctor_2(
-        self,
-        defaults: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptoptions::ScriptOptions,
-        >,
-    ) -> () {
+    fn ctor_2(self, defaults: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptoptions::ScriptOptions>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(defaults),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(defaults), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ScriptLoader()` overload"]
-    fn get_script_loader(
-        self,
-    ) -> crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader {
+    fn get_script_loader(self) -> crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::get_script_loader(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ScriptLoader(crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader)` overload"]
-    fn set_script_loader(
-        self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader,
-        >,
-    ) -> () {
+    fn set_script_loader(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::loaders::iscriptloader::IScriptLoader>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::set_script_loader(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::set_script_loader(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DebugPrint()` overload"]
     fn get_debug_print(self) -> crate::system::action_1::Action_1<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::get_debug_print(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DebugPrint(crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]
-    fn set_debug_print(
-        self,
-        value: impl ::core::convert::Into<crate::system::action_1::Action_1<::unity2::Il2CppString>>,
-    ) -> () {
+    fn set_debug_print(self, value: impl ::core::convert::Into<crate::system::action_1::Action_1<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::set_debug_print(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::set_debug_print(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DebugInput()` overload"]
-    fn get_debug_input(
-        self,
-    ) -> crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString> {
+    fn get_debug_input(self) -> crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::get_debug_input(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DebugInput(crate::system::func_2::Func_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"]
-    fn set_debug_input(
-        self,
-        value: impl ::core::convert::Into<
-            crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
-        >,
-    ) -> () {
+    fn set_debug_input(self, value: impl ::core::convert::Into<crate::system::func_2::Func_2<::unity2::Il2CppString, ::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::set_debug_input(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::set_debug_input(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_UseLuaErrorLocations()` overload"]
     fn get_use_lua_error_locations(self) -> bool {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::get_use_lua_error_locations(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::get_use_lua_error_locations(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_UseLuaErrorLocations(bool)` overload"]
     fn set_use_lua_error_locations(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::set_use_lua_error_locations(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::set_use_lua_error_locations(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ColonOperatorClrCallbackBehaviour()` overload"]
-    fn get_colon_operator_clr_callback_behaviour(
-        self,
-    ) -> crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour {
+    fn get_colon_operator_clr_callback_behaviour(self) -> crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::get_colon_operator_clr_callback_behaviour(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::get_colon_operator_clr_callback_behaviour(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ColonOperatorClrCallbackBehaviour(crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour)` overload"]
     fn set_colon_operator_clr_callback_behaviour(
         self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour,
-        >,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::colonoperatorbehaviour::ColonOperatorBehaviour>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::set_colon_operator_clr_callback_behaviour(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1231,93 +884,56 @@ pub trait IScriptOptionsMethods: IScriptOptions {
     #[doc = "`get_Stdin()` overload"]
     fn get_stdin(self) -> crate::system::io::stream::Stream {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::get_stdin(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Stdin(crate::system::io::stream::Stream)` overload"]
     fn set_stdin(self, value: impl ::core::convert::Into<crate::system::io::stream::Stream>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::set_stdin(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::set_stdin(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Stdout()` overload"]
     fn get_stdout(self) -> crate::system::io::stream::Stream {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::get_stdout(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Stdout(crate::system::io::stream::Stream)` overload"]
-    fn set_stdout(
-        self,
-        value: impl ::core::convert::Into<crate::system::io::stream::Stream>,
-    ) -> () {
+    fn set_stdout(self, value: impl ::core::convert::Into<crate::system::io::stream::Stream>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::set_stdout(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::set_stdout(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Stderr()` overload"]
     fn get_stderr(self) -> crate::system::io::stream::Stream {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::get_stderr(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Stderr(crate::system::io::stream::Stream)` overload"]
-    fn set_stderr(
-        self,
-        value: impl ::core::convert::Into<crate::system::io::stream::Stream>,
-    ) -> () {
+    fn set_stderr(self, value: impl ::core::convert::Into<crate::system::io::stream::Stream>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::set_stderr(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::set_stderr(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_TailCallOptimizationThreshold()` overload"]
     fn get_tail_call_optimization_threshold(self) -> i32 {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::get_tail_call_optimization_threshold(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::get_tail_call_optimization_threshold(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_TailCallOptimizationThreshold(i32)` overload"]
     fn set_tail_call_optimization_threshold(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptOptions_unity2_raw::set_tail_call_optimization_threshold(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1328,26 +944,15 @@ pub trait IScriptOptionsMethods: IScriptOptions {
     #[doc = "`get_CheckThreadAccess()` overload"]
     fn get_check_thread_access(self) -> bool {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::get_check_thread_access(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::get_check_thread_access(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CheckThreadAccess(bool)` overload"]
     fn set_check_thread_access(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptOptions_unity2_raw::set_check_thread_access(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptOptions as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptOptions_unity2_raw::set_check_thread_access(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -1359,13 +964,8 @@ impl<__T: IScriptOptions> IScriptOptionsMethods for __T {}
 impl ScriptOptions {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptOptions),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ScriptOptions), ::core::stringify!(new),));
         <Self as IScriptOptionsMethods>::ctor(this);
         this
     }
@@ -1387,9 +987,7 @@ impl ScriptOptions {
 #[cfg(feature = "moon_sharp-interpreter-scriptoptions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptOptions;
-    pub use super::IScriptOptionsMethods;
-    pub use super::ScriptOptions;
+    pub use super::{IScriptOptions, IScriptOptionsMethods, ScriptOptions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

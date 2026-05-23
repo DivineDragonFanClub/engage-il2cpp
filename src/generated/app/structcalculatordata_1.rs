@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-structcalculatordata_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdata_1::{IStructData_1, StructData_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdata_1::{IStructData_1, StructData_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structcalculatordata_1/StructCalculatorData_1.md"))]
     #[::unity2::class(namespace = "App", name = "StructCalculatorData`1")]
@@ -18,9 +22,7 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct StructCalculatorData_1<T0: ::unity2::ClassIdentity> {
         #[rename(name = "m_Commands")]
-        pub m_commands: crate::system::collections::generic::list_1::List_1<
-            crate::app::calculatorcommand::CalculatorCommand,
-        >,
+        pub m_commands: crate::system::collections::generic::list_1::List_1<crate::app::calculatorcommand::CalculatorCommand>,
     }
 }
 
@@ -36,18 +38,11 @@ impl<T0: ::unity2::ClassIdentity> StructCalculatorData_1<T0> {
 
     #[doc = "`AddCommand(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     #[method(name = "AddCommand", args = 2)]
-    pub fn add_command(
-        self,
-        name: ::unity2::Il2CppString,
-        func: ::unity2::Il2CppString,
-    ) -> crate::app::calculatorcommand::CalculatorCommand;
+    pub fn add_command(self, name: ::unity2::Il2CppString, func: ::unity2::Il2CppString) -> crate::app::calculatorcommand::CalculatorCommand;
 
     #[doc = "`AddConditionGetterCommand(::unity2::Il2CppString)` overload"]
     #[method(name = "AddConditionGetterCommand", args = 1)]
-    pub fn add_condition_getter_command(
-        self,
-        name: ::unity2::Il2CppString,
-    ) -> crate::app::conditiongettercommand::ConditionGetterCommand;
+    pub fn add_condition_getter_command(self, name: ::unity2::Il2CppString) -> crate::app::conditiongettercommand::ConditionGetterCommand;
 
     #[doc = "`ReleaseCommand()` overload"]
     #[method(name = "ReleaseCommand", args = 0)]
@@ -77,19 +72,17 @@ impl<T0: ::unity2::ClassIdentity> StructCalculatorData_1<T0> {
 #[cfg(feature = "app-structcalculatordata_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStructCalculatorData_1;
-    pub use super::IStructCalculatorData_1Methods;
-    pub use super::StructCalculatorData_1;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{IStructCalculatorData_1, IStructCalculatorData_1Methods, StructCalculatorData_1};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdata_1::IStructData_1;
     #[cfg(feature = "app-structdata_1")]
     pub use crate::app::structdata_1::IStructData_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

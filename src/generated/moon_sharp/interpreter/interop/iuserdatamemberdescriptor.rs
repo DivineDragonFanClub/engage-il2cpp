@@ -2,15 +2,12 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iuserdatamemberdescriptor-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/iuserdatamemberdescriptor/IUserDataMemberDescriptor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "IUserDataMemberDescriptor"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "IUserDataMemberDescriptor")]
     pub struct IUserDataMemberDescriptor {}
 }
 
@@ -26,9 +23,7 @@ mod __IUserDataMemberDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -41,41 +36,27 @@ mod __IUserDataMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: IUserDataMemberDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            IUserDataMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: IUserDataMemberDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(IUserDataMemberDescriptor, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -88,41 +69,27 @@ mod __IUserDataMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_Type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_Type",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_type(
-        this: IUserDataMemberDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            IUserDataMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_type::get_offset() as isize),
-        );
+    pub unsafe fn get_type(this: IUserDataMemberDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(IUserDataMemberDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -138,18 +105,15 @@ mod __IUserDataMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "GetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "GetValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value(
@@ -163,20 +127,14 @@ mod __IUserDataMemberDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, script, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -193,18 +151,15 @@ mod __IUserDataMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "SetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "SetValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_value(
@@ -220,20 +175,14 @@ mod __IUserDataMemberDescriptor_unity2_raw {
             crate::system::object::Object,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_value::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
         inner(this, script, obj, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_member_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -246,34 +195,33 @@ mod __IUserDataMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_MemberType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_MemberType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_member_type(
         this: IUserDataMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::userdatamembertype::UserDataMemberType {
-        let inner : extern "C" fn (IUserDataMemberDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: userdatamembertype :: UserDataMemberType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_member_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            IUserDataMemberDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::userdatamembertype::UserDataMemberType =
+            ::core::mem::transmute(__lookup_get_member_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_optimize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -286,39 +234,27 @@ mod __IUserDataMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Optimize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Optimize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn optimize(
-        this: IUserDataMemberDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn optimize(this: IUserDataMemberDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(IUserDataMemberDescriptor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_optimize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_optimize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_static {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -331,30 +267,20 @@ mod __IUserDataMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_IsStatic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_IsStatic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_static(
-        this: IUserDataMemberDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_static(this: IUserDataMemberDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(IUserDataMemberDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_static::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_static::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -365,26 +291,16 @@ pub trait IIUserDataMemberDescriptorMethods: IIUserDataMemberDescriptor {
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IUserDataMemberDescriptor_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IUserDataMemberDescriptor_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Type()` overload"]
     fn get_type(self) -> ::unity2::SystemType {
         unsafe {
             let __receiver =
-                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IUserDataMemberDescriptor_unity2_raw::get_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IUserDataMemberDescriptor_unity2_raw::get_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]
@@ -395,9 +311,7 @@ pub trait IIUserDataMemberDescriptorMethods: IIUserDataMemberDescriptor {
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IUserDataMemberDescriptor_unity2_raw::get_value(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -415,9 +329,7 @@ pub trait IIUserDataMemberDescriptorMethods: IIUserDataMemberDescriptor {
     ) -> bool {
         unsafe {
             let __receiver =
-                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IUserDataMemberDescriptor_unity2_raw::set_value(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -428,44 +340,27 @@ pub trait IIUserDataMemberDescriptorMethods: IIUserDataMemberDescriptor {
         }
     }
     #[doc = "`get_MemberType()` overload"]
-    fn get_member_type(
-        self,
-    ) -> crate::moon_sharp::interpreter::interop::userdatamembertype::UserDataMemberType {
+    fn get_member_type(self) -> crate::moon_sharp::interpreter::interop::userdatamembertype::UserDataMemberType {
         unsafe {
             let __receiver =
-                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IUserDataMemberDescriptor_unity2_raw::get_member_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IUserDataMemberDescriptor_unity2_raw::get_member_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Optimize()` overload"]
     fn optimize(self) -> () {
         unsafe {
             let __receiver =
-                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IUserDataMemberDescriptor_unity2_raw::optimize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IUserDataMemberDescriptor_unity2_raw::optimize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsStatic()` overload"]
     fn get_is_static(self) -> bool {
         unsafe {
             let __receiver =
-                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IUserDataMemberDescriptor_unity2_raw::get_is_static(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <IUserDataMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IUserDataMemberDescriptor_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -476,7 +371,5 @@ impl<__T: IIUserDataMemberDescriptor> IIUserDataMemberDescriptorMethods for __T 
 #[cfg(feature = "moon_sharp-interpreter-interop-iuserdatamemberdescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIUserDataMemberDescriptor;
-    pub use super::IIUserDataMemberDescriptorMethods;
-    pub use super::IUserDataMemberDescriptor;
+    pub use super::{IIUserDataMemberDescriptor, IIUserDataMemberDescriptorMethods, IUserDataMemberDescriptor};
 }

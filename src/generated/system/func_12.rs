@@ -2,12 +2,14 @@
 
 #[cfg(feature = "system-func_12-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/func_12/Func_12.md"))]
     #[::unity2::class(namespace = "System", name = "Func`12")]
@@ -56,20 +58,7 @@ impl<
 
     #[doc = "`Invoke(T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10)` overload"]
     #[method(name = "Invoke", args = 11)]
-    pub fn invoke(
-        self,
-        arg1: T0,
-        arg2: T1,
-        arg3: T2,
-        arg4: T3,
-        arg5: T4,
-        arg6: T5,
-        arg7: T6,
-        arg8: T7,
-        arg9: T8,
-        arg10: T9,
-        arg11: T10,
-    ) -> T11;
+    pub fn invoke(self, arg1: T0, arg2: T1, arg3: T2, arg4: T3, arg5: T4, arg6: T5, arg7: T6, arg8: T7, arg9: T8, arg10: T9, arg11: T10) -> T11;
 }
 
 #[cfg(feature = "system-func_12")]
@@ -90,16 +79,9 @@ impl<
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Func_12),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFunc_12Methods<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>::ctor(
-            this, object, method,
-        );
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Func_12), ::core::stringify!(new),));
+        <Self as IFunc_12Methods<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>::ctor(this, object, method);
         this
     }
 }
@@ -107,16 +89,12 @@ impl<
 #[cfg(feature = "system-func_12")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Func_12;
-    pub use super::IFunc_12;
-    pub use super::IFunc_12Methods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{Func_12, IFunc_12, IFunc_12Methods};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

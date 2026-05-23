@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-excludefromobjectfactoryattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/excludefromobjectfactoryattribute/ExcludeFromObjectFactoryAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ExcludeFromObjectFactoryAttribute")]
@@ -23,9 +23,7 @@ mod __ExcludeFromObjectFactoryAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ExcludeFromObjectFactoryAttribute as ::unity2::ClassIdentity>::class(),
@@ -38,32 +36,20 @@ mod __ExcludeFromObjectFactoryAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExcludeFromObjectFactoryAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExcludeFromObjectFactoryAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ExcludeFromObjectFactoryAttribute,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ExcludeFromObjectFactoryAttribute,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: ExcludeFromObjectFactoryAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ExcludeFromObjectFactoryAttribute, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -73,14 +59,10 @@ pub trait IExcludeFromObjectFactoryAttributeMethods: IExcludeFromObjectFactoryAt
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <ExcludeFromObjectFactoryAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ExcludeFromObjectFactoryAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ExcludeFromObjectFactoryAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ExcludeFromObjectFactoryAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -107,7 +89,5 @@ impl ExcludeFromObjectFactoryAttribute {
 #[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ExcludeFromObjectFactoryAttribute;
-    pub use super::IExcludeFromObjectFactoryAttribute;
-    pub use super::IExcludeFromObjectFactoryAttributeMethods;
+    pub use super::{ExcludeFromObjectFactoryAttribute, IExcludeFromObjectFactoryAttribute, IExcludeFromObjectFactoryAttributeMethods};
 }

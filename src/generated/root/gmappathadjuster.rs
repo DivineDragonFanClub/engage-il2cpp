@@ -2,41 +2,21 @@
 
 #[cfg(feature = "root-gmappathadjuster-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gmappathadjuster/GmapPathAdjuster.md"))]
-    #[::unity2::class(namespace = "", name = "GmapPathAdjuster")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct GmapPathAdjuster {
-        #[rename(name = "両端をモデル位置に合わせる")]
-        pub 両端をモデル位置に合わせる: bool,
-        #[rename(name = "移動時に地面に吸着させる")]
-        pub 移動時に地面に吸着させる: bool,
-        #[rename(name = "吸着対象")]
-        pub 吸着対象: crate::system::collections::generic::list_1::List_1<
-            crate::root::gmappathadjuster::GmapPathAdjuster_TargetModel,
-        >,
-        #[rename(name = "m_TargetColliders")]
-        pub m_target_colliders: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::collider::Collider,
-        >,
-        #[rename(name = "m_LastPositions")]
-        pub m_last_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "m_BothSpotTransforms")]
-        pub m_both_spot_transforms: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::transform::Transform,
-        >,
-        #[rename(name = "m_IsInitialized")]
-        pub m_is_initialized: bool,
-    }
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/gmappathadjuster/GmapPathAdjuster_TargetModel.md"))]
     #[repr(C)]
@@ -48,9 +28,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for GmapPathAdjuster_TargetModel {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "GmapPathAdjuster.TargetModel";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -61,11 +40,28 @@ mod __types {
 
     impl ::unity2::IlType for GmapPathAdjuster_TargetModel {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gmappathadjuster/GmapPathAdjuster.md"))]
+    #[::unity2::class(namespace = "", name = "GmapPathAdjuster")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapPathAdjuster {
+        #[rename(name = "両端をモデル位置に合わせる")]
+        pub 両端をモデル位置に合わせる: bool,
+        #[rename(name = "移動時に地面に吸着させる")]
+        pub 移動時に地面に吸着させる: bool,
+        #[rename(name = "吸着対象")]
+        pub 吸着対象: crate::system::collections::generic::list_1::List_1<crate::root::gmappathadjuster::GmapPathAdjuster_TargetModel>,
+        #[rename(name = "m_TargetColliders")]
+        pub m_target_colliders: crate::system::collections::generic::list_1::List_1<crate::unity_engine::collider::Collider>,
+        #[rename(name = "m_LastPositions")]
+        pub m_last_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "m_BothSpotTransforms")]
+        pub m_both_spot_transforms: crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform>,
+        #[rename(name = "m_IsInitialized")]
+        pub m_is_initialized: bool,
     }
 }
 
@@ -81,9 +77,7 @@ mod __GmapPathAdjuster_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -96,39 +90,27 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -141,39 +123,27 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn setup(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_colliders {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -186,39 +156,27 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "SetupColliders",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "SetupColliders",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_colliders(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn setup_colliders(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup_colliders::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup_colliders::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_both_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -231,39 +189,27 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "SetupBothObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "SetupBothObjects",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_both_objects(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn setup_both_objects(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup_both_objects::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup_both_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -276,39 +222,27 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -321,39 +255,27 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_adjust_ground {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -366,39 +288,27 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "AdjustGround",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "AdjustGround",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn adjust_ground(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn adjust_ground(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_adjust_ground::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_adjust_ground::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -411,41 +321,28 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "IsChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "IsChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_changed(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn is_changed(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_changed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_adjust_ground_point {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
                 "AdjustGroundPoint",
@@ -457,40 +354,27 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "AdjustGroundPoint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "AdjustGroundPoint",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn adjust_ground_point(
-        this: GmapPathAdjuster,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn adjust_ground_point(this: GmapPathAdjuster, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathAdjuster, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_adjust_ground_point::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_adjust_ground_point::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_adjust_both_spots {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -503,40 +387,33 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "AdjustBothSpots",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "AdjustBothSpots",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn adjust_both_spots(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn adjust_both_spots(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_adjust_both_spots::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_adjust_both_spots::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raycast_to_targets {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::collider::Collider> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
                 "RaycastToTargets",
@@ -548,18 +425,15 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    "RaycastToTargets",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        "RaycastToTargets",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast_to_targets(
@@ -575,26 +449,14 @@ mod __GmapPathAdjuster_unity2_raw {
             *mut crate::unity_engine::raycasthit::RaycastHit,
             ::unity2::Array<crate::unity_engine::collider::Collider>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast_to_targets::get_offset() as isize),
-        );
-        inner(
-            origin,
-            direction,
-            out_raycast_hit,
-            targets,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_raycast_to_targets::get_method_info().method_ptr);
+        inner(origin, direction, out_raycast_hit, targets, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathAdjuster as ::unity2::ClassIdentity>::class(),
@@ -607,30 +469,20 @@ mod __GmapPathAdjuster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathAdjuster as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GmapPathAdjuster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GmapPathAdjuster, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathAdjuster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -644,8 +496,7 @@ impl GmapPathAdjuster {
         targets: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::collider::Collider>>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __GmapPathAdjuster_unity2_raw::raycast_to_targets(
                     ::core::convert::Into::into(origin),
@@ -665,109 +516,77 @@ pub trait IGmapPathAdjusterMethods: IGmapPathAdjuster {
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapPathAdjuster_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Setup()` overload"]
     fn setup(self) -> () {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapPathAdjuster_unity2_raw::setup(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupColliders()` overload"]
     fn setup_colliders(self) -> bool {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapPathAdjuster_unity2_raw::setup_colliders(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupBothObjects()` overload"]
     fn setup_both_objects(self) -> bool {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapPathAdjuster_unity2_raw::setup_both_objects(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapPathAdjuster_unity2_raw::setup_both_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapPathAdjuster_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapPathAdjuster_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AdjustGround()` overload"]
     fn adjust_ground(self) -> () {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapPathAdjuster_unity2_raw::adjust_ground(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsChanged()` overload"]
     fn is_changed(self) -> i32 {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapPathAdjuster_unity2_raw::is_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AdjustGroundPoint(i32)` overload"]
     fn adjust_ground_point(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapPathAdjuster_unity2_raw::adjust_ground_point(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapPathAdjuster_unity2_raw::adjust_ground_point(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`AdjustBothSpots()` overload"]
     fn adjust_both_spots(self) -> () {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapPathAdjuster_unity2_raw::adjust_both_spots(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapPathAdjuster_unity2_raw::adjust_both_spots(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathAdjuster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapPathAdjuster_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -795,26 +614,21 @@ impl GmapPathAdjuster {
 #[cfg(feature = "root-gmappathadjuster")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapPathAdjuster;
-    pub use super::GmapPathAdjuster_TargetModel;
-    pub use super::IGmapPathAdjuster;
-    pub use super::IGmapPathAdjusterMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{GmapPathAdjuster, GmapPathAdjuster_TargetModel, IGmapPathAdjuster, IGmapPathAdjusterMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-filehandle_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::filecommon::{FileCommon, IFileCommon};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::filecommon::{FileCommon, IFileCommon},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filehandle_1/FileHandle_1.md"))]
     #[::unity2::class(namespace = "App", name = "FileHandle`1")]
@@ -77,13 +79,8 @@ impl<T0: ::unity2::ClassIdentity> FileHandle_1<T0> {
 impl<T0: ::unity2::ClassIdentity> FileHandle_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FileHandle_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FileHandle_1), ::core::stringify!(new),));
         <Self as IFileHandle_1Methods<T0>>::ctor(this);
         this
     }
@@ -92,13 +89,10 @@ impl<T0: ::unity2::ClassIdentity> FileHandle_1<T0> {
 #[cfg(feature = "app-filehandle_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FileHandle_1;
-    pub use super::IFileHandle_1;
-    pub use super::IFileHandle_1Methods;
-    pub use crate::app::filecommon::IFileCommon;
+    pub use super::{FileHandle_1, IFileHandle_1, IFileHandle_1Methods};
     #[cfg(feature = "app-filecommon")]
     pub use crate::app::filecommon::IFileCommonMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::filecommon::IFileCommon, system::object::IObject};
 }

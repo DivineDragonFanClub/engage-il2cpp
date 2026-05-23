@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-gameicon-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameicon/GameIcon.md"))]
     #[::unity2::class(namespace = "App", name = "GameIcon")]
@@ -59,91 +59,59 @@ mod __GameIcon_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameIcon as ::unity2::ClassIdentity>::class(),
-                "LoadAsync",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GameIcon as ::unity2::ClassIdentity>::class(), "LoadAsync", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "LoadAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "LoadAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameIcon as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GameIcon as ::unity2::ClassIdentity>::class(), "Unload", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "Unload",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "Unload",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_item_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -159,18 +127,15 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetItemKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetItemKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_item_kind(
@@ -178,24 +143,15 @@ mod __GameIcon_unity2_raw {
         is_outline: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_item_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_item_kind::get_method_info().method_ptr);
         inner(icon_name, is_outline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_item_kind_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -211,18 +167,15 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetItemKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetItemKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_item_kind_2(
@@ -230,24 +183,15 @@ mod __GameIcon_unity2_raw {
         is_outline: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData_Kinds,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_item_kind_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::itemdata::ItemData_Kinds, bool, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_item_kind_2::get_method_info().method_ptr);
         inner(item_kind, is_outline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_item_kind_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -264,18 +208,15 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetItemKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetItemKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_item_kind_3(
@@ -284,25 +225,15 @@ mod __GameIcon_unity2_raw {
         is_outline: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData_Kinds,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_item_kind_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_item_kind_3::get_method_info().method_ptr);
         inner(item_kind, is_bullet, is_outline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_item_kind_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
                 <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
@@ -319,18 +250,15 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetItemKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetItemKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_item_kind_4(
@@ -344,20 +272,14 @@ mod __GameIcon_unity2_raw {
             crate::app::jobdata::JobData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_item_kind_4::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_item_kind_4::get_method_info().method_ptr);
         inner(item_kind, job_data, is_outline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_item_kind_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -373,18 +295,15 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetItemKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetItemKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_item_kind_5(
@@ -392,122 +311,76 @@ mod __GameIcon_unity2_raw {
         is_outline: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_item_kind_5::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, bool, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_item_kind_5::get_method_info().method_ptr);
         inner(item_data, is_outline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameIcon as ::unity2::ClassIdentity>::class(),
-                "TryGetItem",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GameIcon as ::unity2::ClassIdentity>::class(), "TryGetItem", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_item(
         icon_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_item::get_method_info().method_ptr);
         inner(icon_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_item_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameIcon as ::unity2::ClassIdentity>::class(),
-                "TryGetItem",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GameIcon as ::unity2::ClassIdentity>::class(), "TryGetItem", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_item_2(
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_item_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_item_2::get_method_info().method_ptr);
         inner(item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_system_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TryGetSystemItem",
@@ -519,41 +392,30 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetSystemItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetSystemItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_system_item(
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_system_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_system_item::get_method_info().method_ptr);
         inner(item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_efficacy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -569,18 +431,15 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetEfficacy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetEfficacy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_efficacy(
@@ -588,72 +447,45 @@ mod __GameIcon_unity2_raw {
         is_outline: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_efficacy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_efficacy::get_method_info().method_ptr);
         inner(icon_label, is_outline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameIcon as ::unity2::ClassIdentity>::class(),
-                "TryGetSkill",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GameIcon as ::unity2::ClassIdentity>::class(), "TryGetSkill", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetSkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_skill(
         skill_icon_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_skill::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_skill::get_method_info().method_ptr);
         inner(skill_icon_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_skill_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
@@ -666,40 +498,28 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetSkillEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetSkillEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_get_skill_empty(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
+    pub unsafe fn try_get_skill_empty(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_get_skill_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_get_skill_empty::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_god_symbol {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TryGetGodSymbol",
@@ -711,43 +531,31 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetGodSymbol",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetGodSymbol",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_god_symbol(
         god_data: crate::app::goddata::GodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_god_symbol::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::goddata::GodData, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_god_symbol::get_method_info().method_ptr);
         inner(god_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_god_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TryGetGodRing",
@@ -759,43 +567,31 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetGodRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetGodRing",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_god_ring(
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_god_ring::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_god_ring::get_method_info().method_ptr);
         inner(unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_god_ring_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TryGetGodRing",
@@ -807,43 +603,31 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetGodRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetGodRing",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_god_ring_2(
         god_data: crate::app::goddata::GodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_god_ring_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::goddata::GodData, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_god_ring_2::get_method_info().method_ptr);
         inner(god_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_god_ring_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TryGetGodRing",
@@ -855,43 +639,31 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetGodRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetGodRing",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_god_ring_3(
         ring: crate::app::ringdata::RingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_god_ring_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_god_ring_3::get_method_info().method_ptr);
         inner(ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_god_ring_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData_Ranks as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData_Ranks as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TryGetGodRing",
@@ -903,41 +675,30 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetGodRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetGodRing",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_god_ring_4(
         rank: crate::app::ringdata::RingData_Ranks,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::ringdata::RingData_Ranks,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_god_ring_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::ringdata::RingData_Ranks, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_god_ring_4::get_method_info().method_ptr);
         inner(rank, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_accessory_kinds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::accessorydata::AccessoryData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -951,43 +712,31 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetAccessoryKinds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetAccessoryKinds",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_accessory_kinds(
         accessory_kinds: crate::app::accessorydata::AccessoryData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::accessorydata::AccessoryData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_accessory_kinds::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::accessorydata::AccessoryData_Kinds, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_accessory_kinds::get_method_info().method_ptr);
         inner(accessory_kinds, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_common_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData_Ranks as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData_Ranks as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TryGetCommonRing",
@@ -999,43 +748,31 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetCommonRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetCommonRing",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_common_ring(
         ring_data_rank: crate::app::ringdata::RingData_Ranks,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::ringdata::RingData_Ranks,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_common_ring::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::ringdata::RingData_Ranks, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_common_ring::get_method_info().method_ptr);
         inner(ring_data_rank, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_system {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TryGetSystem",
@@ -1047,43 +784,31 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TryGetSystem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TryGetSystem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_system(
         icon_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_system::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_system::get_method_info().method_ptr);
         inner(icon_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tyr_get_unit_icon_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TyrGetUnitIconIndex",
@@ -1095,43 +820,31 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TyrGetUnitIconIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TyrGetUnitIconIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn tyr_get_unit_icon_index(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tyr_get_unit_icon_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_tyr_get_unit_icon_index::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tyr_get_unit_icon_pallete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
                 "TyrGetUnitIconPallete",
@@ -1143,41 +856,30 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "TyrGetUnitIconPallete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "TyrGetUnitIconPallete",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn tyr_get_unit_icon_pallete(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tyr_get_unit_icon_pallete::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_tyr_get_unit_icon_pallete::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_unit_icon_cache {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameIcon as ::unity2::ClassIdentity>::class(),
@@ -1190,67 +892,46 @@ mod __GameIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    "ClearUnitIconCache",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        "ClearUnitIconCache",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_unit_icon_cache(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_unit_icon_cache::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_unit_icon_cache::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameIcon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GameIcon as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameIcon as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameIcon as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: GameIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameIcon, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GameIcon, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1261,10 +942,12 @@ impl GameIcon {
     pub fn load_async() -> () {
         unsafe { __GameIcon_unity2_raw::load_async(::core::option::Option::None) }
     }
+
     #[doc = "`Unload()` overload"]
     pub fn unload() -> () {
         unsafe { __GameIcon_unity2_raw::unload(::core::option::Option::None) }
     }
+
     #[doc = "`TryGetItemKind(::unity2::Il2CppString, bool)` overload"]
     pub fn try_get_item_kind(
         icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1278,6 +961,7 @@ impl GameIcon {
             )
         }
     }
+
     #[doc = "`TryGetItemKind(crate::app::itemdata::ItemData_Kinds, bool)` overload"]
     pub fn try_get_item_kind_2(
         item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
@@ -1291,6 +975,7 @@ impl GameIcon {
             )
         }
     }
+
     #[doc = "`TryGetItemKind(crate::app::itemdata::ItemData_Kinds, bool, bool)` overload"]
     pub fn try_get_item_kind_3(
         item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
@@ -1306,6 +991,7 @@ impl GameIcon {
             )
         }
     }
+
     #[doc = "`TryGetItemKind(crate::app::itemdata::ItemData_Kinds, crate::app::jobdata::JobData, bool)` overload"]
     pub fn try_get_item_kind_4(
         item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
@@ -1321,6 +1007,7 @@ impl GameIcon {
             )
         }
     }
+
     #[doc = "`TryGetItemKind(crate::app::itemdata::ItemData, bool)` overload"]
     pub fn try_get_item_kind_5(
         item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
@@ -1334,39 +1021,22 @@ impl GameIcon {
             )
         }
     }
+
     #[doc = "`TryGetItem(::unity2::Il2CppString)` overload"]
-    pub fn try_get_item(
-        icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_item(
-                ::core::convert::Into::into(icon_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_item(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_item(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetItem(crate::app::itemdata::ItemData)` overload"]
-    pub fn try_get_item_2(
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_item_2(
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_item_2(item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_item_2(::core::convert::Into::into(item), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetSystemItem(crate::app::itemdata::ItemData)` overload"]
-    pub fn try_get_system_item(
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_system_item(
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_system_item(item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_system_item(::core::convert::Into::into(item), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetEfficacy(::unity2::Il2CppString, bool)` overload"]
     pub fn try_get_efficacy(
         icon_label: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1380,131 +1050,71 @@ impl GameIcon {
             )
         }
     }
+
     #[doc = "`TryGetSkill(::unity2::Il2CppString)` overload"]
-    pub fn try_get_skill(
-        skill_icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_skill(
-                ::core::convert::Into::into(skill_icon_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_skill(skill_icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_skill(::core::convert::Into::into(skill_icon_name), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetSkillEmpty()` overload"]
     pub fn try_get_skill_empty() -> crate::unity_engine::sprite::Sprite {
         unsafe { __GameIcon_unity2_raw::try_get_skill_empty(::core::option::Option::None) }
     }
+
     #[doc = "`TryGetGodSymbol(crate::app::goddata::GodData)` overload"]
-    pub fn try_get_god_symbol(
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_god_symbol(
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_god_symbol(god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_god_symbol(::core::convert::Into::into(god_data), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetGodRing(crate::app::unit::Unit)` overload"]
-    pub fn try_get_god_ring(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_god_ring(
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_god_ring(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_god_ring(::core::convert::Into::into(unit), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetGodRing(crate::app::goddata::GodData)` overload"]
-    pub fn try_get_god_ring_2(
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_god_ring_2(
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_god_ring_2(god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_god_ring_2(::core::convert::Into::into(god_data), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetGodRing(crate::app::ringdata::RingData)` overload"]
-    pub fn try_get_god_ring_3(
-        ring: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_god_ring_3(
-                ::core::convert::Into::into(ring),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_god_ring_3(ring: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_god_ring_3(::core::convert::Into::into(ring), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetGodRing(crate::app::ringdata::RingData_Ranks)` overload"]
-    pub fn try_get_god_ring_4(
-        rank: impl ::core::convert::Into<crate::app::ringdata::RingData_Ranks>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_god_ring_4(
-                ::core::convert::Into::into(rank),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_god_ring_4(rank: impl ::core::convert::Into<crate::app::ringdata::RingData_Ranks>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_god_ring_4(::core::convert::Into::into(rank), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetAccessoryKinds(crate::app::accessorydata::AccessoryData_Kinds)` overload"]
     pub fn try_get_accessory_kinds(
         accessory_kinds: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>,
     ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_accessory_kinds(
-                ::core::convert::Into::into(accessory_kinds),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GameIcon_unity2_raw::try_get_accessory_kinds(::core::convert::Into::into(accessory_kinds), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetCommonRing(crate::app::ringdata::RingData_Ranks)` overload"]
     pub fn try_get_common_ring(
         ring_data_rank: impl ::core::convert::Into<crate::app::ringdata::RingData_Ranks>,
     ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_common_ring(
-                ::core::convert::Into::into(ring_data_rank),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GameIcon_unity2_raw::try_get_common_ring(::core::convert::Into::into(ring_data_rank), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetSystem(::unity2::Il2CppString)` overload"]
-    pub fn try_get_system(
-        icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::try_get_system(
-                ::core::convert::Into::into(icon_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_system(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::try_get_system(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
     }
+
     #[doc = "`TyrGetUnitIconIndex(::unity2::Il2CppString)` overload"]
-    pub fn tyr_get_unit_icon_index(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::tyr_get_unit_icon_index(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn tyr_get_unit_icon_index(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::tyr_get_unit_icon_index(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`TyrGetUnitIconPallete(::unity2::Il2CppString)` overload"]
-    pub fn tyr_get_unit_icon_pallete(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __GameIcon_unity2_raw::tyr_get_unit_icon_pallete(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn tyr_get_unit_icon_pallete(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __GameIcon_unity2_raw::tyr_get_unit_icon_pallete(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`ClearUnitIconCache()` overload"]
     pub fn clear_unit_icon_cache() -> () {
         unsafe { __GameIcon_unity2_raw::clear_unit_icon_cache(::core::option::Option::None) }
@@ -1516,9 +1126,7 @@ pub trait IGameIconMethods: IGameIcon {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GameIcon as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameIcon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1531,13 +1139,8 @@ impl<__T: IGameIcon> IGameIconMethods for __T {}
 impl GameIcon {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameIcon),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GameIcon), ::core::stringify!(new),));
         <Self as IGameIconMethods>::ctor(this);
         this
     }
@@ -1546,9 +1149,7 @@ impl GameIcon {
 #[cfg(feature = "app-gameicon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameIcon;
-    pub use super::IGameIcon;
-    pub use super::IGameIconMethods;
+    pub use super::{GameIcon, IGameIcon, IGameIconMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

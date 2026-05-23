@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-playables-iplayable_interface-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/iplayable_interface/IPlayable_Interface.md"))]
     #[::unity2::class(namespace = "UnityEngine.Playables", name = "IPlayable")]
@@ -23,9 +23,7 @@ mod __IPlayable_Interface_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IPlayable_Interface as ::unity2::ClassIdentity>::class(),
@@ -38,34 +36,23 @@ mod __IPlayable_Interface_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IPlayable_Interface as ::unity2::ClassIdentity>::NAME,
-                    "GetHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IPlayable_Interface as ::unity2::ClassIdentity>::NAME,
+                        "GetHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_handle(
         this: IPlayable_Interface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
-        let inner: extern "C" fn(
-            IPlayable_Interface,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_handle::get_offset() as isize),
-            );
+        let inner: extern "C" fn(IPlayable_Interface, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -75,9 +62,7 @@ pub trait IIPlayable_InterfaceMethods: IIPlayable_Interface {
     #[doc = "`GetHandle()` overload"]
     fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
         unsafe {
-            let __receiver = <IPlayable_Interface as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IPlayable_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IPlayable_Interface_unity2_raw::get_handle(__receiver, ::core::option::Option::None)
         }
     }
@@ -89,7 +74,5 @@ impl<__T: IIPlayable_Interface> IIPlayable_InterfaceMethods for __T {}
 #[cfg(feature = "unity_engine-playables-iplayable_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIPlayable_Interface;
-    pub use super::IIPlayable_InterfaceMethods;
-    pub use super::IPlayable_Interface;
+    pub use super::{IIPlayable_Interface, IIPlayable_InterfaceMethods, IPlayable_Interface};
 }

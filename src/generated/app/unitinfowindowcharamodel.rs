@@ -2,16 +2,13 @@
 
 #[cfg(feature = "app-unitinfowindowcharamodel-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel_ReservedCharaVoice.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "UnitInfoWindowCharaModel.ReservedCharaVoice"
-    )]
+    #[::unity2::class(namespace = "App", name = "UnitInfoWindowCharaModel.ReservedCharaVoice")]
     #[parent(crate::system::object::Object)]
     pub struct UnitInfoWindowCharaModel_ReservedCharaVoice {
         #[rename(name = "m_PersonSwitchName")]
@@ -28,50 +25,112 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitInfoWindowCharaModel")]
     #[parent(crate::system::object::Object)]
     pub struct UnitInfoWindowCharaModel {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "AnimHashIsCharaOnly")] pub anim_hash_is_chara_only : i32 ,
-# [static_field] # [rename (name = "AnimHashIsStandBy")] pub anim_hash_is_stand_by : i32 ,
-# [static_field] # [rename (name = "AnimHashIsTransition")] pub anim_hash_is_transition : i32 ,
-# [static_field] # [rename (name = "AnimHashIsTransparent")] pub anim_hash_is_transparent : i32 ,
-# [static_field] # [rename (name = "AnimHashBasicFace")] pub anim_hash_basic_face : i32 ,
-# [static_field] # [rename (name = "AnimHashBasicBody")] pub anim_hash_basic_body : i32 ,
-# [static_field] # [rename (name = "AnimHashRingSelectFace")] pub anim_hash_ring_select_face : i32 ,
-# [static_field] # [rename (name = "AnimHashRingSelectBody")] pub anim_hash_ring_select_body : i32 ,
-# [static_field] # [rename (name = "AnimHashFortuneTellingBodyIdle")] pub anim_hash_fortune_telling_body_idle : i32 ,
-# [static_field] # [rename (name = "AnimHashFortuneTellingFaceGood")] pub anim_hash_fortune_telling_face_good : i32 ,
-# [static_field] # [rename (name = "AnimHashFortuneTellingBodyGood")] pub anim_hash_fortune_telling_body_good : i32 ,
-# [static_field] # [rename (name = "AnimHashFortuneTellingFaceBad")] pub anim_hash_fortune_telling_face_bad : i32 ,
-# [static_field] # [rename (name = "AnimHashFortuneTellingBodyBad")] pub anim_hash_fortune_telling_body_bad : i32 ,
-# [rename (name = "m_AnimHashFortuneTellingFace")] pub m_anim_hash_fortune_telling_face : i32 ,
-# [static_field] # [rename (name = "AnimHashStandByFace")] pub anim_hash_stand_by_face : i32 ,
-# [static_field] # [rename (name = "AnimHashStandByFacePain")] pub anim_hash_stand_by_face_pain : i32 ,
-# [static_field] # [rename (name = "AnimHashStandByBodyNoWeapon")] pub anim_hash_stand_by_body_no_weapon : i32 ,
-# [static_field] # [rename (name = "StandByAnimeHashTable")] pub stand_by_anime_hash_table : :: unity2 :: Array < i32 > ,
-# [rename (name = "m_ReservedCharaVoice")] pub m_reserved_chara_voice : crate :: app :: unitinfowindowcharamodel :: UnitInfoWindowCharaModel_ReservedCharaVoice ,
-# [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_CameraObject")] pub m_camera_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_RenderTexture")] pub m_render_texture : crate :: unity_engine :: rendertexture :: RenderTexture ,
-# [rename (name = "m_OffscreenCamera")] pub m_offscreen_camera : crate :: unity_engine :: rendering :: universal :: custom :: customoffscreencamera :: CustomOffscreenCamera ,
-# [rename (name = "m_CharaUpdater")] pub m_chara_updater : crate :: app :: unitinfowindowcharaupdater :: UnitInfoWindowCharaUpdater ,
-# [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [rename (name = "m_IsValid")] pub m_is_valid : bool ,
-# [rename (name = "m_IsCharaStandBy")] pub m_is_chara_stand_by : bool ,
-# [rename (name = "m_IsReverse")] pub m_is_reverse : bool ,
-# [rename (name = "m_IsReverseRotation")] pub m_is_reverse_rotation : bool ,
-# [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [rename (name = "m_God")] pub m_god : crate :: app :: godunit :: GodUnit ,
-# [rename (name = "m_NextLoadUnit")] pub m_next_load_unit : crate :: app :: unit :: Unit ,
-# [rename (name = "m_NextLoadGod")] pub m_next_load_god : crate :: app :: godunit :: GodUnit ,
-# [rename (name = "m_NextCallback")] pub m_next_callback : crate :: app :: talk3_d :: characterfactoryasync_2 :: CharacterFactoryAsync_onLoad ,
-# [rename (name = "m_Chara")] pub m_chara : crate :: combat :: character :: Character ,
-# [rename (name = "m_CreateReserveUnitItem")] pub m_create_reserve_unit_item : crate :: app :: unititem :: UnitItem ,
-# [rename (name = "m_IsEfficacy")] pub m_is_efficacy : bool ,
-# [rename (name = "m_LookAtTransform")] pub m_look_at_transform : crate :: unity_engine :: transform :: Transform ,
-# [static_field] # [rename (name = "c_LookSpeed")] pub c_look_speed : f32 ,
-# [rename (name = "m_OnSetupDoneCallback")] pub m_on_setup_done_callback : crate :: system :: action :: Action ,
-# [rename (name = "m_DelayFrameCount")] pub m_delay_frame_count : crate :: app :: gameparam :: GameParam_Holder ,
-}
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "AnimHashIsCharaOnly")]
+        pub anim_hash_is_chara_only: i32,
+        #[static_field]
+        #[rename(name = "AnimHashIsStandBy")]
+        pub anim_hash_is_stand_by: i32,
+        #[static_field]
+        #[rename(name = "AnimHashIsTransition")]
+        pub anim_hash_is_transition: i32,
+        #[static_field]
+        #[rename(name = "AnimHashIsTransparent")]
+        pub anim_hash_is_transparent: i32,
+        #[static_field]
+        #[rename(name = "AnimHashBasicFace")]
+        pub anim_hash_basic_face: i32,
+        #[static_field]
+        #[rename(name = "AnimHashBasicBody")]
+        pub anim_hash_basic_body: i32,
+        #[static_field]
+        #[rename(name = "AnimHashRingSelectFace")]
+        pub anim_hash_ring_select_face: i32,
+        #[static_field]
+        #[rename(name = "AnimHashRingSelectBody")]
+        pub anim_hash_ring_select_body: i32,
+        #[static_field]
+        #[rename(name = "AnimHashFortuneTellingBodyIdle")]
+        pub anim_hash_fortune_telling_body_idle: i32,
+        #[static_field]
+        #[rename(name = "AnimHashFortuneTellingFaceGood")]
+        pub anim_hash_fortune_telling_face_good: i32,
+        #[static_field]
+        #[rename(name = "AnimHashFortuneTellingBodyGood")]
+        pub anim_hash_fortune_telling_body_good: i32,
+        #[static_field]
+        #[rename(name = "AnimHashFortuneTellingFaceBad")]
+        pub anim_hash_fortune_telling_face_bad: i32,
+        #[static_field]
+        #[rename(name = "AnimHashFortuneTellingBodyBad")]
+        pub anim_hash_fortune_telling_body_bad: i32,
+        #[rename(name = "m_AnimHashFortuneTellingFace")]
+        pub m_anim_hash_fortune_telling_face: i32,
+        #[static_field]
+        #[rename(name = "AnimHashStandByFace")]
+        pub anim_hash_stand_by_face: i32,
+        #[static_field]
+        #[rename(name = "AnimHashStandByFacePain")]
+        pub anim_hash_stand_by_face_pain: i32,
+        #[static_field]
+        #[rename(name = "AnimHashStandByBodyNoWeapon")]
+        pub anim_hash_stand_by_body_no_weapon: i32,
+        #[static_field]
+        #[rename(name = "StandByAnimeHashTable")]
+        pub stand_by_anime_hash_table: ::unity2::Array<i32>,
+        #[rename(name = "m_ReservedCharaVoice")]
+        pub m_reserved_chara_voice: crate::app::unitinfowindowcharamodel::UnitInfoWindowCharaModel_ReservedCharaVoice,
+        #[rename(name = "m_PrefabHandle")]
+        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CameraObject")]
+        pub m_camera_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_RenderTexture")]
+        pub m_render_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[rename(name = "m_OffscreenCamera")]
+        pub m_offscreen_camera: crate::unity_engine::rendering::universal::custom::customoffscreencamera::CustomOffscreenCamera,
+        #[rename(name = "m_CharaUpdater")]
+        pub m_chara_updater: crate::app::unitinfowindowcharaupdater::UnitInfoWindowCharaUpdater,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_IsValid")]
+        pub m_is_valid: bool,
+        #[rename(name = "m_IsCharaStandBy")]
+        pub m_is_chara_stand_by: bool,
+        #[rename(name = "m_IsReverse")]
+        pub m_is_reverse: bool,
+        #[rename(name = "m_IsReverseRotation")]
+        pub m_is_reverse_rotation: bool,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_God")]
+        pub m_god: crate::app::godunit::GodUnit,
+        #[rename(name = "m_NextLoadUnit")]
+        pub m_next_load_unit: crate::app::unit::Unit,
+        #[rename(name = "m_NextLoadGod")]
+        pub m_next_load_god: crate::app::godunit::GodUnit,
+        #[rename(name = "m_NextCallback")]
+        pub m_next_callback: crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad,
+        #[rename(name = "m_Chara")]
+        pub m_chara: crate::combat::character::Character,
+        #[rename(name = "m_CreateReserveUnitItem")]
+        pub m_create_reserve_unit_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_IsEfficacy")]
+        pub m_is_efficacy: bool,
+        #[rename(name = "m_LookAtTransform")]
+        pub m_look_at_transform: crate::unity_engine::transform::Transform,
+        #[static_field]
+        #[rename(name = "c_LookSpeed")]
+        pub c_look_speed: f32,
+        #[rename(name = "m_OnSetupDoneCallback")]
+        pub m_on_setup_done_callback: crate::system::action::Action,
+        #[rename(name = "m_DelayFrameCount")]
+        pub m_delay_frame_count: crate::app::gameparam::GameParam_Holder,
+    }
 }
 
 #[cfg(feature = "app-unitinfowindowcharamodel-types")]
@@ -86,9 +145,7 @@ mod __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_reserve_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -106,18 +163,15 @@ mod __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
-                    "ReserveVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
+                        "ReserveVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reserve_voice(
@@ -135,27 +189,14 @@ mod __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw {
             ::unity2::Il2CppString,
             crate::combat::character::Character,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reserve_voice::get_offset() as isize),
-        );
-        inner(
-            this,
-            person_switch_name,
-            engage_switch_name,
-            event_name,
-            chara,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_reserve_voice::get_method_info().method_ptr);
+        inner(this, person_switch_name, engage_switch_name, event_name, chara, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::class(),
@@ -168,41 +209,27 @@ mod __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayVoice",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_voice(
-        this: UnitInfoWindowCharaModel_ReservedCharaVoice,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel_ReservedCharaVoice,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_voice::get_offset() as isize),
-        );
+    pub unsafe fn play_voice(this: UnitInfoWindowCharaModel_ReservedCharaVoice, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitInfoWindowCharaModel_ReservedCharaVoice, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_voice::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::class(),
@@ -215,40 +242,26 @@ mod __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: UnitInfoWindowCharaModel_ReservedCharaVoice,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel_ReservedCharaVoice,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: UnitInfoWindowCharaModel_ReservedCharaVoice, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitInfoWindowCharaModel_ReservedCharaVoice, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unitinfowindowcharamodel")]
-pub trait IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods:
-    IUnitInfoWindowCharaModel_ReservedCharaVoice
-{
+pub trait IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods: IUnitInfoWindowCharaModel_ReservedCharaVoice {
     #[doc = "`ReserveVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::character::Character)` overload"]
     fn reserve_voice(
         self,
@@ -258,7 +271,9 @@ pub trait IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods:
         chara: impl ::core::convert::Into<crate::combat::character::Character>,
     ) -> () {
         unsafe {
-            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::reserve_voice(
                 __receiver,
                 ::core::convert::Into::into(person_switch_name),
@@ -272,30 +287,25 @@ pub trait IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods:
     #[doc = "`PlayVoice()` overload"]
     fn play_voice(self) -> () {
         unsafe {
-            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::play_voice(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::play_voice(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-unitinfowindowcharamodel")]
-impl<__T: IUnitInfoWindowCharaModel_ReservedCharaVoice>
-    IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods for __T
-{
-}
+impl<__T: IUnitInfoWindowCharaModel_ReservedCharaVoice> IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods for __T {}
 
 #[cfg(feature = "app-unitinfowindowcharamodel")]
 impl UnitInfoWindowCharaModel_ReservedCharaVoice {
@@ -322,11 +332,8 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_setup_done_callback {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetOnSetupDoneCallback",
@@ -338,18 +345,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetOnSetupDoneCallback",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetOnSetupDoneCallback",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_setup_done_callback(
@@ -357,28 +361,17 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         callback: crate::system::action::Action,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_setup_done_callback::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::system::action::Action, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_setup_done_callback::get_method_info().method_ptr);
         inner(this, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -390,18 +383,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -410,34 +400,17 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_reverse: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            is_duplicate_render_texture,
-            is_reverse,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, is_duplicate_render_texture, is_reverse, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "CreateAsync",
@@ -449,18 +422,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CreateAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CreateAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_async(
@@ -469,30 +439,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_reverse: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_async::get_offset() as isize),
-        );
-        inner(
-            this,
-            is_duplicate_render_texture,
-            is_reverse,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_async::get_method_info().method_ptr);
+        inner(this, is_duplicate_render_texture, is_reverse, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_creating {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -505,39 +460,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "IsCreating",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "IsCreating",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_creating(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_creating(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_creating::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_creating::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -550,39 +493,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_model {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -595,39 +526,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingModel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingModel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_model(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_model(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_model::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_model::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -647,18 +566,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit(
@@ -671,38 +587,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_delay_load: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            x,
-            z,
-            b_relax,
-            b_reverse_rotation,
-            is_delay_load,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::app::unit::Unit, i32, i32, bool, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
+        inner(this, unit, x, z, b_relax, b_reverse_rotation, is_delay_load, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_forced_set_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -720,18 +613,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "ForcedSetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "ForcedSetUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn forced_set_unit(
@@ -742,34 +632,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_delay_load: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::app::unit::Unit,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_forced_set_unit::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            b_relax,
-            b_reverse_rotation,
-            is_delay_load,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::app::unit::Unit, bool, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_forced_set_unit::get_method_info().method_ptr);
+        inner(this, unit, b_relax, b_reverse_rotation, is_delay_load, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_hub {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -787,18 +658,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetUnitHub",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetUnitHub",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit_hub(
@@ -809,34 +677,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_delay_load: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::app::unit::Unit,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_hub::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            b_relax,
-            b_reverse_rotation,
-            is_delay_load,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::app::unit::Unit, bool, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit_hub::get_method_info().method_ptr);
+        inner(this, unit, b_relax, b_reverse_rotation, is_delay_load, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_relay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
                 <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
@@ -853,18 +702,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetUnitRelay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetUnitRelay",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit_relay(
@@ -880,20 +726,14 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             crate::app::jobdata::JobData,
             crate::app::unitedit::UnitEdit,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_relay::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_unit_relay::get_method_info().method_ptr);
         inner(this, person, job, edit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -913,18 +753,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetUnitImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetUnitImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit_impl(
@@ -937,20 +774,8 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_hub: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::app::unit::Unit,
-            bool,
-            bool,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::app::unit::Unit, bool, bool, bool, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit_impl::get_method_info().method_ptr);
         inner(
             this,
             unit,
@@ -966,9 +791,7 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -981,39 +804,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -1026,39 +837,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMotion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_motion(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_motion(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_motion::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -1071,43 +870,29 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_visible(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_visible(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "CreateImpl",
@@ -1119,18 +904,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CreateImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CreateImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_impl(
@@ -1139,30 +921,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_reverse: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_impl::get_offset() as isize),
-        );
-        inner(
-            this,
-            is_duplicate_render_texture,
-            is_reverse,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_impl::get_method_info().method_ptr);
+        inner(this, is_duplicate_render_texture, is_reverse, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_chara_model {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -1175,41 +942,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "DeleteCharaModel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "DeleteCharaModel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_chara_model(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete_chara_model(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_chara_model::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete_chara_model::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_chara_model_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "DeleteCharaModel",
@@ -1221,18 +975,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "DeleteCharaModel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "DeleteCharaModel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn delete_chara_model_2(
@@ -1240,28 +991,17 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         chara: crate::combat::character::Character,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_chara_model_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_chara_model_2::get_method_info().method_ptr);
         inner(this, chara, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_chara_model {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "CreateCharaModel",
@@ -1273,18 +1013,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CreateCharaModel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CreateCharaModel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_chara_model(
@@ -1293,25 +1030,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_hub: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_chara_model::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_chara_model::get_method_info().method_ptr);
         inner(this, b_relax, is_hub, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_character_animation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1329,18 +1056,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCharacterAnimation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCharacterAnimation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_character_animation(
@@ -1358,27 +1082,14 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             bool,
             crate::app::unititem::UnitItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_character_animation::get_offset() as isize),
-        );
-        inner(
-            this,
-            chara,
-            b_relax,
-            is_hub,
-            unit_item,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_update_character_animation::get_method_info().method_ptr);
+        inner(this, chara, b_relax, is_hub, unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1396,18 +1107,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetGod",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_god(
@@ -1418,34 +1126,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_delay_load: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::app::godunit::GodUnit,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_god::get_offset() as isize),
-        );
-        inner(
-            this,
-            god,
-            b_relax,
-            b_reverse_rotation,
-            is_delay_load,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::app::godunit::GodUnit, bool, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_god::get_method_info().method_ptr);
+        inner(this, god, b_relax, b_reverse_rotation, is_delay_load, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_chara_only_on {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -1458,39 +1147,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CharaOnlyOn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CharaOnlyOn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn chara_only_on(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn chara_only_on(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_chara_only_on::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_chara_only_on::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_chara_only_off {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -1503,39 +1180,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CharaOnlyOff",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CharaOnlyOff",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn chara_only_off(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn chara_only_off(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_chara_only_off::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_chara_only_off::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_chara_only_transition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -1548,39 +1213,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "IsCharaOnlyTransition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "IsCharaOnlyTransition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_chara_only_transition(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_chara_only_transition(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_chara_only_transition::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_chara_only_transition::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_create_reserve_unit_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1596,18 +1249,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetCreateReserveUnitItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetCreateReserveUnitItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_create_reserve_unit_item(
@@ -1616,25 +1266,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_override: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::app::unititem::UnitItem,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_create_reserve_unit_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::app::unititem::UnitItem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_create_reserve_unit_item::get_method_info().method_ptr);
         inner(this, unit_item, is_override, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_stand_by_anime {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1650,18 +1290,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "UpdateStandByAnime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "UpdateStandByAnime",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_stand_by_anime(
@@ -1670,27 +1307,16 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_weapon_shop: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::app::unititem::UnitItem,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_stand_by_anime::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::app::unititem::UnitItem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_stand_by_anime::get_method_info().method_ptr);
         inner(this, unit_item, is_weapon_shop, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetEfficacyAttack",
@@ -1702,42 +1328,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetEfficacyAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetEfficacyAttack",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_attack(
-        this: UnitInfoWindowCharaModel,
-        is_efficacy: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_attack(this: UnitInfoWindowCharaModel, is_efficacy: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_attack::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_attack::get_method_info().method_ptr);
         inner(this, is_efficacy, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_relax_anime {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetRelaxAnime",
@@ -1749,42 +1361,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetRelaxAnime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetRelaxAnime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_relax_anime(
-        this: UnitInfoWindowCharaModel,
-        transition_duration: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_relax_anime(this: UnitInfoWindowCharaModel, transition_duration: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_relax_anime::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_relax_anime::get_method_info().method_ptr);
         inner(this, transition_duration, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_status_anime {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetStatusAnime",
@@ -1796,42 +1394,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetStatusAnime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetStatusAnime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_status_anime(
-        this: UnitInfoWindowCharaModel,
-        transition_duration: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_status_anime(this: UnitInfoWindowCharaModel, transition_duration: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_status_anime::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_status_anime::get_method_info().method_ptr);
         inner(this, transition_duration, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fortune_telling_good_anime {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetFortuneTellingGoodAnime",
@@ -1843,18 +1427,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetFortuneTellingGoodAnime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetFortuneTellingGoodAnime",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fortune_telling_good_anime(
@@ -1863,22 +1444,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_fortune_telling_good_anime::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_fortune_telling_good_anime::get_method_info().method_ptr);
         inner(this, is_allow_unit_null, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fortune_telling_bad_anime {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetFortuneTellingBadAnime",
@@ -1890,18 +1464,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetFortuneTellingBadAnime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetFortuneTellingBadAnime",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fortune_telling_bad_anime(
@@ -1910,20 +1481,14 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_fortune_telling_bad_anime::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_fortune_telling_bad_anime::get_method_info().method_ptr);
         inner(this, is_allow_unit_null, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weapon_shop_chara {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -1936,39 +1501,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetWeaponShopChara",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetWeaponShopChara",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_weapon_shop_chara(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_weapon_shop_chara(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_weapon_shop_chara::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_weapon_shop_chara::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_summon_chara {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -1981,39 +1534,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetSummonChara",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetSummonChara",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_summon_chara(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_summon_chara(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_summon_chara::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_summon_chara::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_god_select_normal_face_anime {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2026,41 +1567,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "UpdateGodSelectNormalFaceAnime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "UpdateGodSelectNormalFaceAnime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_god_select_normal_face_anime(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_god_select_normal_face_anime(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_god_select_normal_face_anime::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_god_select_normal_face_anime::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "ShowWeapon",
@@ -2072,18 +1600,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "ShowWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "ShowWeapon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn show_weapon(
@@ -2091,24 +1616,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show_weapon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show_weapon::get_method_info().method_ptr);
         inner(this, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2121,39 +1637,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "HideWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "HideWeapon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_weapon(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_weapon(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_weapon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_weapon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_transparent_on {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2166,39 +1670,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "TransparentOn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "TransparentOn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn transparent_on(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn transparent_on(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_transparent_on::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_transparent_on::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_transparent_off {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2211,39 +1703,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "TransparentOff",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "TransparentOff",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn transparent_off(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn transparent_off(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_transparent_off::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_transparent_off::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_activate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2256,41 +1736,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "Activate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "Activate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn activate(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn activate(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_activate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_activate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deactivate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "Deactivate",
@@ -2302,42 +1769,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "Deactivate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "Deactivate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deactivate(
-        this: UnitInfoWindowCharaModel,
-        b_clear_stand_by: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn deactivate(this: UnitInfoWindowCharaModel, b_clear_stand_by: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_deactivate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_deactivate::get_method_info().method_ptr);
         inner(this, b_clear_stand_by, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_chara_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetCharaImage",
@@ -2349,18 +1802,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetCharaImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetCharaImage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_chara_image(
@@ -2368,24 +1818,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         image_simple: crate::unity_engine::ui::image::Image,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::unity_engine::ui::image::Image,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_chara_image::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::unity_engine::ui::image::Image, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_chara_image::get_method_info().method_ptr);
         inner(this, image_simple, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2398,41 +1839,30 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "get_RenderTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "get_RenderTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_render_texture(
         this: UnitInfoWindowCharaModel,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendertexture::RenderTexture {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendertexture::RenderTexture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_render_texture::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> crate::unity_engine::rendertexture::RenderTexture =
+            ::core::mem::transmute(__lookup_get_render_texture::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_face_camera_component {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2445,41 +1875,30 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "get_FaceCameraComponent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "get_FaceCameraComponent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_face_camera_component(
         this: UnitInfoWindowCharaModel,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::camera::Camera {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_face_camera_component::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera =
+            ::core::mem::transmute(__lookup_get_face_camera_component::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_head_locator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2492,41 +1911,30 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "GetHeadLocator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "GetHeadLocator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_head_locator(
         this: UnitInfoWindowCharaModel,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_head_locator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_head_locator::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_head_locator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -2542,18 +1950,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetHeadLocator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetHeadLocator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_head_locator(
@@ -2562,25 +1967,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         default_weight: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_head_locator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::unity_engine::vector3::Vector3, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_head_locator::get_method_info().method_ptr);
         inner(this, pos, default_weight, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_head_locator_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -2597,18 +1992,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetHeadLocator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetHeadLocator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_head_locator_2(
@@ -2618,34 +2010,16 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_weight_interpolated: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::unity_engine::transform::Transform,
-            f32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_head_locator_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            loc,
-            default_weight,
-            is_weight_interpolated,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::unity_engine::transform::Transform, f32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_head_locator_2::get_method_info().method_ptr);
+        inner(this, loc, default_weight, is_weight_interpolated, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_look_at {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetLookAt",
@@ -2657,18 +2031,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetLookAt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetLookAt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_look_at(
@@ -2676,24 +2047,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         transform: crate::unity_engine::transform::Transform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_look_at::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_look_at::get_method_info().method_ptr);
         inner(this, transform, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_look_at_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2706,41 +2068,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetLookAtCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetLookAtCamera",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_look_at_camera(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_look_at_camera(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_look_at_camera::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_look_at_camera::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_eyes_weight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "SetEyesWeight",
@@ -2752,40 +2101,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetEyesWeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetEyesWeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_eyes_weight(
-        this: UnitInfoWindowCharaModel,
-        default_eyes_weight: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_eyes_weight(this: UnitInfoWindowCharaModel, default_eyes_weight: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_eyes_weight::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_eyes_weight::get_method_info().method_ptr);
         inner(this, default_eyes_weight, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_chara_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2798,39 +2134,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "IsCharaVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "IsCharaVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_chara_visible(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_chara_visible(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_chara_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_chara_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_chara_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2847,18 +2171,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "PlayCharaVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "PlayCharaVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_chara_voice(
@@ -2874,26 +2195,14 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_chara_voice::get_offset() as isize),
-        );
-        inner(
-            this,
-            person_switch_name,
-            engage_switch_name,
-            event_name,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_play_chara_voice::get_method_info().method_ptr);
+        inner(this, person_switch_name, engage_switch_name, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reserve_chara_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2910,18 +2219,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "ReserveCharaVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "ReserveCharaVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reserve_chara_voice(
@@ -2937,26 +2243,14 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reserve_chara_voice::get_offset() as isize),
-        );
-        inner(
-            this,
-            person_switch_name,
-            engage_switch_name,
-            event_name,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_reserve_chara_voice::get_method_info().method_ptr);
+        inner(this, person_switch_name, engage_switch_name, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_reserved_chara_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -2969,39 +2263,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "PlayReservedCharaVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "PlayReservedCharaVoice",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_reserved_chara_voice(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_reserved_chara_voice(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_reserved_chara_voice::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_reserved_chara_voice::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_chara_rot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3015,18 +2297,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "AddCharaRot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "AddCharaRot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_chara_rot(
@@ -3034,24 +2313,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         quaternion: crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_chara_rot::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_chara_rot::get_method_info().method_ptr);
         inner(this, quaternion, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_camera_adjust_y {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -3064,43 +2334,29 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "SetCameraAdjustY",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "SetCameraAdjustY",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_camera_adjust_y(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_camera_adjust_y(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_camera_adjust_y::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_camera_adjust_y::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "Setup",
@@ -3112,18 +2368,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
@@ -3132,32 +2385,16 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         is_reverse: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
-        inner(
-            this,
-            is_duplicate_render_texture,
-            is_reverse,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, bool, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
+        inner(this, is_duplicate_render_texture, is_reverse, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "GetGameObject",
@@ -3169,18 +2406,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "GetGameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "GetGameObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_game_object(
@@ -3192,21 +2426,19 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             UnitInfoWindowCharaModel,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_game_object::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_get_game_object::get_method_info().method_ptr);
         inner(this, obj_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_unit_model {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: talk3_d :: characterfactoryasync_2 :: CharacterFactoryAsync_onLoad as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "CreateUnitModel",
@@ -3218,18 +2450,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CreateUnitModel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CreateUnitModel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_unit_model(
@@ -3245,21 +2474,18 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_unit_model::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_unit_model::get_method_info().method_ptr);
         inner(this, unit, callback, is_hub, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_god_model {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: talk3_d :: characterfactoryasync_2 :: CharacterFactoryAsync_onLoad as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "CreateGodModel",
@@ -3271,18 +2497,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CreateGodModel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CreateGodModel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_god_model(
@@ -3296,21 +2519,20 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             crate::app::godunit::GodUnit,
             crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_god_model::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_god_model::get_method_info().method_ptr);
         inner(this, god, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_unit_model_relay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: persondata :: PersonData as :: unity2 :: IlType > :: il_type () , < crate :: app :: jobdata :: JobData as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitedit :: UnitEdit as :: unity2 :: IlType > :: il_type () , < crate :: app :: talk3_d :: characterfactoryasync_2 :: CharacterFactoryAsync_onLoad as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+                <crate::app::unitedit::UnitEdit as ::unity2::IlType>::il_type(),
+                <crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "CreateUnitModelRelay",
@@ -3322,18 +2544,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CreateUnitModelRelay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CreateUnitModelRelay",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_unit_model_relay(
@@ -3351,20 +2570,14 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             crate::app::unitedit::UnitEdit,
             crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_unit_model_relay::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_unit_model_relay::get_method_info().method_ptr);
         inner(this, person, job, edit, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_loading {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -3377,41 +2590,30 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "WaitLoading",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "WaitLoading",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn wait_loading(
         this: UnitInfoWindowCharaModel,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_wait_loading::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_wait_loading::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_chara_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -3424,39 +2626,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "HideCharaImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "HideCharaImage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_chara_image(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_chara_image(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_chara_image::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_chara_image::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_setup_done {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -3469,41 +2659,28 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "OnSetupDone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "OnSetupDone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_setup_done(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_setup_done(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_setup_done::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_setup_done::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_chara_model_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
                 "CreateCharaModel",
@@ -3515,18 +2692,15 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "CreateCharaModel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "CreateCharaModel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_chara_model_2(
@@ -3538,20 +2712,14 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
             UnitInfoWindowCharaModel,
             crate::combat::character::Character,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_chara_model_2::get_offset() as isize),
-        );
+        ) -> crate::combat::character::Character = ::core::mem::transmute(__lookup_create_chara_model_2::get_method_info().method_ptr);
         inner(this, chara, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_pain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -3564,39 +2732,27 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "isPain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "isPain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_pain(
-        this: UnitInfoWindowCharaModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_pain(this: UnitInfoWindowCharaModel, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_pain::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_pain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_object_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -3609,41 +2765,30 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    "get_GameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        "get_GameObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_game_object_2(
         this: UnitInfoWindowCharaModel,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_game_object_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoWindowCharaModel, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_game_object_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::class(),
@@ -3656,26 +2801,19 @@ mod __UnitInfoWindowCharaModel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaModel as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -3691,15 +2829,10 @@ impl UnitInfoWindowCharaModel {
 #[cfg(feature = "app-unitinfowindowcharamodel")]
 pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     #[doc = "`SetOnSetupDoneCallback(crate::system::action::Action)` overload"]
-    fn set_on_setup_done_callback(
-        self,
-        callback: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
+    fn set_on_setup_done_callback(self, callback: impl ::core::convert::Into<crate::system::action::Action>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_on_setup_done_callback(
                 __receiver,
                 ::core::convert::Into::into(callback),
@@ -3708,16 +2841,10 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
         }
     }
     #[doc = "`.ctor(bool, bool)` overload"]
-    fn ctor(
-        self,
-        is_duplicate_render_texture: impl ::core::convert::Into<bool>,
-        is_reverse: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor(self, is_duplicate_render_texture: impl ::core::convert::Into<bool>, is_reverse: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(is_duplicate_render_texture),
@@ -3727,16 +2854,10 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
         }
     }
     #[doc = "`CreateAsync(bool, bool)` overload"]
-    fn create_async(
-        self,
-        is_duplicate_render_texture: impl ::core::convert::Into<bool>,
-        is_reverse: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn create_async(self, is_duplicate_render_texture: impl ::core::convert::Into<bool>, is_reverse: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::create_async(
                 __receiver,
                 ::core::convert::Into::into(is_duplicate_render_texture),
@@ -3749,22 +2870,15 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn is_creating(self) -> bool {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::is_creating(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::is_creating(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Destroy()` overload"]
     fn destroy(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::destroy(__receiver, ::core::option::Option::None)
         }
     }
@@ -3772,13 +2886,8 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn is_loading_model(self) -> bool {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::is_loading_model(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::is_loading_model(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetUnit(crate::app::unit::Unit, i32, i32, bool, bool, bool)` overload"]
@@ -3793,9 +2902,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_unit(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3818,9 +2925,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::forced_set_unit(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3841,9 +2946,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_unit_hub(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3863,9 +2966,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_unit_relay(
                 __receiver,
                 ::core::convert::Into::into(person),
@@ -3887,9 +2988,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_unit_impl(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3906,9 +3005,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn tick(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::tick(__receiver, ::core::option::Option::None)
         }
     }
@@ -3916,39 +3013,23 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn update_motion(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::update_motion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::update_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateVisible()` overload"]
     fn update_visible(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::update_visible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::update_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateImpl(bool, bool)` overload"]
-    fn create_impl(
-        self,
-        is_duplicate_render_texture: impl ::core::convert::Into<bool>,
-        is_reverse: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn create_impl(self, is_duplicate_render_texture: impl ::core::convert::Into<bool>, is_reverse: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::create_impl(
                 __receiver,
                 ::core::convert::Into::into(is_duplicate_render_texture),
@@ -3961,43 +3042,23 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn delete_chara_model(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::delete_chara_model(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::delete_chara_model(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteCharaModel(crate::combat::character::Character)` overload"]
-    fn delete_chara_model_2(
-        self,
-        chara: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> () {
+    fn delete_chara_model_2(self, chara: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::delete_chara_model_2(
-                __receiver,
-                ::core::convert::Into::into(chara),
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::delete_chara_model_2(__receiver, ::core::convert::Into::into(chara), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateCharaModel(bool, bool)` overload"]
-    fn create_chara_model(
-        self,
-        b_relax: impl ::core::convert::Into<bool>,
-        is_hub: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn create_chara_model(self, b_relax: impl ::core::convert::Into<bool>, is_hub: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::create_chara_model(
                 __receiver,
                 ::core::convert::Into::into(b_relax),
@@ -4016,9 +3077,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::update_character_animation(
                 __receiver,
                 ::core::convert::Into::into(chara),
@@ -4039,9 +3098,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_god(
                 __receiver,
                 ::core::convert::Into::into(god),
@@ -4056,39 +3113,24 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn chara_only_on(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::chara_only_on(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::chara_only_on(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CharaOnlyOff()` overload"]
     fn chara_only_off(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::chara_only_off(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::chara_only_off(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsCharaOnlyTransition()` overload"]
     fn is_chara_only_transition(self) -> bool {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::is_chara_only_transition(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::is_chara_only_transition(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetCreateReserveUnitItem(crate::app::unititem::UnitItem, bool)` overload"]
@@ -4099,9 +3141,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_create_reserve_unit_item(
                 __receiver,
                 ::core::convert::Into::into(unit_item),
@@ -4118,9 +3158,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::update_stand_by_anime(
                 __receiver,
                 ::core::convert::Into::into(unit_item),
@@ -4133,9 +3171,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn set_efficacy_attack(self, is_efficacy: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_efficacy_attack(
                 __receiver,
                 ::core::convert::Into::into(is_efficacy),
@@ -4147,9 +3183,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn set_relax_anime(self, transition_duration: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_relax_anime(
                 __receiver,
                 ::core::convert::Into::into(transition_duration),
@@ -4161,9 +3195,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn set_status_anime(self, transition_duration: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_status_anime(
                 __receiver,
                 ::core::convert::Into::into(transition_duration),
@@ -4172,15 +3204,10 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
         }
     }
     #[doc = "`SetFortuneTellingGoodAnime(bool)` overload"]
-    fn set_fortune_telling_good_anime(
-        self,
-        is_allow_unit_null: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_fortune_telling_good_anime(self, is_allow_unit_null: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_fortune_telling_good_anime(
                 __receiver,
                 ::core::convert::Into::into(is_allow_unit_null),
@@ -4189,15 +3216,10 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
         }
     }
     #[doc = "`SetFortuneTellingBadAnime(bool)` overload"]
-    fn set_fortune_telling_bad_anime(
-        self,
-        is_allow_unit_null: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_fortune_telling_bad_anime(self, is_allow_unit_null: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_fortune_telling_bad_anime(
                 __receiver,
                 ::core::convert::Into::into(is_allow_unit_null),
@@ -4209,131 +3231,79 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn set_weapon_shop_chara(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::set_weapon_shop_chara(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::set_weapon_shop_chara(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetSummonChara()` overload"]
     fn set_summon_chara(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::set_summon_chara(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::set_summon_chara(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateGodSelectNormalFaceAnime()` overload"]
     fn update_god_select_normal_face_anime(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::update_god_select_normal_face_anime(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::update_god_select_normal_face_anime(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShowWeapon(crate::app::itemdata::ItemData)` overload"]
     fn show_weapon(self, item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::show_weapon(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::show_weapon(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
         }
     }
     #[doc = "`HideWeapon()` overload"]
     fn hide_weapon(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::hide_weapon(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::hide_weapon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TransparentOn()` overload"]
     fn transparent_on(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::transparent_on(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::transparent_on(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TransparentOff()` overload"]
     fn transparent_off(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::transparent_off(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::transparent_off(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Activate()` overload"]
     fn activate(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::activate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::activate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Deactivate(bool)` overload"]
     fn deactivate(self, b_clear_stand_by: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::deactivate(
-                __receiver,
-                ::core::convert::Into::into(b_clear_stand_by),
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::deactivate(__receiver, ::core::convert::Into::into(b_clear_stand_by), ::core::option::Option::None)
         }
     }
     #[doc = "`SetCharaImage(crate::unity_engine::ui::image::Image)` overload"]
-    fn set_chara_image(
-        self,
-        image_simple: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-    ) -> () {
+    fn set_chara_image(self, image_simple: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_chara_image(
                 __receiver,
                 ::core::convert::Into::into(image_simple),
@@ -4345,39 +3315,24 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::get_render_texture(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::get_render_texture(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_FaceCameraComponent()` overload"]
     fn get_face_camera_component(self) -> crate::unity_engine::camera::Camera {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::get_face_camera_component(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::get_face_camera_component(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetHeadLocator()` overload"]
     fn get_head_locator(self) -> crate::unity_engine::transform::Transform {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::get_head_locator(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::get_head_locator(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetHeadLocator(crate::unity_engine::vector3::Vector3, f32)` overload"]
@@ -4388,9 +3343,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_head_locator(
                 __receiver,
                 ::core::convert::Into::into(pos),
@@ -4408,9 +3361,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_head_locator_2(
                 __receiver,
                 ::core::convert::Into::into(loc),
@@ -4421,42 +3372,26 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
         }
     }
     #[doc = "`SetLookAt(crate::unity_engine::transform::Transform)` overload"]
-    fn set_look_at(
-        self,
-        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> () {
+    fn set_look_at(self, transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::set_look_at(
-                __receiver,
-                ::core::convert::Into::into(transform),
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::set_look_at(__receiver, ::core::convert::Into::into(transform), ::core::option::Option::None)
         }
     }
     #[doc = "`SetLookAtCamera()` overload"]
     fn set_look_at_camera(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::set_look_at_camera(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::set_look_at_camera(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetEyesWeight(f32)` overload"]
     fn set_eyes_weight(self, default_eyes_weight: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::set_eyes_weight(
                 __receiver,
                 ::core::convert::Into::into(default_eyes_weight),
@@ -4468,13 +3403,8 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn is_chara_visible(self) -> bool {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::is_chara_visible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::is_chara_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayCharaVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
@@ -4486,9 +3416,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::play_chara_voice(
                 __receiver,
                 ::core::convert::Into::into(person_switch_name),
@@ -4507,9 +3435,7 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::reserve_chara_voice(
                 __receiver,
                 ::core::convert::Into::into(person_switch_name),
@@ -4523,56 +3449,31 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn play_reserved_chara_voice(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::play_reserved_chara_voice(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::play_reserved_chara_voice(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddCharaRot(crate::unity_engine::quaternion::Quaternion)` overload"]
-    fn add_chara_rot(
-        self,
-        quaternion: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> () {
+    fn add_chara_rot(self, quaternion: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::add_chara_rot(
-                __receiver,
-                ::core::convert::Into::into(quaternion),
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::add_chara_rot(__receiver, ::core::convert::Into::into(quaternion), ::core::option::Option::None)
         }
     }
     #[doc = "`SetCameraAdjustY()` overload"]
     fn set_camera_adjust_y(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::set_camera_adjust_y(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::set_camera_adjust_y(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Setup(bool, bool)` overload"]
-    fn setup(
-        self,
-        is_duplicate_render_texture: impl ::core::convert::Into<bool>,
-        is_reverse: impl ::core::convert::Into<bool>,
-    ) -> bool {
+    fn setup(self, is_duplicate_render_texture: impl ::core::convert::Into<bool>, is_reverse: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::setup(
                 __receiver,
                 ::core::convert::Into::into(is_duplicate_render_texture),
@@ -4582,36 +3483,23 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
         }
     }
     #[doc = "`GetGameObject(::unity2::Il2CppString)` overload"]
-    fn get_game_object(
-        self,
-        obj_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::gameobject::GameObject {
+    fn get_game_object(self, obj_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::get_game_object(
-                __receiver,
-                ::core::convert::Into::into(obj_name),
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::get_game_object(__receiver, ::core::convert::Into::into(obj_name), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateUnitModel(crate::app::unit::Unit, crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad, bool)` overload"]
     fn create_unit_model(
         self,
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        callback: impl ::core::convert::Into<
-            crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad,
-        >,
+        callback: impl ::core::convert::Into<crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad>,
         is_hub: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::create_unit_model(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -4625,15 +3513,11 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn create_god_model(
         self,
         god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        callback: impl ::core::convert::Into<
-            crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad,
-        >,
+        callback: impl ::core::convert::Into<crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad>,
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::create_god_model(
                 __receiver,
                 ::core::convert::Into::into(god),
@@ -4648,15 +3532,11 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
         person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
         job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
         edit: impl ::core::convert::Into<crate::app::unitedit::UnitEdit>,
-        callback: impl ::core::convert::Into<
-            crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad,
-        >,
+        callback: impl ::core::convert::Into<crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad>,
     ) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::create_unit_model_relay(
                 __receiver,
                 ::core::convert::Into::into(person),
@@ -4671,65 +3551,39 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn wait_loading(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::wait_loading(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::wait_loading(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HideCharaImage()` overload"]
     fn hide_chara_image(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::hide_chara_image(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::hide_chara_image(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSetupDone()` overload"]
     fn on_setup_done(self) -> () {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::on_setup_done(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::on_setup_done(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateCharaModel(crate::combat::character::Character)` overload"]
-    fn create_chara_model_2(
-        self,
-        chara: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> crate::combat::character::Character {
+    fn create_chara_model_2(self, chara: impl ::core::convert::Into<crate::combat::character::Character>) -> crate::combat::character::Character {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::create_chara_model_2(
-                __receiver,
-                ::core::convert::Into::into(chara),
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::create_chara_model_2(__receiver, ::core::convert::Into::into(chara), ::core::option::Option::None)
         }
     }
     #[doc = "`isPain()` overload"]
     fn is_pain(self) -> bool {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoWindowCharaModel_unity2_raw::is_pain(__receiver, ::core::option::Option::None)
         }
     }
@@ -4737,13 +3591,8 @@ pub trait IUnitInfoWindowCharaModelMethods: IUnitInfoWindowCharaModel {
     fn get_game_object_2(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
             let __receiver =
-                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoWindowCharaModel_unity2_raw::get_game_object_2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnitInfoWindowCharaModel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoWindowCharaModel_unity2_raw::get_game_object_2(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -4762,11 +3611,7 @@ impl UnitInfoWindowCharaModel {
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitInfoWindowCharaModelMethods>::ctor(
-            this,
-            is_duplicate_render_texture,
-            is_reverse,
-        );
+        <Self as IUnitInfoWindowCharaModelMethods>::ctor(this, is_duplicate_render_texture, is_reverse);
         this
     }
 }
@@ -4774,12 +3619,10 @@ impl UnitInfoWindowCharaModel {
 #[cfg(feature = "app-unitinfowindowcharamodel")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnitInfoWindowCharaModel;
-    pub use super::IUnitInfoWindowCharaModelMethods;
-    pub use super::IUnitInfoWindowCharaModel_ReservedCharaVoice;
-    pub use super::IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods;
-    pub use super::UnitInfoWindowCharaModel;
-    pub use super::UnitInfoWindowCharaModel_ReservedCharaVoice;
+    pub use super::{
+        IUnitInfoWindowCharaModel, IUnitInfoWindowCharaModelMethods, IUnitInfoWindowCharaModel_ReservedCharaVoice,
+        IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods, UnitInfoWindowCharaModel, UnitInfoWindowCharaModel_ReservedCharaVoice,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

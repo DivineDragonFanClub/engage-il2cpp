@@ -2,17 +2,18 @@
 
 #[cfg(feature = "app-singletonpool_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonpool_2/SingletonPool_2_Comparer.md"))]
     #[::unity2::class(namespace = "App", name = "SingletonPool`2.Comparer")]
     #[parent(crate::system::object::Object)]
-    pub struct SingletonPool_2_Comparer<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-    }
+    pub struct SingletonPool_2_Comparer<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonpool_2/SingletonPool_2.md"))]
     #[::unity2::class(namespace = "App", name = "SingletonPool`2")]
@@ -31,8 +32,7 @@ mod __types {
         #[rename(name = "m_Used")]
         pub m_used: crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>,
         #[rename(name = "m_Compare")]
-        pub m_compare:
-            crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T1>,
+        pub m_compare: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T1>,
         #[rename(name = "m_Dictionary")]
         pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, T1>,
         #[rename(name = "m_InstanceIDs")]
@@ -142,9 +142,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2<T
 
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1_Enumerator<T1>;
+    pub fn get_enumerator(self) -> crate::system::collections::generic::list_1::List_1_Enumerator<T1>;
 
     #[doc = "`get_Count()` overload"]
     #[method(name = "get_Count", args = 0)]
@@ -186,16 +184,13 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2<T
 #[cfg(feature = "app-singletonpool_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISingletonPool_2;
-    pub use super::ISingletonPool_2Methods;
-    pub use super::ISingletonPool_2_Comparer;
-    pub use super::ISingletonPool_2_ComparerMethods;
-    pub use super::SingletonPool_2;
-    pub use super::SingletonPool_2_Comparer;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use super::{
+        ISingletonPool_2, ISingletonPool_2Methods, ISingletonPool_2_Comparer, ISingletonPool_2_ComparerMethods, SingletonPool_2,
+        SingletonPool_2_Comparer,
+    };
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::singletonclass_1::ISingletonClass_1, system::object::IObject};
 }

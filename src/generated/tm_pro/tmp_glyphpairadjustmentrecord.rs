@@ -2,24 +2,21 @@
 
 #[cfg(feature = "tm_pro-tmp_glyphpairadjustmentrecord-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_glyphpairadjustmentrecord/TMP_GlyphPairAdjustmentRecord.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_GlyphPairAdjustmentRecord")]
     #[parent(crate::system::object::Object)]
     pub struct TMP_GlyphPairAdjustmentRecord {
         #[rename(name = "m_FirstAdjustmentRecord")]
-        pub m_first_adjustment_record:
-            crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
+        pub m_first_adjustment_record: crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
         #[rename(name = "m_SecondAdjustmentRecord")]
-        pub m_second_adjustment_record:
-            crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
+        pub m_second_adjustment_record: crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
         #[rename(name = "m_FeatureLookupFlags")]
-        pub m_feature_lookup_flags:
-            crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2,
+        pub m_feature_lookup_flags: crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2,
     }
 }
 
@@ -35,9 +32,7 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_first_adjustment_record {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
@@ -50,35 +45,35 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_firstAdjustmentRecord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_firstAdjustmentRecord",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_first_adjustment_record(
         this: TMP_GlyphPairAdjustmentRecord,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord {
-        let inner : extern "C" fn (TMP_GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_first_adjustment_record :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TMP_GlyphPairAdjustmentRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord =
+            ::core::mem::transmute(__lookup_get_first_adjustment_record::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_first_adjustment_record {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
                 "set_firstAdjustmentRecord",
@@ -90,18 +85,15 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    "set_firstAdjustmentRecord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        "set_firstAdjustmentRecord",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_first_adjustment_record(
@@ -113,20 +105,14 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
             TMP_GlyphPairAdjustmentRecord,
             crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_first_adjustment_record::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_first_adjustment_record::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_second_adjustment_record {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
@@ -139,35 +125,35 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_secondAdjustmentRecord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_secondAdjustmentRecord",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_second_adjustment_record(
         this: TMP_GlyphPairAdjustmentRecord,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord {
-        let inner : extern "C" fn (TMP_GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_second_adjustment_record :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TMP_GlyphPairAdjustmentRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord =
+            ::core::mem::transmute(__lookup_get_second_adjustment_record::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_second_adjustment_record {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
                 "set_secondAdjustmentRecord",
@@ -179,18 +165,15 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    "set_secondAdjustmentRecord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        "set_secondAdjustmentRecord",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_second_adjustment_record(
@@ -202,20 +185,14 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
             TMP_GlyphPairAdjustmentRecord,
             crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_second_adjustment_record::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_second_adjustment_record::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_feature_lookup_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
@@ -228,35 +205,35 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_featureLookupFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_featureLookupFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_feature_lookup_flags(
         this: TMP_GlyphPairAdjustmentRecord,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2 {
-        let inner : extern "C" fn (TMP_GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: fontfeaturelookupflags_2 :: FontFeatureLookupFlags_2 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_feature_lookup_flags :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TMP_GlyphPairAdjustmentRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2 =
+            ::core::mem::transmute(__lookup_get_feature_lookup_flags::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_feature_lookup_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: fontfeaturelookupflags_2 :: FontFeatureLookupFlags_2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
                 "set_featureLookupFlags",
@@ -268,18 +245,15 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    "set_featureLookupFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        "set_featureLookupFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_feature_lookup_flags(
@@ -291,21 +265,18 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
             TMP_GlyphPairAdjustmentRecord,
             crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_feature_lookup_flags::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_feature_lookup_flags::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -317,24 +288,21 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: TMP_GlyphPairAdjustmentRecord,
-        first_adjustment_record : crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord,
-        second_adjustment_record : crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord,
+        first_adjustment_record: crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
+        second_adjustment_record: crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -342,26 +310,16 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
             crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
             crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            first_adjustment_record,
-            second_adjustment_record,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, first_adjustment_record, second_adjustment_record, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -373,26 +331,27 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
         this: TMP_GlyphPairAdjustmentRecord,
-        glyph_pair_adjustment_record : crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord,
+        glyph_pair_adjustment_record: crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (TMP_GlyphPairAdjustmentRecord , crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TMP_GlyphPairAdjustmentRecord,
+            crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, glyph_pair_adjustment_record, __unity2_method_info)
     }
 }
@@ -400,32 +359,21 @@ mod __TMP_GlyphPairAdjustmentRecord_unity2_raw {
 #[cfg(feature = "tm_pro-tmp_glyphpairadjustmentrecord")]
 pub trait ITMP_GlyphPairAdjustmentRecordMethods: ITMP_GlyphPairAdjustmentRecord {
     #[doc = "`get_firstAdjustmentRecord()` overload"]
-    fn get_first_adjustment_record(
-        self,
-    ) -> crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord {
+    fn get_first_adjustment_record(self) -> crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord {
         unsafe {
             let __receiver =
-                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_GlyphPairAdjustmentRecord_unity2_raw::get_first_adjustment_record(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_GlyphPairAdjustmentRecord_unity2_raw::get_first_adjustment_record(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_firstAdjustmentRecord(crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord)` overload"]
     fn set_first_adjustment_record(
         self,
-        value: impl ::core::convert::Into<
-            crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
-        >,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord>,
     ) -> () {
         unsafe {
             let __receiver =
-                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_GlyphPairAdjustmentRecord_unity2_raw::set_first_adjustment_record(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -434,32 +382,21 @@ pub trait ITMP_GlyphPairAdjustmentRecordMethods: ITMP_GlyphPairAdjustmentRecord 
         }
     }
     #[doc = "`get_secondAdjustmentRecord()` overload"]
-    fn get_second_adjustment_record(
-        self,
-    ) -> crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord {
+    fn get_second_adjustment_record(self) -> crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord {
         unsafe {
             let __receiver =
-                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_GlyphPairAdjustmentRecord_unity2_raw::get_second_adjustment_record(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_GlyphPairAdjustmentRecord_unity2_raw::get_second_adjustment_record(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_secondAdjustmentRecord(crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord)` overload"]
     fn set_second_adjustment_record(
         self,
-        value: impl ::core::convert::Into<
-            crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
-        >,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord>,
     ) -> () {
         unsafe {
             let __receiver =
-                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_GlyphPairAdjustmentRecord_unity2_raw::set_second_adjustment_record(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -468,32 +405,18 @@ pub trait ITMP_GlyphPairAdjustmentRecordMethods: ITMP_GlyphPairAdjustmentRecord 
         }
     }
     #[doc = "`get_featureLookupFlags()` overload"]
-    fn get_feature_lookup_flags(
-        self,
-    ) -> crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2 {
+    fn get_feature_lookup_flags(self) -> crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2 {
         unsafe {
             let __receiver =
-                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_GlyphPairAdjustmentRecord_unity2_raw::get_feature_lookup_flags(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_GlyphPairAdjustmentRecord_unity2_raw::get_feature_lookup_flags(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_featureLookupFlags(crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2)` overload"]
-    fn set_feature_lookup_flags(
-        self,
-        value: impl ::core::convert::Into<
-            crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2,
-        >,
-    ) -> () {
+    fn set_feature_lookup_flags(self, value: impl ::core::convert::Into<crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2>) -> () {
         unsafe {
             let __receiver =
-                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_GlyphPairAdjustmentRecord_unity2_raw::set_feature_lookup_flags(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -504,18 +427,12 @@ pub trait ITMP_GlyphPairAdjustmentRecordMethods: ITMP_GlyphPairAdjustmentRecord 
     #[doc = "`.ctor(crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord, crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord)` overload"]
     fn ctor(
         self,
-        first_adjustment_record: impl ::core::convert::Into<
-            crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
-        >,
-        second_adjustment_record: impl ::core::convert::Into<
-            crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
-        >,
+        first_adjustment_record: impl ::core::convert::Into<crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord>,
+        second_adjustment_record: impl ::core::convert::Into<crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord>,
     ) -> () {
         unsafe {
             let __receiver =
-                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_GlyphPairAdjustmentRecord_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(first_adjustment_record),
@@ -527,13 +444,13 @@ pub trait ITMP_GlyphPairAdjustmentRecordMethods: ITMP_GlyphPairAdjustmentRecord 
     #[doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord)` overload"]
     fn ctor_2(
         self,
-        glyph_pair_adjustment_record : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord >,
+        glyph_pair_adjustment_record: impl ::core::convert::Into<
+            crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord,
+        >,
     ) -> () {
         unsafe {
             let __receiver =
-                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TMP_GlyphPairAdjustmentRecord as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_GlyphPairAdjustmentRecord_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(glyph_pair_adjustment_record),
@@ -550,8 +467,8 @@ impl<__T: ITMP_GlyphPairAdjustmentRecord> ITMP_GlyphPairAdjustmentRecordMethods 
 impl TMP_GlyphPairAdjustmentRecord {
     #[doc = "`.ctor(crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord, crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord)` — overload selector"]
     pub fn new(
-        first_adjustment_record : crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord,
-        second_adjustment_record : crate :: tm_pro :: tmp_glyphadjustmentrecord :: TMP_GlyphAdjustmentRecord,
+        first_adjustment_record: crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
+        second_adjustment_record: crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -560,17 +477,13 @@ impl TMP_GlyphPairAdjustmentRecord {
                 ::core::stringify!(new),
             )
         });
-        <Self as ITMP_GlyphPairAdjustmentRecordMethods>::ctor(
-            this,
-            first_adjustment_record,
-            second_adjustment_record,
-        );
+        <Self as ITMP_GlyphPairAdjustmentRecordMethods>::ctor(this, first_adjustment_record, second_adjustment_record);
         this
     }
 
     #[doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord)` — overload selector"]
     pub fn new_2(
-        glyph_pair_adjustment_record : crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord,
+        glyph_pair_adjustment_record: crate::unity_engine::text_core::low_level::glyphpairadjustmentrecord::GlyphPairAdjustmentRecord,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -587,9 +500,7 @@ impl TMP_GlyphPairAdjustmentRecord {
 #[cfg(feature = "tm_pro-tmp_glyphpairadjustmentrecord")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_GlyphPairAdjustmentRecord;
-    pub use super::ITMP_GlyphPairAdjustmentRecordMethods;
-    pub use super::TMP_GlyphPairAdjustmentRecord;
+    pub use super::{ITMP_GlyphPairAdjustmentRecord, ITMP_GlyphPairAdjustmentRecordMethods, TMP_GlyphPairAdjustmentRecord};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,19 +2,16 @@
 
 #[cfg(feature = "system-collections-generic-genericequalitycomparer_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::collections::generic::equalitycomparer_1::{
-        EqualityComparer_1, IEqualityComparer_1,
+    use super::*;
+    use crate::system::{
+        collections::generic::equalitycomparer_1::{EqualityComparer_1, IEqualityComparer_1},
+        object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/genericequalitycomparer_1/GenericEqualityComparer_1.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Generic",
-        name = "GenericEqualityComparer`1"
-    )]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "GenericEqualityComparer`1")]
     # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < T0 >)]
     #[parent(crate::system::object::Object)]
     pub struct GenericEqualityComparer_1<T0: ::unity2::ClassIdentity> {}
@@ -36,23 +33,11 @@ impl<T0: ::unity2::ClassIdentity> GenericEqualityComparer_1<T0> {
 
     #[doc = "`IndexOf(::unity2::Array<T0>, T0, i32, i32)` overload"]
     #[method(name = "IndexOf", args = 4)]
-    pub fn index_of(
-        self,
-        array: ::unity2::Array<T0>,
-        value: T0,
-        start_index: i32,
-        count: i32,
-    ) -> i32;
+    pub fn index_of(self, array: ::unity2::Array<T0>, value: T0, start_index: i32, count: i32) -> i32;
 
     #[doc = "`LastIndexOf(::unity2::Array<T0>, T0, i32, i32)` overload"]
     #[method(name = "LastIndexOf", args = 4)]
-    pub fn last_index_of(
-        self,
-        array: ::unity2::Array<T0>,
-        value: T0,
-        start_index: i32,
-        count: i32,
-    ) -> i32;
+    pub fn last_index_of(self, array: ::unity2::Array<T0>, value: T0, start_index: i32, count: i32) -> i32;
 
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     #[method(name = "Equals", args = 1)]
@@ -86,13 +71,10 @@ impl<T0: ::unity2::ClassIdentity> GenericEqualityComparer_1<T0> {
 #[cfg(feature = "system-collections-generic-genericequalitycomparer_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GenericEqualityComparer_1;
-    pub use super::IGenericEqualityComparer_1;
-    pub use super::IGenericEqualityComparer_1Methods;
-    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1;
+    pub use super::{GenericEqualityComparer_1, IGenericEqualityComparer_1, IGenericEqualityComparer_1Methods};
     #[cfg(feature = "system-collections-generic-equalitycomparer_1")]
     pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{collections::generic::equalitycomparer_1::IEqualityComparer_1, object::IObject};
 }

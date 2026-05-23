@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-debugactiondesc-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugactiondesc/DebugActionDesc.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugActionDesc")]
@@ -14,16 +14,11 @@ mod __types {
         #[rename(name = "axisTrigger")]
         pub axis_trigger: ::unity2::Il2CppString,
         #[rename(name = "buttonTriggerList")]
-        pub button_trigger_list: crate::system::collections::generic::list_1::List_1<
-            ::unity2::Array<::unity2::Il2CppString>,
-        >,
+        pub button_trigger_list: crate::system::collections::generic::list_1::List_1<::unity2::Array<::unity2::Il2CppString>>,
         #[rename(name = "keyTriggerList")]
-        pub key_trigger_list: crate::system::collections::generic::list_1::List_1<
-            ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
-        >,
+        pub key_trigger_list: crate::system::collections::generic::list_1::List_1<::unity2::Array<crate::unity_engine::keycode::KeyCode>>,
         #[rename(name = "repeatMode")]
-        pub repeat_mode:
-            crate::unity_engine::rendering::debugactionrepeatmode::DebugActionRepeatMode,
+        pub repeat_mode: crate::unity_engine::rendering::debugactionrepeatmode::DebugActionRepeatMode,
         #[rename(name = "repeatDelay")]
         pub repeat_delay: f32,
     }
@@ -41,9 +36,7 @@ mod __DebugActionDesc_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugActionDesc as ::unity2::ClassIdentity>::class(),
@@ -56,30 +49,20 @@ mod __DebugActionDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugActionDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugActionDesc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DebugActionDesc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DebugActionDesc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugActionDesc, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -89,9 +72,7 @@ pub trait IDebugActionDescMethods: IDebugActionDesc {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DebugActionDesc as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugActionDesc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugActionDesc_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -119,9 +100,7 @@ impl DebugActionDesc {
 #[cfg(feature = "unity_engine-rendering-debugactiondesc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugActionDesc;
-    pub use super::IDebugActionDesc;
-    pub use super::IDebugActionDescMethods;
+    pub use super::{DebugActionDesc, IDebugActionDesc, IDebugActionDescMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

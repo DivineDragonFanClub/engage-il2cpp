@@ -2,16 +2,22 @@
 
 #[cfg(feature = "app-accessoryshopbuyroot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyroot/AccessoryShopBuyRoot_ReturnEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "AccessoryShopBuyRoot.ReturnEventHandler")]
@@ -42,21 +48,17 @@ mod __types {
         #[rename(name = "m_WatchingModeKeyHelpController")]
         pub m_watching_mode_key_help_controller: crate::app::keyhelpcontroller::KeyHelpController,
         #[rename(name = "m_AccessoryShopBuyRootProc")]
-        pub m_accessory_shop_buy_root_proc:
-            crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc,
+        pub m_accessory_shop_buy_root_proc: crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc,
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
         #[rename(name = "m_AccessoryShopBuyMenu")]
         pub m_accessory_shop_buy_menu: crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu,
         #[rename(name = "m_AccessoryEquipmentInfoWindow")]
-        pub m_accessory_equipment_info_window:
-            crate::app::accessoryequipmentinfo::AccessoryEquipmentInfo,
+        pub m_accessory_equipment_info_window: crate::app::accessoryequipmentinfo::AccessoryEquipmentInfo,
         #[rename(name = "m_AccessoryDetailInfoWindow")]
-        pub m_accessory_detail_info_window:
-            crate::app::accessorydetailinfowindow::AccessoryDetailInfoWindow,
+        pub m_accessory_detail_info_window: crate::app::accessorydetailinfowindow::AccessoryDetailInfoWindow,
         #[rename(name = "m_ReturnEventHandler")]
-        pub m_return_event_handler:
-            crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
+        pub m_return_event_handler: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
         #[rename(name = "m_AccessoryData")]
         pub m_accessory_data: crate::app::accessorydata::AccessoryData,
     }
@@ -74,9 +76,7 @@ mod __AccessoryShopBuyRoot_ReturnEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -92,18 +92,15 @@ mod __AccessoryShopBuyRoot_ReturnEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -117,22 +114,15 @@ mod __AccessoryShopBuyRoot_ReturnEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -144,18 +134,15 @@ mod __AccessoryShopBuyRoot_ReturnEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -163,31 +150,20 @@ mod __AccessoryShopBuyRoot_ReturnEventHandler_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AccessoryShopBuyRoot_ReturnEventHandler,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AccessoryShopBuyRoot_ReturnEventHandler, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-accessoryshopbuyroot")]
-pub trait IAccessoryShopBuyRoot_ReturnEventHandlerMethods:
-    IAccessoryShopBuyRoot_ReturnEventHandler
-{
+pub trait IAccessoryShopBuyRoot_ReturnEventHandlerMethods: IAccessoryShopBuyRoot_ReturnEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < AccessoryShopBuyRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __AccessoryShopBuyRoot_ReturnEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -199,21 +175,16 @@ pub trait IAccessoryShopBuyRoot_ReturnEventHandlerMethods:
     #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
     fn invoke(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = < AccessoryShopBuyRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AccessoryShopBuyRoot_ReturnEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AccessoryShopBuyRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-accessoryshopbuyroot")]
-impl<__T: IAccessoryShopBuyRoot_ReturnEventHandler> IAccessoryShopBuyRoot_ReturnEventHandlerMethods
-    for __T
-{
-}
+impl<__T: IAccessoryShopBuyRoot_ReturnEventHandler> IAccessoryShopBuyRoot_ReturnEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-accessoryshopbuyroot")]
 impl AccessoryShopBuyRoot_ReturnEventHandler {
@@ -240,9 +211,7 @@ mod __AccessoryShopBuyRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load_prefab_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -255,35 +224,26 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "LoadPrefabAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "LoadPrefabAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_prefab_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -296,35 +256,26 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -337,36 +288,31 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "UnloadPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "UnloadPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -378,24 +324,21 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         unit: crate::app::unit::Unit,
-        return_event_handler : crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler,
+        return_event_handler: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot {
         let inner: extern "C" fn(
@@ -403,22 +346,19 @@ mod __AccessoryShopBuyRoot_unity2_raw {
             crate::app::unit::Unit,
             crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, unit, return_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -430,25 +370,22 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
         this: AccessoryShopBuyRoot,
         super_: crate::app::procinst::ProcInst,
         unit: crate::app::unit::Unit,
-        return_event_handler : crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler,
+        return_event_handler: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -457,27 +394,16 @@ mod __AccessoryShopBuyRoot_unity2_raw {
             crate::app::unit::Unit,
             crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
-        inner(
-            this,
-            super_,
-            unit,
-            return_event_handler,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(this, super_, unit, return_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
                 "Destroy",
@@ -489,41 +415,27 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy(
-        root: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy::get_offset() as isize),
-        );
+    pub unsafe fn destroy(root: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -536,41 +448,28 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
                 "OnSelectMenuItem",
@@ -582,18 +481,15 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnSelectMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnSelectMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_select_menu_item(
@@ -601,26 +497,16 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         accessory_data: crate::app::accessorydata::AccessoryData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AccessoryShopBuyRoot,
-            crate::app::accessorydata::AccessoryData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select_menu_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AccessoryShopBuyRoot, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select_menu_item::get_method_info().method_ptr);
         inner(this, accessory_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_decide_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
                 "OnDecideMenuItem",
@@ -632,18 +518,15 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnDecideMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnDecideMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_decide_menu_item(
@@ -651,24 +534,15 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         accessory_data: crate::app::accessorydata::AccessoryData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AccessoryShopBuyRoot,
-            crate::app::accessorydata::AccessoryData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_decide_menu_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AccessoryShopBuyRoot, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_decide_menu_item::get_method_info().method_ptr);
         inner(this, accessory_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose_confirm_dialog {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -681,39 +555,27 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnDisposeConfirmDialog",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnDisposeConfirmDialog",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose_confirm_dialog(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose_confirm_dialog(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose_confirm_dialog::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose_confirm_dialog::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_buy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -726,39 +588,27 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnBuy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnBuy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_buy(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_buy(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_buy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_buy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_change_unit_to_prev {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -771,39 +621,27 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnChangeUnitToPrev",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnChangeUnitToPrev",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_change_unit_to_prev(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_change_unit_to_prev(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_change_unit_to_prev::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_change_unit_to_prev::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_change_unit_to_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -816,41 +654,28 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnChangeUnitToNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnChangeUnitToNext",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_change_unit_to_next(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_change_unit_to_next(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_change_unit_to_next::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_change_unit_to_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_change_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
                 "OnChangeKind",
@@ -862,18 +687,15 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnChangeKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnChangeKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_change_kind(
@@ -881,24 +703,15 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         accessory_data: crate::app::accessorydata::AccessoryData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AccessoryShopBuyRoot,
-            crate::app::accessorydata::AccessoryData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_change_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AccessoryShopBuyRoot, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_change_kind::get_method_info().method_ptr);
         inner(this, accessory_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_start_watching {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -911,39 +724,27 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnStartWatching",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnStartWatching",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_start_watching(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn on_start_watching(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_start_watching::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_start_watching::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_end_watching {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -956,39 +757,27 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnEndWatching",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnEndWatching",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_end_watching(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_end_watching(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_end_watching::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_end_watching::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_show_ui {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -1001,39 +790,27 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnShowUI",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnShowUI",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_show_ui(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_show_ui(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_show_ui::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_show_ui::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_hide_ui {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -1046,39 +823,27 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnHideUI",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnHideUI",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_hide_ui(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_hide_ui(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_hide_ui::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_hide_ui::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_request_close_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::class(),
@@ -1091,30 +856,20 @@ mod __AccessoryShopBuyRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnRequestCloseMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryShopBuyRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnRequestCloseMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_request_close_menu(
-        this: AccessoryShopBuyRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_request_close_menu(this: AccessoryShopBuyRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AccessoryShopBuyRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_request_close_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_request_close_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1123,27 +878,24 @@ mod __AccessoryShopBuyRoot_unity2_raw {
 impl AccessoryShopBuyRoot {
     #[doc = "`LoadPrefabAsync()` overload"]
     pub fn load_prefab_async() -> () {
-        unsafe {
-            __AccessoryShopBuyRoot_unity2_raw::load_prefab_async(::core::option::Option::None)
-        }
+        unsafe { __AccessoryShopBuyRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
     }
+
     #[doc = "`IsLoadingPrefab()` overload"]
     pub fn is_loading_prefab() -> bool {
-        unsafe {
-            __AccessoryShopBuyRoot_unity2_raw::is_loading_prefab(::core::option::Option::None)
-        }
+        unsafe { __AccessoryShopBuyRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`UnloadPrefab()` overload"]
     pub fn unload_prefab() -> () {
         unsafe { __AccessoryShopBuyRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        return_event_handler: impl ::core::convert::Into<
-            crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
-        >,
+        return_event_handler: impl ::core::convert::Into<crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler>,
     ) -> crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot {
         unsafe {
             __AccessoryShopBuyRoot_unity2_raw::create_bind(
@@ -1154,16 +906,10 @@ impl AccessoryShopBuyRoot {
             )
         }
     }
+
     #[doc = "`Destroy(crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot)` overload"]
-    pub fn destroy(
-        root: impl ::core::convert::Into<crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot>,
-    ) -> () {
-        unsafe {
-            __AccessoryShopBuyRoot_unity2_raw::destroy(
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn destroy(root: impl ::core::convert::Into<crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot>) -> () {
+        unsafe { __AccessoryShopBuyRoot_unity2_raw::destroy(::core::convert::Into::into(root), ::core::option::Option::None) }
     }
 }
 
@@ -1174,14 +920,11 @@ pub trait IAccessoryShopBuyRootMethods: IAccessoryShopBuyRoot {
         self,
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        return_event_handler: impl ::core::convert::Into<
-            crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
-        >,
+        return_event_handler: impl ::core::convert::Into<crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AccessoryShopBuyRoot_unity2_raw::create(
                 __receiver,
                 ::core::convert::Into::into(super_),
@@ -1194,21 +937,16 @@ pub trait IAccessoryShopBuyRootMethods: IAccessoryShopBuyRoot {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AccessoryShopBuyRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelectMenuItem(crate::app::accessorydata::AccessoryData)` overload"]
-    fn on_select_menu_item(
-        self,
-        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
-    ) -> () {
+    fn on_select_menu_item(self, accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AccessoryShopBuyRoot_unity2_raw::on_select_menu_item(
                 __receiver,
                 ::core::convert::Into::into(accessory_data),
@@ -1217,14 +955,10 @@ pub trait IAccessoryShopBuyRootMethods: IAccessoryShopBuyRoot {
         }
     }
     #[doc = "`OnDecideMenuItem(crate::app::accessorydata::AccessoryData)` overload"]
-    fn on_decide_menu_item(
-        self,
-        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
-    ) -> () {
+    fn on_decide_menu_item(self, accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AccessoryShopBuyRoot_unity2_raw::on_decide_menu_item(
                 __receiver,
                 ::core::convert::Into::into(accessory_data),
@@ -1235,116 +969,81 @@ pub trait IAccessoryShopBuyRootMethods: IAccessoryShopBuyRoot {
     #[doc = "`OnDisposeConfirmDialog()` overload"]
     fn on_dispose_confirm_dialog(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AccessoryShopBuyRoot_unity2_raw::on_dispose_confirm_dialog(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AccessoryShopBuyRoot_unity2_raw::on_dispose_confirm_dialog(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnBuy()` overload"]
     fn on_buy(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AccessoryShopBuyRoot_unity2_raw::on_buy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnChangeUnitToPrev()` overload"]
     fn on_change_unit_to_prev(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AccessoryShopBuyRoot_unity2_raw::on_change_unit_to_prev(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AccessoryShopBuyRoot_unity2_raw::on_change_unit_to_prev(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnChangeUnitToNext()` overload"]
     fn on_change_unit_to_next(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AccessoryShopBuyRoot_unity2_raw::on_change_unit_to_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AccessoryShopBuyRoot_unity2_raw::on_change_unit_to_next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnChangeKind(crate::app::accessorydata::AccessoryData)` overload"]
-    fn on_change_kind(
-        self,
-        accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
-    ) -> () {
+    fn on_change_kind(self, accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AccessoryShopBuyRoot_unity2_raw::on_change_kind(
-                __receiver,
-                ::core::convert::Into::into(accessory_data),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AccessoryShopBuyRoot_unity2_raw::on_change_kind(__receiver, ::core::convert::Into::into(accessory_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnStartWatching()` overload"]
     fn on_start_watching(self) -> bool {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AccessoryShopBuyRoot_unity2_raw::on_start_watching(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AccessoryShopBuyRoot_unity2_raw::on_start_watching(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEndWatching()` overload"]
     fn on_end_watching(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AccessoryShopBuyRoot_unity2_raw::on_end_watching(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AccessoryShopBuyRoot_unity2_raw::on_end_watching(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnShowUI()` overload"]
     fn on_show_ui(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AccessoryShopBuyRoot_unity2_raw::on_show_ui(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnHideUI()` overload"]
     fn on_hide_ui(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AccessoryShopBuyRoot_unity2_raw::on_hide_ui(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnRequestCloseMenu()` overload"]
     fn on_request_close_menu(self) -> () {
         unsafe {
-            let __receiver = <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AccessoryShopBuyRoot_unity2_raw::on_request_close_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AccessoryShopBuyRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AccessoryShopBuyRoot_unity2_raw::on_request_close_menu(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1371,31 +1070,26 @@ impl AccessoryShopBuyRoot {
 #[cfg(feature = "app-accessoryshopbuyroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryShopBuyRoot;
-    pub use super::AccessoryShopBuyRoot_ReturnEventHandler;
-    pub use super::IAccessoryShopBuyRoot;
-    pub use super::IAccessoryShopBuyRootMethods;
-    pub use super::IAccessoryShopBuyRoot_ReturnEventHandler;
-    pub use super::IAccessoryShopBuyRoot_ReturnEventHandlerMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        AccessoryShopBuyRoot, AccessoryShopBuyRoot_ReturnEventHandler, IAccessoryShopBuyRoot, IAccessoryShopBuyRootMethods,
+        IAccessoryShopBuyRoot_ReturnEventHandler, IAccessoryShopBuyRoot_ReturnEventHandlerMethods,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

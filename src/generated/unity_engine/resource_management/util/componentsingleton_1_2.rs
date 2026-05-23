@@ -2,20 +2,21 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/componentsingleton_1_2/ComponentSingleton_1_2.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.Util",
-        name = "ComponentSingleton`1"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "ComponentSingleton`1")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     #[parent(crate::unity_engine::behaviour::Behaviour)]
     #[parent(crate::unity_engine::component::Component)]
@@ -86,22 +87,19 @@ impl<T0: ::unity2::ClassIdentity> ComponentSingleton_1_2<T0> {
 #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ComponentSingleton_1_2;
-    pub use super::IComponentSingleton_1_2;
-    pub use super::IComponentSingleton_1_2Methods;
-    pub use crate::system::object::IObject;
+    pub use super::{ComponentSingleton_1_2, IComponentSingleton_1_2, IComponentSingleton_1_2Methods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

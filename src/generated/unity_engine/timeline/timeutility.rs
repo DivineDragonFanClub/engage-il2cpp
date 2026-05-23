@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-timeline-timeutility-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timeutility/TimeUtility.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeUtility")]
@@ -35,12 +35,9 @@ mod __TimeUtility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_animation_clip_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimeUtility as ::unity2::ClassIdentity>::class(),
                 "GetAnimationClipLength",
@@ -52,73 +49,49 @@ mod __TimeUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimeUtility as ::unity2::ClassIdentity>::NAME,
-                    "GetAnimationClipLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimeUtility as ::unity2::ClassIdentity>::NAME,
+                        "GetAnimationClipLength",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_animation_clip_length(
         clip: crate::unity_engine::animationclip::AnimationClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f64 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationclip::AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> f64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_animation_clip_length::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod) -> f64 =
+            ::core::mem::transmute(__lookup_get_animation_clip_length::get_method_info().method_ptr);
         inner(clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimeUtility as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TimeUtility as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimeUtility as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimeUtility as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -126,16 +99,10 @@ mod __TimeUtility_unity2_raw {
 #[cfg(feature = "unity_engine-timeline-timeutility")]
 impl TimeUtility {
     #[doc = "`GetAnimationClipLength(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    pub fn get_animation_clip_length(
-        clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
-    ) -> f64 {
-        unsafe {
-            __TimeUtility_unity2_raw::get_animation_clip_length(
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_animation_clip_length(clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>) -> f64 {
+        unsafe { __TimeUtility_unity2_raw::get_animation_clip_length(::core::convert::Into::into(clip), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TimeUtility_unity2_raw::cctor(::core::option::Option::None) }
@@ -145,8 +112,7 @@ impl TimeUtility {
 #[cfg(feature = "unity_engine-timeline-timeutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITimeUtility;
-    pub use super::TimeUtility;
+    pub use super::{ITimeUtility, TimeUtility};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

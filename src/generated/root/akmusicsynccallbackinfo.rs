@@ -2,11 +2,13 @@
 
 #[cfg(feature = "root-akmusicsynccallbackinfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::root::akcallbackinfo::{AkCallbackInfo, IAkCallbackInfo};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        root::akcallbackinfo::{AkCallbackInfo, IAkCallbackInfo},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmusicsynccallbackinfo/AkMusicSyncCallbackInfo.md"))]
     #[::unity2::class(namespace = "", name = "AkMusicSyncCallbackInfo")]
@@ -29,13 +31,9 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -47,18 +45,15 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -67,26 +62,17 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         c_memory_own: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkMusicSyncCallbackInfo,
-            ::unity2::IntPtr,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, c_ptr, c_memory_own, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akmusicsynccallbackinfo :: AkMusicSyncCallbackInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
                 "getCPtr",
@@ -98,43 +84,31 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "getCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "getCPtr",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_ptr(
         obj: crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_ptr::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_get_c_ptr::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
                 "setCPtr",
@@ -146,43 +120,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "setCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "setCPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_c_ptr(
-        this: AkMusicSyncCallbackInfo,
-        c_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkMusicSyncCallbackInfo,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_c_ptr::get_offset() as isize),
-        );
+    pub unsafe fn set_c_ptr(this: AkMusicSyncCallbackInfo, c_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_c_ptr::get_method_info().method_ptr);
         inner(this, c_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -195,39 +153,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -240,39 +186,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_playing_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -285,39 +219,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_playingID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_playingID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_playing_id(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
+    pub unsafe fn get_playing_id(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_playing_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_playing_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_i_current_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -330,39 +252,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_iCurrentPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_iCurrentPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_i_current_position(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_segment_info_i_current_position(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_segment_info_i_current_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_i_current_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_i_pre_entry_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -375,39 +285,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_iPreEntryDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_iPreEntryDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_i_pre_entry_duration(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_segment_info_i_pre_entry_duration(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_segment_info_i_pre_entry_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_i_pre_entry_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_i_active_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -420,39 +318,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_iActiveDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_iActiveDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_i_active_duration(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_segment_info_i_active_duration(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_segment_info_i_active_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_i_active_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_i_post_exit_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -465,39 +351,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_iPostExitDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_iPostExitDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_i_post_exit_duration(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_segment_info_i_post_exit_duration(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_segment_info_i_post_exit_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_i_post_exit_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_i_remaining_look_ahead_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -510,42 +384,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_iRemainingLookAheadTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_iRemainingLookAheadTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_i_remaining_look_ahead_time(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_segment_info_i_remaining_look_ahead_time(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_get_segment_info_i_remaining_look_ahead_time::get_offset()
-                            as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_i_remaining_look_ahead_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_f_beat_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -558,39 +417,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_fBeatDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_fBeatDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_f_beat_duration(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_segment_info_f_beat_duration(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_segment_info_f_beat_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_f_beat_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_f_bar_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -603,39 +450,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_fBarDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_fBarDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_f_bar_duration(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_segment_info_f_bar_duration(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_segment_info_f_bar_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_f_bar_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_f_grid_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -648,39 +483,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_fGridDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_fGridDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_f_grid_duration(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_segment_info_f_grid_duration(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_segment_info_f_grid_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_f_grid_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_segment_info_f_grid_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -693,39 +516,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_segmentInfo_fGridOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_segmentInfo_fGridOffset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_segment_info_f_grid_offset(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_segment_info_f_grid_offset(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_segment_info_f_grid_offset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_segment_info_f_grid_offset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_music_sync_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -738,41 +549,30 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_musicSyncType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_musicSyncType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_music_sync_type(
         this: AkMusicSyncCallbackInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcallbacktype::AkCallbackType {
-        let inner: extern "C" fn(
-            AkMusicSyncCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::akcallbacktype::AkCallbackType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_music_sync_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> crate::root::akcallbacktype::AkCallbackType =
+            ::core::mem::transmute(__lookup_get_music_sync_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_user_cue_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -785,41 +585,27 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_userCueName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_userCueName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_user_cue_name(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            AkMusicSyncCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_user_cue_name::get_offset() as isize),
-        );
+    pub unsafe fn get_user_cue_name(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_user_cue_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -832,30 +618,20 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMusicSyncCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: AkMusicSyncCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: AkMusicSyncCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMusicSyncCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -863,31 +639,18 @@ mod __AkMusicSyncCallbackInfo_unity2_raw {
 #[cfg(feature = "root-akmusicsynccallbackinfo")]
 impl AkMusicSyncCallbackInfo {
     #[doc = "`getCPtr(crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo)` overload"]
-    pub fn get_c_ptr(
-        obj: impl ::core::convert::Into<crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __AkMusicSyncCallbackInfo_unity2_raw::get_c_ptr(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_c_ptr(obj: impl ::core::convert::Into<crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo>) -> ::unity2::IntPtr {
+        unsafe { __AkMusicSyncCallbackInfo_unity2_raw::get_c_ptr(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "root-akmusicsynccallbackinfo")]
 pub trait IAkMusicSyncCallbackInfoMethods: IAkMusicSyncCallbackInfo {
     #[doc = "`.ctor(::unity2::IntPtr, bool)` overload"]
-    fn ctor(
-        self,
-        c_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        c_memory_own: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>, c_memory_own: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMusicSyncCallbackInfo_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(c_ptr),
@@ -900,23 +663,15 @@ pub trait IAkMusicSyncCallbackInfoMethods: IAkMusicSyncCallbackInfo {
     fn set_c_ptr(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::set_c_ptr(
-                __receiver,
-                ::core::convert::Into::into(c_ptr),
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMusicSyncCallbackInfo_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
@@ -924,9 +679,7 @@ pub trait IAkMusicSyncCallbackInfoMethods: IAkMusicSyncCallbackInfo {
     fn dispose(self) -> () {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMusicSyncCallbackInfo_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
@@ -934,165 +687,103 @@ pub trait IAkMusicSyncCallbackInfoMethods: IAkMusicSyncCallbackInfo {
     fn get_playing_id(self) -> u32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_playing_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_playing_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_iCurrentPosition()` overload"]
     fn get_segment_info_i_current_position(self) -> i32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_current_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_current_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_iPreEntryDuration()` overload"]
     fn get_segment_info_i_pre_entry_duration(self) -> i32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_pre_entry_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_pre_entry_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_iActiveDuration()` overload"]
     fn get_segment_info_i_active_duration(self) -> i32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_active_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_active_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_iPostExitDuration()` overload"]
     fn get_segment_info_i_post_exit_duration(self) -> i32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_post_exit_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_post_exit_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_iRemainingLookAheadTime()` overload"]
     fn get_segment_info_i_remaining_look_ahead_time(self) -> i32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_remaining_look_ahead_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_i_remaining_look_ahead_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_fBeatDuration()` overload"]
     fn get_segment_info_f_beat_duration(self) -> f32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_f_beat_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_f_beat_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_fBarDuration()` overload"]
     fn get_segment_info_f_bar_duration(self) -> f32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_f_bar_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_f_bar_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_fGridDuration()` overload"]
     fn get_segment_info_f_grid_duration(self) -> f32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_f_grid_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_f_grid_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_segmentInfo_fGridOffset()` overload"]
     fn get_segment_info_f_grid_offset(self) -> f32 {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_f_grid_offset(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_segment_info_f_grid_offset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_musicSyncType()` overload"]
     fn get_music_sync_type(self) -> crate::root::akcallbacktype::AkCallbackType {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_music_sync_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_music_sync_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_userCueName()` overload"]
     fn get_user_cue_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMusicSyncCallbackInfo_unity2_raw::get_user_cue_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMusicSyncCallbackInfo_unity2_raw::get_user_cue_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor_2(self) -> () {
         unsafe {
             let __receiver =
-                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkMusicSyncCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMusicSyncCallbackInfo_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
         }
     }
@@ -1133,13 +824,10 @@ impl AkMusicSyncCallbackInfo {
 #[cfg(feature = "root-akmusicsynccallbackinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkMusicSyncCallbackInfo;
-    pub use super::IAkMusicSyncCallbackInfo;
-    pub use super::IAkMusicSyncCallbackInfoMethods;
-    pub use crate::root::akcallbackinfo::IAkCallbackInfo;
+    pub use super::{AkMusicSyncCallbackInfo, IAkMusicSyncCallbackInfo, IAkMusicSyncCallbackInfoMethods};
     #[cfg(feature = "root-akcallbackinfo")]
     pub use crate::root::akcallbackinfo::IAkCallbackInfoMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{root::akcallbackinfo::IAkCallbackInfo, system::object::IObject};
 }

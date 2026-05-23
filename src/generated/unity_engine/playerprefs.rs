@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-playerprefs-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playerprefs/PlayerPrefs.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "PlayerPrefs")]
@@ -25,104 +25,64 @@ mod __PlayerPrefs_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayerPrefs as ::unity2::ClassIdentity>::class(),
-                "GetInt",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayerPrefs as ::unity2::ClassIdentity>::class(), "GetInt", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerPrefs as ::unity2::ClassIdentity>::NAME,
-                    "GetInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerPrefs as ::unity2::ClassIdentity>::NAME,
+                        "GetInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_int(
-        key: ::unity2::Il2CppString,
-        default_value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_int(key: ::unity2::Il2CppString, default_value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_int::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_int::get_method_info().method_ptr);
         inner(key, default_value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_int_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayerPrefs as ::unity2::ClassIdentity>::class(),
-                "GetInt",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayerPrefs as ::unity2::ClassIdentity>::class(), "GetInt", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerPrefs as ::unity2::ClassIdentity>::NAME,
-                    "GetInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerPrefs as ::unity2::ClassIdentity>::NAME,
+                        "GetInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_int_2(
-        key: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_int_2(key: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_int_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_int_2::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -138,18 +98,15 @@ mod __PlayerPrefs_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerPrefs as ::unity2::ClassIdentity>::NAME,
-                    "GetString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerPrefs as ::unity2::ClassIdentity>::NAME,
+                        "GetString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_string(
@@ -157,26 +114,16 @@ mod __PlayerPrefs_unity2_raw {
         default_value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_string::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_string::get_method_info().method_ptr);
         inner(key, default_value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_string_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerPrefs as ::unity2::ClassIdentity>::class(),
                 "GetString",
@@ -188,32 +135,20 @@ mod __PlayerPrefs_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerPrefs as ::unity2::ClassIdentity>::NAME,
-                    "GetString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerPrefs as ::unity2::ClassIdentity>::NAME,
+                        "GetString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_string_2(
-        key: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_string_2::get_offset() as isize),
-        );
+    pub unsafe fn get_string_2(key: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_string_2::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
 }
@@ -221,10 +156,7 @@ mod __PlayerPrefs_unity2_raw {
 #[cfg(feature = "unity_engine-playerprefs")]
 impl PlayerPrefs {
     #[doc = "`GetInt(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_int(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        default_value: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_int(key: impl ::core::convert::Into<::unity2::Il2CppString>, default_value: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __PlayerPrefs_unity2_raw::get_int(
                 ::core::convert::Into::into(key),
@@ -233,15 +165,12 @@ impl PlayerPrefs {
             )
         }
     }
+
     #[doc = "`GetInt(::unity2::Il2CppString)` overload"]
     pub fn get_int_2(key: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __PlayerPrefs_unity2_raw::get_int_2(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayerPrefs_unity2_raw::get_int_2(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
+
     #[doc = "`GetString(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn get_string(
         key: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -255,24 +184,17 @@ impl PlayerPrefs {
             )
         }
     }
+
     #[doc = "`GetString(::unity2::Il2CppString)` overload"]
-    pub fn get_string_2(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __PlayerPrefs_unity2_raw::get_string_2(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_string_2(key: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __PlayerPrefs_unity2_raw::get_string_2(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-playerprefs")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPlayerPrefs;
-    pub use super::PlayerPrefs;
+    pub use super::{IPlayerPrefs, PlayerPrefs};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

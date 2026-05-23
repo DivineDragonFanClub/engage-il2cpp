@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-audio-audiomixerplayable-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/audio/audiomixerplayable/AudioMixerPlayable.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for AudioMixerPlayable {
-        const NAMESPACE: &'static str = "UnityEngine.Audio";
-
         const NAME: &'static str = "AudioMixerPlayable";
+        const NAMESPACE: &'static str = "UnityEngine.Audio";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,10 +30,7 @@ mod __types {
 
     impl ::unity2::IlType for AudioMixerPlayable {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -49,9 +47,7 @@ mod __AudioMixerPlayable_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AudioMixerPlayable as ::unity2::ClassIdentity>::class(),
@@ -64,44 +60,32 @@ mod __AudioMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AudioMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "GetHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AudioMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "GetHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_handle(
         this: AudioMixerPlayable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
-        let inner: extern "C" fn(
-            AudioMixerPlayable,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_handle::get_offset() as isize),
-            );
+        let inner: extern "C" fn(AudioMixerPlayable, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: audio :: audiomixerplayable :: AudioMixerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AudioMixerPlayable as ::unity2::ClassIdentity>::class(),
                 "Equals",
@@ -113,18 +97,15 @@ mod __AudioMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AudioMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AudioMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals(
@@ -136,11 +117,7 @@ mod __AudioMixerPlayable_unity2_raw {
             AudioMixerPlayable,
             crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
 }
@@ -151,20 +128,10 @@ impl AudioMixerPlayable {
     pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
         unsafe { __AudioMixerPlayable_unity2_raw::get_handle(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable)` overload"]
-    pub fn equals(
-        self,
-        other: impl ::core::convert::Into<
-            crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable,
-        >,
-    ) -> bool {
-        unsafe {
-            __AudioMixerPlayable_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::audio::audiomixerplayable::AudioMixerPlayable>) -> bool {
+        unsafe { __AudioMixerPlayable_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
 }
 
@@ -172,10 +139,9 @@ impl AudioMixerPlayable {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AudioMixerPlayable;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-runtimeanimationeventutility-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/runtimeanimationeventutility/RuntimeAnimationEventUtility.md"))]
     #[::unity2::class(namespace = "Combat", name = "RuntimeAnimationEventUtility")]
@@ -25,10 +25,11 @@ mod __RuntimeAnimationEventUtility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_find_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: animationevent :: AnimationEvent > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::animationevent::AnimationEvent> as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RuntimeAnimationEventUtility as ::unity2::ClassIdentity>::class(),
                 "FindByName",
@@ -40,18 +41,15 @@ mod __RuntimeAnimationEventUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RuntimeAnimationEventUtility as ::unity2::ClassIdentity>::NAME,
-                    "FindByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RuntimeAnimationEventUtility as ::unity2::ClassIdentity>::NAME,
+                        "FindByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_by_name(
@@ -63,11 +61,7 @@ mod __RuntimeAnimationEventUtility_unity2_raw {
             ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationevent::AnimationEvent = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_by_name::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::animationevent::AnimationEvent = ::core::mem::transmute(__lookup_find_by_name::get_method_info().method_ptr);
         inner(events, name, __unity2_method_info)
     }
 }
@@ -76,9 +70,7 @@ mod __RuntimeAnimationEventUtility_unity2_raw {
 impl RuntimeAnimationEventUtility {
     #[doc = "`FindByName(::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>, ::unity2::Il2CppString)` overload"]
     pub fn find_by_name(
-        events: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
-        >,
+        events: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>>,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::unity_engine::animationevent::AnimationEvent {
         unsafe {
@@ -94,8 +86,7 @@ impl RuntimeAnimationEventUtility {
 #[cfg(feature = "combat-runtimeanimationeventutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRuntimeAnimationEventUtility;
-    pub use super::RuntimeAnimationEventUtility;
+    pub use super::{IRuntimeAnimationEventUtility, RuntimeAnimationEventUtility};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

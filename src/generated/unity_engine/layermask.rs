@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-layermask-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/layermask/LayerMask.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for LayerMask {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "LayerMask";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,10 +30,7 @@ mod __types {
 
     impl ::unity2::IlType for LayerMask {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -49,11 +47,8 @@ mod __LayerMask_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayerMask as ::unity2::ClassIdentity>::class(),
                 "op_Implicit",
@@ -65,43 +60,28 @@ mod __LayerMask_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayerMask as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayerMask as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_implicit(
-        mask: crate::unity_engine::layermask::LayerMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::layermask::LayerMask,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit::get_offset() as isize),
-        );
+    pub unsafe fn op_implicit(mask: crate::unity_engine::layermask::LayerMask, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::unity_engine::layermask::LayerMask, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayerMask as ::unity2::ClassIdentity>::class(),
                 "op_Implicit",
@@ -113,88 +93,55 @@ mod __LayerMask_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayerMask as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayerMask as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_implicit_2(
-        int_val: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::layermask::LayerMask {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::layermask::LayerMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit_2::get_offset() as isize),
-        );
+    pub unsafe fn op_implicit_2(int_val: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::layermask::LayerMask {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::layermask::LayerMask =
+            ::core::mem::transmute(__lookup_op_implicit_2::get_method_info().method_ptr);
         inner(int_val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LayerMask as ::unity2::ClassIdentity>::class(),
-                "get_value",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<LayerMask as ::unity2::ClassIdentity>::class(), "get_value", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayerMask as ::unity2::ClassIdentity>::NAME,
-                    "get_value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayerMask as ::unity2::ClassIdentity>::NAME,
+                        "get_value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value(
-        this: LayerMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value(this: LayerMask, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(LayerMask, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_layer_to_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayerMask as ::unity2::ClassIdentity>::class(),
                 "LayerToName",
@@ -206,41 +153,28 @@ mod __LayerMask_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayerMask as ::unity2::ClassIdentity>::NAME,
-                    "LayerToName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayerMask as ::unity2::ClassIdentity>::NAME,
+                        "LayerToName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn layer_to_name(
-        layer: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn layer_to_name(layer: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_layer_to_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_layer_to_name::get_method_info().method_ptr);
         inner(layer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_name_to_layer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayerMask as ::unity2::ClassIdentity>::class(),
                 "NameToLayer",
@@ -252,78 +186,47 @@ mod __LayerMask_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayerMask as ::unity2::ClassIdentity>::NAME,
-                    "NameToLayer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayerMask as ::unity2::ClassIdentity>::NAME,
+                        "NameToLayer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn name_to_layer(
-        layer_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn name_to_layer(layer_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_name_to_layer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_name_to_layer::get_method_info().method_ptr);
         inner(layer_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LayerMask as ::unity2::ClassIdentity>::class(),
-                "GetMask",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<LayerMask as ::unity2::ClassIdentity>::class(), "GetMask", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayerMask as ::unity2::ClassIdentity>::NAME,
-                    "GetMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayerMask as ::unity2::ClassIdentity>::NAME,
+                        "GetMask",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mask(
-        layer_names: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mask::get_offset() as isize),
-        );
+    pub unsafe fn get_mask(layer_names: ::unity2::Array<::unity2::Il2CppString>, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_mask::get_method_info().method_ptr);
         inner(layer_names, __unity2_method_info)
     }
 }
@@ -331,55 +234,28 @@ mod __LayerMask_unity2_raw {
 #[cfg(feature = "unity_engine-layermask")]
 impl LayerMask {
     #[doc = "`op_Implicit(crate::unity_engine::layermask::LayerMask)` overload"]
-    pub fn op_implicit(
-        mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
-    ) -> i32 {
-        unsafe {
-            __LayerMask_unity2_raw::op_implicit(
-                ::core::convert::Into::into(mask),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_implicit(mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>) -> i32 {
+        unsafe { __LayerMask_unity2_raw::op_implicit(::core::convert::Into::into(mask), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Implicit(i32)` overload"]
-    pub fn op_implicit_2(
-        int_val: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::layermask::LayerMask {
-        unsafe {
-            __LayerMask_unity2_raw::op_implicit_2(
-                ::core::convert::Into::into(int_val),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_implicit_2(int_val: impl ::core::convert::Into<i32>) -> crate::unity_engine::layermask::LayerMask {
+        unsafe { __LayerMask_unity2_raw::op_implicit_2(::core::convert::Into::into(int_val), ::core::option::Option::None) }
     }
+
     #[doc = "`LayerToName(i32)` overload"]
     pub fn layer_to_name(layer: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            __LayerMask_unity2_raw::layer_to_name(
-                ::core::convert::Into::into(layer),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __LayerMask_unity2_raw::layer_to_name(::core::convert::Into::into(layer), ::core::option::Option::None) }
     }
+
     #[doc = "`NameToLayer(::unity2::Il2CppString)` overload"]
     pub fn name_to_layer(layer_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __LayerMask_unity2_raw::name_to_layer(
-                ::core::convert::Into::into(layer_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __LayerMask_unity2_raw::name_to_layer(::core::convert::Into::into(layer_name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMask(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    pub fn get_mask(
-        layer_names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> i32 {
-        unsafe {
-            __LayerMask_unity2_raw::get_mask(
-                ::core::convert::Into::into(layer_names),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_mask(layer_names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> i32 {
+        unsafe { __LayerMask_unity2_raw::get_mask(::core::convert::Into::into(layer_names), ::core::option::Option::None) }
     }
 }
 
@@ -395,10 +271,9 @@ impl LayerMask {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::LayerMask;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

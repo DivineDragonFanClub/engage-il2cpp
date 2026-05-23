@@ -2,9 +2,9 @@
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-idebugger-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/idebugger/IDebugger.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Debugging", name = "IDebugger")]
@@ -23,9 +23,7 @@ mod __IDebugger_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_debugger_caps {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
@@ -38,35 +36,32 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "GetDebuggerCaps",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "GetDebuggerCaps",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_debugger_caps(
         this: IDebugger,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps {
-        let inner : extern "C" fn (IDebugger , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: debuggercaps :: DebuggerCaps = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_debugger_caps :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(IDebugger, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps =
+            ::core::mem::transmute(__lookup_get_debugger_caps::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_debug_service {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: debugservice :: DebugService as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::debugging::debugservice::DebugService as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
                 "SetDebugService",
@@ -78,18 +73,15 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "SetDebugService",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "SetDebugService",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_debug_service(
@@ -97,25 +89,17 @@ mod __IDebugger_unity2_raw {
         debug_service: crate::moon_sharp::interpreter::debugging::debugservice::DebugService,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            IDebugger,
-            crate::moon_sharp::interpreter::debugging::debugservice::DebugService,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_debug_service::get_offset() as isize),
-        );
+        let inner: extern "C" fn(IDebugger, crate::moon_sharp::interpreter::debugging::debugservice::DebugService, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_debug_service::get_method_info().method_ptr);
         inner(this, debug_service, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_source_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
                 "SetSourceCode",
@@ -127,18 +111,15 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "SetSourceCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "SetSourceCode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_source_code(
@@ -146,26 +127,16 @@ mod __IDebugger_unity2_raw {
         source_code: crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            IDebugger,
-            crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_source_code::get_offset() as isize),
-        );
+        let inner: extern "C" fn(IDebugger, crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_source_code::get_method_info().method_ptr);
         inner(this, source_code, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_byte_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
                 "SetByteCode",
@@ -177,18 +148,15 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "SetByteCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "SetByteCode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_byte_code(
@@ -196,24 +164,15 @@ mod __IDebugger_unity2_raw {
         byte_code: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            IDebugger,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_byte_code::get_offset() as isize),
-        );
+        let inner: extern "C" fn(IDebugger, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_byte_code::get_method_info().method_ptr);
         inner(this, byte_code, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_pause_requested {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
@@ -226,40 +185,29 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "IsPauseRequested",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "IsPauseRequested",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_pause_requested(
-        this: IDebugger,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_pause_requested(this: IDebugger, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(IDebugger, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_pause_requested::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_pause_requested::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_signal_runtime_exception {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptruntimeexception :: ScriptRuntimeException as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
                 "SignalRuntimeException",
@@ -271,18 +219,15 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "SignalRuntimeException",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "SignalRuntimeException",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn signal_runtime_exception(
@@ -294,44 +239,32 @@ mod __IDebugger_unity2_raw {
             IDebugger,
             crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_signal_runtime_exception::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_signal_runtime_exception::get_method_info().method_ptr);
         inner(this, ex, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IDebugger as ::unity2::ClassIdentity>::class(),
-                "GetAction",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<IDebugger as ::unity2::ClassIdentity>::class(), "GetAction", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "GetAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "GetAction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_action(
@@ -340,16 +273,20 @@ mod __IDebugger_unity2_raw {
         sourceref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction {
-        let inner : extern "C" fn (IDebugger , i32 , crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: debuggeraction :: DebuggerAction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_action :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            IDebugger,
+            i32,
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction =
+            ::core::mem::transmute(__lookup_get_action::get_method_info().method_ptr);
         inner(this, ip, sourceref, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_signal_execution_ended {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
@@ -362,94 +299,69 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "SignalExecutionEnded",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "SignalExecutionEnded",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn signal_execution_ended(
-        this: IDebugger,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn signal_execution_ended(this: IDebugger, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(IDebugger, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_signal_execution_ended::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_signal_execution_ended::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: watchtype :: WatchType as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: debugging :: watchitem :: WatchItem > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IDebugger as ::unity2::ClassIdentity>::class(),
-                "Update",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[
+                    <crate::moon_sharp::interpreter::debugging::watchtype::WatchType as ::unity2::IlType>::il_type(),
+                    <crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                        crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
+                    > as ::unity2::IlType>::il_type(),
+                ];
+            ::unity2::lookup::method_info_on_class_with_signature(<IDebugger as ::unity2::ClassIdentity>::class(), "Update", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(
         this: IDebugger,
         watch_type: crate::moon_sharp::interpreter::debugging::watchtype::WatchType,
-        items: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
-        >,
+        items: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             IDebugger,
             crate::moon_sharp::interpreter::debugging::watchtype::WatchType,
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, watch_type, items, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_watch_items {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
@@ -462,50 +374,37 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "GetWatchItems",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "GetWatchItems",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_watch_items(
         this: IDebugger,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression> {
         let inner: extern "C" fn(
             IDebugger,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_watch_items::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_get_watch_items::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_refresh_breakpoints {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                    crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDebugger as ::unity2::ClassIdentity>::class(),
                 "RefreshBreakpoints",
@@ -517,38 +416,27 @@ mod __IDebugger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugger as ::unity2::ClassIdentity>::NAME,
-                    "RefreshBreakpoints",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugger as ::unity2::ClassIdentity>::NAME,
+                        "RefreshBreakpoints",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn refresh_breakpoints(
         this: IDebugger,
-        refs: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
+        refs: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             IDebugger,
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_refresh_breakpoints::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_refresh_breakpoints::get_method_info().method_ptr);
         inner(this, refs, __unity2_method_info)
     }
 }
@@ -556,107 +444,61 @@ mod __IDebugger_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-debugging-idebugger")]
 pub trait IIDebuggerMethods: IIDebugger {
     #[doc = "`GetDebuggerCaps()` overload"]
-    fn get_debugger_caps(
-        self,
-    ) -> crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps {
+    fn get_debugger_caps(self) -> crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDebugger_unity2_raw::get_debugger_caps(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetDebugService(crate::moon_sharp::interpreter::debugging::debugservice::DebugService)` overload"]
     fn set_debug_service(
         self,
-        debug_service: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::debugservice::DebugService,
-        >,
+        debug_service: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::debugservice::DebugService>,
     ) -> () {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDebugger_unity2_raw::set_debug_service(
-                __receiver,
-                ::core::convert::Into::into(debug_service),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDebugger_unity2_raw::set_debug_service(__receiver, ::core::convert::Into::into(debug_service), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSourceCode(crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)` overload"]
-    fn set_source_code(
-        self,
-        source_code: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
-        >,
-    ) -> () {
+    fn set_source_code(self, source_code: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>) -> () {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDebugger_unity2_raw::set_source_code(
-                __receiver,
-                ::core::convert::Into::into(source_code),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDebugger_unity2_raw::set_source_code(__receiver, ::core::convert::Into::into(source_code), ::core::option::Option::None)
         }
     }
     #[doc = "`SetByteCode(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn set_byte_code(
-        self,
-        byte_code: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    fn set_byte_code(self, byte_code: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDebugger_unity2_raw::set_byte_code(
-                __receiver,
-                ::core::convert::Into::into(byte_code),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDebugger_unity2_raw::set_byte_code(__receiver, ::core::convert::Into::into(byte_code), ::core::option::Option::None)
         }
     }
     #[doc = "`IsPauseRequested()` overload"]
     fn is_pause_requested(self) -> bool {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDebugger_unity2_raw::is_pause_requested(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SignalRuntimeException(crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException)` overload"]
     fn signal_runtime_exception(
         self,
-        ex: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException,
-        >,
+        ex: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException>,
     ) -> bool {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDebugger_unity2_raw::signal_runtime_exception(
-                __receiver,
-                ::core::convert::Into::into(ex),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDebugger_unity2_raw::signal_runtime_exception(__receiver, ::core::convert::Into::into(ex), ::core::option::Option::None)
         }
     }
     #[doc = "`GetAction(i32, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]
     fn get_action(
         self,
         ip: impl ::core::convert::Into<i32>,
-        sourceref: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
+        sourceref: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>,
     ) -> crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDebugger_unity2_raw::get_action(
                 __receiver,
                 ::core::convert::Into::into(ip),
@@ -668,28 +510,20 @@ pub trait IIDebuggerMethods: IIDebugger {
     #[doc = "`SignalExecutionEnded()` overload"]
     fn signal_execution_ended(self) -> () {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDebugger_unity2_raw::signal_execution_ended(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update(crate::moon_sharp::interpreter::debugging::watchtype::WatchType, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>)` overload"]
     fn update(
         self,
-        watch_type: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::watchtype::WatchType,
-        >,
+        watch_type: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::watchtype::WatchType>,
         items: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDebugger_unity2_raw::update(
                 __receiver,
                 ::core::convert::Into::into(watch_type),
@@ -701,13 +535,9 @@ pub trait IIDebuggerMethods: IIDebugger {
     #[doc = "`GetWatchItems()` overload"]
     fn get_watch_items(
         self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression> {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDebugger_unity2_raw::get_watch_items(__receiver, ::core::option::Option::None)
         }
     }
@@ -715,20 +545,12 @@ pub trait IIDebuggerMethods: IIDebugger {
     fn refresh_breakpoints(
         self,
         refs: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDebugger_unity2_raw::refresh_breakpoints(
-                __receiver,
-                ::core::convert::Into::into(refs),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDebugger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDebugger_unity2_raw::refresh_breakpoints(__receiver, ::core::convert::Into::into(refs), ::core::option::Option::None)
         }
     }
 }
@@ -739,7 +561,5 @@ impl<__T: IIDebugger> IIDebuggerMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-debugging-idebugger")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IDebugger;
-    pub use super::IIDebugger;
-    pub use super::IIDebuggerMethods;
+    pub use super::{IDebugger, IIDebugger, IIDebuggerMethods};
 }

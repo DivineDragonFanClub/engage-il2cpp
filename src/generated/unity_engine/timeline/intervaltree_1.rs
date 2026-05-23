@@ -2,11 +2,23 @@
 
 #[cfg(feature = "unity_engine-timeline-intervaltree_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/intervaltree_1/IntervalTree_1.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "IntervalTree`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct IntervalTree_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Entries")]
+        pub m_entries: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::intervaltree_1::IntervalTree_1_Entry<T0>>,
+        #[rename(name = "m_Nodes")]
+        pub m_nodes: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::intervaltreenode::IntervalTreeNode>,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/intervaltree_1/IntervalTree_1_Entry.md"))]
     #[repr(C)]
@@ -16,9 +28,8 @@ mod __types {
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for IntervalTree_1_Entry<T0> {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
         const NAME: &'static str = "IntervalTree`1.Entry";
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,25 +44,8 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for IntervalTree_1_Entry<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/intervaltree_1/IntervalTree_1.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "IntervalTree`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct IntervalTree_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Entries")]
-        pub m_entries: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1_Entry<T0>,
-        >,
-        #[rename(name = "m_Nodes")]
-        pub m_nodes: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::intervaltreenode::IntervalTreeNode,
-        >,
     }
 }
 
@@ -75,11 +69,7 @@ impl<T0: ::unity2::ClassIdentity> IntervalTree_1<T0> {
 
     #[doc = "`IntersectsWith(i64, crate::system::collections::generic::list_1::List_1<T0>)` overload"]
     #[method(name = "IntersectsWith", args = 2)]
-    pub fn intersects_with(
-        self,
-        value: i64,
-        results: crate::system::collections::generic::list_1::List_1<T0>,
-    ) -> ();
+    pub fn intersects_with(self, value: i64, results: crate::system::collections::generic::list_1::List_1<T0>) -> ();
 
     #[doc = "`Query(crate::unity_engine::timeline::intervaltreenode::IntervalTreeNode, i64, crate::system::collections::generic::list_1::List_1<T0>)` overload"]
     #[method(name = "Query", args = 3)]
@@ -122,14 +112,10 @@ impl<T0: ::unity2::ClassIdentity> IntervalTree_1<T0> {
 #[cfg(feature = "unity_engine-timeline-intervaltree_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIntervalTree_1;
-    pub use super::IIntervalTree_1Methods;
-    pub use super::IntervalTree_1;
-    pub use super::IntervalTree_1_Entry;
-    pub use crate::system::object::IObject;
+    pub use super::{IIntervalTree_1, IIntervalTree_1Methods, IntervalTree_1, IntervalTree_1_Entry};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

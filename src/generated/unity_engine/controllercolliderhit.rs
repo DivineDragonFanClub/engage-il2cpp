@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-controllercolliderhit-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/controllercolliderhit/ControllerColliderHit.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ControllerColliderHit")]
@@ -34,8 +34,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-controllercolliderhit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ControllerColliderHit;
-    pub use super::IControllerColliderHit;
+    pub use super::{ControllerColliderHit, IControllerColliderHit};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

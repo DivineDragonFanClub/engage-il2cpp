@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-event_systems-ibegindraghandler-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ibegindraghandler/IBeginDragHandler.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IBeginDragHandler")]
@@ -23,10 +23,9 @@ mod __IBeginDragHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_begin_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IBeginDragHandler as ::unity2::ClassIdentity>::class(),
                 "OnBeginDrag",
@@ -38,18 +37,15 @@ mod __IBeginDragHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IBeginDragHandler as ::unity2::ClassIdentity>::NAME,
-                    "OnBeginDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IBeginDragHandler as ::unity2::ClassIdentity>::NAME,
+                        "OnBeginDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_begin_drag(
@@ -61,11 +57,7 @@ mod __IBeginDragHandler_unity2_raw {
             IBeginDragHandler,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_begin_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_begin_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
 }
@@ -73,21 +65,10 @@ mod __IBeginDragHandler_unity2_raw {
 #[cfg(feature = "unity_engine-event_systems-ibegindraghandler")]
 pub trait IIBeginDragHandlerMethods: IIBeginDragHandler {
     #[doc = "`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_begin_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_begin_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <IBeginDragHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IBeginDragHandler_unity2_raw::on_begin_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IBeginDragHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IBeginDragHandler_unity2_raw::on_begin_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
 }
@@ -98,7 +79,5 @@ impl<__T: IIBeginDragHandler> IIBeginDragHandlerMethods for __T {}
 #[cfg(feature = "unity_engine-event_systems-ibegindraghandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IBeginDragHandler;
-    pub use super::IIBeginDragHandler;
-    pub use super::IIBeginDragHandlerMethods;
+    pub use super::{IBeginDragHandler, IIBeginDragHandler, IIBeginDragHandlerMethods};
 }

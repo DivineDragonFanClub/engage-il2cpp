@@ -40,15 +40,11 @@ pub use comparer_1::{Comparer_1, IComparer_1};
 pub mod dictionary_2;
 #[cfg(feature = "system-collections-generic-dictionary_2-types")]
 pub use dictionary_2::{
-    Dictionary_2, Dictionary_2_Entry, Dictionary_2_Enumerator, Dictionary_2_KeyCollection,
-    Dictionary_2_KeyCollection_Enumerator, Dictionary_2_ValueCollection,
-    Dictionary_2_ValueCollection_Enumerator, IDictionary_2, IDictionary_2_KeyCollection,
-    IDictionary_2_ValueCollection,
+    Dictionary_2, Dictionary_2_Entry, Dictionary_2_Enumerator, Dictionary_2_KeyCollection, Dictionary_2_KeyCollection_Enumerator,
+    Dictionary_2_ValueCollection, Dictionary_2_ValueCollection_Enumerator, IDictionary_2, IDictionary_2_KeyCollection, IDictionary_2_ValueCollection,
 };
 #[cfg(feature = "system-collections-generic-dictionary_2")]
-pub use dictionary_2::{
-    IDictionary_2Methods, IDictionary_2_KeyCollectionMethods, IDictionary_2_ValueCollectionMethods,
-};
+pub use dictionary_2::{IDictionary_2Methods, IDictionary_2_KeyCollectionMethods, IDictionary_2_ValueCollectionMethods};
 #[cfg(any(feature = "system-collections-generic-dictionaryhashhelpers-types"))]
 pub mod dictionaryhashhelpers;
 #[cfg(feature = "system-collections-generic-dictionaryhashhelpers-types")]
@@ -56,15 +52,11 @@ pub use dictionaryhashhelpers::{DictionaryHashHelpers, IDictionaryHashHelpers};
 #[cfg(any(feature = "system-collections-generic-dictionarykeycollectiondebugview_2-types"))]
 pub mod dictionarykeycollectiondebugview_2;
 #[cfg(feature = "system-collections-generic-dictionarykeycollectiondebugview_2-types")]
-pub use dictionarykeycollectiondebugview_2::{
-    DictionaryKeyCollectionDebugView_2, IDictionaryKeyCollectionDebugView_2,
-};
+pub use dictionarykeycollectiondebugview_2::{DictionaryKeyCollectionDebugView_2, IDictionaryKeyCollectionDebugView_2};
 #[cfg(any(feature = "system-collections-generic-dictionaryvaluecollectiondebugview_2-types"))]
 pub mod dictionaryvaluecollectiondebugview_2;
 #[cfg(feature = "system-collections-generic-dictionaryvaluecollectiondebugview_2-types")]
-pub use dictionaryvaluecollectiondebugview_2::{
-    DictionaryValueCollectionDebugView_2, IDictionaryValueCollectionDebugView_2,
-};
+pub use dictionaryvaluecollectiondebugview_2::{DictionaryValueCollectionDebugView_2, IDictionaryValueCollectionDebugView_2};
 #[cfg(any(feature = "system-collections-generic-enumequalitycomparer_1-types"))]
 pub mod enumequalitycomparer_1;
 #[cfg(feature = "system-collections-generic-enumequalitycomparer_1")]
@@ -98,9 +90,7 @@ pub mod hashset_1;
 #[cfg(feature = "system-collections-generic-hashset_1")]
 pub use hashset_1::IHashSet_1Methods;
 #[cfg(feature = "system-collections-generic-hashset_1-types")]
-pub use hashset_1::{
-    HashSet_1, HashSet_1_ElementCount, HashSet_1_Enumerator, HashSet_1_Slot, IHashSet_1,
-};
+pub use hashset_1::{HashSet_1, HashSet_1_ElementCount, HashSet_1_Enumerator, HashSet_1_Slot, IHashSet_1};
 #[cfg(any(feature = "system-collections-generic-icollection_1-types"))]
 pub mod icollection_1;
 #[cfg(feature = "system-collections-generic-icollection_1")]
@@ -144,9 +134,7 @@ pub mod iequalitycomparer_1_interface;
 #[cfg(feature = "system-collections-generic-iequalitycomparer_1_interface")]
 pub use iequalitycomparer_1_interface::IIEqualityComparer_1_InterfaceMethods;
 #[cfg(feature = "system-collections-generic-iequalitycomparer_1_interface-types")]
-pub use iequalitycomparer_1_interface::{
-    IEqualityComparer_1_Interface, IIEqualityComparer_1_Interface,
-};
+pub use iequalitycomparer_1_interface::{IEqualityComparer_1_Interface, IIEqualityComparer_1_Interface};
 #[cfg(any(feature = "system-collections-generic-ilist_1_interface-types"))]
 pub mod ilist_1_interface;
 #[cfg(feature = "system-collections-generic-ilist_1_interface")]
@@ -230,9 +218,7 @@ pub use longenumequalitycomparer_1::{ILongEnumEqualityComparer_1, LongEnumEquali
 #[cfg(any(feature = "system-collections-generic-mscorlib_collectiondebugview_1-types"))]
 pub mod mscorlib_collectiondebugview_1;
 #[cfg(feature = "system-collections-generic-mscorlib_collectiondebugview_1-types")]
-pub use mscorlib_collectiondebugview_1::{
-    IMscorlib_CollectionDebugView_1, Mscorlib_CollectionDebugView_1,
-};
+pub use mscorlib_collectiondebugview_1::{IMscorlib_CollectionDebugView_1, Mscorlib_CollectionDebugView_1};
 #[cfg(any(feature = "system-collections-generic-nodecolor-types"))]
 pub mod nodecolor;
 #[cfg(feature = "system-collections-generic-nodecolor-types")]
@@ -242,9 +228,7 @@ pub mod nonrandomizedstringequalitycomparer;
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
 pub use nonrandomizedstringequalitycomparer::INonRandomizedStringEqualityComparerMethods;
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer-types")]
-pub use nonrandomizedstringequalitycomparer::{
-    INonRandomizedStringEqualityComparer, NonRandomizedStringEqualityComparer,
-};
+pub use nonrandomizedstringequalitycomparer::{INonRandomizedStringEqualityComparer, NonRandomizedStringEqualityComparer};
 #[cfg(any(feature = "system-collections-generic-nullablecomparer_1-types"))]
 pub mod nullablecomparer_1;
 #[cfg(feature = "system-collections-generic-nullablecomparer_1")]
@@ -301,23 +285,19 @@ pub use shortenumequalitycomparer_1::{IShortEnumEqualityComparer_1, ShortEnumEqu
 pub mod sorteddictionary_2;
 #[cfg(feature = "system-collections-generic-sorteddictionary_2-types")]
 pub use sorteddictionary_2::{
-    ISortedDictionary_2, ISortedDictionary_2_KeyCollection,
-    ISortedDictionary_2_KeyValuePairComparer, ISortedDictionary_2_ValueCollection,
-    SortedDictionary_2, SortedDictionary_2_Enumerator, SortedDictionary_2_KeyCollection,
-    SortedDictionary_2_KeyCollection_Enumerator, SortedDictionary_2_KeyValuePairComparer,
-    SortedDictionary_2_ValueCollection, SortedDictionary_2_ValueCollection_Enumerator,
+    ISortedDictionary_2, ISortedDictionary_2_KeyCollection, ISortedDictionary_2_KeyValuePairComparer, ISortedDictionary_2_ValueCollection,
+    SortedDictionary_2, SortedDictionary_2_Enumerator, SortedDictionary_2_KeyCollection, SortedDictionary_2_KeyCollection_Enumerator,
+    SortedDictionary_2_KeyValuePairComparer, SortedDictionary_2_ValueCollection, SortedDictionary_2_ValueCollection_Enumerator,
 };
 #[cfg(feature = "system-collections-generic-sorteddictionary_2")]
 pub use sorteddictionary_2::{
-    ISortedDictionary_2Methods, ISortedDictionary_2_KeyCollectionMethods,
-    ISortedDictionary_2_KeyValuePairComparerMethods, ISortedDictionary_2_ValueCollectionMethods,
+    ISortedDictionary_2Methods, ISortedDictionary_2_KeyCollectionMethods, ISortedDictionary_2_KeyValuePairComparerMethods,
+    ISortedDictionary_2_ValueCollectionMethods,
 };
 #[cfg(any(feature = "system-collections-generic-sortedset_1-types"))]
 pub mod sortedset_1;
 #[cfg(feature = "system-collections-generic-sortedset_1-types")]
-pub use sortedset_1::{
-    ISortedSet_1, ISortedSet_1_Node, SortedSet_1, SortedSet_1_Enumerator, SortedSet_1_Node,
-};
+pub use sortedset_1::{ISortedSet_1, ISortedSet_1_Node, SortedSet_1, SortedSet_1_Enumerator, SortedSet_1_Node};
 #[cfg(feature = "system-collections-generic-sortedset_1")]
 pub use sortedset_1::{ISortedSet_1Methods, ISortedSet_1_NodeMethods};
 #[cfg(any(feature = "system-collections-generic-stack_1-types"))]

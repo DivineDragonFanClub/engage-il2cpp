@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-iserializationcallbackreceiver-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/iserializationcallbackreceiver/ISerializationCallbackReceiver.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ISerializationCallbackReceiver")]
@@ -23,9 +23,7 @@ mod __ISerializationCallbackReceiver_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_before_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ISerializationCallbackReceiver as ::unity2::ClassIdentity>::class(),
@@ -38,39 +36,27 @@ mod __ISerializationCallbackReceiver_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ISerializationCallbackReceiver as ::unity2::ClassIdentity>::NAME,
-                    "OnBeforeSerialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ISerializationCallbackReceiver as ::unity2::ClassIdentity>::NAME,
+                        "OnBeforeSerialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_before_serialize(
-        this: ISerializationCallbackReceiver,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_before_serialize(this: ISerializationCallbackReceiver, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ISerializationCallbackReceiver, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_before_serialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_before_serialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_after_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ISerializationCallbackReceiver as ::unity2::ClassIdentity>::class(),
@@ -83,30 +69,20 @@ mod __ISerializationCallbackReceiver_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ISerializationCallbackReceiver as ::unity2::ClassIdentity>::NAME,
-                    "OnAfterDeserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ISerializationCallbackReceiver as ::unity2::ClassIdentity>::NAME,
+                        "OnAfterDeserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_after_deserialize(
-        this: ISerializationCallbackReceiver,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_after_deserialize(this: ISerializationCallbackReceiver, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ISerializationCallbackReceiver, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_after_deserialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_after_deserialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -117,26 +93,16 @@ pub trait IISerializationCallbackReceiverMethods: IISerializationCallbackReceive
     fn on_before_serialize(self) -> () {
         unsafe {
             let __receiver =
-                <ISerializationCallbackReceiver as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ISerializationCallbackReceiver_unity2_raw::on_before_serialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ISerializationCallbackReceiver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ISerializationCallbackReceiver_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnAfterDeserialize()` overload"]
     fn on_after_deserialize(self) -> () {
         unsafe {
             let __receiver =
-                <ISerializationCallbackReceiver as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ISerializationCallbackReceiver_unity2_raw::on_after_deserialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ISerializationCallbackReceiver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ISerializationCallbackReceiver_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -147,7 +113,5 @@ impl<__T: IISerializationCallbackReceiver> IISerializationCallbackReceiverMethod
 #[cfg(feature = "unity_engine-iserializationcallbackreceiver")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IISerializationCallbackReceiver;
-    pub use super::IISerializationCallbackReceiverMethods;
-    pub use super::ISerializationCallbackReceiver;
+    pub use super::{IISerializationCallbackReceiver, IISerializationCallbackReceiverMethods, ISerializationCallbackReceiver};
 }

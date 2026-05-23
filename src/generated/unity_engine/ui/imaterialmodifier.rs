@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imaterialmodifier/IMaterialModifier.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "IMaterialModifier")]
@@ -23,11 +23,8 @@ mod __IMaterialModifier_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_modified_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IMaterialModifier as ::unity2::ClassIdentity>::class(),
                 "GetModifiedMaterial",
@@ -39,18 +36,15 @@ mod __IMaterialModifier_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IMaterialModifier as ::unity2::ClassIdentity>::NAME,
-                    "GetModifiedMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IMaterialModifier as ::unity2::ClassIdentity>::NAME,
+                        "GetModifiedMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_modified_material(
@@ -62,11 +56,7 @@ mod __IMaterialModifier_unity2_raw {
             IMaterialModifier,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_modified_material::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_modified_material::get_method_info().method_ptr);
         inner(this, base_material, __unity2_method_info)
     }
 }
@@ -79,9 +69,7 @@ pub trait IIMaterialModifierMethods: IIMaterialModifier {
         base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <IMaterialModifier as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IMaterialModifier as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IMaterialModifier_unity2_raw::get_modified_material(
                 __receiver,
                 ::core::convert::Into::into(base_material),
@@ -97,7 +85,5 @@ impl<__T: IIMaterialModifier> IIMaterialModifierMethods for __T {}
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIMaterialModifier;
-    pub use super::IIMaterialModifierMethods;
-    pub use super::IMaterialModifier;
+    pub use super::{IIMaterialModifier, IIMaterialModifierMethods, IMaterialModifier};
 }

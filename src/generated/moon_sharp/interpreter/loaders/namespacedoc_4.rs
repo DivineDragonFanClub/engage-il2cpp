@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-namespacedoc_4-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/loaders/namespacedoc_4/NamespaceDoc_4.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Loaders", name = "NamespaceDoc")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "moon_sharp-interpreter-loaders-namespacedoc_4")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INamespaceDoc_4;
-    pub use super::NamespaceDoc_4;
+    pub use super::{INamespaceDoc_4, NamespaceDoc_4};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-gmaputil-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaputil/GmapUtil.md"))]
     #[::unity2::class(namespace = "App", name = "GmapUtil")]
@@ -32,9 +32,7 @@ mod __GmapUtil_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_sortiable_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
@@ -47,37 +45,28 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "get_SortiableCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "get_SortiableCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sortiable_count(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sortiable_count::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_sortiable_count::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sortiable_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
                 "set_SortiableCount",
@@ -89,40 +78,28 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "set_SortiableCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "set_SortiableCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_sortiable_count(
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sortiable_count::get_offset() as isize),
-        );
+    pub unsafe fn set_sortiable_count(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_sortiable_count::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_encount_rank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
                 "GetEncountRank",
@@ -134,41 +111,28 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetEncountRank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetEncountRank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_encount_rank(
-        gmap_spot: crate::app::gmapspot::GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_encount_rank(gmap_spot: crate::app::gmapspot::GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(crate::app::gmapspot::GmapSpot, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_encount_rank::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_encount_rank::get_method_info().method_ptr);
         inner(gmap_spot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sortie_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
                 "GetSortieNum",
@@ -180,18 +144,15 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetSortieNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetSortieNum",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sortie_num(
@@ -201,25 +162,16 @@ mod __GmapUtil_unity2_raw {
         let inner: extern "C" fn(
             crate::app::gmapspot::GmapSpot,
             ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::list_1::List_1<i32> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sortie_num::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<i32> = ::core::mem::transmute(__lookup_get_sortie_num::get_method_info().method_ptr);
         inner(gmap_spot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_encount_rank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
                 "CalcEncountRank",
@@ -231,40 +183,27 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "CalcEncountRank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "CalcEncountRank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_encount_rank(
-        sortie_count: i32,
-        is_dlc_mode: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn calc_encount_rank(sortie_count: i32, is_dlc_mode: bool, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(i32, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_encount_rank::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_encount_rank::get_method_info().method_ptr);
         inner(sortie_count, is_dlc_mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_average_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::difficulty::Difficulty as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -280,18 +219,15 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetAverageLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetAverageLevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_average_level(
@@ -299,26 +235,16 @@ mod __GmapUtil_unity2_raw {
         sortie_count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::difficulty::Difficulty,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_average_level::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::difficulty::Difficulty, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_average_level::get_method_info().method_ptr);
         inner(difficulty, sortie_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_vandre_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
                 "GetVandreLevel",
@@ -330,43 +256,29 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetVandreLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetVandreLevel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_vandre_level(
-        vandre_unit: *mut crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_vandre_level(vandre_unit: *mut crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(*mut crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_vandre_level::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_vandre_level::get_method_info().method_ptr);
         inner(vandre_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reduct_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::disposdata::DisposData,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
                 "ReductDispos",
@@ -378,46 +290,33 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "ReductDispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "ReductDispos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reduct_dispos(
-        dispos_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
+        dispos_list: crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> {
         let inner: extern "C" fn(
             crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reduct_dispos::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> =
+            ::core::mem::transmute(__lookup_reduct_dispos::get_method_info().method_ptr);
         inner(dispos_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_equipable_weapons {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
                 <crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type(),
@@ -433,18 +332,15 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetEquipableWeapons",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetEquipableWeapons",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_equipable_weapons(
@@ -456,20 +352,15 @@ mod __GmapUtil_unity2_raw {
             crate::app::jobdata::JobData,
             *mut crate::app::weaponmask::WeaponMask,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::itemdata::ItemData_Kinds> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_equipable_weapons::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::app::itemdata::ItemData_Kinds> =
+            ::core::mem::transmute(__lookup_get_equipable_weapons::get_method_info().method_ptr);
         inner(job, selected_mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_down_level_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
                 <crate::app::weaponlevel::WeaponLevel_Kind as ::unity2::IlType>::il_type(),
@@ -485,18 +376,15 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetDownLevelWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetDownLevelWeapon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_down_level_weapon(
@@ -508,20 +396,14 @@ mod __GmapUtil_unity2_raw {
             crate::app::itemdata::ItemData,
             crate::app::weaponlevel::WeaponLevel_Kind,
             ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_down_level_weapon::get_offset() as isize),
-        );
+        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(__lookup_get_down_level_weapon::get_method_info().method_ptr);
         inner(item, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_regist_rare_dispos_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
@@ -534,35 +416,27 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "RegistRareDisposCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "RegistRareDisposCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn regist_rare_dispos_count(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_regist_rare_dispos_count::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_regist_rare_dispos_count::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rare_exp_dispos_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
@@ -575,35 +449,27 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetRareExpDisposCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetRareExpDisposCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rare_exp_dispos_count(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rare_exp_dispos_count::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_rare_exp_dispos_count::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rare_gold_dispos_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
@@ -616,39 +482,28 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetRareGoldDisposCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetRareGoldDisposCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rare_gold_dispos_count(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rare_gold_dispos_count::get_offset() as isize),
-        );
+    pub unsafe fn get_rare_gold_dispos_count(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_rare_gold_dispos_count::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_weapon_mask_to_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
                 "WeaponMaskToArray",
@@ -660,18 +515,15 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "WeaponMaskToArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "WeaponMaskToArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn weapon_mask_to_array(
@@ -681,24 +533,17 @@ mod __GmapUtil_unity2_raw {
         let inner: extern "C" fn(
             crate::app::weaponmask::WeaponMask,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::itemdata::ItemData_Kinds> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_weapon_mask_to_array::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::app::itemdata::ItemData_Kinds> =
+            ::core::mem::transmute(__lookup_weapon_mask_to_array::get_method_info().method_ptr);
         inner(mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_weapon_array_to_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::app::itemdata::ItemData_Kinds,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::app::itemdata::ItemData_Kinds> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
                 "WeaponArrayToMask",
@@ -710,18 +555,15 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "WeaponArrayToMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "WeaponArrayToMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn weapon_array_to_mask(
@@ -731,20 +573,14 @@ mod __GmapUtil_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
             ::unity2::OptionalMethod,
-        ) -> crate::app::weaponmask::WeaponMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_weapon_array_to_mask::get_offset() as isize),
-        );
+        ) -> crate::app::weaponmask::WeaponMask = ::core::mem::transmute(__lookup_weapon_array_to_mask::get_method_info().method_ptr);
         inner(kinds, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_appear_gradlon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
@@ -757,35 +593,26 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "IsAppearGradlon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "IsAppearGradlon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_appear_gradlon(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_appear_gradlon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_appear_gradlon::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_visible_gradlon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapUtil as ::unity2::ClassIdentity>::class(),
@@ -798,108 +625,72 @@ mod __GmapUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVisibleGradlon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVisibleGradlon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_visible_gradlon(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_visible_gradlon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_visible_gradlon::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapUtil as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapUtil as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: GmapUtil, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapUtil, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapUtil, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapUtil as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapUtil as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapUtil as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapUtil as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -910,42 +701,26 @@ impl GmapUtil {
     pub fn get_sortiable_count() -> i32 {
         unsafe { __GmapUtil_unity2_raw::get_sortiable_count(::core::option::Option::None) }
     }
+
     #[doc = "`set_SortiableCount(i32)` overload"]
     pub fn set_sortiable_count(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __GmapUtil_unity2_raw::set_sortiable_count(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GmapUtil_unity2_raw::set_sortiable_count(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`GetEncountRank(crate::app::gmapspot::GmapSpot)` overload"]
-    pub fn get_encount_rank(
-        gmap_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>,
-    ) -> i32 {
-        unsafe {
-            __GmapUtil_unity2_raw::get_encount_rank(
-                ::core::convert::Into::into(gmap_spot),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_encount_rank(gmap_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>) -> i32 {
+        unsafe { __GmapUtil_unity2_raw::get_encount_rank(::core::convert::Into::into(gmap_spot), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSortieNum(crate::app::gmapspot::GmapSpot)` overload"]
     pub fn get_sortie_num(
         gmap_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>,
     ) -> crate::system::collections::generic::list_1::List_1<i32> {
-        unsafe {
-            __GmapUtil_unity2_raw::get_sortie_num(
-                ::core::convert::Into::into(gmap_spot),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GmapUtil_unity2_raw::get_sortie_num(::core::convert::Into::into(gmap_spot), ::core::option::Option::None) }
     }
+
     #[doc = "`CalcEncountRank(i32, bool)` overload"]
-    pub fn calc_encount_rank(
-        sortie_count: impl ::core::convert::Into<i32>,
-        is_dlc_mode: impl ::core::convert::Into<bool>,
-    ) -> i32 {
+    pub fn calc_encount_rank(sortie_count: impl ::core::convert::Into<i32>, is_dlc_mode: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
             __GmapUtil_unity2_raw::calc_encount_rank(
                 ::core::convert::Into::into(sortie_count),
@@ -954,6 +729,7 @@ impl GmapUtil {
             )
         }
     }
+
     #[doc = "`GetAverageLevel(crate::app::difficulty::Difficulty, i32)` overload"]
     pub fn get_average_level(
         difficulty: impl ::core::convert::Into<crate::app::difficulty::Difficulty>,
@@ -967,53 +743,36 @@ impl GmapUtil {
             )
         }
     }
+
     #[doc = "`GetVandreLevel(*mutcrate::app::unit::Unit)` overload"]
     pub fn get_vandre_level() -> (i32, crate::app::unit::Unit) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::unit::Unit>::uninit();
-            let __ret = {
-                __GmapUtil_unity2_raw::get_vandre_level(
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __ret = { __GmapUtil_unity2_raw::get_vandre_level(__out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`ReductDispos(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
     pub fn reduct_dispos(
-        dispos_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>,
-        >,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>
-    {
-        unsafe {
-            __GmapUtil_unity2_raw::reduct_dispos(
-                ::core::convert::Into::into(dispos_list),
-                ::core::option::Option::None,
-            )
-        }
+        dispos_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> {
+        unsafe { __GmapUtil_unity2_raw::reduct_dispos(::core::convert::Into::into(dispos_list), ::core::option::Option::None) }
     }
+
     #[doc = "`GetEquipableWeapons(crate::app::jobdata::JobData, *mutcrate::app::weaponmask::WeaponMask)` overload"]
     pub fn get_equipable_weapons(
         job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-    ) -> (
-        ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
-        crate::app::weaponmask::WeaponMask,
-    ) {
+    ) -> (::unity2::Array<crate::app::itemdata::ItemData_Kinds>, crate::app::weaponmask::WeaponMask) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::app::weaponmask::WeaponMask>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::weaponmask::WeaponMask>::uninit();
             let __ret = {
-                __GmapUtil_unity2_raw::get_equipable_weapons(
-                    ::core::convert::Into::into(job),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
+                __GmapUtil_unity2_raw::get_equipable_weapons(::core::convert::Into::into(job), __out_0.as_mut_ptr(), ::core::option::Option::None)
             };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`GetDownLevelWeapon(crate::app::itemdata::ItemData, crate::app::weaponlevel::WeaponLevel_Kind)` overload"]
     pub fn get_down_level_weapon(
         item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
@@ -1027,48 +786,46 @@ impl GmapUtil {
             )
         }
     }
+
     #[doc = "`RegistRareDisposCount()` overload"]
     pub fn regist_rare_dispos_count() -> () {
         unsafe { __GmapUtil_unity2_raw::regist_rare_dispos_count(::core::option::Option::None) }
     }
+
     #[doc = "`GetRareExpDisposCount()` overload"]
     pub fn get_rare_exp_dispos_count() -> i32 {
         unsafe { __GmapUtil_unity2_raw::get_rare_exp_dispos_count(::core::option::Option::None) }
     }
+
     #[doc = "`GetRareGoldDisposCount()` overload"]
     pub fn get_rare_gold_dispos_count() -> i32 {
         unsafe { __GmapUtil_unity2_raw::get_rare_gold_dispos_count(::core::option::Option::None) }
     }
+
     #[doc = "`WeaponMaskToArray(crate::app::weaponmask::WeaponMask)` overload"]
     pub fn weapon_mask_to_array(
         mask: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>,
     ) -> ::unity2::Array<crate::app::itemdata::ItemData_Kinds> {
-        unsafe {
-            __GmapUtil_unity2_raw::weapon_mask_to_array(
-                ::core::convert::Into::into(mask),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GmapUtil_unity2_raw::weapon_mask_to_array(::core::convert::Into::into(mask), ::core::option::Option::None) }
     }
+
     #[doc = "`WeaponArrayToMask(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]
     pub fn weapon_array_to_mask(
         kinds: impl ::core::convert::Into<::unity2::Array<crate::app::itemdata::ItemData_Kinds>>,
     ) -> crate::app::weaponmask::WeaponMask {
-        unsafe {
-            __GmapUtil_unity2_raw::weapon_array_to_mask(
-                ::core::convert::Into::into(kinds),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GmapUtil_unity2_raw::weapon_array_to_mask(::core::convert::Into::into(kinds), ::core::option::Option::None) }
     }
+
     #[doc = "`IsAppearGradlon()` overload"]
     pub fn is_appear_gradlon() -> bool {
         unsafe { __GmapUtil_unity2_raw::is_appear_gradlon(::core::option::Option::None) }
     }
+
     #[doc = "`UpdateVisibleGradlon()` overload"]
     pub fn update_visible_gradlon() -> () {
         unsafe { __GmapUtil_unity2_raw::update_visible_gradlon(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __GmapUtil_unity2_raw::cctor(::core::option::Option::None) }
@@ -1080,9 +837,7 @@ pub trait IGmapUtilMethods: IGmapUtil {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GmapUtil as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapUtil as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapUtil_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1095,13 +850,8 @@ impl<__T: IGmapUtil> IGmapUtilMethods for __T {}
 impl GmapUtil {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapUtil),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GmapUtil), ::core::stringify!(new),));
         <Self as IGmapUtilMethods>::ctor(this);
         this
     }
@@ -1110,9 +860,7 @@ impl GmapUtil {
 #[cfg(feature = "app-gmaputil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapUtil;
-    pub use super::IGmapUtil;
-    pub use super::IGmapUtilMethods;
+    pub use super::{GmapUtil, IGmapUtil, IGmapUtilMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

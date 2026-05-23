@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-hubrangeaction-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubrangeaction/HubRangeAction.md"))]
     #[::unity2::class(namespace = "App", name = "HubRangeAction")]
@@ -18,11 +18,9 @@ mod __types {
         #[rename(name = "m_triggerOut")]
         pub m_trigger_out: bool,
         #[rename(name = "m_funcInRange")]
-        pub m_func_in_range:
-            crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
+        pub m_func_in_range: crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
         #[rename(name = "m_funcOutRange")]
-        pub m_func_out_range:
-            crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
+        pub m_func_out_range: crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
     }
 }
 
@@ -38,9 +36,7 @@ mod __HubRangeAction_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
@@ -53,41 +49,28 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "get_IsStop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "get_IsStop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_stop(
-        this: HubRangeAction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_stop(this: HubRangeAction, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(HubRangeAction, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_stop::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_stop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
                 "set_IsStop",
@@ -99,40 +82,27 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "set_IsStop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "set_IsStop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_stop(
-        this: HubRangeAction,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_stop(this: HubRangeAction, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRangeAction, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_stop::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_stop::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
@@ -145,41 +115,28 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "get_Distance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "get_Distance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_distance(
-        this: HubRangeAction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_distance(this: HubRangeAction, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(HubRangeAction, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_distance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
                 "set_Distance",
@@ -191,40 +148,27 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "set_Distance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "set_Distance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_distance(
-        this: HubRangeAction,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_distance(this: HubRangeAction, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRangeAction, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_distance::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_interval {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
@@ -237,41 +181,28 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "get_Interval",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "get_Interval",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_interval(
-        this: HubRangeAction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_interval(this: HubRangeAction, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(HubRangeAction, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_interval::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_interval::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_interval {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
                 "set_Interval",
@@ -283,40 +214,27 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "set_Interval",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "set_Interval",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_interval(
-        this: HubRangeAction,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_interval(this: HubRangeAction, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRangeAction, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_interval::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_interval::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
@@ -329,41 +247,28 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "get_Angle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "get_Angle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_angle(
-        this: HubRangeAction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_angle(this: HubRangeAction, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(HubRangeAction, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_angle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_angle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
                 "set_Angle",
@@ -375,40 +280,27 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "set_Angle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "set_Angle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_angle(
-        this: HubRangeAction,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_angle(this: HubRangeAction, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRangeAction, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_angle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_angle::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_stop_main {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
@@ -421,41 +313,28 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "get_IsStopMain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "get_IsStopMain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_stop_main(
-        this: HubRangeAction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_stop_main(this: HubRangeAction, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(HubRangeAction, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_stop_main::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_stop_main::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_stop_main {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
                 "set_IsStopMain",
@@ -467,49 +346,31 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "set_IsStopMain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "set_IsStopMain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_stop_main(
-        this: HubRangeAction,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_stop_main(this: HubRangeAction, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRangeAction, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_stop_main::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_stop_main::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::system::action_1::Action_1<
-                        crate::app::hubunitcontroller::HubUnitController,
-                    > as ::unity2::IlType>::il_type(),
-                    <crate::system::action_1::Action_1<
-                        crate::app::hubunitcontroller::HubUnitController,
-                    > as ::unity2::IlType>::il_type(),
-                ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController> as ::unity2::IlType>::il_type(),
+                <crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -521,28 +382,21 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: HubRangeAction,
-        func_in_range: crate::system::action_1::Action_1<
-            crate::app::hubunitcontroller::HubUnitController,
-        >,
-        func_out_range: crate::system::action_1::Action_1<
-            crate::app::hubunitcontroller::HubUnitController,
-        >,
+        func_in_range: crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
+        func_out_range: crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -550,20 +404,14 @@ mod __HubRangeAction_unity2_raw {
             crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
             crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, func_in_range, func_out_range, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
@@ -576,42 +424,29 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: HubRangeAction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset(this: HubRangeAction, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRangeAction, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::hubunitcontroller::HubUnitController as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubunitcontroller::HubUnitController as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRangeAction as ::unity2::ClassIdentity>::class(),
                 "Update",
@@ -623,18 +458,15 @@ mod __HubRangeAction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRangeAction as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRangeAction as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(
@@ -642,15 +474,8 @@ mod __HubRangeAction_unity2_raw {
         unit: crate::app::hubunitcontroller::HubUnitController,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubRangeAction,
-            crate::app::hubunitcontroller::HubUnitController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubRangeAction, crate::app::hubunitcontroller::HubUnitController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
 }
@@ -660,127 +485,81 @@ pub trait IHubRangeActionMethods: IHubRangeAction {
     #[doc = "`get_IsStop()` overload"]
     fn get_is_stop(self) -> bool {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRangeAction_unity2_raw::get_is_stop(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsStop(bool)` overload"]
     fn set_is_stop(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRangeAction_unity2_raw::set_is_stop(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRangeAction_unity2_raw::set_is_stop(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Distance()` overload"]
     fn get_distance(self) -> f32 {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRangeAction_unity2_raw::get_distance(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Distance(f32)` overload"]
     fn set_distance(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRangeAction_unity2_raw::set_distance(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRangeAction_unity2_raw::set_distance(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Interval()` overload"]
     fn get_interval(self) -> f32 {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRangeAction_unity2_raw::get_interval(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Interval(f32)` overload"]
     fn set_interval(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRangeAction_unity2_raw::set_interval(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRangeAction_unity2_raw::set_interval(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Angle()` overload"]
     fn get_angle(self) -> f32 {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRangeAction_unity2_raw::get_angle(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Angle(f32)` overload"]
     fn set_angle(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRangeAction_unity2_raw::set_angle(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRangeAction_unity2_raw::set_angle(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsStopMain()` overload"]
     fn get_is_stop_main(self) -> bool {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRangeAction_unity2_raw::get_is_stop_main(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsStopMain(bool)` overload"]
     fn set_is_stop_main(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRangeAction_unity2_raw::set_is_stop_main(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRangeAction_unity2_raw::set_is_stop_main(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>, crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>)` overload"]
     fn ctor(
         self,
-        func_in_range: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
-        >,
-        func_out_range: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
-        >,
+        func_in_range: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>>,
+        func_out_range: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>>,
     ) -> () {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRangeAction_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(func_in_range),
@@ -792,26 +571,15 @@ pub trait IHubRangeActionMethods: IHubRangeAction {
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRangeAction_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update(crate::app::hubunitcontroller::HubUnitController)` overload"]
-    fn update(
-        self,
-        unit: impl ::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>,
-    ) -> () {
+    fn update(self, unit: impl ::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>) -> () {
         unsafe {
-            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRangeAction_unity2_raw::update(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubRangeAction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRangeAction_unity2_raw::update(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
 }
@@ -823,12 +591,8 @@ impl<__T: IHubRangeAction> IHubRangeActionMethods for __T {}
 impl HubRangeAction {
     #[doc = "`.ctor(crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>, crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>)` — overload selector"]
     pub fn new(
-        func_in_range: crate::system::action_1::Action_1<
-            crate::app::hubunitcontroller::HubUnitController,
-        >,
-        func_out_range: crate::system::action_1::Action_1<
-            crate::app::hubunitcontroller::HubUnitController,
-        >,
+        func_in_range: crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
+        func_out_range: crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -845,9 +609,7 @@ impl HubRangeAction {
 #[cfg(feature = "app-hubrangeaction")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubRangeAction;
-    pub use super::IHubRangeAction;
-    pub use super::IHubRangeActionMethods;
+    pub use super::{HubRangeAction, IHubRangeAction, IHubRangeActionMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

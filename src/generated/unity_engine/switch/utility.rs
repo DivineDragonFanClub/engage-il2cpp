@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-switch-utility-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/utility/Utility.md"))]
     #[::unity2::class(namespace = "UnityEngine.Switch", name = "Utility")]
@@ -25,9 +25,7 @@ mod __Utility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_allocatable_native_memory_long {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Utility as ::unity2::ClassIdentity>::class(),
@@ -40,28 +38,20 @@ mod __Utility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility as ::unity2::ClassIdentity>::NAME,
-                    "GetAllocatableNativeMemoryLong",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility as ::unity2::ClassIdentity>::NAME,
+                        "GetAllocatableNativeMemoryLong",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_allocatable_native_memory_long(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_allocatable_native_memory_long::get_offset() as isize),
-        );
+    pub unsafe fn get_allocatable_native_memory_long(__unity2_method_info: ::unity2::OptionalMethod) -> i64 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i64 =
+            ::core::mem::transmute(__lookup_get_allocatable_native_memory_long::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -70,17 +60,14 @@ mod __Utility_unity2_raw {
 impl Utility {
     #[doc = "`GetAllocatableNativeMemoryLong()` overload"]
     pub fn get_allocatable_native_memory_long() -> i64 {
-        unsafe {
-            __Utility_unity2_raw::get_allocatable_native_memory_long(::core::option::Option::None)
-        }
+        unsafe { __Utility_unity2_raw::get_allocatable_native_memory_long(::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-switch-utility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUtility;
-    pub use super::Utility;
+    pub use super::{IUtility, Utility};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

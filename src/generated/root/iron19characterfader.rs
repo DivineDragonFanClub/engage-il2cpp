@@ -2,14 +2,18 @@
 
 #[cfg(feature = "root-iron19characterfader-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/iron19characterfader/Iron19CharacterFader.md"))]
     #[::unity2::class(namespace = "", name = "Iron19CharacterFader")]
@@ -54,37 +58,24 @@ mod __types {
         #[rename(name = "m_AnimatorControl")]
         pub m_animator_control: bool,
         #[rename(name = "m_Renderers")]
-        pub m_renderers: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::renderer::Renderer,
-        >,
+        pub m_renderers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer>,
         #[rename(name = "m_Materials")]
-        pub m_materials: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::material::Material,
-        >,
+        pub m_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
         #[rename(name = "m_Particles")]
-        pub m_particles: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::material::Material,
-        >,
+        pub m_particles: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
         #[rename(name = "m_Animators")]
-        pub m_animators: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::animator::Animator,
-        >,
+        pub m_animators: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animator::Animator>,
         #[rename(name = "m_SkinnedMeshRenderers")]
-        pub m_skinned_mesh_renderers: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
-        >,
+        pub m_skinned_mesh_renderers:
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
         #[rename(name = "m_Proportions")]
-        pub m_proportions: crate::system::collections::generic::list_1::List_1<
-            crate::combat::characterproportion::CharacterProportion,
-        >,
+        pub m_proportions: crate::system::collections::generic::list_1::List_1<crate::combat::characterproportion::CharacterProportion>,
         #[rename(name = "m_MouthControllers")]
-        pub m_mouth_controllers: crate::system::collections::generic::list_1::List_1<
-            crate::app::eventcharactermouthcontroller::EventCharacterMouthController,
-        >,
+        pub m_mouth_controllers:
+            crate::system::collections::generic::list_1::List_1<crate::app::eventcharactermouthcontroller::EventCharacterMouthController>,
         #[rename(name = "m_SkinQualityLodAdjusters")]
-        pub m_skin_quality_lod_adjusters: crate::system::collections::generic::list_1::List_1<
-            crate::app::skinqualitylodadjuster::SkinQualityLodAdjuster,
-        >,
+        pub m_skin_quality_lod_adjusters:
+            crate::system::collections::generic::list_1::List_1<crate::app::skinqualitylodadjuster::SkinQualityLodAdjuster>,
         #[rename(name = "m_Character")]
         pub m_character: crate::combat::character::Character,
         #[rename(name = "m_OutlineMaterialDisableProp")]
@@ -104,9 +95,7 @@ mod __Iron19CharacterFader_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -119,39 +108,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -164,39 +141,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "TryInitialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "TryInitialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_initialize(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn try_initialize(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_initialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_initialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_release {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -209,41 +174,28 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "TryRelease",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "TryRelease",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_release(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn try_release(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_release::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_release::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fade_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "SetFadeAlpha",
@@ -255,40 +207,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "SetFadeAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "SetFadeAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_fade_alpha(
-        this: Iron19CharacterFader,
-        alpha: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_fade_alpha(this: Iron19CharacterFader, alpha: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_fade_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_fade_alpha::get_method_info().method_ptr);
         inner(this, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -301,41 +240,28 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "GetAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "GetAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alpha(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_alpha(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_alpha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_layer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "SetTargetLayer",
@@ -347,40 +273,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "SetTargetLayer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "SetTargetLayer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_target_layer(
-        this: Iron19CharacterFader,
-        layer: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_target_layer(this: Iron19CharacterFader, layer: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_target_layer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_target_layer::get_method_info().method_ptr);
         inner(this, layer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_animator_control {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -393,39 +306,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "DisableAnimatorControl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "DisableAnimatorControl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_animator_control(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_animator_control(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_animator_control::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_animator_control::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pivot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -438,43 +339,28 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "GetPivot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "GetPivot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pivot(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            Iron19CharacterFader,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pivot::get_offset() as isize),
-        );
+    pub unsafe fn get_pivot(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_pivot::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_reject {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "IsReject",
@@ -486,18 +372,15 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "IsReject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "IsReject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_reject(
@@ -505,26 +388,16 @@ mod __Iron19CharacterFader_unity2_raw {
         camera: crate::unity_engine::camera::Camera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            Iron19CharacterFader,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_reject::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Iron19CharacterFader, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_reject::get_method_info().method_ptr);
         inner(this, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_outline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "IsOutline",
@@ -536,18 +409,15 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "IsOutline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "IsOutline",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_outline(
@@ -555,26 +425,16 @@ mod __Iron19CharacterFader_unity2_raw {
         camera: crate::unity_engine::camera::Camera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            Iron19CharacterFader,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_outline::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Iron19CharacterFader, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_outline::get_method_info().method_ptr);
         inner(this, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_skin_weights1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "IsSkinWeights1",
@@ -586,18 +446,15 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "IsSkinWeights1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "IsSkinWeights1",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_skin_weights1(
@@ -605,26 +462,16 @@ mod __Iron19CharacterFader_unity2_raw {
         camera: crate::unity_engine::camera::Camera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            Iron19CharacterFader,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_skin_weights1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Iron19CharacterFader, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_skin_weights1::get_method_info().method_ptr);
         inner(this, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_skin_weights2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "IsSkinWeights2",
@@ -636,18 +483,15 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "IsSkinWeights2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "IsSkinWeights2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_skin_weights2(
@@ -655,26 +499,16 @@ mod __Iron19CharacterFader_unity2_raw {
         camera: crate::unity_engine::camera::Camera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            Iron19CharacterFader,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_skin_weights2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Iron19CharacterFader, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_skin_weights2::get_method_info().method_ptr);
         inner(this, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_camera_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "UpdateCameraAlpha",
@@ -686,42 +520,28 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCameraAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCameraAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_camera_alpha(
-        this: Iron19CharacterFader,
-        speed: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_camera_alpha(this: Iron19CharacterFader, speed: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_camera_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_camera_alpha::get_method_info().method_ptr);
         inner(this, speed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_camera_outline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "UpdateCameraOutline",
@@ -733,40 +553,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCameraOutline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCameraOutline",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_camera_outline(
-        this: Iron19CharacterFader,
-        speed: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_camera_outline(this: Iron19CharacterFader, speed: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_camera_outline::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_camera_outline::get_method_info().method_ptr);
         inner(this, speed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_camera_skin_weights {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -779,41 +586,28 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCameraSkinWeights",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCameraSkinWeights",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_camera_skin_weights(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_camera_skin_weights(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_camera_skin_weights::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_camera_skin_weights::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "UpdateEnabled",
@@ -825,42 +619,28 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "UpdateEnabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "UpdateEnabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_enabled(
-        this: Iron19CharacterFader,
-        enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_enabled(this: Iron19CharacterFader, enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_enabled::get_method_info().method_ptr);
         inner(this, enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_outline_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "SetOutlineEnabled",
@@ -872,42 +652,28 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "SetOutlineEnabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "SetOutlineEnabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_outline_enabled(
-        this: Iron19CharacterFader,
-        enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_outline_enabled(this: Iron19CharacterFader, enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_outline_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_outline_enabled::get_method_info().method_ptr);
         inner(this, enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_outline_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
                 "SetOutlineScale",
@@ -919,40 +685,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "SetOutlineScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "SetOutlineScale",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_outline_scale(
-        this: Iron19CharacterFader,
-        scale: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_outline_scale(this: Iron19CharacterFader, scale: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_outline_scale::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_outline_scale::get_method_info().method_ptr);
         inner(this, scale, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_skin_quality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::skinquality::SkinQuality as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -966,18 +719,15 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "SetSkinQuality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "SetSkinQuality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_skin_quality(
@@ -985,24 +735,15 @@ mod __Iron19CharacterFader_unity2_raw {
         skin_quality: crate::unity_engine::skinquality::SkinQuality,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Iron19CharacterFader,
-            crate::unity_engine::skinquality::SkinQuality,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_skin_quality::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Iron19CharacterFader, crate::unity_engine::skinquality::SkinQuality, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_skin_quality::get_method_info().method_ptr);
         inner(this, skin_quality, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -1015,39 +756,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "OnDestroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "OnDestroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_destroy(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_destroy(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -1060,39 +789,27 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    "UpdateAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        "UpdateAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_alpha(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_alpha(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_alpha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Iron19CharacterFader as ::unity2::ClassIdentity>::class(),
@@ -1105,30 +822,20 @@ mod __Iron19CharacterFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Iron19CharacterFader as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: Iron19CharacterFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: Iron19CharacterFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Iron19CharacterFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1138,273 +845,176 @@ pub trait IIron19CharacterFaderMethods: IIron19CharacterFader {
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Iron19CharacterFader_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TryInitialize()` overload"]
     fn try_initialize(self) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::try_initialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::try_initialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TryRelease()` overload"]
     fn try_release(self) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Iron19CharacterFader_unity2_raw::try_release(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetFadeAlpha(f32)` overload"]
     fn set_fade_alpha(self, alpha: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::set_fade_alpha(
-                __receiver,
-                ::core::convert::Into::into(alpha),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::set_fade_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::option::Option::None)
         }
     }
     #[doc = "`GetAlpha()` overload"]
     fn get_alpha(self) -> f32 {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Iron19CharacterFader_unity2_raw::get_alpha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetTargetLayer(i32)` overload"]
     fn set_target_layer(self, layer: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::set_target_layer(
-                __receiver,
-                ::core::convert::Into::into(layer),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::set_target_layer(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
         }
     }
     #[doc = "`DisableAnimatorControl()` overload"]
     fn disable_animator_control(self) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::disable_animator_control(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::disable_animator_control(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetPivot()` overload"]
     fn get_pivot(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Iron19CharacterFader_unity2_raw::get_pivot(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsReject(crate::unity_engine::camera::Camera)` overload"]
-    fn is_reject(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> bool {
+    fn is_reject(self, camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> bool {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::is_reject(
-                __receiver,
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::is_reject(__receiver, ::core::convert::Into::into(camera), ::core::option::Option::None)
         }
     }
     #[doc = "`IsOutline(crate::unity_engine::camera::Camera)` overload"]
-    fn is_outline(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> bool {
+    fn is_outline(self, camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> bool {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::is_outline(
-                __receiver,
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::is_outline(__receiver, ::core::convert::Into::into(camera), ::core::option::Option::None)
         }
     }
     #[doc = "`IsSkinWeights1(crate::unity_engine::camera::Camera)` overload"]
-    fn is_skin_weights1(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> bool {
+    fn is_skin_weights1(self, camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> bool {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::is_skin_weights1(
-                __receiver,
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::is_skin_weights1(__receiver, ::core::convert::Into::into(camera), ::core::option::Option::None)
         }
     }
     #[doc = "`IsSkinWeights2(crate::unity_engine::camera::Camera)` overload"]
-    fn is_skin_weights2(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> bool {
+    fn is_skin_weights2(self, camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> bool {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::is_skin_weights2(
-                __receiver,
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::is_skin_weights2(__receiver, ::core::convert::Into::into(camera), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateCameraAlpha(f32)` overload"]
     fn update_camera_alpha(self, speed: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::update_camera_alpha(
-                __receiver,
-                ::core::convert::Into::into(speed),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::update_camera_alpha(__receiver, ::core::convert::Into::into(speed), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateCameraOutline(f32)` overload"]
     fn update_camera_outline(self, speed: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::update_camera_outline(
-                __receiver,
-                ::core::convert::Into::into(speed),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::update_camera_outline(__receiver, ::core::convert::Into::into(speed), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateCameraSkinWeights()` overload"]
     fn update_camera_skin_weights(self) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::update_camera_skin_weights(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::update_camera_skin_weights(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateEnabled(bool)` overload"]
     fn update_enabled(self, enabled: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::update_enabled(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::update_enabled(__receiver, ::core::convert::Into::into(enabled), ::core::option::Option::None)
         }
     }
     #[doc = "`SetOutlineEnabled(bool)` overload"]
     fn set_outline_enabled(self, enabled: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::set_outline_enabled(
-                __receiver,
-                ::core::convert::Into::into(enabled),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::set_outline_enabled(__receiver, ::core::convert::Into::into(enabled), ::core::option::Option::None)
         }
     }
     #[doc = "`SetOutlineScale(f32)` overload"]
     fn set_outline_scale(self, scale: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::set_outline_scale(
-                __receiver,
-                ::core::convert::Into::into(scale),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::set_outline_scale(__receiver, ::core::convert::Into::into(scale), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSkinQuality(crate::unity_engine::skinquality::SkinQuality)` overload"]
-    fn set_skin_quality(
-        self,
-        skin_quality: impl ::core::convert::Into<crate::unity_engine::skinquality::SkinQuality>,
-    ) -> () {
+    fn set_skin_quality(self, skin_quality: impl ::core::convert::Into<crate::unity_engine::skinquality::SkinQuality>) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::set_skin_quality(
-                __receiver,
-                ::core::convert::Into::into(skin_quality),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::set_skin_quality(__receiver, ::core::convert::Into::into(skin_quality), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDestroy()` overload"]
     fn on_destroy(self) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Iron19CharacterFader_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateAlpha()` overload"]
     fn update_alpha(self) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Iron19CharacterFader_unity2_raw::update_alpha(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Iron19CharacterFader_unity2_raw::update_alpha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Iron19CharacterFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Iron19CharacterFader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1432,22 +1042,19 @@ impl Iron19CharacterFader {
 #[cfg(feature = "root-iron19characterfader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIron19CharacterFader;
-    pub use super::IIron19CharacterFaderMethods;
-    pub use super::Iron19CharacterFader;
-    pub use crate::system::object::IObject;
+    pub use super::{IIron19CharacterFader, IIron19CharacterFaderMethods, Iron19CharacterFader};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

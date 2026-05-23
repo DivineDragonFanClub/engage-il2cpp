@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-avatar-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::object_2::{IObject_2, Object_2},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/avatar/Avatar.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Avatar")]
@@ -26,138 +28,80 @@ mod __Avatar_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Avatar as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Avatar as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Avatar as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: Avatar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Avatar, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Avatar as ::unity2::ClassIdentity>::class(),
-                "get_isValid",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Avatar as ::unity2::ClassIdentity>::class(), "get_isValid", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "get_isValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "get_isValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_valid(
-        this: Avatar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Avatar, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_valid::get_offset() as isize),
-        );
+    pub unsafe fn get_is_valid(this: Avatar, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Avatar, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_human {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Avatar as ::unity2::ClassIdentity>::class(),
-                "get_isHuman",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Avatar as ::unity2::ClassIdentity>::class(), "get_isHuman", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "get_isHuman",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "get_isHuman",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_human(
-        this: Avatar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Avatar, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_human::get_offset() as isize),
-        );
+    pub unsafe fn get_is_human(this: Avatar, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Avatar, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_human::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_human_description {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
@@ -170,42 +114,30 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "get_humanDescription",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "get_humanDescription",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_human_description(
         this: Avatar,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::humandescription::HumanDescription {
-        let inner: extern "C" fn(
-            Avatar,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::humandescription::HumanDescription = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_human_description::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, ::unity2::OptionalMethod) -> crate::unity_engine::humandescription::HumanDescription =
+            ::core::mem::transmute(__lookup_get_human_description::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_muscle_min_max {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -222,94 +154,55 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "SetMuscleMinMax",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "SetMuscleMinMax",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_muscle_min_max(
-        this: Avatar,
-        muscle_id: i32,
-        min: f32,
-        max: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_muscle_min_max(this: Avatar, muscle_id: i32, min: f32, max: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Avatar, i32, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_muscle_min_max::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_muscle_min_max::get_method_info().method_ptr);
         inner(this, muscle_id, min, max, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_parameter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Avatar as ::unity2::ClassIdentity>::class(),
-                "SetParameter",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Avatar as ::unity2::ClassIdentity>::class(), "SetParameter", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "SetParameter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "SetParameter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_parameter(
-        this: Avatar,
-        parameter_id: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_parameter(this: Avatar, parameter_id: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Avatar, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_parameter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_parameter::get_method_info().method_ptr);
         inner(this, parameter_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_axis_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
                 "GetAxisLength",
@@ -321,42 +214,28 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "GetAxisLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "GetAxisLength",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_axis_length(
-        this: Avatar,
-        human_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_axis_length(this: Avatar, human_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(Avatar, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_axis_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_axis_length::get_method_info().method_ptr);
         inner(this, human_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pre_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
                 "GetPreRotation",
@@ -368,18 +247,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "GetPreRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "GetPreRotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pre_rotation(
@@ -387,26 +263,16 @@ mod __Avatar_unity2_raw {
         human_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pre_rotation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_get_pre_rotation::get_method_info().method_ptr);
         inner(this, human_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_post_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
                 "GetPostRotation",
@@ -418,18 +284,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "GetPostRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "GetPostRotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_post_rotation(
@@ -437,52 +300,34 @@ mod __Avatar_unity2_raw {
         human_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_post_rotation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_get_post_rotation::get_method_info().method_ptr);
         inner(this, human_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_zy_post_q {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Avatar as ::unity2::ClassIdentity>::class(),
-                "GetZYPostQ",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Avatar as ::unity2::ClassIdentity>::class(), "GetZYPostQ", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "GetZYPostQ",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "GetZYPostQ",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_zy_post_q(
@@ -498,47 +343,32 @@ mod __Avatar_unity2_raw {
             crate::unity_engine::quaternion::Quaternion,
             crate::unity_engine::quaternion::Quaternion,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_zy_post_q::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(__lookup_get_zy_post_q::get_method_info().method_ptr);
         inner(this, human_id, parent_q, q, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_zy_roll {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Avatar as ::unity2::ClassIdentity>::class(),
-                "GetZYRoll",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Avatar as ::unity2::ClassIdentity>::class(), "GetZYRoll", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "GetZYRoll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "GetZYRoll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_zy_roll(
@@ -552,45 +382,29 @@ mod __Avatar_unity2_raw {
             i32,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_zy_roll::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(__lookup_get_zy_roll::get_method_info().method_ptr);
         inner(this, human_id, uvw, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_limit_sign {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Avatar as ::unity2::ClassIdentity>::class(),
-                "GetLimitSign",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Avatar as ::unity2::ClassIdentity>::class(), "GetLimitSign", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "GetLimitSign",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "GetLimitSign",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_limit_sign(
@@ -598,26 +412,16 @@ mod __Avatar_unity2_raw {
         human_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_limit_sign::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_limit_sign::get_method_info().method_ptr);
         inner(this, human_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_axis_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
                 "Internal_GetAxisLength",
@@ -629,42 +433,28 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetAxisLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetAxisLength",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_get_axis_length(
-        this: Avatar,
-        human_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn internal_get_axis_length(this: Avatar, human_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(Avatar, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_internal_get_axis_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_internal_get_axis_length::get_method_info().method_ptr);
         inner(this, human_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_pre_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
                 "Internal_GetPreRotation",
@@ -676,18 +466,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetPreRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetPreRotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_pre_rotation(
@@ -695,26 +482,16 @@ mod __Avatar_unity2_raw {
         human_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_pre_rotation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_internal_get_pre_rotation::get_method_info().method_ptr);
         inner(this, human_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_post_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
                 "Internal_GetPostRotation",
@@ -726,18 +503,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetPostRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetPostRotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_post_rotation(
@@ -745,24 +519,15 @@ mod __Avatar_unity2_raw {
         human_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_post_rotation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_internal_get_post_rotation::get_method_info().method_ptr);
         inner(this, human_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_zy_post_q {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -779,18 +544,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetZYPostQ",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetZYPostQ",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_zy_post_q(
@@ -806,20 +568,14 @@ mod __Avatar_unity2_raw {
             crate::unity_engine::quaternion::Quaternion,
             crate::unity_engine::quaternion::Quaternion,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_zy_post_q::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(__lookup_internal_get_zy_post_q::get_method_info().method_ptr);
         inner(this, human_id, parent_q, q, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_zy_roll {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -835,18 +591,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetZYRoll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetZYRoll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_zy_roll(
@@ -860,22 +613,15 @@ mod __Avatar_unity2_raw {
             i32,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_zy_roll::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(__lookup_internal_get_zy_roll::get_method_info().method_ptr);
         inner(this, human_id, uvw, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_limit_sign {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
                 "Internal_GetLimitSign",
@@ -887,18 +633,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetLimitSign",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetLimitSign",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_limit_sign(
@@ -906,25 +649,17 @@ mod __Avatar_unity2_raw {
         human_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_limit_sign::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_internal_get_limit_sign::get_method_info().method_ptr);
         inner(this, human_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_human_description_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: humandescription :: HumanDescription as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::humandescription::HumanDescription as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Avatar as ::unity2::ClassIdentity>::class(),
                 "get_humanDescription_Injected",
@@ -936,18 +671,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "get_humanDescription_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "get_humanDescription_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_human_description_injected(
@@ -955,24 +687,15 @@ mod __Avatar_unity2_raw {
         ret: *mut crate::unity_engine::humandescription::HumanDescription,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Avatar,
-            *mut crate::unity_engine::humandescription::HumanDescription,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_human_description_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, *mut crate::unity_engine::humandescription::HumanDescription, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_human_description_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_pre_rotation_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -988,18 +711,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetPreRotation_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetPreRotation_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_pre_rotation_injected(
@@ -1008,25 +728,15 @@ mod __Avatar_unity2_raw {
         ret: *mut crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            *mut crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_pre_rotation_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, *mut crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_get_pre_rotation_injected::get_method_info().method_ptr);
         inner(this, human_id, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_post_rotation_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -1042,18 +752,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetPostRotation_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetPostRotation_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_post_rotation_injected(
@@ -1062,25 +769,15 @@ mod __Avatar_unity2_raw {
         ret: *mut crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            *mut crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_post_rotation_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, *mut crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_get_post_rotation_injected::get_method_info().method_ptr);
         inner(this, human_id, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_zy_post_q_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -1098,18 +795,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetZYPostQ_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetZYPostQ_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_zy_post_q_injected(
@@ -1127,20 +821,14 @@ mod __Avatar_unity2_raw {
             *mut crate::unity_engine::quaternion::Quaternion,
             *mut crate::unity_engine::quaternion::Quaternion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_zy_post_q_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_get_zy_post_q_injected::get_method_info().method_ptr);
         inner(this, human_id, parent_q, q, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_zy_roll_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1157,18 +845,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetZYRoll_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetZYRoll_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_zy_roll_injected(
@@ -1184,20 +869,14 @@ mod __Avatar_unity2_raw {
             *mut crate::unity_engine::vector3::Vector3,
             *mut crate::unity_engine::quaternion::Quaternion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_zy_roll_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_get_zy_roll_injected::get_method_info().method_ptr);
         inner(this, human_id, uvw, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_limit_sign_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1213,18 +892,15 @@ mod __Avatar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Avatar as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetLimitSign_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Avatar as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetLimitSign_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_limit_sign_injected(
@@ -1233,16 +909,8 @@ mod __Avatar_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Avatar,
-            i32,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_limit_sign_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Avatar, i32, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_get_limit_sign_injected::get_method_info().method_ptr);
         inner(this, human_id, ret, __unity2_method_info)
     }
 }
@@ -1252,36 +920,28 @@ pub trait IAvatarMethods: IAvatar {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_isValid()` overload"]
     fn get_is_valid(self) -> bool {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_isHuman()` overload"]
     fn get_is_human(self) -> bool {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::get_is_human(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_humanDescription()` overload"]
     fn get_human_description(self) -> crate::unity_engine::humandescription::HumanDescription {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::get_human_description(__receiver, ::core::option::Option::None)
         }
     }
@@ -1293,9 +953,7 @@ pub trait IAvatarMethods: IAvatar {
         max: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::set_muscle_min_max(
                 __receiver,
                 ::core::convert::Into::into(muscle_id),
@@ -1306,15 +964,9 @@ pub trait IAvatarMethods: IAvatar {
         }
     }
     #[doc = "`SetParameter(i32, f32)` overload"]
-    fn set_parameter(
-        self,
-        parameter_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_parameter(self, parameter_id: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::set_parameter(
                 __receiver,
                 ::core::convert::Into::into(parameter_id),
@@ -1326,46 +978,22 @@ pub trait IAvatarMethods: IAvatar {
     #[doc = "`GetAxisLength(i32)` overload"]
     fn get_axis_length(self, human_id: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Avatar_unity2_raw::get_axis_length(
-                __receiver,
-                ::core::convert::Into::into(human_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Avatar_unity2_raw::get_axis_length(__receiver, ::core::convert::Into::into(human_id), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPreRotation(i32)` overload"]
-    fn get_pre_rotation(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::quaternion::Quaternion {
+    fn get_pre_rotation(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Avatar_unity2_raw::get_pre_rotation(
-                __receiver,
-                ::core::convert::Into::into(human_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Avatar_unity2_raw::get_pre_rotation(__receiver, ::core::convert::Into::into(human_id), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPostRotation(i32)` overload"]
-    fn get_post_rotation(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::quaternion::Quaternion {
+    fn get_post_rotation(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Avatar_unity2_raw::get_post_rotation(
-                __receiver,
-                ::core::convert::Into::into(human_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Avatar_unity2_raw::get_post_rotation(__receiver, ::core::convert::Into::into(human_id), ::core::option::Option::None)
         }
     }
     #[doc = "`GetZYPostQ(i32, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::quaternion::Quaternion)` overload"]
@@ -1376,9 +1004,7 @@ pub trait IAvatarMethods: IAvatar {
         q: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
     ) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::get_zy_post_q(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1395,9 +1021,7 @@ pub trait IAvatarMethods: IAvatar {
         uvw: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::get_zy_roll(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1407,64 +1031,31 @@ pub trait IAvatarMethods: IAvatar {
         }
     }
     #[doc = "`GetLimitSign(i32)` overload"]
-    fn get_limit_sign(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector3::Vector3 {
+    fn get_limit_sign(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Avatar_unity2_raw::get_limit_sign(
-                __receiver,
-                ::core::convert::Into::into(human_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Avatar_unity2_raw::get_limit_sign(__receiver, ::core::convert::Into::into(human_id), ::core::option::Option::None)
         }
     }
     #[doc = "`Internal_GetAxisLength(i32)` overload"]
     fn internal_get_axis_length(self, human_id: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Avatar_unity2_raw::internal_get_axis_length(
-                __receiver,
-                ::core::convert::Into::into(human_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Avatar_unity2_raw::internal_get_axis_length(__receiver, ::core::convert::Into::into(human_id), ::core::option::Option::None)
         }
     }
     #[doc = "`Internal_GetPreRotation(i32)` overload"]
-    fn internal_get_pre_rotation(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::quaternion::Quaternion {
+    fn internal_get_pre_rotation(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Avatar_unity2_raw::internal_get_pre_rotation(
-                __receiver,
-                ::core::convert::Into::into(human_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Avatar_unity2_raw::internal_get_pre_rotation(__receiver, ::core::convert::Into::into(human_id), ::core::option::Option::None)
         }
     }
     #[doc = "`Internal_GetPostRotation(i32)` overload"]
-    fn internal_get_post_rotation(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::quaternion::Quaternion {
+    fn internal_get_post_rotation(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Avatar_unity2_raw::internal_get_post_rotation(
-                __receiver,
-                ::core::convert::Into::into(human_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Avatar_unity2_raw::internal_get_post_rotation(__receiver, ::core::convert::Into::into(human_id), ::core::option::Option::None)
         }
     }
     #[doc = "`Internal_GetZYPostQ(i32, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::quaternion::Quaternion)` overload"]
@@ -1475,9 +1066,7 @@ pub trait IAvatarMethods: IAvatar {
         q: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
     ) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::internal_get_zy_post_q(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1494,9 +1083,7 @@ pub trait IAvatarMethods: IAvatar {
         uvw: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Avatar_unity2_raw::internal_get_zy_roll(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1506,51 +1093,26 @@ pub trait IAvatarMethods: IAvatar {
         }
     }
     #[doc = "`Internal_GetLimitSign(i32)` overload"]
-    fn internal_get_limit_sign(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector3::Vector3 {
+    fn internal_get_limit_sign(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Avatar_unity2_raw::internal_get_limit_sign(
-                __receiver,
-                ::core::convert::Into::into(human_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Avatar_unity2_raw::internal_get_limit_sign(__receiver, ::core::convert::Into::into(human_id), ::core::option::Option::None)
         }
     }
     #[doc = "`get_humanDescription_Injected(*mutcrate::unity_engine::humandescription::HumanDescription)` overload"]
-    fn get_human_description_injected(
-        self,
-    ) -> crate::unity_engine::humandescription::HumanDescription {
+    fn get_human_description_injected(self) -> crate::unity_engine::humandescription::HumanDescription {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::humandescription::HumanDescription,
-            >::uninit();
-            __Avatar_unity2_raw::get_human_description_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::humandescription::HumanDescription>::uninit();
+            __Avatar_unity2_raw::get_human_description_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`Internal_GetPreRotation_Injected(i32, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
-    fn internal_get_pre_rotation_injected(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::quaternion::Quaternion {
+    fn internal_get_pre_rotation_injected(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
             __Avatar_unity2_raw::internal_get_pre_rotation_injected(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1561,16 +1123,10 @@ pub trait IAvatarMethods: IAvatar {
         }
     }
     #[doc = "`Internal_GetPostRotation_Injected(i32, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
-    fn internal_get_post_rotation_injected(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::quaternion::Quaternion {
+    fn internal_get_post_rotation_injected(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
             __Avatar_unity2_raw::internal_get_post_rotation_injected(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1590,15 +1146,10 @@ pub trait IAvatarMethods: IAvatar {
         crate::unity_engine::quaternion::Quaternion,
     ) {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
             __Avatar_unity2_raw::internal_get_zy_post_q_injected(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1607,29 +1158,18 @@ pub trait IAvatarMethods: IAvatar {
                 __out_2.as_mut_ptr(),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
     #[doc = "`Internal_GetZYRoll_Injected(i32, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
     fn internal_get_zy_roll_injected(
         self,
         human_id: impl ::core::convert::Into<i32>,
-    ) -> (
-        crate::unity_engine::vector3::Vector3,
-        crate::unity_engine::quaternion::Quaternion,
-    ) {
+    ) -> (crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion) {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
             __Avatar_unity2_raw::internal_get_zy_roll_injected(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1641,16 +1181,10 @@ pub trait IAvatarMethods: IAvatar {
         }
     }
     #[doc = "`Internal_GetLimitSign_Injected(i32, *mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn internal_get_limit_sign_injected(
-        self,
-        human_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector3::Vector3 {
+    fn internal_get_limit_sign_injected(self, human_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __receiver = <Avatar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             __Avatar_unity2_raw::internal_get_limit_sign_injected(
                 __receiver,
                 ::core::convert::Into::into(human_id),
@@ -1669,13 +1203,8 @@ impl<__T: IAvatar> IAvatarMethods for __T {}
 impl Avatar {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Avatar),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Avatar), ::core::stringify!(new),));
         <Self as IAvatarMethods>::ctor(this);
         this
     }
@@ -1684,13 +1213,10 @@ impl Avatar {
 #[cfg(feature = "unity_engine-avatar")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Avatar;
-    pub use super::IAvatar;
-    pub use super::IAvatarMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{Avatar, IAvatar, IAvatarMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{system::object::IObject, unity_engine::object_2::IObject_2};
 }

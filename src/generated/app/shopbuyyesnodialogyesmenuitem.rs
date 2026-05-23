@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-shopbuyyesnodialogyesmenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopbuyyesnodialogyesmenuitem/ShopBuyYesNoDialogYesMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "ShopBuyYesNoDialogYesMenuItem")]
@@ -31,10 +35,9 @@ mod __ShopBuyYesNoDialogYesMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: shopbuyyesnodialog :: ShopBuyYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -46,18 +49,15 @@ mod __ShopBuyYesNoDialogYesMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -69,21 +69,18 @@ mod __ShopBuyYesNoDialogYesMenuItem_unity2_raw {
             ShopBuyYesNoDialogYesMenuItem,
             crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, yes_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopbuyyesnodialog :: ShopBuyYesNoDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -95,18 +92,15 @@ mod __ShopBuyYesNoDialogYesMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -120,20 +114,14 @@ mod __ShopBuyYesNoDialogYesMenuItem_unity2_raw {
             ::unity2::Il2CppString,
             crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, text, yes_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::class(),
@@ -146,41 +134,30 @@ mod __ShopBuyYesNoDialogYesMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: ShopBuyYesNoDialogYesMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            ShopBuyYesNoDialogYesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ShopBuyYesNoDialogYesMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::class(),
@@ -193,32 +170,23 @@ mod __ShopBuyYesNoDialogYesMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShopBuyYesNoDialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn b_call(
         this: ShopBuyYesNoDialogYesMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            ShopBuyYesNoDialogYesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ShopBuyYesNoDialogYesMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -226,37 +194,22 @@ mod __ShopBuyYesNoDialogYesMenuItem_unity2_raw {
 #[cfg(feature = "app-shopbuyyesnodialogyesmenuitem")]
 pub trait IShopBuyYesNoDialogYesMenuItemMethods: IShopBuyYesNoDialogYesMenuItem {
     #[doc = "`.ctor(crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
-    fn ctor(
-        self,
-        yes_event_handler: impl ::core::convert::Into<
-            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-        >,
-    ) -> () {
+    fn ctor(self, yes_event_handler: impl ::core::convert::Into<crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler>) -> () {
         unsafe {
             let __receiver =
-                <ShopBuyYesNoDialogYesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShopBuyYesNoDialogYesMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(yes_event_handler),
-                ::core::option::Option::None,
-            )
+                <ShopBuyYesNoDialogYesMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShopBuyYesNoDialogYesMenuItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(yes_event_handler), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]
     fn ctor_2(
         self,
         text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        yes_event_handler: impl ::core::convert::Into<
-            crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-        >,
+        yes_event_handler: impl ::core::convert::Into<crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler>,
     ) -> () {
         unsafe {
             let __receiver =
-                <ShopBuyYesNoDialogYesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ShopBuyYesNoDialogYesMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShopBuyYesNoDialogYesMenuItem_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -269,26 +222,16 @@ pub trait IShopBuyYesNoDialogYesMenuItemMethods: IShopBuyYesNoDialogYesMenuItem 
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <ShopBuyYesNoDialogYesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShopBuyYesNoDialogYesMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ShopBuyYesNoDialogYesMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShopBuyYesNoDialogYesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <ShopBuyYesNoDialogYesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShopBuyYesNoDialogYesMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ShopBuyYesNoDialogYesMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShopBuyYesNoDialogYesMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -299,9 +242,7 @@ impl<__T: IShopBuyYesNoDialogYesMenuItem> IShopBuyYesNoDialogYesMenuItemMethods 
 #[cfg(feature = "app-shopbuyyesnodialogyesmenuitem")]
 impl ShopBuyYesNoDialogYesMenuItem {
     #[doc = "`.ctor(crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` — overload selector"]
-    pub fn new(
-        yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-    ) -> Self {
+    pub fn new(yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -314,10 +255,7 @@ impl ShopBuyYesNoDialogYesMenuItem {
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` — overload selector"]
-    pub fn new_2(
-        text: ::unity2::Il2CppString,
-        yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
-    ) -> Self {
+    pub fn new_2(text: ::unity2::Il2CppString, yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -333,19 +271,17 @@ impl ShopBuyYesNoDialogYesMenuItem {
 #[cfg(feature = "app-shopbuyyesnodialogyesmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShopBuyYesNoDialogYesMenuItem;
-    pub use super::IShopBuyYesNoDialogYesMenuItemMethods;
-    pub use super::ShopBuyYesNoDialogYesMenuItem;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use super::{IShopBuyYesNoDialogYesMenuItem, IShopBuyYesNoDialogYesMenuItemMethods, ShopBuyYesNoDialogYesMenuItem};
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     #[cfg(feature = "app-basicdialogitemyes")]
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes, basicmenuitem::IBasicMenuItem},
+        system::object::IObject,
+    };
 }

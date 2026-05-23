@@ -11,17 +11,13 @@ pub mod lightweightrenderpipelineasset;
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipelineasset")]
 pub use lightweightrenderpipelineasset::ILightweightRenderPipelineAssetMethods;
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipelineasset-types")]
-pub use lightweightrenderpipelineasset::{
-    ILightweightRenderPipelineAsset, LightweightRenderPipelineAsset,
-};
+pub use lightweightrenderpipelineasset::{ILightweightRenderPipelineAsset, LightweightRenderPipelineAsset};
 #[cfg(any(feature = "unity_engine-rendering-lwrp-lightweightrenderpipelineeditorresources-types"))]
 pub mod lightweightrenderpipelineeditorresources;
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipelineeditorresources")]
 pub use lightweightrenderpipelineeditorresources::ILightweightRenderPipelineEditorResourcesMethods;
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipelineeditorresources-types")]
-pub use lightweightrenderpipelineeditorresources::{
-    ILightweightRenderPipelineEditorResources, LightweightRenderPipelineEditorResources,
-};
+pub use lightweightrenderpipelineeditorresources::{ILightweightRenderPipelineEditorResources, LightweightRenderPipelineEditorResources};
 #[cfg(any(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata-types"))]
 pub mod lwrpadditionalcameradata;
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-profilecardvisualassets-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualassets/ProfileCardVisualAssets.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardVisualAssets")]
@@ -77,9 +77,7 @@ mod __ProfileCardVisualAssets_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
@@ -92,35 +90,26 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "LoadAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "LoadAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
@@ -133,36 +122,30 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "IsLoading",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "IsLoading",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_loading(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardbgdata :: ProfileCardBgData as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: sprite :: Sprite > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type(),
+                <crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "GetBg",
@@ -174,18 +157,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "GetBg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "GetBg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_bg(
@@ -197,23 +177,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
             crate::app::profilecardbgdata::ProfileCardBgData,
             crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bg::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_bg::get_method_info().method_ptr);
         inner(bg_data, completed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "ReleaseBg",
@@ -225,44 +198,29 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseBg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseBg",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_bg(
-        bg_data: crate::app::profilecardbgdata::ProfileCardBgData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::profilecardbgdata::ProfileCardBgData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_bg::get_offset() as isize),
-        );
+    pub unsafe fn release_bg(bg_data: crate::app::profilecardbgdata::ProfileCardBgData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::profilecardbgdata::ProfileCardBgData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_bg::get_method_info().method_ptr);
         inner(bg_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_bg_thumb {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetBgThumb",
@@ -274,42 +232,34 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetBgThumb",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetBgThumb",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_bg_thumb(
         bg_data: crate::app::profilecardbgdata::ProfileCardBgData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            crate::app::profilecardbgdata::ProfileCardBgData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_bg_thumb::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::profilecardbgdata::ProfileCardBgData, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_bg_thumb::get_method_info().method_ptr);
         inner(bg_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardframedata :: ProfileCardFrameData as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: sprite :: Sprite > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardframedata::ProfileCardFrameData as ::unity2::IlType>::il_type(),
+                <crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "GetFrame",
@@ -321,18 +271,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "GetFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "GetFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_frame(
@@ -344,21 +291,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
             crate::app::profilecardframedata::ProfileCardFrameData,
             crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_frame::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_frame::get_method_info().method_ptr);
         inner(frame_data, completed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardframedata :: ProfileCardFrameData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardframedata::ProfileCardFrameData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "ReleaseFrame",
@@ -370,42 +312,32 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release_frame(
         frame_data: crate::app::profilecardframedata::ProfileCardFrameData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::profilecardframedata::ProfileCardFrameData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_frame::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::profilecardframedata::ProfileCardFrameData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_frame::get_method_info().method_ptr);
         inner(frame_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_frame_thumb {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardframedata :: ProfileCardFrameData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardframedata::ProfileCardFrameData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetFrameThumb",
@@ -417,18 +349,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetFrameThumb",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetFrameThumb",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_frame_thumb(
@@ -438,20 +367,14 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardframedata::ProfileCardFrameData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_frame_thumb::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_frame_thumb::get_method_info().method_ptr);
         inner(frame_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_frame_thumb_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
@@ -464,39 +387,29 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetFrameThumbEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetFrameThumbEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_get_frame_thumb_empty(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
+    pub unsafe fn try_get_frame_thumb_empty(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_get_frame_thumb_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_get_frame_thumb_empty::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_name_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoNameBg",
@@ -508,18 +421,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoNameBg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoNameBg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_name_bg(
@@ -529,21 +439,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_name_bg::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_name_bg::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_comment_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoCommentBg",
@@ -555,18 +460,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoCommentBg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoCommentBg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_comment_bg(
@@ -576,21 +478,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_comment_bg::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_comment_bg::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_title_large_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoTitleLargeBg",
@@ -602,18 +499,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoTitleLargeBg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoTitleLargeBg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_title_large_bg(
@@ -623,21 +517,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_title_large_bg::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_title_large_bg::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_title_small_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoTitleSmallBg",
@@ -649,18 +538,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoTitleSmallBg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoTitleSmallBg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_title_small_bg(
@@ -670,21 +556,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_title_small_bg::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_title_small_bg::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_column_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoColumnBg",
@@ -696,18 +577,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoColumnBg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoColumnBg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_column_bg(
@@ -717,21 +595,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_column_bg::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_column_bg::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoLine",
@@ -743,18 +616,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoLine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_line(
@@ -764,21 +634,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_line::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_line::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_unit_name_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoUnitNameBg",
@@ -790,18 +655,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoUnitNameBg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoUnitNameBg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_unit_name_bg(
@@ -811,21 +673,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_unit_name_bg::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_unit_name_bg::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_achievement1_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoAchievement1Bg",
@@ -837,18 +694,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoAchievement1Bg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoAchievement1Bg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_achievement1_bg(
@@ -858,21 +712,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_achievement1_bg::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_achievement1_bg::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_achievement2_bg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoAchievement2Bg",
@@ -884,18 +733,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoAchievement2Bg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoAchievement2Bg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_achievement2_bg(
@@ -905,21 +751,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_achievement2_bg::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_achievement2_bg::get_method_info().method_ptr);
         inner(deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_text_deco_thumb {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextDecoThumb",
@@ -931,18 +772,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextDecoThumb",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextDecoThumb",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_text_deco_thumb(
@@ -952,21 +790,16 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_text_deco_thumb::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_text_deco_thumb::get_method_info().method_ptr);
         inner(text_deco_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_stamp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardstampdata::ProfileCardStampData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetStamp",
@@ -978,18 +811,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetStamp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetStamp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_stamp(
@@ -999,22 +829,15 @@ mod __ProfileCardVisualAssets_unity2_raw {
         let inner: extern "C" fn(
             crate::app::profilecardstampdata::ProfileCardStampData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_stamp::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(__lookup_try_get_stamp::get_method_info().method_ptr);
         inner(stamp_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_textures {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
                 "TryGetTextures",
@@ -1026,41 +849,30 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextures",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextures",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_textures(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_textures::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get_textures::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_texture_face_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
@@ -1073,38 +885,27 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTextureFaceEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTextureFaceEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_get_texture_face_empty(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
+    pub unsafe fn try_get_texture_face_empty(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_get_texture_face_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_get_texture_face_empty::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_texture_photo_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
@@ -1117,38 +918,27 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "TryGetTexturePhotoEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "TryGetTexturePhotoEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_get_texture_photo_empty(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
+    pub unsafe fn try_get_texture_photo_empty(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_get_texture_photo_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_get_texture_photo_empty::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
@@ -1161,35 +951,26 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    "Unload",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        "Unload",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
@@ -1202,39 +983,27 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ProfileCardVisualAssets,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ProfileCardVisualAssets, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardVisualAssets, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualAssets as ::unity2::ClassIdentity>::class(),
@@ -1247,26 +1016,19 @@ mod __ProfileCardVisualAssets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualAssets as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1277,16 +1039,16 @@ impl ProfileCardVisualAssets {
     pub fn load_async() -> () {
         unsafe { __ProfileCardVisualAssets_unity2_raw::load_async(::core::option::Option::None) }
     }
+
     #[doc = "`IsLoading()` overload"]
     pub fn is_loading() -> bool {
         unsafe { __ProfileCardVisualAssets_unity2_raw::is_loading(::core::option::Option::None) }
     }
+
     #[doc = "`GetBg(crate::app::profilecardbgdata::ProfileCardBgData, crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite>)` overload"]
     pub fn get_bg(
         bg_data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>,
-        completed: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite>,
-        >,
+        completed: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite>>,
     ) -> () {
         unsafe {
             __ProfileCardVisualAssets_unity2_raw::get_bg(
@@ -1296,34 +1058,23 @@ impl ProfileCardVisualAssets {
             )
         }
     }
+
     #[doc = "`ReleaseBg(crate::app::profilecardbgdata::ProfileCardBgData)` overload"]
-    pub fn release_bg(
-        bg_data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>,
-    ) -> () {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::release_bg(
-                ::core::convert::Into::into(bg_data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn release_bg(bg_data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>) -> () {
+        unsafe { __ProfileCardVisualAssets_unity2_raw::release_bg(::core::convert::Into::into(bg_data), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetBgThumb(crate::app::profilecardbgdata::ProfileCardBgData)` overload"]
     pub fn try_get_bg_thumb(
         bg_data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>,
     ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_bg_thumb(
-                ::core::convert::Into::into(bg_data),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ProfileCardVisualAssets_unity2_raw::try_get_bg_thumb(::core::convert::Into::into(bg_data), ::core::option::Option::None) }
     }
+
     #[doc = "`GetFrame(crate::app::profilecardframedata::ProfileCardFrameData, crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite>)` overload"]
     pub fn get_frame(
         frame_data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>,
-        completed: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite>,
-        >,
+        completed: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::sprite::Sprite>>,
     ) -> () {
         unsafe {
             __ProfileCardVisualAssets_unity2_raw::get_frame(
@@ -1333,67 +1084,45 @@ impl ProfileCardVisualAssets {
             )
         }
     }
+
     #[doc = "`ReleaseFrame(crate::app::profilecardframedata::ProfileCardFrameData)` overload"]
-    pub fn release_frame(
-        frame_data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>,
-    ) -> () {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::release_frame(
-                ::core::convert::Into::into(frame_data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn release_frame(frame_data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>) -> () {
+        unsafe { __ProfileCardVisualAssets_unity2_raw::release_frame(::core::convert::Into::into(frame_data), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetFrameThumb(crate::app::profilecardframedata::ProfileCardFrameData)` overload"]
     pub fn try_get_frame_thumb(
         frame_data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>,
     ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_frame_thumb(
-                ::core::convert::Into::into(frame_data),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ProfileCardVisualAssets_unity2_raw::try_get_frame_thumb(::core::convert::Into::into(frame_data), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetFrameThumbEmpty()` overload"]
     pub fn try_get_frame_thumb_empty() -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_frame_thumb_empty(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ProfileCardVisualAssets_unity2_raw::try_get_frame_thumb_empty(::core::option::Option::None) }
     }
+
     #[doc = "`TryGetTextDecoNameBg(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_name_bg(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_name_bg(
-                ::core::convert::Into::into(deco_data),
-                ::core::option::Option::None,
-            )
+            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_name_bg(::core::convert::Into::into(deco_data), ::core::option::Option::None)
         }
     }
+
     #[doc = "`TryGetTextDecoCommentBg(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_comment_bg(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_comment_bg(
-                ::core::convert::Into::into(deco_data),
-                ::core::option::Option::None,
-            )
+            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_comment_bg(::core::convert::Into::into(deco_data), ::core::option::Option::None)
         }
     }
+
     #[doc = "`TryGetTextDecoTitleLargeBg(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_title_large_bg(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
             __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_title_large_bg(
@@ -1402,11 +1131,10 @@ impl ProfileCardVisualAssets {
             )
         }
     }
+
     #[doc = "`TryGetTextDecoTitleSmallBg(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_title_small_bg(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
             __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_title_small_bg(
@@ -1415,50 +1143,35 @@ impl ProfileCardVisualAssets {
             )
         }
     }
+
     #[doc = "`TryGetTextDecoColumnBg(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_column_bg(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_column_bg(
-                ::core::convert::Into::into(deco_data),
-                ::core::option::Option::None,
-            )
+            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_column_bg(::core::convert::Into::into(deco_data), ::core::option::Option::None)
         }
     }
+
     #[doc = "`TryGetTextDecoLine(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_line(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_line(
-                ::core::convert::Into::into(deco_data),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_line(::core::convert::Into::into(deco_data), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetTextDecoUnitNameBg(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_unit_name_bg(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_unit_name_bg(
-                ::core::convert::Into::into(deco_data),
-                ::core::option::Option::None,
-            )
+            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_unit_name_bg(::core::convert::Into::into(deco_data), ::core::option::Option::None)
         }
     }
+
     #[doc = "`TryGetTextDecoAchievement1Bg(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_achievement1_bg(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
             __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_achievement1_bg(
@@ -1467,11 +1180,10 @@ impl ProfileCardVisualAssets {
             )
         }
     }
+
     #[doc = "`TryGetTextDecoAchievement2Bg(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_achievement2_bg(
-        deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
             __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_achievement2_bg(
@@ -1480,61 +1192,43 @@ impl ProfileCardVisualAssets {
             )
         }
     }
+
     #[doc = "`TryGetTextDecoThumb(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
     pub fn try_get_text_deco_thumb(
-        text_deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        text_deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
     ) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_thumb(
-                ::core::convert::Into::into(text_deco_data),
-                ::core::option::Option::None,
-            )
+            __ProfileCardVisualAssets_unity2_raw::try_get_text_deco_thumb(::core::convert::Into::into(text_deco_data), ::core::option::Option::None)
         }
     }
+
     #[doc = "`TryGetStamp(crate::app::profilecardstampdata::ProfileCardStampData)` overload"]
     pub fn try_get_stamp(
         stamp_data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>,
     ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_stamp(
-                ::core::convert::Into::into(stamp_data),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ProfileCardVisualAssets_unity2_raw::try_get_stamp(::core::convert::Into::into(stamp_data), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetTextures(::unity2::Il2CppString)` overload"]
-    pub fn try_get_textures(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_textures(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_textures(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
+        unsafe { __ProfileCardVisualAssets_unity2_raw::try_get_textures(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetTextureFaceEmpty()` overload"]
     pub fn try_get_texture_face_empty() -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_texture_face_empty(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ProfileCardVisualAssets_unity2_raw::try_get_texture_face_empty(::core::option::Option::None) }
     }
+
     #[doc = "`TryGetTexturePhotoEmpty()` overload"]
     pub fn try_get_texture_photo_empty() -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            __ProfileCardVisualAssets_unity2_raw::try_get_texture_photo_empty(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ProfileCardVisualAssets_unity2_raw::try_get_texture_photo_empty(::core::option::Option::None) }
     }
+
     #[doc = "`Unload()` overload"]
     pub fn unload() -> () {
         unsafe { __ProfileCardVisualAssets_unity2_raw::unload(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __ProfileCardVisualAssets_unity2_raw::cctor(::core::option::Option::None) }
@@ -1547,9 +1241,7 @@ pub trait IProfileCardVisualAssetsMethods: IProfileCardVisualAssets {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardVisualAssets as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProfileCardVisualAssets as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardVisualAssets_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1577,9 +1269,7 @@ impl ProfileCardVisualAssets {
 #[cfg(feature = "app-profilecardvisualassets")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProfileCardVisualAssets;
-    pub use super::IProfileCardVisualAssetsMethods;
-    pub use super::ProfileCardVisualAssets;
+    pub use super::{IProfileCardVisualAssets, IProfileCardVisualAssetsMethods, ProfileCardVisualAssets};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

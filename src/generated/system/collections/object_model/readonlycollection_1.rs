@@ -2,16 +2,13 @@
 
 #[cfg(feature = "system-collections-object_model-readonlycollection_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/object_model/readonlycollection_1/ReadOnlyCollection_1.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.ObjectModel",
-        name = "ReadOnlyCollection`1"
-    )]
+    #[::unity2::class(namespace = "System.Collections.ObjectModel", name = "ReadOnlyCollection`1")]
     #[parent(crate::system::object::Object)]
     pub struct ReadOnlyCollection_1<T0: ::unity2::ClassIdentity> {
         #[rename(name = "list")]
@@ -29,10 +26,7 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
     #[doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>,
-    ) -> ();
+    pub fn ctor(self, list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>) -> ();
 
     #[doc = "`get_Count()` overload"]
     #[method(name = "get_Count", args = 0)]
@@ -52,9 +46,7 @@ impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
 
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
 
     #[doc = "`IndexOf(T0)` overload"]
     #[method(name = "IndexOf", args = 1)]
@@ -62,9 +54,7 @@ impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
 
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
     #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 
     #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
     #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
@@ -76,11 +66,7 @@ impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
 
     #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
     #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(
-        self,
-        array: ::unity2::IlInstance,
-        index: i32,
-    ) -> ();
+    pub fn system_collections_i_collection_copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
 
     #[doc = "`System.Collections.IList.get_IsReadOnly()` overload"]
     #[method(name = "System.Collections.IList.get_IsReadOnly", args = 0)]
@@ -92,11 +78,7 @@ impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
 
     #[doc = "`System.Collections.IList.set_Item(i32, crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IList.set_Item", args = 2)]
-    pub fn system_collections_i_list_set_item(
-        self,
-        index: i32,
-        value: crate::system::object::Object,
-    ) -> ();
+    pub fn system_collections_i_list_set_item(self, index: i32, value: crate::system::object::Object) -> ();
 
     #[doc = "`System.Collections.IList.Add(crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IList.Add", args = 1)]
@@ -120,11 +102,7 @@ impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
 
     #[doc = "`System.Collections.IList.Insert(i32, crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IList.Insert", args = 2)]
-    pub fn system_collections_i_list_insert(
-        self,
-        index: i32,
-        value: crate::system::object::Object,
-    ) -> ();
+    pub fn system_collections_i_list_insert(self, index: i32, value: crate::system::object::Object) -> ();
 
     #[doc = "`System.Collections.IList.Remove(crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IList.Remove", args = 1)]
@@ -138,9 +116,7 @@ impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
 #[cfg(feature = "system-collections-object_model-readonlycollection_1")]
 impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
     #[doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>,
-    ) -> Self {
+    pub fn new(list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -156,9 +132,7 @@ impl<T0: ::unity2::ClassIdentity> ReadOnlyCollection_1<T0> {
 #[cfg(feature = "system-collections-object_model-readonlycollection_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IReadOnlyCollection_1;
-    pub use super::IReadOnlyCollection_1Methods;
-    pub use super::ReadOnlyCollection_1;
+    pub use super::{IReadOnlyCollection_1, IReadOnlyCollection_1Methods, ReadOnlyCollection_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

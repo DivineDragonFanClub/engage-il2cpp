@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-lightmapsettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::object_2::{IObject_2, Object_2},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/lightmapsettings/LightmapSettings.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "LightmapSettings")]
@@ -26,9 +28,7 @@ mod __LightmapSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
@@ -41,39 +41,27 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: LightmapSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: LightmapSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LightmapSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lightmaps {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
@@ -86,45 +74,29 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_lightmaps",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_lightmaps",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_lightmaps(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::unity_engine::lightmapdata::LightmapData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_lightmaps::get_offset() as isize),
-        );
+    pub unsafe fn get_lightmaps(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData> =
+            ::core::mem::transmute(__lookup_get_lightmaps::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_lightmaps {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::lightmapdata::LightmapData,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::lightmapdata::LightmapData> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
                 "set_lightmaps",
@@ -136,41 +108,30 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_lightmaps",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_lightmaps",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_lightmaps(
         value: ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_lightmaps::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_lightmaps::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lightmaps_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
@@ -183,42 +144,29 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_lightmapsMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_lightmapsMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_lightmaps_mode(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::lightmapsmode::LightmapsMode {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::lightmapsmode::LightmapsMode = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_lightmaps_mode::get_offset() as isize),
-        );
+    pub unsafe fn get_lightmaps_mode(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::lightmapsmode::LightmapsMode {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::lightmapsmode::LightmapsMode =
+            ::core::mem::transmute(__lookup_get_lightmaps_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_lightmaps_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::lightmapsmode::LightmapsMode as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::lightmapsmode::LightmapsMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
                 "set_lightmapsMode",
@@ -230,41 +178,27 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_lightmapsMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_lightmapsMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_lightmaps_mode(
-        value: crate::unity_engine::lightmapsmode::LightmapsMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::lightmapsmode::LightmapsMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_lightmaps_mode::get_offset() as isize),
-        );
+    pub unsafe fn set_lightmaps_mode(value: crate::unity_engine::lightmapsmode::LightmapsMode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::lightmapsmode::LightmapsMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_lightmaps_mode::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_probes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
@@ -277,39 +211,27 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_lightProbes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_lightProbes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_light_probes(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::lightprobes::LightProbes {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::lightprobes::LightProbes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_light_probes::get_offset() as isize),
-        );
+    pub unsafe fn get_light_probes(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::lightprobes::LightProbes {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::lightprobes::LightProbes =
+            ::core::mem::transmute(__lookup_get_light_probes::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_light_probes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::lightprobes::LightProbes as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -323,41 +245,27 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_lightProbes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_lightProbes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_light_probes(
-        value: crate::unity_engine::lightprobes::LightProbes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::lightprobes::LightProbes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_light_probes::get_offset() as isize),
-        );
+    pub unsafe fn set_light_probes(value: crate::unity_engine::lightprobes::LightProbes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::lightprobes::LightProbes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_light_probes::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
@@ -370,35 +278,26 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reset(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lightmaps_mode_legacy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
@@ -411,42 +310,31 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_lightmapsModeLegacy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_lightmapsModeLegacy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_lightmaps_mode_legacy(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_lightmaps_mode_legacy::get_offset() as isize),
-            );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy =
+            ::core::mem::transmute(__lookup_get_lightmaps_mode_legacy::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_lightmaps_mode_legacy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: lightmapsmodelegacy :: LightmapsModeLegacy as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
                 "set_lightmapsModeLegacy",
@@ -458,41 +346,30 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_lightmapsModeLegacy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_lightmapsModeLegacy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_lightmaps_mode_legacy(
         value: crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_lightmaps_mode_legacy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_lightmaps_mode_legacy::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_baked_color_space {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapSettings as ::unity2::ClassIdentity>::class(),
@@ -505,39 +382,27 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_bakedColorSpace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_bakedColorSpace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_baked_color_space(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::colorspace::ColorSpace {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::colorspace::ColorSpace = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_baked_color_space::get_offset() as isize),
-        );
+    pub unsafe fn get_baked_color_space(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::colorspace::ColorSpace {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::colorspace::ColorSpace =
+            ::core::mem::transmute(__lookup_get_baked_color_space::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_baked_color_space {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::colorspace::ColorSpace as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -551,32 +416,20 @@ mod __LightmapSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_bakedColorSpace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_bakedColorSpace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_baked_color_space(
-        value: crate::unity_engine::colorspace::ColorSpace,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::colorspace::ColorSpace,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_baked_color_space::get_offset() as isize),
-        );
+    pub unsafe fn set_baked_color_space(value: crate::unity_engine::colorspace::ColorSpace, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::colorspace::ColorSpace, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_baked_color_space::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
 }
@@ -587,87 +440,55 @@ impl LightmapSettings {
     pub fn get_lightmaps() -> ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData> {
         unsafe { __LightmapSettings_unity2_raw::get_lightmaps(::core::option::Option::None) }
     }
+
     #[doc = "`set_lightmaps(::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>)` overload"]
-    pub fn set_lightmaps(
-        value: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>,
-        >,
-    ) -> () {
-        unsafe {
-            __LightmapSettings_unity2_raw::set_lightmaps(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_lightmaps(value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>>) -> () {
+        unsafe { __LightmapSettings_unity2_raw::set_lightmaps(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_lightmapsMode()` overload"]
     pub fn get_lightmaps_mode() -> crate::unity_engine::lightmapsmode::LightmapsMode {
         unsafe { __LightmapSettings_unity2_raw::get_lightmaps_mode(::core::option::Option::None) }
     }
+
     #[doc = "`set_lightmapsMode(crate::unity_engine::lightmapsmode::LightmapsMode)` overload"]
-    pub fn set_lightmaps_mode(
-        value: impl ::core::convert::Into<crate::unity_engine::lightmapsmode::LightmapsMode>,
-    ) -> () {
-        unsafe {
-            __LightmapSettings_unity2_raw::set_lightmaps_mode(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_lightmaps_mode(value: impl ::core::convert::Into<crate::unity_engine::lightmapsmode::LightmapsMode>) -> () {
+        unsafe { __LightmapSettings_unity2_raw::set_lightmaps_mode(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_lightProbes()` overload"]
     pub fn get_light_probes() -> crate::unity_engine::lightprobes::LightProbes {
         unsafe { __LightmapSettings_unity2_raw::get_light_probes(::core::option::Option::None) }
     }
+
     #[doc = "`set_lightProbes(crate::unity_engine::lightprobes::LightProbes)` overload"]
-    pub fn set_light_probes(
-        value: impl ::core::convert::Into<crate::unity_engine::lightprobes::LightProbes>,
-    ) -> () {
-        unsafe {
-            __LightmapSettings_unity2_raw::set_light_probes(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_light_probes(value: impl ::core::convert::Into<crate::unity_engine::lightprobes::LightProbes>) -> () {
+        unsafe { __LightmapSettings_unity2_raw::set_light_probes(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`Reset()` overload"]
     pub fn reset() -> () {
         unsafe { __LightmapSettings_unity2_raw::reset(::core::option::Option::None) }
     }
+
     #[doc = "`get_lightmapsModeLegacy()` overload"]
-    pub fn get_lightmaps_mode_legacy(
-    ) -> crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy {
-        unsafe {
-            __LightmapSettings_unity2_raw::get_lightmaps_mode_legacy(::core::option::Option::None)
-        }
+    pub fn get_lightmaps_mode_legacy() -> crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy {
+        unsafe { __LightmapSettings_unity2_raw::get_lightmaps_mode_legacy(::core::option::Option::None) }
     }
+
     #[doc = "`set_lightmapsModeLegacy(crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy)` overload"]
-    pub fn set_lightmaps_mode_legacy(
-        value: impl ::core::convert::Into<crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy>,
-    ) -> () {
-        unsafe {
-            __LightmapSettings_unity2_raw::set_lightmaps_mode_legacy(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_lightmaps_mode_legacy(value: impl ::core::convert::Into<crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy>) -> () {
+        unsafe { __LightmapSettings_unity2_raw::set_lightmaps_mode_legacy(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_bakedColorSpace()` overload"]
     pub fn get_baked_color_space() -> crate::unity_engine::colorspace::ColorSpace {
-        unsafe {
-            __LightmapSettings_unity2_raw::get_baked_color_space(::core::option::Option::None)
-        }
+        unsafe { __LightmapSettings_unity2_raw::get_baked_color_space(::core::option::Option::None) }
     }
+
     #[doc = "`set_bakedColorSpace(crate::unity_engine::colorspace::ColorSpace)` overload"]
-    pub fn set_baked_color_space(
-        value: impl ::core::convert::Into<crate::unity_engine::colorspace::ColorSpace>,
-    ) -> () {
-        unsafe {
-            __LightmapSettings_unity2_raw::set_baked_color_space(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_baked_color_space(value: impl ::core::convert::Into<crate::unity_engine::colorspace::ColorSpace>) -> () {
+        unsafe { __LightmapSettings_unity2_raw::set_baked_color_space(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 }
 
@@ -676,9 +497,7 @@ pub trait ILightmapSettingsMethods: ILightmapSettings {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <LightmapSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LightmapSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LightmapSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -706,13 +525,10 @@ impl LightmapSettings {
 #[cfg(feature = "unity_engine-lightmapsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILightmapSettings;
-    pub use super::ILightmapSettingsMethods;
-    pub use super::LightmapSettings;
-    pub use crate::system::object::IObject;
+    pub use super::{ILightmapSettings, ILightmapSettingsMethods, LightmapSettings};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{system::object::IObject, unity_engine::object_2::IObject_2};
 }

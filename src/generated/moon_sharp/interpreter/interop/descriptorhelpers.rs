@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-descriptorhelpers-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/descriptorhelpers/DescriptorHelpers.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "DescriptorHelpers"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "DescriptorHelpers")]
     #[parent(crate::system::object::Object)]
     pub struct DescriptorHelpers {}
 }
@@ -28,11 +25,8 @@ mod __DescriptorHelpers_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_delegate_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "IsDelegateType",
@@ -44,41 +38,28 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "IsDelegateType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "IsDelegateType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_delegate_type(
-        t: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_delegate_type(t: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_delegate_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_delegate_type::get_method_info().method_ptr);
         inner(t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clr_visibility {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "GetClrVisibility",
@@ -90,44 +71,29 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetClrVisibility",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetClrVisibility",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_clr_visibility(
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clr_visibility::get_offset() as isize),
-        );
+    pub unsafe fn get_clr_visibility(r#type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_clr_visibility::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clr_visibility_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::fieldinfo::FieldInfo as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::fieldinfo::FieldInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "GetClrVisibility",
@@ -139,42 +105,32 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetClrVisibility",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetClrVisibility",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clr_visibility_2(
         info: crate::system::reflection::fieldinfo::FieldInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::system::reflection::fieldinfo::FieldInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clr_visibility_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::reflection::fieldinfo::FieldInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_clr_visibility_2::get_method_info().method_ptr);
         inner(info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clr_visibility_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::propertyinfo::PropertyInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "GetClrVisibility",
@@ -186,44 +142,32 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetClrVisibility",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetClrVisibility",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clr_visibility_3(
         info: crate::system::reflection::propertyinfo::PropertyInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::system::reflection::propertyinfo::PropertyInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clr_visibility_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_clr_visibility_3::get_method_info().method_ptr);
         inner(info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clr_visibility_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::methodbase::MethodBase as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::methodbase::MethodBase as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "GetClrVisibility",
@@ -235,42 +179,32 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetClrVisibility",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetClrVisibility",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clr_visibility_4(
         info: crate::system::reflection::methodbase::MethodBase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::system::reflection::methodbase::MethodBase,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clr_visibility_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::reflection::methodbase::MethodBase, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_clr_visibility_4::get_method_info().method_ptr);
         inner(info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_property_info_public {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::propertyinfo::PropertyInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "IsPropertyInfoPublic",
@@ -282,44 +216,32 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "IsPropertyInfoPublic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "IsPropertyInfoPublic",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_property_info_public(
         pi: crate::system::reflection::propertyinfo::PropertyInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::reflection::propertyinfo::PropertyInfo,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_property_info_public::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_property_info_public::get_method_info().method_ptr);
         inner(pi, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_meta_names_from_attributes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::methodinfo::MethodInfo as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::methodinfo::MethodInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "GetMetaNamesFromAttributes",
@@ -331,18 +253,15 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetMetaNamesFromAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetMetaNamesFromAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_meta_names_from_attributes(
@@ -352,22 +271,15 @@ mod __DescriptorHelpers_unity2_raw {
         let inner: extern "C" fn(
             crate::system::reflection::methodinfo::MethodInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_meta_names_from_attributes::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_meta_names_from_attributes::get_method_info().method_ptr);
         inner(mi, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_safe_get_types {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::system::reflection::assembly::Assembly as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -381,43 +293,31 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "SafeGetTypes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "SafeGetTypes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn safe_get_types(
         asm: crate::system::reflection::assembly::Assembly,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<::unity2::SystemType> {
-        let inner: extern "C" fn(
-            crate::system::reflection::assembly::Assembly,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_safe_get_types::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::reflection::assembly::Assembly, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::SystemType> =
+            ::core::mem::transmute(__lookup_safe_get_types::get_method_info().method_ptr);
         inner(asm, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_conversion_method_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "GetConversionMethodName",
@@ -429,43 +329,28 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetConversionMethodName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetConversionMethodName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_conversion_method_name(
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_conversion_method_name::get_offset() as isize),
-        );
+    pub unsafe fn get_conversion_method_name(r#type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_conversion_method_name::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_all_implemented_types {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "GetAllImplementedTypes",
@@ -477,37 +362,34 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetAllImplementedTypes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetAllImplementedTypes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_all_implemented_types(
         t: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>
-    {
-        let inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: SystemType > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_all_implemented_types :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType> {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType> =
+            ::core::mem::transmute(__lookup_get_all_implemented_types::get_method_info().method_ptr);
         inner(t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid_simple_identifier {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "IsValidSimpleIdentifier",
@@ -519,41 +401,28 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "IsValidSimpleIdentifier",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "IsValidSimpleIdentifier",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_valid_simple_identifier(
-        str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_valid_simple_identifier(str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid_simple_identifier::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_valid_simple_identifier::get_method_info().method_ptr);
         inner(str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_valid_simple_identifier {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "ToValidSimpleIdentifier",
@@ -565,43 +434,28 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "ToValidSimpleIdentifier",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "ToValidSimpleIdentifier",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_valid_simple_identifier(
-        str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_valid_simple_identifier::get_offset() as isize),
-        );
+    pub unsafe fn to_valid_simple_identifier(str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_valid_simple_identifier::get_method_info().method_ptr);
         inner(str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_camelify {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "Camelify",
@@ -613,43 +467,28 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "Camelify",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "Camelify",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn camelify(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_camelify::get_offset() as isize),
-        );
+    pub unsafe fn camelify(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_camelify::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_upper_first_letter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DescriptorHelpers as ::unity2::ClassIdentity>::class(),
                 "UpperFirstLetter",
@@ -661,32 +500,20 @@ mod __DescriptorHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
-                    "UpperFirstLetter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DescriptorHelpers as ::unity2::ClassIdentity>::NAME,
+                        "UpperFirstLetter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn upper_first_letter(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_upper_first_letter::get_offset() as isize),
-        );
+    pub unsafe fn upper_first_letter(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_upper_first_letter::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
 }
@@ -695,164 +522,83 @@ mod __DescriptorHelpers_unity2_raw {
 impl DescriptorHelpers {
     #[doc = "`IsDelegateType(::unity2::SystemType)` overload"]
     pub fn is_delegate_type(t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::is_delegate_type(
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DescriptorHelpers_unity2_raw::is_delegate_type(::core::convert::Into::into(t), ::core::option::Option::None) }
     }
+
     #[doc = "`GetClrVisibility(::unity2::SystemType)` overload"]
-    pub fn get_clr_visibility(
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::get_clr_visibility(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_clr_visibility(r#type: impl ::core::convert::Into<::unity2::SystemType>) -> ::unity2::Il2CppString {
+        unsafe { __DescriptorHelpers_unity2_raw::get_clr_visibility(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`GetClrVisibility(crate::system::reflection::fieldinfo::FieldInfo)` overload"]
-    pub fn get_clr_visibility_2(
-        info: impl ::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::get_clr_visibility_2(
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_clr_visibility_2(info: impl ::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>) -> ::unity2::Il2CppString {
+        unsafe { __DescriptorHelpers_unity2_raw::get_clr_visibility_2(::core::convert::Into::into(info), ::core::option::Option::None) }
     }
+
     #[doc = "`GetClrVisibility(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    pub fn get_clr_visibility_3(
-        info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::get_clr_visibility_3(
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_clr_visibility_3(info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>) -> ::unity2::Il2CppString {
+        unsafe { __DescriptorHelpers_unity2_raw::get_clr_visibility_3(::core::convert::Into::into(info), ::core::option::Option::None) }
     }
+
     #[doc = "`GetClrVisibility(crate::system::reflection::methodbase::MethodBase)` overload"]
-    pub fn get_clr_visibility_4(
-        info: impl ::core::convert::Into<crate::system::reflection::methodbase::MethodBase>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::get_clr_visibility_4(
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_clr_visibility_4(info: impl ::core::convert::Into<crate::system::reflection::methodbase::MethodBase>) -> ::unity2::Il2CppString {
+        unsafe { __DescriptorHelpers_unity2_raw::get_clr_visibility_4(::core::convert::Into::into(info), ::core::option::Option::None) }
     }
+
     #[doc = "`IsPropertyInfoPublic(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    pub fn is_property_info_public(
-        pi: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
-    ) -> bool {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::is_property_info_public(
-                ::core::convert::Into::into(pi),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_property_info_public(pi: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>) -> bool {
+        unsafe { __DescriptorHelpers_unity2_raw::is_property_info_public(::core::convert::Into::into(pi), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMetaNamesFromAttributes(crate::system::reflection::methodinfo::MethodInfo)` overload"]
     pub fn get_meta_names_from_attributes(
         mi: impl ::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>,
     ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::get_meta_names_from_attributes(
-                ::core::convert::Into::into(mi),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DescriptorHelpers_unity2_raw::get_meta_names_from_attributes(::core::convert::Into::into(mi), ::core::option::Option::None) }
     }
+
     #[doc = "`SafeGetTypes(crate::system::reflection::assembly::Assembly)` overload"]
-    pub fn safe_get_types(
-        asm: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
-    ) -> ::unity2::Array<::unity2::SystemType> {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::safe_get_types(
-                ::core::convert::Into::into(asm),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn safe_get_types(asm: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>) -> ::unity2::Array<::unity2::SystemType> {
+        unsafe { __DescriptorHelpers_unity2_raw::safe_get_types(::core::convert::Into::into(asm), ::core::option::Option::None) }
     }
+
     #[doc = "`GetConversionMethodName(::unity2::SystemType)` overload"]
-    pub fn get_conversion_method_name(
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::get_conversion_method_name(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_conversion_method_name(r#type: impl ::core::convert::Into<::unity2::SystemType>) -> ::unity2::Il2CppString {
+        unsafe { __DescriptorHelpers_unity2_raw::get_conversion_method_name(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`GetAllImplementedTypes(::unity2::SystemType)` overload"]
     pub fn get_all_implemented_types(
         t: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>
-    {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::get_all_implemented_types(
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType> {
+        unsafe { __DescriptorHelpers_unity2_raw::get_all_implemented_types(::core::convert::Into::into(t), ::core::option::Option::None) }
     }
+
     #[doc = "`IsValidSimpleIdentifier(::unity2::Il2CppString)` overload"]
-    pub fn is_valid_simple_identifier(
-        str: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::is_valid_simple_identifier(
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_valid_simple_identifier(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __DescriptorHelpers_unity2_raw::is_valid_simple_identifier(::core::convert::Into::into(str), ::core::option::Option::None) }
     }
+
     #[doc = "`ToValidSimpleIdentifier(::unity2::Il2CppString)` overload"]
-    pub fn to_valid_simple_identifier(
-        str: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::to_valid_simple_identifier(
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn to_valid_simple_identifier(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __DescriptorHelpers_unity2_raw::to_valid_simple_identifier(::core::convert::Into::into(str), ::core::option::Option::None) }
     }
+
     #[doc = "`Camelify(::unity2::Il2CppString)` overload"]
-    pub fn camelify(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::camelify(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn camelify(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __DescriptorHelpers_unity2_raw::camelify(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`UpperFirstLetter(::unity2::Il2CppString)` overload"]
-    pub fn upper_first_letter(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DescriptorHelpers_unity2_raw::upper_first_letter(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn upper_first_letter(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __DescriptorHelpers_unity2_raw::upper_first_letter(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-descriptorhelpers")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DescriptorHelpers;
-    pub use super::IDescriptorHelpers;
+    pub use super::{DescriptorHelpers, IDescriptorHelpers};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

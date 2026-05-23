@@ -2,13 +2,17 @@
 
 #[cfg(feature = "unity_engine-monobehaviour-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/monobehaviour/MonoBehaviour.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "MonoBehaviour")]
@@ -28,9 +32,7 @@ mod __MonoBehaviour_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_invoking {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
@@ -43,39 +45,27 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "IsInvoking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "IsInvoking",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_invoking(
-        this: MonoBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_invoking(this: MonoBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MonoBehaviour, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_invoking::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_invoking::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cancel_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
@@ -88,39 +78,27 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "CancelInvoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "CancelInvoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn cancel_invoke(
-        this: MonoBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn cancel_invoke(this: MonoBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MonoBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_cancel_invoke::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_cancel_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -136,45 +114,27 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke(
-        this: MonoBehaviour,
-        method_name: ::unity2::Il2CppString,
-        time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+    pub unsafe fn invoke(this: MonoBehaviour, method_name: ::unity2::Il2CppString, time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MonoBehaviour, ::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, method_name, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_repeating {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -191,18 +151,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "InvokeRepeating",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "InvokeRepeating",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke_repeating(
@@ -212,28 +169,16 @@ mod __MonoBehaviour_unity2_raw {
         repeat_rate: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            ::unity2::Il2CppString,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_repeating::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MonoBehaviour, ::unity2::Il2CppString, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_repeating::get_method_info().method_ptr);
         inner(this, method_name, time, repeat_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cancel_invoke_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "CancelInvoke",
@@ -245,45 +190,28 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "CancelInvoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "CancelInvoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn cancel_invoke_2(
-        this: MonoBehaviour,
-        method_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cancel_invoke_2::get_offset() as isize),
-        );
+    pub unsafe fn cancel_invoke_2(this: MonoBehaviour, method_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MonoBehaviour, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cancel_invoke_2::get_method_info().method_ptr);
         inner(this, method_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_invoking_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "IsInvoking",
@@ -295,45 +223,28 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "IsInvoking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "IsInvoking",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_invoking_2(
-        this: MonoBehaviour,
-        method_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_invoking_2::get_offset() as isize),
-        );
+    pub unsafe fn is_invoking_2(this: MonoBehaviour, method_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MonoBehaviour, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_invoking_2::get_method_info().method_ptr);
         inner(this, method_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_coroutine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StartCoroutine",
@@ -345,18 +256,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StartCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StartCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start_coroutine(
@@ -364,24 +272,15 @@ mod __MonoBehaviour_unity2_raw {
         method_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::coroutine::Coroutine {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_coroutine::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MonoBehaviour, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::coroutine::Coroutine =
+            ::core::mem::transmute(__lookup_start_coroutine::get_method_info().method_ptr);
         inner(this, method_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_coroutine_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -397,18 +296,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StartCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StartCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start_coroutine_2(
@@ -422,24 +318,16 @@ mod __MonoBehaviour_unity2_raw {
             ::unity2::Il2CppString,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_coroutine_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(__lookup_start_coroutine_2::get_method_info().method_ptr);
         inner(this, method_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_coroutine_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StartCoroutine",
@@ -451,18 +339,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StartCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StartCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start_coroutine_3(
@@ -474,24 +359,16 @@ mod __MonoBehaviour_unity2_raw {
             MonoBehaviour,
             crate::system::collections::ienumerator::IEnumerator,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_coroutine_3::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(__lookup_start_coroutine_3::get_method_info().method_ptr);
         inner(this, routine, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_coroutine_auto {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StartCoroutine_Auto",
@@ -503,18 +380,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StartCoroutine_Auto",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StartCoroutine_Auto",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start_coroutine_auto(
@@ -526,24 +400,16 @@ mod __MonoBehaviour_unity2_raw {
             MonoBehaviour,
             crate::system::collections::ienumerator::IEnumerator,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_coroutine_auto::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(__lookup_start_coroutine_auto::get_method_info().method_ptr);
         inner(this, routine, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_coroutine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StopCoroutine",
@@ -555,18 +421,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StopCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StopCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop_coroutine(
@@ -574,26 +437,16 @@ mod __MonoBehaviour_unity2_raw {
         routine: crate::system::collections::ienumerator::IEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            crate::system::collections::ienumerator::IEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop_coroutine::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MonoBehaviour, crate::system::collections::ienumerator::IEnumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_coroutine::get_method_info().method_ptr);
         inner(this, routine, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_coroutine_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::coroutine::Coroutine as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::coroutine::Coroutine as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StopCoroutine",
@@ -605,18 +458,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StopCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StopCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop_coroutine_2(
@@ -624,26 +474,16 @@ mod __MonoBehaviour_unity2_raw {
         routine: crate::unity_engine::coroutine::Coroutine,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            crate::unity_engine::coroutine::Coroutine,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop_coroutine_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MonoBehaviour, crate::unity_engine::coroutine::Coroutine, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_coroutine_2::get_method_info().method_ptr);
         inner(this, routine, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_coroutine_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StopCoroutine",
@@ -655,43 +495,27 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StopCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StopCoroutine",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_coroutine_3(
-        this: MonoBehaviour,
-        method_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop_coroutine_3::get_offset() as isize),
-        );
+    pub unsafe fn stop_coroutine_3(this: MonoBehaviour, method_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MonoBehaviour, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_coroutine_3::get_method_info().method_ptr);
         inner(this, method_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_all_coroutines {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
@@ -704,39 +528,27 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StopAllCoroutines",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StopAllCoroutines",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_all_coroutines(
-        this: MonoBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop_all_coroutines(this: MonoBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MonoBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_all_coroutines::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop_all_coroutines::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_use_gui_layout {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
@@ -749,41 +561,28 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_useGUILayout",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_useGUILayout",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_use_gui_layout(
-        this: MonoBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_use_gui_layout(this: MonoBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MonoBehaviour, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_use_gui_layout::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_use_gui_layout::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_use_gui_layout {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "set_useGUILayout",
@@ -795,89 +594,56 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_useGUILayout",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_useGUILayout",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_use_gui_layout(
-        this: MonoBehaviour,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_use_gui_layout(this: MonoBehaviour, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MonoBehaviour, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_use_gui_layout::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_use_gui_layout::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_print {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoBehaviour as ::unity2::ClassIdentity>::class(),
-                "print",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoBehaviour as ::unity2::ClassIdentity>::class(), "print", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "print",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "print",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn print(
-        message: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn print(message: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_print::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_print::get_method_info().method_ptr);
         inner(message, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_cancel_invoke_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::monobehaviour::MonoBehaviour as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::monobehaviour::MonoBehaviour as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "Internal_CancelInvokeAll",
@@ -889,44 +655,32 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "Internal_CancelInvokeAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "Internal_CancelInvokeAll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_cancel_invoke_all(
         self_: crate::unity_engine::monobehaviour::MonoBehaviour,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::monobehaviour::MonoBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_cancel_invoke_all::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::monobehaviour::MonoBehaviour, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_cancel_invoke_all::get_method_info().method_ptr);
         inner(self_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_is_invoking_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::monobehaviour::MonoBehaviour as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::monobehaviour::MonoBehaviour as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "Internal_IsInvokingAll",
@@ -938,41 +692,30 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "Internal_IsInvokingAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "Internal_IsInvokingAll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_is_invoking_all(
         self_: crate::unity_engine::monobehaviour::MonoBehaviour,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::monobehaviour::MonoBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_is_invoking_all::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::monobehaviour::MonoBehaviour, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_internal_is_invoking_all::get_method_info().method_ptr);
         inner(self_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_delayed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::monobehaviour::MonoBehaviour as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -990,18 +733,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "InvokeDelayed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "InvokeDelayed",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke_delayed(
@@ -1017,20 +757,14 @@ mod __MonoBehaviour_unity2_raw {
             f32,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_delayed::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke_delayed::get_method_info().method_ptr);
         inner(self_, method_name, time, repeat_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cancel_invoke_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::monobehaviour::MonoBehaviour as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1046,18 +780,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "CancelInvoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "CancelInvoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cancel_invoke_3(
@@ -1065,24 +796,15 @@ mod __MonoBehaviour_unity2_raw {
         method_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::monobehaviour::MonoBehaviour,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cancel_invoke_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::monobehaviour::MonoBehaviour, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cancel_invoke_3::get_method_info().method_ptr);
         inner(self_, method_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_invoking_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::monobehaviour::MonoBehaviour as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1098,18 +820,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "IsInvoking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "IsInvoking",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_invoking_3(
@@ -1117,26 +836,16 @@ mod __MonoBehaviour_unity2_raw {
         method_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::monobehaviour::MonoBehaviour,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_invoking_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::monobehaviour::MonoBehaviour, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_invoking_3::get_method_info().method_ptr);
         inner(self_, method_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_object_mono_behaviour {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "IsObjectMonoBehaviour",
@@ -1148,41 +857,27 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "IsObjectMonoBehaviour",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "IsObjectMonoBehaviour",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_object_mono_behaviour(
-        obj: crate::unity_engine::object_2::Object_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_object_mono_behaviour::get_offset() as isize),
-        );
+    pub unsafe fn is_object_mono_behaviour(obj: crate::unity_engine::object_2::Object_2, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_object_mono_behaviour::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_coroutine_managed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1198,18 +893,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StartCoroutineManaged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StartCoroutineManaged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start_coroutine_managed(
@@ -1223,24 +915,16 @@ mod __MonoBehaviour_unity2_raw {
             ::unity2::Il2CppString,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_coroutine_managed::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(__lookup_start_coroutine_managed::get_method_info().method_ptr);
         inner(this, method_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_coroutine_managed2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StartCoroutineManaged2",
@@ -1252,18 +936,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StartCoroutineManaged2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StartCoroutineManaged2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start_coroutine_managed2(
@@ -1275,22 +956,15 @@ mod __MonoBehaviour_unity2_raw {
             MonoBehaviour,
             crate::system::collections::ienumerator::IEnumerator,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_coroutine_managed2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::coroutine::Coroutine = ::core::mem::transmute(__lookup_start_coroutine_managed2::get_method_info().method_ptr);
         inner(this, enumerator, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_coroutine_managed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::coroutine::Coroutine as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::coroutine::Coroutine as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StopCoroutineManaged",
@@ -1302,18 +976,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StopCoroutineManaged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StopCoroutineManaged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop_coroutine_managed(
@@ -1321,28 +992,17 @@ mod __MonoBehaviour_unity2_raw {
         routine: crate::unity_engine::coroutine::Coroutine,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            crate::unity_engine::coroutine::Coroutine,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop_coroutine_managed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MonoBehaviour, crate::unity_engine::coroutine::Coroutine, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_coroutine_managed::get_method_info().method_ptr);
         inner(this, routine, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_coroutine_from_enumerator_managed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::ienumerator::IEnumerator as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
                 "StopCoroutineFromEnumeratorManaged",
@@ -1354,18 +1014,15 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "StopCoroutineFromEnumeratorManaged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "StopCoroutineFromEnumeratorManaged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop_coroutine_from_enumerator_managed(
@@ -1373,24 +1030,15 @@ mod __MonoBehaviour_unity2_raw {
         routine: crate::system::collections::ienumerator::IEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            crate::system::collections::ienumerator::IEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop_coroutine_from_enumerator_managed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MonoBehaviour, crate::system::collections::ienumerator::IEnumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_coroutine_from_enumerator_managed::get_method_info().method_ptr);
         inner(this, routine, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_script_class_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoBehaviour as ::unity2::ClassIdentity>::class(),
@@ -1403,74 +1051,46 @@ mod __MonoBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "GetScriptClassName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "GetScriptClassName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_script_class_name(
-        this: MonoBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MonoBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_script_class_name::get_offset() as isize),
-        );
+    pub unsafe fn get_script_class_name(this: MonoBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MonoBehaviour, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_script_class_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoBehaviour as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoBehaviour as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoBehaviour as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MonoBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MonoBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MonoBehaviour, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1479,35 +1099,19 @@ mod __MonoBehaviour_unity2_raw {
 impl MonoBehaviour {
     #[doc = "`print(crate::system::object::Object)` overload"]
     pub fn print(message: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            __MonoBehaviour_unity2_raw::print(
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MonoBehaviour_unity2_raw::print(::core::convert::Into::into(message), ::core::option::Option::None) }
     }
+
     #[doc = "`Internal_CancelInvokeAll(crate::unity_engine::monobehaviour::MonoBehaviour)` overload"]
-    pub fn internal_cancel_invoke_all(
-        self_: impl ::core::convert::Into<crate::unity_engine::monobehaviour::MonoBehaviour>,
-    ) -> () {
-        unsafe {
-            __MonoBehaviour_unity2_raw::internal_cancel_invoke_all(
-                ::core::convert::Into::into(self_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn internal_cancel_invoke_all(self_: impl ::core::convert::Into<crate::unity_engine::monobehaviour::MonoBehaviour>) -> () {
+        unsafe { __MonoBehaviour_unity2_raw::internal_cancel_invoke_all(::core::convert::Into::into(self_), ::core::option::Option::None) }
     }
+
     #[doc = "`Internal_IsInvokingAll(crate::unity_engine::monobehaviour::MonoBehaviour)` overload"]
-    pub fn internal_is_invoking_all(
-        self_: impl ::core::convert::Into<crate::unity_engine::monobehaviour::MonoBehaviour>,
-    ) -> bool {
-        unsafe {
-            __MonoBehaviour_unity2_raw::internal_is_invoking_all(
-                ::core::convert::Into::into(self_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn internal_is_invoking_all(self_: impl ::core::convert::Into<crate::unity_engine::monobehaviour::MonoBehaviour>) -> bool {
+        unsafe { __MonoBehaviour_unity2_raw::internal_is_invoking_all(::core::convert::Into::into(self_), ::core::option::Option::None) }
     }
+
     #[doc = "`InvokeDelayed(crate::unity_engine::monobehaviour::MonoBehaviour, ::unity2::Il2CppString, f32, f32)` overload"]
     pub fn invoke_delayed(
         self_: impl ::core::convert::Into<crate::unity_engine::monobehaviour::MonoBehaviour>,
@@ -1525,6 +1129,7 @@ impl MonoBehaviour {
             )
         }
     }
+
     #[doc = "`CancelInvoke(crate::unity_engine::monobehaviour::MonoBehaviour, ::unity2::Il2CppString)` overload"]
     pub fn cancel_invoke_3(
         self_: impl ::core::convert::Into<crate::unity_engine::monobehaviour::MonoBehaviour>,
@@ -1538,6 +1143,7 @@ impl MonoBehaviour {
             )
         }
     }
+
     #[doc = "`IsInvoking(crate::unity_engine::monobehaviour::MonoBehaviour, ::unity2::Il2CppString)` overload"]
     pub fn is_invoking_3(
         self_: impl ::core::convert::Into<crate::unity_engine::monobehaviour::MonoBehaviour>,
@@ -1551,16 +1157,10 @@ impl MonoBehaviour {
             )
         }
     }
+
     #[doc = "`IsObjectMonoBehaviour(crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn is_object_mono_behaviour(
-        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> bool {
-        unsafe {
-            __MonoBehaviour_unity2_raw::is_object_mono_behaviour(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_object_mono_behaviour(obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> bool {
+        unsafe { __MonoBehaviour_unity2_raw::is_object_mono_behaviour(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
 }
 
@@ -1569,31 +1169,21 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
     #[doc = "`IsInvoking()` overload"]
     fn is_invoking(self) -> bool {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::is_invoking(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CancelInvoke()` overload"]
     fn cancel_invoke(self) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::cancel_invoke(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Invoke(::unity2::Il2CppString, f32)` overload"]
-    fn invoke(
-        self,
-        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        time: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn invoke(self, method_name: impl ::core::convert::Into<::unity2::Il2CppString>, time: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(method_name),
@@ -1610,9 +1200,7 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
         repeat_rate: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::invoke_repeating(
                 __receiver,
                 ::core::convert::Into::into(method_name),
@@ -1623,51 +1211,24 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
         }
     }
     #[doc = "`CancelInvoke(::unity2::Il2CppString)` overload"]
-    fn cancel_invoke_2(
-        self,
-        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn cancel_invoke_2(self, method_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::cancel_invoke_2(
-                __receiver,
-                ::core::convert::Into::into(method_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::cancel_invoke_2(__receiver, ::core::convert::Into::into(method_name), ::core::option::Option::None)
         }
     }
     #[doc = "`IsInvoking(::unity2::Il2CppString)` overload"]
-    fn is_invoking_2(
-        self,
-        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn is_invoking_2(self, method_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::is_invoking_2(
-                __receiver,
-                ::core::convert::Into::into(method_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::is_invoking_2(__receiver, ::core::convert::Into::into(method_name), ::core::option::Option::None)
         }
     }
     #[doc = "`StartCoroutine(::unity2::Il2CppString)` overload"]
-    fn start_coroutine(
-        self,
-        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::coroutine::Coroutine {
+    fn start_coroutine(self, method_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::coroutine::Coroutine {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::start_coroutine(
-                __receiver,
-                ::core::convert::Into::into(method_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::start_coroutine(__receiver, ::core::convert::Into::into(method_name), ::core::option::Option::None)
         }
     }
     #[doc = "`StartCoroutine(::unity2::Il2CppString, crate::system::object::Object)` overload"]
@@ -1677,9 +1238,7 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
         value: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> crate::unity_engine::coroutine::Coroutine {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::start_coroutine_2(
                 __receiver,
                 ::core::convert::Into::into(method_name),
@@ -1694,14 +1253,8 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
         routine: impl ::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>,
     ) -> crate::unity_engine::coroutine::Coroutine {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::start_coroutine_3(
-                __receiver,
-                ::core::convert::Into::into(routine),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::start_coroutine_3(__receiver, ::core::convert::Into::into(routine), ::core::option::Option::None)
         }
     }
     #[doc = "`StartCoroutine_Auto(crate::system::collections::ienumerator::IEnumerator)` overload"]
@@ -1710,96 +1263,50 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
         routine: impl ::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>,
     ) -> crate::unity_engine::coroutine::Coroutine {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::start_coroutine_auto(
-                __receiver,
-                ::core::convert::Into::into(routine),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::start_coroutine_auto(__receiver, ::core::convert::Into::into(routine), ::core::option::Option::None)
         }
     }
     #[doc = "`StopCoroutine(crate::system::collections::ienumerator::IEnumerator)` overload"]
-    fn stop_coroutine(
-        self,
-        routine: impl ::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>,
-    ) -> () {
+    fn stop_coroutine(self, routine: impl ::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::stop_coroutine(
-                __receiver,
-                ::core::convert::Into::into(routine),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::stop_coroutine(__receiver, ::core::convert::Into::into(routine), ::core::option::Option::None)
         }
     }
     #[doc = "`StopCoroutine(crate::unity_engine::coroutine::Coroutine)` overload"]
-    fn stop_coroutine_2(
-        self,
-        routine: impl ::core::convert::Into<crate::unity_engine::coroutine::Coroutine>,
-    ) -> () {
+    fn stop_coroutine_2(self, routine: impl ::core::convert::Into<crate::unity_engine::coroutine::Coroutine>) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::stop_coroutine_2(
-                __receiver,
-                ::core::convert::Into::into(routine),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::stop_coroutine_2(__receiver, ::core::convert::Into::into(routine), ::core::option::Option::None)
         }
     }
     #[doc = "`StopCoroutine(::unity2::Il2CppString)` overload"]
-    fn stop_coroutine_3(
-        self,
-        method_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn stop_coroutine_3(self, method_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::stop_coroutine_3(
-                __receiver,
-                ::core::convert::Into::into(method_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::stop_coroutine_3(__receiver, ::core::convert::Into::into(method_name), ::core::option::Option::None)
         }
     }
     #[doc = "`StopAllCoroutines()` overload"]
     fn stop_all_coroutines(self) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::stop_all_coroutines(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::stop_all_coroutines(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_useGUILayout()` overload"]
     fn get_use_gui_layout(self) -> bool {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::get_use_gui_layout(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_useGUILayout(bool)` overload"]
     fn set_use_gui_layout(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::set_use_gui_layout(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::set_use_gui_layout(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`StartCoroutineManaged(::unity2::Il2CppString, crate::system::object::Object)` overload"]
@@ -1809,9 +1316,7 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
         value: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> crate::unity_engine::coroutine::Coroutine {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::start_coroutine_managed(
                 __receiver,
                 ::core::convert::Into::into(method_name),
@@ -1826,41 +1331,21 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
         enumerator: impl ::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>,
     ) -> crate::unity_engine::coroutine::Coroutine {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::start_coroutine_managed2(
-                __receiver,
-                ::core::convert::Into::into(enumerator),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::start_coroutine_managed2(__receiver, ::core::convert::Into::into(enumerator), ::core::option::Option::None)
         }
     }
     #[doc = "`StopCoroutineManaged(crate::unity_engine::coroutine::Coroutine)` overload"]
-    fn stop_coroutine_managed(
-        self,
-        routine: impl ::core::convert::Into<crate::unity_engine::coroutine::Coroutine>,
-    ) -> () {
+    fn stop_coroutine_managed(self, routine: impl ::core::convert::Into<crate::unity_engine::coroutine::Coroutine>) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::stop_coroutine_managed(
-                __receiver,
-                ::core::convert::Into::into(routine),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::stop_coroutine_managed(__receiver, ::core::convert::Into::into(routine), ::core::option::Option::None)
         }
     }
     #[doc = "`StopCoroutineFromEnumeratorManaged(crate::system::collections::ienumerator::IEnumerator)` overload"]
-    fn stop_coroutine_from_enumerator_managed(
-        self,
-        routine: impl ::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>,
-    ) -> () {
+    fn stop_coroutine_from_enumerator_managed(self, routine: impl ::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::stop_coroutine_from_enumerator_managed(
                 __receiver,
                 ::core::convert::Into::into(routine),
@@ -1871,21 +1356,14 @@ pub trait IMonoBehaviourMethods: IMonoBehaviour {
     #[doc = "`GetScriptClassName()` overload"]
     fn get_script_class_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoBehaviour_unity2_raw::get_script_class_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoBehaviour_unity2_raw::get_script_class_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1898,13 +1376,8 @@ impl<__T: IMonoBehaviour> IMonoBehaviourMethods for __T {}
 impl MonoBehaviour {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MonoBehaviour),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MonoBehaviour), ::core::stringify!(new),));
         <Self as IMonoBehaviourMethods>::ctor(this);
         this
     }
@@ -1913,19 +1386,17 @@ impl MonoBehaviour {
 #[cfg(feature = "unity_engine-monobehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMonoBehaviour;
-    pub use super::IMonoBehaviourMethods;
-    pub use super::MonoBehaviour;
-    pub use crate::system::object::IObject;
+    pub use super::{IMonoBehaviour, IMonoBehaviourMethods, MonoBehaviour};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, object_2::IObject_2},
+    };
 }

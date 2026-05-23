@@ -2,27 +2,26 @@
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenucontent::{BasicMenuContent, IBasicMenuContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenucontent/FoodstuffMenuContent_CursorController.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "FoodstuffMenuContent.CursorController"
-    )]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "FoodstuffMenuContent.CursorController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FoodstuffMenuContent_CursorController {
         #[rename(name = "m_Images")]
-        pub m_images: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::image::Image,
-        >,
+        pub m_images: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image>,
         #[rename(name = "EnableColor")]
         pub enable_color: crate::unity_engine::color::Color,
         #[rename(name = "DisableColor")]
@@ -42,11 +41,9 @@ mod __types {
         #[rename(name = "m_RareMax")]
         pub m_rare_max: i32,
         #[rename(name = "m_MainCursor")]
-        pub m_main_cursor:
-            crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent_CursorController,
+        pub m_main_cursor: crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent_CursorController,
         #[rename(name = "m_SubCursor")]
-        pub m_sub_cursor:
-            crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent_CursorController,
+        pub m_sub_cursor: crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent_CursorController,
         #[rename(name = "m_FoodstuffTitleText")]
         pub m_foodstuff_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_FoodstuffCountText")]
@@ -70,9 +67,7 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::class(),
@@ -85,43 +80,28 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup(
-        this: FoodstuffMenuContent_CursorController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenuContent_CursorController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+    pub unsafe fn setup(this: FoodstuffMenuContent_CursorController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FoodstuffMenuContent_CursorController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_visible_without_cursor_images {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::class(),
                 "SetVisibleWithoutCursorImages",
@@ -133,18 +113,15 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
-                    "SetVisibleWithoutCursorImages",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
+                        "SetVisibleWithoutCursorImages",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_visible_without_cursor_images(
@@ -152,26 +129,16 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         is_visible: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenuContent_CursorController,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_visible_without_cursor_images::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FoodstuffMenuContent_CursorController, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_visible_without_cursor_images::get_method_info().method_ptr);
         inner(this, is_visible, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_visible_cursor_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::class(),
                 "SetVisibleCursorImage",
@@ -183,18 +150,15 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
-                    "SetVisibleCursorImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
+                        "SetVisibleCursorImage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_visible_cursor_image(
@@ -202,26 +166,16 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         is_visible: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenuContent_CursorController,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_visible_cursor_image::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FoodstuffMenuContent_CursorController, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_visible_cursor_image::get_method_info().method_ptr);
         inner(this, is_visible, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sibling_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::class(),
                 "SetSiblingIndex",
@@ -233,45 +187,28 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
-                    "SetSiblingIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
+                        "SetSiblingIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_sibling_index(
-        this: FoodstuffMenuContent_CursorController,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenuContent_CursorController,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sibling_index::get_offset() as isize),
-        );
+    pub unsafe fn set_sibling_index(this: FoodstuffMenuContent_CursorController, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FoodstuffMenuContent_CursorController, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_sibling_index::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_back_cursor_image_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::class(),
                 "SetBackCursorImageEnabled",
@@ -283,18 +220,15 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
-                    "SetBackCursorImageEnabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
+                        "SetBackCursorImageEnabled",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_back_cursor_image_enabled(
@@ -302,26 +236,16 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenuContent_CursorController,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_back_cursor_image_enabled::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FoodstuffMenuContent_CursorController, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_back_cursor_image_enabled::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::class(),
                 "SetColor",
@@ -333,43 +257,27 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
-                    "SetColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
+                        "SetColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_color(
-        this: FoodstuffMenuContent_CursorController,
-        is_enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenuContent_CursorController,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_color::get_offset() as isize),
-        );
+    pub unsafe fn set_color(this: FoodstuffMenuContent_CursorController, is_enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FoodstuffMenuContent_CursorController, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_color::get_method_info().method_ptr);
         inner(this, is_enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::class(),
@@ -382,54 +290,41 @@ mod __FoodstuffMenuContent_CursorController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent_CursorController as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: FoodstuffMenuContent_CursorController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FoodstuffMenuContent_CursorController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: FoodstuffMenuContent_CursorController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FoodstuffMenuContent_CursorController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-pub trait IFoodstuffMenuContent_CursorControllerMethods:
-    IFoodstuffMenuContent_CursorController
-{
+pub trait IFoodstuffMenuContent_CursorControllerMethods: IFoodstuffMenuContent_CursorController {
     #[doc = "`Setup()` overload"]
     fn setup(self) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __FoodstuffMenuContent_CursorController_unity2_raw::setup(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <FoodstuffMenuContent_CursorController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffMenuContent_CursorController_unity2_raw::setup(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetVisibleWithoutCursorImages(bool)` overload"]
     fn set_visible_without_cursor_images(self, is_visible: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <FoodstuffMenuContent_CursorController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __FoodstuffMenuContent_CursorController_unity2_raw::set_visible_without_cursor_images(
                 __receiver,
                 ::core::convert::Into::into(is_visible),
@@ -440,7 +335,9 @@ pub trait IFoodstuffMenuContent_CursorControllerMethods:
     #[doc = "`SetVisibleCursorImage(bool)` overload"]
     fn set_visible_cursor_image(self, is_visible: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <FoodstuffMenuContent_CursorController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __FoodstuffMenuContent_CursorController_unity2_raw::set_visible_cursor_image(
                 __receiver,
                 ::core::convert::Into::into(is_visible),
@@ -451,7 +348,9 @@ pub trait IFoodstuffMenuContent_CursorControllerMethods:
     #[doc = "`SetSiblingIndex(i32)` overload"]
     fn set_sibling_index(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <FoodstuffMenuContent_CursorController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __FoodstuffMenuContent_CursorController_unity2_raw::set_sibling_index(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -462,7 +361,9 @@ pub trait IFoodstuffMenuContent_CursorControllerMethods:
     #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
     fn set_back_cursor_image_enabled(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <FoodstuffMenuContent_CursorController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __FoodstuffMenuContent_CursorController_unity2_raw::set_back_cursor_image_enabled(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -473,7 +374,9 @@ pub trait IFoodstuffMenuContent_CursorControllerMethods:
     #[doc = "`SetColor(bool)` overload"]
     fn set_color(self, is_enable: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <FoodstuffMenuContent_CursorController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __FoodstuffMenuContent_CursorController_unity2_raw::set_color(
                 __receiver,
                 ::core::convert::Into::into(is_enable),
@@ -484,20 +387,16 @@ pub trait IFoodstuffMenuContent_CursorControllerMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < FoodstuffMenuContent_CursorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __FoodstuffMenuContent_CursorController_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <FoodstuffMenuContent_CursorController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __FoodstuffMenuContent_CursorController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-impl<__T: IFoodstuffMenuContent_CursorController> IFoodstuffMenuContent_CursorControllerMethods
-    for __T
-{
-}
+impl<__T: IFoodstuffMenuContent_CursorController> IFoodstuffMenuContent_CursorControllerMethods for __T {}
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
 impl FoodstuffMenuContent_CursorController {
@@ -524,9 +423,7 @@ mod __FoodstuffMenuContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -539,39 +436,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_messages {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -584,39 +469,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetMessages",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetMessages",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_messages(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_messages(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_messages::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_messages::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_obj_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -629,39 +502,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "InitObjReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "InitObjReference",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init_obj_reference(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init_obj_reference(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_obj_reference::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_obj_reference::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_menu_item_content_max {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -674,39 +535,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetMenuItemContentMax",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetMenuItemContentMax",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_menu_item_content_max(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_menu_item_content_max(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_menu_item_content_max::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_menu_item_content_max::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_menu_item_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -719,39 +568,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildMenuItemContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildMenuItemContent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_menu_item_content(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_menu_item_content(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_menu_item_content::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_menu_item_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_after_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -764,39 +601,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "AfterBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "AfterBuild",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn after_build(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn after_build(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_after_build::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_after_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_foodstuff_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -809,41 +634,28 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetFoodstuffNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetFoodstuffNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_foodstuff_num(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_foodstuff_num(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_foodstuff_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_foodstuff_num::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_cursor_moved_pos_y {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
                 "CalcCursorMovedPosY",
@@ -855,40 +667,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcCursorMovedPosY",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcCursorMovedPosY",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: FoodstuffMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_cursor_moved_pos_y(this: FoodstuffMenuContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(FoodstuffMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_cursor_moved_pos_y::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cursor_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -905,18 +704,15 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetCursorEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetCursorEnable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_cursor_enable(
@@ -932,28 +728,15 @@ mod __FoodstuffMenuContent_unity2_raw {
             bool,
             crate::app::basicmenuitem::BasicMenuItem_Attribute,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cursor_enable::get_offset() as isize),
-        );
-        inner(
-            this,
-            is_foodstuff,
-            is_decide,
-            attribute,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_cursor_enable::get_method_info().method_ptr);
+        inner(this, is_foodstuff, is_decide, attribute, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_cursor_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
                 "ChangeCursorColor",
@@ -965,40 +748,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "ChangeCursorColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "ChangeCursorColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn change_cursor_color(
-        this: FoodstuffMenuContent,
-        is_enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn change_cursor_color(this: FoodstuffMenuContent, is_enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change_cursor_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_change_cursor_color::get_method_info().method_ptr);
         inner(this, is_enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1011,41 +781,28 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_num(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_num(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_num::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_normal_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetNormalNum",
@@ -1057,42 +814,28 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetNormalNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetNormalNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_normal_num(
-        this: FoodstuffMenuContent,
-        num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_normal_num(this: FoodstuffMenuContent, num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_normal_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_normal_num::get_method_info().method_ptr);
         inner(this, num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rare_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetRareNum",
@@ -1104,40 +847,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetRareNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetRareNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_rare_num(
-        this: FoodstuffMenuContent,
-        num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_rare_num(this: FoodstuffMenuContent, num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_rare_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_rare_num::get_method_info().method_ptr);
         inner(this, num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selected_normal_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1150,39 +880,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectedNormalCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectedNormalCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selected_normal_count(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_selected_normal_count(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_selected_normal_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_selected_normal_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selected_rare_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1195,41 +913,28 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectedRareCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectedRareCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selected_rare_count(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_selected_rare_count(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_selected_rare_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_selected_rare_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_put_cursor_in_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
                 "PutCursorInFront",
@@ -1241,42 +946,28 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "PutCursorInFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "PutCursorInFront",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn put_cursor_in_front(
-        this: FoodstuffMenuContent,
-        cursor_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn put_cursor_in_front(this: FoodstuffMenuContent, cursor_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_put_cursor_in_front::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_put_cursor_in_front::get_method_info().method_ptr);
         inner(this, cursor_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_put_cursor_in_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
                 "PutCursorInBack",
@@ -1288,40 +979,27 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "PutCursorInBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "PutCursorInBack",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn put_cursor_in_back(
-        this: FoodstuffMenuContent,
-        cursor_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn put_cursor_in_back(this: FoodstuffMenuContent, cursor_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_put_cursor_in_back::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_put_cursor_in_back::get_method_info().method_ptr);
         inner(this, cursor_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FoodstuffMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1334,30 +1012,20 @@ mod __FoodstuffMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FoodstuffMenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: FoodstuffMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: FoodstuffMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FoodstuffMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1367,87 +1035,64 @@ pub trait IFoodstuffMenuContentMethods: IFoodstuffMenuContent {
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FoodstuffMenuContent_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMessages()` overload"]
     fn set_messages(self) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::set_messages(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::set_messages(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InitObjReference()` overload"]
     fn init_obj_reference(self) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::init_obj_reference(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::init_obj_reference(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMenuItemContentMax()` overload"]
     fn get_menu_item_content_max(self) -> i32 {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::get_menu_item_content_max(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildMenuItemContent()` overload"]
     fn build_menu_item_content(self) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::build_menu_item_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::build_menu_item_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AfterBuild()` overload"]
     fn after_build(self) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FoodstuffMenuContent_unity2_raw::after_build(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetFoodstuffNum()` overload"]
     fn set_foodstuff_num(self) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::set_foodstuff_num(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::set_foodstuff_num(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcCursorMovedPosY(i32)` overload"]
     fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FoodstuffMenuContent_unity2_raw::calc_cursor_moved_pos_y(
                 __receiver,
                 ::core::convert::Into::into(menu_item_index),
@@ -1463,9 +1108,8 @@ pub trait IFoodstuffMenuContentMethods: IFoodstuffMenuContent {
         attribute: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem_Attribute>,
     ) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FoodstuffMenuContent_unity2_raw::set_cursor_enable(
                 __receiver,
                 ::core::convert::Into::into(is_foodstuff),
@@ -1478,81 +1122,56 @@ pub trait IFoodstuffMenuContentMethods: IFoodstuffMenuContent {
     #[doc = "`ChangeCursorColor(bool)` overload"]
     fn change_cursor_color(self, is_enable: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::change_cursor_color(
-                __receiver,
-                ::core::convert::Into::into(is_enable),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::change_cursor_color(__receiver, ::core::convert::Into::into(is_enable), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateNum()` overload"]
     fn update_num(self) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FoodstuffMenuContent_unity2_raw::update_num(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetNormalNum(i32)` overload"]
     fn set_normal_num(self, num: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::set_normal_num(
-                __receiver,
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::set_normal_num(__receiver, ::core::convert::Into::into(num), ::core::option::Option::None)
         }
     }
     #[doc = "`SetRareNum(i32)` overload"]
     fn set_rare_num(self, num: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::set_rare_num(
-                __receiver,
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::set_rare_num(__receiver, ::core::convert::Into::into(num), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSelectedNormalCount()` overload"]
     fn get_selected_normal_count(self) -> i32 {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::get_selected_normal_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::get_selected_normal_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetSelectedRareCount()` overload"]
     fn get_selected_rare_count(self) -> i32 {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::get_selected_rare_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::get_selected_rare_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PutCursorInFront(i32)` overload"]
     fn put_cursor_in_front(self, cursor_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FoodstuffMenuContent_unity2_raw::put_cursor_in_front(
                 __receiver,
                 ::core::convert::Into::into(cursor_index),
@@ -1563,22 +1182,16 @@ pub trait IFoodstuffMenuContentMethods: IFoodstuffMenuContent {
     #[doc = "`PutCursorInBack(i32)` overload"]
     fn put_cursor_in_back(self, cursor_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FoodstuffMenuContent_unity2_raw::put_cursor_in_back(
-                __receiver,
-                ::core::convert::Into::into(cursor_index),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FoodstuffMenuContent_unity2_raw::put_cursor_in_back(__receiver, ::core::convert::Into::into(cursor_index), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FoodstuffMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FoodstuffMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1606,28 +1219,25 @@ impl FoodstuffMenuContent {
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FoodstuffMenuContent;
-    pub use super::FoodstuffMenuContent_CursorController;
-    pub use super::IFoodstuffMenuContent;
-    pub use super::IFoodstuffMenuContentMethods;
-    pub use super::IFoodstuffMenuContent_CursorController;
-    pub use super::IFoodstuffMenuContent_CursorControllerMethods;
-    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use super::{
+        FoodstuffMenuContent, FoodstuffMenuContent_CursorController, IFoodstuffMenuContent, IFoodstuffMenuContentMethods,
+        IFoodstuffMenuContent_CursorController, IFoodstuffMenuContent_CursorControllerMethods,
+    };
     #[cfg(feature = "app-basicmenucontent")]
     pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenucontent::IBasicMenuContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

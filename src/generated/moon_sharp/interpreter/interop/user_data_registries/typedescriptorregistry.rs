@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-typedescriptorregistry-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/user_data_registries/typedescriptorregistry/TypeDescriptorRegistry.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.UserDataRegistries",
-        name = "TypeDescriptorRegistry"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.UserDataRegistries", name = "TypeDescriptorRegistry")]
     #[parent(crate::system::object::Object)]
     pub struct TypeDescriptorRegistry {
         #[static_field]
@@ -25,21 +22,17 @@ mod __types {
         >,
         #[static_field]
         #[rename(name = "s_TypeRegistryHistory")]
-        pub s_type_registry_history:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::SystemType,
-                crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
-            >,
+        pub s_type_registry_history: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::SystemType,
+            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+        >,
         #[static_field]
         #[rename(name = "s_DefaultAccessMode")]
-        pub s_default_access_mode:
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+        pub s_default_access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
     }
 }
 
-#[cfg(
-    feature = "moon_sharp-interpreter-interop-user_data_registries-typedescriptorregistry-types"
-)]
+#[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-typedescriptorregistry-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-typedescriptorregistry")]
@@ -51,9 +44,7 @@ mod __TypeDescriptorRegistry_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_register_assembly {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::reflection::assembly::Assembly as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -69,18 +60,15 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "RegisterAssembly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "RegisterAssembly",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_assembly(
@@ -88,26 +76,16 @@ mod __TypeDescriptorRegistry_unity2_raw {
         include_extension_types: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::system::reflection::assembly::Assembly,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_assembly::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::reflection::assembly::Assembly, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_assembly::get_method_info().method_ptr);
         inner(asm, include_extension_types, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_type_registered {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "IsTypeRegistered",
@@ -119,41 +97,28 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "IsTypeRegistered",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "IsTypeRegistered",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_type_registered(
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_type_registered(r#type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_type_registered::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_type_registered::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unregister_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "UnregisterType",
@@ -165,39 +130,27 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "UnregisterType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "UnregisterType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unregister_type(
-        t: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn unregister_type(t: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unregister_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_unregister_type::get_method_info().method_ptr);
         inner(t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_access_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
@@ -210,34 +163,31 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "get_DefaultAccessMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "get_DefaultAccessMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_default_access_mode(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_access_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode =
+            ::core::mem::transmute(__lookup_get_default_access_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_default_access_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "set_DefaultAccessMode",
@@ -249,42 +199,35 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "set_DefaultAccessMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "set_DefaultAccessMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_default_access_mode(
         value: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_default_access_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_default_access_mode::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_proxy_type_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: iproxyfactory :: IProxyFactory as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "RegisterProxyType_Impl",
@@ -296,18 +239,15 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "RegisterProxyType_Impl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "RegisterProxyType_Impl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_proxy_type_impl(
@@ -316,22 +256,26 @@ mod __TypeDescriptorRegistry_unity2_raw {
         friendly_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: iproxyfactory :: IProxyFactory , crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_register_proxy_type_impl :: get_offset () as isize) ,) ;
-        inner(
-            proxy_factory,
-            access_mode,
-            friendly_name,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory,
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor =
+            ::core::mem::transmute(__lookup_register_proxy_type_impl::get_method_info().method_ptr);
+        inner(proxy_factory, access_mode, friendly_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_type_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "RegisterType_Impl",
@@ -343,44 +287,44 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "RegisterType_Impl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "RegisterType_Impl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_type_impl(
         r#type: ::unity2::SystemType,
         access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
         friendly_name: ::unity2::Il2CppString,
-        descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
+        descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
-        let inner : extern "C" fn (:: unity2 :: SystemType , crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_register_type_impl :: get_offset () as isize) ,) ;
-        inner(
-            r#type,
-            access_mode,
-            friendly_name,
-            descriptor,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+            ::unity2::Il2CppString,
+            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor =
+            ::core::mem::transmute(__lookup_register_type_impl::get_method_info().method_ptr);
+        inner(r#type, access_mode, friendly_name, descriptor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perform_registration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "PerformRegistration",
@@ -392,37 +336,41 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "PerformRegistration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "PerformRegistration",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perform_registration(
         r#type: ::unity2::SystemType,
-        new_descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
-        old_descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
+        new_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+        old_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
-        let inner : extern "C" fn (:: unity2 :: SystemType , crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor , crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_perform_registration :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor =
+            ::core::mem::transmute(__lookup_perform_registration::get_method_info().method_ptr);
         inner(r#type, new_descriptor, old_descriptor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resolve_default_access_mode_for_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "ResolveDefaultAccessModeForType",
@@ -434,18 +382,15 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "ResolveDefaultAccessModeForType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "ResolveDefaultAccessModeForType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resolve_default_access_mode_for_type(
@@ -453,16 +398,19 @@ mod __TypeDescriptorRegistry_unity2_raw {
         r#type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_resolve_default_access_mode_for_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode =
+            ::core::mem::transmute(__lookup_resolve_default_access_mode_for_type::get_method_info().method_ptr);
         inner(access_mode, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_descriptor_for_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -478,18 +426,15 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "GetDescriptorForType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "GetDescriptorForType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_descriptor_for_type(
@@ -497,18 +442,20 @@ mod __TypeDescriptorRegistry_unity2_raw {
         search_interfaces: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
-        let inner : extern "C" fn (:: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_descriptor_for_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor =
+            ::core::mem::transmute(__lookup_get_descriptor_for_type::get_method_info().method_ptr);
         inner(r#type, search_interfaces, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_framework_is_assignable_from {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "FrameworkIsAssignableFrom",
@@ -520,41 +467,28 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "FrameworkIsAssignableFrom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "FrameworkIsAssignableFrom",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn framework_is_assignable_from(
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn framework_is_assignable_from(r#type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_framework_is_assignable_from::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_framework_is_assignable_from::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_type_blacklisted {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
                 "IsTypeBlacklisted",
@@ -566,39 +500,27 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "IsTypeBlacklisted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "IsTypeBlacklisted",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_type_blacklisted(
-        t: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_type_blacklisted(t: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_type_blacklisted::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_type_blacklisted::get_method_info().method_ptr);
         inner(t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_registered_types {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
@@ -611,18 +533,15 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "get_RegisteredTypes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "get_RegisteredTypes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_registered_types(
@@ -633,16 +552,21 @@ mod __TypeDescriptorRegistry_unity2_raw {
             crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         >,
     > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < :: unity2 :: SystemType , crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor > > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_registered_types :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
+                ::unity2::SystemType,
+                crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            >,
+        > = ::core::mem::transmute(__lookup_get_registered_types::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_registered_types_history {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
@@ -655,18 +579,15 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "get_RegisteredTypesHistory",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "get_RegisteredTypesHistory",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_registered_types_history(
@@ -677,16 +598,21 @@ mod __TypeDescriptorRegistry_unity2_raw {
             crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         >,
     > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < :: unity2 :: SystemType , crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor > > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_registered_types_history :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
+                ::unity2::SystemType,
+                crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            >,
+        > = ::core::mem::transmute(__lookup_get_registered_types_history::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_registration_policy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
@@ -699,30 +625,32 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "get_RegistrationPolicy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "get_RegistrationPolicy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_registration_policy (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_registration_policy :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_registration_policy(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy =
+            ::core::mem::transmute(__lookup_get_registration_policy::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_registration_policy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
@@ -735,34 +663,32 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    "set_RegistrationPolicy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        "set_RegistrationPolicy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_registration_policy(
-        value : crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy,
+        value: crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_registration_policy :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_registration_policy::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TypeDescriptorRegistry as ::unity2::ClassIdentity>::class(),
@@ -775,26 +701,19 @@ mod __TypeDescriptorRegistry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeDescriptorRegistry as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -814,54 +733,31 @@ impl TypeDescriptorRegistry {
             )
         }
     }
+
     #[doc = "`IsTypeRegistered(::unity2::SystemType)` overload"]
     pub fn is_type_registered(r#type: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::is_type_registered(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TypeDescriptorRegistry_unity2_raw::is_type_registered(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`UnregisterType(::unity2::SystemType)` overload"]
     pub fn unregister_type(t: impl ::core::convert::Into<::unity2::SystemType>) -> () {
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::unregister_type(
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TypeDescriptorRegistry_unity2_raw::unregister_type(::core::convert::Into::into(t), ::core::option::Option::None) }
     }
+
     #[doc = "`get_DefaultAccessMode()` overload"]
-    pub fn get_default_access_mode(
-    ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::get_default_access_mode(
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_default_access_mode() -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
+        unsafe { __TypeDescriptorRegistry_unity2_raw::get_default_access_mode(::core::option::Option::None) }
     }
+
     #[doc = "`set_DefaultAccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
-    pub fn set_default_access_mode(
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        >,
-    ) -> () {
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::set_default_access_mode(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_default_access_mode(value: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>) -> () {
+        unsafe { __TypeDescriptorRegistry_unity2_raw::set_default_access_mode(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`RegisterProxyType_Impl(crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::Il2CppString)` overload"]
     pub fn register_proxy_type_impl(
-        proxy_factory: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory,
-        >,
-        access_mode: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        >,
+        proxy_factory: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory>,
+        access_mode: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>,
         friendly_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
         unsafe {
@@ -873,16 +769,13 @@ impl TypeDescriptorRegistry {
             )
         }
     }
+
     #[doc = "`RegisterType_Impl(::unity2::SystemType, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::Il2CppString, crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor)` overload"]
     pub fn register_type_impl(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
-        access_mode: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        >,
+        access_mode: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>,
         friendly_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        descriptor: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
-        >,
+        descriptor: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
         unsafe {
             __TypeDescriptorRegistry_unity2_raw::register_type_impl(
@@ -894,15 +787,12 @@ impl TypeDescriptorRegistry {
             )
         }
     }
+
     #[doc = "`PerformRegistration(::unity2::SystemType, crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor)` overload"]
     pub fn perform_registration(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
-        new_descriptor: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
-        >,
-        old_descriptor: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
-        >,
+        new_descriptor: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
+        old_descriptor: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
         unsafe {
             __TypeDescriptorRegistry_unity2_raw::perform_registration(
@@ -913,11 +803,10 @@ impl TypeDescriptorRegistry {
             )
         }
     }
+
     #[doc = "`ResolveDefaultAccessModeForType(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::SystemType)` overload"]
     pub fn resolve_default_access_mode_for_type(
-        access_mode: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        >,
+        access_mode: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>,
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
     ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
         unsafe {
@@ -928,6 +817,7 @@ impl TypeDescriptorRegistry {
             )
         }
     }
+
     #[doc = "`GetDescriptorForType(::unity2::SystemType, bool)` overload"]
     pub fn get_descriptor_for_type(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -941,70 +831,51 @@ impl TypeDescriptorRegistry {
             )
         }
     }
+
     #[doc = "`FrameworkIsAssignableFrom(::unity2::SystemType)` overload"]
-    pub fn framework_is_assignable_from(
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> bool {
+    pub fn framework_is_assignable_from(r#type: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
         unsafe {
-            __TypeDescriptorRegistry_unity2_raw::framework_is_assignable_from(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            __TypeDescriptorRegistry_unity2_raw::framework_is_assignable_from(::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
+
     #[doc = "`IsTypeBlacklisted(::unity2::SystemType)` overload"]
     pub fn is_type_blacklisted(t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::is_type_blacklisted(
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TypeDescriptorRegistry_unity2_raw::is_type_blacklisted(::core::convert::Into::into(t), ::core::option::Option::None) }
     }
+
     #[doc = "`get_RegisteredTypes()` overload"]
-    pub fn get_registered_types(
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+    pub fn get_registered_types() -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
             ::unity2::SystemType,
             crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         >,
     > {
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::get_registered_types(::core::option::Option::None)
-        }
+        unsafe { __TypeDescriptorRegistry_unity2_raw::get_registered_types(::core::option::Option::None) }
     }
+
     #[doc = "`get_RegisteredTypesHistory()` overload"]
-    pub fn get_registered_types_history(
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+    pub fn get_registered_types_history() -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
         crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
             ::unity2::SystemType,
             crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         >,
     > {
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::get_registered_types_history(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TypeDescriptorRegistry_unity2_raw::get_registered_types_history(::core::option::Option::None) }
     }
-    #[doc = "`get_RegistrationPolicy()` overload"]    pub fn get_registration_policy () -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy{
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::get_registration_policy(
-                ::core::option::Option::None,
-            )
-        }
+
+    #[doc = "`get_RegistrationPolicy()` overload"]
+    pub fn get_registration_policy() -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy {
+        unsafe { __TypeDescriptorRegistry_unity2_raw::get_registration_policy(::core::option::Option::None) }
     }
+
     #[doc = "`set_RegistrationPolicy(crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy)` overload"]
     pub fn set_registration_policy(
-        value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy >,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy>,
     ) -> () {
-        unsafe {
-            __TypeDescriptorRegistry_unity2_raw::set_registration_policy(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TypeDescriptorRegistry_unity2_raw::set_registration_policy(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TypeDescriptorRegistry_unity2_raw::cctor(::core::option::Option::None) }
@@ -1014,8 +885,7 @@ impl TypeDescriptorRegistry {
 #[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-typedescriptorregistry")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITypeDescriptorRegistry;
-    pub use super::TypeDescriptorRegistry;
+    pub use super::{ITypeDescriptorRegistry, TypeDescriptorRegistry};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

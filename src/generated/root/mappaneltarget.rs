@@ -2,38 +2,35 @@
 
 #[cfg(feature = "root-mappaneltarget-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    use super::*;
+    use crate::{
+        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DangerType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapPanelTarget_DangerType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapPanelTarget_DangerType {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "MapPanelTarget.DangerType";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -44,10 +41,7 @@ mod __types {
 
     impl ::unity2::IlType for MapPanelTarget_DangerType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -65,106 +59,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapPanelTarget_DirtyType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapPanelTarget_DirtyType {
-        const NAMESPACE: &'static str = "";
-
-        const NAME: &'static str = "MapPanelTarget.DirtyType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapPanelTarget_DirtyType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapPanelTarget_DirtyType {
-        pub fn attack() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn full_bullet() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_MeshIndex.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapPanelTarget_MeshIndex {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapPanelTarget_MeshIndex {
-        const NAMESPACE: &'static str = "";
-
-        const NAME: &'static str = "MapPanelTarget.MeshIndex";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapPanelTarget_MeshIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapPanelTarget_MeshIndex {
-        pub fn general() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn engage() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn gunner() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn full_bullet() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappaneltarget/MapPanelTarget.md"))]
     #[::unity2::class(namespace = "", name = "MapPanelTarget")]
     # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappaneltarget :: MapPanelTarget >)]
@@ -177,10 +71,8 @@ mod __types {
         #[rename(name = "m_TargetTexW")]
         pub m_target_tex_w: f32,
         #[rename(name = "m_DangerUnits")]
-        pub m_danger_units: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            i32,
-            crate::root::mappaneltarget::MapPanelTarget_DangerType,
-        >,
+        pub m_danger_units:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::root::mappaneltarget::MapPanelTarget_DangerType>,
         #[rename(name = "m_GeneralMaterial")]
         pub m_general_material: crate::unity_engine::material::Material,
         #[rename(name = "m_EngageMaterial")]
@@ -224,17 +116,13 @@ mod __types {
         #[rename(name = "m_ArchHeightOffset")]
         pub m_arch_height_offset: f32,
         #[rename(name = "m_GeneralAttackerList")]
-        pub m_general_attacker_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        pub m_general_attacker_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         #[rename(name = "m_EngageAttackerList")]
-        pub m_engage_attacker_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        pub m_engage_attacker_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         #[rename(name = "m_GunnerList")]
-        pub m_gunner_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        pub m_gunner_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         #[rename(name = "m_FullBulletList")]
-        pub m_full_bullet_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        pub m_full_bullet_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         #[rename(name = "m_Target")]
         pub m_target: crate::app::unit::Unit,
         #[rename(name = "m_DestX")]
@@ -252,6 +140,86 @@ mod __types {
         #[rename(name = "m_DirtyFlag")]
         pub m_dirty_flag: crate::root::mappaneltarget::MapPanelTarget_DirtyType,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapPanelTarget_DirtyType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapPanelTarget_DirtyType {
+        const NAME: &'static str = "MapPanelTarget.DirtyType";
+        const NAMESPACE: &'static str = "";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapPanelTarget_DirtyType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapPanelTarget_DirtyType {
+        pub fn attack() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn full_bullet() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_MeshIndex.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapPanelTarget_MeshIndex {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapPanelTarget_MeshIndex {
+        const NAME: &'static str = "MapPanelTarget.MeshIndex";
+        const NAMESPACE: &'static str = "";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapPanelTarget_MeshIndex {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapPanelTarget_MeshIndex {
+        pub fn general() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn engage() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn gunner() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn full_bullet() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 4 }
+        }
+    }
 }
 
 #[cfg(feature = "root-mappaneltarget-types")]
@@ -266,9 +234,7 @@ mod __MapPanelTarget_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_sub_mesh_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -281,39 +247,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_SubMeshCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_SubMeshCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sub_mesh_count(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_sub_mesh_count(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sub_mesh_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sub_mesh_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -326,39 +280,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -371,39 +313,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_late_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -416,39 +346,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "LateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "LateUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn late_update(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn late_update(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_late_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_source_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -461,42 +379,30 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "GetSourceMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "GetSourceMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source_materials(
         this: MapPanelTarget,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::material::Material> {
-        let inner: extern "C" fn(
-            MapPanelTarget,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_source_materials::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::material::Material> =
+            ::core::mem::transmute(__lookup_get_source_materials::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_danger_units {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -509,39 +415,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "UpdateDangerUnits",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "UpdateDangerUnits",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_danger_units(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_danger_units(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_danger_units::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_danger_units::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -554,41 +448,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "GetTargetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "GetTargetUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_target_unit(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            MapPanelTarget,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_unit::get_offset() as isize),
-        );
+    pub unsafe fn get_target_unit(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_target_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_enemy_attack_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -605,18 +485,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "IsEnemyAttackRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "IsEnemyAttackRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_enemy_attack_range(
@@ -626,26 +503,15 @@ mod __MapPanelTarget_unity2_raw {
         z: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapPanelTarget,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enemy_attack_range::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapPanelTarget, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_enemy_attack_range::get_method_info().method_ptr);
         inner(this, unit, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit_for_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -662,18 +528,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "CommitForAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "CommitForAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn commit_for_attack(
@@ -683,26 +546,15 @@ mod __MapPanelTarget_unity2_raw {
         z: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapPanelTarget,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_commit_for_attack::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapPanelTarget, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_for_attack::get_method_info().method_ptr);
         inner(this, unit, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit_for_full_bullet {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -715,39 +567,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "CommitForFullBullet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "CommitForFullBullet",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit_for_full_bullet(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn commit_for_full_bullet(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_for_full_bullet::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_commit_for_full_bullet::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -760,39 +600,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "SetMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "SetMesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mesh(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_mesh(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_mesh::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mesh_for_general_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
@@ -809,18 +637,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "SetMeshForGeneralAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "SetMeshForGeneralAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mesh_for_general_attack(
@@ -836,20 +661,14 @@ mod __MapPanelTarget_unity2_raw {
             crate::unity_engine::vector2::Vector2,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mesh_for_general_attack::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_mesh_for_general_attack::get_method_info().method_ptr);
         inner(this, dest_pos, uv0, uv2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mesh_for_engage_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
@@ -866,18 +685,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "SetMeshForEngageAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "SetMeshForEngageAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mesh_for_engage_attack(
@@ -893,20 +709,14 @@ mod __MapPanelTarget_unity2_raw {
             crate::unity_engine::vector2::Vector2,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mesh_for_engage_attack::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_mesh_for_engage_attack::get_method_info().method_ptr);
         inner(this, dest_pos, uv0, uv2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mesh_for_gunner {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
@@ -923,18 +733,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "SetMeshForGunner",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "SetMeshForGunner",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mesh_for_gunner(
@@ -950,20 +757,14 @@ mod __MapPanelTarget_unity2_raw {
             crate::unity_engine::vector2::Vector2,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mesh_for_gunner::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_mesh_for_gunner::get_method_info().method_ptr);
         inner(this, dest_pos, uv0, uv2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mesh_for_full_bullet {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
@@ -979,18 +780,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "SetMeshForFullBullet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "SetMeshForFullBullet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mesh_for_full_bullet(
@@ -1004,20 +802,14 @@ mod __MapPanelTarget_unity2_raw {
             crate::unity_engine::vector2::Vector2,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mesh_for_full_bullet::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_mesh_for_full_bullet::get_method_info().method_ptr);
         inner(this, uv0, uv2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_targeted_for_general_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1034,18 +826,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "IsTargetedForGeneralAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "IsTargetedForGeneralAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_targeted_for_general_attack(
@@ -1055,26 +844,15 @@ mod __MapPanelTarget_unity2_raw {
         z: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapPanelTarget,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_targeted_for_general_attack::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapPanelTarget, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_targeted_for_general_attack::get_method_info().method_ptr);
         inner(this, enemy, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_targeted_for_engage_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -1090,18 +868,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "IsTargetedForEngageAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "IsTargetedForEngageAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_targeted_for_engage_attack(
@@ -1110,25 +885,15 @@ mod __MapPanelTarget_unity2_raw {
         target: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapPanelTarget,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_targeted_for_engage_attack::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapPanelTarget, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_targeted_for_engage_attack::get_method_info().method_ptr);
         inner(this, enemy, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_targeted_for_gunner {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1145,18 +910,15 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "IsTargetedForGunner",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "IsTargetedForGunner",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_targeted_for_gunner(
@@ -1166,26 +928,15 @@ mod __MapPanelTarget_unity2_raw {
         z: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapPanelTarget,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_targeted_for_gunner::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapPanelTarget, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_targeted_for_gunner::get_method_info().method_ptr);
         inner(this, enemy, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alpha_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1198,41 +949,30 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_AlphaCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_AlphaCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_alpha_curve(
         this: MapPanelTarget,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            MapPanelTarget,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_alpha_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_alpha_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_z_offset_for_general {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1245,39 +985,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_PositionZOffsetForGeneral",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_PositionZOffsetForGeneral",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_z_offset_for_general(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_position_z_offset_for_general(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_position_z_offset_for_general::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_position_z_offset_for_general::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_z_offset_for_horse {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1290,39 +1018,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_PositionZOffsetForHorse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_PositionZOffsetForHorse",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_z_offset_for_horse(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_position_z_offset_for_horse(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_position_z_offset_for_horse::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_position_z_offset_for_horse::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_z_offset_for_fly {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1335,39 +1051,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_PositionZOffsetForFly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_PositionZOffsetForFly",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_z_offset_for_fly(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_position_z_offset_for_fly(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_position_z_offset_for_fly::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_position_z_offset_for_fly::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_z_offset_for_bmap_size2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1380,39 +1084,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_PositionZOffsetForBmapSize2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_PositionZOffsetForBmapSize2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_z_offset_for_bmap_size2(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_position_z_offset_for_bmap_size2(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_position_z_offset_for_bmap_size2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_position_z_offset_for_bmap_size2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_z_offset_for_bmap_size3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1425,39 +1117,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_PositionZOffsetForBmapSize3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_PositionZOffsetForBmapSize3",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_z_offset_for_bmap_size3(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_position_z_offset_for_bmap_size3(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_position_z_offset_for_bmap_size3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_position_z_offset_for_bmap_size3::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_z_offset_for_bmap_size5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1470,39 +1150,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_PositionZOffsetForBmapSize5",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_PositionZOffsetForBmapSize5",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_z_offset_for_bmap_size5(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_position_z_offset_for_bmap_size5(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_position_z_offset_for_bmap_size5::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_position_z_offset_for_bmap_size5::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arch_height_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1515,39 +1183,27 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    "get_ArchHeightOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_ArchHeightOffset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arch_height_offset(
-        this: MapPanelTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_arch_height_offset(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arch_height_offset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arch_height_offset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelTarget as ::unity2::ClassIdentity>::class(),
@@ -1560,27 +1216,20 @@ mod __MapPanelTarget_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelTarget as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapPanelTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1590,72 +1239,49 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
     #[doc = "`get_SubMeshCount()` overload"]
     fn get_sub_mesh_count(self) -> i32 {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_sub_mesh_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LateUpdate()` overload"]
     fn late_update(self) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::late_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetSourceMaterials()` overload"]
     fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_source_materials(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateDangerUnits()` overload"]
     fn update_danger_units(self) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::update_danger_units(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::update_danger_units(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetTargetUnit()` overload"]
     fn get_target_unit(self) -> crate::app::unit::Unit {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::get_target_unit(__receiver, ::core::option::Option::None)
         }
     }
@@ -1667,9 +1293,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         z: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::is_enemy_attack_range(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1687,9 +1311,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         z: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::commit_for_attack(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1702,21 +1324,14 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
     #[doc = "`CommitForFullBullet()` overload"]
     fn commit_for_full_bullet(self) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::commit_for_full_bullet(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::commit_for_full_bullet(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMesh()` overload"]
     fn set_mesh(self) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::set_mesh(__receiver, ::core::option::Option::None)
         }
     }
@@ -1728,9 +1343,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::set_mesh_for_general_attack(
                 __receiver,
                 ::core::convert::Into::into(dest_pos),
@@ -1748,9 +1361,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::set_mesh_for_engage_attack(
                 __receiver,
                 ::core::convert::Into::into(dest_pos),
@@ -1768,9 +1379,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::set_mesh_for_gunner(
                 __receiver,
                 ::core::convert::Into::into(dest_pos),
@@ -1787,9 +1396,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         uv2: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::set_mesh_for_full_bullet(
                 __receiver,
                 ::core::convert::Into::into(uv0),
@@ -1806,9 +1413,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         z: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::is_targeted_for_general_attack(
                 __receiver,
                 ::core::convert::Into::into(enemy),
@@ -1825,9 +1430,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         target: impl ::core::convert::Into<crate::app::unit::Unit>,
     ) -> bool {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::is_targeted_for_engage_attack(
                 __receiver,
                 ::core::convert::Into::into(enemy),
@@ -1844,9 +1447,7 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
         z: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::is_targeted_for_gunner(
                 __receiver,
                 ::core::convert::Into::into(enemy),
@@ -1859,102 +1460,63 @@ pub trait IMapPanelTargetMethods: IMapPanelTarget {
     #[doc = "`get_AlphaCurve()` overload"]
     fn get_alpha_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::get_alpha_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_PositionZOffsetForGeneral()` overload"]
     fn get_position_z_offset_for_general(self) -> f32 {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_position_z_offset_for_general(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_position_z_offset_for_general(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_PositionZOffsetForHorse()` overload"]
     fn get_position_z_offset_for_horse(self) -> f32 {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_position_z_offset_for_horse(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_position_z_offset_for_horse(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_PositionZOffsetForFly()` overload"]
     fn get_position_z_offset_for_fly(self) -> f32 {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_position_z_offset_for_fly(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_position_z_offset_for_fly(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_PositionZOffsetForBmapSize2()` overload"]
     fn get_position_z_offset_for_bmap_size2(self) -> f32 {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_position_z_offset_for_bmap_size2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_position_z_offset_for_bmap_size2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_PositionZOffsetForBmapSize3()` overload"]
     fn get_position_z_offset_for_bmap_size3(self) -> f32 {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_position_z_offset_for_bmap_size3(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_position_z_offset_for_bmap_size3(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_PositionZOffsetForBmapSize5()` overload"]
     fn get_position_z_offset_for_bmap_size5(self) -> f32 {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_position_z_offset_for_bmap_size5(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_position_z_offset_for_bmap_size5(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ArchHeightOffset()` overload"]
     fn get_arch_height_offset(self) -> f32 {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapPanelTarget_unity2_raw::get_arch_height_offset(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelTarget_unity2_raw::get_arch_height_offset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapPanelTarget as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapPanelTarget_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1982,37 +1544,31 @@ impl MapPanelTarget {
 #[cfg(feature = "root-mappaneltarget")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapPanelTarget;
-    pub use super::IMapPanelTargetMethods;
-    pub use super::MapPanelTarget;
-    pub use super::MapPanelTarget_DangerType;
-    pub use super::MapPanelTarget_DirtyType;
-    pub use super::MapPanelTarget_MeshIndex;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use super::{
+        IMapPanelTarget, IMapPanelTargetMethods, MapPanelTarget, MapPanelTarget_DangerType, MapPanelTarget_DirtyType, MapPanelTarget_MeshIndex,
+    };
     #[cfg(feature = "app-singletonmonobehaviour_1")]
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     #[cfg(feature = "root-mappanelbase_1")]
     pub use crate::root::mappanelbase_1::IMapPanelBase_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
+        root::mappanelbase_1::IMapPanelBase_1,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

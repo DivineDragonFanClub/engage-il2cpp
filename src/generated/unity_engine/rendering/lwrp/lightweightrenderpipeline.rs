@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/lwrp/lightweightrenderpipeline/LightweightRenderPipeline.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.LWRP",
-        name = "LightweightRenderPipeline"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.LWRP", name = "LightweightRenderPipeline")]
     #[parent(crate::system::object::Object)]
     pub struct LightweightRenderPipeline {}
 }
@@ -28,10 +25,10 @@ mod __LightweightRenderPipeline_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightweightRenderPipeline as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -43,26 +40,27 @@ mod __LightweightRenderPipeline_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightweightRenderPipeline as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightweightRenderPipeline as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: LightweightRenderPipeline,
-        asset : crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset,
+        asset: crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (LightweightRenderPipeline , crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            LightweightRenderPipeline,
+            crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, asset, __unity2_method_info)
     }
 }
@@ -72,18 +70,12 @@ pub trait ILightweightRenderPipelineMethods: ILightweightRenderPipeline {
     #[doc = "`.ctor(crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset)` overload"]
     fn ctor(
         self,
-        asset : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset >,
+        asset: impl ::core::convert::Into<crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset>,
     ) -> () {
         unsafe {
             let __receiver =
-                <LightweightRenderPipeline as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __LightweightRenderPipeline_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(asset),
-                ::core::option::Option::None,
-            )
+                <LightweightRenderPipeline as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LightweightRenderPipeline_unity2_raw::ctor(__receiver, ::core::convert::Into::into(asset), ::core::option::Option::None)
         }
     }
 }
@@ -94,9 +86,7 @@ impl<__T: ILightweightRenderPipeline> ILightweightRenderPipelineMethods for __T 
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
 impl LightweightRenderPipeline {
     #[doc = "`.ctor(crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset)` — overload selector"]
-    pub fn new(
-        asset : crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset,
-    ) -> Self {
+    pub fn new(asset: crate::unity_engine::rendering::lwrp::lightweightrenderpipelineasset::LightweightRenderPipelineAsset) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -112,9 +102,7 @@ impl LightweightRenderPipeline {
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILightweightRenderPipeline;
-    pub use super::ILightweightRenderPipelineMethods;
-    pub use super::LightweightRenderPipeline;
+    pub use super::{ILightweightRenderPipeline, ILightweightRenderPipelineMethods, LightweightRenderPipeline};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

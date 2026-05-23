@@ -2,13 +2,13 @@
 
 #[cfg(feature = "root-ppradialblurplayablebehaviour-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::playables::playablebehaviour::{
-        IPlayableBehaviour, PlayableBehaviour,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/ppradialblurplayablebehaviour/PPRadialBlurPlayableBehaviour.md"))]
     #[::unity2::class(namespace = "", name = "PPRadialBlurPlayableBehaviour")]
@@ -28,9 +28,7 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_pp_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::class(),
@@ -43,41 +41,30 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_PPVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_PPVolume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pp_volume(
         this: PPRadialBlurPlayableBehaviour,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::volume::Volume {
-        let inner: extern "C" fn(
-            PPRadialBlurPlayableBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::volume::Volume = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pp_volume::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PPRadialBlurPlayableBehaviour, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::volume::Volume =
+            ::core::mem::transmute(__lookup_get_pp_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pp_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::rendering::volume::Volume as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -91,18 +78,15 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_PPVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_PPVolume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pp_volume(
@@ -110,24 +94,15 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         value: crate::unity_engine::rendering::volume::Volume,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PPRadialBlurPlayableBehaviour,
-            crate::unity_engine::rendering::volume::Volume,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pp_volume::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PPRadialBlurPlayableBehaviour, crate::unity_engine::rendering::volume::Volume, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pp_volume::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_begin_intensity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::class(),
@@ -140,41 +115,28 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_BeginIntensity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_BeginIntensity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_begin_intensity(
-        this: PPRadialBlurPlayableBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_begin_intensity(this: PPRadialBlurPlayableBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PPRadialBlurPlayableBehaviour, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_begin_intensity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_begin_intensity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_begin_intensity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::class(),
                 "set_BeginIntensity",
@@ -186,43 +148,27 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_BeginIntensity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_BeginIntensity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_begin_intensity(
-        this: PPRadialBlurPlayableBehaviour,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PPRadialBlurPlayableBehaviour,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_begin_intensity::get_offset() as isize),
-        );
+    pub unsafe fn set_begin_intensity(this: PPRadialBlurPlayableBehaviour, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PPRadialBlurPlayableBehaviour, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_begin_intensity::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_end_intensity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::class(),
@@ -235,41 +181,28 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_EndIntensity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_EndIntensity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_end_intensity(
-        this: PPRadialBlurPlayableBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_end_intensity(this: PPRadialBlurPlayableBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PPRadialBlurPlayableBehaviour, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_end_intensity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_end_intensity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_end_intensity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::class(),
                 "set_EndIntensity",
@@ -281,47 +214,30 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_EndIntensity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_EndIntensity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_end_intensity(
-        this: PPRadialBlurPlayableBehaviour,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PPRadialBlurPlayableBehaviour,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_end_intensity::get_offset() as isize),
-        );
+    pub unsafe fn set_end_intensity(this: PPRadialBlurPlayableBehaviour, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PPRadialBlurPlayableBehaviour, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_end_intensity::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -335,18 +251,15 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "ProcessFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "ProcessFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn process_frame(
@@ -362,20 +275,14 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
             crate::unity_engine::playables::framedata::FrameData,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_process_frame::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_process_frame::get_method_info().method_ptr);
         inner(this, playable, info, player_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::class(),
@@ -388,30 +295,20 @@ mod __PPRadialBlurPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PPRadialBlurPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PPRadialBlurPlayableBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PPRadialBlurPlayableBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PPRadialBlurPlayableBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -422,52 +319,31 @@ pub trait IPPRadialBlurPlayableBehaviourMethods: IPPRadialBlurPlayableBehaviour 
     fn get_pp_volume(self) -> crate::unity_engine::rendering::volume::Volume {
         unsafe {
             let __receiver =
-                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PPRadialBlurPlayableBehaviour_unity2_raw::get_pp_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PPRadialBlurPlayableBehaviour_unity2_raw::get_pp_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PPVolume(crate::unity_engine::rendering::volume::Volume)` overload"]
-    fn set_pp_volume(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>,
-    ) -> () {
+    fn set_pp_volume(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::volume::Volume>) -> () {
         unsafe {
             let __receiver =
-                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PPRadialBlurPlayableBehaviour_unity2_raw::set_pp_volume(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PPRadialBlurPlayableBehaviour_unity2_raw::set_pp_volume(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_BeginIntensity()` overload"]
     fn get_begin_intensity(self) -> f32 {
         unsafe {
             let __receiver =
-                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PPRadialBlurPlayableBehaviour_unity2_raw::get_begin_intensity(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PPRadialBlurPlayableBehaviour_unity2_raw::get_begin_intensity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_BeginIntensity(f32)` overload"]
     fn set_begin_intensity(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PPRadialBlurPlayableBehaviour_unity2_raw::set_begin_intensity(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -479,22 +355,15 @@ pub trait IPPRadialBlurPlayableBehaviourMethods: IPPRadialBlurPlayableBehaviour 
     fn get_end_intensity(self) -> f32 {
         unsafe {
             let __receiver =
-                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PPRadialBlurPlayableBehaviour_unity2_raw::get_end_intensity(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PPRadialBlurPlayableBehaviour_unity2_raw::get_end_intensity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EndIntensity(f32)` overload"]
     fn set_end_intensity(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PPRadialBlurPlayableBehaviour_unity2_raw::set_end_intensity(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -511,9 +380,7 @@ pub trait IPPRadialBlurPlayableBehaviourMethods: IPPRadialBlurPlayableBehaviour 
     ) -> () {
         unsafe {
             let __receiver =
-                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PPRadialBlurPlayableBehaviour_unity2_raw::process_frame(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -527,13 +394,8 @@ pub trait IPPRadialBlurPlayableBehaviourMethods: IPPRadialBlurPlayableBehaviour 
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PPRadialBlurPlayableBehaviour_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PPRadialBlurPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PPRadialBlurPlayableBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -560,13 +422,10 @@ impl PPRadialBlurPlayableBehaviour {
 #[cfg(feature = "root-ppradialblurplayablebehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPPRadialBlurPlayableBehaviour;
-    pub use super::IPPRadialBlurPlayableBehaviourMethods;
-    pub use super::PPRadialBlurPlayableBehaviour;
-    pub use crate::system::object::IObject;
+    pub use super::{IPPRadialBlurPlayableBehaviour, IPPRadialBlurPlayableBehaviourMethods, PPRadialBlurPlayableBehaviour};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
     #[cfg(feature = "unity_engine-playables-playablebehaviour")]
     pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
 }

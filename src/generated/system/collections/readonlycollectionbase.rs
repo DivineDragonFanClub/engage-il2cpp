@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-collections-readonlycollectionbase-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/readonlycollectionbase/ReadOnlyCollectionBase.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "ReadOnlyCollectionBase")]
@@ -28,9 +28,7 @@ mod __ReadOnlyCollectionBase_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_inner_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::class(),
@@ -43,41 +41,30 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
-                    "get_InnerList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
+                        "get_InnerList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_inner_list(
         this: ReadOnlyCollectionBase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::arraylist::ArrayList {
-        let inner: extern "C" fn(
-            ReadOnlyCollectionBase,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::arraylist::ArrayList = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_inner_list::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod) -> crate::system::collections::arraylist::ArrayList =
+            ::core::mem::transmute(__lookup_get_inner_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::class(),
@@ -90,39 +77,27 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_count(
-        this: ReadOnlyCollectionBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_count(this: ReadOnlyCollectionBase, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_system_collections_i_collection_get_is_synchronized {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::class(),
@@ -135,18 +110,15 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.ICollection.get_IsSynchronized",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.get_IsSynchronized",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn system_collections_i_collection_get_is_synchronized(
@@ -154,23 +126,14 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_system_collections_i_collection_get_is_synchronized::get_offset()
-                            as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_system_collections_i_collection_get_is_synchronized::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_system_collections_i_collection_get_sync_root {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::class(),
@@ -183,43 +146,30 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.ICollection.get_SyncRoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.get_SyncRoot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn system_collections_i_collection_get_sync_root(
         this: ReadOnlyCollectionBase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ReadOnlyCollectionBase,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_system_collections_i_collection_get_sync_root::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_get_sync_root::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_system_collections_i_collection_copy_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IlInstance as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -235,18 +185,15 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.ICollection.CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn system_collections_i_collection_copy_to(
@@ -255,25 +202,15 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ReadOnlyCollectionBase,
-            ::unity2::IlInstance,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_system_collections_i_collection_copy_to::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ReadOnlyCollectionBase, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_copy_to::get_method_info().method_ptr);
         inner(this, array, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enumerator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::class(),
@@ -286,41 +223,30 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_enumerator(
         this: ReadOnlyCollectionBase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            ReadOnlyCollectionBase,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enumerator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::class(),
@@ -333,30 +259,20 @@ mod __ReadOnlyCollectionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReadOnlyCollectionBase as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ReadOnlyCollectionBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ReadOnlyCollectionBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -366,46 +282,33 @@ pub trait IReadOnlyCollectionBaseMethods: IReadOnlyCollectionBase {
     #[doc = "`get_InnerList()` overload"]
     fn get_inner_list(self) -> crate::system::collections::arraylist::ArrayList {
         unsafe {
-            let __receiver = <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReadOnlyCollectionBase_unity2_raw::get_inner_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ReadOnlyCollectionBase_unity2_raw::get_inner_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Count()` overload"]
     fn get_count(self) -> i32 {
         unsafe {
-            let __receiver = <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ReadOnlyCollectionBase_unity2_raw::get_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
     fn system_collections_i_collection_get_is_synchronized(self) -> bool {
         unsafe {
-            let __receiver = <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReadOnlyCollectionBase_unity2_raw::system_collections_i_collection_get_is_synchronized(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ReadOnlyCollectionBase_unity2_raw::system_collections_i_collection_get_is_synchronized(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
     fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReadOnlyCollectionBase_unity2_raw::system_collections_i_collection_get_sync_root(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ReadOnlyCollectionBase_unity2_raw::system_collections_i_collection_get_sync_root(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
@@ -415,9 +318,8 @@ pub trait IReadOnlyCollectionBaseMethods: IReadOnlyCollectionBase {
         index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ReadOnlyCollectionBase_unity2_raw::system_collections_i_collection_copy_to(
                 __receiver,
                 ::core::convert::Into::into(array),
@@ -429,21 +331,16 @@ pub trait IReadOnlyCollectionBaseMethods: IReadOnlyCollectionBase {
     #[doc = "`GetEnumerator()` overload"]
     fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReadOnlyCollectionBase_unity2_raw::get_enumerator(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ReadOnlyCollectionBase_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ReadOnlyCollectionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ReadOnlyCollectionBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -471,9 +368,7 @@ impl ReadOnlyCollectionBase {
 #[cfg(feature = "system-collections-readonlycollectionbase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IReadOnlyCollectionBase;
-    pub use super::IReadOnlyCollectionBaseMethods;
-    pub use super::ReadOnlyCollectionBase;
+    pub use super::{IReadOnlyCollectionBase, IReadOnlyCollectionBaseMethods, ReadOnlyCollectionBase};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

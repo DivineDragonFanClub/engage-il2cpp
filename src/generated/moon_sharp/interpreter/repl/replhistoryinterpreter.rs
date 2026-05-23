@@ -2,19 +2,16 @@
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replhistoryinterpreter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::repl::replinterpreter::{
-        IReplInterpreter, ReplInterpreter,
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::repl::replinterpreter::{IReplInterpreter, ReplInterpreter},
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/repl/replhistoryinterpreter/ReplHistoryInterpreter.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.REPL",
-        name = "ReplHistoryInterpreter"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.REPL", name = "ReplHistoryInterpreter")]
     #[parent(crate::moon_sharp::interpreter::repl::replinterpreter::ReplInterpreter)]
     pub struct ReplHistoryInterpreter {
         #[rename(name = "m_History")]
@@ -38,9 +35,7 @@ mod __ReplHistoryInterpreter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -56,18 +51,15 @@ mod __ReplHistoryInterpreter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReplHistoryInterpreter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReplHistoryInterpreter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -76,27 +68,16 @@ mod __ReplHistoryInterpreter_unity2_raw {
         history_size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ReplHistoryInterpreter,
-            crate::moon_sharp::interpreter::script::Script,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ReplHistoryInterpreter, crate::moon_sharp::interpreter::script::Script, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, script, history_size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReplHistoryInterpreter as ::unity2::ClassIdentity>::class(),
                 "Evaluate",
@@ -108,18 +89,15 @@ mod __ReplHistoryInterpreter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReplHistoryInterpreter as ::unity2::ClassIdentity>::NAME,
-                    "Evaluate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReplHistoryInterpreter as ::unity2::ClassIdentity>::NAME,
+                        "Evaluate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn evaluate(
@@ -131,20 +109,14 @@ mod __ReplHistoryInterpreter_unity2_raw {
             ReplHistoryInterpreter,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_evaluate::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_evaluate::get_method_info().method_ptr);
         inner(this, input, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_history_prev {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReplHistoryInterpreter as ::unity2::ClassIdentity>::class(),
@@ -157,41 +129,27 @@ mod __ReplHistoryInterpreter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReplHistoryInterpreter as ::unity2::ClassIdentity>::NAME,
-                    "HistoryPrev",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReplHistoryInterpreter as ::unity2::ClassIdentity>::NAME,
+                        "HistoryPrev",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn history_prev(
-        this: ReplHistoryInterpreter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ReplHistoryInterpreter,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_history_prev::get_offset() as isize),
-        );
+    pub unsafe fn history_prev(this: ReplHistoryInterpreter, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ReplHistoryInterpreter, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_history_prev::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_history_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReplHistoryInterpreter as ::unity2::ClassIdentity>::class(),
@@ -204,32 +162,20 @@ mod __ReplHistoryInterpreter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReplHistoryInterpreter as ::unity2::ClassIdentity>::NAME,
-                    "HistoryNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReplHistoryInterpreter as ::unity2::ClassIdentity>::NAME,
+                        "HistoryNext",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn history_next(
-        this: ReplHistoryInterpreter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ReplHistoryInterpreter,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_history_next::get_offset() as isize),
-        );
+    pub unsafe fn history_next(this: ReplHistoryInterpreter, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ReplHistoryInterpreter, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_history_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -243,9 +189,8 @@ pub trait IReplHistoryInterpreterMethods: IReplHistoryInterpreter {
         history_size: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <ReplHistoryInterpreter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ReplHistoryInterpreter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ReplHistoryInterpreter_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -255,43 +200,27 @@ pub trait IReplHistoryInterpreterMethods: IReplHistoryInterpreter {
         }
     }
     #[doc = "`Evaluate(::unity2::Il2CppString)` overload"]
-    fn evaluate(
-        self,
-        input: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+    fn evaluate(self, input: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <ReplHistoryInterpreter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReplHistoryInterpreter_unity2_raw::evaluate(
-                __receiver,
-                ::core::convert::Into::into(input),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ReplHistoryInterpreter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ReplHistoryInterpreter_unity2_raw::evaluate(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)
         }
     }
     #[doc = "`HistoryPrev()` overload"]
     fn history_prev(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ReplHistoryInterpreter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReplHistoryInterpreter_unity2_raw::history_prev(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ReplHistoryInterpreter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ReplHistoryInterpreter_unity2_raw::history_prev(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HistoryNext()` overload"]
     fn history_next(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ReplHistoryInterpreter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReplHistoryInterpreter_unity2_raw::history_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ReplHistoryInterpreter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ReplHistoryInterpreter_unity2_raw::history_next(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -318,13 +247,10 @@ impl ReplHistoryInterpreter {
 #[cfg(feature = "moon_sharp-interpreter-repl-replhistoryinterpreter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IReplHistoryInterpreter;
-    pub use super::IReplHistoryInterpreterMethods;
-    pub use super::ReplHistoryInterpreter;
-    pub use crate::moon_sharp::interpreter::repl::replinterpreter::IReplInterpreter;
+    pub use super::{IReplHistoryInterpreter, IReplHistoryInterpreterMethods, ReplHistoryInterpreter};
     #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter")]
     pub use crate::moon_sharp::interpreter::repl::replinterpreter::IReplInterpreterMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{moon_sharp::interpreter::repl::replinterpreter::IReplInterpreter, system::object::IObject};
 }

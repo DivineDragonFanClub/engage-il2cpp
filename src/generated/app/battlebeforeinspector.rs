@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-battlebeforeinspector-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::eachinspector::{EachInspector, IEachInspector};
-    use crate::app::mapinspector::{IMapInspector, MapInspector};
-    use crate::app::scriptutil::{IScriptUtil, ScriptUtil};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            eachinspector::{EachInspector, IEachInspector},
+            mapinspector::{IMapInspector, MapInspector},
+            scriptutil::{IScriptUtil, ScriptUtil},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlebeforeinspector/BattleBeforeInspector.md"))]
     #[::unity2::class(namespace = "App", name = "BattleBeforeInspector")]
@@ -28,13 +32,9 @@ mod __BattleBeforeInspector_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleBeforeInspector as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -46,18 +46,15 @@ mod __BattleBeforeInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleBeforeInspector as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleBeforeInspector as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -69,11 +66,7 @@ mod __BattleBeforeInspector_unity2_raw {
             BattleBeforeInspector,
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, args, __unity2_method_info)
     }
 }
@@ -81,21 +74,11 @@ mod __BattleBeforeInspector_unity2_raw {
 #[cfg(feature = "app-battlebeforeinspector")]
 pub trait IBattleBeforeInspectorMethods: IBattleBeforeInspector {
     #[doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    fn ctor(
-        self,
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
+    fn ctor(self, args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
         unsafe {
-            let __receiver = <BattleBeforeInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleBeforeInspector_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <BattleBeforeInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleBeforeInspector_unity2_raw::ctor(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
 }
@@ -122,19 +105,17 @@ impl BattleBeforeInspector {
 #[cfg(feature = "app-battlebeforeinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleBeforeInspector;
-    pub use super::IBattleBeforeInspector;
-    pub use super::IBattleBeforeInspectorMethods;
-    pub use crate::app::eachinspector::IEachInspector;
+    pub use super::{BattleBeforeInspector, IBattleBeforeInspector, IBattleBeforeInspectorMethods};
     #[cfg(feature = "app-eachinspector")]
     pub use crate::app::eachinspector::IEachInspectorMethods;
-    pub use crate::app::mapinspector::IMapInspector;
     #[cfg(feature = "app-mapinspector")]
     pub use crate::app::mapinspector::IMapInspectorMethods;
-    pub use crate::app::scriptutil::IScriptUtil;
     #[cfg(feature = "app-scriptutil")]
     pub use crate::app::scriptutil::IScriptUtilMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{eachinspector::IEachInspector, mapinspector::IMapInspector, scriptutil::IScriptUtil},
+        system::object::IObject,
+    };
 }

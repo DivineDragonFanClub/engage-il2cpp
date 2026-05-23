@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-gamesoundutil-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesoundutil/GameSoundUtil.md"))]
     #[::unity2::class(namespace = "App", name = "GameSoundUtil")]
@@ -25,11 +25,8 @@ mod __GameSoundUtil_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_ground_material_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameSoundUtil as ::unity2::ClassIdentity>::class(),
                 "GetGroundMaterialName",
@@ -41,43 +38,31 @@ mod __GameSoundUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetGroundMaterialName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetGroundMaterialName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_ground_material_name(
         pos: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_ground_material_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_ground_material_name::get_method_info().method_ptr);
         inner(pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attack_type_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::attacktype::AttackType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::attacktype::AttackType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameSoundUtil as ::unity2::ClassIdentity>::class(),
                 "GetAttackTypeName",
@@ -89,43 +74,31 @@ mod __GameSoundUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetAttackTypeName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetAttackTypeName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_attack_type_name(
         attack_type: crate::app::attacktype::AttackType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::attacktype::AttackType,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attack_type_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::attacktype::AttackType, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_attack_type_name::get_method_info().method_ptr);
         inner(attack_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_damage_level_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::damagelevel::DamageLevel as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::damagelevel::DamageLevel as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameSoundUtil as ::unity2::ClassIdentity>::class(),
                 "GetDamageLevelName",
@@ -137,41 +110,30 @@ mod __GameSoundUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetDamageLevelName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetDamageLevelName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_damage_level_name(
         damage_level: crate::app::damagelevel::DamageLevel,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::damagelevel::DamageLevel,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_damage_level_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::damagelevel::DamageLevel, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_damage_level_name::get_method_info().method_ptr);
         inner(damage_level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weapon_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
@@ -187,18 +149,15 @@ mod __GameSoundUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetWeaponName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetWeaponName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_weapon_name(
@@ -206,26 +165,16 @@ mod __GameSoundUtil_unity2_raw {
         item_kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_weapon_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_weapon_name::get_method_info().method_ptr);
         inner(asset_weapon_name, item_kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_weapon_name_by_item_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameSoundUtil as ::unity2::ClassIdentity>::class(),
                 "GetDefaultWeaponNameByItemKind",
@@ -237,74 +186,49 @@ mod __GameSoundUtil_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
-                    "GetDefaultWeaponNameByItemKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
+                        "GetDefaultWeaponNameByItemKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_default_weapon_name_by_item_kind(
         item_kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_default_weapon_name_by_item_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_default_weapon_name_by_item_kind::get_method_info().method_ptr);
         inner(item_kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSoundUtil as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GameSoundUtil as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameSoundUtil as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: GameSoundUtil, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameSoundUtil, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(GameSoundUtil, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -312,38 +236,20 @@ mod __GameSoundUtil_unity2_raw {
 #[cfg(feature = "app-gamesoundutil")]
 impl GameSoundUtil {
     #[doc = "`GetGroundMaterialName(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn get_ground_material_name(
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __GameSoundUtil_unity2_raw::get_ground_material_name(
-                ::core::convert::Into::into(pos),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_ground_material_name(pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> ::unity2::Il2CppString {
+        unsafe { __GameSoundUtil_unity2_raw::get_ground_material_name(::core::convert::Into::into(pos), ::core::option::Option::None) }
     }
+
     #[doc = "`GetAttackTypeName(crate::app::attacktype::AttackType)` overload"]
-    pub fn get_attack_type_name(
-        attack_type: impl ::core::convert::Into<crate::app::attacktype::AttackType>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __GameSoundUtil_unity2_raw::get_attack_type_name(
-                ::core::convert::Into::into(attack_type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_attack_type_name(attack_type: impl ::core::convert::Into<crate::app::attacktype::AttackType>) -> ::unity2::Il2CppString {
+        unsafe { __GameSoundUtil_unity2_raw::get_attack_type_name(::core::convert::Into::into(attack_type), ::core::option::Option::None) }
     }
+
     #[doc = "`GetDamageLevelName(crate::app::damagelevel::DamageLevel)` overload"]
-    pub fn get_damage_level_name(
-        damage_level: impl ::core::convert::Into<crate::app::damagelevel::DamageLevel>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __GameSoundUtil_unity2_raw::get_damage_level_name(
-                ::core::convert::Into::into(damage_level),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_damage_level_name(damage_level: impl ::core::convert::Into<crate::app::damagelevel::DamageLevel>) -> ::unity2::Il2CppString {
+        unsafe { __GameSoundUtil_unity2_raw::get_damage_level_name(::core::convert::Into::into(damage_level), ::core::option::Option::None) }
     }
+
     #[doc = "`GetWeaponName(::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds)` overload"]
     pub fn get_weapon_name(
         asset_weapon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -357,15 +263,13 @@ impl GameSoundUtil {
             )
         }
     }
+
     #[doc = "`GetDefaultWeaponNameByItemKind(crate::app::itemdata::ItemData_Kinds)` overload"]
     pub fn get_default_weapon_name_by_item_kind(
         item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
     ) -> ::unity2::Il2CppString {
         unsafe {
-            __GameSoundUtil_unity2_raw::get_default_weapon_name_by_item_kind(
-                ::core::convert::Into::into(item_kind),
-                ::core::option::Option::None,
-            )
+            __GameSoundUtil_unity2_raw::get_default_weapon_name_by_item_kind(::core::convert::Into::into(item_kind), ::core::option::Option::None)
         }
     }
 }
@@ -375,9 +279,7 @@ pub trait IGameSoundUtilMethods: IGameSoundUtil {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GameSoundUtil as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameSoundUtil as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameSoundUtil_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -390,13 +292,8 @@ impl<__T: IGameSoundUtil> IGameSoundUtilMethods for __T {}
 impl GameSoundUtil {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSoundUtil),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GameSoundUtil), ::core::stringify!(new),));
         <Self as IGameSoundUtilMethods>::ctor(this);
         this
     }
@@ -405,9 +302,7 @@ impl GameSoundUtil {
 #[cfg(feature = "app-gamesoundutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameSoundUtil;
-    pub use super::IGameSoundUtil;
-    pub use super::IGameSoundUtilMethods;
+    pub use super::{GameSoundUtil, IGameSoundUtil, IGameSoundUtilMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

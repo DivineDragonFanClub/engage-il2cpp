@@ -2,33 +2,32 @@
 
 #[cfg(feature = "app-godweaponrefinedata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdataarray_1::{IStructDataArray_1, StructDataArray_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godweaponrefinedata/GodWeaponRefineData_Kind.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GodWeaponRefineData_Kind {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GodWeaponRefineData_Kind {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "GodWeaponRefineData.Kind";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,10 +38,7 @@ mod __types {
 
     impl ::unity2::IlType for GodWeaponRefineData_Kind {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -142,9 +138,7 @@ mod __GodWeaponRefineData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -157,41 +151,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::godweaponrefinedata::GodWeaponRefineData,
-                > as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "TryGet",
@@ -203,47 +183,34 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "TryGet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "TryGet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get(
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::godweaponrefinedata::GodWeaponRefineData,
-        >,
+        data_list: crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>,
         level: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::godweaponrefinedata::GodWeaponRefineData {
         let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::godweaponrefinedata::GodWeaponRefineData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::app::godweaponrefinedata::GodWeaponRefineData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get::get_offset() as isize),
-        );
+        ) -> crate::app::godweaponrefinedata::GodWeaponRefineData = ::core::mem::transmute(__lookup_try_get::get_method_info().method_ptr);
         inner(data_list, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_iid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -256,43 +223,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Iid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Iid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_iid(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GodWeaponRefineData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_iid::get_offset() as isize),
-        );
+    pub unsafe fn get_iid(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_iid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_iid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Iid",
@@ -304,43 +256,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Iid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Iid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_iid(
-        this: GodWeaponRefineData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GodWeaponRefineData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_iid::get_offset() as isize),
-        );
+    pub unsafe fn set_iid(this: GodWeaponRefineData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GodWeaponRefineData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_iid::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_power_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -353,41 +289,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_PowerMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_PowerMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_power_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_power_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_power_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_power_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_power_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_PowerMat",
@@ -399,40 +322,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_PowerMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_PowerMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_power_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_power_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_power_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_power_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -445,41 +355,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_HitMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_HitMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hit_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_hit_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hit_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hit_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hit_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_HitMat",
@@ -491,40 +388,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_HitMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_HitMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hit_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_hit_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_hit_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_hit_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_critical_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -537,41 +421,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_CriticalMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_CriticalMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_critical_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_critical_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_critical_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_critical_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_critical_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_CriticalMat",
@@ -583,40 +454,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_CriticalMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_CriticalMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_critical_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_critical_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_critical_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_critical_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_avoid_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -629,41 +487,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_AvoidMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_AvoidMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_avoid_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_avoid_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_avoid_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_avoid_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_avoid_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_AvoidMat",
@@ -675,40 +520,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_AvoidMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_AvoidMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_avoid_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_avoid_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_avoid_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_avoid_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_secure_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -721,41 +553,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_SecureMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_SecureMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_secure_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_secure_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_secure_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_secure_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_secure_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_SecureMat",
@@ -767,40 +586,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_SecureMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_SecureMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_secure_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_secure_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_secure_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_secure_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_tech_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -813,41 +619,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_TechMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_TechMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_tech_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_tech_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_tech_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_tech_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_tech_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_TechMat",
@@ -859,40 +652,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_TechMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_TechMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_tech_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_tech_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_tech_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_tech_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_quick_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -905,41 +685,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_QuickMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_QuickMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_quick_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_quick_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_quick_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_quick_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_quick_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_QuickMat",
@@ -951,40 +718,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_QuickMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_QuickMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_quick_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_quick_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_quick_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_quick_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_def_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -997,41 +751,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_DefMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_DefMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_def_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_def_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_def_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_def_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_def_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_DefMat",
@@ -1043,40 +784,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_DefMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_DefMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_def_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_def_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_def_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_def_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mdef_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1089,41 +817,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_MdefMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_MdefMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mdef_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_mdef_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_mdef_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_mdef_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mdef_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_MdefMat",
@@ -1135,40 +850,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_MdefMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_MdefMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mdef_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_mdef_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_mdef_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_mdef_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_horse_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1181,41 +883,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyHorseMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyHorseMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_horse_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_horse_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_horse_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_horse_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_horse_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyHorseMat",
@@ -1227,40 +916,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyHorseMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyHorseMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_horse_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_horse_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_horse_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_horse_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_armor_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1273,41 +949,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyArmorMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyArmorMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_armor_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_armor_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_armor_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_armor_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_armor_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyArmorMat",
@@ -1319,40 +982,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyArmorMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyArmorMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_armor_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_armor_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_armor_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_armor_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_fly_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1365,41 +1015,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyFlyMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyFlyMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_fly_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_fly_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_fly_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_fly_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_fly_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyFlyMat",
@@ -1411,40 +1048,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyFlyMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyFlyMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_fly_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_fly_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_fly_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_fly_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_dragon_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1457,41 +1081,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyDragonMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyDragonMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_dragon_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_dragon_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_dragon_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_dragon_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_dragon_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyDragonMat",
@@ -1503,40 +1114,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyDragonMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyDragonMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_dragon_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_dragon_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_dragon_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_dragon_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_morph_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1549,41 +1147,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyMorphMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyMorphMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_morph_mat(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_morph_mat(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_morph_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_morph_mat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_morph_mat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyMorphMat",
@@ -1595,40 +1180,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyMorphMat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyMorphMat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_morph_mat(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_morph_mat(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_morph_mat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_morph_mat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_power_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1641,41 +1213,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_PowerCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_PowerCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_power_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_power_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_power_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_power_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_power_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_PowerCapa",
@@ -1687,40 +1246,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_PowerCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_PowerCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_power_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_power_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_power_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_power_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1733,41 +1279,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_HitCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_HitCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hit_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_hit_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hit_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hit_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hit_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_HitCapa",
@@ -1779,40 +1312,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_HitCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_HitCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hit_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_hit_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_hit_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_hit_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_critical_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1825,41 +1345,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_CriticalCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_CriticalCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_critical_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_critical_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_critical_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_critical_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_critical_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_CriticalCapa",
@@ -1871,40 +1378,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_CriticalCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_CriticalCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_critical_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_critical_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_critical_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_critical_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_avoid_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -1917,41 +1411,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_AvoidCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_AvoidCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_avoid_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_avoid_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_avoid_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_avoid_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_avoid_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_AvoidCapa",
@@ -1963,40 +1444,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_AvoidCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_AvoidCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_avoid_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_avoid_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_avoid_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_avoid_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_secure_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2009,41 +1477,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_SecureCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_SecureCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_secure_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_secure_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_secure_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_secure_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_secure_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_SecureCapa",
@@ -2055,40 +1510,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_SecureCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_SecureCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_secure_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_secure_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_secure_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_secure_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_tech_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2101,41 +1543,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_TechCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_TechCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_tech_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_tech_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_tech_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_tech_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_tech_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_TechCapa",
@@ -2147,40 +1576,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_TechCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_TechCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_tech_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_tech_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_tech_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_tech_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_quick_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2193,41 +1609,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_QuickCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_QuickCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_quick_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_quick_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_quick_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_quick_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_quick_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_QuickCapa",
@@ -2239,40 +1642,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_QuickCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_QuickCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_quick_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_quick_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_quick_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_quick_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_def_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2285,41 +1675,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_DefCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_DefCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_def_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_def_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_def_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_def_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_def_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_DefCapa",
@@ -2331,40 +1708,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_DefCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_DefCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_def_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_def_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_def_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_def_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mdef_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2377,41 +1741,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_MdefCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_MdefCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mdef_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_mdef_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_mdef_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_mdef_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mdef_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_MdefCapa",
@@ -2423,40 +1774,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_MdefCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_MdefCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mdef_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_mdef_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_mdef_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_mdef_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_horse_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2469,41 +1807,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyHorseCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyHorseCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_horse_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_horse_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_horse_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_horse_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_horse_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyHorseCapa",
@@ -2515,40 +1840,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyHorseCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyHorseCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_horse_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_horse_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_horse_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_horse_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_armor_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2561,41 +1873,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyArmorCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyArmorCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_armor_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_armor_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_armor_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_armor_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_armor_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyArmorCapa",
@@ -2607,40 +1906,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyArmorCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyArmorCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_armor_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_armor_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_armor_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_armor_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_fly_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2653,41 +1939,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyFlyCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyFlyCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_fly_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_fly_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_fly_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_fly_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_fly_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyFlyCapa",
@@ -2699,40 +1972,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyFlyCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyFlyCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_fly_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_fly_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_fly_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_fly_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_dragon_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2745,41 +2005,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyDragonCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyDragonCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_dragon_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_dragon_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_dragon_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_dragon_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_dragon_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyDragonCapa",
@@ -2791,40 +2038,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyDragonCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyDragonCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_dragon_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_dragon_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_dragon_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_dragon_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_morph_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2837,41 +2071,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_EfficacyMorphCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_EfficacyMorphCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_morph_capa(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_efficacy_morph_capa(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_efficacy_morph_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_efficacy_morph_capa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_morph_capa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_EfficacyMorphCapa",
@@ -2883,40 +2104,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_EfficacyMorphCapa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_EfficacyMorphCapa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_morph_capa(
-        this: GodWeaponRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_efficacy_morph_capa(this: GodWeaponRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_efficacy_morph_capa::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_efficacy_morph_capa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_power {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -2929,41 +2137,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Power",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Power",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_power(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_power(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_power::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_power::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_power {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Power",
@@ -2975,40 +2170,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Power",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Power",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_power(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_power(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_power::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_power::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -3021,41 +2203,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Hit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Hit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hit(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_hit(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Hit",
@@ -3067,40 +2236,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Hit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Hit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hit(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_hit(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_hit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_hit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_critical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -3113,41 +2269,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Critical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Critical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_critical(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_critical(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_critical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_critical::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_critical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Critical",
@@ -3159,40 +2302,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Critical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Critical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_critical(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_critical(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_critical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_critical::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_avoid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -3205,41 +2335,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Avoid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Avoid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_avoid(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_avoid(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_avoid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_avoid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_avoid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Avoid",
@@ -3251,40 +2368,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Avoid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Avoid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_avoid(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_avoid(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_avoid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_avoid::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_secure {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -3297,41 +2401,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Secure",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Secure",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_secure(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_secure(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_secure::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_secure::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_secure {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Secure",
@@ -3343,40 +2434,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Secure",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Secure",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_secure(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_secure(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_secure::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_secure::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_tech {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -3389,41 +2467,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Tech",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Tech",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_tech(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_tech(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_tech::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_tech::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_tech {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Tech",
@@ -3435,40 +2500,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Tech",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Tech",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_tech(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_tech(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_tech::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_tech::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_quick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -3481,41 +2533,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Quick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Quick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_quick(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_quick(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_quick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_quick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_quick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Quick",
@@ -3527,40 +2566,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Quick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Quick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_quick(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_quick(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_quick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_quick::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_def {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -3573,41 +2599,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Def",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Def",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_def(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_def(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_def::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_def::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_def {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Def",
@@ -3619,40 +2632,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Def",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Def",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_def(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_def(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_def::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_def::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mdef {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -3665,41 +2665,28 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Mdef",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Mdef",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mdef(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_mdef(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_mdef::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_mdef::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mdef {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Mdef",
@@ -3711,41 +2698,29 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Mdef",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Mdef",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mdef(
-        this: GodWeaponRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_mdef(this: GodWeaponRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_mdef::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_mdef::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_kind_mid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetKindMid",
@@ -3757,42 +2732,32 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetKindMid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetKindMid",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_kind_mid(
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_kind_mid::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_kind_mid::get_method_info().method_ptr);
         inner(kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "IsSkill",
@@ -3804,42 +2769,29 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "IsSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "IsSkill",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_skill(
-        kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_skill::get_offset() as isize),
-        );
+    pub unsafe fn is_skill(kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_skill::get_method_info().method_ptr);
         inner(kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_kind_sid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetKindSid",
@@ -3851,43 +2803,31 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetKindSid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetKindSid",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_kind_sid(
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_kind_sid::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_kind_sid::get_method_info().method_ptr);
         inner(kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetKind",
@@ -3899,43 +2839,32 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_kind(
         sid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::godweaponrefinedata::GodWeaponRefineData_Kind {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::godweaponrefinedata::GodWeaponRefineData_Kind = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::godweaponrefinedata::GodWeaponRefineData_Kind =
+            ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
         inner(sid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_material_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetMaterialCount",
@@ -3947,18 +2876,15 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetMaterialCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetMaterialCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_material_count(
@@ -3966,25 +2892,17 @@ mod __GodWeaponRefineData_unity2_raw {
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> u16 {
-        let inner: extern "C" fn(
-            GodWeaponRefineData,
-            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-            ::unity2::OptionalMethod,
-        ) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_material_count::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_material_count::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_material_iid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetMaterialIid",
@@ -3996,42 +2914,32 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetMaterialIid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetMaterialIid",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_material_iid(
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_material_iid::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_material_iid::get_method_info().method_ptr);
         inner(kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_capacity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetCapacity",
@@ -4043,18 +2951,15 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetCapacity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetCapacity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_capacity(
@@ -4062,25 +2967,17 @@ mod __GodWeaponRefineData_unity2_raw {
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> u16 {
-        let inner: extern "C" fn(
-            GodWeaponRefineData,
-            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-            ::unity2::OptionalMethod,
-        ) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_capacity::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_capacity::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetValue",
@@ -4092,18 +2989,15 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value(
@@ -4111,24 +3005,15 @@ mod __GodWeaponRefineData_unity2_raw {
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i8 {
-        let inner: extern "C" fn(
-            GodWeaponRefineData,
-            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-            ::unity2::OptionalMethod,
-        ) -> i8 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, ::unity2::OptionalMethod) -> i8 =
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -4141,50 +3026,41 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value_2(
-        data_list: crate::app::structdataarraylist_1::StructDataArrayList_1<
-            crate::app::godweaponrefinedata::GodWeaponRefineData,
-        >,
+        data_list: crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::godweaponrefinedata::GodWeaponRefineData>,
         level: i32,
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
-            crate::app::structdataarraylist_1::StructDataArrayList_1<
-                crate::app::godweaponrefinedata::GodWeaponRefineData,
-            >,
+            crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::godweaponrefinedata::GodWeaponRefineData>,
             i32,
             crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value_2::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_value_2::get_method_info().method_ptr);
         inner(data_list, level, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetValue",
@@ -4196,18 +3072,15 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value_3(
@@ -4221,20 +3094,14 @@ mod __GodWeaponRefineData_unity2_raw {
             i32,
             crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value_3::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_value_3::get_method_info().method_ptr);
         inner(iid, level, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_power {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4250,40 +3117,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValuePower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValuePower",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_power(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_power(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_power::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_power::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4299,40 +3153,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValueHit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValueHit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_hit(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_hit(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_hit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_hit::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_critical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4348,40 +3189,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValueCritical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValueCritical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_critical(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_critical(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_critical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_critical::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_avoid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4397,40 +3225,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValueAvoid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValueAvoid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_avoid(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_avoid(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_avoid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_avoid::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_secure {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4446,40 +3261,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValueSecure",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValueSecure",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_secure(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_secure(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_secure::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_secure::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_tech {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4495,40 +3297,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValueTech",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValueTech",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_tech(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_tech(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_tech::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_tech::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_quick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4544,40 +3333,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValueQuick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValueQuick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_quick(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_quick(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_quick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_quick::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_def {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4593,40 +3369,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValueDef",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValueDef",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_def(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_def(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_def::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_def::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_mdef {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4642,40 +3405,27 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetValueMdef",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetValueMdef",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_mdef(
-        iid: ::unity2::Il2CppString,
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value_mdef(iid: ::unity2::Il2CppString, level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_mdef::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_mdef::get_method_info().method_ptr);
         inner(iid, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_min_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -4688,36 +3438,30 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetMinLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetMinLevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_min_level(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_min_level::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_min_level::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetMaxLevel",
@@ -4729,18 +3473,15 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxLevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_max_level(
@@ -4748,24 +3489,15 @@ mod __GodWeaponRefineData_unity2_raw {
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_max_level::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_max_level::get_method_info().method_ptr);
         inner(iid, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_level_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData > as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -4778,48 +3510,39 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxLevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_max_level_2(
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::godweaponrefinedata::GodWeaponRefineData,
-        >,
+        data_list: crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>,
         kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::godweaponrefinedata::GodWeaponRefineData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>,
             crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_max_level_2::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_max_level_2::get_method_info().method_ptr);
         inner(data_list, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_total_capacity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: godweaponrefinedata :: GodWeaponRefineData_Kind as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::godweaponrefinedata::GodWeaponRefineData_Kind as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
                 "GetTotalCapacity",
@@ -4831,18 +3554,15 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetTotalCapacity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetTotalCapacity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_total_capacity(
@@ -4856,20 +3576,14 @@ mod __GodWeaponRefineData_unity2_raw {
             crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
             i32,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_total_capacity::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_total_capacity::get_method_info().method_ptr);
         inner(iid, kind, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodWeaponRefineData as ::unity2::ClassIdentity>::class(),
@@ -4882,30 +3596,20 @@ mod __GodWeaponRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodWeaponRefineData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GodWeaponRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GodWeaponRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodWeaponRefineData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -4916,13 +3620,10 @@ impl GodWeaponRefineData {
     pub fn load() -> () {
         unsafe { __GodWeaponRefineData_unity2_raw::load(::core::option::Option::None) }
     }
+
     #[doc = "`TryGet(crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, i32)` overload"]
     pub fn try_get(
-        data_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::godweaponrefinedata::GodWeaponRefineData,
-            >,
-        >,
+        data_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>>,
         level: impl ::core::convert::Into<i32>,
     ) -> crate::app::godweaponrefinedata::GodWeaponRefineData {
         unsafe {
@@ -4933,67 +3634,36 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetKindMid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
-    pub fn get_kind_mid(
-        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __GodWeaponRefineData_unity2_raw::get_kind_mid(
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_kind_mid(kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>) -> ::unity2::Il2CppString {
+        unsafe { __GodWeaponRefineData_unity2_raw::get_kind_mid(::core::convert::Into::into(kind), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSkill(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
-    pub fn is_skill(
-        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
-    ) -> bool {
-        unsafe {
-            __GodWeaponRefineData_unity2_raw::is_skill(
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_skill(kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>) -> bool {
+        unsafe { __GodWeaponRefineData_unity2_raw::is_skill(::core::convert::Into::into(kind), ::core::option::Option::None) }
     }
+
     #[doc = "`GetKindSid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
-    pub fn get_kind_sid(
-        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __GodWeaponRefineData_unity2_raw::get_kind_sid(
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_kind_sid(kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>) -> ::unity2::Il2CppString {
+        unsafe { __GodWeaponRefineData_unity2_raw::get_kind_sid(::core::convert::Into::into(kind), ::core::option::Option::None) }
     }
+
     #[doc = "`GetKind(::unity2::Il2CppString)` overload"]
-    pub fn get_kind(
-        sid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::godweaponrefinedata::GodWeaponRefineData_Kind {
-        unsafe {
-            __GodWeaponRefineData_unity2_raw::get_kind(
-                ::core::convert::Into::into(sid),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_kind(sid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::godweaponrefinedata::GodWeaponRefineData_Kind {
+        unsafe { __GodWeaponRefineData_unity2_raw::get_kind(::core::convert::Into::into(sid), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMaterialIid(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
-    pub fn get_material_iid(
-        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __GodWeaponRefineData_unity2_raw::get_material_iid(
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_material_iid(kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>) -> ::unity2::Il2CppString {
+        unsafe { __GodWeaponRefineData_unity2_raw::get_material_iid(::core::convert::Into::into(kind), ::core::option::Option::None) }
     }
+
     #[doc = "`GetValue(crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, i32, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
     pub fn get_value_2(
         data_list: impl ::core::convert::Into<
-            crate::app::structdataarraylist_1::StructDataArrayList_1<
-                crate::app::godweaponrefinedata::GodWeaponRefineData,
-            >,
+            crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::godweaponrefinedata::GodWeaponRefineData>,
         >,
         level: impl ::core::convert::Into<i32>,
         kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
@@ -5007,6 +3677,7 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValue(::unity2::Il2CppString, i32, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
     pub fn get_value_3(
         iid: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5022,11 +3693,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValuePower(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_power(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_power(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_power(
                 ::core::convert::Into::into(iid),
@@ -5035,11 +3704,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValueHit(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_hit(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_hit(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_hit(
                 ::core::convert::Into::into(iid),
@@ -5048,11 +3715,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValueCritical(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_critical(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_critical(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_critical(
                 ::core::convert::Into::into(iid),
@@ -5061,11 +3726,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValueAvoid(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_avoid(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_avoid(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_avoid(
                 ::core::convert::Into::into(iid),
@@ -5074,11 +3737,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValueSecure(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_secure(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_secure(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_secure(
                 ::core::convert::Into::into(iid),
@@ -5087,11 +3748,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValueTech(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_tech(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_tech(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_tech(
                 ::core::convert::Into::into(iid),
@@ -5100,11 +3759,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValueQuick(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_quick(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_quick(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_quick(
                 ::core::convert::Into::into(iid),
@@ -5113,11 +3770,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValueDef(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_def(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_def(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_def(
                 ::core::convert::Into::into(iid),
@@ -5126,11 +3781,9 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetValueMdef(::unity2::Il2CppString, i32)` overload"]
-    pub fn get_value_mdef(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_value_mdef(iid: impl ::core::convert::Into<::unity2::Il2CppString>, level: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __GodWeaponRefineData_unity2_raw::get_value_mdef(
                 ::core::convert::Into::into(iid),
@@ -5139,10 +3792,12 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetMinLevel()` overload"]
     pub fn get_min_level() -> i32 {
         unsafe { __GodWeaponRefineData_unity2_raw::get_min_level(::core::option::Option::None) }
     }
+
     #[doc = "`GetMaxLevel(::unity2::Il2CppString, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
     pub fn get_max_level(
         iid: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5156,13 +3811,10 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetMaxLevel(crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
     pub fn get_max_level_2(
-        data_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::godweaponrefinedata::GodWeaponRefineData,
-            >,
-        >,
+        data_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::godweaponrefinedata::GodWeaponRefineData>>,
         kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
     ) -> i32 {
         unsafe {
@@ -5173,6 +3825,7 @@ impl GodWeaponRefineData {
             )
         }
     }
+
     #[doc = "`GetTotalCapacity(::unity2::Il2CppString, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32)` overload"]
     pub fn get_total_capacity(
         iid: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5195,959 +3848,560 @@ pub trait IGodWeaponRefineDataMethods: IGodWeaponRefineData {
     #[doc = "`get_Iid()` overload"]
     fn get_iid(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_iid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Iid(::unity2::Il2CppString)` overload"]
     fn set_iid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_iid(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_iid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_PowerMat()` overload"]
     fn get_power_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_power_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_power_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PowerMat(u16)` overload"]
     fn set_power_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_power_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_power_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_HitMat()` overload"]
     fn get_hit_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_hit_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_HitMat(u16)` overload"]
     fn set_hit_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_hit_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_hit_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_CriticalMat()` overload"]
     fn get_critical_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_critical_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_critical_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CriticalMat(u16)` overload"]
     fn set_critical_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_critical_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_critical_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AvoidMat()` overload"]
     fn get_avoid_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_avoid_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_avoid_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AvoidMat(u16)` overload"]
     fn set_avoid_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_avoid_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_avoid_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SecureMat()` overload"]
     fn get_secure_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_secure_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_secure_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SecureMat(u16)` overload"]
     fn set_secure_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_secure_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_secure_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_TechMat()` overload"]
     fn get_tech_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_tech_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_TechMat(u16)` overload"]
     fn set_tech_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_tech_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_tech_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_QuickMat()` overload"]
     fn get_quick_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_quick_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_quick_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_QuickMat(u16)` overload"]
     fn set_quick_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_quick_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_quick_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DefMat()` overload"]
     fn get_def_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_def_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DefMat(u16)` overload"]
     fn set_def_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_def_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_def_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_MdefMat()` overload"]
     fn get_mdef_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_mdef_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MdefMat(u16)` overload"]
     fn set_mdef_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_mdef_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_mdef_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyHorseMat()` overload"]
     fn get_efficacy_horse_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_horse_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_horse_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyHorseMat(u16)` overload"]
     fn set_efficacy_horse_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_horse_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_horse_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyArmorMat()` overload"]
     fn get_efficacy_armor_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_armor_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_armor_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyArmorMat(u16)` overload"]
     fn set_efficacy_armor_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_armor_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_armor_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyFlyMat()` overload"]
     fn get_efficacy_fly_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_fly_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_fly_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyFlyMat(u16)` overload"]
     fn set_efficacy_fly_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_fly_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_fly_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyDragonMat()` overload"]
     fn get_efficacy_dragon_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_dragon_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_dragon_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyDragonMat(u16)` overload"]
     fn set_efficacy_dragon_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_dragon_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_dragon_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyMorphMat()` overload"]
     fn get_efficacy_morph_mat(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_morph_mat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_morph_mat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyMorphMat(u16)` overload"]
     fn set_efficacy_morph_mat(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_morph_mat(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_morph_mat(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_PowerCapa()` overload"]
     fn get_power_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_power_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_power_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PowerCapa(u16)` overload"]
     fn set_power_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_power_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_power_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_HitCapa()` overload"]
     fn get_hit_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_hit_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_HitCapa(u16)` overload"]
     fn set_hit_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_hit_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_hit_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_CriticalCapa()` overload"]
     fn get_critical_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_critical_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_critical_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CriticalCapa(u16)` overload"]
     fn set_critical_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_critical_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_critical_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AvoidCapa()` overload"]
     fn get_avoid_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_avoid_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_avoid_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AvoidCapa(u16)` overload"]
     fn set_avoid_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_avoid_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_avoid_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SecureCapa()` overload"]
     fn get_secure_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_secure_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_secure_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SecureCapa(u16)` overload"]
     fn set_secure_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_secure_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_secure_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_TechCapa()` overload"]
     fn get_tech_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_tech_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_tech_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_TechCapa(u16)` overload"]
     fn set_tech_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_tech_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_tech_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_QuickCapa()` overload"]
     fn get_quick_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_quick_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_quick_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_QuickCapa(u16)` overload"]
     fn set_quick_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_quick_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_quick_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DefCapa()` overload"]
     fn get_def_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_def_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DefCapa(u16)` overload"]
     fn set_def_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_def_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_def_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_MdefCapa()` overload"]
     fn get_mdef_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_mdef_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_mdef_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MdefCapa(u16)` overload"]
     fn set_mdef_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_mdef_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_mdef_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyHorseCapa()` overload"]
     fn get_efficacy_horse_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_horse_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_horse_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyHorseCapa(u16)` overload"]
     fn set_efficacy_horse_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_horse_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_horse_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyArmorCapa()` overload"]
     fn get_efficacy_armor_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_armor_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_armor_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyArmorCapa(u16)` overload"]
     fn set_efficacy_armor_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_armor_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_armor_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyFlyCapa()` overload"]
     fn get_efficacy_fly_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_fly_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_fly_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyFlyCapa(u16)` overload"]
     fn set_efficacy_fly_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_fly_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_fly_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyDragonCapa()` overload"]
     fn get_efficacy_dragon_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_dragon_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_dragon_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyDragonCapa(u16)` overload"]
     fn set_efficacy_dragon_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_dragon_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_dragon_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EfficacyMorphCapa()` overload"]
     fn get_efficacy_morph_capa(self) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_efficacy_morph_capa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_efficacy_morph_capa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EfficacyMorphCapa(u16)` overload"]
     fn set_efficacy_morph_capa(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_efficacy_morph_capa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_efficacy_morph_capa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Power()` overload"]
     fn get_power(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_power(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Power(i8)` overload"]
     fn set_power(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_power(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_power(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Hit()` overload"]
     fn get_hit(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_hit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Hit(i8)` overload"]
     fn set_hit(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_hit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_hit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Critical()` overload"]
     fn get_critical(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_critical(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Critical(i8)` overload"]
     fn set_critical(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_critical(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_critical(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Avoid()` overload"]
     fn get_avoid(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_avoid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Avoid(i8)` overload"]
     fn set_avoid(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_avoid(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_avoid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Secure()` overload"]
     fn get_secure(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_secure(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Secure(i8)` overload"]
     fn set_secure(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_secure(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_secure(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Tech()` overload"]
     fn get_tech(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_tech(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Tech(i8)` overload"]
     fn set_tech(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_tech(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_tech(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Quick()` overload"]
     fn get_quick(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_quick(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Quick(i8)` overload"]
     fn set_quick(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_quick(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_quick(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Def()` overload"]
     fn get_def(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_def(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Def(i8)` overload"]
     fn set_def(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_def(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_def(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Mdef()` overload"]
     fn get_mdef(self) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::get_mdef(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Mdef(i8)` overload"]
     fn set_mdef(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::set_mdef(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::set_mdef(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetMaterialCount(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
-    fn get_material_count(
-        self,
-        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
-    ) -> u16 {
+    fn get_material_count(self, kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_material_count(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_material_count(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCapacity(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
-    fn get_capacity(
-        self,
-        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
-    ) -> u16 {
+    fn get_capacity(self, kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>) -> u16 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_capacity(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_capacity(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`GetValue(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)` overload"]
-    fn get_value(
-        self,
-        kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
-    ) -> i8 {
+    fn get_value(self, kind: impl ::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>) -> i8 {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodWeaponRefineData_unity2_raw::get_value(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodWeaponRefineData_unity2_raw::get_value(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GodWeaponRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodWeaponRefineData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -6175,26 +4429,21 @@ impl GodWeaponRefineData {
 #[cfg(feature = "app-godweaponrefinedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodWeaponRefineData;
-    pub use super::GodWeaponRefineData_Kind;
-    pub use super::IGodWeaponRefineData;
-    pub use super::IGodWeaponRefineDataMethods;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{GodWeaponRefineData, GodWeaponRefineData_Kind, IGodWeaponRefineData, IGodWeaponRefineDataMethods};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
     #[cfg(feature = "app-structdataarray_1")]
     pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

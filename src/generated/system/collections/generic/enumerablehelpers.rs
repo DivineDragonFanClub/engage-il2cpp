@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-collections-generic-enumerablehelpers-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/enumerablehelpers/EnumerableHelpers.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "EnumerableHelpers")]
@@ -26,47 +26,34 @@ mod __EnumerableHelpers_unity2_raw {
 #[cfg(feature = "system-collections-generic-enumerablehelpers")]
 impl EnumerableHelpers {
     pub fn to_array<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        source: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<M0>,
-        >,
+        source: impl ::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<M0>>,
         length: impl ::core::convert::Into<*mut i32>,
     ) -> ::unity2::Array<M0> {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <EnumerableHelpers as ::unity2::ClassIdentity>::class(),
-                "ToArray",
-                2,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<EnumerableHelpers as ::unity2::ClassIdentity>::class(), "ToArray", 2)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <EnumerableHelpers as ::unity2::ClassIdentity>::NAME,
-                "ToArray",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EnumerableHelpers as ::unity2::ClassIdentity>::NAME,
+                    "ToArray",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
             let __f: extern "C" fn(
@@ -87,8 +74,7 @@ impl EnumerableHelpers {
 #[cfg(feature = "system-collections-generic-enumerablehelpers")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EnumerableHelpers;
-    pub use super::IEnumerableHelpers;
+    pub use super::{EnumerableHelpers, IEnumerableHelpers};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

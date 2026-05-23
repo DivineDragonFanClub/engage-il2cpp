@@ -2,28 +2,31 @@
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_EnhanceObject.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "DishAllMenuContent.EnhanceObject"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct DishAllMenuContent_EnhanceObject {
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Name")]
-        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Value")]
-        pub m_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_FoodstuffsHistory.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.FoodstuffsHistory")]
+    #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
+    pub struct DishAllMenuContent_FoodstuffsHistory {
+        #[rename(name = "m_FoodstuffItemList")]
+        pub m_foodstuff_item_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_FoodstuffGroup")]
+        pub m_foodstuff_group: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Nothing")]
+        pub m_nothing: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Blank")]
+        pub m_blank: crate::unity_engine::gameobject::GameObject,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_DishHistory.md"))]
@@ -37,9 +40,8 @@ mod __types {
         #[rename(name = "m_FoodDifficulty")]
         pub m_food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_EnhanceObjectList")]
-        pub m_enhance_object_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
-        >,
+        pub m_enhance_object_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>,
         #[rename(name = "m_Dish")]
         pub m_dish: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_Params")]
@@ -50,6 +52,18 @@ mod __types {
         pub m_blank1: crate::unity_engine::gameobject::GameObject,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_EnhanceObject.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.EnhanceObject")]
+    #[parent(crate::system::object::Object)]
+    pub struct DishAllMenuContent_EnhanceObject {
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Name")]
+        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Value")]
+        pub m_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent.md"))]
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -58,30 +72,22 @@ mod __types {
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
         #[rename(name = "m_UnitSelectMenuContent")]
-        pub m_unit_select_menu_content:
-            crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2,
+        pub m_unit_select_menu_content: crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2,
         #[rename(name = "m_DishSelectMenuContent")]
-        pub m_dish_select_menu_content:
-            crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent,
+        pub m_dish_select_menu_content: crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent,
         #[rename(name = "m_FoodstuffMenuContent")]
-        pub m_foodstuff_menu_content:
-            crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent,
+        pub m_foodstuff_menu_content: crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent,
         #[rename(name = "m_HistoryList")]
-        pub m_history_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject,
-        >,
+        pub m_history_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject>,
         #[rename(name = "m_CookHistory")]
-        pub m_cook_history:
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_CookHistory,
+        pub m_cook_history: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_CookHistory,
         #[rename(name = "m_UnitsHistory")]
-        pub m_units_history:
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_UnitsHistory,
+        pub m_units_history: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_UnitsHistory,
         #[rename(name = "m_DishHistory")]
-        pub m_dish_history:
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_DishHistory,
+        pub m_dish_history: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_DishHistory,
         #[rename(name = "m_FoodstuffsHistory")]
-        pub m_foodstuffs_history:
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_FoodstuffsHistory,
+        pub m_foodstuffs_history: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_FoodstuffsHistory,
         #[rename(name = "m_UnitIcon0")]
         pub m_unit_icon0: crate::app::uniticon::UnitIcon,
         #[rename(name = "m_UnitName0")]
@@ -97,13 +103,10 @@ mod __types {
         #[rename(name = "m_FoodDifficulty")]
         pub m_food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_EnhanceObjectList")]
-        pub m_enhance_object_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
-        >,
+        pub m_enhance_object_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>,
         #[rename(name = "m_FoodstuffItemList")]
-        pub m_foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_foodstuff_item_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_FoodstuffGroup")]
         pub m_foodstuff_group: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_CookChefTitleText")]
@@ -122,48 +125,8 @@ mod __types {
         pub m_animator: crate::unity_engine::animator::Animator,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_CookHistory.md"))]
-    #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.CookHistory")]
-    #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
-    pub struct DishAllMenuContent_CookHistory {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_HistoryObject.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "DishAllMenuContent.HistoryObject"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct DishAllMenuContent_HistoryObject {
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CanvasGroup")]
-        pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_FoodstuffsHistory.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "DishAllMenuContent.FoodstuffsHistory"
-    )]
-    #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
-    pub struct DishAllMenuContent_FoodstuffsHistory {
-        #[rename(name = "m_FoodstuffItemList")]
-        pub m_foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_FoodstuffGroup")]
-        pub m_foodstuff_group: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Nothing")]
-        pub m_nothing: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Blank")]
-        pub m_blank: crate::unity_engine::gameobject::GameObject,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_UnitsHistory.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "DishAllMenuContent.UnitsHistory"
-    )]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.UnitsHistory")]
     #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
     pub struct DishAllMenuContent_UnitsHistory {
         #[rename(name = "m_UnitIcon0")]
@@ -179,6 +142,21 @@ mod __types {
         #[rename(name = "m_Blank")]
         pub m_blank: crate::unity_engine::gameobject::GameObject,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_HistoryObject.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.HistoryObject")]
+    #[parent(crate::system::object::Object)]
+    pub struct DishAllMenuContent_HistoryObject {
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CanvasGroup")]
+        pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_CookHistory.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.CookHistory")]
+    #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
+    pub struct DishAllMenuContent_CookHistory {}
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent-types")]
@@ -187,19 +165,194 @@ pub use __types::*;
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishAllMenuContent_EnhanceObject_unity2_raw {
+mod __DishAllMenuContent_FoodstuffsHistory_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DishAllMenuContent_FoodstuffsHistory,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        foodstuff_item_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        foodstuff_group: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishAllMenuContent_FoodstuffsHistory,
+            crate::unity_engine::gameobject::GameObject,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, game_object, foodstuff_item_list, foodstuff_group, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::foodstuffdata::FoodstuffData,
+            > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
+                "Show",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show(
+        this: DishAllMenuContent_FoodstuffsHistory,
+        foodstuffs: crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishAllMenuContent_FoodstuffsHistory,
+            crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, foodstuffs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_foodstuffs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::foodstuffdata::FoodstuffData,
+            > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
+                "SetFoodstuffs",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
+                        "SetFoodstuffs",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_foodstuffs(
+        this: DishAllMenuContent_FoodstuffsHistory,
+        foodstuffs: crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishAllMenuContent_FoodstuffsHistory,
+            crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_foodstuffs::get_method_info().method_ptr);
+        inner(this, foodstuffs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_foodstuff_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
+                "SetFoodstuffItem",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
+                        "SetFoodstuffItem",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_foodstuff_item(
+        this: DishAllMenuContent_FoodstuffsHistory,
+        content_item: crate::unity_engine::gameobject::GameObject,
+        data: crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishAllMenuContent_FoodstuffsHistory,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_foodstuff_item::get_method_info().method_ptr);
+        inner(this, content_item, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_EnhanceObject as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
+                "Hide",
                 0,
                 param_types,
                 false,
@@ -208,66 +361,122 @@ mod __DishAllMenuContent_EnhanceObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_EnhanceObject as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DishAllMenuContent_EnhanceObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DishAllMenuContent_EnhanceObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn hide(this: DishAllMenuContent_FoodstuffsHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DishAllMenuContent_FoodstuffsHistory, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-pub trait IDishAllMenuContent_EnhanceObjectMethods: IDishAllMenuContent_EnhanceObject {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait IDishAllMenuContent_FoodstuffsHistoryMethods: IDishAllMenuContent_FoodstuffsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(
+        self,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        foodstuff_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>>,
+        foodstuff_group: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <DishAllMenuContent_EnhanceObject as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_EnhanceObject_unity2_raw::ctor(
+            let __receiver = <DishAllMenuContent_FoodstuffsHistory as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(game_object),
+                ::core::convert::Into::into(foodstuff_item_list),
+                ::core::convert::Into::into(foodstuff_group),
                 ::core::option::Option::None,
             )
+        }
+    }
+    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    fn show(
+        self,
+        foodstuffs: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DishAllMenuContent_FoodstuffsHistory as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::show(__receiver, ::core::convert::Into::into(foodstuffs), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetFoodstuffs(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    fn set_foodstuffs(
+        self,
+        foodstuffs: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DishAllMenuContent_FoodstuffsHistory as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::set_foodstuffs(
+                __receiver,
+                ::core::convert::Into::into(foodstuffs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFoodstuffItem(crate::unity_engine::gameobject::GameObject, crate::app::foodstuffdata::FoodstuffData)` overload"]
+    fn set_foodstuff_item(
+        self,
+        content_item: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DishAllMenuContent_FoodstuffsHistory as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::set_foodstuff_item(
+                __receiver,
+                ::core::convert::Into::into(content_item),
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver = <DishAllMenuContent_FoodstuffsHistory as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl<__T: IDishAllMenuContent_EnhanceObject> IDishAllMenuContent_EnhanceObjectMethods for __T {}
+impl<__T: IDishAllMenuContent_FoodstuffsHistory> IDishAllMenuContent_FoodstuffsHistoryMethods for __T {}
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_EnhanceObject {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl DishAllMenuContent_FoodstuffsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(
+        game_object: crate::unity_engine::gameobject::GameObject,
+        foodstuff_item_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        foodstuff_group: crate::unity_engine::gameobject::GameObject,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_EnhanceObject),
+                ::core::stringify!(DishAllMenuContent_FoodstuffsHistory),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishAllMenuContent_EnhanceObjectMethods>::ctor(this);
+        <Self as IDishAllMenuContent_FoodstuffsHistoryMethods>::ctor(this, game_object, foodstuff_item_list, foodstuff_group);
         this
     }
 }
@@ -281,18 +490,17 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[
+                    <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                    <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                    <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+                    <crate::system::collections::generic::list_1::List_1<
+                        crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
+                    > as ::unity2::IlType>::il_type(),
+                ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -304,18 +512,15 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -335,15 +540,9 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
             crate::tm_pro::textmeshprougui::TextMeshProUGUI,
             crate::unity_engine::gameobject::GameObject,
             crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             game_object,
@@ -358,11 +557,8 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::class(),
                 "Show",
@@ -374,18 +570,15 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn show(
@@ -393,24 +586,15 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
         food: crate::app::fooddata::FoodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_DishHistory,
-            crate::app::fooddata::FoodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DishAllMenuContent_DishHistory, crate::app::fooddata::FoodData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
         inner(this, food, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::class(),
@@ -423,41 +607,28 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: DishAllMenuContent_DishHistory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide(this: DishAllMenuContent_DishHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishAllMenuContent_DishHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_food_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::class(),
                 "SetFoodInfo",
@@ -469,18 +640,15 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
-                    "SetFoodInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
+                        "SetFoodInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_food_info(
@@ -488,26 +656,16 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
         food: crate::app::fooddata::FoodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_DishHistory,
-            crate::app::fooddata::FoodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_food_info::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DishAllMenuContent_DishHistory, crate::app::fooddata::FoodData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_food_info::get_method_info().method_ptr);
         inner(this, food, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enhance_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::class(),
                 "GetEnhanceType",
@@ -519,18 +677,15 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
-                    "GetEnhanceType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_DishHistory as ::unity2::ClassIdentity>::NAME,
+                        "GetEnhanceType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_enhance_type(
@@ -542,12 +697,8 @@ mod __DishAllMenuContent_DishHistory_unity2_raw {
             DishAllMenuContent_DishHistory,
             i32,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::capabilitydefinition::CapabilityDefinition_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enhance_type::get_offset() as isize),
-        );
+        ) -> crate::app::capabilitydefinition::CapabilityDefinition_Type =
+            ::core::mem::transmute(__lookup_get_enhance_type::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
 }
@@ -562,16 +713,12 @@ pub trait IDishAllMenuContent_DishHistoryMethods: IDishAllMenuContent_DishHistor
         difficulty_icon: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         food_difficulty: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
         enhance_object_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>,
         >,
     ) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_DishHistory_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(game_object),
@@ -587,53 +734,31 @@ pub trait IDishAllMenuContent_DishHistoryMethods: IDishAllMenuContent_DishHistor
     fn show(self, food: impl ::core::convert::Into<crate::app::fooddata::FoodData>) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_DishHistory_unity2_raw::show(
-                __receiver,
-                ::core::convert::Into::into(food),
-                ::core::option::Option::None,
-            )
+                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_DishHistory_unity2_raw::show(__receiver, ::core::convert::Into::into(food), ::core::option::Option::None)
         }
     }
     #[doc = "`Hide()` overload"]
     fn hide(self) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_DishHistory_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_DishHistory_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetFoodInfo(crate::app::fooddata::FoodData)` overload"]
     fn set_food_info(self, food: impl ::core::convert::Into<crate::app::fooddata::FoodData>) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_DishHistory_unity2_raw::set_food_info(
-                __receiver,
-                ::core::convert::Into::into(food),
-                ::core::option::Option::None,
-            )
+                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_DishHistory_unity2_raw::set_food_info(__receiver, ::core::convert::Into::into(food), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEnhanceType(i32)` overload"]
-    fn get_enhance_type(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::capabilitydefinition::CapabilityDefinition_Type {
+    fn get_enhance_type(self, index: impl ::core::convert::Into<i32>) -> crate::app::capabilitydefinition::CapabilityDefinition_Type {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DishAllMenuContent_DishHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_DishHistory_unity2_raw::get_enhance_type(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -665,14 +790,78 @@ impl DishAllMenuContent_DishHistory {
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishAllMenuContent_DishHistoryMethods>::ctor(
-            this,
-            game_object,
-            food_name,
-            difficulty_icon,
-            food_difficulty,
-            enhance_object_list,
-        );
+        <Self as IDishAllMenuContent_DishHistoryMethods>::ctor(this, game_object, food_name, difficulty_icon, food_difficulty, enhance_object_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DishAllMenuContent_EnhanceObject_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_EnhanceObject as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_EnhanceObject as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: DishAllMenuContent_EnhanceObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DishAllMenuContent_EnhanceObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+pub trait IDishAllMenuContent_EnhanceObjectMethods: IDishAllMenuContent_EnhanceObject {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <DishAllMenuContent_EnhanceObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_EnhanceObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+impl<__T: IDishAllMenuContent_EnhanceObject> IDishAllMenuContent_EnhanceObjectMethods for __T {}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+impl DishAllMenuContent_EnhanceObject {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishAllMenuContent_EnhanceObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishAllMenuContent_EnhanceObjectMethods>::ctor(this);
         this
     }
 }
@@ -686,9 +875,7 @@ mod __DishAllMenuContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load_prefab_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -701,35 +888,26 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "LoadPrefabAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "LoadPrefabAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_prefab_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -742,35 +920,26 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -783,35 +952,26 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "UnloadPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "UnloadPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -824,34 +984,29 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: cooking_menu :: dishallmenucontent :: DishAllMenuContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishallmenucontent :: DishAllMenuContent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
                 "Destroy",
@@ -863,41 +1018,30 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy(
         content: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(content, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -910,39 +1054,27 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: DishAllMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: DishAllMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishAllMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_messages {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -955,39 +1087,27 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetMessages",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetMessages",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_messages(
-        this: DishAllMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_messages(this: DishAllMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishAllMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_messages::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_messages::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_and_enable_unit_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1000,38 +1120,35 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetAndEnableUnitSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetAndEnableUnitSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_and_enable_unit_select(
         this: DishAllMenuContent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2 {
-        let inner : extern "C" fn (DishAllMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: cooking_menu :: unitselectmenucontent_2 :: UnitSelectMenuContent_2 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_and_enable_unit_select :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            DishAllMenuContent,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2 =
+            ::core::mem::transmute(__lookup_get_and_enable_unit_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_and_enable_dish_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::unit::Unit,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
                 "GetAndEnableDishSelect",
@@ -1043,39 +1160,36 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetAndEnableDishSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetAndEnableDishSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_and_enable_dish_select(
         this: DishAllMenuContent,
-        selected_unit_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::unit::Unit,
-        >,
+        selected_unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent {
-        let inner : extern "C" fn (DishAllMenuContent , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> crate :: app :: cooking_menu :: dishselectmenucontent :: DishSelectMenuContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_and_enable_dish_select :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            DishAllMenuContent,
+            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent =
+            ::core::mem::transmute(__lookup_get_and_enable_dish_select::get_method_info().method_ptr);
         inner(this, selected_unit_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_and_enable_foodstuff_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
                 "GetAndEnableFoodstuffSelect",
@@ -1087,18 +1201,15 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetAndEnableFoodstuffSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetAndEnableFoodstuffSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_and_enable_foodstuff_select(
@@ -1106,16 +1217,19 @@ mod __DishAllMenuContent_unity2_raw {
         food: crate::app::fooddata::FoodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent {
-        let inner : extern "C" fn (DishAllMenuContent , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: cooking_menu :: foodstuffmenucontent :: FoodstuffMenuContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_and_enable_foodstuff_select :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            DishAllMenuContent,
+            crate::app::fooddata::FoodData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent =
+            ::core::mem::transmute(__lookup_get_and_enable_foodstuff_select::get_method_info().method_ptr);
         inner(this, food, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_menu_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1128,43 +1242,30 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "DisableMenuAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "DisableMenuAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_menu_all(
-        this: DishAllMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_menu_all(this: DishAllMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishAllMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_menu_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_menu_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_open_confirm_dialog {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::foodstuffdata::FoodstuffData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::foodstuffdata::FoodstuffData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
                 "OnOpenConfirmDialog",
@@ -1176,47 +1277,34 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "OnOpenConfirmDialog",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "OnOpenConfirmDialog",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_open_confirm_dialog(
         this: DishAllMenuContent,
-        foodstuffs: crate::system::collections::generic::list_1::List_1<
-            crate::app::foodstuffdata::FoodstuffData,
-        >,
+        foodstuffs: crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             DishAllMenuContent,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::foodstuffdata::FoodstuffData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_open_confirm_dialog::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_open_confirm_dialog::get_method_info().method_ptr);
         inner(this, foodstuffs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1229,39 +1317,27 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close(
-        this: DishAllMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close(this: DishAllMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishAllMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_closed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1274,39 +1350,27 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "IsClosed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "IsClosed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_closed(
-        this: DishAllMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_closed(this: DishAllMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(DishAllMenuContent, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_closed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_closed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1319,30 +1383,20 @@ mod __DishAllMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DishAllMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DishAllMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishAllMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1353,30 +1407,25 @@ impl DishAllMenuContent {
     pub fn load_prefab_async() -> () {
         unsafe { __DishAllMenuContent_unity2_raw::load_prefab_async(::core::option::Option::None) }
     }
+
     #[doc = "`IsLoadingPrefab()` overload"]
     pub fn is_loading_prefab() -> bool {
         unsafe { __DishAllMenuContent_unity2_raw::is_loading_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`UnloadPrefab()` overload"]
     pub fn unload_prefab() -> () {
         unsafe { __DishAllMenuContent_unity2_raw::unload_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`Create()` overload"]
     pub fn create() -> crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent {
         unsafe { __DishAllMenuContent_unity2_raw::create(::core::option::Option::None) }
     }
+
     #[doc = "`Destroy(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent)` overload"]
-    pub fn destroy(
-        content: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,
-        >,
-    ) -> () {
-        unsafe {
-            __DishAllMenuContent_unity2_raw::destroy(
-                ::core::convert::Into::into(content),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn destroy(content: impl ::core::convert::Into<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent>) -> () {
+        unsafe { __DishAllMenuContent_unity2_raw::destroy(::core::convert::Into::into(content), ::core::option::Option::None) }
     }
 }
 
@@ -1385,46 +1434,31 @@ pub trait IDishAllMenuContentMethods: IDishAllMenuContent {
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMessages()` overload"]
     fn set_messages(self) -> () {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_unity2_raw::set_messages(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAndEnableUnitSelect()` overload"]
-    fn get_and_enable_unit_select(
-        self,
-    ) -> crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2 {
+    fn get_and_enable_unit_select(self) -> crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2 {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DishAllMenuContent_unity2_raw::get_and_enable_unit_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_unity2_raw::get_and_enable_unit_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAndEnableDishSelect(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
     fn get_and_enable_dish_select(
         self,
-        selected_unit_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        >,
+        selected_unit_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>,
     ) -> crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_unity2_raw::get_and_enable_dish_select(
                 __receiver,
                 ::core::convert::Into::into(selected_unit_list),
@@ -1438,9 +1472,7 @@ pub trait IDishAllMenuContentMethods: IDishAllMenuContent {
         food: impl ::core::convert::Into<crate::app::fooddata::FoodData>,
     ) -> crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_unity2_raw::get_and_enable_foodstuff_select(
                 __receiver,
                 ::core::convert::Into::into(food),
@@ -1451,59 +1483,38 @@ pub trait IDishAllMenuContentMethods: IDishAllMenuContent {
     #[doc = "`DisableMenuAll()` overload"]
     fn disable_menu_all(self) -> () {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DishAllMenuContent_unity2_raw::disable_menu_all(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_unity2_raw::disable_menu_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnOpenConfirmDialog(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
     fn on_open_confirm_dialog(
         self,
-        foodstuffs: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::foodstuffdata::FoodstuffData,
-            >,
-        >,
+        foodstuffs: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>>,
     ) -> () {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DishAllMenuContent_unity2_raw::on_open_confirm_dialog(
-                __receiver,
-                ::core::convert::Into::into(foodstuffs),
-                ::core::option::Option::None,
-            )
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_unity2_raw::on_open_confirm_dialog(__receiver, ::core::convert::Into::into(foodstuffs), ::core::option::Option::None)
         }
     }
     #[doc = "`Close()` overload"]
     fn close(self) -> () {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_unity2_raw::close(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsClosed()` overload"]
     fn is_closed(self) -> bool {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_unity2_raw::is_closed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DishAllMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishAllMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1531,20 +1542,72 @@ impl DishAllMenuContent {
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishAllMenuContent_CookHistory_unity2_raw {
+mod __DishAllMenuContent_UnitsHistory_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::uniticon::UnitIcon as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+                <crate::app::uniticon::UnitIcon as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_CookHistory as ::unity2::ClassIdentity>::class(),
+                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
                 ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DishAllMenuContent_UnitsHistory,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        unit_icon0: crate::app::uniticon::UnitIcon,
+        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        unit_icon1: crate::app::uniticon::UnitIcon,
+        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishAllMenuContent_UnitsHistory,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::uniticon::UnitIcon,
+            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+            crate::app::uniticon::UnitIcon,
+            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, game_object, unit_icon0, unit_name0, unit_icon1, unit_name1, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
+                "Show",
                 1,
                 param_types,
                 false,
@@ -1553,47 +1616,38 @@ mod __DishAllMenuContent_CookHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_CookHistory as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DishAllMenuContent_CookHistory,
-        game_object: crate::unity_engine::gameobject::GameObject,
+    pub unsafe fn show(
+        this: DishAllMenuContent_UnitsHistory,
+        unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DishAllMenuContent_CookHistory,
-            crate::unity_engine::gameobject::GameObject,
+            DishAllMenuContent_UnitsHistory,
+            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, game_object, __unity2_method_info)
+        ) -> () = ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, unit_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_setup_cook {
+    pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_CookHistory as ::unity2::ClassIdentity>::class(),
-                "SetupCook",
+                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
+                "Hide",
                 0,
                 param_types,
                 false,
@@ -1602,83 +1656,88 @@ mod __DishAllMenuContent_CookHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_CookHistory as ::unity2::ClassIdentity>::NAME,
-                    "SetupCook",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_cook(
-        this: DishAllMenuContent_CookHistory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DishAllMenuContent_CookHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup_cook::get_offset() as isize),
-            );
+    pub unsafe fn hide(this: DishAllMenuContent_UnitsHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DishAllMenuContent_UnitsHistory, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-pub trait IDishAllMenuContent_CookHistoryMethods: IDishAllMenuContent_CookHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+pub trait IDishAllMenuContent_UnitsHistoryMethods: IDishAllMenuContent_UnitsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]
     fn ctor(
         self,
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        unit_icon0: impl ::core::convert::Into<crate::app::uniticon::UnitIcon>,
+        unit_name0: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        unit_icon1: impl ::core::convert::Into<crate::app::uniticon::UnitIcon>,
+        unit_name1: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
     ) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_CookHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_CookHistory_unity2_raw::ctor(
+                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_UnitsHistory_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(game_object),
+                ::core::convert::Into::into(unit_icon0),
+                ::core::convert::Into::into(unit_name0),
+                ::core::convert::Into::into(unit_icon1),
+                ::core::convert::Into::into(unit_name1),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetupCook()` overload"]
-    fn setup_cook(self) -> () {
+    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
+    fn show(self, unit_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_CookHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_CookHistory_unity2_raw::setup_cook(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_UnitsHistory_unity2_raw::show(__receiver, ::core::convert::Into::into(unit_list), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver =
+                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_UnitsHistory_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl<__T: IDishAllMenuContent_CookHistory> IDishAllMenuContent_CookHistoryMethods for __T {}
+impl<__T: IDishAllMenuContent_UnitsHistory> IDishAllMenuContent_UnitsHistoryMethods for __T {}
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_CookHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
+impl DishAllMenuContent_UnitsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` — overload selector"]
+    pub fn new(
+        game_object: crate::unity_engine::gameobject::GameObject,
+        unit_icon0: crate::app::uniticon::UnitIcon,
+        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        unit_icon1: crate::app::uniticon::UnitIcon,
+        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_CookHistory),
+                ::core::stringify!(DishAllMenuContent_UnitsHistory),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishAllMenuContent_CookHistoryMethods>::ctor(this, game_object);
+        <Self as IDishAllMenuContent_UnitsHistoryMethods>::ctor(this, game_object, unit_icon0, unit_name0, unit_icon1, unit_name1);
         this
     }
 }
@@ -1692,9 +1751,7 @@ mod __DishAllMenuContent_HistoryObject_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1708,18 +1765,15 @@ mod __DishAllMenuContent_HistoryObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1727,24 +1781,15 @@ mod __DishAllMenuContent_HistoryObject_unity2_raw {
         game_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_HistoryObject,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DishAllMenuContent_HistoryObject, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::class(),
@@ -1757,39 +1802,27 @@ mod __DishAllMenuContent_HistoryObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show(
-        this: DishAllMenuContent_HistoryObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show(this: DishAllMenuContent_HistoryObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishAllMenuContent_HistoryObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::class(),
@@ -1802,39 +1835,27 @@ mod __DishAllMenuContent_HistoryObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: DishAllMenuContent_HistoryObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide(this: DishAllMenuContent_HistoryObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishAllMenuContent_HistoryObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::class(),
@@ -1847,32 +1868,23 @@ mod __DishAllMenuContent_HistoryObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::NAME,
-                    "get_gameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_HistoryObject as ::unity2::ClassIdentity>::NAME,
+                        "get_gameObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_game_object(
         this: DishAllMenuContent_HistoryObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            DishAllMenuContent_HistoryObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_game_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DishAllMenuContent_HistoryObject, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_game_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1880,59 +1892,35 @@ mod __DishAllMenuContent_HistoryObject_unity2_raw {
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
 pub trait IDishAllMenuContent_HistoryObjectMethods: IDishAllMenuContent_HistoryObject {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn ctor(self, game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_HistoryObject as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_HistoryObject_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(game_object),
-                ::core::option::Option::None,
-            )
+                <DishAllMenuContent_HistoryObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_HistoryObject_unity2_raw::ctor(__receiver, ::core::convert::Into::into(game_object), ::core::option::Option::None)
         }
     }
     #[doc = "`Show()` overload"]
     fn show(self) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_HistoryObject as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_HistoryObject_unity2_raw::show(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishAllMenuContent_HistoryObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_HistoryObject_unity2_raw::show(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Hide()` overload"]
     fn hide(self) -> () {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_HistoryObject as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_HistoryObject_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishAllMenuContent_HistoryObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_HistoryObject_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_gameObject()` overload"]
     fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
             let __receiver =
-                <DishAllMenuContent_HistoryObject as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_HistoryObject_unity2_raw::get_game_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishAllMenuContent_HistoryObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_HistoryObject_unity2_raw::get_game_object(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1959,26 +1947,19 @@ impl DishAllMenuContent_HistoryObject {
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishAllMenuContent_FoodstuffsHistory_unity2_raw {
+mod __DishAllMenuContent_CookHistory_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::gameobject::GameObject,
-                > as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
+                <DishAllMenuContent_CookHistory as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                3,
+                1,
                 param_types,
                 false,
             )
@@ -1986,227 +1967,35 @@ mod __DishAllMenuContent_FoodstuffsHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_CookHistory as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: DishAllMenuContent_FoodstuffsHistory,
+        this: DishAllMenuContent_CookHistory,
         game_object: crate::unity_engine::gameobject::GameObject,
-        foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        foodstuff_group: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_FoodstuffsHistory,
-            crate::unity_engine::gameobject::GameObject,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::gameobject::GameObject,
-            >,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            game_object,
-            foodstuff_item_list,
-            foodstuff_group,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(DishAllMenuContent_CookHistory, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_show {
+    pub mod __lookup_setup_cook {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::foodstuffdata::FoodstuffData,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
-                "Show",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show(
-        this: DishAllMenuContent_FoodstuffsHistory,
-        foodstuffs: crate::system::collections::generic::list_1::List_1<
-            crate::app::foodstuffdata::FoodstuffData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_FoodstuffsHistory,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::foodstuffdata::FoodstuffData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show::get_offset() as isize),
-        );
-        inner(this, foodstuffs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_foodstuffs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::foodstuffdata::FoodstuffData,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
-                "SetFoodstuffs",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
-                    "SetFoodstuffs",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_foodstuffs(
-        this: DishAllMenuContent_FoodstuffsHistory,
-        foodstuffs: crate::system::collections::generic::list_1::List_1<
-            crate::app::foodstuffdata::FoodstuffData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_FoodstuffsHistory,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::foodstuffdata::FoodstuffData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_foodstuffs::get_offset() as isize),
-        );
-        inner(this, foodstuffs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_foodstuff_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
-                "SetFoodstuffItem",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
-                    "SetFoodstuffItem",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_foodstuff_item(
-        this: DishAllMenuContent_FoodstuffsHistory,
-        content_item: crate::unity_engine::gameobject::GameObject,
-        data: crate::app::foodstuffdata::FoodstuffData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_FoodstuffsHistory,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::foodstuffdata::FoodstuffData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_foodstuff_item::get_offset() as isize),
-        );
-        inner(this, content_item, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::class(),
-                "Hide",
+                <DishAllMenuContent_CookHistory as ::unity2::ClassIdentity>::class(),
+                "SetupCook",
                 0,
                 param_types,
                 false,
@@ -2215,423 +2004,59 @@ mod __DishAllMenuContent_FoodstuffsHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_FoodstuffsHistory as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_CookHistory as ::unity2::ClassIdentity>::NAME,
+                        "SetupCook",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: DishAllMenuContent_FoodstuffsHistory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_FoodstuffsHistory,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hide::get_offset() as isize),
-        );
+    pub unsafe fn setup_cook(this: DishAllMenuContent_CookHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DishAllMenuContent_CookHistory, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_cook::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-pub trait IDishAllMenuContent_FoodstuffsHistoryMethods:
-    IDishAllMenuContent_FoodstuffsHistory
-{
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        foodstuff_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::gameobject::GameObject,
-            >,
-        >,
-        foodstuff_group: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+pub trait IDishAllMenuContent_CookHistoryMethods: IDishAllMenuContent_CookHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = < DishAllMenuContent_FoodstuffsHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(game_object),
-                ::core::convert::Into::into(foodstuff_item_list),
-                ::core::convert::Into::into(foodstuff_group),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DishAllMenuContent_CookHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_CookHistory_unity2_raw::ctor(__receiver, ::core::convert::Into::into(game_object), ::core::option::Option::None)
         }
     }
-    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    fn show(
-        self,
-        foodstuffs: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::foodstuffdata::FoodstuffData,
-            >,
-        >,
-    ) -> () {
+    #[doc = "`SetupCook()` overload"]
+    fn setup_cook(self) -> () {
         unsafe {
-            let __receiver = < DishAllMenuContent_FoodstuffsHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::show(
-                __receiver,
-                ::core::convert::Into::into(foodstuffs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetFoodstuffs(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    fn set_foodstuffs(
-        self,
-        foodstuffs: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::foodstuffdata::FoodstuffData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < DishAllMenuContent_FoodstuffsHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::set_foodstuffs(
-                __receiver,
-                ::core::convert::Into::into(foodstuffs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetFoodstuffItem(crate::unity_engine::gameobject::GameObject, crate::app::foodstuffdata::FoodstuffData)` overload"]
-    fn set_foodstuff_item(
-        self,
-        content_item: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
-    ) -> () {
-        unsafe {
-            let __receiver = < DishAllMenuContent_FoodstuffsHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::set_foodstuff_item(
-                __receiver,
-                ::core::convert::Into::into(content_item),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver = < DishAllMenuContent_FoodstuffsHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DishAllMenuContent_FoodstuffsHistory_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DishAllMenuContent_CookHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_CookHistory_unity2_raw::setup_cook(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl<__T: IDishAllMenuContent_FoodstuffsHistory> IDishAllMenuContent_FoodstuffsHistoryMethods
-    for __T
-{
-}
+impl<__T: IDishAllMenuContent_CookHistory> IDishAllMenuContent_CookHistoryMethods for __T {}
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_FoodstuffsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(
-        game_object: crate::unity_engine::gameobject::GameObject,
-        foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        foodstuff_group: crate::unity_engine::gameobject::GameObject,
-    ) -> Self {
+impl DishAllMenuContent_CookHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_FoodstuffsHistory),
+                ::core::stringify!(DishAllMenuContent_CookHistory),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishAllMenuContent_FoodstuffsHistoryMethods>::ctor(
-            this,
-            game_object,
-            foodstuff_item_list,
-            foodstuff_group,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishAllMenuContent_UnitsHistory_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::uniticon::UnitIcon as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-                <crate::app::uniticon::UnitIcon as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DishAllMenuContent_UnitsHistory,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        unit_icon0: crate::app::uniticon::UnitIcon,
-        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        unit_icon1: crate::app::uniticon::UnitIcon,
-        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_UnitsHistory,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::uniticon::UnitIcon,
-            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-            crate::app::uniticon::UnitIcon,
-            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            game_object,
-            unit_icon0,
-            unit_name0,
-            unit_icon1,
-            unit_name1,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::unit::Unit,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
-                "Show",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show(
-        this: DishAllMenuContent_UnitsHistory,
-        unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_UnitsHistory,
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show::get_offset() as isize),
-        );
-        inner(this, unit_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hide(
-        this: DishAllMenuContent_UnitsHistory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DishAllMenuContent_UnitsHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-pub trait IDishAllMenuContent_UnitsHistoryMethods: IDishAllMenuContent_UnitsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]
-    fn ctor(
-        self,
-        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        unit_icon0: impl ::core::convert::Into<crate::app::uniticon::UnitIcon>,
-        unit_name0: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        unit_icon1: impl ::core::convert::Into<crate::app::uniticon::UnitIcon>,
-        unit_name1: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_UnitsHistory_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(game_object),
-                ::core::convert::Into::into(unit_icon0),
-                ::core::convert::Into::into(unit_name0),
-                ::core::convert::Into::into(unit_icon1),
-                ::core::convert::Into::into(unit_name1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
-    fn show(
-        self,
-        unit_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_UnitsHistory_unity2_raw::show(
-                __receiver,
-                ::core::convert::Into::into(unit_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishAllMenuContent_UnitsHistory_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl<__T: IDishAllMenuContent_UnitsHistory> IDishAllMenuContent_UnitsHistoryMethods for __T {}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_UnitsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` — overload selector"]
-    pub fn new(
-        game_object: crate::unity_engine::gameobject::GameObject,
-        unit_icon0: crate::app::uniticon::UnitIcon,
-        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        unit_icon1: crate::app::uniticon::UnitIcon,
-        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_UnitsHistory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishAllMenuContent_UnitsHistoryMethods>::ctor(
-            this,
-            game_object,
-            unit_icon0,
-            unit_name0,
-            unit_icon1,
-            unit_name1,
-        );
+        <Self as IDishAllMenuContent_CookHistoryMethods>::ctor(this, game_object);
         this
     }
 }
@@ -2639,40 +2064,26 @@ impl DishAllMenuContent_UnitsHistory {
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DishAllMenuContent;
-    pub use super::DishAllMenuContent_CookHistory;
-    pub use super::DishAllMenuContent_DishHistory;
-    pub use super::DishAllMenuContent_EnhanceObject;
-    pub use super::DishAllMenuContent_FoodstuffsHistory;
-    pub use super::DishAllMenuContent_HistoryObject;
-    pub use super::DishAllMenuContent_UnitsHistory;
-    pub use super::IDishAllMenuContent;
-    pub use super::IDishAllMenuContentMethods;
-    pub use super::IDishAllMenuContent_CookHistory;
-    pub use super::IDishAllMenuContent_CookHistoryMethods;
-    pub use super::IDishAllMenuContent_DishHistory;
-    pub use super::IDishAllMenuContent_DishHistoryMethods;
-    pub use super::IDishAllMenuContent_EnhanceObject;
-    pub use super::IDishAllMenuContent_EnhanceObjectMethods;
-    pub use super::IDishAllMenuContent_FoodstuffsHistory;
-    pub use super::IDishAllMenuContent_FoodstuffsHistoryMethods;
-    pub use super::IDishAllMenuContent_HistoryObject;
-    pub use super::IDishAllMenuContent_HistoryObjectMethods;
-    pub use super::IDishAllMenuContent_UnitsHistory;
-    pub use super::IDishAllMenuContent_UnitsHistoryMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        DishAllMenuContent, DishAllMenuContent_CookHistory, DishAllMenuContent_DishHistory, DishAllMenuContent_EnhanceObject,
+        DishAllMenuContent_FoodstuffsHistory, DishAllMenuContent_HistoryObject, DishAllMenuContent_UnitsHistory, IDishAllMenuContent,
+        IDishAllMenuContentMethods, IDishAllMenuContent_CookHistory, IDishAllMenuContent_CookHistoryMethods, IDishAllMenuContent_DishHistory,
+        IDishAllMenuContent_DishHistoryMethods, IDishAllMenuContent_EnhanceObject, IDishAllMenuContent_EnhanceObjectMethods,
+        IDishAllMenuContent_FoodstuffsHistory, IDishAllMenuContent_FoodstuffsHistoryMethods, IDishAllMenuContent_HistoryObject,
+        IDishAllMenuContent_HistoryObjectMethods, IDishAllMenuContent_UnitsHistory, IDishAllMenuContent_UnitsHistoryMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

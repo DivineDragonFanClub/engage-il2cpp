@@ -2,74 +2,10 @@
 
 #[cfg(feature = "system-collections-specialized-listdictionary-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeEnumerator.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Specialized",
-        name = "ListDictionary.NodeEnumerator"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ListDictionary_NodeEnumerator {
-        #[rename(name = "list")]
-        pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
-        #[rename(name = "current")]
-        pub current:
-            crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
-        #[rename(name = "version")]
-        pub version: i32,
-        #[rename(name = "start")]
-        pub start: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_DictionaryNode.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Specialized",
-        name = "ListDictionary.DictionaryNode"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ListDictionary_DictionaryNode {
-        #[rename(name = "key")]
-        pub key: ::unity2::IlInstance,
-        #[rename(name = "value")]
-        pub value: ::unity2::IlInstance,
-        #[rename(name = "next")]
-        pub next:
-            crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Specialized",
-        name = "ListDictionary.NodeKeyValueCollection"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ListDictionary_NodeKeyValueCollection {
-        #[rename(name = "list")]
-        pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
-        #[rename(name = "isKeys")]
-        pub is_keys: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary.md"))]
-    #[::unity2::class(namespace = "System.Collections.Specialized", name = "ListDictionary")]
-    #[parent(crate::system::object::Object)]
-    pub struct ListDictionary {
-        #[rename(name = "head")]
-        pub head:
-            crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
-        #[rename(name = "version")]
-        pub version: i32,
-        #[rename(name = "count")]
-        pub count: i32,
-        #[rename(name = "comparer")]
-        pub comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
-        #[rename(name = "_syncRoot")]
-        pub sync_root: ::unity2::IlInstance,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator.md"))]
     #[::unity2::class(
@@ -81,14 +17,65 @@ mod __types {
         #[rename(name = "list")]
         pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
         #[rename(name = "current")]
-        pub current:
-            crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
+        pub current: crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
         #[rename(name = "version")]
         pub version: i32,
         #[rename(name = "isKeys")]
         pub is_keys: bool,
         #[rename(name = "start")]
         pub start: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_DictionaryNode.md"))]
+    #[::unity2::class(namespace = "System.Collections.Specialized", name = "ListDictionary.DictionaryNode")]
+    #[parent(crate::system::object::Object)]
+    pub struct ListDictionary_DictionaryNode {
+        #[rename(name = "key")]
+        pub key: ::unity2::IlInstance,
+        #[rename(name = "value")]
+        pub value: ::unity2::IlInstance,
+        #[rename(name = "next")]
+        pub next: crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeEnumerator.md"))]
+    #[::unity2::class(namespace = "System.Collections.Specialized", name = "ListDictionary.NodeEnumerator")]
+    #[parent(crate::system::object::Object)]
+    pub struct ListDictionary_NodeEnumerator {
+        #[rename(name = "list")]
+        pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
+        #[rename(name = "current")]
+        pub current: crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
+        #[rename(name = "version")]
+        pub version: i32,
+        #[rename(name = "start")]
+        pub start: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary.md"))]
+    #[::unity2::class(namespace = "System.Collections.Specialized", name = "ListDictionary")]
+    #[parent(crate::system::object::Object)]
+    pub struct ListDictionary {
+        #[rename(name = "head")]
+        pub head: crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
+        #[rename(name = "version")]
+        pub version: i32,
+        #[rename(name = "count")]
+        pub count: i32,
+        #[rename(name = "comparer")]
+        pub comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
+        #[rename(name = "_syncRoot")]
+        pub sync_root: ::unity2::IlInstance,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection.md"))]
+    #[::unity2::class(namespace = "System.Collections.Specialized", name = "ListDictionary.NodeKeyValueCollection")]
+    #[parent(crate::system::object::Object)]
+    pub struct ListDictionary_NodeKeyValueCollection {
+        #[rename(name = "list")]
+        pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
+        #[rename(name = "isKeys")]
+        pub is_keys: bool,
     }
 }
 
@@ -98,20 +85,21 @@ pub use __types::*;
 #[cfg(feature = "system-collections-specialized-listdictionary")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ListDictionary_NodeEnumerator_unity2_raw {
+mod __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: specialized :: listdictionary :: ListDictionary as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::specialized::listdictionary::ListDictionary as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
@@ -119,46 +107,39 @@ mod __ListDictionary_NodeEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: ListDictionary_NodeEnumerator,
+        this: ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
         list: crate::system::collections::specialized::listdictionary::ListDictionary,
+        is_keys: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ListDictionary_NodeEnumerator,
+            ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
             crate::system::collections::specialized::listdictionary::ListDictionary,
+            bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, list, __unity2_method_info)
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, list, is_keys, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::ClassIdentity>::class(),
                 "get_Current",
                 0,
                 param_types,
@@ -168,187 +149,35 @@ mod __ListDictionary_NodeEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_current(
-        this: ListDictionary_NodeEnumerator,
+        this: ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
         let inner: extern "C" fn(
-            ListDictionary_NodeEnumerator,
+            ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_entry {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
-                "get_Entry",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Entry",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_entry(
-        this: ListDictionary_NodeEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::dictionaryentry::DictionaryEntry {
-        let inner: extern "C" fn(
-            ListDictionary_NodeEnumerator,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::dictionaryentry::DictionaryEntry =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_entry::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_key {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
-                "get_Key",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Key",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_key(
-        this: ListDictionary_NodeEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ListDictionary_NodeEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_key::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
-                "get_Value",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Value",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_value(
-        this: ListDictionary_NodeEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ListDictionary_NodeEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value::get_offset() as isize),
-        );
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::ClassIdentity>::class(),
                 "MoveNext",
                 0,
                 param_types,
@@ -358,42 +187,33 @@ mod __ListDictionary_NodeEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "MoveNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn move_next(
-        this: ListDictionary_NodeEnumerator,
+        this: ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(ListDictionary_NodeEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_next::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -403,51 +223,42 @@ mod __ListDictionary_NodeEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: ListDictionary_NodeEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ListDictionary_NodeEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+    pub unsafe fn reset(this: ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-pub trait IListDictionary_NodeEnumeratorMethods: IListDictionary_NodeEnumerator {
-    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` overload"]
+pub trait IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods:
+    IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator
+{
+    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"]
     fn ctor(
         self,
-        list: impl ::core::convert::Into<
-            crate::system::collections::specialized::listdictionary::ListDictionary,
-        >,
+        list: impl ::core::convert::Into<crate::system::collections::specialized::listdictionary::ListDictionary>,
+        is_keys: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ListDictionary_NodeEnumerator_unity2_raw::ctor(
+            let __receiver = <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(list),
+                ::core::convert::Into::into(is_keys),
                 ::core::option::Option::None,
             )
         }
@@ -455,100 +266,50 @@ pub trait IListDictionary_NodeEnumeratorMethods: IListDictionary_NodeEnumerator 
     #[doc = "`get_Current()` overload"]
     fn get_current(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver =
-                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ListDictionary_NodeEnumerator_unity2_raw::get_current(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Entry()` overload"]
-    fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry {
-        unsafe {
-            let __receiver =
-                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ListDictionary_NodeEnumerator_unity2_raw::get_entry(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Key()` overload"]
-    fn get_key(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver =
-                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ListDictionary_NodeEnumerator_unity2_raw::get_key(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Value()` overload"]
-    fn get_value(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver =
-                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ListDictionary_NodeEnumerator_unity2_raw::get_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MoveNext()` overload"]
     fn move_next(self) -> bool {
         unsafe {
-            let __receiver =
-                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ListDictionary_NodeEnumerator_unity2_raw::move_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver =
-                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ListDictionary_NodeEnumerator_unity2_raw::reset(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-impl<__T: IListDictionary_NodeEnumerator> IListDictionary_NodeEnumeratorMethods for __T {}
+impl<__T: IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator> IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods
+    for __T
+{
+}
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeEnumerator {
-    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::specialized::listdictionary::ListDictionary,
-    ) -> Self {
+impl ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator {
+    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"]
+    pub fn new(list: crate::system::collections::specialized::listdictionary::ListDictionary, is_keys: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionary_NodeEnumerator),
+                ::core::stringify!(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator),
                 ::core::stringify!(new),
             )
         });
-        <Self as IListDictionary_NodeEnumeratorMethods>::ctor(this, list);
+        <Self as IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods>::ctor(this, list, is_keys);
         this
     }
 }
@@ -562,9 +323,7 @@ mod __ListDictionary_DictionaryNode_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary_DictionaryNode as ::unity2::ClassIdentity>::class(),
@@ -577,30 +336,20 @@ mod __ListDictionary_DictionaryNode_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_DictionaryNode as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_DictionaryNode as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ListDictionary_DictionaryNode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ListDictionary_DictionaryNode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ListDictionary_DictionaryNode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -611,13 +360,8 @@ pub trait IListDictionary_DictionaryNodeMethods: IListDictionary_DictionaryNode 
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ListDictionary_DictionaryNode as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ListDictionary_DictionaryNode_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ListDictionary_DictionaryNode as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_DictionaryNode_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -644,20 +388,19 @@ impl ListDictionary_DictionaryNode {
 #[cfg(feature = "system-collections-specialized-listdictionary")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ListDictionary_NodeKeyValueCollection_unity2_raw {
+mod __ListDictionary_NodeEnumerator_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: specialized :: listdictionary :: ListDictionary as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::specialized::listdictionary::ListDictionary as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                1,
                 param_types,
                 false,
             )
@@ -665,103 +408,38 @@ mod __ListDictionary_NodeKeyValueCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: ListDictionary_NodeKeyValueCollection,
+        this: ListDictionary_NodeEnumerator,
         list: crate::system::collections::specialized::listdictionary::ListDictionary,
-        is_keys: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection,
+            ListDictionary_NodeEnumerator,
             crate::system::collections::specialized::listdictionary::ListDictionary,
-            bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, list, is_keys, __unity2_method_info)
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_collection_copy_to {
+    pub mod __lookup_get_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.ICollection.CopyTo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.ICollection.CopyTo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn system_collections_i_collection_copy_to(
-        this: ListDictionary_NodeKeyValueCollection,
-        array: ::unity2::IlInstance,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection,
-            ::unity2::IlInstance,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_system_collections_i_collection_copy_to::get_offset() as isize),
-        );
-        inner(this, array, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_collection_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.ICollection.get_Count",
+                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Current",
                 0,
                 param_types,
                 false,
@@ -770,45 +448,31 @@ mod __ListDictionary_NodeKeyValueCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.ICollection.get_Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn system_collections_i_collection_get_count(
-        this: ListDictionary_NodeKeyValueCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_system_collections_i_collection_get_count::get_offset() as isize),
-        );
+    pub unsafe fn get_current(this: ListDictionary_NodeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ListDictionary_NodeEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_collection_get_is_synchronized {
+    pub mod __lookup_get_entry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.ICollection.get_IsSynchronized",
+                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Entry",
                 0,
                 param_types,
                 false,
@@ -817,48 +481,36 @@ mod __ListDictionary_NodeKeyValueCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.ICollection.get_IsSynchronized",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Entry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn system_collections_i_collection_get_is_synchronized(
-        this: ListDictionary_NodeKeyValueCollection,
+    pub unsafe fn get_entry(
+        this: ListDictionary_NodeEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    ) -> crate::system::collections::dictionaryentry::DictionaryEntry {
         let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection,
+            ListDictionary_NodeEnumerator,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_system_collections_i_collection_get_is_synchronized::get_offset()
-                        as isize,
-                ),
-        );
+        ) -> crate::system::collections::dictionaryentry::DictionaryEntry = ::core::mem::transmute(__lookup_get_entry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_collection_get_sync_root {
+    pub mod __lookup_get_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.ICollection.get_SyncRoot",
+                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Key",
                 0,
                 param_types,
                 false,
@@ -867,47 +519,31 @@ mod __ListDictionary_NodeKeyValueCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.ICollection.get_SyncRoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Key",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn system_collections_i_collection_get_sync_root(
-        this: ListDictionary_NodeKeyValueCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_system_collections_i_collection_get_sync_root::get_offset() as isize,
-                ),
-        );
+    pub unsafe fn get_key(this: ListDictionary_NodeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ListDictionary_NodeEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_key::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
+    pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
+                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                "get_Value",
                 0,
                 param_types,
                 false,
@@ -916,124 +552,165 @@ mod __ListDictionary_NodeKeyValueCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.IEnumerable.GetEnumerator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+    }
+    pub unsafe fn get_value(this: ListDictionary_NodeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ListDictionary_NodeEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                "MoveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: ListDictionary_NodeKeyValueCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_system_collections_i_enumerable_get_enumerator::get_offset() as isize,
-                ),
-        );
+    pub unsafe fn move_next(this: ListDictionary_NodeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ListDictionary_NodeEnumerator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: ListDictionary_NodeEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ListDictionary_NodeEnumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-pub trait IListDictionary_NodeKeyValueCollectionMethods:
-    IListDictionary_NodeKeyValueCollection
-{
-    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"]
-    fn ctor(
-        self,
-        list: impl ::core::convert::Into<
-            crate::system::collections::specialized::listdictionary::ListDictionary,
-        >,
-        is_keys: impl ::core::convert::Into<bool>,
-    ) -> () {
+pub trait IListDictionary_NodeEnumeratorMethods: IListDictionary_NodeEnumerator {
+    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` overload"]
+    fn ctor(self, list: impl ::core::convert::Into<crate::system::collections::specialized::listdictionary::ListDictionary>) -> () {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(list),
-                ::core::convert::Into::into(is_keys),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_NodeEnumerator_unity2_raw::ctor(__receiver, ::core::convert::Into::into(list), ::core::option::Option::None)
         }
     }
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    fn system_collections_i_collection_copy_to(
-        self,
-        array: impl ::core::convert::Into<::unity2::IlInstance>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    #[doc = "`get_Current()` overload"]
+    fn get_current(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_unity2_raw :: system_collections_i_collection_copy_to (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None)
+            let __receiver =
+                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_NodeEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
-    fn system_collections_i_collection_get_count(self) -> i32 {
+    #[doc = "`get_Entry()` overload"]
+    fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_unity2_raw :: system_collections_i_collection_get_count (__receiver , :: core :: option :: Option :: None)
+            let __receiver =
+                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_NodeEnumerator_unity2_raw::get_entry(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    fn system_collections_i_collection_get_is_synchronized(self) -> bool {
+    #[doc = "`get_Key()` overload"]
+    fn get_key(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_unity2_raw :: system_collections_i_collection_get_is_synchronized (__receiver , :: core :: option :: Option :: None)
+            let __receiver =
+                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_NodeEnumerator_unity2_raw::get_key(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object {
+    #[doc = "`get_Value()` overload"]
+    fn get_value(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_unity2_raw :: system_collections_i_collection_get_sync_root (__receiver , :: core :: option :: Option :: None)
+            let __receiver =
+                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_NodeEnumerator_unity2_raw::get_value(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
+    #[doc = "`MoveNext()` overload"]
+    fn move_next(self) -> bool {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_unity2_raw :: system_collections_i_enumerable_get_enumerator (__receiver , :: core :: option :: Option :: None)
+            let __receiver =
+                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_NodeEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <ListDictionary_NodeEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_NodeEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-impl<__T: IListDictionary_NodeKeyValueCollection> IListDictionary_NodeKeyValueCollectionMethods
-    for __T
-{
-}
+impl<__T: IListDictionary_NodeEnumerator> IListDictionary_NodeEnumeratorMethods for __T {}
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::specialized::listdictionary::ListDictionary,
-        is_keys: bool,
-    ) -> Self {
+impl ListDictionary_NodeEnumerator {
+    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` — overload selector"]
+    pub fn new(list: crate::system::collections::specialized::listdictionary::ListDictionary) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionary_NodeKeyValueCollection),
+                ::core::stringify!(ListDictionary_NodeEnumerator),
                 ::core::stringify!(new),
             )
         });
-        <Self as IListDictionary_NodeKeyValueCollectionMethods>::ctor(this, list, is_keys);
+        <Self as IListDictionary_NodeEnumeratorMethods>::ctor(this, list);
         this
     }
 }
@@ -1047,9 +724,7 @@ mod __ListDictionary_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1062,37 +737,29 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: ListDictionary, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: icomparer_interface :: IComparer_Interface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::icomparer_interface::IComparer_Interface as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -1104,18 +771,15 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -1127,22 +791,15 @@ mod __ListDictionary_unity2_raw {
             ListDictionary,
             crate::system::collections::icomparer_interface::IComparer_Interface,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, comparer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
                 "get_Item",
@@ -1154,18 +811,15 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item(
@@ -1173,24 +827,15 @@ mod __ListDictionary_unity2_raw {
         key: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ListDictionary,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ListDictionary, crate::system::object::Object, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1206,18 +851,15 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_item(
@@ -1226,25 +868,15 @@ mod __ListDictionary_unity2_raw {
         value: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ListDictionary,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ListDictionary, crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
         inner(this, key, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1257,39 +889,27 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_count(
-        this: ListDictionary,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_count(this: ListDictionary, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_keys {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1302,41 +922,30 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "get_Keys",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "get_Keys",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_keys(
         this: ListDictionary,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::icollection::ICollection {
-        let inner: extern "C" fn(
-            ListDictionary,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::icollection::ICollection = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_keys::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> crate::system::collections::icollection::ICollection =
+            ::core::mem::transmute(__lookup_get_keys::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_read_only {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1349,39 +958,27 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "get_IsReadOnly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "get_IsReadOnly",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_read_only(
-        this: ListDictionary,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_read_only(this: ListDictionary, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_read_only::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_read_only::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_fixed_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1394,39 +991,27 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "get_IsFixedSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "get_IsFixedSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_fixed_size(
-        this: ListDictionary,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_fixed_size(this: ListDictionary, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_fixed_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_fixed_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_synchronized {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1439,39 +1024,27 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "get_IsSynchronized",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSynchronized",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_synchronized(
-        this: ListDictionary,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_synchronized(this: ListDictionary, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_synchronized::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_synchronized::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sync_root {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1484,41 +1057,27 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "get_SyncRoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "get_SyncRoot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sync_root(
-        this: ListDictionary,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ListDictionary,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sync_root::get_offset() as isize),
-        );
+    pub unsafe fn get_sync_root(this: ListDictionary, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_sync_root::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_values {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1531,68 +1090,48 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "get_Values",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "get_Values",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_values(
         this: ListDictionary,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::icollection::ICollection {
-        let inner: extern "C" fn(
-            ListDictionary,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::icollection::ICollection = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_values::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> crate::system::collections::icollection::ICollection =
+            ::core::mem::transmute(__lookup_get_values::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ListDictionary as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ListDictionary as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
@@ -1601,27 +1140,16 @@ mod __ListDictionary_unity2_raw {
         value: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ListDictionary,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ListDictionary, crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, key, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_contains {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
                 "Contains",
@@ -1633,43 +1161,27 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "Contains",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "Contains",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn contains(
-        this: ListDictionary,
-        key: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ListDictionary,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_contains::get_offset() as isize),
-        );
+    pub unsafe fn contains(this: ListDictionary, key: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ListDictionary, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_contains::get_method_info().method_ptr);
         inner(this, key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IlInstance as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1685,45 +1197,27 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn copy_to(
-        this: ListDictionary,
-        array: ::unity2::IlInstance,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ListDictionary,
-            ::unity2::IlInstance,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to::get_offset() as isize),
-        );
+    pub unsafe fn copy_to(this: ListDictionary, array: ::unity2::IlInstance, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ListDictionary, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
         inner(this, array, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enumerator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1736,34 +1230,33 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_enumerator(
         this: ListDictionary,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator {
-        let inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: idictionaryenumerator :: IDictionaryEnumerator = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_enumerator :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ListDictionary,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator =
+            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_system_collections_i_enumerable_get_enumerator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
@@ -1776,45 +1269,31 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.IEnumerable.GetEnumerator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.IEnumerable.GetEnumerator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn system_collections_i_enumerable_get_enumerator(
         this: ListDictionary,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            ListDictionary,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_system_collections_i_enumerable_get_enumerator::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(ListDictionary, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ListDictionary as ::unity2::ClassIdentity>::class(),
                 "Remove",
@@ -1826,34 +1305,20 @@ mod __ListDictionary_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ListDictionary as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove(
-        this: ListDictionary,
-        key: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ListDictionary,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
+    pub unsafe fn remove(this: ListDictionary, key: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ListDictionary, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
         inner(this, key, __unity2_method_info)
     }
 }
@@ -1863,44 +1328,22 @@ pub trait IListDictionaryMethods: IListDictionary {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]
-    fn ctor_2(
-        self,
-        comparer: impl ::core::convert::Into<
-            crate::system::collections::icomparer_interface::IComparer_Interface,
-        >,
-    ) -> () {
+    fn ctor_2(self, comparer: impl ::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>) -> () {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ListDictionary_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(comparer),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(comparer), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Item(crate::system::object::Object)` overload"]
-    fn get_item(
-        self,
-        key: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> crate::system::object::Object {
+    fn get_item(self, key: impl ::core::convert::Into<crate::system::object::Object>) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ListDictionary_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_unity2_raw::get_item(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]
@@ -1910,9 +1353,7 @@ pub trait IListDictionaryMethods: IListDictionary {
         value: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::set_item(
                 __receiver,
                 ::core::convert::Into::into(key),
@@ -1924,66 +1365,49 @@ pub trait IListDictionaryMethods: IListDictionary {
     #[doc = "`get_Count()` overload"]
     fn get_count(self) -> i32 {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::get_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Keys()` overload"]
     fn get_keys(self) -> crate::system::collections::icollection::ICollection {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::get_keys(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsReadOnly()` overload"]
     fn get_is_read_only(self) -> bool {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsFixedSize()` overload"]
     fn get_is_fixed_size(self) -> bool {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::get_is_fixed_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsSynchronized()` overload"]
     fn get_is_synchronized(self) -> bool {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ListDictionary_unity2_raw::get_is_synchronized(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SyncRoot()` overload"]
     fn get_sync_root(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Values()` overload"]
     fn get_values(self) -> crate::system::collections::icollection::ICollection {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::get_values(__receiver, ::core::option::Option::None)
         }
     }
@@ -1994,9 +1418,7 @@ pub trait IListDictionaryMethods: IListDictionary {
         value: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::add(
                 __receiver,
                 ::core::convert::Into::into(key),
@@ -2008,26 +1430,14 @@ pub trait IListDictionaryMethods: IListDictionary {
     #[doc = "`Contains(crate::system::object::Object)` overload"]
     fn contains(self, key: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ListDictionary_unity2_raw::contains(
-                __receiver,
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_unity2_raw::contains(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
-    fn copy_to(
-        self,
-        array: impl ::core::convert::Into<::unity2::IlInstance>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn copy_to(self, array: impl ::core::convert::Into<::unity2::IlInstance>, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::copy_to(
                 __receiver,
                 ::core::convert::Into::into(array),
@@ -2037,41 +1447,24 @@ pub trait IListDictionaryMethods: IListDictionary {
         }
     }
     #[doc = "`GetEnumerator()` overload"]
-    fn get_enumerator(
-        self,
-    ) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator {
+    fn get_enumerator(self) -> crate::system::collections::idictionaryenumerator::IDictionaryEnumerator {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ListDictionary_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
+    fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ListDictionary_unity2_raw::system_collections_i_enumerable_get_enumerator(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_unity2_raw::system_collections_i_enumerable_get_enumerator(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Remove(crate::system::object::Object)` overload"]
     fn remove(self, key: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ListDictionary_unity2_raw::remove(
-                __receiver,
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ListDictionary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ListDictionary_unity2_raw::remove(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
         }
     }
 }
@@ -2095,9 +1488,7 @@ impl ListDictionary {
     }
 
     #[doc = "`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface)` — overload selector"]
-    pub fn new_2(
-        comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
-    ) -> Self {
+    pub fn new_2(comparer: crate::system::collections::icomparer_interface::IComparer_Interface) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -2113,161 +1504,256 @@ impl ListDictionary {
 #[cfg(feature = "system-collections-specialized-listdictionary")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw {
+mod __ListDictionary_NodeKeyValueCollection_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: specialized :: listdictionary :: ListDictionary as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::specialized::listdictionary::ListDictionary as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn ctor(
-        this: ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
+        this: ListDictionary_NodeKeyValueCollection,
         list: crate::system::collections::specialized::listdictionary::ListDictionary,
         is_keys: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
+            ListDictionary_NodeKeyValueCollection,
             crate::system::collections::specialized::listdictionary::ListDictionary,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, list, is_keys, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
+    pub mod __lookup_system_collections_i_collection_copy_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,)
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.CopyTo",
+                2,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current(
-        this: ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: class () , "MoveNext" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.CopyTo",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn move_next(
-        this: ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_next::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reset(
-        this: ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
+    pub unsafe fn system_collections_i_collection_copy_to(
+        this: ListDictionary_NodeKeyValueCollection,
+        array: ::unity2::IlInstance,
+        index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
+        let inner: extern "C" fn(ListDictionary_NodeKeyValueCollection, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_copy_to::get_method_info().method_ptr);
+        inner(this, array, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_count(
+        this: ListDictionary_NodeKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(ListDictionary_NodeKeyValueCollection, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_is_synchronized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.get_IsSynchronized",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.get_IsSynchronized",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_is_synchronized(
+        this: ListDictionary_NodeKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(ListDictionary_NodeKeyValueCollection, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_get_is_synchronized::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_sync_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.get_SyncRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.get_SyncRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_sync_root(
+        this: ListDictionary_NodeKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(ListDictionary_NodeKeyValueCollection, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_get_sync_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerable.GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ListDictionary_NodeKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.IEnumerable.GetEnumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_enumerable_get_enumerator(
+        this: ListDictionary_NodeKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
         let inner: extern "C" fn(
-            ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
+            ListDictionary_NodeKeyValueCollection,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset::get_offset() as isize),
-        );
+        ) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-pub trait IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods:
-    IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator
-{
+pub trait IListDictionary_NodeKeyValueCollectionMethods: IListDictionary_NodeKeyValueCollection {
     #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"]
     fn ctor(
         self,
-        list: impl ::core::convert::Into<
-            crate::system::collections::specialized::listdictionary::ListDictionary,
-        >,
+        list: impl ::core::convert::Into<crate::system::collections::specialized::listdictionary::ListDictionary>,
         is_keys: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw::ctor(
+            let __receiver = <ListDictionary_NodeKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(list),
                 ::core::convert::Into::into(is_keys),
@@ -2275,31 +1761,64 @@ pub trait IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods:
             )
         }
     }
-    #[doc = "`get_Current()` overload"]
-    fn get_current(self) -> crate::system::object::Object {
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    fn system_collections_i_collection_copy_to(
+        self,
+        array: impl ::core::convert::Into<::unity2::IlInstance>,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw::get_current(
+            let __receiver = <ListDictionary_NodeKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_unity2_raw::system_collections_i_collection_copy_to(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
+    fn system_collections_i_collection_get_count(self) -> i32 {
+        unsafe {
+            let __receiver = <ListDictionary_NodeKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_unity2_raw::system_collections_i_collection_get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    fn system_collections_i_collection_get_is_synchronized(self) -> bool {
+        unsafe {
+            let __receiver = <ListDictionary_NodeKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_unity2_raw::system_collections_i_collection_get_is_synchronized(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`MoveNext()` overload"]
-    fn move_next(self) -> bool {
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw::move_next(
+            let __receiver = <ListDictionary_NodeKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_unity2_raw::system_collections_i_collection_get_sync_root(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator_unity2_raw::reset(
+            let __receiver = <ListDictionary_NodeKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ListDictionary_NodeKeyValueCollection_unity2_raw::system_collections_i_enumerable_get_enumerator(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2308,28 +1827,20 @@ pub trait IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods:
 }
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-impl<__T: IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator>
-    IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods for __T
-{
-}
+impl<__T: IListDictionary_NodeKeyValueCollection> IListDictionary_NodeKeyValueCollectionMethods for __T {}
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator {
+impl ListDictionary_NodeKeyValueCollection {
     #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::specialized::listdictionary::ListDictionary,
-        is_keys: bool,
-    ) -> Self {
+    pub fn new(list: crate::system::collections::specialized::listdictionary::ListDictionary, is_keys: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator),
+                ::core::stringify!(ListDictionary_NodeKeyValueCollection),
                 ::core::stringify!(new),
             )
         });
-        <Self as IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods>::ctor(
-            this, list, is_keys,
-        );
+        <Self as IListDictionary_NodeKeyValueCollectionMethods>::ctor(this, list, is_keys);
         this
     }
 }
@@ -2337,21 +1848,13 @@ impl ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator {
 #[cfg(feature = "system-collections-specialized-listdictionary")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IListDictionary;
-    pub use super::IListDictionaryMethods;
-    pub use super::IListDictionary_DictionaryNode;
-    pub use super::IListDictionary_DictionaryNodeMethods;
-    pub use super::IListDictionary_NodeEnumerator;
-    pub use super::IListDictionary_NodeEnumeratorMethods;
-    pub use super::IListDictionary_NodeKeyValueCollection;
-    pub use super::IListDictionary_NodeKeyValueCollectionMethods;
-    pub use super::IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator;
-    pub use super::IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods;
-    pub use super::ListDictionary;
-    pub use super::ListDictionary_DictionaryNode;
-    pub use super::ListDictionary_NodeEnumerator;
-    pub use super::ListDictionary_NodeKeyValueCollection;
-    pub use super::ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator;
+    pub use super::{
+        IListDictionary, IListDictionaryMethods, IListDictionary_DictionaryNode, IListDictionary_DictionaryNodeMethods,
+        IListDictionary_NodeEnumerator, IListDictionary_NodeEnumeratorMethods, IListDictionary_NodeKeyValueCollection,
+        IListDictionary_NodeKeyValueCollectionMethods, IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
+        IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods, ListDictionary, ListDictionary_DictionaryNode,
+        ListDictionary_NodeEnumerator, ListDictionary_NodeKeyValueCollection, ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

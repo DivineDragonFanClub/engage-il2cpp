@@ -2,15 +2,30 @@
 
 #[cfg(feature = "app-sortieentrustscore-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_EnhancePerson.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieEntrustScore.EnhancePerson")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieEntrustScore_EnhancePerson {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_Rod.md"))]
     #[::unity2::class(namespace = "App", name = "SortieEntrustScore.Rod")]
     #[parent(crate::system::object::Object)]
     pub struct SortieEntrustScore_Rod {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_Vulnerary.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieEntrustScore.Vulnerary")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieEntrustScore_Vulnerary {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_Enhance.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieEntrustScore.Enhance")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieEntrustScore_Enhance {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore.md"))]
     #[::unity2::class(namespace = "App", name = "SortieEntrustScore")]
@@ -25,16 +40,6 @@ mod __types {
         pub m_result: crate::app::sortieentrustscore::SortieEntrustScore_Result,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_EnhancePerson.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieEntrustScore.EnhancePerson")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieEntrustScore_EnhancePerson {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_Enhance.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieEntrustScore.Enhance")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieEntrustScore_Enhance {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_Result.md"))]
     #[::unity2::class(namespace = "App", name = "SortieEntrustScore.Result")]
     #[parent(crate::system::object::Object)]
@@ -44,11 +49,6 @@ mod __types {
         #[rename(name = "m_Score")]
         pub m_score: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_Vulnerary.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieEntrustScore.Vulnerary")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieEntrustScore_Vulnerary {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustscore/SortieEntrustScore_Weapon.md"))]
     #[::unity2::class(namespace = "App", name = "SortieEntrustScore.Weapon")]
@@ -72,18 +72,19 @@ pub use __types::*;
 #[cfg(feature = "app-sortieentrustscore")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieEntrustScore_Rod_unity2_raw {
+mod __SortieEntrustScore_EnhancePerson_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exclude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::class(),
+                <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::class(),
                 "IsExclude",
                 2,
                 param_types,
@@ -93,18 +94,15 @@ mod __SortieEntrustScore_Rod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::NAME,
-                    "IsExclude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::NAME,
+                        "IsExclude",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exclude(
@@ -116,23 +114,21 @@ mod __SortieEntrustScore_Rod_unity2_raw {
             crate::app::sortieentrustunitdata::SortieEntrustUnitData,
             crate::app::sortieentruststockdata::SortieEntrustStockData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exclude::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_exclude::get_method_info().method_ptr);
         inner(unit_data, stock_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustscore :: SortieEntrustScore_Result as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustscore::SortieEntrustScore_Result as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::class(),
+                <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::class(),
                 "Calc",
                 3,
                 param_types,
@@ -142,18 +138,15 @@ mod __SortieEntrustScore_Rod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::NAME,
+                        "Calc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc(
@@ -167,20 +160,207 @@ mod __SortieEntrustScore_Rod_unity2_raw {
             crate::app::sortieentrustunitdata::SortieEntrustUnitData,
             crate::app::sortieentruststockdata::SortieEntrustStockData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_calc::get_method_info().method_ptr);
         inner(result, unit_data, stock_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SortieEntrustScore_EnhancePerson, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SortieEntrustScore_EnhancePerson, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-sortieentrustscore")]
+impl SortieEntrustScore_EnhancePerson {
+    #[doc = "`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
+    pub fn is_exclude(
+        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
+    ) -> bool {
+        unsafe {
+            __SortieEntrustScore_EnhancePerson_unity2_raw::is_exclude(
+                ::core::convert::Into::into(unit_data),
+                ::core::convert::Into::into(stock_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
+    pub fn calc(
+        result: impl ::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result>,
+        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
+    ) -> () {
+        unsafe {
+            __SortieEntrustScore_EnhancePerson_unity2_raw::calc(
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(unit_data),
+                ::core::convert::Into::into(stock_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-sortieentrustscore")]
+pub trait ISortieEntrustScore_EnhancePersonMethods: ISortieEntrustScore_EnhancePerson {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SortieEntrustScore_EnhancePerson as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_EnhancePerson_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-sortieentrustscore")]
+impl<__T: ISortieEntrustScore_EnhancePerson> ISortieEntrustScore_EnhancePersonMethods for __T {}
+
+#[cfg(feature = "app-sortieentrustscore")]
+impl SortieEntrustScore_EnhancePerson {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieEntrustScore_EnhancePerson),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieEntrustScore_EnhancePersonMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortieentrustscore")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SortieEntrustScore_Rod_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exclude {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::class(),
+                "IsExclude",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::NAME,
+                        "IsExclude",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exclude(
+        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+        stock_data: crate::app::sortieentruststockdata::SortieEntrustStockData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+            crate::app::sortieentruststockdata::SortieEntrustStockData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_is_exclude::get_method_info().method_ptr);
+        inner(unit_data, stock_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustscore::SortieEntrustScore_Result as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::class(),
+                "Calc",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::NAME,
+                        "Calc",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc(
+        result: crate::app::sortieentrustscore::SortieEntrustScore_Result,
+        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+        stock_data: crate::app::sortieentruststockdata::SortieEntrustStockData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::sortieentrustscore::SortieEntrustScore_Result,
+            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+            crate::app::sortieentruststockdata::SortieEntrustStockData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_calc::get_method_info().method_ptr);
+        inner(result, unit_data, stock_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::class(),
@@ -193,30 +373,20 @@ mod __SortieEntrustScore_Rod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Rod as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SortieEntrustScore_Rod,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SortieEntrustScore_Rod, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieEntrustScore_Rod, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -226,9 +396,7 @@ impl SortieEntrustScore_Rod {
     #[doc = "`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
     pub fn is_exclude(
         unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
     ) -> bool {
         unsafe {
             __SortieEntrustScore_Rod_unity2_raw::is_exclude(
@@ -238,13 +406,12 @@ impl SortieEntrustScore_Rod {
             )
         }
     }
+
     #[doc = "`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
     pub fn calc(
         result: impl ::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result>,
         unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
     ) -> () {
         unsafe {
             __SortieEntrustScore_Rod_unity2_raw::calc(
@@ -262,9 +429,8 @@ pub trait ISortieEntrustScore_RodMethods: ISortieEntrustScore_Rod {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <SortieEntrustScore_Rod as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SortieEntrustScore_Rod as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieEntrustScore_Rod_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -292,832 +458,19 @@ impl SortieEntrustScore_Rod {
 #[cfg(feature = "app-sortieentrustscore")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieEntrustScore_unity2_raw {
+mod __SortieEntrustScore_Vulnerary_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_item_kind_mask {
+    pub mod __lookup_is_exclude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "GetItemKindMask",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "GetItemKindMask",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_item_kind_mask(
-        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-            ::unity2::OptionalMethod,
-        ) -> u32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item_kind_mask::get_offset() as isize),
-        );
-        inner(unit_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SortieEntrustScore,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SortieEntrustScore, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn initialize(
-        this: SortieEntrustScore,
-        stock_data: crate::app::sortieentruststockdata::SortieEntrustStockData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SortieEntrustScore,
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize::get_offset() as isize),
-        );
-        inner(this, stock_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "Calc",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc(
-        this: SortieEntrustScore,
-        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SortieEntrustScore,
-            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
-        inner(this, unit_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_high {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::sortieentrustscore::SortieEntrustScore as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "SelectHigh",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "SelectHigh",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn select_high(
-        this: SortieEntrustScore,
-        other: crate::app::sortieentrustscore::SortieEntrustScore,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SortieEntrustScore,
-            crate::app::sortieentrustscore::SortieEntrustScore,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_high::get_offset() as isize),
-        );
-        inner(this, other, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stock_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "get_StockData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "get_StockData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_stock_data(
-        this: SortieEntrustScore,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::sortieentruststockdata::SortieEntrustStockData {
-        let inner: extern "C" fn(
-            SortieEntrustScore,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::sortieentruststockdata::SortieEntrustStockData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stock_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_valid_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "get_IsValidScore",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "get_IsValidScore",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_valid_score(
-        this: SortieEntrustScore,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(SortieEntrustScore, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_valid_score::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "get_Score",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "get_Score",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_score(
-        this: SortieEntrustScore,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(SortieEntrustScore, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_score::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exclude {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "IsExclude",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "IsExclude",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_exclude(
-        this: SortieEntrustScore,
-        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SortieEntrustScore,
-            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exclude::get_offset() as isize),
-        );
-        inner(this, unit_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_range_normal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "IsRangeNormal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "IsRangeNormal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_range_normal(
-        item_data: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_range_normal::get_offset() as isize),
-            );
-        inner(item_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_range_special {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "IsRangeSpecial",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "IsRangeSpecial",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_range_special(
-        item_data: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_range_special::get_offset() as isize),
-            );
-        inner(item_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_range_covered {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "IsRangeCovered",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "IsRangeCovered",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_range_covered(
-        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-        stock_item_data: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_range_covered::get_offset() as isize),
-        );
-        inner(unit_data, stock_item_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_personal_use {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
-                "IsPersonalUse",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
-                    "IsPersonalUse",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_personal_use(
-        item_data: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_personal_use::get_offset() as isize),
-            );
-        inner(item_data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-sortieentrustscore")]
-impl SortieEntrustScore {
-    #[doc = "`GetItemKindMask(crate::app::sortieentrustunitdata::SortieEntrustUnitData)` overload"]
-    pub fn get_item_kind_mask(
-        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-    ) -> u32 {
-        unsafe {
-            __SortieEntrustScore_unity2_raw::get_item_kind_mask(
-                ::core::convert::Into::into(unit_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRangeNormal(crate::app::itemdata::ItemData)` overload"]
-    pub fn is_range_normal(
-        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustScore_unity2_raw::is_range_normal(
-                ::core::convert::Into::into(item_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRangeSpecial(crate::app::itemdata::ItemData)` overload"]
-    pub fn is_range_special(
-        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustScore_unity2_raw::is_range_special(
-                ::core::convert::Into::into(item_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRangeCovered(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::itemdata::ItemData)` overload"]
-    pub fn is_range_covered(
-        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustScore_unity2_raw::is_range_covered(
-                ::core::convert::Into::into(unit_data),
-                ::core::convert::Into::into(stock_item_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsPersonalUse(crate::app::itemdata::ItemData)` overload"]
-    pub fn is_personal_use(
-        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustScore_unity2_raw::is_personal_use(
-                ::core::convert::Into::into(item_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-sortieentrustscore")]
-pub trait ISortieEntrustScoreMethods: ISortieEntrustScore {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrustScore_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Initialize(crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
-    fn initialize(
-        self,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrustScore_unity2_raw::initialize(
-                __receiver,
-                ::core::convert::Into::into(stock_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calc(crate::app::sortieentrustunitdata::SortieEntrustUnitData)` overload"]
-    fn calc(
-        self,
-        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrustScore_unity2_raw::calc(
-                __receiver,
-                ::core::convert::Into::into(unit_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SelectHigh(crate::app::sortieentrustscore::SortieEntrustScore)` overload"]
-    fn select_high(
-        self,
-        other: impl ::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore>,
-    ) -> () {
-        unsafe {
-            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrustScore_unity2_raw::select_high(
-                __receiver,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_StockData()` overload"]
-    fn get_stock_data(self) -> crate::app::sortieentruststockdata::SortieEntrustStockData {
-        unsafe {
-            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrustScore_unity2_raw::get_stock_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsValidScore()` overload"]
-    fn get_is_valid_score(self) -> bool {
-        unsafe {
-            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrustScore_unity2_raw::get_is_valid_score(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Score()` overload"]
-    fn get_score(self) -> i32 {
-        unsafe {
-            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrustScore_unity2_raw::get_score(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData)` overload"]
-    fn is_exclude(
-        self,
-        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SortieEntrustScore_unity2_raw::is_exclude(
-                __receiver,
-                ::core::convert::Into::into(unit_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-sortieentrustscore")]
-impl<__T: ISortieEntrustScore> ISortieEntrustScoreMethods for __T {}
-
-#[cfg(feature = "app-sortieentrustscore")]
-impl SortieEntrustScore {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieEntrustScore),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieEntrustScoreMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortieentrustscore")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieEntrustScore_EnhancePerson_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exclude {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::class(),
+                <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::class(),
                 "IsExclude",
                 2,
                 param_types,
@@ -1127,18 +480,15 @@ mod __SortieEntrustScore_EnhancePerson_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::NAME,
-                    "IsExclude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::NAME,
+                        "IsExclude",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exclude(
@@ -1150,23 +500,21 @@ mod __SortieEntrustScore_EnhancePerson_unity2_raw {
             crate::app::sortieentrustunitdata::SortieEntrustUnitData,
             crate::app::sortieentruststockdata::SortieEntrustStockData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exclude::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_exclude::get_method_info().method_ptr);
         inner(unit_data, stock_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustscore :: SortieEntrustScore_Result as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustscore::SortieEntrustScore_Result as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::class(),
+                <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::class(),
                 "Calc",
                 3,
                 param_types,
@@ -1176,18 +524,15 @@ mod __SortieEntrustScore_EnhancePerson_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::NAME,
+                        "Calc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc(
@@ -1201,23 +546,17 @@ mod __SortieEntrustScore_EnhancePerson_unity2_raw {
             crate::app::sortieentrustunitdata::SortieEntrustUnitData,
             crate::app::sortieentruststockdata::SortieEntrustStockData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_calc::get_method_info().method_ptr);
         inner(result, unit_data, stock_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::class(),
+                <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1227,61 +566,48 @@ mod __SortieEntrustScore_EnhancePerson_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_EnhancePerson as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SortieEntrustScore_EnhancePerson,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SortieEntrustScore_EnhancePerson, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: SortieEntrustScore_Vulnerary, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SortieEntrustScore_Vulnerary, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-sortieentrustscore")]
-impl SortieEntrustScore_EnhancePerson {
+impl SortieEntrustScore_Vulnerary {
     #[doc = "`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
     pub fn is_exclude(
         unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
     ) -> bool {
         unsafe {
-            __SortieEntrustScore_EnhancePerson_unity2_raw::is_exclude(
+            __SortieEntrustScore_Vulnerary_unity2_raw::is_exclude(
                 ::core::convert::Into::into(unit_data),
                 ::core::convert::Into::into(stock_data),
                 ::core::option::Option::None,
             )
         }
     }
+
     #[doc = "`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
     pub fn calc(
         result: impl ::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result>,
         unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
     ) -> () {
         unsafe {
-            __SortieEntrustScore_EnhancePerson_unity2_raw::calc(
+            __SortieEntrustScore_Vulnerary_unity2_raw::calc(
                 ::core::convert::Into::into(result),
                 ::core::convert::Into::into(unit_data),
                 ::core::convert::Into::into(stock_data),
@@ -1292,37 +618,32 @@ impl SortieEntrustScore_EnhancePerson {
 }
 
 #[cfg(feature = "app-sortieentrustscore")]
-pub trait ISortieEntrustScore_EnhancePersonMethods: ISortieEntrustScore_EnhancePerson {
+pub trait ISortieEntrustScore_VulneraryMethods: ISortieEntrustScore_Vulnerary {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SortieEntrustScore_EnhancePerson as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieEntrustScore_EnhancePerson_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieEntrustScore_Vulnerary as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_Vulnerary_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-sortieentrustscore")]
-impl<__T: ISortieEntrustScore_EnhancePerson> ISortieEntrustScore_EnhancePersonMethods for __T {}
+impl<__T: ISortieEntrustScore_Vulnerary> ISortieEntrustScore_VulneraryMethods for __T {}
 
 #[cfg(feature = "app-sortieentrustscore")]
-impl SortieEntrustScore_EnhancePerson {
+impl SortieEntrustScore_Vulnerary {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SortieEntrustScore_EnhancePerson),
+                ::core::stringify!(SortieEntrustScore_Vulnerary),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISortieEntrustScore_EnhancePersonMethods>::ctor(this);
+        <Self as ISortieEntrustScore_VulneraryMethods>::ctor(this);
         this
     }
 }
@@ -1336,10 +657,11 @@ mod __SortieEntrustScore_Enhance_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_exclude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::class(),
                 "IsExclude",
@@ -1351,18 +673,15 @@ mod __SortieEntrustScore_Enhance_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::NAME,
-                    "IsExclude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::NAME,
+                        "IsExclude",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exclude(
@@ -1374,21 +693,19 @@ mod __SortieEntrustScore_Enhance_unity2_raw {
             crate::app::sortieentrustunitdata::SortieEntrustUnitData,
             crate::app::sortieentruststockdata::SortieEntrustStockData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exclude::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_exclude::get_method_info().method_ptr);
         inner(unit_data, stock_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustscore :: SortieEntrustScore_Result as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustscore::SortieEntrustScore_Result as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::class(),
                 "Calc",
@@ -1400,18 +717,15 @@ mod __SortieEntrustScore_Enhance_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::NAME,
+                        "Calc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc(
@@ -1425,20 +739,14 @@ mod __SortieEntrustScore_Enhance_unity2_raw {
             crate::app::sortieentrustunitdata::SortieEntrustUnitData,
             crate::app::sortieentruststockdata::SortieEntrustStockData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_calc::get_method_info().method_ptr);
         inner(result, unit_data, stock_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::class(),
@@ -1451,30 +759,20 @@ mod __SortieEntrustScore_Enhance_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Enhance as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SortieEntrustScore_Enhance,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SortieEntrustScore_Enhance, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieEntrustScore_Enhance, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1484,9 +782,7 @@ impl SortieEntrustScore_Enhance {
     #[doc = "`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
     pub fn is_exclude(
         unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
     ) -> bool {
         unsafe {
             __SortieEntrustScore_Enhance_unity2_raw::is_exclude(
@@ -1496,13 +792,12 @@ impl SortieEntrustScore_Enhance {
             )
         }
     }
+
     #[doc = "`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
     pub fn calc(
         result: impl ::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result>,
         unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
     ) -> () {
         unsafe {
             __SortieEntrustScore_Enhance_unity2_raw::calc(
@@ -1521,9 +816,7 @@ pub trait ISortieEntrustScore_EnhanceMethods: ISortieEntrustScore_Enhance {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SortieEntrustScore_Enhance as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieEntrustScore_Enhance as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieEntrustScore_Enhance_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1551,15 +844,602 @@ impl SortieEntrustScore_Enhance {
 #[cfg(feature = "app-sortieentrustscore")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SortieEntrustScore_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_kind_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "GetItemKindMask",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "GetItemKindMask",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_kind_mask(
+        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u32 {
+        let inner: extern "C" fn(crate::app::sortieentrustunitdata::SortieEntrustUnitData, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_item_kind_mask::get_method_info().method_ptr);
+        inner(unit_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SortieEntrustScore, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SortieEntrustScore, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn initialize(
+        this: SortieEntrustScore,
+        stock_data: crate::app::sortieentruststockdata::SortieEntrustStockData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieEntrustScore, crate::app::sortieentruststockdata::SortieEntrustStockData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
+        inner(this, stock_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "Calc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "Calc",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc(
+        this: SortieEntrustScore,
+        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieEntrustScore, crate::app::sortieentrustunitdata::SortieEntrustUnitData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc::get_method_info().method_ptr);
+        inner(this, unit_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_high {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustscore::SortieEntrustScore as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "SelectHigh",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "SelectHigh",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn select_high(
+        this: SortieEntrustScore,
+        other: crate::app::sortieentrustscore::SortieEntrustScore,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SortieEntrustScore, crate::app::sortieentrustscore::SortieEntrustScore, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_select_high::get_method_info().method_ptr);
+        inner(this, other, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_stock_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "get_StockData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "get_StockData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_stock_data(
+        this: SortieEntrustScore,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::sortieentruststockdata::SortieEntrustStockData {
+        let inner: extern "C" fn(SortieEntrustScore, ::unity2::OptionalMethod) -> crate::app::sortieentruststockdata::SortieEntrustStockData =
+            ::core::mem::transmute(__lookup_get_stock_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_valid_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "get_IsValidScore",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "get_IsValidScore",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_valid_score(this: SortieEntrustScore, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SortieEntrustScore, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_valid_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: SortieEntrustScore, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SortieEntrustScore, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exclude {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "IsExclude",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "IsExclude",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exclude(
+        this: SortieEntrustScore,
+        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(SortieEntrustScore, crate::app::sortieentrustunitdata::SortieEntrustUnitData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exclude::get_method_info().method_ptr);
+        inner(this, unit_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_range_normal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "IsRangeNormal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "IsRangeNormal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_range_normal(item_data: crate::app::itemdata::ItemData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_range_normal::get_method_info().method_ptr);
+        inner(item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_range_special {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "IsRangeSpecial",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "IsRangeSpecial",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_range_special(item_data: crate::app::itemdata::ItemData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_range_special::get_method_info().method_ptr);
+        inner(item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_range_covered {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "IsRangeCovered",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "IsRangeCovered",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_range_covered(
+        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+        stock_item_data: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_is_range_covered::get_method_info().method_ptr);
+        inner(unit_data, stock_item_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_personal_use {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SortieEntrustScore as ::unity2::ClassIdentity>::class(),
+                "IsPersonalUse",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore as ::unity2::ClassIdentity>::NAME,
+                        "IsPersonalUse",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_personal_use(item_data: crate::app::itemdata::ItemData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_personal_use::get_method_info().method_ptr);
+        inner(item_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-sortieentrustscore")]
+impl SortieEntrustScore {
+    #[doc = "`GetItemKindMask(crate::app::sortieentrustunitdata::SortieEntrustUnitData)` overload"]
+    pub fn get_item_kind_mask(unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>) -> u32 {
+        unsafe { __SortieEntrustScore_unity2_raw::get_item_kind_mask(::core::convert::Into::into(unit_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsRangeNormal(crate::app::itemdata::ItemData)` overload"]
+    pub fn is_range_normal(item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
+        unsafe { __SortieEntrustScore_unity2_raw::is_range_normal(::core::convert::Into::into(item_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsRangeSpecial(crate::app::itemdata::ItemData)` overload"]
+    pub fn is_range_special(item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
+        unsafe { __SortieEntrustScore_unity2_raw::is_range_special(::core::convert::Into::into(item_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsRangeCovered(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::itemdata::ItemData)` overload"]
+    pub fn is_range_covered(
+        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
+        stock_item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> bool {
+        unsafe {
+            __SortieEntrustScore_unity2_raw::is_range_covered(
+                ::core::convert::Into::into(unit_data),
+                ::core::convert::Into::into(stock_item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`IsPersonalUse(crate::app::itemdata::ItemData)` overload"]
+    pub fn is_personal_use(item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
+        unsafe { __SortieEntrustScore_unity2_raw::is_personal_use(::core::convert::Into::into(item_data), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-sortieentrustscore")]
+pub trait ISortieEntrustScoreMethods: ISortieEntrustScore {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Initialize(crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
+    fn initialize(self, stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>) -> () {
+        unsafe {
+            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_unity2_raw::initialize(__receiver, ::core::convert::Into::into(stock_data), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Calc(crate::app::sortieentrustunitdata::SortieEntrustUnitData)` overload"]
+    fn calc(self, unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>) -> () {
+        unsafe {
+            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_unity2_raw::calc(__receiver, ::core::convert::Into::into(unit_data), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SelectHigh(crate::app::sortieentrustscore::SortieEntrustScore)` overload"]
+    fn select_high(self, other: impl ::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore>) -> () {
+        unsafe {
+            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_unity2_raw::select_high(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_StockData()` overload"]
+    fn get_stock_data(self) -> crate::app::sortieentruststockdata::SortieEntrustStockData {
+        unsafe {
+            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_unity2_raw::get_stock_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsValidScore()` overload"]
+    fn get_is_valid_score(self) -> bool {
+        unsafe {
+            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_unity2_raw::get_is_valid_score(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Score()` overload"]
+    fn get_score(self) -> i32 {
+        unsafe {
+            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_unity2_raw::get_score(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData)` overload"]
+    fn is_exclude(self, unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>) -> bool {
+        unsafe {
+            let __receiver = <SortieEntrustScore as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_unity2_raw::is_exclude(__receiver, ::core::convert::Into::into(unit_data), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-sortieentrustscore")]
+impl<__T: ISortieEntrustScore> ISortieEntrustScoreMethods for __T {}
+
+#[cfg(feature = "app-sortieentrustscore")]
+impl SortieEntrustScore {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieEntrustScore),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieEntrustScoreMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-sortieentrustscore")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __SortieEntrustScore_Result_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Result as ::unity2::ClassIdentity>::class(),
@@ -1572,41 +1452,28 @@ mod __SortieEntrustScore_Result_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: SortieEntrustScore_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: SortieEntrustScore_Result, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieEntrustScore_Result, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Result as ::unity2::ClassIdentity>::class(),
                 "Set",
@@ -1618,40 +1485,27 @@ mod __SortieEntrustScore_Result_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set(
-        this: SortieEntrustScore_Result,
-        score: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set(this: SortieEntrustScore_Result, score: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieEntrustScore_Result, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, score, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Result as ::unity2::ClassIdentity>::class(),
@@ -1664,39 +1518,27 @@ mod __SortieEntrustScore_Result_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
-                    "get_IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
+                        "get_IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_valid(
-        this: SortieEntrustScore_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_valid(this: SortieEntrustScore_Result, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SortieEntrustScore_Result, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_score {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Result as ::unity2::ClassIdentity>::class(),
@@ -1709,39 +1551,27 @@ mod __SortieEntrustScore_Result_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
-                    "get_Score",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_score(
-        this: SortieEntrustScore_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_score(this: SortieEntrustScore_Result, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SortieEntrustScore_Result, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_score::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Result as ::unity2::ClassIdentity>::class(),
@@ -1754,30 +1584,20 @@ mod __SortieEntrustScore_Result_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Result as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SortieEntrustScore_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SortieEntrustScore_Result, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieEntrustScore_Result, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1788,9 +1608,7 @@ pub trait ISortieEntrustScore_ResultMethods: ISortieEntrustScore_Result {
     fn clear(self) -> () {
         unsafe {
             let __receiver =
-                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieEntrustScore_Result_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
@@ -1798,49 +1616,31 @@ pub trait ISortieEntrustScore_ResultMethods: ISortieEntrustScore_Result {
     fn set(self, score: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieEntrustScore_Result_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(score),
-                ::core::option::Option::None,
-            )
+                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_Result_unity2_raw::set(__receiver, ::core::convert::Into::into(score), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsValid()` overload"]
     fn get_is_valid(self) -> bool {
         unsafe {
             let __receiver =
-                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieEntrustScore_Result_unity2_raw::get_is_valid(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_Result_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Score()` overload"]
     fn get_score(self) -> i32 {
         unsafe {
             let __receiver =
-                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieEntrustScore_Result_unity2_raw::get_score(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieEntrustScore_Result_unity2_raw::get_score(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieEntrustScore_Result as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieEntrustScore_Result_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1868,240 +1668,17 @@ impl SortieEntrustScore_Result {
 #[cfg(feature = "app-sortieentrustscore")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SortieEntrustScore_Vulnerary_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exclude {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::class(),
-                "IsExclude",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::NAME,
-                    "IsExclude",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_exclude(
-        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-        stock_data: crate::app::sortieentruststockdata::SortieEntrustStockData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exclude::get_offset() as isize),
-        );
-        inner(unit_data, stock_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustscore :: SortieEntrustScore_Result as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::class(),
-                "Calc",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc(
-        result: crate::app::sortieentrustscore::SortieEntrustScore_Result,
-        unit_data: crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-        stock_data: crate::app::sortieentruststockdata::SortieEntrustStockData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustscore::SortieEntrustScore_Result,
-            crate::app::sortieentrustunitdata::SortieEntrustUnitData,
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
-        inner(result, unit_data, stock_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Vulnerary as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SortieEntrustScore_Vulnerary,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SortieEntrustScore_Vulnerary, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-sortieentrustscore")]
-impl SortieEntrustScore_Vulnerary {
-    #[doc = "`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
-    pub fn is_exclude(
-        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustScore_Vulnerary_unity2_raw::is_exclude(
-                ::core::convert::Into::into(unit_data),
-                ::core::convert::Into::into(stock_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
-    pub fn calc(
-        result: impl ::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result>,
-        unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
-    ) -> () {
-        unsafe {
-            __SortieEntrustScore_Vulnerary_unity2_raw::calc(
-                ::core::convert::Into::into(result),
-                ::core::convert::Into::into(unit_data),
-                ::core::convert::Into::into(stock_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-sortieentrustscore")]
-pub trait ISortieEntrustScore_VulneraryMethods: ISortieEntrustScore_Vulnerary {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SortieEntrustScore_Vulnerary as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieEntrustScore_Vulnerary_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-sortieentrustscore")]
-impl<__T: ISortieEntrustScore_Vulnerary> ISortieEntrustScore_VulneraryMethods for __T {}
-
-#[cfg(feature = "app-sortieentrustscore")]
-impl SortieEntrustScore_Vulnerary {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieEntrustScore_Vulnerary),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieEntrustScore_VulneraryMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-sortieentrustscore")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __SortieEntrustScore_Weapon_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exclude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::class(),
                 "IsExclude",
@@ -2113,18 +1690,15 @@ mod __SortieEntrustScore_Weapon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::NAME,
-                    "IsExclude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::NAME,
+                        "IsExclude",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exclude(
@@ -2136,21 +1710,19 @@ mod __SortieEntrustScore_Weapon_unity2_raw {
             crate::app::sortieentrustunitdata::SortieEntrustUnitData,
             crate::app::sortieentruststockdata::SortieEntrustStockData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exclude::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_exclude::get_method_info().method_ptr);
         inner(unit_data, stock_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustscore :: SortieEntrustScore_Result as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData as :: unity2 :: IlType > :: il_type () , < crate :: app :: sortieentruststockdata :: SortieEntrustStockData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::sortieentrustscore::SortieEntrustScore_Result as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentrustunitdata::SortieEntrustUnitData as ::unity2::IlType>::il_type(),
+                <crate::app::sortieentruststockdata::SortieEntrustStockData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::class(),
                 "Calc",
@@ -2162,18 +1734,15 @@ mod __SortieEntrustScore_Weapon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::NAME,
-                    "Calc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::NAME,
+                        "Calc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc(
@@ -2187,20 +1756,14 @@ mod __SortieEntrustScore_Weapon_unity2_raw {
             crate::app::sortieentrustunitdata::SortieEntrustUnitData,
             crate::app::sortieentruststockdata::SortieEntrustStockData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_calc::get_method_info().method_ptr);
         inner(result, unit_data, stock_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_power_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -2216,18 +1779,15 @@ mod __SortieEntrustScore_Weapon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::NAME,
-                    "GetEfficacyPowerOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::NAME,
+                        "GetEfficacyPowerOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_efficacy_power_offset(
@@ -2235,24 +1795,15 @@ mod __SortieEntrustScore_Weapon_unity2_raw {
         stock_item_data: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::unititem::UnitItem,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_efficacy_power_offset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unititem::UnitItem, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_efficacy_power_offset::get_method_info().method_ptr);
         inner(stock_unit_item, stock_item_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::class(),
@@ -2265,30 +1816,20 @@ mod __SortieEntrustScore_Weapon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustScore_Weapon as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SortieEntrustScore_Weapon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SortieEntrustScore_Weapon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieEntrustScore_Weapon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2298,9 +1839,7 @@ impl SortieEntrustScore_Weapon {
     #[doc = "`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
     pub fn is_exclude(
         unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
     ) -> bool {
         unsafe {
             __SortieEntrustScore_Weapon_unity2_raw::is_exclude(
@@ -2310,13 +1849,12 @@ impl SortieEntrustScore_Weapon {
             )
         }
     }
+
     #[doc = "`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]
     pub fn calc(
         result: impl ::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result>,
         unit_data: impl ::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData>,
-        stock_data: impl ::core::convert::Into<
-            crate::app::sortieentruststockdata::SortieEntrustStockData,
-        >,
+        stock_data: impl ::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>,
     ) -> () {
         unsafe {
             __SortieEntrustScore_Weapon_unity2_raw::calc(
@@ -2327,6 +1865,7 @@ impl SortieEntrustScore_Weapon {
             )
         }
     }
+
     #[doc = "`GetEfficacyPowerOffset(crate::app::unititem::UnitItem, crate::app::itemdata::ItemData)` overload"]
     pub fn get_efficacy_power_offset(
         stock_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
@@ -2348,9 +1887,7 @@ pub trait ISortieEntrustScore_WeaponMethods: ISortieEntrustScore_Weapon {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SortieEntrustScore_Weapon as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieEntrustScore_Weapon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieEntrustScore_Weapon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2378,27 +1915,13 @@ impl SortieEntrustScore_Weapon {
 #[cfg(feature = "app-sortieentrustscore")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISortieEntrustScore;
-    pub use super::ISortieEntrustScoreMethods;
-    pub use super::ISortieEntrustScore_Enhance;
-    pub use super::ISortieEntrustScore_EnhanceMethods;
-    pub use super::ISortieEntrustScore_EnhancePerson;
-    pub use super::ISortieEntrustScore_EnhancePersonMethods;
-    pub use super::ISortieEntrustScore_Result;
-    pub use super::ISortieEntrustScore_ResultMethods;
-    pub use super::ISortieEntrustScore_Rod;
-    pub use super::ISortieEntrustScore_RodMethods;
-    pub use super::ISortieEntrustScore_Vulnerary;
-    pub use super::ISortieEntrustScore_VulneraryMethods;
-    pub use super::ISortieEntrustScore_Weapon;
-    pub use super::ISortieEntrustScore_WeaponMethods;
-    pub use super::SortieEntrustScore;
-    pub use super::SortieEntrustScore_Enhance;
-    pub use super::SortieEntrustScore_EnhancePerson;
-    pub use super::SortieEntrustScore_Result;
-    pub use super::SortieEntrustScore_Rod;
-    pub use super::SortieEntrustScore_Vulnerary;
-    pub use super::SortieEntrustScore_Weapon;
+    pub use super::{
+        ISortieEntrustScore, ISortieEntrustScoreMethods, ISortieEntrustScore_Enhance, ISortieEntrustScore_EnhanceMethods,
+        ISortieEntrustScore_EnhancePerson, ISortieEntrustScore_EnhancePersonMethods, ISortieEntrustScore_Result, ISortieEntrustScore_ResultMethods,
+        ISortieEntrustScore_Rod, ISortieEntrustScore_RodMethods, ISortieEntrustScore_Vulnerary, ISortieEntrustScore_VulneraryMethods,
+        ISortieEntrustScore_Weapon, ISortieEntrustScore_WeaponMethods, SortieEntrustScore, SortieEntrustScore_Enhance,
+        SortieEntrustScore_EnhancePerson, SortieEntrustScore_Result, SortieEntrustScore_Rod, SortieEntrustScore_Vulnerary, SortieEntrustScore_Weapon,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

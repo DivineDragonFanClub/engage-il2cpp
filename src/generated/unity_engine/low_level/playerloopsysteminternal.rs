@@ -2,28 +2,28 @@
 
 #[cfg(feature = "unity_engine-low_level-playerloopsysteminternal-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/low_level/playerloopsysteminternal/PlayerLoopSystemInternal.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
     pub struct PlayerLoopSystemInternal {
         pub r#type: ::unity2::SystemType,
-        pub update_delegate:
-            crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem_UpdateFunction,
+        pub update_delegate: crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem_UpdateFunction,
         pub update_function: ::unity2::IntPtr,
         pub loop_condition_function: ::unity2::IntPtr,
         pub num_sub_systems: i32,
     }
 
     impl ::unity2::ClassIdentity for PlayerLoopSystemInternal {
-        const NAMESPACE: &'static str = "UnityEngine.LowLevel";
-
         const NAME: &'static str = "PlayerLoopSystemInternal";
+        const NAMESPACE: &'static str = "UnityEngine.LowLevel";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -34,10 +34,7 @@ mod __types {
 
     impl ::unity2::IlType for PlayerLoopSystemInternal {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -49,10 +46,9 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::PlayerLoopSystemInternal;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

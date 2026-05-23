@@ -2,13 +2,17 @@
 
 #[cfg(feature = "unity_engine-collider2d-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/collider2d/Collider2D.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Collider2D")]
@@ -28,9 +32,7 @@ mod __Collider2D_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_attached_rigidbody {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Collider2D as ::unity2::ClassIdentity>::class(),
@@ -43,41 +45,30 @@ mod __Collider2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Collider2D as ::unity2::ClassIdentity>::NAME,
-                    "get_attachedRigidbody",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Collider2D as ::unity2::ClassIdentity>::NAME,
+                        "get_attachedRigidbody",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_attached_rigidbody(
         this: Collider2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rigidbody2d::Rigidbody2D {
-        let inner: extern "C" fn(
-            Collider2D,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rigidbody2d::Rigidbody2D = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attached_rigidbody::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Collider2D, ::unity2::OptionalMethod) -> crate::unity_engine::rigidbody2d::Rigidbody2D =
+            ::core::mem::transmute(__lookup_get_attached_rigidbody::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bounds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Collider2D as ::unity2::ClassIdentity>::class(),
@@ -90,43 +81,28 @@ mod __Collider2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Collider2D as ::unity2::ClassIdentity>::NAME,
-                    "get_bounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Collider2D as ::unity2::ClassIdentity>::NAME,
+                        "get_bounds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bounds(
-        this: Collider2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::bounds::Bounds {
-        let inner: extern "C" fn(
-            Collider2D,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bounds::get_offset() as isize),
-        );
+    pub unsafe fn get_bounds(this: Collider2D, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(Collider2D, ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds =
+            ::core::mem::transmute(__lookup_get_bounds::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_overlap_point {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Collider2D as ::unity2::ClassIdentity>::class(),
                 "OverlapPoint",
@@ -138,18 +114,15 @@ mod __Collider2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Collider2D as ::unity2::ClassIdentity>::NAME,
-                    "OverlapPoint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Collider2D as ::unity2::ClassIdentity>::NAME,
+                        "OverlapPoint",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn overlap_point(
@@ -157,26 +130,16 @@ mod __Collider2D_unity2_raw {
         point: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            Collider2D,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_overlap_point::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Collider2D, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_overlap_point::get_method_info().method_ptr);
         inner(this, point, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bounds_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Collider2D as ::unity2::ClassIdentity>::class(),
                 "get_bounds_Injected",
@@ -188,18 +151,15 @@ mod __Collider2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Collider2D as ::unity2::ClassIdentity>::NAME,
-                    "get_bounds_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Collider2D as ::unity2::ClassIdentity>::NAME,
+                        "get_bounds_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_bounds_injected(
@@ -207,26 +167,16 @@ mod __Collider2D_unity2_raw {
         ret: *mut crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Collider2D,
-            *mut crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bounds_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Collider2D, *mut crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_bounds_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_overlap_point_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Collider2D as ::unity2::ClassIdentity>::class(),
                 "OverlapPoint_Injected",
@@ -238,18 +188,15 @@ mod __Collider2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Collider2D as ::unity2::ClassIdentity>::NAME,
-                    "OverlapPoint_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Collider2D as ::unity2::ClassIdentity>::NAME,
+                        "OverlapPoint_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn overlap_point_injected(
@@ -257,15 +204,8 @@ mod __Collider2D_unity2_raw {
         point: *mut crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            Collider2D,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_overlap_point_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Collider2D, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_overlap_point_injected::get_method_info().method_ptr);
         inner(this, point, __unity2_method_info)
     }
 }
@@ -275,71 +215,39 @@ pub trait ICollider2DMethods: ICollider2D {
     #[doc = "`get_attachedRigidbody()` overload"]
     fn get_attached_rigidbody(self) -> crate::unity_engine::rigidbody2d::Rigidbody2D {
         unsafe {
-            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Collider2D_unity2_raw::get_attached_rigidbody(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Collider2D_unity2_raw::get_attached_rigidbody(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_bounds()` overload"]
     fn get_bounds(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Collider2D_unity2_raw::get_bounds(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OverlapPoint(crate::unity_engine::vector2::Vector2)` overload"]
-    fn overlap_point(
-        self,
-        point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> bool {
+    fn overlap_point(self, point: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> bool {
         unsafe {
-            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Collider2D_unity2_raw::overlap_point(
-                __receiver,
-                ::core::convert::Into::into(point),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Collider2D_unity2_raw::overlap_point(__receiver, ::core::convert::Into::into(point), ::core::option::Option::None)
         }
     }
     #[doc = "`get_bounds_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"]
     fn get_bounds_injected(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
-            __Collider2D_unity2_raw::get_bounds_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            __Collider2D_unity2_raw::get_bounds_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`OverlapPoint_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
     fn overlap_point_injected(self) -> (bool, crate::unity_engine::vector2::Vector2) {
         unsafe {
-            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            let __ret = {
-                __Collider2D_unity2_raw::overlap_point_injected(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __receiver = <Collider2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let __ret = { __Collider2D_unity2_raw::overlap_point_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
@@ -351,19 +259,17 @@ impl<__T: ICollider2D> ICollider2DMethods for __T {}
 #[cfg(feature = "unity_engine-collider2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Collider2D;
-    pub use super::ICollider2D;
-    pub use super::ICollider2DMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{Collider2D, ICollider2D, ICollider2DMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, object_2::IObject_2},
+    };
 }

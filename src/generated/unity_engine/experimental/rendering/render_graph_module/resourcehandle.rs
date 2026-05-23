@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/resourcehandle/ResourceHandle.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for ResourceHandle {
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
         const NAME: &'static str = "ResourceHandle";
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,17 +30,12 @@ mod __types {
 
     impl ::unity2::IlType for ResourceHandle {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
 
-#[cfg(
-    feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle-types"
-)]
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle")]
@@ -51,9 +47,7 @@ mod __ResourceHandle_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
@@ -66,39 +60,27 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    "get_index",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        "get_index",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_index(
-        this: ResourceHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_index(this: ResourceHandle, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ResourceHandle, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
@@ -111,30 +93,29 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    "get_type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        "get_type",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_type (this : ResourceHandle , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType{
-        let inner : extern "C" fn (ResourceHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_type :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_type(
+        this: ResourceHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType {
+        let inner : extern "C" fn (ResourceHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType = :: core :: mem :: transmute (__lookup_get_type :: get_method_info () . method_ptr ,) ;
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
@@ -147,35 +128,34 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    "set_type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        "set_type",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_type(
         this: ResourceHandle,
-        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType,
+        value: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ResourceHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ResourceHandle,
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_i_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
@@ -188,39 +168,27 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    "get_iType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        "get_iType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_i_type(
-        this: ResourceHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_i_type(this: ResourceHandle, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ResourceHandle, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_i_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_i_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
@@ -233,37 +201,39 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: ResourceHandle,
         value: i32,
-        r#type : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType,
+        r#type: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ResourceHandle , i32 , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ResourceHandle,
+            i32,
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, value, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
                 "op_Implicit",
@@ -275,34 +245,32 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit(
-        handle : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle,
+        handle: crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_implicit :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
@@ -315,41 +283,28 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    "IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        "IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_valid(
-        this: ResourceHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_valid(this: ResourceHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ResourceHandle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_new_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
                 "NewFrame",
@@ -361,38 +316,26 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    "NewFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        "NewFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn new_frame(
-        execution_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_new_frame::get_offset() as isize),
-        );
+    pub unsafe fn new_frame(execution_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_new_frame::get_method_info().method_ptr);
         inner(execution_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceHandle as ::unity2::ClassIdentity>::class(),
@@ -405,26 +348,19 @@ mod __ResourceHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceHandle as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceHandle as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -433,24 +369,16 @@ mod __ResourceHandle_unity2_raw {
 impl ResourceHandle {
     #[doc = "`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle)` overload"]
     pub fn op_implicit(
-        handle : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle >,
+        handle: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle>,
     ) -> i32 {
-        unsafe {
-            __ResourceHandle_unity2_raw::op_implicit(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ResourceHandle_unity2_raw::op_implicit(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`NewFrame(i32)` overload"]
     pub fn new_frame(execution_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __ResourceHandle_unity2_raw::new_frame(
-                ::core::convert::Into::into(execution_index),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ResourceHandle_unity2_raw::new_frame(::core::convert::Into::into(execution_index), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __ResourceHandle_unity2_raw::cctor(::core::option::Option::None) }
@@ -463,31 +391,34 @@ impl ResourceHandle {
     pub fn get_index(self) -> i32 {
         unsafe { __ResourceHandle_unity2_raw::get_index(self, ::core::option::Option::None) }
     }
-    #[doc = "`get_type()` overload"]    pub fn get_type (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType{
+
+    #[doc = "`get_type()` overload"]
+    pub fn get_type(self) -> crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType {
         unsafe { __ResourceHandle_unity2_raw::get_type(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_type(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType)` overload"]
     pub fn set_type(
         self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType >,
+        value: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType,
+        >,
     ) -> () {
-        unsafe {
-            __ResourceHandle_unity2_raw::set_type(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ResourceHandle_unity2_raw::set_type(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_iType()` overload"]
     pub fn get_i_type(self) -> i32 {
         unsafe { __ResourceHandle_unity2_raw::get_i_type(self, ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(i32, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType)` overload"]
     pub fn ctor(
         self,
         value: impl ::core::convert::Into<i32>,
-        r#type : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType >,
+        r#type: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType,
+        >,
     ) -> () {
         unsafe {
             __ResourceHandle_unity2_raw::ctor(
@@ -498,6 +429,7 @@ impl ResourceHandle {
             )
         }
     }
+
     #[doc = "`IsValid()` overload"]
     pub fn is_valid(self) -> bool {
         unsafe { __ResourceHandle_unity2_raw::is_valid(self, ::core::option::Option::None) }
@@ -508,10 +440,9 @@ impl ResourceHandle {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ResourceHandle;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

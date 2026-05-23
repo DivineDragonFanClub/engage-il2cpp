@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-profilecarddeleteoverlimitsequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardDeleteOverLimitSequence")]
@@ -24,21 +28,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct ProfileCardDeleteOverLimitSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for ProfileCardDeleteOverLimitSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "ProfileCardDeleteOverLimitSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -49,10 +46,7 @@ mod __types {
 
     impl ::unity2::IlType for ProfileCardDeleteOverLimitSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -79,11 +73,8 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::profilelist::ProfileList as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::profilelist::ProfileList as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -95,18 +86,15 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -114,24 +102,15 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         list: crate::app::profilelist::ProfileList,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            crate::app::profilelist::ProfileList,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, crate::app::profilelist::ProfileList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -144,41 +123,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_resources(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_resources::get_offset() as isize),
-        );
+    pub unsafe fn load_resources(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -191,41 +156,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoading",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoading",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading::get_offset() as isize),
-        );
+    pub unsafe fn is_loading(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -238,41 +189,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_resources(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_resources::get_offset() as isize),
-        );
+    pub unsafe fn release_resources(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fade {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -285,41 +222,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetFade",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetFade",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_fade(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fade::get_offset() as isize),
-        );
+    pub unsafe fn set_fade(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fade::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_restore_fade {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -332,41 +255,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "RestoreFade",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "RestoreFade",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn restore_fade(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_restore_fade::get_offset() as isize),
-        );
+    pub unsafe fn restore_fade(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_restore_fade::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_message_at_first {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -379,41 +288,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "MessageAtFirst",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "MessageAtFirst",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn message_at_first(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_message_at_first::get_offset() as isize),
-        );
+    pub unsafe fn message_at_first(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_message_at_first::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -426,41 +321,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+    pub unsafe fn create(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -473,41 +354,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenList",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open_list(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_open_list::get_offset() as isize),
-        );
+    pub unsafe fn open_list(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::class(),
@@ -520,41 +387,27 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "End",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "End",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn end(
-        this: ProfileCardDeleteOverLimitSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardDeleteOverLimitSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end::get_offset() as isize),
-        );
+    pub unsafe fn end(this: ProfileCardDeleteOverLimitSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardDeleteOverLimitSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::profilelist::ProfileList as ::unity2::IlType>::il_type(),
@@ -570,18 +423,15 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardDeleteOverLimitSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -589,15 +439,8 @@ mod __ProfileCardDeleteOverLimitSequence_unity2_raw {
         list: crate::app::profilelist::ProfileList,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::profilelist::ProfileList,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::profilelist::ProfileList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, list, __unity2_method_info)
     }
 }
@@ -624,132 +467,91 @@ pub trait IProfileCardDeleteOverLimitSequenceMethods: IProfileCardDeleteOverLimi
     #[doc = "`.ctor(crate::app::profilelist::ProfileList)` overload"]
     fn ctor(self, list: impl ::core::convert::Into<crate::app::profilelist::ProfileList>) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(list),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::ctor(__receiver, ::core::convert::Into::into(list), ::core::option::Option::None)
         }
     }
     #[doc = "`LoadResources()` overload"]
     fn load_resources(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::load_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoading()` overload"]
     fn is_loading(self) -> bool {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::is_loading(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseResources()` overload"]
     fn release_resources(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::release_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::release_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetFade()` overload"]
     fn set_fade(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::set_fade(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::set_fade(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RestoreFade()` overload"]
     fn restore_fade(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::restore_fade(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::restore_fade(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MessageAtFirst()` overload"]
     fn message_at_first(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::message_at_first(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::message_at_first(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Create()` overload"]
     fn create(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::create(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OpenList()` overload"]
     fn open_list(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::open_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::open_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`End()` overload"]
     fn end(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardDeleteOverLimitSequence_unity2_raw::end(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardDeleteOverLimitSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardDeleteOverLimitSequence_unity2_raw::end(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -776,20 +578,20 @@ impl ProfileCardDeleteOverLimitSequence {
 #[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProfileCardDeleteOverLimitSequence;
-    pub use super::IProfileCardDeleteOverLimitSequenceMethods;
-    pub use super::ProfileCardDeleteOverLimitSequence;
-    pub use super::ProfileCardDeleteOverLimitSequence_Label;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        IProfileCardDeleteOverLimitSequence, IProfileCardDeleteOverLimitSequenceMethods, ProfileCardDeleteOverLimitSequence,
+        ProfileCardDeleteOverLimitSequence_Label,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

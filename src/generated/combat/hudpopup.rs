@@ -2,14 +2,18 @@
 
 #[cfg(feature = "combat-hudpopup-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hudpopup/HUDPopup.md"))]
     #[::unity2::class(namespace = "Combat", name = "HUDPopup")]
@@ -36,52 +40,34 @@ mod __HUDPopup_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HUDPopup as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<HUDPopup as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(this: HUDPopup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HUDPopup, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HUDPopup, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_world_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HUDPopup as ::unity2::ClassIdentity>::class(),
                 "SetWorldPosition",
@@ -93,18 +79,15 @@ mod __HUDPopup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "SetWorldPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "SetWorldPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_world_position(
@@ -116,20 +99,14 @@ mod __HUDPopup_unity2_raw {
             HUDPopup,
             *mut crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_world_position::get_offset() as isize),
-        );
+        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(__lookup_set_world_position::get_method_info().method_ptr);
         inner(this, world_pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_world_position_and_display_number {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -145,18 +122,15 @@ mod __HUDPopup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "SetWorldPositionAndDisplayNumber",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "SetWorldPositionAndDisplayNumber",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_world_position_and_display_number(
@@ -170,24 +144,15 @@ mod __HUDPopup_unity2_raw {
             *mut crate::unity_engine::vector3::Vector3,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_world_position_and_display_number::get_offset() as isize),
-        );
+        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(__lookup_set_world_position_and_display_number::get_method_info().method_ptr);
         inner(this, world_pos, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set2_d_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HUDPopup as ::unity2::ClassIdentity>::class(),
                 "Set2DOffset",
@@ -199,18 +164,15 @@ mod __HUDPopup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "Set2DOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "Set2DOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set2_d_offset(
@@ -219,50 +181,30 @@ mod __HUDPopup_unity2_raw {
         offset_y: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::hudpopup::HUDPopup {
-        let inner: extern "C" fn(
-            HUDPopup,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set2_d_offset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HUDPopup, f32, f32, ::unity2::OptionalMethod) -> crate::combat::hudpopup::HUDPopup =
+            ::core::mem::transmute(__lookup_set2_d_offset::get_method_info().method_ptr);
         inner(this, offset_x, offset_y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HUDPopup as ::unity2::ClassIdentity>::class(),
-                "SetText",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<HUDPopup as ::unity2::ClassIdentity>::class(), "SetText", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "SetText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "SetText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_text(
@@ -270,121 +212,70 @@ mod __HUDPopup_unity2_raw {
         text: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::hudpopup::HUDPopup {
-        let inner: extern "C" fn(
-            HUDPopup,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HUDPopup, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::combat::hudpopup::HUDPopup =
+            ::core::mem::transmute(__lookup_set_text::get_method_info().method_ptr);
         inner(this, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HUDPopup as ::unity2::ClassIdentity>::class(),
-                "SetText",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<HUDPopup as ::unity2::ClassIdentity>::class(), "SetText", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "SetText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "SetText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_text_2(
-        this: HUDPopup,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::hudpopup::HUDPopup {
-        let inner: extern "C" fn(
-            HUDPopup,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_2::get_offset() as isize),
-        );
+    pub unsafe fn set_text_2(this: HUDPopup, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::hudpopup::HUDPopup {
+        let inner: extern "C" fn(HUDPopup, i32, ::unity2::OptionalMethod) -> crate::combat::hudpopup::HUDPopup =
+            ::core::mem::transmute(__lookup_set_text_2::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HUDPopup as ::unity2::ClassIdentity>::class(),
-                "GetText",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<HUDPopup as ::unity2::ClassIdentity>::class(), "GetText", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "GetText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "GetText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_text(
-        this: HUDPopup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_text(this: HUDPopup, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(HUDPopup, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_text::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HUDPopup as ::unity2::ClassIdentity>::class(),
                 "SetTextColor",
@@ -396,18 +287,15 @@ mod __HUDPopup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "SetTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "SetTextColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_text_color(
@@ -415,51 +303,33 @@ mod __HUDPopup_unity2_raw {
         color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::hudpopup::HUDPopup {
-        let inner: extern "C" fn(
-            HUDPopup,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HUDPopup, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> crate::combat::hudpopup::HUDPopup =
+            ::core::mem::transmute(__lookup_set_text_color::get_method_info().method_ptr);
         inner(this, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HUDPopup as ::unity2::ClassIdentity>::class(),
-                "SetImage",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<HUDPopup as ::unity2::ClassIdentity>::class(), "SetImage", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    "SetImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        "SetImage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_image(
@@ -473,52 +343,33 @@ mod __HUDPopup_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::sprite::Sprite,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_image::get_offset() as isize),
-        );
+        ) -> crate::combat::hudpopup::HUDPopup = ::core::mem::transmute(__lookup_set_image::get_method_info().method_ptr);
         inner(this, name, sprite, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HUDPopup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<HUDPopup as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HUDPopup as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HUDPopup as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: HUDPopup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HUDPopup, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HUDPopup, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -528,32 +379,16 @@ pub trait IHUDPopupMethods: IHUDPopup {
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HUDPopup_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetWorldPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    fn set_world_position(
-        self,
-    ) -> (
-        crate::combat::hudpopup::HUDPopup,
-        crate::unity_engine::vector3::Vector3,
-    ) {
+    fn set_world_position(self) -> (crate::combat::hudpopup::HUDPopup, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = {
-                __HUDPopup_unity2_raw::set_world_position(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = { __HUDPopup_unity2_raw::set_world_position(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
@@ -561,16 +396,10 @@ pub trait IHUDPopupMethods: IHUDPopup {
     fn set_world_position_and_display_number(
         self,
         value: impl ::core::convert::Into<i32>,
-    ) -> (
-        crate::combat::hudpopup::HUDPopup,
-        crate::unity_engine::vector3::Vector3,
-    ) {
+    ) -> (crate::combat::hudpopup::HUDPopup, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             let __ret = {
                 __HUDPopup_unity2_raw::set_world_position_and_display_number(
                     __receiver,
@@ -589,9 +418,7 @@ pub trait IHUDPopupMethods: IHUDPopup {
         offset_y: impl ::core::convert::Into<f32>,
     ) -> crate::combat::hudpopup::HUDPopup {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HUDPopup_unity2_raw::set2_d_offset(
                 __receiver,
                 ::core::convert::Into::into(offset_x),
@@ -601,60 +428,31 @@ pub trait IHUDPopupMethods: IHUDPopup {
         }
     }
     #[doc = "`SetText(::unity2::Il2CppString)` overload"]
-    fn set_text(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::combat::hudpopup::HUDPopup {
+    fn set_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::combat::hudpopup::HUDPopup {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HUDPopup_unity2_raw::set_text(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HUDPopup_unity2_raw::set_text(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
         }
     }
     #[doc = "`SetText(i32)` overload"]
-    fn set_text_2(
-        self,
-        value: impl ::core::convert::Into<i32>,
-    ) -> crate::combat::hudpopup::HUDPopup {
+    fn set_text_2(self, value: impl ::core::convert::Into<i32>) -> crate::combat::hudpopup::HUDPopup {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HUDPopup_unity2_raw::set_text_2(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HUDPopup_unity2_raw::set_text_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetText()` overload"]
     fn get_text(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HUDPopup_unity2_raw::get_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetTextColor(crate::unity_engine::color::Color)` overload"]
-    fn set_text_color(
-        self,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> crate::combat::hudpopup::HUDPopup {
+    fn set_text_color(self, color: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> crate::combat::hudpopup::HUDPopup {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HUDPopup_unity2_raw::set_text_color(
-                __receiver,
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HUDPopup_unity2_raw::set_text_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)
         }
     }
     #[doc = "`SetImage(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"]
@@ -664,9 +462,7 @@ pub trait IHUDPopupMethods: IHUDPopup {
         sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
     ) -> crate::combat::hudpopup::HUDPopup {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HUDPopup_unity2_raw::set_image(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -678,9 +474,7 @@ pub trait IHUDPopupMethods: IHUDPopup {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HUDPopup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HUDPopup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -693,13 +487,8 @@ impl<__T: IHUDPopup> IHUDPopupMethods for __T {}
 impl HUDPopup {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HUDPopup),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HUDPopup), ::core::stringify!(new),));
         <Self as IHUDPopupMethods>::ctor(this);
         this
     }
@@ -708,22 +497,19 @@ impl HUDPopup {
 #[cfg(feature = "combat-hudpopup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HUDPopup;
-    pub use super::IHUDPopup;
-    pub use super::IHUDPopupMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{HUDPopup, IHUDPopup, IHUDPopupMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,22 +2,19 @@
 
 #[cfg(feature = "moon_sharp-interpreter-dynamicexpressionexception-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::interpreterexception::{
-        IInterpreterException, InterpreterException,
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::{
+            interpreterexception::{IInterpreterException, InterpreterException},
+            scriptruntimeexception::{IScriptRuntimeException, ScriptRuntimeException},
+        },
+        system::object::{IObject, Object},
     };
-    use crate::moon_sharp::interpreter::scriptruntimeexception::{
-        IScriptRuntimeException, ScriptRuntimeException,
-    };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/dynamicexpressionexception/DynamicExpressionException.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter",
-        name = "DynamicExpressionException"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "DynamicExpressionException")]
     #[parent(crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException)]
     pub struct DynamicExpressionException {}
 }
@@ -34,9 +31,7 @@ mod __DynamicExpressionException_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
@@ -52,18 +47,15 @@ mod __DynamicExpressionException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicExpressionException as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DynamicExpressionException as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -77,22 +69,15 @@ mod __DynamicExpressionException_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, format, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DynamicExpressionException as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -104,34 +89,20 @@ mod __DynamicExpressionException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicExpressionException as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DynamicExpressionException as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: DynamicExpressionException,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DynamicExpressionException,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+    pub unsafe fn ctor_2(this: DynamicExpressionException, message: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DynamicExpressionException, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, message, __unity2_method_info)
     }
 }
@@ -146,9 +117,7 @@ pub trait IDynamicExpressionExceptionMethods: IDynamicExpressionException {
     ) -> () {
         unsafe {
             let __receiver =
-                <DynamicExpressionException as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DynamicExpressionException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DynamicExpressionException_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(format),
@@ -161,14 +130,8 @@ pub trait IDynamicExpressionExceptionMethods: IDynamicExpressionException {
     fn ctor_2(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <DynamicExpressionException as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DynamicExpressionException_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
+                <DynamicExpressionException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DynamicExpressionException_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(message), ::core::option::Option::None)
         }
     }
 }
@@ -179,10 +142,7 @@ impl<__T: IDynamicExpressionException> IDynamicExpressionExceptionMethods for __
 #[cfg(feature = "moon_sharp-interpreter-dynamicexpressionexception")]
 impl DynamicExpressionException {
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"]
-    pub fn new(
-        format: ::unity2::Il2CppString,
-        args: ::unity2::Array<crate::system::object::Object>,
-    ) -> Self {
+    pub fn new(format: ::unity2::Il2CppString, args: ::unity2::Array<crate::system::object::Object>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -211,17 +171,18 @@ impl DynamicExpressionException {
 #[cfg(feature = "moon_sharp-interpreter-dynamicexpressionexception")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DynamicExpressionException;
-    pub use super::IDynamicExpressionException;
-    pub use super::IDynamicExpressionExceptionMethods;
-    pub use crate::moon_sharp::interpreter::interpreterexception::IInterpreterException;
+    pub use super::{DynamicExpressionException, IDynamicExpressionException, IDynamicExpressionExceptionMethods};
     #[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
     pub use crate::moon_sharp::interpreter::interpreterexception::IInterpreterExceptionMethods;
-    pub use crate::moon_sharp::interpreter::interpreterexception::InterpreterException;
-    pub use crate::moon_sharp::interpreter::scriptruntimeexception::IScriptRuntimeException;
     #[cfg(feature = "moon_sharp-interpreter-scriptruntimeexception")]
     pub use crate::moon_sharp::interpreter::scriptruntimeexception::IScriptRuntimeExceptionMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::{
+            interpreterexception::{IInterpreterException, InterpreterException},
+            scriptruntimeexception::IScriptRuntimeException,
+        },
+        system::object::IObject,
+    };
 }

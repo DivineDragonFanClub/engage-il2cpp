@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-systemcalculatorinstance_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::calculatormanager::{CalculatorManager, ICalculatorManager};
-    use crate::app::calculatorutil::{CalculatorUtil, ICalculatorUtil};
-    use crate::app::systemcalculator::{ISystemCalculator, SystemCalculator};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            calculatormanager::{CalculatorManager, ICalculatorManager},
+            calculatorutil::{CalculatorUtil, ICalculatorUtil},
+            systemcalculator::{ISystemCalculator, SystemCalculator},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculatorinstance_1/SystemCalculatorInstance_1.md"))]
     #[::unity2::class(namespace = "App", name = "SystemCalculatorInstance`1")]
@@ -61,19 +65,17 @@ impl<T0: ::unity2::ClassIdentity> SystemCalculatorInstance_1<T0> {
 #[cfg(feature = "app-systemcalculatorinstance_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISystemCalculatorInstance_1;
-    pub use super::ISystemCalculatorInstance_1Methods;
-    pub use super::SystemCalculatorInstance_1;
-    pub use crate::app::calculatormanager::ICalculatorManager;
+    pub use super::{ISystemCalculatorInstance_1, ISystemCalculatorInstance_1Methods, SystemCalculatorInstance_1};
     #[cfg(feature = "app-calculatormanager")]
     pub use crate::app::calculatormanager::ICalculatorManagerMethods;
-    pub use crate::app::calculatorutil::ICalculatorUtil;
     #[cfg(feature = "app-calculatorutil")]
     pub use crate::app::calculatorutil::ICalculatorUtilMethods;
-    pub use crate::app::systemcalculator::ISystemCalculator;
     #[cfg(feature = "app-systemcalculator")]
     pub use crate::app::systemcalculator::ISystemCalculatorMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{calculatormanager::ICalculatorManager, calculatorutil::ICalculatorUtil, systemcalculator::ISystemCalculator},
+        system::object::IObject,
+    };
 }

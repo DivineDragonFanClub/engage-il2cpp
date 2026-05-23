@@ -2,37 +2,50 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-resourcemanagerruntimedata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/resourcemanagerruntimedata/ResourceManagerRuntimeData.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.Initialization",
-        name = "ResourceManagerRuntimeData"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Initialization", name = "ResourceManagerRuntimeData")]
     #[parent(crate::system::object::Object)]
     pub struct ResourceManagerRuntimeData {
-# [static_field] # [rename (name = "kCatalogAddress")] pub k_catalog_address : :: unity2 :: Il2CppString ,
-# [rename (name = "m_buildTarget")] pub m_build_target : :: unity2 :: Il2CppString ,
-# [rename (name = "m_SettingsHash")] pub m_settings_hash : :: unity2 :: Il2CppString ,
-# [rename (name = "m_CatalogLocations")] pub m_catalog_locations : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationdata :: ResourceLocationData > ,
-# [rename (name = "m_ProfileEvents")] pub m_profile_events : bool ,
-# [rename (name = "m_LogResourceManagerExceptions")] pub m_log_resource_manager_exceptions : bool ,
-# [rename (name = "m_ExtraInitializationData")] pub m_extra_initialization_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData > ,
-# [rename (name = "m_DisableCatalogUpdateOnStart")] pub m_disable_catalog_update_on_start : bool ,
-# [rename (name = "m_IsLocalCatalogInBundle")] pub m_is_local_catalog_in_bundle : bool ,
-# [rename (name = "m_CertificateHandlerType")] pub m_certificate_handler_type : crate :: unity_engine :: resource_management :: util :: serializedtype :: SerializedType ,
-# [rename (name = "m_AddressablesVersion")] pub m_addressables_version : :: unity2 :: Il2CppString ,
-# [rename (name = "m_maxConcurrentWebRequests")] pub m_max_concurrent_web_requests : i32 ,
-# [rename (name = "m_CatalogRequestsTimeout")] pub m_catalog_requests_timeout : i32 ,
-}
+        #[static_field]
+        #[rename(name = "kCatalogAddress")]
+        pub k_catalog_address: ::unity2::Il2CppString,
+        #[rename(name = "m_buildTarget")]
+        pub m_build_target: ::unity2::Il2CppString,
+        #[rename(name = "m_SettingsHash")]
+        pub m_settings_hash: ::unity2::Il2CppString,
+        #[rename(name = "m_CatalogLocations")]
+        pub m_catalog_locations: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::addressable_assets::resource_locators::resourcelocationdata::ResourceLocationData,
+        >,
+        #[rename(name = "m_ProfileEvents")]
+        pub m_profile_events: bool,
+        #[rename(name = "m_LogResourceManagerExceptions")]
+        pub m_log_resource_manager_exceptions: bool,
+        #[rename(name = "m_ExtraInitializationData")]
+        pub m_extra_initialization_data: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
+        >,
+        #[rename(name = "m_DisableCatalogUpdateOnStart")]
+        pub m_disable_catalog_update_on_start: bool,
+        #[rename(name = "m_IsLocalCatalogInBundle")]
+        pub m_is_local_catalog_in_bundle: bool,
+        #[rename(name = "m_CertificateHandlerType")]
+        pub m_certificate_handler_type: crate::unity_engine::resource_management::util::serializedtype::SerializedType,
+        #[rename(name = "m_AddressablesVersion")]
+        pub m_addressables_version: ::unity2::Il2CppString,
+        #[rename(name = "m_maxConcurrentWebRequests")]
+        pub m_max_concurrent_web_requests: i32,
+        #[rename(name = "m_CatalogRequestsTimeout")]
+        pub m_catalog_requests_timeout: i32,
+    }
 }
 
-#[cfg(
-    feature = "unity_engine-addressable_assets-initialization-resourcemanagerruntimedata-types"
-)]
+#[cfg(feature = "unity_engine-addressable_assets-initialization-resourcemanagerruntimedata-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-resourcemanagerruntimedata")]
@@ -44,9 +57,7 @@ mod __ResourceManagerRuntimeData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_build_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -59,43 +70,28 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_BuildTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_BuildTarget",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_build_target(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ResourceManagerRuntimeData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_build_target::get_offset() as isize),
-        );
+    pub unsafe fn get_build_target(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_build_target::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_build_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_BuildTarget",
@@ -107,18 +103,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_BuildTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_BuildTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_build_target(
@@ -126,24 +119,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ResourceManagerRuntimeData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_build_target::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_build_target::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_settings_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -156,43 +140,28 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_SettingsHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_SettingsHash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_settings_hash(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ResourceManagerRuntimeData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_settings_hash::get_offset() as isize),
-        );
+    pub unsafe fn get_settings_hash(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_settings_hash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_settings_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_SettingsHash",
@@ -204,18 +173,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_SettingsHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_SettingsHash",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_settings_hash(
@@ -223,24 +189,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ResourceManagerRuntimeData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_settings_hash::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_settings_hash::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_catalog_locations {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -253,30 +210,36 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_CatalogLocations",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_CatalogLocations",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_catalog_locations (this : ResourceManagerRuntimeData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationdata :: ResourceLocationData >{
-        let inner : extern "C" fn (ResourceManagerRuntimeData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationdata :: ResourceLocationData > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_catalog_locations :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_catalog_locations(
+        this: ResourceManagerRuntimeData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::addressable_assets::resource_locators::resourcelocationdata::ResourceLocationData,
+    > {
+        let inner: extern "C" fn(
+            ResourceManagerRuntimeData,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::addressable_assets::resource_locators::resourcelocationdata::ResourceLocationData,
+        > = ::core::mem::transmute(__lookup_get_catalog_locations::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_profile_events {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -289,41 +252,28 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_ProfileEvents",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_ProfileEvents",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_profile_events(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_profile_events(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_profile_events::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_profile_events::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_profile_events {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_ProfileEvents",
@@ -335,40 +285,27 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_ProfileEvents",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_ProfileEvents",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_profile_events(
-        this: ResourceManagerRuntimeData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_profile_events(this: ResourceManagerRuntimeData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ResourceManagerRuntimeData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_profile_events::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_profile_events::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_log_resource_manager_exceptions {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -381,41 +318,28 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_LogResourceManagerExceptions",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_LogResourceManagerExceptions",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_log_resource_manager_exceptions(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_log_resource_manager_exceptions(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_log_resource_manager_exceptions::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_log_resource_manager_exceptions::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_log_resource_manager_exceptions {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_LogResourceManagerExceptions",
@@ -427,18 +351,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_LogResourceManagerExceptions",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_LogResourceManagerExceptions",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_log_resource_manager_exceptions(
@@ -447,20 +368,14 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(ResourceManagerRuntimeData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_log_resource_manager_exceptions::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_log_resource_manager_exceptions::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_initialization_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -473,30 +388,36 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_InitializationObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_InitializationObjects",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_initialization_objects (this : ResourceManagerRuntimeData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData >{
-        let inner : extern "C" fn (ResourceManagerRuntimeData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_initialization_objects :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_initialization_objects(
+        this: ResourceManagerRuntimeData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
+    > {
+        let inner: extern "C" fn(
+            ResourceManagerRuntimeData,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
+        > = ::core::mem::transmute(__lookup_get_initialization_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_disable_catalog_update_on_startup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -509,41 +430,28 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_DisableCatalogUpdateOnStartup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_DisableCatalogUpdateOnStartup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_disable_catalog_update_on_startup(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_disable_catalog_update_on_startup(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_disable_catalog_update_on_startup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_disable_catalog_update_on_startup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_disable_catalog_update_on_startup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_DisableCatalogUpdateOnStartup",
@@ -555,18 +463,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_DisableCatalogUpdateOnStartup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_DisableCatalogUpdateOnStartup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_disable_catalog_update_on_startup(
@@ -575,20 +480,14 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(ResourceManagerRuntimeData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_disable_catalog_update_on_startup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_disable_catalog_update_on_startup::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_local_catalog_in_bundle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -601,41 +500,28 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_IsLocalCatalogInBundle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_IsLocalCatalogInBundle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_local_catalog_in_bundle(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_local_catalog_in_bundle(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_local_catalog_in_bundle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_local_catalog_in_bundle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_local_catalog_in_bundle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_IsLocalCatalogInBundle",
@@ -647,18 +533,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_IsLocalCatalogInBundle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_IsLocalCatalogInBundle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_is_local_catalog_in_bundle(
@@ -667,20 +550,14 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(ResourceManagerRuntimeData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_local_catalog_in_bundle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_local_catalog_in_bundle::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_certificate_handler_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -693,43 +570,31 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_CertificateHandlerType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_CertificateHandlerType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_certificate_handler_type(
         this: ResourceManagerRuntimeData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ResourceManagerRuntimeData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_certificate_handler_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_certificate_handler_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_certificate_handler_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_CertificateHandlerType",
@@ -741,18 +606,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_CertificateHandlerType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_CertificateHandlerType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_certificate_handler_type(
@@ -760,24 +622,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         value: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ResourceManagerRuntimeData,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_certificate_handler_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_certificate_handler_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_addressables_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -790,43 +643,31 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_AddressablesVersion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_AddressablesVersion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_addressables_version(
         this: ResourceManagerRuntimeData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ResourceManagerRuntimeData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_addressables_version::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_addressables_version::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_addressables_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_AddressablesVersion",
@@ -838,18 +679,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_AddressablesVersion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_AddressablesVersion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_addressables_version(
@@ -857,24 +695,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ResourceManagerRuntimeData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_addressables_version::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_addressables_version::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_concurrent_web_requests {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -887,41 +716,28 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_MaxConcurrentWebRequests",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_MaxConcurrentWebRequests",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_max_concurrent_web_requests(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_max_concurrent_web_requests(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_max_concurrent_web_requests::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_max_concurrent_web_requests::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_max_concurrent_web_requests {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_MaxConcurrentWebRequests",
@@ -933,18 +749,15 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_MaxConcurrentWebRequests",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_MaxConcurrentWebRequests",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_max_concurrent_web_requests(
@@ -953,20 +766,14 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(ResourceManagerRuntimeData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_max_concurrent_web_requests::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_max_concurrent_web_requests::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_catalog_requests_timeout {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -979,41 +786,28 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "get_CatalogRequestsTimeout",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "get_CatalogRequestsTimeout",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_catalog_requests_timeout(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_catalog_requests_timeout(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_catalog_requests_timeout::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_catalog_requests_timeout::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_catalog_requests_timeout {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
                 "set_CatalogRequestsTimeout",
@@ -1025,40 +819,27 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    "set_CatalogRequestsTimeout",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        "set_CatalogRequestsTimeout",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_catalog_requests_timeout(
-        this: ResourceManagerRuntimeData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_catalog_requests_timeout(this: ResourceManagerRuntimeData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ResourceManagerRuntimeData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_catalog_requests_timeout::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_catalog_requests_timeout::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::class(),
@@ -1071,30 +852,20 @@ mod __ResourceManagerRuntimeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManagerRuntimeData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ResourceManagerRuntimeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ResourceManagerRuntimeData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ResourceManagerRuntimeData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1105,115 +876,75 @@ pub trait IResourceManagerRuntimeDataMethods: IResourceManagerRuntimeData {
     fn get_build_target(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_build_target(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_build_target(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_BuildTarget(::unity2::Il2CppString)` overload"]
     fn set_build_target(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::set_build_target(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::set_build_target(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SettingsHash()` overload"]
     fn get_settings_hash(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_settings_hash(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_settings_hash(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SettingsHash(::unity2::Il2CppString)` overload"]
     fn set_settings_hash(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::set_settings_hash(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::set_settings_hash(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
-    #[doc = "`get_CatalogLocations()` overload"]    fn get_catalog_locations (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationdata :: ResourceLocationData >{
+    #[doc = "`get_CatalogLocations()` overload"]
+    fn get_catalog_locations(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::addressable_assets::resource_locators::resourcelocationdata::ResourceLocationData,
+    > {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_catalog_locations(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_catalog_locations(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ProfileEvents()` overload"]
     fn get_profile_events(self) -> bool {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_profile_events(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_profile_events(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ProfileEvents(bool)` overload"]
     fn set_profile_events(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::set_profile_events(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::set_profile_events(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LogResourceManagerExceptions()` overload"]
     fn get_log_resource_manager_exceptions(self) -> bool {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_log_resource_manager_exceptions(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_log_resource_manager_exceptions(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LogResourceManagerExceptions(bool)` overload"]
     fn set_log_resource_manager_exceptions(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceManagerRuntimeData_unity2_raw::set_log_resource_manager_exceptions(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1221,38 +952,31 @@ pub trait IResourceManagerRuntimeDataMethods: IResourceManagerRuntimeData {
             )
         }
     }
-    #[doc = "`get_InitializationObjects()` overload"]    fn get_initialization_objects (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData >{
+    #[doc = "`get_InitializationObjects()` overload"]
+    fn get_initialization_objects(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
+    > {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_initialization_objects(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_initialization_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_DisableCatalogUpdateOnStartup()` overload"]
     fn get_disable_catalog_update_on_startup(self) -> bool {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_disable_catalog_update_on_startup(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_disable_catalog_update_on_startup(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DisableCatalogUpdateOnStartup(bool)` overload"]
     fn set_disable_catalog_update_on_startup(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceManagerRuntimeData_unity2_raw::set_disable_catalog_update_on_startup(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1264,22 +988,15 @@ pub trait IResourceManagerRuntimeDataMethods: IResourceManagerRuntimeData {
     fn get_is_local_catalog_in_bundle(self) -> bool {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_is_local_catalog_in_bundle(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_is_local_catalog_in_bundle(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsLocalCatalogInBundle(bool)` overload"]
     fn set_is_local_catalog_in_bundle(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceManagerRuntimeData_unity2_raw::set_is_local_catalog_in_bundle(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1291,25 +1008,15 @@ pub trait IResourceManagerRuntimeDataMethods: IResourceManagerRuntimeData {
     fn get_certificate_handler_type(self) -> ::unity2::SystemType {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_certificate_handler_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_certificate_handler_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CertificateHandlerType(::unity2::SystemType)` overload"]
-    fn set_certificate_handler_type(
-        self,
-        value: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> () {
+    fn set_certificate_handler_type(self, value: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceManagerRuntimeData_unity2_raw::set_certificate_handler_type(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1321,25 +1028,15 @@ pub trait IResourceManagerRuntimeDataMethods: IResourceManagerRuntimeData {
     fn get_addressables_version(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_addressables_version(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_addressables_version(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AddressablesVersion(::unity2::Il2CppString)` overload"]
-    fn set_addressables_version(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_addressables_version(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceManagerRuntimeData_unity2_raw::set_addressables_version(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1351,22 +1048,15 @@ pub trait IResourceManagerRuntimeDataMethods: IResourceManagerRuntimeData {
     fn get_max_concurrent_web_requests(self) -> i32 {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_max_concurrent_web_requests(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_max_concurrent_web_requests(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MaxConcurrentWebRequests(i32)` overload"]
     fn set_max_concurrent_web_requests(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceManagerRuntimeData_unity2_raw::set_max_concurrent_web_requests(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1378,22 +1068,15 @@ pub trait IResourceManagerRuntimeDataMethods: IResourceManagerRuntimeData {
     fn get_catalog_requests_timeout(self) -> i32 {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceManagerRuntimeData_unity2_raw::get_catalog_requests_timeout(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ResourceManagerRuntimeData_unity2_raw::get_catalog_requests_timeout(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CatalogRequestsTimeout(i32)` overload"]
     fn set_catalog_requests_timeout(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceManagerRuntimeData_unity2_raw::set_catalog_requests_timeout(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1405,9 +1088,7 @@ pub trait IResourceManagerRuntimeDataMethods: IResourceManagerRuntimeData {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ResourceManagerRuntimeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceManagerRuntimeData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1435,9 +1116,7 @@ impl ResourceManagerRuntimeData {
 #[cfg(feature = "unity_engine-addressable_assets-initialization-resourcemanagerruntimedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IResourceManagerRuntimeData;
-    pub use super::IResourceManagerRuntimeDataMethods;
-    pub use super::ResourceManagerRuntimeData;
+    pub use super::{IResourceManagerRuntimeData, IResourceManagerRuntimeDataMethods, ResourceManagerRuntimeData};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

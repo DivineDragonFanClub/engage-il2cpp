@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/memory/experimental/memoryprofiler/MemoryProfiler.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Profiling.Memory.Experimental",
-        name = "MemoryProfiler"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Profiling.Memory.Experimental", name = "MemoryProfiler")]
     #[parent(crate::system::object::Object)]
     pub struct MemoryProfiler {
         #[static_field]
@@ -26,9 +23,7 @@ mod __types {
         >,
         #[static_field]
         #[rename(name = "createMetaData")]
-        pub create_meta_data: crate::system::action_1::Action_1<
-            crate::unity_engine::profiling::memory::experimental::metadata::MetaData,
-        >,
+        pub create_meta_data: crate::system::action_1::Action_1<crate::unity_engine::profiling::memory::experimental::metadata::MetaData>,
     }
 }
 
@@ -44,9 +39,7 @@ mod __MemoryProfiler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_metadata {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MemoryProfiler as ::unity2::ClassIdentity>::class(),
@@ -59,38 +52,27 @@ mod __MemoryProfiler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
-                    "PrepareMetadata",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                        "PrepareMetadata",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn prepare_metadata(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
+    pub unsafe fn prepare_metadata(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare_metadata::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_prepare_metadata::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_int_to_byte_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -107,18 +89,15 @@ mod __MemoryProfiler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
-                    "WriteIntToByteArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                        "WriteIntToByteArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write_int_to_byte_array(
@@ -128,20 +107,14 @@ mod __MemoryProfiler_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(::unity2::Array<u8>, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_write_int_to_byte_array::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_write_int_to_byte_array::get_method_info().method_ptr);
         inner(array, offset, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_string_to_byte_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -158,18 +131,15 @@ mod __MemoryProfiler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
-                    "WriteStringToByteArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                        "WriteStringToByteArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write_string_to_byte_array(
@@ -178,25 +148,15 @@ mod __MemoryProfiler_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::Array<u8>,
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_string_to_byte_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<u8>, i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_write_string_to_byte_array::get_method_info().method_ptr);
         inner(array, offset, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize_snapshot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -212,40 +172,27 @@ mod __MemoryProfiler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
-                    "FinalizeSnapshot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                        "FinalizeSnapshot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize_snapshot(
-        path: ::unity2::Il2CppString,
-        result: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize_snapshot(path: ::unity2::Il2CppString, result: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize_snapshot::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize_snapshot::get_method_info().method_ptr);
         inner(path, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_save_screenshot_to_disk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -266,18 +213,15 @@ mod __MemoryProfiler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
-                    "SaveScreenshotToDisk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemoryProfiler as ::unity2::ClassIdentity>::NAME,
+                        "SaveScreenshotToDisk",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn save_screenshot_to_disk(
@@ -299,21 +243,8 @@ mod __MemoryProfiler_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_save_screenshot_to_disk::get_offset() as isize),
-        );
-        inner(
-            path,
-            result,
-            pixels_ptr,
-            pixels_count,
-            format,
-            width,
-            height,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_save_screenshot_to_disk::get_method_info().method_ptr);
+        inner(path, result, pixels_ptr, pixels_count, format, width, height, __unity2_method_info)
     }
 }
 
@@ -323,6 +254,7 @@ impl MemoryProfiler {
     pub fn prepare_metadata() -> ::unity2::Array<u8> {
         unsafe { __MemoryProfiler_unity2_raw::prepare_metadata(::core::option::Option::None) }
     }
+
     #[doc = "`WriteIntToByteArray(::unity2::Array<u8>, i32, i32)` overload"]
     pub fn write_int_to_byte_array(
         array: impl ::core::convert::Into<::unity2::Array<u8>>,
@@ -338,6 +270,7 @@ impl MemoryProfiler {
             )
         }
     }
+
     #[doc = "`WriteStringToByteArray(::unity2::Array<u8>, i32, ::unity2::Il2CppString)` overload"]
     pub fn write_string_to_byte_array(
         array: impl ::core::convert::Into<::unity2::Array<u8>>,
@@ -353,11 +286,9 @@ impl MemoryProfiler {
             )
         }
     }
+
     #[doc = "`FinalizeSnapshot(::unity2::Il2CppString, bool)` overload"]
-    pub fn finalize_snapshot(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        result: impl ::core::convert::Into<bool>,
-    ) -> () {
+    pub fn finalize_snapshot(path: impl ::core::convert::Into<::unity2::Il2CppString>, result: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             __MemoryProfiler_unity2_raw::finalize_snapshot(
                 ::core::convert::Into::into(path),
@@ -366,6 +297,7 @@ impl MemoryProfiler {
             )
         }
     }
+
     #[doc = "`SaveScreenshotToDisk(::unity2::Il2CppString, bool, ::unity2::IntPtr, i32, crate::unity_engine::textureformat::TextureFormat, i32, i32)` overload"]
     pub fn save_screenshot_to_disk(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -394,8 +326,7 @@ impl MemoryProfiler {
 #[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMemoryProfiler;
-    pub use super::MemoryProfiler;
+    pub use super::{IMemoryProfiler, MemoryProfiler};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

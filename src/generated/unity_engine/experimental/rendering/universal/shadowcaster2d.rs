@@ -2,40 +2,53 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::{
-        IShadowCasterGroup2D, ShadowCasterGroup2D,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            experimental::rendering::universal::shadowcastergroup2d::{IShadowCasterGroup2D, ShadowCasterGroup2D},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/shadowcaster2d/ShadowCaster2D.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "ShadowCaster2D"
-    )]
-    # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D)]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "ShadowCaster2D")]
+    #[parent(crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)]
     pub struct ShadowCaster2D {
-# [rename (name = "m_HasRenderer")] pub m_has_renderer : bool ,
-# [rename (name = "m_UseRendererSilhouette")] pub m_use_renderer_silhouette : bool ,
-# [rename (name = "m_CastsShadows")] pub m_casts_shadows : bool ,
-# [rename (name = "m_SelfShadows")] pub m_self_shadows : bool ,
-# [rename (name = "m_ApplyToSortingLayers")] pub m_apply_to_sorting_layers : :: unity2 :: Array < i32 > ,
-# [rename (name = "m_ShapePath")] pub m_shape_path : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [rename (name = "m_ShapePathHash")] pub m_shape_path_hash : i32 ,
-# [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [rename (name = "m_InstanceId")] pub m_instance_id : i32 ,
-# [rename (name = "m_ShadowCasterGroup")] pub m_shadow_caster_group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D ,
-# [rename (name = "m_PreviousShadowCasterGroup")] pub m_previous_shadow_caster_group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D ,
-# [rename (name = "m_PreviousShadowGroup")] pub m_previous_shadow_group : i32 ,
-# [rename (name = "m_PreviousCastsShadows")] pub m_previous_casts_shadows : bool ,
-# [rename (name = "m_PreviousPathHash")] pub m_previous_path_hash : i32 ,
-}
+        #[rename(name = "m_HasRenderer")]
+        pub m_has_renderer: bool,
+        #[rename(name = "m_UseRendererSilhouette")]
+        pub m_use_renderer_silhouette: bool,
+        #[rename(name = "m_CastsShadows")]
+        pub m_casts_shadows: bool,
+        #[rename(name = "m_SelfShadows")]
+        pub m_self_shadows: bool,
+        #[rename(name = "m_ApplyToSortingLayers")]
+        pub m_apply_to_sorting_layers: ::unity2::Array<i32>,
+        #[rename(name = "m_ShapePath")]
+        pub m_shape_path: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "m_ShapePathHash")]
+        pub m_shape_path_hash: i32,
+        #[rename(name = "m_Mesh")]
+        pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[rename(name = "m_InstanceId")]
+        pub m_instance_id: i32,
+        #[rename(name = "m_ShadowCasterGroup")]
+        pub m_shadow_caster_group: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        #[rename(name = "m_PreviousShadowCasterGroup")]
+        pub m_previous_shadow_caster_group: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        #[rename(name = "m_PreviousShadowGroup")]
+        pub m_previous_shadow_group: i32,
+        #[rename(name = "m_PreviousCastsShadows")]
+        pub m_previous_casts_shadows: bool,
+        #[rename(name = "m_PreviousPathHash")]
+        pub m_previous_path_hash: i32,
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d-types")]
@@ -50,9 +63,7 @@ mod __ShadowCaster2D_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -65,41 +76,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "get_mesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "get_mesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mesh(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(
-            ShadowCaster2D,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mesh::get_offset() as isize),
-        );
+    pub unsafe fn get_mesh(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(__lookup_get_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shape_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -112,42 +109,30 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "get_shapePath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "get_shapePath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shape_path(
         this: ShadowCaster2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
-        let inner: extern "C" fn(
-            ShadowCaster2D,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shape_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> =
+            ::core::mem::transmute(__lookup_get_shape_path::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shape_path_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -160,41 +145,28 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "get_shapePathHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "get_shapePathHash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_shape_path_hash(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_shape_path_hash(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_shape_path_hash::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_shape_path_hash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shape_path_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
                 "set_shapePathHash",
@@ -206,42 +178,28 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "set_shapePathHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "set_shapePathHash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_shape_path_hash(
-        this: ShadowCaster2D,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_shape_path_hash(this: ShadowCaster2D, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_shape_path_hash::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_shape_path_hash::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_use_renderer_silhouette {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
                 "set_useRendererSilhouette",
@@ -253,40 +211,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "set_useRendererSilhouette",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "set_useRendererSilhouette",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_use_renderer_silhouette(
-        this: ShadowCaster2D,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_use_renderer_silhouette(this: ShadowCaster2D, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_use_renderer_silhouette::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_use_renderer_silhouette::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_use_renderer_silhouette {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -299,41 +244,28 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "get_useRendererSilhouette",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "get_useRendererSilhouette",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_use_renderer_silhouette(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_use_renderer_silhouette(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_use_renderer_silhouette::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_use_renderer_silhouette::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_self_shadows {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
                 "set_selfShadows",
@@ -345,40 +277,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "set_selfShadows",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "set_selfShadows",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_self_shadows(
-        this: ShadowCaster2D,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_self_shadows(this: ShadowCaster2D, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_self_shadows::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_self_shadows::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_self_shadows {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -391,41 +310,28 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "get_selfShadows",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "get_selfShadows",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_self_shadows(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_self_shadows(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_self_shadows::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_self_shadows::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_casts_shadows {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
                 "set_castsShadows",
@@ -437,40 +343,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "set_castsShadows",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "set_castsShadows",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_casts_shadows(
-        this: ShadowCaster2D,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_casts_shadows(this: ShadowCaster2D, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_casts_shadows::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_casts_shadows::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_casts_shadows {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -483,39 +376,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "get_castsShadows",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "get_castsShadows",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_casts_shadows(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_casts_shadows(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_casts_shadows::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_casts_shadows::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_default_sorting_layers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -528,40 +409,28 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "SetDefaultSortingLayers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "SetDefaultSortingLayers",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_default_sorting_layers(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<i32> {
+    pub unsafe fn set_default_sorting_layers(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<i32> =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_default_sorting_layers::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_default_sorting_layers::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_shadowed_layer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
                 "IsShadowedLayer",
@@ -573,40 +442,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "IsShadowedLayer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "IsShadowedLayer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_shadowed_layer(
-        this: ShadowCaster2D,
-        layer: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_shadowed_layer(this: ShadowCaster2D, layer: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ShadowCaster2D, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_shadowed_layer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_shadowed_layer::get_method_info().method_ptr);
         inner(this, layer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -619,39 +475,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -664,39 +508,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -709,39 +541,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -754,39 +574,27 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: ShadowCaster2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCaster2D as ::unity2::ClassIdentity>::class(),
@@ -799,27 +607,20 @@ mod __ShadowCaster2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCaster2D as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: ShadowCaster2D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCaster2D, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -828,9 +629,7 @@ mod __ShadowCaster2D_unity2_raw {
 impl ShadowCaster2D {
     #[doc = "`SetDefaultSortingLayers()` overload"]
     pub fn set_default_sorting_layers() -> ::unity2::Array<i32> {
-        unsafe {
-            __ShadowCaster2D_unity2_raw::set_default_sorting_layers(::core::option::Option::None)
-        }
+        unsafe { __ShadowCaster2D_unity2_raw::set_default_sorting_layers(::core::option::Option::None) }
     }
 }
 
@@ -839,170 +638,112 @@ pub trait IShadowCaster2DMethods: IShadowCaster2D {
     #[doc = "`get_mesh()` overload"]
     fn get_mesh(self) -> crate::unity_engine::mesh::Mesh {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_shapePath()` overload"]
     fn get_shape_path(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::get_shape_path(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_shapePathHash()` overload"]
     fn get_shape_path_hash(self) -> i32 {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShadowCaster2D_unity2_raw::get_shape_path_hash(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShadowCaster2D_unity2_raw::get_shape_path_hash(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_shapePathHash(i32)` overload"]
     fn set_shape_path_hash(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShadowCaster2D_unity2_raw::set_shape_path_hash(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShadowCaster2D_unity2_raw::set_shape_path_hash(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`set_useRendererSilhouette(bool)` overload"]
     fn set_use_renderer_silhouette(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShadowCaster2D_unity2_raw::set_use_renderer_silhouette(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShadowCaster2D_unity2_raw::set_use_renderer_silhouette(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_useRendererSilhouette()` overload"]
     fn get_use_renderer_silhouette(self) -> bool {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShadowCaster2D_unity2_raw::get_use_renderer_silhouette(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShadowCaster2D_unity2_raw::get_use_renderer_silhouette(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_selfShadows(bool)` overload"]
     fn set_self_shadows(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShadowCaster2D_unity2_raw::set_self_shadows(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShadowCaster2D_unity2_raw::set_self_shadows(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_selfShadows()` overload"]
     fn get_self_shadows(self) -> bool {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::get_self_shadows(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_castsShadows(bool)` overload"]
     fn set_casts_shadows(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShadowCaster2D_unity2_raw::set_casts_shadows(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShadowCaster2D_unity2_raw::set_casts_shadows(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_castsShadows()` overload"]
     fn get_casts_shadows(self) -> bool {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::get_casts_shadows(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsShadowedLayer(i32)` overload"]
     fn is_shadowed_layer(self, layer: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShadowCaster2D_unity2_raw::is_shadowed_layer(
-                __receiver,
-                ::core::convert::Into::into(layer),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShadowCaster2D_unity2_raw::is_shadowed_layer(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
         }
     }
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowCaster2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCaster2D_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1030,25 +771,24 @@ impl ShadowCaster2D {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShadowCaster2D;
-    pub use super::IShadowCaster2DMethods;
-    pub use super::ShadowCaster2D;
-    pub use crate::system::object::IObject;
+    pub use super::{IShadowCaster2D, IShadowCaster2DMethods, ShadowCaster2D};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::IShadowCasterGroup2D;
     #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcastergroup2d")]
     pub use crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::IShadowCasterGroup2DMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour, component::IComponent, experimental::rendering::universal::shadowcastergroup2d::IShadowCasterGroup2D,
+            monobehaviour::IMonoBehaviour, object_2::IObject_2,
+        },
+    };
 }

@@ -2,18 +2,17 @@
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-slice_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/slice_1/Slice_1.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.DataStructs", name = "Slice`1")]
     #[parent(crate::system::object::Object)]
     pub struct Slice_1<T0: ::unity2::ClassIdentity> {
         #[rename(name = "m_SourceList")]
-        pub m_source_list:
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>,
+        pub m_source_list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>,
         #[rename(name = "m_From")]
         pub m_from: i32,
         #[rename(name = "m_Length")]
@@ -65,15 +64,11 @@ impl<T0: ::unity2::ClassIdentity> Slice_1<T0> {
 
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
 
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
     #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 
     #[doc = "`ToArray()` overload"]
     #[method(name = "ToArray", args = 0)]
@@ -123,19 +118,9 @@ impl<T0: ::unity2::ClassIdentity> Slice_1<T0> {
 #[cfg(feature = "moon_sharp-interpreter-data_structs-slice_1")]
 impl<T0: ::unity2::ClassIdentity> Slice_1<T0> {
     #[doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>, i32, i32, bool)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>,
-        from: i32,
-        length: i32,
-        reversed: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Slice_1),
-                ::core::stringify!(new),
-            )
-        });
+    pub fn new(list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>, from: i32, length: i32, reversed: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Slice_1), ::core::stringify!(new),));
         <Self as ISlice_1Methods<T0>>::ctor(this, list, from, length, reversed);
         this
     }
@@ -144,9 +129,7 @@ impl<T0: ::unity2::ClassIdentity> Slice_1<T0> {
 #[cfg(feature = "moon_sharp-interpreter-data_structs-slice_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISlice_1;
-    pub use super::ISlice_1Methods;
-    pub use super::Slice_1;
+    pub use super::{ISlice_1, ISlice_1Methods, Slice_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

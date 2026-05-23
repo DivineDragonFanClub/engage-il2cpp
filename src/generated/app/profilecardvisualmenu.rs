@@ -2,17 +2,23 @@
 
 #[cfg(feature = "app-profilecardvisualmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::gridmenu::{GridMenu, IGridMenu};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            gridmenu::{GridMenu, IGridMenu},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_DisposeEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardVisualMenu.DisposeEventHandler")]
@@ -39,11 +45,9 @@ mod __types {
         #[rename(name = "m_Selects")]
         pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
         #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
+        pub m_decide_event_handler: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
         #[rename(name = "m_DisposeEventHandler")]
-        pub m_dispose_event_handler:
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
+        pub m_dispose_event_handler: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_DecideEventHandler.md"))]
@@ -53,21 +57,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_Category.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct ProfileCardVisualMenu_Category {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for ProfileCardVisualMenu_Category {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "ProfileCardVisualMenu.Category";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -78,10 +75,7 @@ mod __types {
 
     impl ::unity2::IlType for ProfileCardVisualMenu_Category {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -124,9 +118,7 @@ mod __ProfileCardVisualMenu_DisposeEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -142,18 +134,15 @@ mod __ProfileCardVisualMenu_DisposeEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -167,20 +156,14 @@ mod __ProfileCardVisualMenu_DisposeEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
@@ -193,48 +176,32 @@ mod __ProfileCardVisualMenu_DisposeEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke(
-        this: ProfileCardVisualMenu_DisposeEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardVisualMenu_DisposeEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+    pub unsafe fn invoke(this: ProfileCardVisualMenu_DisposeEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardVisualMenu_DisposeEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardvisualmenu")]
-pub trait IProfileCardVisualMenu_DisposeEventHandlerMethods:
-    IProfileCardVisualMenu_DisposeEventHandler
-{
+pub trait IProfileCardVisualMenu_DisposeEventHandlerMethods: IProfileCardVisualMenu_DisposeEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < ProfileCardVisualMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ProfileCardVisualMenu_DisposeEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ProfileCardVisualMenu_DisposeEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -246,20 +213,16 @@ pub trait IProfileCardVisualMenu_DisposeEventHandlerMethods:
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> () {
         unsafe {
-            let __receiver = < ProfileCardVisualMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardVisualMenu_DisposeEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardVisualMenu_DisposeEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardVisualMenu_DisposeEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-profilecardvisualmenu")]
-impl<__T: IProfileCardVisualMenu_DisposeEventHandler>
-    IProfileCardVisualMenu_DisposeEventHandlerMethods for __T
-{
-}
+impl<__T: IProfileCardVisualMenu_DisposeEventHandler> IProfileCardVisualMenu_DisposeEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-profilecardvisualmenu")]
 impl ProfileCardVisualMenu_DisposeEventHandler {
@@ -286,10 +249,16 @@ mod __ProfileCardVisualMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardvisualmenucontent :: ProfileCardVisualMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardroot::ProfileCardRoot as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -301,18 +270,15 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -321,8 +287,8 @@ mod __ProfileCardVisualMenu_unity2_raw {
         profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
         my_profile_card_temp: crate::app::profilecard::ProfileCard,
         initial_category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
-        decide_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler,
-        dispose_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler,
+        decide_event_handler: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
+        dispose_event_handler: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::profilecardvisualmenu::ProfileCardVisualMenu {
         let inner: extern "C" fn(
@@ -334,12 +300,7 @@ mod __ProfileCardVisualMenu_unity2_raw {
             crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
             crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::profilecardvisualmenu::ProfileCardVisualMenu = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> crate::app::profilecardvisualmenu::ProfileCardVisualMenu = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(
             super_,
             menu_content,
@@ -355,10 +316,12 @@ mod __ProfileCardVisualMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
                 "CreateMenuItem",
@@ -370,18 +333,15 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_menu_item(
@@ -389,35 +349,31 @@ mod __ProfileCardVisualMenu_unity2_raw {
         my_profile_card_temp: crate::app::profilecard::ProfileCard,
         initial_decided_index: *mut i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
         let inner: extern "C" fn(
             crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
             crate::app::profilecard::ProfileCard,
             *mut i32,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_menu_item::get_offset() as isize),
-        );
-        inner(
-            category,
-            my_profile_card_temp,
-            initial_decided_index,
-            __unity2_method_info,
-        )
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> =
+            ::core::mem::transmute(__lookup_create_menu_item::get_method_info().method_ptr);
+        inner(category, my_profile_card_temp, initial_decided_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: gridmenucontent :: GridMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::gridmenucontent::GridMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardroot::ProfileCardRoot as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -429,39 +385,32 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: ProfileCardVisualMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::gridmenucontent::GridMenuContent,
         profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
         my_profile_card_temp: crate::app::profilecard::ProfileCard,
         category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
         initial_decided_index: i32,
-        decide_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler,
-        dispose_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler,
+        decide_event_handler: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
+        dispose_event_handler: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ProfileCardVisualMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             crate::app::gridmenucontent::GridMenuContent,
             crate::app::profilecardroot::ProfileCardRoot,
             crate::app::profilecard::ProfileCard,
@@ -470,11 +419,7 @@ mod __ProfileCardVisualMenu_unity2_raw {
             crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
             crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             menu_item_list,
@@ -492,11 +437,8 @@ mod __ProfileCardVisualMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
                 "OnBuild",
@@ -508,40 +450,27 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnBuild",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_build(
-        this: ProfileCardVisualMenu,
-        is_first_build: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_build(this: ProfileCardVisualMenu, is_first_build: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardVisualMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_build::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
         inner(this, is_first_build, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rebuild_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
@@ -554,39 +483,27 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "RebuildMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "RebuildMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rebuild_menu(
-        this: ProfileCardVisualMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn rebuild_menu(this: ProfileCardVisualMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardVisualMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_rebuild_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_rebuild_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
@@ -599,41 +516,27 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: ProfileCardVisualMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ProfileCardVisualMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: ProfileCardVisualMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ProfileCardVisualMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
@@ -646,43 +549,31 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_select(
         this: ProfileCardVisualMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuselect::BasicMenuSelect {
-        let inner: extern "C" fn(
-            ProfileCardVisualMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuselect::BasicMenuSelect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_select::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardVisualMenu, ::unity2::OptionalMethod) -> crate::app::basicmenuselect::BasicMenuSelect =
+            ::core::mem::transmute(__lookup_get_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_decided {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
                 "UpdateDecided",
@@ -694,42 +585,28 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateDecided",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateDecided",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_decided(
-        this: ProfileCardVisualMenu,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn update_decided(this: ProfileCardVisualMenu, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ProfileCardVisualMenu, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_decided::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_decided::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_decided_removable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
                 "UpdateDecidedRemovable",
@@ -741,42 +618,28 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateDecidedRemovable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateDecidedRemovable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_decided_removable(
-        this: ProfileCardVisualMenu,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_decided_removable(this: ProfileCardVisualMenu, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardVisualMenu, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_decided_removable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_decided_removable::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_profile_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
                 "UpdateProfileData",
@@ -788,18 +651,15 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateProfileData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateProfileData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_profile_data(
@@ -807,24 +667,15 @@ mod __ProfileCardVisualMenu_unity2_raw {
         remove: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ProfileCardVisualMenu,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_profile_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardVisualMenu, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_update_profile_data::get_method_info().method_ptr);
         inner(this, remove, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
@@ -837,41 +688,28 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateContent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_content(
-        this: ProfileCardVisualMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_content(this: ProfileCardVisualMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardVisualMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_content::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_card_root {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
                 "UpdateCardRoot",
@@ -883,40 +721,27 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCardRoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCardRoot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_card_root(
-        this: ProfileCardVisualMenu,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_card_root(this: ProfileCardVisualMenu, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardVisualMenu, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_card_root::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_card_root::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
@@ -929,39 +754,27 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: ProfileCardVisualMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: ProfileCardVisualMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardVisualMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu as ::unity2::ClassIdentity>::class(),
@@ -974,26 +787,19 @@ mod __ProfileCardVisualMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1003,20 +809,12 @@ impl ProfileCardVisualMenu {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_content: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent,
-        >,
+        menu_content: impl ::core::convert::Into<crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent>,
         profile_card_root: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot>,
         my_profile_card_temp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
-        initial_category: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
-        >,
-        dispose_event_handler: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
-        >,
+        initial_category: impl ::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler>,
+        dispose_event_handler: impl ::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler>,
     ) -> crate::app::profilecardvisualmenu::ProfileCardVisualMenu {
         unsafe {
             __ProfileCardVisualMenu_unity2_raw::create_bind(
@@ -1031,16 +829,13 @@ impl ProfileCardVisualMenu {
             )
         }
     }
+
     #[doc = "`CreateMenuItem(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, crate::app::profilecard::ProfileCard, *muti32)` overload"]
     pub fn create_menu_item(
-        category: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
-        >,
+        category: impl ::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category>,
         my_profile_card_temp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
     ) -> (
-        crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         i32,
     ) {
         unsafe {
@@ -1056,6 +851,7 @@ impl ProfileCardVisualMenu {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __ProfileCardVisualMenu_unity2_raw::cctor(::core::option::Option::None) }
@@ -1067,29 +863,18 @@ pub trait IProfileCardVisualMenuMethods: IProfileCardVisualMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, i32, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` overload"]
     fn ctor(
         self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
         menu_content: impl ::core::convert::Into<crate::app::gridmenucontent::GridMenuContent>,
         profile_card_root: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot>,
         my_profile_card_temp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
-        category: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
-        >,
+        category: impl ::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category>,
         initial_decided_index: impl ::core::convert::Into<i32>,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
-        >,
-        dispose_event_handler: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
-        >,
+        decide_event_handler: impl ::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler>,
+        dispose_event_handler: impl ::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardVisualMenu_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_item_list),
@@ -1107,65 +892,48 @@ pub trait IProfileCardVisualMenuMethods: IProfileCardVisualMenu {
     #[doc = "`OnBuild(bool)` overload"]
     fn on_build(self, is_first_build: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardVisualMenu_unity2_raw::on_build(
-                __receiver,
-                ::core::convert::Into::into(is_first_build),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardVisualMenu_unity2_raw::on_build(__receiver, ::core::convert::Into::into(is_first_build), ::core::option::Option::None)
         }
     }
     #[doc = "`RebuildMenu()` overload"]
     fn rebuild_menu(self) -> () {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardVisualMenu_unity2_raw::rebuild_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardVisualMenu_unity2_raw::rebuild_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardVisualMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetSelect()` overload"]
     fn get_select(self) -> crate::app::basicmenuselect::BasicMenuSelect {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardVisualMenu_unity2_raw::get_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateDecided(i32)` overload"]
     fn update_decided(self, menu_item_index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardVisualMenu_unity2_raw::update_decided(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardVisualMenu_unity2_raw::update_decided(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateDecidedRemovable(i32)` overload"]
     fn update_decided_removable(self, menu_item_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardVisualMenu_unity2_raw::update_decided_removable(
                 __receiver,
                 ::core::convert::Into::into(menu_item_index),
@@ -1174,39 +942,26 @@ pub trait IProfileCardVisualMenuMethods: IProfileCardVisualMenu {
         }
     }
     #[doc = "`UpdateProfileData(bool)` overload"]
-    fn update_profile_data(
-        self,
-        remove: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
+    fn update_profile_data(self, remove: impl ::core::convert::Into<bool>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardVisualMenu_unity2_raw::update_profile_data(
-                __receiver,
-                ::core::convert::Into::into(remove),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardVisualMenu_unity2_raw::update_profile_data(__receiver, ::core::convert::Into::into(remove), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateContent()` overload"]
     fn update_content(self) -> () {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardVisualMenu_unity2_raw::update_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardVisualMenu_unity2_raw::update_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateCardRoot(i32)` overload"]
     fn update_card_root(self, menu_item_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardVisualMenu_unity2_raw::update_card_root(
                 __receiver,
                 ::core::convert::Into::into(menu_item_index),
@@ -1217,9 +972,8 @@ pub trait IProfileCardVisualMenuMethods: IProfileCardVisualMenu {
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
-            let __receiver = <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProfileCardVisualMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardVisualMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
@@ -1232,16 +986,14 @@ impl<__T: IProfileCardVisualMenu> IProfileCardVisualMenuMethods for __T {}
 impl ProfileCardVisualMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, i32, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::gridmenucontent::GridMenuContent,
         profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
         my_profile_card_temp: crate::app::profilecard::ProfileCard,
         category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
         initial_decided_index: i32,
-        decide_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler,
-        dispose_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler,
+        decide_event_handler: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
+        dispose_event_handler: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -1274,9 +1026,7 @@ mod __ProfileCardVisualMenu_DecideEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -1292,18 +1042,15 @@ mod __ProfileCardVisualMenu_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1317,21 +1064,18 @@ mod __ProfileCardVisualMenu_DecideEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -1343,18 +1087,15 @@ mod __ProfileCardVisualMenu_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -1368,27 +1109,19 @@ mod __ProfileCardVisualMenu_DecideEventHandler_unity2_raw {
             crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, category, id, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardvisualmenu")]
-pub trait IProfileCardVisualMenu_DecideEventHandlerMethods:
-    IProfileCardVisualMenu_DecideEventHandler
-{
+pub trait IProfileCardVisualMenu_DecideEventHandlerMethods: IProfileCardVisualMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < ProfileCardVisualMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ProfileCardVisualMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ProfileCardVisualMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -1400,13 +1133,13 @@ pub trait IProfileCardVisualMenu_DecideEventHandlerMethods:
     #[doc = "`Invoke(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, ::unity2::Il2CppString)` overload"]
     fn invoke(
         self,
-        category: impl ::core::convert::Into<
-            crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
-        >,
+        category: impl ::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category>,
         id: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = < ProfileCardVisualMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ProfileCardVisualMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ProfileCardVisualMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(category),
@@ -1418,10 +1151,7 @@ pub trait IProfileCardVisualMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-profilecardvisualmenu")]
-impl<__T: IProfileCardVisualMenu_DecideEventHandler>
-    IProfileCardVisualMenu_DecideEventHandlerMethods for __T
-{
-}
+impl<__T: IProfileCardVisualMenu_DecideEventHandler> IProfileCardVisualMenu_DecideEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-profilecardvisualmenu")]
 impl ProfileCardVisualMenu_DecideEventHandler {
@@ -1442,38 +1172,30 @@ impl ProfileCardVisualMenu_DecideEventHandler {
 #[cfg(feature = "app-profilecardvisualmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProfileCardVisualMenu;
-    pub use super::IProfileCardVisualMenuMethods;
-    pub use super::IProfileCardVisualMenu_DecideEventHandler;
-    pub use super::IProfileCardVisualMenu_DecideEventHandlerMethods;
-    pub use super::IProfileCardVisualMenu_DisposeEventHandler;
-    pub use super::IProfileCardVisualMenu_DisposeEventHandlerMethods;
-    pub use super::ProfileCardVisualMenu;
-    pub use super::ProfileCardVisualMenu_Category;
-    pub use super::ProfileCardVisualMenu_DecideEventHandler;
-    pub use super::ProfileCardVisualMenu_DisposeEventHandler;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        IProfileCardVisualMenu, IProfileCardVisualMenuMethods, IProfileCardVisualMenu_DecideEventHandler,
+        IProfileCardVisualMenu_DecideEventHandlerMethods, IProfileCardVisualMenu_DisposeEventHandler,
+        IProfileCardVisualMenu_DisposeEventHandlerMethods, ProfileCardVisualMenu, ProfileCardVisualMenu_Category,
+        ProfileCardVisualMenu_DecideEventHandler, ProfileCardVisualMenu_DisposeEventHandler,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::gridmenu::IGridMenu;
     #[cfg(feature = "app-gridmenu")]
     pub use crate::app::gridmenu::IGridMenuMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, gridmenu::IGridMenu, procinst::IProcInst},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

@@ -2,43 +2,16 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::universal::scriptablerenderpass::{
-        IScriptableRenderPass, ScriptableRenderPass,
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "ColorGradingLutPass"
-    )]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct ColorGradingLutPass {
-        #[rename(name = "m_LutBuilderLdr")]
-        pub m_lut_builder_ldr: crate::unity_engine::material::Material,
-        #[rename(name = "m_LutBuilderHdr")]
-        pub m_lut_builder_hdr: crate::unity_engine::material::Material,
-        #[rename(name = "m_HdrLutFormat")]
-        pub m_hdr_lut_format:
-            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        #[rename(name = "m_LdrLutFormat")]
-        pub m_ldr_lut_format:
-            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        #[rename(name = "m_InternalLut")]
-        pub m_internal_lut:
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_HableCurve")]
-        pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass_ShaderConstants.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "ColorGradingLutPass.ShaderConstants"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "ColorGradingLutPass.ShaderConstants")]
     #[parent(crate::system::object::Object)]
     pub struct ColorGradingLutPass_ShaderConstants {
         #[static_field]
@@ -114,10 +87,75 @@ mod __types {
         #[rename(name = "_CurveSatVsSat")]
         pub curve_sat_vs_sat: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "ColorGradingLutPass")]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct ColorGradingLutPass {
+        #[rename(name = "m_LutBuilderLdr")]
+        pub m_lut_builder_ldr: crate::unity_engine::material::Material,
+        #[rename(name = "m_LutBuilderHdr")]
+        pub m_lut_builder_hdr: crate::unity_engine::material::Material,
+        #[rename(name = "m_HdrLutFormat")]
+        pub m_hdr_lut_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[rename(name = "m_LdrLutFormat")]
+        pub m_ldr_lut_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[rename(name = "m_InternalLut")]
+        pub m_internal_lut: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_HableCurve")]
+        pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ColorGradingLutPass_ShaderConstants_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorGradingLutPass_ShaderConstants as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ColorGradingLutPass_ShaderConstants as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+impl ColorGradingLutPass_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ColorGradingLutPass_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
 #[doc(hidden)]
@@ -128,10 +166,11 @@ mod __ColorGradingLutPass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::postprocessdata::PostProcessData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ColorGradingLutPass as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -143,18 +182,15 @@ mod __ColorGradingLutPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -168,21 +204,16 @@ mod __ColorGradingLutPass_unity2_raw {
             crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
             crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, evt, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ColorGradingLutPass as ::unity2::ClassIdentity>::class(),
                 "Setup",
@@ -194,44 +225,38 @@ mod __ColorGradingLutPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
         this: ColorGradingLutPass,
-        internal_lut : * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+        internal_lut: *mut crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ColorGradingLutPass,
             *mut crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, internal_lut, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ColorGradingLutPass as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -243,24 +268,21 @@ mod __ColorGradingLutPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
         this: ColorGradingLutPass,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -268,21 +290,16 @@ mod __ColorGradingLutPass_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_finish_camera_stack_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ColorGradingLutPass as ::unity2::ClassIdentity>::class(),
                 "OnFinishCameraStackRendering",
@@ -294,18 +311,15 @@ mod __ColorGradingLutPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
-                    "OnFinishCameraStackRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
+                        "OnFinishCameraStackRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_finish_camera_stack_rendering(
@@ -313,24 +327,15 @@ mod __ColorGradingLutPass_unity2_raw {
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ColorGradingLutPass,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_finish_camera_stack_rendering::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ColorGradingLutPass, crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_finish_camera_stack_rendering::get_method_info().method_ptr);
         inner(this, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cleanup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ColorGradingLutPass as ::unity2::ClassIdentity>::class(),
@@ -343,30 +348,20 @@ mod __ColorGradingLutPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
-                    "Cleanup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ColorGradingLutPass as ::unity2::ClassIdentity>::NAME,
+                        "Cleanup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn cleanup(
-        this: ColorGradingLutPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn cleanup(this: ColorGradingLutPass, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ColorGradingLutPass, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_cleanup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_cleanup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -376,17 +371,11 @@ pub trait IColorGradingLutPassMethods: IColorGradingLutPass {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` overload"]
     fn ctor(
         self,
-        evt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        >,
-        data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-        >,
+        evt: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
+        data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::postprocessdata::PostProcessData>,
     ) -> () {
         unsafe {
-            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ColorGradingLutPass_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(evt),
@@ -396,38 +385,22 @@ pub trait IColorGradingLutPassMethods: IColorGradingLutPass {
         }
     }
     #[doc = "`Setup(*mutcrate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
-    fn setup(
-        self,
-    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+    fn setup(self) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
         unsafe {
-            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-            >::uninit();
-            __ColorGradingLutPass_unity2_raw::setup(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>::uninit();
+            __ColorGradingLutPass_unity2_raw::setup(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn execute(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ColorGradingLutPass_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -438,14 +411,9 @@ pub trait IColorGradingLutPassMethods: IColorGradingLutPass {
         }
     }
     #[doc = "`OnFinishCameraStackRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn on_finish_camera_stack_rendering(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> () {
+    fn on_finish_camera_stack_rendering(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
         unsafe {
-            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ColorGradingLutPass_unity2_raw::on_finish_camera_stack_rendering(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -456,9 +424,7 @@ pub trait IColorGradingLutPassMethods: IColorGradingLutPass {
     #[doc = "`Cleanup()` overload"]
     fn cleanup(self) -> () {
         unsafe {
-            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ColorGradingLutPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ColorGradingLutPass_unity2_raw::cleanup(__receiver, ::core::option::Option::None)
         }
     }
@@ -488,74 +454,14 @@ impl ColorGradingLutPass {
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ColorGradingLutPass_ShaderConstants_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorGradingLutPass_ShaderConstants as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ColorGradingLutPass_ShaderConstants as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
-impl ColorGradingLutPass_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __ColorGradingLutPass_ShaderConstants_unity2_raw::cctor(::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::ColorGradingLutPass;
-    pub use super::ColorGradingLutPass_ShaderConstants;
-    pub use super::IColorGradingLutPass;
-    pub use super::IColorGradingLutPassMethods;
-    pub use super::IColorGradingLutPass_ShaderConstants;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ColorGradingLutPass, ColorGradingLutPass_ShaderConstants, IColorGradingLutPass, IColorGradingLutPassMethods,
+        IColorGradingLutPass_ShaderConstants,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
+    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
 }

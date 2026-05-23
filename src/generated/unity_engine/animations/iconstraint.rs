@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-animations-iconstraint-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animations/iconstraint/IConstraint.md"))]
     #[::unity2::class(namespace = "UnityEngine.Animations", name = "IConstraint")]
@@ -17,6 +17,5 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-animations-iconstraint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IConstraint;
-    pub use super::IIConstraint;
+    pub use super::{IConstraint, IIConstraint};
 }

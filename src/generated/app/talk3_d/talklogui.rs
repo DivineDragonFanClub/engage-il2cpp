@@ -2,10 +2,33 @@
 
 #[cfg(feature = "app-talk3_d-talklogui-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Cursor")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkLogUI_Cursor {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_PosFrom")]
+        pub m_pos_from: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_PosTo")]
+        pub m_pos_to: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[rename(name = "m_Duration")]
+        pub m_duration: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkLogUI {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_ScrollBar.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.ScrollBar")]
@@ -61,33 +84,240 @@ mod __types {
         #[rename(name = "WinUpDownAnimSpeed")]
         pub win_up_down_anim_speed: f32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkLogUI {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Cursor")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkLogUI_Cursor {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_PosFrom")]
-        pub m_pos_from: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_PosTo")]
-        pub m_pos_to: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_Duration")]
-        pub m_duration: f32,
-    }
 }
 
 #[cfg(feature = "app-talk3_d-talklogui-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkLogUI_Cursor_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkLogUI_Cursor,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkLogUI_Cursor, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update(this: TalkLogUI_Cursor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkLogUI_Cursor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::talk3_d::talklogui::TalkLogUI_Window as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                "MovePosition",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                        "MovePosition",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn move_position(
+        this: TalkLogUI_Cursor,
+        win: crate::app::talk3_d::talklogui::TalkLogUI_Window,
+        msec: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkLogUI_Cursor, crate::app::talk3_d::talklogui::TalkLogUI_Window, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_move_position::get_method_info().method_ptr);
+        inner(this, win, msec, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+pub trait ITalkLogUI_CursorMethods: ITalkLogUI_Cursor {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Cursor_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Cursor_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]
+    fn move_position(
+        self,
+        win: impl ::core::convert::Into<crate::app::talk3_d::talklogui::TalkLogUI_Window>,
+        msec: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Cursor_unity2_raw::move_position(
+                __receiver,
+                ::core::convert::Into::into(win),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl<__T: ITalkLogUI_Cursor> ITalkLogUI_CursorMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl TalkLogUI_Cursor {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkLogUI_Cursor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkLogUI_CursorMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkLogUI_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkLogUI as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TalkLogUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkLogUI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+pub trait ITalkLogUIMethods: ITalkLogUI {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl<__T: ITalkLogUI> ITalkLogUIMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl TalkLogUI {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TalkLogUI), ::core::stringify!(new),));
+        <Self as ITalkLogUIMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-talk3_d-talklogui")]
 #[doc(hidden)]
@@ -98,9 +328,7 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -116,18 +344,15 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -136,25 +361,15 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         item_max: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_ScrollBar,
-            crate::unity_engine::gameobject::GameObject,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkLogUI_ScrollBar, crate::unity_engine::gameobject::GameObject, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root_object, item_max, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
@@ -167,39 +382,27 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: TalkLogUI_ScrollBar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: TalkLogUI_ScrollBar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_slide_handle_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -216,18 +419,15 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "MoveSlideHandlePos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                        "MoveSlideHandlePos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn move_slide_handle_pos(
@@ -237,28 +437,16 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         msec: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_ScrollBar,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_slide_handle_pos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkLogUI_ScrollBar, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_move_slide_handle_pos::get_method_info().method_ptr);
         inner(this, scroll_index, log_num, msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_slide_handle_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
                 "SetSlideHandleSize",
@@ -270,40 +458,27 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "SetSlideHandleSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                        "SetSlideHandleSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_slide_handle_size(
-        this: TalkLogUI_ScrollBar,
-        log_num: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_slide_handle_size(this: TalkLogUI_ScrollBar, log_num: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_ScrollBar, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_slide_handle_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_slide_handle_size::get_method_info().method_ptr);
         inner(this, log_num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
@@ -316,39 +491,27 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show(
-        this: TalkLogUI_ScrollBar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show(this: TalkLogUI_ScrollBar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
@@ -361,30 +524,20 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: TalkLogUI_ScrollBar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide(this: TalkLogUI_ScrollBar, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -398,9 +551,7 @@ pub trait ITalkLogUI_ScrollBarMethods: ITalkLogUI_ScrollBar {
         item_max: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_ScrollBar_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(root_object),
@@ -412,9 +563,7 @@ pub trait ITalkLogUI_ScrollBarMethods: ITalkLogUI_ScrollBar {
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_ScrollBar_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
@@ -426,9 +575,7 @@ pub trait ITalkLogUI_ScrollBarMethods: ITalkLogUI_ScrollBar {
         msec: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_ScrollBar_unity2_raw::move_slide_handle_pos(
                 __receiver,
                 ::core::convert::Into::into(scroll_index),
@@ -441,31 +588,21 @@ pub trait ITalkLogUI_ScrollBarMethods: ITalkLogUI_ScrollBar {
     #[doc = "`SetSlideHandleSize(f32)` overload"]
     fn set_slide_handle_size(self, log_num: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_ScrollBar_unity2_raw::set_slide_handle_size(
-                __receiver,
-                ::core::convert::Into::into(log_num),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_ScrollBar_unity2_raw::set_slide_handle_size(__receiver, ::core::convert::Into::into(log_num), ::core::option::Option::None)
         }
     }
     #[doc = "`Show()` overload"]
     fn show(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_ScrollBar_unity2_raw::show(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Hide()` overload"]
     fn hide(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_ScrollBar_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
@@ -499,9 +636,7 @@ mod __TalkLogUI_Window_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -517,18 +652,15 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -537,25 +669,15 @@ mod __TalkLogUI_Window_unity2_raw {
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_Window,
-            i32,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkLogUI_Window, i32, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, index, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -572,18 +694,15 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(
@@ -593,32 +712,15 @@ mod __TalkLogUI_Window_unity2_raw {
         is_voice_event_playing: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_Window,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
-        inner(
-            this,
-            is_selected,
-            is_voice_event_exist,
-            is_voice_event_playing,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(TalkLogUI_Window, bool, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, is_selected, is_voice_event_exist, is_voice_event_playing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -631,39 +733,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "GetIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "GetIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_index(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_index(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_selected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -681,18 +771,15 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "IsSelected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "IsSelected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_selected(
@@ -703,34 +790,15 @@ mod __TalkLogUI_Window_unity2_raw {
         scroll_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            TalkLogUI_Window,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_selected::get_offset() as isize),
-        );
-        inner(
-            this,
-            log_add_count,
-            view_window_max,
-            cursor_index,
-            scroll_index,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(TalkLogUI_Window, i32, i32, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_selected::get_method_info().method_ptr);
+        inner(this, log_add_count, view_window_max, cursor_index, scroll_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -743,43 +811,28 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "GetTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "GetTransform",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_transform(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            TalkLogUI_Window,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_transform::get_offset() as isize),
-        );
+    pub unsafe fn get_transform(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_talker_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
                 "SetTalkerName",
@@ -791,45 +844,28 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "SetTalkerName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "SetTalkerName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_talker_name(
-        this: TalkLogUI_Window,
-        talker_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_Window,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_talker_name::get_offset() as isize),
-        );
+    pub unsafe fn set_talker_name(this: TalkLogUI_Window, talker_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkLogUI_Window, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_talker_name::get_method_info().method_ptr);
         inner(this, talker_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_body_mess {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
                 "SetBodyMess",
@@ -841,43 +877,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "SetBodyMess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "SetBodyMess",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_body_mess(
-        this: TalkLogUI_Window,
-        body_mess: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_Window,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_body_mess::get_offset() as isize),
-        );
+    pub unsafe fn set_body_mess(this: TalkLogUI_Window, body_mess: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkLogUI_Window, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_body_mess::get_method_info().method_ptr);
         inner(this, body_mess, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -890,39 +910,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -935,39 +943,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_key_help {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -980,39 +976,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "ShowKeyHelp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "ShowKeyHelp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show_key_help(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show_key_help(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_key_help::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show_key_help::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_key_help {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -1025,39 +1009,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "HideKeyHelp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "HideKeyHelp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_key_help(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_key_help(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_key_help::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_key_help::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_anim_key_help_idle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -1070,39 +1042,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "PlayAnim_KeyHelpIdle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "PlayAnim_KeyHelpIdle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_anim_key_help_idle(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_anim_key_help_idle(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_anim_key_help_idle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_anim_key_help_idle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_anim_key_help_playing_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -1115,39 +1075,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "PlayAnim_KeyHelpPlayingVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "PlayAnim_KeyHelpPlayingVoice",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_anim_key_help_playing_voice(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_anim_key_help_playing_voice(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_anim_key_help_playing_voice::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_anim_key_help_playing_voice::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing_move_animation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -1160,41 +1108,28 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "IsPlayingMoveAnimation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "IsPlayingMoveAnimation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing_move_animation(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_playing_move_animation(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_playing_move_animation::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_playing_move_animation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_up_anim {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
                 "PlayUpAnim",
@@ -1206,42 +1141,28 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "PlayUpAnim",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "PlayUpAnim",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_up_anim(
-        this: TalkLogUI_Window,
-        is_move_fast: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_up_anim(this: TalkLogUI_Window, is_move_fast: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_Window, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_up_anim::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_up_anim::get_method_info().method_ptr);
         inner(this, is_move_fast, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_down_anim {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
                 "PlayDownAnim",
@@ -1253,40 +1174,27 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "PlayDownAnim",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "PlayDownAnim",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_down_anim(
-        this: TalkLogUI_Window,
-        is_move_fast: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_down_anim(this: TalkLogUI_Window, is_move_fast: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkLogUI_Window, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_down_anim::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_down_anim::get_method_info().method_ptr);
         inner(this, is_move_fast, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_window_up_down_anim_duration_msec {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkLogUI_Window as ::unity2::ClassIdentity>::class(),
@@ -1299,30 +1207,20 @@ mod __TalkLogUI_Window_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
-                    "GetWindowUpDownAnimDurationMsec",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkLogUI_Window as ::unity2::ClassIdentity>::NAME,
+                        "GetWindowUpDownAnimDurationMsec",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_window_up_down_anim_duration_msec(
-        this: TalkLogUI_Window,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_window_up_down_anim_duration_msec(this: TalkLogUI_Window, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TalkLogUI_Window, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_window_up_down_anim_duration_msec::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_window_up_down_anim_duration_msec::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1336,9 +1234,7 @@ pub trait ITalkLogUI_WindowMethods: ITalkLogUI_Window {
         root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -1355,9 +1251,7 @@ pub trait ITalkLogUI_WindowMethods: ITalkLogUI_Window {
         is_voice_event_playing: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::update(
                 __receiver,
                 ::core::convert::Into::into(is_selected),
@@ -1370,9 +1264,7 @@ pub trait ITalkLogUI_WindowMethods: ITalkLogUI_Window {
     #[doc = "`GetIndex()` overload"]
     fn get_index(self) -> i32 {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::get_index(__receiver, ::core::option::Option::None)
         }
     }
@@ -1385,9 +1277,7 @@ pub trait ITalkLogUI_WindowMethods: ITalkLogUI_Window {
         scroll_index: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::is_selected(
                 __receiver,
                 ::core::convert::Into::into(log_add_count),
@@ -1401,149 +1291,92 @@ pub trait ITalkLogUI_WindowMethods: ITalkLogUI_Window {
     #[doc = "`GetTransform()` overload"]
     fn get_transform(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::get_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetTalkerName(::unity2::Il2CppString)` overload"]
-    fn set_talker_name(
-        self,
-        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_talker_name(self, talker_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Window_unity2_raw::set_talker_name(
-                __receiver,
-                ::core::convert::Into::into(talker_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Window_unity2_raw::set_talker_name(__receiver, ::core::convert::Into::into(talker_name), ::core::option::Option::None)
         }
     }
     #[doc = "`SetBodyMess(::unity2::Il2CppString)` overload"]
     fn set_body_mess(self, body_mess: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Window_unity2_raw::set_body_mess(
-                __receiver,
-                ::core::convert::Into::into(body_mess),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Window_unity2_raw::set_body_mess(__receiver, ::core::convert::Into::into(body_mess), ::core::option::Option::None)
         }
     }
     #[doc = "`Show()` overload"]
     fn show(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::show(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Hide()` overload"]
     fn hide(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShowKeyHelp()` overload"]
     fn show_key_help(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::show_key_help(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HideKeyHelp()` overload"]
     fn hide_key_help(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkLogUI_Window_unity2_raw::hide_key_help(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayAnim_KeyHelpIdle()` overload"]
     fn play_anim_key_help_idle(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Window_unity2_raw::play_anim_key_help_idle(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Window_unity2_raw::play_anim_key_help_idle(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayAnim_KeyHelpPlayingVoice()` overload"]
     fn play_anim_key_help_playing_voice(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Window_unity2_raw::play_anim_key_help_playing_voice(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Window_unity2_raw::play_anim_key_help_playing_voice(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPlayingMoveAnimation()` overload"]
     fn is_playing_move_animation(self) -> bool {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Window_unity2_raw::is_playing_move_animation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Window_unity2_raw::is_playing_move_animation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayUpAnim(bool)` overload"]
     fn play_up_anim(self, is_move_fast: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Window_unity2_raw::play_up_anim(
-                __receiver,
-                ::core::convert::Into::into(is_move_fast),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Window_unity2_raw::play_up_anim(__receiver, ::core::convert::Into::into(is_move_fast), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayDownAnim(bool)` overload"]
     fn play_down_anim(self, is_move_fast: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Window_unity2_raw::play_down_anim(
-                __receiver,
-                ::core::convert::Into::into(is_move_fast),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Window_unity2_raw::play_down_anim(__receiver, ::core::convert::Into::into(is_move_fast), ::core::option::Option::None)
         }
     }
     #[doc = "`GetWindowUpDownAnimDurationMsec()` overload"]
     fn get_window_up_down_anim_duration_msec(self) -> f32 {
         unsafe {
-            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Window_unity2_raw::get_window_up_down_anim_duration_msec(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkLogUI_Window as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkLogUI_Window_unity2_raw::get_window_up_down_anim_duration_msec(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1569,322 +1402,11 @@ impl TalkLogUI_Window {
 
 #[cfg(feature = "app-talk3_d-talklogui")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkLogUI_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: TalkLogUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkLogUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-pub trait ITalkLogUIMethods: ITalkLogUI {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl<__T: ITalkLogUI> ITalkLogUIMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkLogUI),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkLogUIMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkLogUI_Cursor_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkLogUI_Cursor,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_Cursor,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: TalkLogUI_Cursor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkLogUI_Cursor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::talk3_d::talklogui::TalkLogUI_Window as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
-                "MovePosition",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "MovePosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn move_position(
-        this: TalkLogUI_Cursor,
-        win: crate::app::talk3_d::talklogui::TalkLogUI_Window,
-        msec: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkLogUI_Cursor,
-            crate::app::talk3_d::talklogui::TalkLogUI_Window,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_position::get_offset() as isize),
-        );
-        inner(this, win, msec, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-pub trait ITalkLogUI_CursorMethods: ITalkLogUI_Cursor {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Cursor_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Cursor_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]
-    fn move_position(
-        self,
-        win: impl ::core::convert::Into<crate::app::talk3_d::talklogui::TalkLogUI_Window>,
-        msec: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_Cursor_unity2_raw::move_position(
-                __receiver,
-                ::core::convert::Into::into(win),
-                ::core::convert::Into::into(msec),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl<__T: ITalkLogUI_Cursor> ITalkLogUI_CursorMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI_Cursor {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkLogUI_Cursor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkLogUI_CursorMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::ITalkLogUI;
-    pub use super::ITalkLogUIMethods;
-    pub use super::ITalkLogUI_Cursor;
-    pub use super::ITalkLogUI_CursorMethods;
-    pub use super::ITalkLogUI_ScrollBar;
-    pub use super::ITalkLogUI_ScrollBarMethods;
-    pub use super::ITalkLogUI_Window;
-    pub use super::ITalkLogUI_WindowMethods;
-    pub use super::TalkLogUI;
-    pub use super::TalkLogUI_Cursor;
-    pub use super::TalkLogUI_ScrollBar;
-    pub use super::TalkLogUI_Window;
+    pub use super::{
+        ITalkLogUI, ITalkLogUIMethods, ITalkLogUI_Cursor, ITalkLogUI_CursorMethods, ITalkLogUI_ScrollBar, ITalkLogUI_ScrollBarMethods,
+        ITalkLogUI_Window, ITalkLogUI_WindowMethods, TalkLogUI, TalkLogUI_Cursor, TalkLogUI_ScrollBar, TalkLogUI_Window,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

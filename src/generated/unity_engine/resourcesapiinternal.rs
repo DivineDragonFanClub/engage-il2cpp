@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-resourcesapiinternal-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resourcesapiinternal/ResourcesAPIInternal.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ResourcesAPIInternal")]
@@ -25,11 +25,8 @@ mod __ResourcesAPIInternal_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_find_objects_of_type_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourcesAPIInternal as ::unity2::ClassIdentity>::class(),
                 "FindObjectsOfTypeAll",
@@ -41,44 +38,31 @@ mod __ResourcesAPIInternal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
-                    "FindObjectsOfTypeAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
+                        "FindObjectsOfTypeAll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_objects_of_type_all(
         r#type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_objects_of_type_all::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> =
+            ::core::mem::transmute(__lookup_find_objects_of_type_all::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_shader_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourcesAPIInternal as ::unity2::ClassIdentity>::class(),
                 "FindShaderByName",
@@ -90,41 +74,30 @@ mod __ResourcesAPIInternal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
-                    "FindShaderByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
+                        "FindShaderByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_shader_by_name(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::shader::Shader {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::shader::Shader = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_shader_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader =
+            ::core::mem::transmute(__lookup_find_shader_by_name::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -140,18 +113,15 @@ mod __ResourcesAPIInternal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load(
@@ -159,24 +129,15 @@ mod __ResourcesAPIInternal_unity2_raw {
         system_type_instance: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(path, system_type_instance, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -192,18 +153,15 @@ mod __ResourcesAPIInternal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
-                    "LoadAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
+                        "LoadAll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_all(
@@ -215,21 +173,14 @@ mod __ResourcesAPIInternal_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_all::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(__lookup_load_all::get_method_info().method_ptr);
         inner(path, system_type_instance, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_async_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -245,18 +196,15 @@ mod __ResourcesAPIInternal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
-                    "LoadAsyncInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
+                        "LoadAsyncInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_async_internal(
@@ -268,22 +216,16 @@ mod __ResourcesAPIInternal_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::resourcerequest::ResourceRequest = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_async_internal::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::resourcerequest::ResourceRequest =
+            ::core::mem::transmute(__lookup_load_async_internal::get_method_info().method_ptr);
         inner(path, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourcesAPIInternal as ::unity2::ClassIdentity>::class(),
                 "UnloadAsset",
@@ -295,32 +237,20 @@ mod __ResourcesAPIInternal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
-                    "UnloadAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourcesAPIInternal as ::unity2::ClassIdentity>::NAME,
+                        "UnloadAsset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload_asset(
-        asset_to_unload: crate::unity_engine::object_2::Object_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_asset::get_offset() as isize),
-        );
+    pub unsafe fn unload_asset(asset_to_unload: crate::unity_engine::object_2::Object_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload_asset::get_method_info().method_ptr);
         inner(asset_to_unload, __unity2_method_info)
     }
 }
@@ -331,24 +261,14 @@ impl ResourcesAPIInternal {
     pub fn find_objects_of_type_all(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
     ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> {
-        unsafe {
-            __ResourcesAPIInternal_unity2_raw::find_objects_of_type_all(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ResourcesAPIInternal_unity2_raw::find_objects_of_type_all(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`FindShaderByName(::unity2::Il2CppString)` overload"]
-    pub fn find_shader_by_name(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::shader::Shader {
-        unsafe {
-            __ResourcesAPIInternal_unity2_raw::find_shader_by_name(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn find_shader_by_name(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::shader::Shader {
+        unsafe { __ResourcesAPIInternal_unity2_raw::find_shader_by_name(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`Load(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
     pub fn load(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -362,6 +282,7 @@ impl ResourcesAPIInternal {
             )
         }
     }
+
     #[doc = "`LoadAll(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
     pub fn load_all(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -375,6 +296,7 @@ impl ResourcesAPIInternal {
             )
         }
     }
+
     #[doc = "`LoadAsyncInternal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
     pub fn load_async_internal(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -388,24 +310,17 @@ impl ResourcesAPIInternal {
             )
         }
     }
+
     #[doc = "`UnloadAsset(crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn unload_asset(
-        asset_to_unload: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
-        unsafe {
-            __ResourcesAPIInternal_unity2_raw::unload_asset(
-                ::core::convert::Into::into(asset_to_unload),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn unload_asset(asset_to_unload: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
+        unsafe { __ResourcesAPIInternal_unity2_raw::unload_asset(::core::convert::Into::into(asset_to_unload), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-resourcesapiinternal")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IResourcesAPIInternal;
-    pub use super::ResourcesAPIInternal;
+    pub use super::{IResourcesAPIInternal, ResourcesAPIInternal};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

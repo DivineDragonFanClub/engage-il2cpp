@@ -2,14 +2,40 @@
 
 #[cfg(feature = "app-fishingconfig-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_AngleBorder.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingConfig.AngleBorder")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingConfig_AngleBorder {
+        #[rename(name = "High")]
+        pub high: f32,
+        #[rename(name = "Middle")]
+        pub middle: f32,
+        #[rename(name = "Low")]
+        pub low: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_FixCameraConfig.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingConfig.FixCameraConfig")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingConfig_FixCameraConfig {
+        #[rename(name = "Pos")]
+        pub pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "Rot")]
+        pub rot: crate::unity_engine::vector3::Vector3,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig.md"))]
     #[::unity2::class(namespace = "App", name = "FishingConfig")]
@@ -170,324 +196,10 @@ mod __types {
         #[rename(name = "m_BattleCounterSplashInterval")]
         pub m_battle_counter_splash_interval: f32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_FixCameraConfig.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingConfig.FixCameraConfig")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingConfig_FixCameraConfig {
-        #[rename(name = "Pos")]
-        pub pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "Rot")]
-        pub rot: crate::unity_engine::vector3::Vector3,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_AngleBorder.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingConfig.AngleBorder")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingConfig_AngleBorder {
-        #[rename(name = "High")]
-        pub high: f32,
-        #[rename(name = "Middle")]
-        pub middle: f32,
-        #[rename(name = "Low")]
-        pub low: f32,
-    }
 }
 
 #[cfg(feature = "app-fishingconfig-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-fishingconfig")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingConfig_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingConfig as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingConfig as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start(this: FishingConfig, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingConfig, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingConfig as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingConfig as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: FishingConfig,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingConfig, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingConfig as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingConfig as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: FishingConfig, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingConfig, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fishingconfig")]
-pub trait IFishingConfigMethods: IFishingConfig {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <FishingConfig as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingConfig_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <FishingConfig as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingConfig_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <FishingConfig as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingConfig_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-fishingconfig")]
-impl<__T: IFishingConfig> IFishingConfigMethods for __T {}
-
-#[cfg(feature = "app-fishingconfig")]
-impl FishingConfig {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingConfig),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingConfigMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-fishingconfig")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingConfig_FixCameraConfig_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingConfig_FixCameraConfig as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingConfig_FixCameraConfig as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FishingConfig_FixCameraConfig,
-        set_pos: crate::unity_engine::vector3::Vector3,
-        set_rot: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FishingConfig_FixCameraConfig,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, set_pos, set_rot, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fishingconfig")]
-pub trait IFishingConfig_FixCameraConfigMethods: IFishingConfig_FixCameraConfig {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    fn ctor(
-        self,
-        set_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        set_rot: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FishingConfig_FixCameraConfig as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingConfig_FixCameraConfig_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(set_pos),
-                ::core::convert::Into::into(set_rot),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-fishingconfig")]
-impl<__T: IFishingConfig_FixCameraConfig> IFishingConfig_FixCameraConfigMethods for __T {}
-
-#[cfg(feature = "app-fishingconfig")]
-impl FishingConfig_FixCameraConfig {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` — overload selector"]
-    pub fn new(
-        set_pos: crate::unity_engine::vector3::Vector3,
-        set_rot: crate::unity_engine::vector3::Vector3,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingConfig_FixCameraConfig),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingConfig_FixCameraConfigMethods>::ctor(this, set_pos, set_rot);
-        this
-    }
-}
 
 #[cfg(feature = "app-fishingconfig")]
 #[doc(hidden)]
@@ -498,9 +210,7 @@ mod __FishingConfig_AngleBorder_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingConfig_AngleBorder as ::unity2::ClassIdentity>::class(),
@@ -513,39 +223,27 @@ mod __FishingConfig_AngleBorder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingConfig_AngleBorder as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingConfig_AngleBorder as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: FishingConfig_AngleBorder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: FishingConfig_AngleBorder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingConfig_AngleBorder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -562,18 +260,15 @@ mod __FishingConfig_AngleBorder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingConfig_AngleBorder as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingConfig_AngleBorder as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -583,17 +278,8 @@ mod __FishingConfig_AngleBorder_unity2_raw {
         set_low: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingConfig_AngleBorder,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingConfig_AngleBorder, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, set_high, set_middle, set_low, __unity2_method_info)
     }
 }
@@ -604,9 +290,7 @@ pub trait IFishingConfig_AngleBorderMethods: IFishingConfig_AngleBorder {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <FishingConfig_AngleBorder as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <FishingConfig_AngleBorder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingConfig_AngleBorder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -619,9 +303,7 @@ pub trait IFishingConfig_AngleBorderMethods: IFishingConfig_AngleBorder {
     ) -> () {
         unsafe {
             let __receiver =
-                <FishingConfig_AngleBorder as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <FishingConfig_AngleBorder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingConfig_AngleBorder_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(set_high),
@@ -667,29 +349,247 @@ impl FishingConfig_AngleBorder {
 
 #[cfg(feature = "app-fishingconfig")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FishingConfig_FixCameraConfig_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingConfig_FixCameraConfig as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingConfig_FixCameraConfig as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FishingConfig_FixCameraConfig,
+        set_pos: crate::unity_engine::vector3::Vector3,
+        set_rot: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FishingConfig_FixCameraConfig,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, set_pos, set_rot, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fishingconfig")]
+pub trait IFishingConfig_FixCameraConfigMethods: IFishingConfig_FixCameraConfig {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    fn ctor(
+        self,
+        set_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        set_rot: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <FishingConfig_FixCameraConfig as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingConfig_FixCameraConfig_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(set_pos),
+                ::core::convert::Into::into(set_rot),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-fishingconfig")]
+impl<__T: IFishingConfig_FixCameraConfig> IFishingConfig_FixCameraConfigMethods for __T {}
+
+#[cfg(feature = "app-fishingconfig")]
+impl FishingConfig_FixCameraConfig {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` — overload selector"]
+    pub fn new(set_pos: crate::unity_engine::vector3::Vector3, set_rot: crate::unity_engine::vector3::Vector3) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingConfig_FixCameraConfig),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingConfig_FixCameraConfigMethods>::ctor(this, set_pos, set_rot);
+        this
+    }
+}
+
+#[cfg(feature = "app-fishingconfig")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FishingConfig_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<FishingConfig as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingConfig as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start(this: FishingConfig, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingConfig, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingConfig as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingConfig as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update(this: FishingConfig, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingConfig, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<FishingConfig as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingConfig as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: FishingConfig, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingConfig, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fishingconfig")]
+pub trait IFishingConfigMethods: IFishingConfig {
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <FishingConfig as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingConfig_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <FishingConfig as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingConfig_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <FishingConfig as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingConfig_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-fishingconfig")]
+impl<__T: IFishingConfig> IFishingConfigMethods for __T {}
+
+#[cfg(feature = "app-fishingconfig")]
+impl FishingConfig {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FishingConfig), ::core::stringify!(new),));
+        <Self as IFishingConfigMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-fishingconfig")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingConfig;
-    pub use super::FishingConfig_AngleBorder;
-    pub use super::FishingConfig_FixCameraConfig;
-    pub use super::IFishingConfig;
-    pub use super::IFishingConfigMethods;
-    pub use super::IFishingConfig_AngleBorder;
-    pub use super::IFishingConfig_AngleBorderMethods;
-    pub use super::IFishingConfig_FixCameraConfig;
-    pub use super::IFishingConfig_FixCameraConfigMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        FishingConfig, FishingConfig_AngleBorder, FishingConfig_FixCameraConfig, IFishingConfig, IFishingConfigMethods, IFishingConfig_AngleBorder,
+        IFishingConfig_AngleBorderMethods, IFishingConfig_FixCameraConfig, IFishingConfig_FixCameraConfigMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

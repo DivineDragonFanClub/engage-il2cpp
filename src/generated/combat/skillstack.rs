@@ -2,720 +2,29 @@
 
 #[cfg(feature = "combat-skillstack-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skillstack/SkillStack_Packet.md"))]
+    #[::unity2::class(namespace = "Combat", name = "SkillStack.Packet")]
+    #[parent(crate::system::object::Object)]
+    pub struct SkillStack_Packet {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skillstack/SkillStack.md"))]
     #[::unity2::class(namespace = "Combat", name = "SkillStack")]
     #[parent(crate::system::object::Object)]
     pub struct SkillStack {
         #[rename(name = "list")]
-        pub list: crate::system::collections::generic::list_1::List_1<
-            crate::combat::skillstack::SkillStack_Packet,
-        >,
+        pub list: crate::system::collections::generic::list_1::List_1<crate::combat::skillstack::SkillStack_Packet>,
         #[rename(name = "damages")]
         pub damages_field: ::unity2::Array<i32>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skillstack/SkillStack_Packet.md"))]
-    #[::unity2::class(namespace = "Combat", name = "SkillStack.Packet")]
-    #[parent(crate::system::object::Object)]
-    pub struct SkillStack_Packet {}
 }
 
 #[cfg(feature = "combat-skillstack-types")]
 pub use __types::*;
-
-#[cfg(feature = "combat-skillstack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SkillStack_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_debugger_display {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "get_DebuggerDisplay",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "get_DebuggerDisplay",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_debugger_display(
-        this: SkillStack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_debugger_display::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: SkillStack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<
-        crate::combat::skillstack::SkillStack_Packet,
-    > {
-        let inner : extern "C" fn (SkillStack , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: combat :: skillstack :: SkillStack_Packet > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_enumerator :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_damages {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "Damages",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "Damages",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn damages(
-        this: SkillStack,
-        side: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(SkillStack, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_damages::get_offset() as isize),
-            );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "HasDamage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "HasDamage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn has_damage(
-        this: SkillStack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_has_damage::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_push_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "PushSkill",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "PushSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn push_skill(
-        this: SkillStack,
-        data: crate::app::skilldata::SkillData,
-        from_side: i32,
-        to_side: i32,
-        pl_damage: i32,
-        en_damage: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillStack,
-            crate::app::skilldata::SkillData,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push_skill::get_offset() as isize),
-        );
-        inner(
-            this,
-            data,
-            from_side,
-            to_side,
-            pl_damage,
-            en_damage,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_damages {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "ClearDamages",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "ClearDamages",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear_damages(
-        this: SkillStack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_damages::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clone_and_clear_if_not_null {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "CloneAndClearIfNotNull",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "CloneAndClearIfNotNull",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clone_and_clear_if_not_null(
-        this: SkillStack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::skillstack::SkillStack {
-        let inner: extern "C" fn(
-            SkillStack,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::skillstack::SkillStack = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clone_and_clear_if_not_null::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_phase_for_popup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "CreatePhaseForPopup",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "CreatePhaseForPopup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_phase_for_popup(
-        this: SkillStack,
-        src: crate::combat::phase::Phase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::phase::Phase {
-        let inner: extern "C" fn(
-            SkillStack,
-            crate::combat::phase::Phase,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::phase::Phase = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_phase_for_popup::get_offset() as isize),
-        );
-        inner(this, src, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_preload_for_asset_loader {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "PreloadForAssetLoader",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "PreloadForAssetLoader",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn preload_for_asset_loader(
-        this: SkillStack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_preload_for_asset_loader::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_freeze_duration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                "CalcFreezeDuration",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    "CalcFreezeDuration",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_freeze_duration(
-        this: SkillStack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_freeze_duration::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillStack as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: SkillStack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "combat-skillstack")]
-pub trait ISkillStackMethods: ISkillStack {
-    #[doc = "`get_DebuggerDisplay()` overload"]
-    fn get_debugger_display(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::get_debugger_display(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetEnumerator()` overload"]
-    fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<
-        crate::combat::skillstack::SkillStack_Packet,
-    > {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Damages(i32)` overload"]
-    fn damages(self, side: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::damages(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`HasDamage()` overload"]
-    fn has_damage(self) -> bool {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::has_damage(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PushSkill(crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"]
-    fn push_skill(
-        self,
-        data: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        from_side: impl ::core::convert::Into<i32>,
-        to_side: impl ::core::convert::Into<i32>,
-        pl_damage: impl ::core::convert::Into<i32>,
-        en_damage: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::push_skill(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(from_side),
-                ::core::convert::Into::into(to_side),
-                ::core::convert::Into::into(pl_damage),
-                ::core::convert::Into::into(en_damage),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ClearDamages()` overload"]
-    fn clear_damages(self) -> () {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::clear_damages(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloneAndClearIfNotNull()` overload"]
-    fn clone_and_clear_if_not_null(self) -> crate::combat::skillstack::SkillStack {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::clone_and_clear_if_not_null(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreatePhaseForPopup(crate::combat::phase::Phase)` overload"]
-    fn create_phase_for_popup(
-        self,
-        src: impl ::core::convert::Into<crate::combat::phase::Phase>,
-    ) -> crate::combat::phase::Phase {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::create_phase_for_popup(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PreloadForAssetLoader()` overload"]
-    fn preload_for_asset_loader(self) -> () {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::preload_for_asset_loader(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcFreezeDuration()` overload"]
-    fn calc_freeze_duration(self) -> f32 {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::calc_freeze_duration(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "combat-skillstack")]
-impl<__T: ISkillStack> ISkillStackMethods for __T {}
-
-#[cfg(feature = "combat-skillstack")]
-impl SkillStack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SkillStack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISkillStackMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "combat-skillstack")]
 #[doc(hidden)]
@@ -726,9 +35,7 @@ mod __SkillStack_Packet_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_from_side {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillStack_Packet as ::unity2::ClassIdentity>::class(),
@@ -741,41 +48,28 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    "get_FromSide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        "get_FromSide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_from_side(
-        this: SkillStack_Packet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_from_side(this: SkillStack_Packet, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillStack_Packet, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_from_side::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_from_side::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_from_side {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillStack_Packet as ::unity2::ClassIdentity>::class(),
                 "set_FromSide",
@@ -787,40 +81,27 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    "set_FromSide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        "set_FromSide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_from_side(
-        this: SkillStack_Packet,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_from_side(this: SkillStack_Packet, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillStack_Packet, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_from_side::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_from_side::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_to_side {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillStack_Packet as ::unity2::ClassIdentity>::class(),
@@ -833,41 +114,28 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    "get_ToSide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        "get_ToSide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_to_side(
-        this: SkillStack_Packet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_to_side(this: SkillStack_Packet, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillStack_Packet, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_to_side::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_to_side::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_to_side {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillStack_Packet as ::unity2::ClassIdentity>::class(),
                 "set_ToSide",
@@ -879,44 +147,28 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    "set_ToSide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        "set_ToSide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_to_side(
-        this: SkillStack_Packet,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_to_side(this: SkillStack_Packet, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillStack_Packet, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_to_side::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_to_side::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_side_from_to_for絆神竜破 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillStack_Packet as ::unity2::ClassIdentity>::class(),
                 "ChangeSideFromTo_For絆神竜破",
@@ -928,18 +180,15 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    "ChangeSideFromTo_For絆神竜破",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        "ChangeSideFromTo_For絆神竜破",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_side_from_to_for絆神竜破(
@@ -949,20 +198,14 @@ mod __SkillStack_Packet_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(SkillStack_Packet, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change_side_from_to_for絆神竜破::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_change_side_from_to_for絆神竜破::get_method_info().method_ptr);
         inner(this, old, new, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillStack_Packet as ::unity2::ClassIdentity>::class(),
@@ -975,43 +218,28 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        "get_Data",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_data(
-        this: SkillStack_Packet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillStack_Packet,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
+    pub unsafe fn get_data(this: SkillStack_Packet, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(SkillStack_Packet, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillStack_Packet as ::unity2::ClassIdentity>::class(),
                 "set_Data",
@@ -1023,43 +251,27 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    "set_Data",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        "set_Data",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_data(
-        this: SkillStack_Packet,
-        value: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillStack_Packet,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
+    pub unsafe fn set_data(this: SkillStack_Packet, value: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillStack_Packet, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1076,18 +288,15 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1097,26 +306,15 @@ mod __SkillStack_Packet_unity2_raw {
         data: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkillStack_Packet,
-            i32,
-            i32,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillStack_Packet, i32, i32, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, from_side, to_side, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_equal_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1133,18 +331,15 @@ mod __SkillStack_Packet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
-                    "IsEqualTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack_Packet as ::unity2::ClassIdentity>::NAME,
+                        "IsEqualTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_equal_to(
@@ -1154,17 +349,8 @@ mod __SkillStack_Packet_unity2_raw {
         data: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SkillStack_Packet,
-            i32,
-            i32,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_equal_to::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillStack_Packet, i32, i32, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_equal_to::get_method_info().method_ptr);
         inner(this, from_side, to_side, data, __unity2_method_info)
     }
 }
@@ -1174,57 +360,35 @@ pub trait ISkillStack_PacketMethods: ISkillStack_Packet {
     #[doc = "`get_FromSide()` overload"]
     fn get_from_side(self) -> i32 {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillStack_Packet_unity2_raw::get_from_side(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_FromSide(i32)` overload"]
     fn set_from_side(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_Packet_unity2_raw::set_from_side(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_Packet_unity2_raw::set_from_side(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ToSide()` overload"]
     fn get_to_side(self) -> i32 {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillStack_Packet_unity2_raw::get_to_side(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ToSide(i32)` overload"]
     fn set_to_side(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_Packet_unity2_raw::set_to_side(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_Packet_unity2_raw::set_to_side(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`ChangeSideFromTo_For絆神竜破(i32, i32)` overload"]
-    fn change_side_from_to_for絆神竜破(
-        self,
-        old: impl ::core::convert::Into<i32>,
-        new: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn change_side_from_to_for絆神竜破(self, old: impl ::core::convert::Into<i32>, new: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillStack_Packet_unity2_raw::change_side_from_to_for絆神竜破(
                 __receiver,
                 ::core::convert::Into::into(old),
@@ -1236,23 +400,15 @@ pub trait ISkillStack_PacketMethods: ISkillStack_Packet {
     #[doc = "`get_Data()` overload"]
     fn get_data(self) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillStack_Packet_unity2_raw::get_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Data(crate::app::skilldata::SkillData)` overload"]
     fn set_data(self, value: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillStack_Packet_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_Packet_unity2_raw::set_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(i32, i32, crate::app::skilldata::SkillData)` overload"]
@@ -1263,9 +419,7 @@ pub trait ISkillStack_PacketMethods: ISkillStack_Packet {
         data: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
     ) -> () {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillStack_Packet_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(from_side),
@@ -1283,9 +437,7 @@ pub trait ISkillStack_PacketMethods: ISkillStack_Packet {
         data: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillStack_Packet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillStack_Packet_unity2_raw::is_equal_to(
                 __receiver,
                 ::core::convert::Into::into(from_side),
@@ -1318,13 +470,503 @@ impl SkillStack_Packet {
 
 #[cfg(feature = "combat-skillstack")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SkillStack_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_debugger_display {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "get_DebuggerDisplay",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "get_DebuggerDisplay",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_debugger_display(this: SkillStack, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_debugger_display::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_enumerator(
+        this: SkillStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::combat::skillstack::SkillStack_Packet> {
+        let inner: extern "C" fn(
+            SkillStack,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::combat::skillstack::SkillStack_Packet> =
+            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_damages {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillStack as ::unity2::ClassIdentity>::class(), "Damages", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "Damages",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn damages(this: SkillStack, side: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SkillStack, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_damages::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "HasDamage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "HasDamage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn has_damage(this: SkillStack, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_has_damage::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_push_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "PushSkill",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "PushSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn push_skill(
+        this: SkillStack,
+        data: crate::app::skilldata::SkillData,
+        from_side: i32,
+        to_side: i32,
+        pl_damage: i32,
+        en_damage: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SkillStack, crate::app::skilldata::SkillData, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_push_skill::get_method_info().method_ptr);
+        inner(this, data, from_side, to_side, pl_damage, en_damage, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_damages {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "ClearDamages",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "ClearDamages",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear_damages(this: SkillStack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_damages::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clone_and_clear_if_not_null {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "CloneAndClearIfNotNull",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "CloneAndClearIfNotNull",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clone_and_clear_if_not_null(
+        this: SkillStack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::skillstack::SkillStack {
+        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> crate::combat::skillstack::SkillStack =
+            ::core::mem::transmute(__lookup_clone_and_clear_if_not_null::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_phase_for_popup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "CreatePhaseForPopup",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "CreatePhaseForPopup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_phase_for_popup(
+        this: SkillStack,
+        src: crate::combat::phase::Phase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::combat::phase::Phase {
+        let inner: extern "C" fn(SkillStack, crate::combat::phase::Phase, ::unity2::OptionalMethod) -> crate::combat::phase::Phase =
+            ::core::mem::transmute(__lookup_create_phase_for_popup::get_method_info().method_ptr);
+        inner(this, src, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_preload_for_asset_loader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "PreloadForAssetLoader",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "PreloadForAssetLoader",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn preload_for_asset_loader(this: SkillStack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_preload_for_asset_loader::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_freeze_duration {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillStack as ::unity2::ClassIdentity>::class(),
+                "CalcFreezeDuration",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        "CalcFreezeDuration",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_freeze_duration(this: SkillStack, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_freeze_duration::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillStack as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillStack as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SkillStack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillStack, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-skillstack")]
+pub trait ISkillStackMethods: ISkillStack {
+    #[doc = "`get_DebuggerDisplay()` overload"]
+    fn get_debugger_display(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::get_debugger_display(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetEnumerator()` overload"]
+    fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::combat::skillstack::SkillStack_Packet> {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Damages(i32)` overload"]
+    fn damages(self, side: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::damages(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HasDamage()` overload"]
+    fn has_damage(self) -> bool {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::has_damage(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PushSkill(crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"]
+    fn push_skill(
+        self,
+        data: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        from_side: impl ::core::convert::Into<i32>,
+        to_side: impl ::core::convert::Into<i32>,
+        pl_damage: impl ::core::convert::Into<i32>,
+        en_damage: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::push_skill(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(from_side),
+                ::core::convert::Into::into(to_side),
+                ::core::convert::Into::into(pl_damage),
+                ::core::convert::Into::into(en_damage),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearDamages()` overload"]
+    fn clear_damages(self) -> () {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::clear_damages(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloneAndClearIfNotNull()` overload"]
+    fn clone_and_clear_if_not_null(self) -> crate::combat::skillstack::SkillStack {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::clone_and_clear_if_not_null(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreatePhaseForPopup(crate::combat::phase::Phase)` overload"]
+    fn create_phase_for_popup(self, src: impl ::core::convert::Into<crate::combat::phase::Phase>) -> crate::combat::phase::Phase {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::create_phase_for_popup(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PreloadForAssetLoader()` overload"]
+    fn preload_for_asset_loader(self) -> () {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::preload_for_asset_loader(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcFreezeDuration()` overload"]
+    fn calc_freeze_duration(self) -> f32 {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::calc_freeze_duration(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SkillStack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillStack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "combat-skillstack")]
+impl<__T: ISkillStack> ISkillStackMethods for __T {}
+
+#[cfg(feature = "combat-skillstack")]
+impl SkillStack {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SkillStack), ::core::stringify!(new),));
+        <Self as ISkillStackMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "combat-skillstack")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::ISkillStack;
-    pub use super::ISkillStackMethods;
-    pub use super::ISkillStack_Packet;
-    pub use super::ISkillStack_PacketMethods;
-    pub use super::SkillStack;
-    pub use super::SkillStack_Packet;
+    pub use super::{ISkillStack, ISkillStackMethods, ISkillStack_Packet, ISkillStack_PacketMethods, SkillStack, SkillStack_Packet};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

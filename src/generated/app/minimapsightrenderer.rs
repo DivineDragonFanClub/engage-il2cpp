@@ -2,17 +2,23 @@
 
 #[cfg(feature = "app-minimapsightrenderer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::graphic::{Graphic, IGraphic};
-    use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic, MaskableGraphic};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::{
+                graphic::{Graphic, IGraphic},
+                maskablegraphic::{IMaskableGraphic, MaskableGraphic},
+            },
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapsightrenderer/MiniMapSightRenderer.md"))]
     #[::unity2::class(namespace = "App", name = "MiniMapSightRenderer")]
@@ -27,16 +33,11 @@ mod __types {
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::unity_engine::mesh::Mesh,
         #[rename(name = "m_Vertices")]
-        pub m_vertices: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
+        pub m_vertices: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
         #[rename(name = "m_Colors")]
-        pub m_colors:
-            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        pub m_colors: crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
         #[rename(name = "m_UVs")]
-        pub m_u_vs: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector2::Vector2,
-        >,
+        pub m_u_vs: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>,
         #[rename(name = "m_Indices")]
         pub m_indices: crate::system::collections::generic::list_1::List_1<i32>,
         #[rename(name = "VERTEX_CAPACITY")]
@@ -58,9 +59,7 @@ mod __MiniMapSightRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -73,43 +72,31 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_Texture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_Texture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_texture(
         this: MiniMapSightRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::texture2d::Texture2D {
-        let inner: extern "C" fn(
-            MiniMapSightRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture2d::Texture2D = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_texture::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::texture2d::Texture2D =
+            ::core::mem::transmute(__lookup_get_texture::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
                 "set_Texture",
@@ -121,18 +108,15 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_Texture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_Texture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_texture(
@@ -140,24 +124,15 @@ mod __MiniMapSightRenderer_unity2_raw {
         value: crate::unity_engine::texture2d::Texture2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MiniMapSightRenderer,
-            crate::unity_engine::texture2d::Texture2D,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_texture::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MiniMapSightRenderer, crate::unity_engine::texture2d::Texture2D, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_texture::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_canvas_renderer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -170,43 +145,31 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_CanvasRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_CanvasRenderer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_canvas_renderer(
         this: MiniMapSightRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::canvasrenderer::CanvasRenderer {
-        let inner: extern "C" fn(
-            MiniMapSightRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::canvasrenderer::CanvasRenderer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_canvas_renderer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::canvasrenderer::CanvasRenderer =
+            ::core::mem::transmute(__lookup_get_canvas_renderer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_grid_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
                 "set_GridSize",
@@ -218,40 +181,27 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_GridSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_GridSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_grid_size(
-        this: MiniMapSightRenderer,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_grid_size(this: MiniMapSightRenderer, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapSightRenderer, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_grid_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_grid_size::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_grid_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -264,39 +214,27 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_GridSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_GridSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_grid_size(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_grid_size(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_grid_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_grid_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_initialize_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -309,39 +247,27 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "TryInitializeData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "TryInitializeData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_initialize_data(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn try_initialize_data(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_initialize_data::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_initialize_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_map_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -354,41 +280,27 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetMapImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetMapImage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_map_image(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapimage::MapImage {
-        let inner: extern "C" fn(
-            MiniMapSightRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapimage::MapImage = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_map_image::get_offset() as isize),
-        );
+    pub unsafe fn get_map_image(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapimage::MapImage {
+        let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> crate::app::mapimage::MapImage =
+            ::core::mem::transmute(__lookup_get_map_image::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_geometry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -401,39 +313,27 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "UpdateGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "UpdateGeometry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_geometry(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_geometry(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_geometry::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_geometry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -446,39 +346,27 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_terrain_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -491,41 +379,28 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "CreateTerrainMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "CreateTerrainMesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_terrain_mesh(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_terrain_mesh(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_terrain_mesh::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_terrain_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_terrain_mesh_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapimage::MapImage as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapimage::MapImage as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
                 "CreateTerrainMesh",
@@ -537,18 +412,15 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "CreateTerrainMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "CreateTerrainMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_terrain_mesh_2(
@@ -556,24 +428,15 @@ mod __MiniMapSightRenderer_unity2_raw {
         map_image: crate::app::mapimage::MapImage,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MiniMapSightRenderer,
-            crate::app::mapimage::MapImage,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_terrain_mesh_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MiniMapSightRenderer, crate::app::mapimage::MapImage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_terrain_mesh_2::get_method_info().method_ptr);
         inner(this, map_image, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mesh_to_renderer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -586,39 +449,27 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetMeshToRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetMeshToRenderer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mesh_to_renderer(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_mesh_to_renderer(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_mesh_to_renderer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_mesh_to_renderer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_map_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -631,39 +482,27 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMapSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMapSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_map_size(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_map_size(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_map_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_map_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapSightRenderer as ::unity2::ClassIdentity>::class(),
@@ -676,30 +515,20 @@ mod __MiniMapSightRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapSightRenderer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MiniMapSightRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MiniMapSightRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -709,168 +538,112 @@ pub trait IMiniMapSightRendererMethods: IMiniMapSightRenderer {
     #[doc = "`get_Texture()` overload"]
     fn get_texture(self) -> crate::unity_engine::texture2d::Texture2D {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MiniMapSightRenderer_unity2_raw::get_texture(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Texture(crate::unity_engine::texture2d::Texture2D)` overload"]
-    fn set_texture(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
-    ) -> () {
+    fn set_texture(self, value: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::set_texture(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::set_texture(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_CanvasRenderer()` overload"]
     fn get_canvas_renderer(self) -> crate::unity_engine::canvasrenderer::CanvasRenderer {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::get_canvas_renderer(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::get_canvas_renderer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_GridSize(f32)` overload"]
     fn set_grid_size(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::set_grid_size(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::set_grid_size(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_GridSize()` overload"]
     fn get_grid_size(self) -> f32 {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::get_grid_size(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::get_grid_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TryInitializeData()` overload"]
     fn try_initialize_data(self) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::try_initialize_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::try_initialize_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMapImage()` overload"]
     fn get_map_image(self) -> crate::app::mapimage::MapImage {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::get_map_image(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::get_map_image(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateGeometry()` overload"]
     fn update_geometry(self) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::update_geometry(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MiniMapSightRenderer_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateTerrainMesh()` overload"]
     fn create_terrain_mesh(self) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::create_terrain_mesh(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::create_terrain_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateTerrainMesh(crate::app::mapimage::MapImage)` overload"]
-    fn create_terrain_mesh_2(
-        self,
-        map_image: impl ::core::convert::Into<crate::app::mapimage::MapImage>,
-    ) -> () {
+    fn create_terrain_mesh_2(self, map_image: impl ::core::convert::Into<crate::app::mapimage::MapImage>) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::create_terrain_mesh_2(
-                __receiver,
-                ::core::convert::Into::into(map_image),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::create_terrain_mesh_2(__receiver, ::core::convert::Into::into(map_image), ::core::option::Option::None)
         }
     }
     #[doc = "`SetMeshToRenderer()` overload"]
     fn set_mesh_to_renderer(self) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::set_mesh_to_renderer(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::set_mesh_to_renderer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMapSize()` overload"]
     fn update_map_size(self) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapSightRenderer_unity2_raw::update_map_size(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapSightRenderer_unity2_raw::update_map_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MiniMapSightRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MiniMapSightRenderer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -898,31 +671,32 @@ impl MiniMapSightRenderer {
 #[cfg(feature = "app-minimapsightrenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMiniMapSightRenderer;
-    pub use super::IMiniMapSightRendererMethods;
-    pub use super::MiniMapSightRenderer;
-    pub use crate::system::object::IObject;
+    pub use super::{IMiniMapSightRenderer, IMiniMapSightRendererMethods, MiniMapSightRenderer};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::graphic::IGraphic;
     #[cfg(feature = "unity_engine-ui-graphic")]
     pub use crate::unity_engine::ui::graphic::IGraphicMethods;
-    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
     #[cfg(feature = "unity_engine-ui-maskablegraphic")]
     pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::uibehaviour::IUIBehaviour,
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+            ui::{graphic::IGraphic, maskablegraphic::IMaskableGraphic},
+        },
+    };
 }

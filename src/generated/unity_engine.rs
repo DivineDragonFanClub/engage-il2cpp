@@ -212,14 +212,11 @@ pub use animatorcullingmode::AnimatorCullingMode;
 pub mod animatoroverridecontroller;
 #[cfg(feature = "unity_engine-animatoroverridecontroller-types")]
 pub use animatoroverridecontroller::{
-    AnimatorOverrideController, AnimatorOverrideController_OnOverrideControllerDirtyCallback,
-    IAnimatorOverrideController, IAnimatorOverrideController_OnOverrideControllerDirtyCallback,
+    AnimatorOverrideController, AnimatorOverrideController_OnOverrideControllerDirtyCallback, IAnimatorOverrideController,
+    IAnimatorOverrideController_OnOverrideControllerDirtyCallback,
 };
 #[cfg(feature = "unity_engine-animatoroverridecontroller")]
-pub use animatoroverridecontroller::{
-    IAnimatorOverrideControllerMethods,
-    IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods,
-};
+pub use animatoroverridecontroller::{IAnimatorOverrideControllerMethods, IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods};
 #[cfg(any(feature = "unity_engine-animatorrecordermode-types"))]
 pub mod animatorrecordermode;
 #[cfg(feature = "unity_engine-animatorrecordermode-types")]
@@ -244,8 +241,7 @@ pub use animatorutility::{AnimatorUtility, IAnimatorUtility};
 pub mod application;
 #[cfg(feature = "unity_engine-application-types")]
 pub use application::{
-    Application, Application_LogCallback, Application_LowMemoryCallback, IApplication,
-    IApplication_LogCallback, IApplication_LowMemoryCallback,
+    Application, Application_LogCallback, Application_LowMemoryCallback, IApplication, IApplication_LogCallback, IApplication_LowMemoryCallback,
 };
 #[cfg(feature = "unity_engine-application")]
 pub use application::{IApplication_LogCallbackMethods, IApplication_LowMemoryCallbackMethods};
@@ -270,9 +266,7 @@ pub use assetbundlecreaterequest::{AssetBundleCreateRequest, IAssetBundleCreateR
 #[cfg(any(feature = "unity_engine-assetbundlerecompressoperation-types"))]
 pub mod assetbundlerecompressoperation;
 #[cfg(feature = "unity_engine-assetbundlerecompressoperation-types")]
-pub use assetbundlerecompressoperation::{
-    AssetBundleRecompressOperation, IAssetBundleRecompressOperation,
-};
+pub use assetbundlerecompressoperation::{AssetBundleRecompressOperation, IAssetBundleRecompressOperation};
 #[cfg(any(feature = "unity_engine-assetbundlerequest-types"))]
 pub mod assetbundlerequest;
 #[cfg(feature = "unity_engine-assetbundlerequest")]
@@ -284,17 +278,13 @@ pub mod assetfilenameextensionattribute;
 #[cfg(feature = "unity_engine-assetfilenameextensionattribute")]
 pub use assetfilenameextensionattribute::IAssetFileNameExtensionAttributeMethods;
 #[cfg(feature = "unity_engine-assetfilenameextensionattribute-types")]
-pub use assetfilenameextensionattribute::{
-    AssetFileNameExtensionAttribute, IAssetFileNameExtensionAttribute,
-};
+pub use assetfilenameextensionattribute::{AssetFileNameExtensionAttribute, IAssetFileNameExtensionAttribute};
 #[cfg(any(feature = "unity_engine-assetreferenceuilabelrestriction-types"))]
 pub mod assetreferenceuilabelrestriction;
 #[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
 pub use assetreferenceuilabelrestriction::IAssetReferenceUILabelRestrictionMethods;
 #[cfg(feature = "unity_engine-assetreferenceuilabelrestriction-types")]
-pub use assetreferenceuilabelrestriction::{
-    AssetReferenceUILabelRestriction, IAssetReferenceUILabelRestriction,
-};
+pub use assetreferenceuilabelrestriction::{AssetReferenceUILabelRestriction, IAssetReferenceUILabelRestriction};
 #[cfg(any(feature = "unity_engine-assetreferenceuirestriction-types"))]
 pub mod assetreferenceuirestriction;
 #[cfg(feature = "unity_engine-assetreferenceuirestriction")]
@@ -327,22 +317,18 @@ pub use audiobehaviour::{AudioBehaviour, IAudioBehaviour};
 pub mod audioclip;
 #[cfg(feature = "unity_engine-audioclip-types")]
 pub use audioclip::{
-    AudioClip, AudioClip_PCMReaderCallback, AudioClip_PCMSetPositionCallback, IAudioClip,
-    IAudioClip_PCMReaderCallback, IAudioClip_PCMSetPositionCallback,
+    AudioClip, AudioClip_PCMReaderCallback, AudioClip_PCMSetPositionCallback, IAudioClip, IAudioClip_PCMReaderCallback,
+    IAudioClip_PCMSetPositionCallback,
 };
 #[cfg(feature = "unity_engine-audioclip")]
-pub use audioclip::{
-    IAudioClipMethods, IAudioClip_PCMReaderCallbackMethods,
-    IAudioClip_PCMSetPositionCallbackMethods,
-};
+pub use audioclip::{IAudioClipMethods, IAudioClip_PCMReaderCallbackMethods, IAudioClip_PCMSetPositionCallbackMethods};
 #[cfg(any(feature = "unity_engine-audiosettings-types"))]
 pub mod audiosettings;
 #[cfg(feature = "unity_engine-audiosettings")]
 pub use audiosettings::IAudioSettings_AudioConfigurationChangeHandlerMethods;
 #[cfg(feature = "unity_engine-audiosettings-types")]
 pub use audiosettings::{
-    AudioSettings, AudioSettings_AudioConfigurationChangeHandler, IAudioSettings,
-    IAudioSettings_AudioConfigurationChangeHandler,
+    AudioSettings, AudioSettings_AudioConfigurationChangeHandler, IAudioSettings, IAudioSettings_AudioConfigurationChangeHandler,
 };
 #[cfg(any(feature = "unity_engine-audiosource-types"))]
 pub mod audiosource;
@@ -381,9 +367,7 @@ pub use avatartarget::AvatarTarget;
 #[cfg(any(feature = "unity_engine-beforerenderhelper-types"))]
 pub mod beforerenderhelper;
 #[cfg(feature = "unity_engine-beforerenderhelper-types")]
-pub use beforerenderhelper::{
-    BeforeRenderHelper, BeforeRenderHelper_OrderBlock, IBeforeRenderHelper,
-};
+pub use beforerenderhelper::{BeforeRenderHelper, BeforeRenderHelper_OrderBlock, IBeforeRenderHelper};
 #[cfg(any(feature = "unity_engine-behaviour-types"))]
 pub mod behaviour;
 #[cfg(feature = "unity_engine-behaviour")]
@@ -453,10 +437,8 @@ pub use cachedassetbundle::CachedAssetBundle;
 pub mod camera;
 #[cfg(feature = "unity_engine-camera-types")]
 pub use camera::{
-    Camera, Camera_CameraCallback, Camera_GateFitMode, Camera_GateFitParameters,
-    Camera_MonoOrStereoscopicEye, Camera_ProjectionMatrixMode, Camera_RenderRequest,
-    Camera_RenderRequestMode, Camera_RenderRequestOutputSpace, Camera_StereoscopicEye, ICamera,
-    ICamera_CameraCallback,
+    Camera, Camera_CameraCallback, Camera_GateFitMode, Camera_GateFitParameters, Camera_MonoOrStereoscopicEye, Camera_ProjectionMatrixMode,
+    Camera_RenderRequest, Camera_RenderRequestMode, Camera_RenderRequestOutputSpace, Camera_StereoscopicEye, ICamera, ICamera_CameraCallback,
 };
 #[cfg(feature = "unity_engine-camera")]
 pub use camera::{ICameraMethods, ICamera_CameraCallbackMethods};
@@ -669,9 +651,7 @@ pub mod cullinggroup;
 #[cfg(feature = "unity_engine-cullinggroup")]
 pub use cullinggroup::ICullingGroup_StateChangedMethods;
 #[cfg(feature = "unity_engine-cullinggroup-types")]
-pub use cullinggroup::{
-    CullingGroup, CullingGroup_StateChanged, ICullingGroup, ICullingGroup_StateChanged,
-};
+pub use cullinggroup::{CullingGroup, CullingGroup_StateChanged, ICullingGroup, ICullingGroup_StateChanged};
 #[cfg(any(feature = "unity_engine-cullinggroupevent-types"))]
 pub mod cullinggroupevent;
 #[cfg(feature = "unity_engine-cullinggroupevent-types")]
@@ -735,9 +715,7 @@ pub use disallowmultiplecomponent::{DisallowMultipleComponent, IDisallowMultiple
 #[cfg(any(feature = "unity_engine-display-types"))]
 pub mod display;
 #[cfg(feature = "unity_engine-display-types")]
-pub use display::{
-    Display, Display_DisplaysUpdatedDelegate, IDisplay, IDisplay_DisplaysUpdatedDelegate,
-};
+pub use display::{Display, Display_DisplaysUpdatedDelegate, IDisplay, IDisplay_DisplaysUpdatedDelegate};
 #[cfg(feature = "unity_engine-display")]
 pub use display::{IDisplayMethods, IDisplay_DisplaysUpdatedDelegateMethods};
 #[cfg(any(feature = "unity_engine-drivenrecttransformtracker-types"))]
@@ -838,9 +816,7 @@ pub mod excludefromobjectfactoryattribute;
 #[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
 pub use excludefromobjectfactoryattribute::IExcludeFromObjectFactoryAttributeMethods;
 #[cfg(feature = "unity_engine-excludefromobjectfactoryattribute-types")]
-pub use excludefromobjectfactoryattribute::{
-    ExcludeFromObjectFactoryAttribute, IExcludeFromObjectFactoryAttribute,
-};
+pub use excludefromobjectfactoryattribute::{ExcludeFromObjectFactoryAttribute, IExcludeFromObjectFactoryAttribute};
 #[cfg(any(feature = "unity_engine-excludefrompresetattribute-types"))]
 pub mod excludefrompresetattribute;
 #[cfg(feature = "unity_engine-excludefrompresetattribute")]
@@ -982,9 +958,7 @@ pub mod extensionofnativeclassattribute;
 #[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
 pub use extensionofnativeclassattribute::IExtensionOfNativeClassAttributeMethods;
 #[cfg(feature = "unity_engine-extensionofnativeclassattribute-types")]
-pub use extensionofnativeclassattribute::{
-    ExtensionOfNativeClassAttribute, IExtensionOfNativeClassAttribute,
-};
+pub use extensionofnativeclassattribute::{ExtensionOfNativeClassAttribute, IExtensionOfNativeClassAttribute};
 #[cfg(any(feature = "unity_engine-failedtoloadscriptobject-types"))]
 pub mod failedtoloadscriptobject;
 #[cfg(feature = "unity_engine-failedtoloadscriptobject-types")]
@@ -1101,14 +1075,12 @@ pub use guicontent::{GUIContent, IGUIContent};
 pub mod guilayout;
 #[cfg(feature = "unity_engine-guilayout-types")]
 pub use guilayout::{
-    GUILayout, GUILayout_AreaScope, GUILayout_HorizontalScope, GUILayout_LayoutedWindow,
-    GUILayout_ScrollViewScope, IGUILayout, IGUILayout_AreaScope, IGUILayout_HorizontalScope,
-    IGUILayout_LayoutedWindow, IGUILayout_ScrollViewScope,
+    GUILayout, GUILayout_AreaScope, GUILayout_HorizontalScope, GUILayout_LayoutedWindow, GUILayout_ScrollViewScope, IGUILayout, IGUILayout_AreaScope,
+    IGUILayout_HorizontalScope, IGUILayout_LayoutedWindow, IGUILayout_ScrollViewScope,
 };
 #[cfg(feature = "unity_engine-guilayout")]
 pub use guilayout::{
-    IGUILayout_AreaScopeMethods, IGUILayout_HorizontalScopeMethods,
-    IGUILayout_LayoutedWindowMethods, IGUILayout_ScrollViewScopeMethods,
+    IGUILayout_AreaScopeMethods, IGUILayout_HorizontalScopeMethods, IGUILayout_LayoutedWindowMethods, IGUILayout_ScrollViewScopeMethods,
 };
 #[cfg(any(feature = "unity_engine-guilayoutentry-types"))]
 pub mod guilayoutentry;
@@ -1133,10 +1105,7 @@ pub mod guilayoututility;
 #[cfg(feature = "unity_engine-guilayoututility")]
 pub use guilayoututility::IGUILayoutUtility_LayoutCacheMethods;
 #[cfg(feature = "unity_engine-guilayoututility-types")]
-pub use guilayoututility::{
-    GUILayoutUtility, GUILayoutUtility_LayoutCache, IGUILayoutUtility,
-    IGUILayoutUtility_LayoutCache,
-};
+pub use guilayoututility::{GUILayoutUtility, GUILayoutUtility_LayoutCache, IGUILayoutUtility, IGUILayoutUtility_LayoutCache};
 #[cfg(any(feature = "unity_engine-guiscrollgroup-types"))]
 pub mod guiscrollgroup;
 #[cfg(feature = "unity_engine-guiscrollgroup")]
@@ -1290,9 +1259,7 @@ pub mod imageeffectallowedinsceneview;
 #[cfg(feature = "unity_engine-imageeffectallowedinsceneview")]
 pub use imageeffectallowedinsceneview::IImageEffectAllowedInSceneViewMethods;
 #[cfg(feature = "unity_engine-imageeffectallowedinsceneview-types")]
-pub use imageeffectallowedinsceneview::{
-    IImageEffectAllowedInSceneView, ImageEffectAllowedInSceneView,
-};
+pub use imageeffectallowedinsceneview::{IImageEffectAllowedInSceneView, ImageEffectAllowedInSceneView};
 #[cfg(any(feature = "unity_engine-imageposition-types"))]
 pub mod imageposition;
 #[cfg(feature = "unity_engine-imageposition-types")]
@@ -1328,17 +1295,13 @@ pub mod integratedsubsystemdescriptor;
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor")]
 pub use integratedsubsystemdescriptor::IIntegratedSubsystemDescriptorMethods;
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor-types")]
-pub use integratedsubsystemdescriptor::{
-    IIntegratedSubsystemDescriptor, IntegratedSubsystemDescriptor,
-};
+pub use integratedsubsystemdescriptor::{IIntegratedSubsystemDescriptor, IntegratedSubsystemDescriptor};
 #[cfg(any(feature = "unity_engine-integratedsubsystemdescriptor_1-types"))]
 pub mod integratedsubsystemdescriptor_1;
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor_1")]
 pub use integratedsubsystemdescriptor_1::IIntegratedSubsystemDescriptor_1Methods;
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor_1-types")]
-pub use integratedsubsystemdescriptor_1::{
-    IIntegratedSubsystemDescriptor_1, IntegratedSubsystemDescriptor_1,
-};
+pub use integratedsubsystemdescriptor_1::{IIntegratedSubsystemDescriptor_1, IntegratedSubsystemDescriptor_1};
 #[cfg(any(
     feature = "unity_engine-internal-defaultvalueattribute-types",
     feature = "unity_engine-internal-excludefromdocsattribute-types"
@@ -1351,25 +1314,19 @@ pub use internal_drawtexturearguments::Internal_DrawTextureArguments;
 #[cfg(any(feature = "unity_engine-internal_subsystemdescriptors-types"))]
 pub mod internal_subsystemdescriptors;
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors-types")]
-pub use internal_subsystemdescriptors::{
-    IInternal_SubsystemDescriptors, Internal_SubsystemDescriptors,
-};
+pub use internal_subsystemdescriptors::{IInternal_SubsystemDescriptors, Internal_SubsystemDescriptors};
 #[cfg(any(feature = "unity_engine-iplayereditorconnectionnative-types"))]
 pub mod iplayereditorconnectionnative;
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
 pub use iplayereditorconnectionnative::IIPlayerEditorConnectionNativeMethods;
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative-types")]
-pub use iplayereditorconnectionnative::{
-    IIPlayerEditorConnectionNative, IPlayerEditorConnectionNative,
-};
+pub use iplayereditorconnectionnative::{IIPlayerEditorConnectionNative, IPlayerEditorConnectionNative};
 #[cfg(any(feature = "unity_engine-iserializationcallbackreceiver-types"))]
 pub mod iserializationcallbackreceiver;
 #[cfg(feature = "unity_engine-iserializationcallbackreceiver")]
 pub use iserializationcallbackreceiver::IISerializationCallbackReceiverMethods;
 #[cfg(feature = "unity_engine-iserializationcallbackreceiver-types")]
-pub use iserializationcallbackreceiver::{
-    IISerializationCallbackReceiver, ISerializationCallbackReceiver,
-};
+pub use iserializationcallbackreceiver::{IISerializationCallbackReceiver, ISerializationCallbackReceiver};
 #[cfg(any(feature = "unity_engine-isubsystem_interface-types"))]
 pub mod isubsystem_interface;
 #[cfg(feature = "unity_engine-isubsystem_interface-types")]
@@ -1379,9 +1336,7 @@ pub mod isubsystemdescriptor_interface;
 #[cfg(feature = "unity_engine-isubsystemdescriptor_interface")]
 pub use isubsystemdescriptor_interface::IISubsystemDescriptor_InterfaceMethods;
 #[cfg(feature = "unity_engine-isubsystemdescriptor_interface-types")]
-pub use isubsystemdescriptor_interface::{
-    IISubsystemDescriptor_Interface, ISubsystemDescriptor_Interface,
-};
+pub use isubsystemdescriptor_interface::{IISubsystemDescriptor_Interface, ISubsystemDescriptor_Interface};
 #[cfg(any(
     feature = "unity_engine-jobs-ijobparallelfortransform-types",
     feature = "unity_engine-jobs-ijobparallelfortransformextensions-types",
@@ -1690,23 +1645,16 @@ pub mod particlesystem;
 pub use particlesystem::IParticleSystemMethods;
 #[cfg(feature = "unity_engine-particlesystem-types")]
 pub use particlesystem::{
-    IParticleSystem, ParticleSystem, ParticleSystem_CollisionModule,
-    ParticleSystem_ColorBySpeedModule, ParticleSystem_ColorOverLifetimeModule,
-    ParticleSystem_CustomDataModule, ParticleSystem_EmissionModule, ParticleSystem_EmitParams,
-    ParticleSystem_ExternalForcesModule, ParticleSystem_ForceOverLifetimeModule,
-    ParticleSystem_InheritVelocityModule, ParticleSystem_LifetimeByEmitterSpeedModule,
-    ParticleSystem_LightsModule, ParticleSystem_LimitVelocityOverLifetimeModule,
-    ParticleSystem_MainModule, ParticleSystem_MinMaxCurve, ParticleSystem_MinMaxGradient,
-    ParticleSystem_NoiseModule, ParticleSystem_Particle, ParticleSystem_PlaybackState,
-    ParticleSystem_PlaybackState_Collision, ParticleSystem_PlaybackState_Emission,
-    ParticleSystem_PlaybackState_Force, ParticleSystem_PlaybackState_Initial,
-    ParticleSystem_PlaybackState_Lights, ParticleSystem_PlaybackState_Noise,
-    ParticleSystem_PlaybackState_Seed, ParticleSystem_PlaybackState_Seed4,
-    ParticleSystem_PlaybackState_Shape, ParticleSystem_PlaybackState_Trail,
-    ParticleSystem_RotationBySpeedModule, ParticleSystem_RotationOverLifetimeModule,
-    ParticleSystem_ShapeModule, ParticleSystem_SizeBySpeedModule,
-    ParticleSystem_SizeOverLifetimeModule, ParticleSystem_SubEmittersModule,
-    ParticleSystem_TextureSheetAnimationModule, ParticleSystem_TrailModule, ParticleSystem_Trails,
+    IParticleSystem, ParticleSystem, ParticleSystem_CollisionModule, ParticleSystem_ColorBySpeedModule, ParticleSystem_ColorOverLifetimeModule,
+    ParticleSystem_CustomDataModule, ParticleSystem_EmissionModule, ParticleSystem_EmitParams, ParticleSystem_ExternalForcesModule,
+    ParticleSystem_ForceOverLifetimeModule, ParticleSystem_InheritVelocityModule, ParticleSystem_LifetimeByEmitterSpeedModule,
+    ParticleSystem_LightsModule, ParticleSystem_LimitVelocityOverLifetimeModule, ParticleSystem_MainModule, ParticleSystem_MinMaxCurve,
+    ParticleSystem_MinMaxGradient, ParticleSystem_NoiseModule, ParticleSystem_Particle, ParticleSystem_PlaybackState,
+    ParticleSystem_PlaybackState_Collision, ParticleSystem_PlaybackState_Emission, ParticleSystem_PlaybackState_Force,
+    ParticleSystem_PlaybackState_Initial, ParticleSystem_PlaybackState_Lights, ParticleSystem_PlaybackState_Noise, ParticleSystem_PlaybackState_Seed,
+    ParticleSystem_PlaybackState_Seed4, ParticleSystem_PlaybackState_Shape, ParticleSystem_PlaybackState_Trail, ParticleSystem_RotationBySpeedModule,
+    ParticleSystem_RotationOverLifetimeModule, ParticleSystem_ShapeModule, ParticleSystem_SizeBySpeedModule, ParticleSystem_SizeOverLifetimeModule,
+    ParticleSystem_SubEmittersModule, ParticleSystem_TextureSheetAnimationModule, ParticleSystem_TrailModule, ParticleSystem_Trails,
     ParticleSystem_TriggerModule, ParticleSystem_VelocityOverLifetimeModule,
 };
 #[cfg(any(feature = "unity_engine-particlesystemcullingmode-types"))]
@@ -1979,8 +1927,8 @@ pub use rectoffset::{IRectOffset, RectOffset};
 pub mod recttransform;
 #[cfg(feature = "unity_engine-recttransform-types")]
 pub use recttransform::{
-    IRectTransform, IRectTransform_ReapplyDrivenProperties, RectTransform, RectTransform_Axis,
-    RectTransform_Edge, RectTransform_ReapplyDrivenProperties,
+    IRectTransform, IRectTransform_ReapplyDrivenProperties, RectTransform, RectTransform_Axis, RectTransform_Edge,
+    RectTransform_ReapplyDrivenProperties,
 };
 #[cfg(feature = "unity_engine-recttransform")]
 pub use recttransform::{IRectTransformMethods, IRectTransform_ReapplyDrivenPropertiesMethods};
@@ -1993,9 +1941,7 @@ pub mod reflectionprobe;
 #[cfg(feature = "unity_engine-reflectionprobe")]
 pub use reflectionprobe::IReflectionProbeMethods;
 #[cfg(feature = "unity_engine-reflectionprobe-types")]
-pub use reflectionprobe::{
-    IReflectionProbe, ReflectionProbe, ReflectionProbe_ReflectionProbeEvent,
-};
+pub use reflectionprobe::{IReflectionProbe, ReflectionProbe, ReflectionProbe_ReflectionProbeEvent};
 #[cfg(any(feature = "unity_engine-renderbuffer-types"))]
 pub mod renderbuffer;
 #[cfg(feature = "unity_engine-renderbuffer-types")]
@@ -2621,9 +2567,7 @@ pub mod runtimeinitializeonloadmethodattribute;
 #[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
 pub use runtimeinitializeonloadmethodattribute::IRuntimeInitializeOnLoadMethodAttributeMethods;
 #[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute-types")]
-pub use runtimeinitializeonloadmethodattribute::{
-    IRuntimeInitializeOnLoadMethodAttribute, RuntimeInitializeOnLoadMethodAttribute,
-};
+pub use runtimeinitializeonloadmethodattribute::{IRuntimeInitializeOnLoadMethodAttribute, RuntimeInitializeOnLoadMethodAttribute};
 #[cfg(any(feature = "unity_engine-runtimeplatform-types"))]
 pub mod runtimeplatform;
 #[cfg(feature = "unity_engine-runtimeplatform-types")]
@@ -2718,9 +2662,7 @@ pub mod shadervariantcollection;
 #[cfg(feature = "unity_engine-shadervariantcollection")]
 pub use shadervariantcollection::IShaderVariantCollectionMethods;
 #[cfg(feature = "unity_engine-shadervariantcollection-types")]
-pub use shadervariantcollection::{
-    IShaderVariantCollection, ShaderVariantCollection, ShaderVariantCollection_ShaderVariant,
-};
+pub use shadervariantcollection::{IShaderVariantCollection, ShaderVariantCollection, ShaderVariantCollection_ShaderVariant};
 #[cfg(any(feature = "unity_engine-shadowmaskmode-types"))]
 pub mod shadowmaskmode;
 #[cfg(feature = "unity_engine-shadowmaskmode-types")]
@@ -2732,9 +2674,7 @@ pub use shadowresolution::ShadowResolution;
 #[cfg(any(feature = "unity_engine-sharedbetweenanimatorsattribute-types"))]
 pub mod sharedbetweenanimatorsattribute;
 #[cfg(feature = "unity_engine-sharedbetweenanimatorsattribute-types")]
-pub use sharedbetweenanimatorsattribute::{
-    ISharedBetweenAnimatorsAttribute, SharedBetweenAnimatorsAttribute,
-};
+pub use sharedbetweenanimatorsattribute::{ISharedBetweenAnimatorsAttribute, SharedBetweenAnimatorsAttribute};
 #[cfg(any(feature = "unity_engine-skeletonbone-types"))]
 pub mod skeletonbone;
 #[cfg(feature = "unity_engine-skeletonbone-types")]
@@ -2938,10 +2878,7 @@ pub mod textasset;
 #[cfg(feature = "unity_engine-textasset")]
 pub use textasset::ITextAssetMethods;
 #[cfg(feature = "unity_engine-textasset-types")]
-pub use textasset::{
-    ITextAsset, ITextAsset_EncodingUtility, TextAsset, TextAsset_CreateOptions,
-    TextAsset_EncodingUtility,
-};
+pub use textasset::{ITextAsset, ITextAsset_EncodingUtility, TextAsset, TextAsset_CreateOptions, TextAsset_EncodingUtility};
 #[cfg(any(feature = "unity_engine-textclipping-types"))]
 pub mod textclipping;
 #[cfg(feature = "unity_engine-textclipping-types")]
@@ -3009,9 +2946,7 @@ pub mod threadandserializationsafeattribute;
 #[cfg(feature = "unity_engine-threadandserializationsafeattribute")]
 pub use threadandserializationsafeattribute::IThreadAndSerializationSafeAttributeMethods;
 #[cfg(feature = "unity_engine-threadandserializationsafeattribute-types")]
-pub use threadandserializationsafeattribute::{
-    IThreadAndSerializationSafeAttribute, ThreadAndSerializationSafeAttribute,
-};
+pub use threadandserializationsafeattribute::{IThreadAndSerializationSafeAttribute, ThreadAndSerializationSafeAttribute};
 #[cfg(any(feature = "unity_engine-threadpriority-types"))]
 pub mod threadpriority;
 #[cfg(feature = "unity_engine-threadpriority-types")]
@@ -3110,9 +3045,7 @@ pub mod touchscreenkeyboard;
 #[cfg(feature = "unity_engine-touchscreenkeyboard")]
 pub use touchscreenkeyboard::ITouchScreenKeyboardMethods;
 #[cfg(feature = "unity_engine-touchscreenkeyboard-types")]
-pub use touchscreenkeyboard::{
-    ITouchScreenKeyboard, TouchScreenKeyboard, TouchScreenKeyboard_Status,
-};
+pub use touchscreenkeyboard::{ITouchScreenKeyboard, TouchScreenKeyboard, TouchScreenKeyboard_Status};
 #[cfg(any(feature = "unity_engine-touchscreenkeyboard_internalconstructorhelperarguments-types"))]
 pub mod touchscreenkeyboard_internalconstructorhelperarguments;
 #[cfg(feature = "unity_engine-touchscreenkeyboard_internalconstructorhelperarguments-types")]
@@ -3244,9 +3177,7 @@ pub use uilineinfo::UILineInfo;
 #[cfg(any(feature = "unity_engine-uisystemprofilerapi-types"))]
 pub mod uisystemprofilerapi;
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]
-pub use uisystemprofilerapi::{
-    IUISystemProfilerApi, UISystemProfilerApi, UISystemProfilerApi_SampleType,
-};
+pub use uisystemprofilerapi::{IUISystemProfilerApi, UISystemProfilerApi, UISystemProfilerApi_SampleType};
 #[cfg(any(feature = "unity_engine-uivertex-types"))]
 pub mod uivertex;
 #[cfg(feature = "unity_engine-uivertex-types")]
@@ -3282,10 +3213,7 @@ pub mod unitysynchronizationcontext;
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
 pub use unitysynchronizationcontext::IUnitySynchronizationContextMethods;
 #[cfg(feature = "unity_engine-unitysynchronizationcontext-types")]
-pub use unitysynchronizationcontext::{
-    IUnitySynchronizationContext, UnitySynchronizationContext,
-    UnitySynchronizationContext_WorkRequest,
-};
+pub use unitysynchronizationcontext::{IUnitySynchronizationContext, UnitySynchronizationContext, UnitySynchronizationContext_WorkRequest};
 #[cfg(any(feature = "unity_engine-vector2-types"))]
 pub mod vector2;
 #[cfg(feature = "unity_engine-vector2-types")]

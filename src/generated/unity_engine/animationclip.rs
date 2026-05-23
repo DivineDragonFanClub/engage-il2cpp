@@ -2,12 +2,16 @@
 
 #[cfg(feature = "unity_engine-animationclip-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::motion::{IMotion, Motion};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            motion::{IMotion, Motion},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animationclip/AnimationClip.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AnimationClip")]
@@ -27,54 +31,35 @@ mod __AnimationClip_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationClip as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimationClip as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create_animation_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "Internal_CreateAnimationClip",
@@ -86,41 +71,30 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "Internal_CreateAnimationClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "Internal_CreateAnimationClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_create_animation_clip(
         self_: crate::unity_engine::animationclip::AnimationClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationclip::AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_create_animation_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_create_animation_clip::get_method_info().method_ptr);
         inner(self_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sample_animation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -136,18 +110,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "SampleAnimation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "SampleAnimation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sample_animation(
@@ -156,25 +127,15 @@ mod __AnimationClip_unity2_raw {
         time: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AnimationClip,
-            crate::unity_engine::gameobject::GameObject,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sample_animation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationClip, crate::unity_engine::gameobject::GameObject, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sample_animation::get_method_info().method_ptr);
         inner(this, go, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sample_animation_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
@@ -192,18 +153,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "SampleAnimation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "SampleAnimation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sample_animation_2(
@@ -219,20 +177,14 @@ mod __AnimationClip_unity2_raw {
             f32,
             crate::unity_engine::wrapmode::WrapMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sample_animation_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_sample_animation_2::get_method_info().method_ptr);
         inner(go, clip, in_time, wrap_mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -245,39 +197,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_length",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_length",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_length(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_length(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_length::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -290,39 +230,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_startTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_startTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_start_time(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_start_time(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_start_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stop_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -335,39 +263,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_stopTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_stopTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stop_time(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_stop_time(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_stop_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_stop_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_frame_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -380,41 +296,28 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_frameRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_frameRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_frame_rate(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_frame_rate(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_frame_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_frame_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_frame_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "set_frameRate",
@@ -426,46 +329,32 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "set_frameRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "set_frameRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_frame_rate(
-        this: AnimationClip,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_frame_rate(this: AnimationClip, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AnimationClip, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_frame_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_frame_rate::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -478,18 +367,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "SetCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "SetCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_curve(
@@ -507,27 +393,14 @@ mod __AnimationClip_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::animationcurve::AnimationCurve,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_curve::get_offset() as isize),
-        );
-        inner(
-            this,
-            relative_path,
-            r#type,
-            property_name,
-            curve,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_curve::get_method_info().method_ptr);
+        inner(this, relative_path, r#type, property_name, curve, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ensure_quaternion_continuity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -540,39 +413,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "EnsureQuaternionContinuity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "EnsureQuaternionContinuity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ensure_quaternion_continuity(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ensure_quaternion_continuity(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ensure_quaternion_continuity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ensure_quaternion_continuity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -585,39 +446,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "ClearCurves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "ClearCurves",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_curves(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_curves(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_curves::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_curves::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_wrap_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -630,43 +479,28 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_wrapMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_wrapMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_wrap_mode(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::wrapmode::WrapMode {
-        let inner: extern "C" fn(
-            AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::wrapmode::WrapMode = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_wrap_mode::get_offset() as isize),
-        );
+    pub unsafe fn get_wrap_mode(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::wrapmode::WrapMode {
+        let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> crate::unity_engine::wrapmode::WrapMode =
+            ::core::mem::transmute(__lookup_get_wrap_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_wrap_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::wrapmode::WrapMode as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::wrapmode::WrapMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "set_wrapMode",
@@ -678,18 +512,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "set_wrapMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "set_wrapMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_wrap_mode(
@@ -697,24 +528,15 @@ mod __AnimationClip_unity2_raw {
         value: crate::unity_engine::wrapmode::WrapMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AnimationClip,
-            crate::unity_engine::wrapmode::WrapMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_wrap_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationClip, crate::unity_engine::wrapmode::WrapMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_wrap_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_bounds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -727,43 +549,28 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_localBounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_localBounds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_local_bounds(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::bounds::Bounds {
-        let inner: extern "C" fn(
-            AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_bounds::get_offset() as isize),
-        );
+    pub unsafe fn get_local_bounds(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds =
+            ::core::mem::transmute(__lookup_get_local_bounds::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_bounds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "set_localBounds",
@@ -775,18 +582,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "set_localBounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "set_localBounds",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_bounds(
@@ -794,24 +598,15 @@ mod __AnimationClip_unity2_raw {
         value: crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AnimationClip,
-            crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_bounds::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationClip, crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_bounds::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_legacy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -824,41 +619,28 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_legacy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_legacy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_legacy(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_legacy(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_legacy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_legacy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_legacy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "set_legacy",
@@ -870,40 +652,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "set_legacy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "set_legacy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_legacy(
-        this: AnimationClip,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_legacy(this: AnimationClip, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AnimationClip, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_legacy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_legacy::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_human_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -916,39 +685,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_humanMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_humanMotion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_human_motion(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_human_motion(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_human_motion::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_human_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -961,39 +718,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_empty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_empty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_empty(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_empty(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_empty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_generic_root_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -1006,39 +751,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_hasGenericRootTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_hasGenericRootTransform",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_generic_root_transform(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_generic_root_transform(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_generic_root_transform::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_generic_root_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_motion_float_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -1051,39 +784,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_hasMotionFloatCurves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_hasMotionFloatCurves",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_motion_float_curves(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_motion_float_curves(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_motion_float_curves::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_motion_float_curves::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_motion_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -1096,39 +817,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_hasMotionCurves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_hasMotionCurves",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_motion_curves(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_motion_curves(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_motion_curves::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_motion_curves::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_root_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -1141,39 +850,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_hasRootCurves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_hasRootCurves",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_root_curves(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_root_curves(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_root_curves::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_root_curves::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_root_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -1186,43 +883,29 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_hasRootMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_hasRootMotion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_root_motion(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_root_motion(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_root_motion::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_root_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "AddEvent",
@@ -1234,18 +917,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "AddEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "AddEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_event(
@@ -1253,26 +933,16 @@ mod __AnimationClip_unity2_raw {
         evt: crate::unity_engine::animationevent::AnimationEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AnimationClip,
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_event::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationClip, crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_event::get_method_info().method_ptr);
         inner(this, evt, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_event_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "AddEventInternal",
@@ -1284,43 +954,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "AddEventInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "AddEventInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_event_internal(
-        this: AnimationClip,
-        evt: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimationClip,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_event_internal::get_offset() as isize),
-        );
+    pub unsafe fn add_event_internal(this: AnimationClip, evt: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AnimationClip, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_event_internal::get_method_info().method_ptr);
         inner(this, evt, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_events {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -1333,47 +987,32 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_events",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_events",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_events(
         this: AnimationClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent> {
-        let inner: extern "C" fn(
-            AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::unity_engine::animationevent::AnimationEvent,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_events::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent> =
+            ::core::mem::transmute(__lookup_get_events::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_events {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::animationevent::AnimationEvent,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::animationevent::AnimationEvent> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "set_events",
@@ -1385,18 +1024,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "set_events",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "set_events",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_events(
@@ -1408,22 +1044,15 @@ mod __AnimationClip_unity2_raw {
             AnimationClip,
             ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_events::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_events::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_events_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IlInstance as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IlInstance as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "SetEventsInternal",
@@ -1435,43 +1064,27 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "SetEventsInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "SetEventsInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_events_internal(
-        this: AnimationClip,
-        value: ::unity2::IlInstance,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimationClip,
-            ::unity2::IlInstance,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_events_internal::get_offset() as isize),
-        );
+    pub unsafe fn set_events_internal(this: AnimationClip, value: ::unity2::IlInstance, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AnimationClip, ::unity2::IlInstance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_events_internal::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_events_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
@@ -1484,41 +1097,28 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "GetEventsInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "GetEventsInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_events_internal(
-        this: AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IlInstance {
+    pub unsafe fn get_events_internal(this: AnimationClip, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IlInstance {
         let inner: extern "C" fn(AnimationClip, ::unity2::OptionalMethod) -> ::unity2::IlInstance =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_events_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_events_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_bounds_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "get_localBounds_Injected",
@@ -1530,18 +1130,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "get_localBounds_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "get_localBounds_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_local_bounds_injected(
@@ -1549,26 +1146,16 @@ mod __AnimationClip_unity2_raw {
         ret: *mut crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AnimationClip,
-            *mut crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_bounds_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationClip, *mut crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_local_bounds_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_bounds_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationClip as ::unity2::ClassIdentity>::class(),
                 "set_localBounds_Injected",
@@ -1580,18 +1167,15 @@ mod __AnimationClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationClip as ::unity2::ClassIdentity>::NAME,
-                    "set_localBounds_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationClip as ::unity2::ClassIdentity>::NAME,
+                        "set_localBounds_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_bounds_injected(
@@ -1599,15 +1183,8 @@ mod __AnimationClip_unity2_raw {
         value: *mut crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AnimationClip,
-            *mut crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_bounds_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationClip, *mut crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_bounds_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -1615,16 +1192,10 @@ mod __AnimationClip_unity2_raw {
 #[cfg(feature = "unity_engine-animationclip")]
 impl AnimationClip {
     #[doc = "`Internal_CreateAnimationClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    pub fn internal_create_animation_clip(
-        self_: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
-    ) -> () {
-        unsafe {
-            __AnimationClip_unity2_raw::internal_create_animation_clip(
-                ::core::convert::Into::into(self_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn internal_create_animation_clip(self_: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>) -> () {
+        unsafe { __AnimationClip_unity2_raw::internal_create_animation_clip(::core::convert::Into::into(self_), ::core::option::Option::None) }
     }
+
     #[doc = "`SampleAnimation(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip, f32, crate::unity_engine::wrapmode::WrapMode)` overload"]
     pub fn sample_animation_2(
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
@@ -1649,9 +1220,7 @@ pub trait IAnimationClipMethods: IAnimationClip {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1662,9 +1231,7 @@ pub trait IAnimationClipMethods: IAnimationClip {
         time: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::sample_animation(
                 __receiver,
                 ::core::convert::Into::into(go),
@@ -1676,50 +1243,36 @@ pub trait IAnimationClipMethods: IAnimationClip {
     #[doc = "`get_length()` overload"]
     fn get_length(self) -> f32 {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_length(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_startTime()` overload"]
     fn get_start_time(self) -> f32 {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_start_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_stopTime()` overload"]
     fn get_stop_time(self) -> f32 {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_stop_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_frameRate()` overload"]
     fn get_frame_rate(self) -> f32 {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_frame_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_frameRate(f32)` overload"]
     fn set_frame_rate(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::set_frame_rate(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::set_frame_rate(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SetCurve(::unity2::Il2CppString, ::unity2::SystemType, ::unity2::Il2CppString, crate::unity_engine::animationcurve::AnimationCurve)` overload"]
@@ -1731,9 +1284,7 @@ pub trait IAnimationClipMethods: IAnimationClip {
         curve: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
     ) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::set_curve(
                 __receiver,
                 ::core::convert::Into::into(relative_path),
@@ -1747,287 +1298,165 @@ pub trait IAnimationClipMethods: IAnimationClip {
     #[doc = "`EnsureQuaternionContinuity()` overload"]
     fn ensure_quaternion_continuity(self) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::ensure_quaternion_continuity(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::ensure_quaternion_continuity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClearCurves()` overload"]
     fn clear_curves(self) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::clear_curves(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_wrapMode()` overload"]
     fn get_wrap_mode(self) -> crate::unity_engine::wrapmode::WrapMode {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_wrap_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_wrapMode(crate::unity_engine::wrapmode::WrapMode)` overload"]
-    fn set_wrap_mode(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>,
-    ) -> () {
+    fn set_wrap_mode(self, value: impl ::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::set_wrap_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::set_wrap_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_localBounds()` overload"]
     fn get_local_bounds(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_local_bounds(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_localBounds(crate::unity_engine::bounds::Bounds)` overload"]
-    fn set_local_bounds(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>,
-    ) -> () {
+    fn set_local_bounds(self, value: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::set_local_bounds(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::set_local_bounds(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_legacy()` overload"]
     fn get_legacy(self) -> bool {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_legacy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_legacy(bool)` overload"]
     fn set_legacy(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::set_legacy(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::set_legacy(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_humanMotion()` overload"]
     fn get_human_motion(self) -> bool {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_human_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_empty()` overload"]
     fn get_empty(self) -> bool {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_empty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasGenericRootTransform()` overload"]
     fn get_has_generic_root_transform(self) -> bool {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::get_has_generic_root_transform(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::get_has_generic_root_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasMotionFloatCurves()` overload"]
     fn get_has_motion_float_curves(self) -> bool {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::get_has_motion_float_curves(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::get_has_motion_float_curves(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasMotionCurves()` overload"]
     fn get_has_motion_curves(self) -> bool {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::get_has_motion_curves(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::get_has_motion_curves(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasRootCurves()` overload"]
     fn get_has_root_curves(self) -> bool {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::get_has_root_curves(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::get_has_root_curves(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasRootMotion()` overload"]
     fn get_has_root_motion(self) -> bool {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::get_has_root_motion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::get_has_root_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddEvent(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    fn add_event(
-        self,
-        evt: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> () {
+    fn add_event(self, evt: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::add_event(
-                __receiver,
-                ::core::convert::Into::into(evt),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::add_event(__receiver, ::core::convert::Into::into(evt), ::core::option::Option::None)
         }
     }
     #[doc = "`AddEventInternal(crate::system::object::Object)` overload"]
-    fn add_event_internal(
-        self,
-        evt: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn add_event_internal(self, evt: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::add_event_internal(
-                __receiver,
-                ::core::convert::Into::into(evt),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::add_event_internal(__receiver, ::core::convert::Into::into(evt), ::core::option::Option::None)
         }
     }
     #[doc = "`get_events()` overload"]
     fn get_events(self) -> ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent> {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimationClip_unity2_raw::get_events(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_events(::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>)` overload"]
-    fn set_events(
-        self,
-        value: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
-        >,
-    ) -> () {
+    fn set_events(self, value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>>) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::set_events(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::set_events(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SetEventsInternal(::unity2::IlInstance)` overload"]
     fn set_events_internal(self, value: impl ::core::convert::Into<::unity2::IlInstance>) -> () {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::set_events_internal(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::set_events_internal(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEventsInternal()` overload"]
     fn get_events_internal(self) -> ::unity2::IlInstance {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AnimationClip_unity2_raw::get_events_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimationClip_unity2_raw::get_events_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_localBounds_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"]
     fn get_local_bounds_injected(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
-            __AnimationClip_unity2_raw::get_local_bounds_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            __AnimationClip_unity2_raw::get_local_bounds_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_localBounds_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"]
     fn set_local_bounds_injected(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
-            __AnimationClip_unity2_raw::set_local_bounds_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <AnimationClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            __AnimationClip_unity2_raw::set_local_bounds_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -2040,13 +1469,8 @@ impl<__T: IAnimationClip> IAnimationClipMethods for __T {}
 impl AnimationClip {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AnimationClip),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AnimationClip), ::core::stringify!(new),));
         <Self as IAnimationClipMethods>::ctor(this);
         this
     }
@@ -2055,16 +1479,15 @@ impl AnimationClip {
 #[cfg(feature = "unity_engine-animationclip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimationClip;
-    pub use super::IAnimationClip;
-    pub use super::IAnimationClipMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AnimationClip, IAnimationClip, IAnimationClipMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::motion::IMotion;
     #[cfg(feature = "unity_engine-motion")]
     pub use crate::unity_engine::motion::IMotionMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{motion::IMotion, object_2::IObject_2},
+    };
 }

@@ -2,43 +2,13 @@
 
 #[cfg(feature = "system-collections-generic-queue_1-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/queue_1/Queue_1_Enumerator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Queue_1_Enumerator<T0> {
-        pub _phantom: ::core::marker::PhantomData<(T0,)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for Queue_1_Enumerator<T0> {
-        const NAMESPACE: &'static str = "System.Collections.Generic";
-
-        const NAME: &'static str = "Queue`1.Enumerator";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| {
-                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-                    .expect("generic instantiation")
-            })
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for Queue_1_Enumerator<T0> {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/queue_1/Queue_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "Queue`1")]
@@ -63,10 +33,137 @@ mod __types {
         #[rename(name = "GrowFactor")]
         pub grow_factor: i32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/queue_1/Queue_1_Enumerator.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Queue_1_Enumerator<T0> {
+        pub _phantom: ::core::marker::PhantomData<(T0,)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for Queue_1_Enumerator<T0> {
+        const NAME: &'static str = "Queue`1.Enumerator";
+        const NAMESPACE: &'static str = "System.Collections.Generic";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| {
+                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                    .expect("generic instantiation")
+            })
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for Queue_1_Enumerator<T0> {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "system-collections-generic-queue_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-generic-queue_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> Queue_1<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, capacity: i32) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(self, collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>) -> ();
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
+    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
+
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
+    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
+    pub fn system_collections_i_collection_copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
+
+    #[doc = "`Enqueue(T0)` overload"]
+    #[method(name = "Enqueue", args = 1)]
+    pub fn enqueue(self, item: T0) -> ();
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(self) -> crate::system::collections::generic::queue_1::Queue_1_Enumerator<T0>;
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`Dequeue()` overload"]
+    #[method(name = "Dequeue", args = 0)]
+    pub fn dequeue(self) -> T0;
+
+    #[doc = "`Peek()` overload"]
+    #[method(name = "Peek", args = 0)]
+    pub fn peek(self) -> T0;
+
+    #[doc = "`Contains(T0)` overload"]
+    #[method(name = "Contains", args = 1)]
+    pub fn contains(self, item: T0) -> bool;
+
+    #[doc = "`SetCapacity(i32)` overload"]
+    #[method(name = "SetCapacity", args = 1)]
+    pub fn set_capacity(self, capacity: i32) -> ();
+
+    #[doc = "`MoveNext(*muti32)` overload"]
+    #[method(name = "MoveNext", args = 1)]
+    pub fn move_next(self, index: *mut i32) -> ();
+
+    #[doc = "`ThrowForEmptyQueue()` overload"]
+    #[method(name = "ThrowForEmptyQueue", args = 0)]
+    pub fn throw_for_empty_queue(self) -> ();
+}
+
+#[cfg(feature = "system-collections-generic-queue_1")]
+impl<T0: ::unity2::ClassIdentity> Queue_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Queue_1), ::core::stringify!(new),));
+        <Self as IQueue_1Methods<T0>>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new_2(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Queue_1), ::core::stringify!(new_2),));
+        <Self as IQueue_1Methods<T0>>::ctor_2(this, capacity);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` — overload selector"]
+    pub fn new_3(collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Queue_1), ::core::stringify!(new_3),));
+        <Self as IQueue_1Methods<T0>>::ctor_3(this, collection);
+        this
+    }
+}
 
 #[cfg(feature = "system-collections-generic-queue_1")]
 #[::unity2::methods(value)]
@@ -101,143 +198,12 @@ impl<T0: ::unity2::ClassIdentity> Queue_1_Enumerator<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-queue_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> Queue_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, capacity: i32) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_3(
-        self,
-        collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
-    ) -> ();
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
-    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
-
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
-    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(
-        self,
-        array: ::unity2::IlInstance,
-        index: i32,
-    ) -> ();
-
-    #[doc = "`Enqueue(T0)` overload"]
-    #[method(name = "Enqueue", args = 1)]
-    pub fn enqueue(self, item: T0) -> ();
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::queue_1::Queue_1_Enumerator<T0>;
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`Dequeue()` overload"]
-    #[method(name = "Dequeue", args = 0)]
-    pub fn dequeue(self) -> T0;
-
-    #[doc = "`Peek()` overload"]
-    #[method(name = "Peek", args = 0)]
-    pub fn peek(self) -> T0;
-
-    #[doc = "`Contains(T0)` overload"]
-    #[method(name = "Contains", args = 1)]
-    pub fn contains(self, item: T0) -> bool;
-
-    #[doc = "`SetCapacity(i32)` overload"]
-    #[method(name = "SetCapacity", args = 1)]
-    pub fn set_capacity(self, capacity: i32) -> ();
-
-    #[doc = "`MoveNext(*muti32)` overload"]
-    #[method(name = "MoveNext", args = 1)]
-    pub fn move_next(self, index: *mut i32) -> ();
-
-    #[doc = "`ThrowForEmptyQueue()` overload"]
-    #[method(name = "ThrowForEmptyQueue", args = 0)]
-    pub fn throw_for_empty_queue(self) -> ();
-}
-
-#[cfg(feature = "system-collections-generic-queue_1")]
-impl<T0: ::unity2::ClassIdentity> Queue_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Queue_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IQueue_1Methods<T0>>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new_2(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Queue_1),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IQueue_1Methods<T0>>::ctor_2(this, capacity);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` — overload selector"]
-    pub fn new_3(
-        collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Queue_1),
-                ::core::stringify!(new_3),
-            )
-        });
-        <Self as IQueue_1Methods<T0>>::ctor_3(this, collection);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-generic-queue_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IQueue_1;
-    pub use super::IQueue_1Methods;
-    pub use super::Queue_1;
-    pub use super::Queue_1_Enumerator;
-    pub use crate::system::object::IObject;
+    pub use super::{IQueue_1, IQueue_1Methods, Queue_1, Queue_1_Enumerator};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

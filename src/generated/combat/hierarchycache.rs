@@ -2,20 +2,17 @@
 
 #[cfg(feature = "combat-hierarchycache-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hierarchycache/HierarchyCache.md"))]
     #[::unity2::class(namespace = "Combat", name = "HierarchyCache")]
     #[parent(crate::system::object::Object)]
     pub struct HierarchyCache {
         #[rename(name = "dic")]
-        pub dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::unity_engine::transform::Transform,
-        >,
+        pub dic: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::transform::Transform>,
     }
 }
 
@@ -31,9 +28,7 @@ mod __HierarchyCache_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_dic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HierarchyCache as ::unity2::ClassIdentity>::class(),
@@ -46,39 +41,36 @@ mod __HierarchyCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HierarchyCache as ::unity2::ClassIdentity>::NAME,
-                    "get_Dic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HierarchyCache as ::unity2::ClassIdentity>::NAME,
+                        "get_Dic",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_dic(
         this: HierarchyCache,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        crate::unity_engine::transform::Transform,
-    > {
-        let inner : extern "C" fn (HierarchyCache , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dic :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::transform::Transform> {
+        let inner: extern "C" fn(
+            HierarchyCache,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::unity_engine::transform::Transform,
+        > = ::core::mem::transmute(__lookup_get_dic::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HierarchyCache as ::unity2::ClassIdentity>::class(),
                 "get_Item",
@@ -90,18 +82,15 @@ mod __HierarchyCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HierarchyCache as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HierarchyCache as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item(
@@ -109,26 +98,16 @@ mod __HierarchyCache_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            HierarchyCache,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HierarchyCache, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HierarchyCache as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -140,45 +119,28 @@ mod __HierarchyCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HierarchyCache as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HierarchyCache as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HierarchyCache,
-        root: crate::unity_engine::transform::Transform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HierarchyCache,
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: HierarchyCache, root: crate::unity_engine::transform::Transform, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HierarchyCache, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HierarchyCache as ::unity2::ClassIdentity>::class(),
                 "AddRange",
@@ -190,18 +152,15 @@ mod __HierarchyCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HierarchyCache as ::unity2::ClassIdentity>::NAME,
-                    "AddRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HierarchyCache as ::unity2::ClassIdentity>::NAME,
+                        "AddRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_range(
@@ -209,15 +168,8 @@ mod __HierarchyCache_unity2_raw {
         root: crate::unity_engine::transform::Transform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HierarchyCache,
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_range::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HierarchyCache, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_range::get_method_info().method_ptr);
         inner(this, root, __unity2_method_info)
     }
 }
@@ -227,63 +179,31 @@ pub trait IHierarchyCacheMethods: IHierarchyCache {
     #[doc = "`get_Dic()` overload"]
     fn get_dic(
         self,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        crate::unity_engine::transform::Transform,
-    > {
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::transform::Transform> {
         unsafe {
-            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HierarchyCache_unity2_raw::get_dic(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
-    fn get_item(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::transform::Transform {
+    fn get_item(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HierarchyCache_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HierarchyCache_unity2_raw::get_item(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> () {
+    fn ctor(self, root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
         unsafe {
-            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HierarchyCache_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HierarchyCache_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
         }
     }
     #[doc = "`AddRange(crate::unity_engine::transform::Transform)` overload"]
-    fn add_range(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> () {
+    fn add_range(self, root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
         unsafe {
-            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HierarchyCache_unity2_raw::add_range(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HierarchyCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HierarchyCache_unity2_raw::add_range(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
         }
     }
 }
@@ -310,9 +230,7 @@ impl HierarchyCache {
 #[cfg(feature = "combat-hierarchycache")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HierarchyCache;
-    pub use super::IHierarchyCache;
-    pub use super::IHierarchyCacheMethods;
+    pub use super::{HierarchyCache, IHierarchyCache, IHierarchyCacheMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

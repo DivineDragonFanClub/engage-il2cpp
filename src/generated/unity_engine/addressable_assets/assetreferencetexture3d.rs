@@ -2,22 +2,19 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture3d-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::addressable_assets::assetreference::{
-        AssetReference, IAssetReference,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::addressable_assets::{
+            assetreference::{AssetReference, IAssetReference},
+            assetreferencet_1::{AssetReferenceT_1, IAssetReferenceT_1},
+        },
     };
-    use crate::unity_engine::addressable_assets::assetreferencet_1::{
-        AssetReferenceT_1, IAssetReferenceT_1,
-    };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencetexture3d/AssetReferenceTexture3D.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets",
-        name = "AssetReferenceTexture3D"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "AssetReferenceTexture3D")]
     # [parent (crate :: unity_engine :: addressable_assets :: assetreferencet_1 :: AssetReferenceT_1 < crate :: unity_engine :: texture3d :: Texture3D >)]
     pub struct AssetReferenceTexture3D {}
 }
@@ -34,11 +31,8 @@ mod __AssetReferenceTexture3D_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReferenceTexture3D as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -50,34 +44,20 @@ mod __AssetReferenceTexture3D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReferenceTexture3D as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReferenceTexture3D as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AssetReferenceTexture3D,
-        guid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetReferenceTexture3D,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AssetReferenceTexture3D, guid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetReferenceTexture3D, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, guid, __unity2_method_info)
     }
 }
@@ -88,14 +68,8 @@ pub trait IAssetReferenceTexture3DMethods: IAssetReferenceTexture3D {
     fn ctor(self, guid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <AssetReferenceTexture3D as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AssetReferenceTexture3D_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(guid),
-                ::core::option::Option::None,
-            )
+                <AssetReferenceTexture3D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReferenceTexture3D_unity2_raw::ctor(__receiver, ::core::convert::Into::into(guid), ::core::option::Option::None)
         }
     }
 }
@@ -122,16 +96,15 @@ impl AssetReferenceTexture3D {
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture3d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetReferenceTexture3D;
-    pub use super::IAssetReferenceTexture3D;
-    pub use super::IAssetReferenceTexture3DMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AssetReferenceTexture3D, IAssetReferenceTexture3D, IAssetReferenceTexture3DMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::addressable_assets::assetreference::IAssetReference;
     #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
     pub use crate::unity_engine::addressable_assets::assetreference::IAssetReferenceMethods;
-    pub use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1;
     #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1")]
     pub use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::addressable_assets::{assetreference::IAssetReference, assetreferencet_1::IAssetReferenceT_1},
+    };
 }

@@ -31,9 +31,7 @@ pub use instructionfieldusage::InstructionFieldUsage;
 #[cfg(any(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions-types"))]
 pub mod instructionfieldusage_extensions;
 #[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions-types")]
-pub use instructionfieldusage_extensions::{
-    IInstructionFieldUsage_Extensions, InstructionFieldUsage_Extensions,
-};
+pub use instructionfieldusage_extensions::{IInstructionFieldUsage_Extensions, InstructionFieldUsage_Extensions};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-looptracker-types"))]
 pub mod looptracker;
 #[cfg(feature = "moon_sharp-interpreter-execution-looptracker")]

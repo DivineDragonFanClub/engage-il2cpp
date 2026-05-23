@@ -2,23 +2,30 @@
 
 #[cfg(feature = "system-reflection-exceptionhandlingclause-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/exceptionhandlingclause/ExceptionHandlingClause.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "ExceptionHandlingClause")]
     #[parent(crate::system::object::Object)]
     pub struct ExceptionHandlingClause {
-# [rename (name = "catch_type")] pub catch_type : :: unity2 :: SystemType ,
-# [rename (name = "filter_offset")] pub filter_offset : i32 ,
-# [rename (name = "flags")] pub flags : crate :: system :: reflection :: exceptionhandlingclauseoptions :: ExceptionHandlingClauseOptions ,
-# [rename (name = "try_offset")] pub try_offset : i32 ,
-# [rename (name = "try_length")] pub try_length : i32 ,
-# [rename (name = "handler_offset")] pub handler_offset : i32 ,
-# [rename (name = "handler_length")] pub handler_length : i32 ,
-}
+        #[rename(name = "catch_type")]
+        pub catch_type: ::unity2::SystemType,
+        #[rename(name = "filter_offset")]
+        pub filter_offset: i32,
+        #[rename(name = "flags")]
+        pub flags: crate::system::reflection::exceptionhandlingclauseoptions::ExceptionHandlingClauseOptions,
+        #[rename(name = "try_offset")]
+        pub try_offset: i32,
+        #[rename(name = "try_length")]
+        pub try_length: i32,
+        #[rename(name = "handler_offset")]
+        pub handler_offset: i32,
+        #[rename(name = "handler_length")]
+        pub handler_length: i32,
+    }
 }
 
 #[cfg(feature = "system-reflection-exceptionhandlingclause-types")]
@@ -33,9 +40,7 @@ mod __ExceptionHandlingClause_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ExceptionHandlingClause as ::unity2::ClassIdentity>::class(),
@@ -48,39 +53,27 @@ mod __ExceptionHandlingClause_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExceptionHandlingClause as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExceptionHandlingClause as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ExceptionHandlingClause,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ExceptionHandlingClause, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ExceptionHandlingClause, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ExceptionHandlingClause as ::unity2::ClassIdentity>::class(),
@@ -93,32 +86,20 @@ mod __ExceptionHandlingClause_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExceptionHandlingClause as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExceptionHandlingClause as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: ExceptionHandlingClause,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ExceptionHandlingClause,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: ExceptionHandlingClause, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ExceptionHandlingClause, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -129,9 +110,7 @@ pub trait IExceptionHandlingClauseMethods: IExceptionHandlingClause {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ExceptionHandlingClause as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ExceptionHandlingClause as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ExceptionHandlingClause_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -139,13 +118,8 @@ pub trait IExceptionHandlingClauseMethods: IExceptionHandlingClause {
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ExceptionHandlingClause as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ExceptionHandlingClause_unity2_raw::to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ExceptionHandlingClause as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ExceptionHandlingClause_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -172,9 +146,7 @@ impl ExceptionHandlingClause {
 #[cfg(feature = "system-reflection-exceptionhandlingclause")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ExceptionHandlingClause;
-    pub use super::IExceptionHandlingClause;
-    pub use super::IExceptionHandlingClauseMethods;
+    pub use super::{ExceptionHandlingClause, IExceptionHandlingClause, IExceptionHandlingClauseMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

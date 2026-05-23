@@ -2,11 +2,23 @@
 
 #[cfg(feature = "app-mapdebugdisposmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::menuitem::{IMenuItem, MenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::menuitem::{IMenuItem, MenuItem},
+        system::object::{IObject, Object},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DisposMenuItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct MapDebugDisposMenu_DisposMenuItem {
+        #[rename(name = "m_Group")]
+        pub m_group: ::unity2::Il2CppString,
+        #[rename(name = "m_PositionGroup")]
+        pub m_position_group: crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DeleteForceMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DeleteForceMenuItem")]
@@ -20,36 +32,342 @@ mod __types {
         pub m_force_unit_count: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MapDebugDisposMenu.DisposMenuItem.SharedPositionGroup"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
-        #[rename(name = "m_PositionGroup")]
-        pub m_position_group: ::unity2::Il2CppString,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu.md"))]
     #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu")]
     #[parent(crate::system::object::Object)]
     pub struct MapDebugDisposMenu {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DisposMenuItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct MapDebugDisposMenu_DisposMenuItem {
-        #[rename(name = "m_Group")]
-        pub m_group: ::unity2::Il2CppString,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DisposMenuItem.SharedPositionGroup")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
         #[rename(name = "m_PositionGroup")]
-        pub m_position_group:
-            crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+        pub m_position_group: ::unity2::Il2CppString,
     }
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapDebugDisposMenu_DisposMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapDebugDisposMenu_DisposMenuItem,
+        group: ::unity2::Il2CppString,
+        position_group: crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapDebugDisposMenu_DisposMenuItem,
+            ::unity2::Il2CppString,
+            crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, group, position_group, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: MapDebugDisposMenu_DisposMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_draw_cell {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
+                "DrawCell",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "DrawCell",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn draw_cell(group: ::unity2::Il2CppString, position: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_draw_cell::get_method_info().method_ptr);
+        inner(group, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnTick",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_tick(this: MapDebugDisposMenu_DisposMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: MapDebugDisposMenu_DisposMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_x_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
+                "XCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "XCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn x_call(
+        this: MapDebugDisposMenu_DisposMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_x_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+impl MapDebugDisposMenu_DisposMenuItem {
+    #[doc = "`DrawCell(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn draw_cell(group: impl ::core::convert::Into<::unity2::Il2CppString>, position: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::draw_cell(
+                ::core::convert::Into::into(group),
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+pub trait IMapDebugDisposMenu_DisposMenuItemMethods: IMapDebugDisposMenu_DisposMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` overload"]
+    fn ctor(
+        self,
+        group: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position_group: impl ::core::convert::Into<crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(group),
+                ::core::convert::Into::into(position_group),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`XCall()` overload"]
+    fn x_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+impl<__T: IMapDebugDisposMenu_DisposMenuItem> IMapDebugDisposMenu_DisposMenuItemMethods for __T {}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+impl MapDebugDisposMenu_DisposMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` — overload selector"]
+    pub fn new(
+        group: ::unity2::Il2CppString,
+        position_group: crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDebugDisposMenu_DisposMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDebugDisposMenu_DisposMenuItemMethods>::ctor(this, group, position_group);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
 #[doc(hidden)]
@@ -60,11 +378,8 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -76,18 +391,15 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -95,24 +407,15 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         force_type: crate::app::force::Force_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, crate::app::force::Force_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, force_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -125,41 +428,27 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_count(
-        this: MapDebugDisposMenu_DeleteForceMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_count::get_offset() as isize),
-        );
+    pub unsafe fn get_column_count(this: MapDebugDisposMenu_DeleteForceMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_column_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_width0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -172,41 +461,27 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnWidth0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnWidth0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_width0(
-        this: MapDebugDisposMenu_DeleteForceMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_width0::get_offset() as isize),
-        );
+    pub unsafe fn get_column_width0(this: MapDebugDisposMenu_DeleteForceMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_column_width0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_width1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -219,41 +494,27 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnWidth1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnWidth1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_width1(
-        this: MapDebugDisposMenu_DeleteForceMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_width1::get_offset() as isize),
-        );
+    pub unsafe fn get_column_width1(this: MapDebugDisposMenu_DeleteForceMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_column_width1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_width2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -266,41 +527,27 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnWidth2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnWidth2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_width2(
-        this: MapDebugDisposMenu_DeleteForceMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_width2::get_offset() as isize),
-        );
+    pub unsafe fn get_column_width2(this: MapDebugDisposMenu_DeleteForceMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_column_width2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_name0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -313,41 +560,30 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnName0",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_name0(
         this: MapDebugDisposMenu_DeleteForceMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name0::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_column_name0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_name1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -360,41 +596,30 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnName1",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_name1(
         this: MapDebugDisposMenu_DeleteForceMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_column_name1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_name2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -407,41 +632,30 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnName2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_name2(
         this: MapDebugDisposMenu_DeleteForceMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_column_name2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -454,41 +668,27 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnTick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnTick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_tick(
-        this: MapDebugDisposMenu_DeleteForceMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_tick::get_offset() as isize),
-        );
+    pub unsafe fn on_tick(this: MapDebugDisposMenu_DeleteForceMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::class(),
@@ -501,44 +701,35 @@ mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: MapDebugDisposMenu_DeleteForceMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DeleteForceMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
-pub trait IMapDebugDisposMenu_DeleteForceMenuItemMethods:
-    IMapDebugDisposMenu_DeleteForceMenuItem
-{
+pub trait IMapDebugDisposMenu_DeleteForceMenuItemMethods: IMapDebugDisposMenu_DeleteForceMenuItem {
     #[doc = "`.ctor(crate::app::force::Force_Type)` overload"]
     fn ctor(self, force_type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> () {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(force_type),
@@ -549,100 +740,88 @@ pub trait IMapDebugDisposMenu_DeleteForceMenuItemMethods:
     #[doc = "`GetColumnCount()` overload"]
     fn get_column_count(self) -> i32 {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnWidth0()` overload"]
     fn get_column_width0(self) -> f32 {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width0(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnWidth1()` overload"]
     fn get_column_width1(self) -> f32 {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnWidth2()` overload"]
     fn get_column_width2(self) -> f32 {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnName0()` overload"]
     fn get_column_name0(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name0(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnName1()` overload"]
     fn get_column_name1(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnName2()` overload"]
     fn get_column_name2(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnTick()` overload"]
     fn on_tick(self) -> () {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::on_tick(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
         unsafe {
-            let __receiver = < MapDebugDisposMenu_DeleteForceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DeleteForceMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
-impl<__T: IMapDebugDisposMenu_DeleteForceMenuItem> IMapDebugDisposMenu_DeleteForceMenuItemMethods
-    for __T
-{
-}
+impl<__T: IMapDebugDisposMenu_DeleteForceMenuItem> IMapDebugDisposMenu_DeleteForceMenuItemMethods for __T {}
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
 impl MapDebugDisposMenu_DeleteForceMenuItem {
@@ -663,228 +842,14 @@ impl MapDebugDisposMenu_DeleteForceMenuItem {
 #[cfg(feature = "app-mapdebugdisposmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: ClassIdentity > :: class () , "Set" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: ClassIdentity > :: NAME , "Set" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set(
-        this: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-        position_group: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
-        inner(this, position_group, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: ClassIdentity > :: class () , "Get" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: ClassIdentity > :: NAME , "Get" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get(
-        this: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: ClassIdentity > :: class () , "Clear" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: ClassIdentity > :: NAME , "Clear" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(
-        this: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapdebugdisposmenu")]
-pub trait IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods:
-    IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup
-{
-    #[doc = "`Set(::unity2::Il2CppString)` overload"]
-    fn set(self, position_group: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = < MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(position_group),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Get()` overload"]
-    fn get(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw::get(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = < MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw::clear(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapdebugdisposmenu")]
-impl<__T: IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup>
-    IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods for __T
-{
-}
-
-#[cfg(feature = "app-mapdebugdisposmenu")]
-impl MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapdebugdisposmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapDebugDisposMenu_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -896,39 +861,27 @@ mod __MapDebugDisposMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDebugDisposMenu as ::unity2::ClassIdentity>::class(),
@@ -941,30 +894,20 @@ mod __MapDebugDisposMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapDebugDisposMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapDebugDisposMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapDebugDisposMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -973,12 +916,7 @@ mod __MapDebugDisposMenu_unity2_raw {
 impl MapDebugDisposMenu {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __MapDebugDisposMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MapDebugDisposMenu_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -987,9 +925,7 @@ pub trait IMapDebugDisposMenuMethods: IMapDebugDisposMenu {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapDebugDisposMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapDebugDisposMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapDebugDisposMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1017,70 +953,123 @@ impl MapDebugDisposMenu {
 #[cfg(feature = "app-mapdebugdisposmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapDebugDisposMenu_DisposMenuItem_unity2_raw {
+mod __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::ClassIdentity>::class(),
+                "Set",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set(
+        this: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+        position_group: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
+        inner(this, position_group, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::ClassIdentity>::class(),
+                "Get",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get(
+        this: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
+                <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapDebugDisposMenu_DisposMenuItem,
-        group: ::unity2::Il2CppString,
-        position_group : crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem,
-            ::unity2::Il2CppString,
-            crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, group, position_group, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
                 0,
                 param_types,
                 false,
@@ -1089,341 +1078,83 @@ mod __MapDebugDisposMenu_DisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: MapDebugDisposMenu_DisposMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_draw_cell {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
-                "DrawCell",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "DrawCell",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn draw_cell(
-        group: ::unity2::Il2CppString,
-        position: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_cell::get_offset() as isize),
-        );
-        inner(group, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnTick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnTick",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_tick(
-        this: MapDebugDisposMenu_DisposMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_tick::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: MapDebugDisposMenu_DisposMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_x_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::class(),
-                "XCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDebugDisposMenu_DisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "XCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn x_call(
-        this: MapDebugDisposMenu_DisposMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(
-            MapDebugDisposMenu_DisposMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_x_call::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
-impl MapDebugDisposMenu_DisposMenuItem {
-    #[doc = "`DrawCell(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn draw_cell(
-        group: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+pub trait IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods: IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
+    #[doc = "`Set(::unity2::Il2CppString)` overload"]
+    fn set(self, position_group: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::draw_cell(
-                ::core::convert::Into::into(group),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapdebugdisposmenu")]
-pub trait IMapDebugDisposMenu_DisposMenuItemMethods: IMapDebugDisposMenu_DisposMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` overload"]
-    fn ctor(
-        self,
-        group: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position_group: impl ::core::convert::Into<
-            crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::ctor(
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw::set(
                 __receiver,
-                ::core::convert::Into::into(group),
                 ::core::convert::Into::into(position_group),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
+    #[doc = "`Get()` overload"]
+    fn get(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw::get(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`OnTick()` overload"]
-    fn on_tick(self) -> () {
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
         unsafe {
-            let __receiver =
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::on_tick(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`XCall()` overload"]
-    fn x_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver =
-                <MapDebugDisposMenu_DisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapDebugDisposMenu_DisposMenuItem_unity2_raw::x_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
-impl<__T: IMapDebugDisposMenu_DisposMenuItem> IMapDebugDisposMenu_DisposMenuItemMethods for __T {}
+impl<__T: IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup> IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods for __T {}
 
 #[cfg(feature = "app-mapdebugdisposmenu")]
-impl MapDebugDisposMenu_DisposMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` — overload selector"]
-    pub fn new(
-        group: ::unity2::Il2CppString,
-        position_group : crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
-    ) -> Self {
+impl MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapDebugDisposMenu_DisposMenuItem),
+                ::core::stringify!(MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapDebugDisposMenu_DisposMenuItemMethods>::ctor(this, group, position_group);
+        <Self as IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods>::ctor(this);
         this
     }
 }
@@ -1431,22 +1162,15 @@ impl MapDebugDisposMenu_DisposMenuItem {
 #[cfg(feature = "app-mapdebugdisposmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapDebugDisposMenu;
-    pub use super::IMapDebugDisposMenuMethods;
-    pub use super::IMapDebugDisposMenu_DeleteForceMenuItem;
-    pub use super::IMapDebugDisposMenu_DeleteForceMenuItemMethods;
-    pub use super::IMapDebugDisposMenu_DisposMenuItem;
-    pub use super::IMapDebugDisposMenu_DisposMenuItemMethods;
-    pub use super::IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup;
-    pub use super::IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods;
-    pub use super::MapDebugDisposMenu;
-    pub use super::MapDebugDisposMenu_DeleteForceMenuItem;
-    pub use super::MapDebugDisposMenu_DisposMenuItem;
-    pub use super::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup;
-    pub use crate::app::menuitem::IMenuItem;
+    pub use super::{
+        IMapDebugDisposMenu, IMapDebugDisposMenuMethods, IMapDebugDisposMenu_DeleteForceMenuItem, IMapDebugDisposMenu_DeleteForceMenuItemMethods,
+        IMapDebugDisposMenu_DisposMenuItem, IMapDebugDisposMenu_DisposMenuItemMethods, IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+        IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods, MapDebugDisposMenu, MapDebugDisposMenu_DeleteForceMenuItem,
+        MapDebugDisposMenu_DisposMenuItem, MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+    };
     #[cfg(feature = "app-menuitem")]
     pub use crate::app::menuitem::IMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::menuitem::IMenuItem, system::object::IObject};
 }

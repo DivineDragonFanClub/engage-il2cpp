@@ -2,14 +2,16 @@
 
 #[cfg(feature = "app-msgfile-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::nintendo::message_studio::lib::binlibmsfilebase::{
-        BinLibmsFileBase, IBinLibmsFileBase,
+    use super::*;
+    use crate::{
+        nintendo::message_studio::lib::{
+            binlibmsfilebase::{BinLibmsFileBase, IBinLibmsFileBase},
+            binmsgfile::{BinMsgFile, IBinMsgFile},
+        },
+        system::object::{IObject, Object},
     };
-    use crate::nintendo::message_studio::lib::binmsgfile::{BinMsgFile, IBinMsgFile};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/msgfile/MsgFile.md"))]
     #[::unity2::class(namespace = "App", name = "MsgFile")]
@@ -32,9 +34,7 @@ mod __MsgFile_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MsgFile as ::unity2::ClassIdentity>::class(),
@@ -47,40 +47,28 @@ mod __MsgFile_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MsgFile as ::unity2::ClassIdentity>::NAME,
-                    "GetReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MsgFile as ::unity2::ClassIdentity>::NAME,
+                        "GetReference",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reference(
-        this: MsgFile,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MsgFile, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reference::get_offset() as isize),
-        );
+    pub unsafe fn get_reference(this: MsgFile, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MsgFile, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_reference::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MsgFile as ::unity2::ClassIdentity>::class(),
                 "SetReference",
@@ -92,40 +80,27 @@ mod __MsgFile_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MsgFile as ::unity2::ClassIdentity>::NAME,
-                    "SetReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MsgFile as ::unity2::ClassIdentity>::NAME,
+                        "SetReference",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_reference(
-        this: MsgFile,
-        refernce: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_reference(this: MsgFile, refernce: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MsgFile, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_reference::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_reference::get_method_info().method_ptr);
         inner(this, refernce, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_inc_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MsgFile as ::unity2::ClassIdentity>::class(),
@@ -138,38 +113,27 @@ mod __MsgFile_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MsgFile as ::unity2::ClassIdentity>::NAME,
-                    "IncReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MsgFile as ::unity2::ClassIdentity>::NAME,
+                        "IncReference",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn inc_reference(
-        this: MsgFile,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MsgFile, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_inc_reference::get_offset() as isize),
-        );
+    pub unsafe fn inc_reference(this: MsgFile, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MsgFile, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_inc_reference::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dec_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MsgFile as ::unity2::ClassIdentity>::class(),
@@ -182,70 +146,39 @@ mod __MsgFile_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MsgFile as ::unity2::ClassIdentity>::NAME,
-                    "DecReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MsgFile as ::unity2::ClassIdentity>::NAME,
+                        "DecReference",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dec_reference(
-        this: MsgFile,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MsgFile, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dec_reference::get_offset() as isize),
-        );
+    pub unsafe fn dec_reference(this: MsgFile, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MsgFile, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dec_reference::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MsgFile as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MsgFile as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MsgFile as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MsgFile as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MsgFile, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MsgFile, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MsgFile, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -255,49 +188,35 @@ pub trait IMsgFileMethods: IMsgFile {
     #[doc = "`GetReference()` overload"]
     fn get_reference(self) -> i32 {
         unsafe {
-            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MsgFile_unity2_raw::get_reference(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetReference(i32)` overload"]
     fn set_reference(self, refernce: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MsgFile_unity2_raw::set_reference(
-                __receiver,
-                ::core::convert::Into::into(refernce),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MsgFile_unity2_raw::set_reference(__receiver, ::core::convert::Into::into(refernce), ::core::option::Option::None)
         }
     }
     #[doc = "`IncReference()` overload"]
     fn inc_reference(self) -> () {
         unsafe {
-            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MsgFile_unity2_raw::inc_reference(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DecReference()` overload"]
     fn dec_reference(self) -> () {
         unsafe {
-            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MsgFile_unity2_raw::dec_reference(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MsgFile as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MsgFile_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -310,13 +229,8 @@ impl<__T: IMsgFile> IMsgFileMethods for __T {}
 impl MsgFile {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MsgFile),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MsgFile), ::core::stringify!(new),));
         <Self as IMsgFileMethods>::ctor(this);
         this
     }
@@ -325,16 +239,15 @@ impl MsgFile {
 #[cfg(feature = "app-msgfile")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMsgFile;
-    pub use super::IMsgFileMethods;
-    pub use super::MsgFile;
-    pub use crate::nintendo::message_studio::lib::binlibmsfilebase::IBinLibmsFileBase;
+    pub use super::{IMsgFile, IMsgFileMethods, MsgFile};
     #[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
     pub use crate::nintendo::message_studio::lib::binlibmsfilebase::IBinLibmsFileBaseMethods;
-    pub use crate::nintendo::message_studio::lib::binmsgfile::IBinMsgFile;
     #[cfg(feature = "nintendo-message_studio-lib-binmsgfile")]
     pub use crate::nintendo::message_studio::lib::binmsgfile::IBinMsgFileMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        nintendo::message_studio::lib::{binlibmsfilebase::IBinLibmsFileBase, binmsgfile::IBinMsgFile},
+        system::object::IObject,
+    };
 }

@@ -2,9 +2,9 @@
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/iloop/ILoop.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution", name = "ILoop")]
@@ -23,33 +23,23 @@ mod __ILoop_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_compile_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ILoop as ::unity2::ClassIdentity>::class(),
-                "CompileBreak",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ILoop as ::unity2::ClassIdentity>::class(), "CompileBreak", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ILoop as ::unity2::ClassIdentity>::NAME,
-                    "CompileBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ILoop as ::unity2::ClassIdentity>::NAME,
+                        "CompileBreak",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compile_break(
@@ -57,56 +47,35 @@ mod __ILoop_unity2_raw {
         bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ILoop,
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile_break::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ILoop, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_compile_break::get_method_info().method_ptr);
         inner(this, bc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_boundary {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ILoop as ::unity2::ClassIdentity>::class(),
-                "IsBoundary",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ILoop as ::unity2::ClassIdentity>::class(), "IsBoundary", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ILoop as ::unity2::ClassIdentity>::NAME,
-                    "IsBoundary",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ILoop as ::unity2::ClassIdentity>::NAME,
+                        "IsBoundary",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_boundary(this: ILoop, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ILoop, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_boundary::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ILoop, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_boundary::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -114,29 +83,16 @@ mod __ILoop_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
 pub trait IILoopMethods: IILoop {
     #[doc = "`CompileBreak(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile_break(
-        self,
-        bc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
-    ) -> () {
+    fn compile_break(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
         unsafe {
-            let __receiver = <ILoop as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ILoop_unity2_raw::compile_break(
-                __receiver,
-                ::core::convert::Into::into(bc),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ILoop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ILoop_unity2_raw::compile_break(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
         }
     }
     #[doc = "`IsBoundary()` overload"]
     fn is_boundary(self) -> bool {
         unsafe {
-            let __receiver = <ILoop as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ILoop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ILoop_unity2_raw::is_boundary(__receiver, ::core::option::Option::None)
         }
     }
@@ -148,7 +104,5 @@ impl<__T: IILoop> IILoopMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IILoop;
-    pub use super::IILoopMethods;
-    pub use super::ILoop;
+    pub use super::{IILoop, IILoopMethods, ILoop};
 }

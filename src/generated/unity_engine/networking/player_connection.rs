@@ -12,24 +12,16 @@ pub mod playerconnection;
 pub use playerconnection::IPlayerConnectionMethods;
 #[cfg(feature = "unity_engine-networking-player_connection-playerconnection-types")]
 pub use playerconnection::{IPlayerConnection, PlayerConnection};
-#[cfg(any(
-    feature = "unity_engine-networking-player_connection-playereditorconnectionevents-types"
-))]
+#[cfg(any(feature = "unity_engine-networking-player_connection-playereditorconnectionevents-types"))]
 pub mod playereditorconnectionevents;
-#[cfg(
-    feature = "unity_engine-networking-player_connection-playereditorconnectionevents-types"
-)]
+#[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents-types")]
 pub use playereditorconnectionevents::{
-    IPlayerEditorConnectionEvents, IPlayerEditorConnectionEvents_ConnectionChangeEvent,
-    IPlayerEditorConnectionEvents_MessageEvent,
-    IPlayerEditorConnectionEvents_MessageTypeSubscribers, PlayerEditorConnectionEvents,
-    PlayerEditorConnectionEvents_ConnectionChangeEvent, PlayerEditorConnectionEvents_MessageEvent,
-    PlayerEditorConnectionEvents_MessageTypeSubscribers,
+    IPlayerEditorConnectionEvents, IPlayerEditorConnectionEvents_ConnectionChangeEvent, IPlayerEditorConnectionEvents_MessageEvent,
+    IPlayerEditorConnectionEvents_MessageTypeSubscribers, PlayerEditorConnectionEvents, PlayerEditorConnectionEvents_ConnectionChangeEvent,
+    PlayerEditorConnectionEvents_MessageEvent, PlayerEditorConnectionEvents_MessageTypeSubscribers,
 };
 #[cfg(feature = "unity_engine-networking-player_connection-playereditorconnectionevents")]
 pub use playereditorconnectionevents::{
-    IPlayerEditorConnectionEventsMethods,
-    IPlayerEditorConnectionEvents_ConnectionChangeEventMethods,
-    IPlayerEditorConnectionEvents_MessageEventMethods,
-    IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods,
+    IPlayerEditorConnectionEventsMethods, IPlayerEditorConnectionEvents_ConnectionChangeEventMethods,
+    IPlayerEditorConnectionEvents_MessageEventMethods, IPlayerEditorConnectionEvents_MessageTypeSubscribersMethods,
 };

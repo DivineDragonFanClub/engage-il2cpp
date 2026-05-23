@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-materialqualityutilities-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/materialqualityutilities/MaterialQualityUtilities.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "MaterialQualityUtilities")]
@@ -35,10 +35,9 @@ mod __MaterialQualityUtilities_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_highest_quality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: materialquality :: MaterialQuality as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::materialquality::MaterialQuality as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialQualityUtilities as ::unity2::ClassIdentity>::class(),
                 "GetHighestQuality",
@@ -50,35 +49,37 @@ mod __MaterialQualityUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetHighestQuality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetHighestQuality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_highest_quality(
         levels: crate::unity_engine::rendering::materialquality::MaterialQuality,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::materialquality::MaterialQuality {
-        let inner : extern "C" fn (crate :: unity_engine :: rendering :: materialquality :: MaterialQuality , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: materialquality :: MaterialQuality = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_highest_quality :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::materialquality::MaterialQuality,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::materialquality::MaterialQuality =
+            ::core::mem::transmute(__lookup_get_highest_quality::get_method_info().method_ptr);
         inner(levels, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_closest_quality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: materialquality :: MaterialQuality as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: materialquality :: MaterialQuality as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::materialquality::MaterialQuality as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::materialquality::MaterialQuality as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialQualityUtilities as ::unity2::ClassIdentity>::class(),
                 "GetClosestQuality",
@@ -90,18 +91,15 @@ mod __MaterialQualityUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetClosestQuality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetClosestQuality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_closest_quality(
@@ -109,17 +107,21 @@ mod __MaterialQualityUtilities_unity2_raw {
         requested_level: crate::unity_engine::rendering::materialquality::MaterialQuality,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::materialquality::MaterialQuality {
-        let inner : extern "C" fn (crate :: unity_engine :: rendering :: materialquality :: MaterialQuality , crate :: unity_engine :: rendering :: materialquality :: MaterialQuality , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: materialquality :: MaterialQuality = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_closest_quality :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::materialquality::MaterialQuality,
+            crate::unity_engine::rendering::materialquality::MaterialQuality,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::materialquality::MaterialQuality =
+            ::core::mem::transmute(__lookup_get_closest_quality::get_method_info().method_ptr);
         inner(available_levels, requested_level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_shader_keywords {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: materialquality :: MaterialQuality as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::materialquality::MaterialQuality as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialQualityUtilities as ::unity2::ClassIdentity>::class(),
                 "SetGlobalShaderKeywords",
@@ -131,42 +133,34 @@ mod __MaterialQualityUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalShaderKeywords",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalShaderKeywords",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_shader_keywords(
         level: crate::unity_engine::rendering::materialquality::MaterialQuality,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::materialquality::MaterialQuality,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_shader_keywords::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::rendering::materialquality::MaterialQuality, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_shader_keywords::get_method_info().method_ptr);
         inner(level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_shader_keywords_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: materialquality :: MaterialQuality as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::materialquality::MaterialQuality as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialQualityUtilities as ::unity2::ClassIdentity>::class(),
                 "SetGlobalShaderKeywords",
@@ -178,18 +172,15 @@ mod __MaterialQualityUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalShaderKeywords",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalShaderKeywords",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_shader_keywords_2(
@@ -201,21 +192,16 @@ mod __MaterialQualityUtilities_unity2_raw {
             crate::unity_engine::rendering::materialquality::MaterialQuality,
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_shader_keywords_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_shader_keywords_2::get_method_info().method_ptr);
         inner(level, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_first_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: materialquality :: MaterialQuality as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::materialquality::MaterialQuality as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialQualityUtilities as ::unity2::ClassIdentity>::class(),
                 "ToFirstIndex",
@@ -227,43 +213,31 @@ mod __MaterialQualityUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
-                    "ToFirstIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
+                        "ToFirstIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn to_first_index(
         level: crate::unity_engine::rendering::materialquality::MaterialQuality,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::materialquality::MaterialQuality,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_first_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::rendering::materialquality::MaterialQuality, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_to_first_index::get_method_info().method_ptr);
         inner(level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_from_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialQualityUtilities as ::unity2::ClassIdentity>::class(),
                 "FromIndex",
@@ -275,34 +249,30 @@ mod __MaterialQualityUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FromIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FromIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn from_index(
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::materialquality::MaterialQuality {
-        let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: materialquality :: MaterialQuality = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_from_index :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::materialquality::MaterialQuality =
+            ::core::mem::transmute(__lookup_from_index::get_method_info().method_ptr);
         inner(index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialQualityUtilities as ::unity2::ClassIdentity>::class(),
@@ -315,26 +285,19 @@ mod __MaterialQualityUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialQualityUtilities as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -343,25 +306,15 @@ mod __MaterialQualityUtilities_unity2_raw {
 impl MaterialQualityUtilities {
     #[doc = "`GetHighestQuality(crate::unity_engine::rendering::materialquality::MaterialQuality)` overload"]
     pub fn get_highest_quality(
-        levels: impl ::core::convert::Into<
-            crate::unity_engine::rendering::materialquality::MaterialQuality,
-        >,
+        levels: impl ::core::convert::Into<crate::unity_engine::rendering::materialquality::MaterialQuality>,
     ) -> crate::unity_engine::rendering::materialquality::MaterialQuality {
-        unsafe {
-            __MaterialQualityUtilities_unity2_raw::get_highest_quality(
-                ::core::convert::Into::into(levels),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MaterialQualityUtilities_unity2_raw::get_highest_quality(::core::convert::Into::into(levels), ::core::option::Option::None) }
     }
+
     #[doc = "`GetClosestQuality(crate::unity_engine::rendering::materialquality::MaterialQuality, crate::unity_engine::rendering::materialquality::MaterialQuality)` overload"]
     pub fn get_closest_quality(
-        available_levels: impl ::core::convert::Into<
-            crate::unity_engine::rendering::materialquality::MaterialQuality,
-        >,
-        requested_level: impl ::core::convert::Into<
-            crate::unity_engine::rendering::materialquality::MaterialQuality,
-        >,
+        available_levels: impl ::core::convert::Into<crate::unity_engine::rendering::materialquality::MaterialQuality>,
+        requested_level: impl ::core::convert::Into<crate::unity_engine::rendering::materialquality::MaterialQuality>,
     ) -> crate::unity_engine::rendering::materialquality::MaterialQuality {
         unsafe {
             __MaterialQualityUtilities_unity2_raw::get_closest_quality(
@@ -371,24 +324,15 @@ impl MaterialQualityUtilities {
             )
         }
     }
+
     #[doc = "`SetGlobalShaderKeywords(crate::unity_engine::rendering::materialquality::MaterialQuality)` overload"]
-    pub fn set_global_shader_keywords(
-        level: impl ::core::convert::Into<
-            crate::unity_engine::rendering::materialquality::MaterialQuality,
-        >,
-    ) -> () {
-        unsafe {
-            __MaterialQualityUtilities_unity2_raw::set_global_shader_keywords(
-                ::core::convert::Into::into(level),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_global_shader_keywords(level: impl ::core::convert::Into<crate::unity_engine::rendering::materialquality::MaterialQuality>) -> () {
+        unsafe { __MaterialQualityUtilities_unity2_raw::set_global_shader_keywords(::core::convert::Into::into(level), ::core::option::Option::None) }
     }
+
     #[doc = "`SetGlobalShaderKeywords(crate::unity_engine::rendering::materialquality::MaterialQuality, crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
     pub fn set_global_shader_keywords_2(
-        level: impl ::core::convert::Into<
-            crate::unity_engine::rendering::materialquality::MaterialQuality,
-        >,
+        level: impl ::core::convert::Into<crate::unity_engine::rendering::materialquality::MaterialQuality>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
     ) -> () {
         unsafe {
@@ -399,30 +343,17 @@ impl MaterialQualityUtilities {
             )
         }
     }
+
     #[doc = "`ToFirstIndex(crate::unity_engine::rendering::materialquality::MaterialQuality)` overload"]
-    pub fn to_first_index(
-        level: impl ::core::convert::Into<
-            crate::unity_engine::rendering::materialquality::MaterialQuality,
-        >,
-    ) -> i32 {
-        unsafe {
-            __MaterialQualityUtilities_unity2_raw::to_first_index(
-                ::core::convert::Into::into(level),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn to_first_index(level: impl ::core::convert::Into<crate::unity_engine::rendering::materialquality::MaterialQuality>) -> i32 {
+        unsafe { __MaterialQualityUtilities_unity2_raw::to_first_index(::core::convert::Into::into(level), ::core::option::Option::None) }
     }
+
     #[doc = "`FromIndex(i32)` overload"]
-    pub fn from_index(
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::rendering::materialquality::MaterialQuality {
-        unsafe {
-            __MaterialQualityUtilities_unity2_raw::from_index(
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn from_index(index: impl ::core::convert::Into<i32>) -> crate::unity_engine::rendering::materialquality::MaterialQuality {
+        unsafe { __MaterialQualityUtilities_unity2_raw::from_index(::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __MaterialQualityUtilities_unity2_raw::cctor(::core::option::Option::None) }
@@ -432,8 +363,7 @@ impl MaterialQualityUtilities {
 #[cfg(feature = "unity_engine-rendering-materialqualityutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMaterialQualityUtilities;
-    pub use super::MaterialQualityUtilities;
+    pub use super::{IMaterialQualityUtilities, MaterialQualityUtilities};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

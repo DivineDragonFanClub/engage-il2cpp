@@ -2,19 +2,16 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::universal::scriptablerenderpass::{
-        IScriptableRenderPass, ScriptableRenderPass,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customeffectpass/CustomEffectPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
-        name = "CustomEffectPass"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomEffectPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CustomEffectPass {
         #[static_field]
@@ -23,8 +20,7 @@ mod __types {
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[rename(name = "m_FilteringSettings")]
-        pub m_filtering_settings:
-            crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
         #[rename(name = "m_EffectTagId")]
         pub m_effect_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
         #[rename(name = "m_EffectFullTagId")]
@@ -32,8 +28,7 @@ mod __types {
         #[rename(name = "m_ShouldSetEffectDepth")]
         pub m_should_set_effect_depth: bool,
         #[rename(name = "m_EffectDepthId")]
-        pub m_effect_depth_id:
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        pub m_effect_depth_id: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
     }
 }
 
@@ -49,9 +44,7 @@ mod __CustomEffectPass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_force_half_effect_to_draw_full {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomEffectPass as ::unity2::ClassIdentity>::class(),
@@ -64,41 +57,28 @@ mod __CustomEffectPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
-                    "get_forceHalfEffectToDrawFull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
+                        "get_forceHalfEffectToDrawFull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_force_half_effect_to_draw_full(
-        this: CustomEffectPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_force_half_effect_to_draw_full(this: CustomEffectPass, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CustomEffectPass, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_force_half_effect_to_draw_full::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_force_half_effect_to_draw_full::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_force_half_effect_to_draw_full {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomEffectPass as ::unity2::ClassIdentity>::class(),
                 "set_forceHalfEffectToDrawFull",
@@ -110,41 +90,31 @@ mod __CustomEffectPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
-                    "set_forceHalfEffectToDrawFull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
+                        "set_forceHalfEffectToDrawFull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_force_half_effect_to_draw_full(
-        this: CustomEffectPass,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_force_half_effect_to_draw_full(this: CustomEffectPass, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomEffectPass, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_force_half_effect_to_draw_full::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_force_half_effect_to_draw_full::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomEffectPass as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -156,18 +126,15 @@ mod __CustomEffectPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -181,22 +148,15 @@ mod __CustomEffectPass_unity2_raw {
             crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
             crate::unity_engine::layermask::LayerMask,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, evt, layer_mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_effect_depth {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomEffectPass as ::unity2::ClassIdentity>::class(),
                 "SetEffectDepth",
@@ -208,41 +168,31 @@ mod __CustomEffectPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
-                    "SetEffectDepth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
+                        "SetEffectDepth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_effect_depth(
-        this: CustomEffectPass,
-        id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_effect_depth(this: CustomEffectPass, id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomEffectPass, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_effect_depth::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_effect_depth::get_method_info().method_ptr);
         inner(this, id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomEffectPass as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -254,24 +204,21 @@ mod __CustomEffectPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomEffectPass as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
         this: CustomEffectPass,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -279,11 +226,7 @@ mod __CustomEffectPass_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
 }
@@ -293,21 +236,14 @@ pub trait ICustomEffectPassMethods: ICustomEffectPass {
     #[doc = "`get_forceHalfEffectToDrawFull()` overload"]
     fn get_force_half_effect_to_draw_full(self) -> bool {
         unsafe {
-            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomEffectPass_unity2_raw::get_force_half_effect_to_draw_full(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomEffectPass_unity2_raw::get_force_half_effect_to_draw_full(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_forceHalfEffectToDrawFull(bool)` overload"]
     fn set_force_half_effect_to_draw_full(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomEffectPass_unity2_raw::set_force_half_effect_to_draw_full(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -318,15 +254,11 @@ pub trait ICustomEffectPassMethods: ICustomEffectPass {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` overload"]
     fn ctor(
         self,
-        evt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        >,
+        evt: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
         layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
     ) -> () {
         unsafe {
-            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomEffectPass_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(evt),
@@ -338,30 +270,18 @@ pub trait ICustomEffectPassMethods: ICustomEffectPass {
     #[doc = "`SetEffectDepth(i32)` overload"]
     fn set_effect_depth(self, id: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomEffectPass_unity2_raw::set_effect_depth(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomEffectPass_unity2_raw::set_effect_depth(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
         }
     }
     #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn execute(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <CustomEffectPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __CustomEffectPass_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -398,13 +318,10 @@ impl CustomEffectPass {
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomEffectPass;
-    pub use super::ICustomEffectPass;
-    pub use super::ICustomEffectPassMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{CustomEffectPass, ICustomEffectPass, ICustomEffectPassMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
+    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
 }

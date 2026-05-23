@@ -2,63 +2,34 @@
 
 #[cfg(feature = "app-capetowersequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo};
-    use crate::app::basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "CapeTowerSequence.ConfirmEnableOnlineDialog"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct CapeTowerSequence_ConfirmEnableOnlineDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "CapeTowerSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct CapeTowerSequence {
-        #[rename(name = "m_CapeTowerTopMenuResult")]
-        pub m_cape_tower_top_menu_result: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
-        #[rename(name = "m_Bg")]
-        pub m_bg: crate::app::menubg::MenuBg,
-        #[rename(name = "m_FromDebugMenu")]
-        pub m_from_debug_menu: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "CapeTowerSequence.ConfirmEnableOnlineDialog.NoMenuItem"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {}
+    use crate::{
+        app::{
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo},
+            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowersequence/CapeTowerSequence_Label2.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct CapeTowerSequence_Label2 {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for CapeTowerSequence_Label2 {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "CapeTowerSequence.Label2";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -69,10 +40,7 @@ mod __types {
 
     impl ::unity2::IlType for CapeTowerSequence_Label2 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -106,11 +74,30 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "CapeTowerSequence.ConfirmEnableOnlineDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct CapeTowerSequence_ConfirmEnableOnlineDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "CapeTowerSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct CapeTowerSequence {
+        #[rename(name = "m_CapeTowerTopMenuResult")]
+        pub m_cape_tower_top_menu_result: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
+        #[rename(name = "m_Bg")]
+        pub m_bg: crate::app::menubg::MenuBg,
+        #[rename(name = "m_FromDebugMenu")]
+        pub m_from_debug_menu: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "CapeTowerSequence.ConfirmEnableOnlineDialog.NoMenuItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "CapeTowerSequence.ConfirmEnableOnlineDialog.YesMenuItem"
-    )]
+    #[::unity2::class(namespace = "App", name = "CapeTowerSequence.ConfirmEnableOnlineDialog.YesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem {}
 }
@@ -127,11 +114,8 @@ mod __CapeTowerSequence_ConfirmEnableOnlineDialog_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence_ConfirmEnableOnlineDialog as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -143,30 +127,20 @@ mod __CapeTowerSequence_ConfirmEnableOnlineDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence_ConfirmEnableOnlineDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence_ConfirmEnableOnlineDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
 }
@@ -176,10 +150,7 @@ impl CapeTowerSequence_ConfirmEnableOnlineDialog {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None)
         }
     }
 }
@@ -193,10 +164,11 @@ mod __CapeTowerSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: capetowertopmenu :: CapeTowerTopMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::capetowertopmenu::CapeTowerTopMenu_Result2 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -208,18 +180,15 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -231,22 +200,15 @@ mod __CapeTowerSequence_unity2_raw {
             crate::app::procinst::ProcInst,
             crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, initial_selected, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_for_debug_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBindForDebugMenu",
@@ -258,40 +220,31 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindForDebugMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindForDebugMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind_for_debug_menu(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind_for_debug_menu(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind_for_debug_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind_for_debug_menu::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capetowertopmenu :: CapeTowerTopMenu_Result2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::capetowertopmenu::CapeTowerTopMenu_Result2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -303,18 +256,15 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -323,30 +273,15 @@ mod __CapeTowerSequence_unity2_raw {
         from_debug_menu: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CapeTowerSequence,
-            crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            initial_selected,
-            from_debug_menu,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(CapeTowerSequence, crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, initial_selected, from_debug_menu, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_desc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -359,41 +294,30 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_desc(
         this: CapeTowerSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            CapeTowerSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -406,39 +330,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_resources(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_resources(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -451,39 +363,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_resources(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_resources(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -496,39 +396,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start_sequence(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start_sequence(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_cape_tower_top_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -541,39 +429,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateCapeTowerTopMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateCapeTowerTopMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_cape_tower_top_menu(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_cape_tower_top_menu(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_cape_tower_top_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_cape_tower_top_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cape_tower_top_menu_branch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -586,39 +462,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "CapeTowerTopMenuBranch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "CapeTowerTopMenuBranch",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn cape_tower_top_menu_branch(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn cape_tower_top_menu_branch(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_cape_tower_top_menu_branch::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_cape_tower_top_menu_branch::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_confirm_enable_online {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -631,39 +495,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "ConfirmEnableOnline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "ConfirmEnableOnline",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn confirm_enable_online(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn confirm_enable_online(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_confirm_enable_online::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_confirm_enable_online::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_login {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -676,39 +528,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "Login",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "Login",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn login(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn login(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_login::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_login::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_login_branch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -721,39 +561,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoginBranch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoginBranch",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn login_branch(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn login_branch(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_login_branch::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_login_branch::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_net_terms {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -766,39 +594,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "ShowNetTerms",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "ShowNetTerms",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show_net_terms(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show_net_terms(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_net_terms::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show_net_terms::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_challenge {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -811,39 +627,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateChallenge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateChallenge",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_challenge(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_challenge(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_challenge::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_challenge::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_relay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -856,39 +660,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRelay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRelay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_relay(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_relay(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_relay::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_relay::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_versus {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -901,39 +693,27 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateVersus",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateVersus",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_versus(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_versus(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_versus::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_versus::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CapeTowerSequence as ::unity2::ClassIdentity>::class(),
@@ -946,30 +726,20 @@ mod __CapeTowerSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence as ::unity2::ClassIdentity>::NAME,
+                        "EndSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn end_sequence(
-        this: CapeTowerSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn end_sequence(this: CapeTowerSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CapeTowerSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_end_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -979,9 +749,7 @@ impl CapeTowerSequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        initial_selected: impl ::core::convert::Into<
-            crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
-        >,
+        initial_selected: impl ::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_Result2>,
     ) -> () {
         unsafe {
             __CapeTowerSequence_unity2_raw::create_bind(
@@ -991,16 +759,10 @@ impl CapeTowerSequence {
             )
         }
     }
+
     #[doc = "`CreateBindForDebugMenu(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_for_debug_menu(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __CapeTowerSequence_unity2_raw::create_bind_for_debug_menu(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind_for_debug_menu(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __CapeTowerSequence_unity2_raw::create_bind_for_debug_menu(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -1009,15 +771,11 @@ pub trait ICapeTowerSequenceMethods: ICapeTowerSequence {
     #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, bool)` overload"]
     fn ctor(
         self,
-        initial_selected: impl ::core::convert::Into<
-            crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
-        >,
+        initial_selected: impl ::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_Result2>,
         from_debug_menu: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(initial_selected),
@@ -1029,141 +787,98 @@ pub trait ICapeTowerSequenceMethods: ICapeTowerSequence {
     #[doc = "`CreateDesc()` overload"]
     fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadResources()` overload"]
     fn load_resources(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingResources()` overload"]
     fn is_loading_resources(self) -> bool {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CapeTowerSequence_unity2_raw::is_loading_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CapeTowerSequence_unity2_raw::is_loading_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartSequence()` overload"]
     fn start_sequence(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::start_sequence(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateCapeTowerTopMenu()` overload"]
     fn create_cape_tower_top_menu(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CapeTowerSequence_unity2_raw::create_cape_tower_top_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CapeTowerSequence_unity2_raw::create_cape_tower_top_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CapeTowerTopMenuBranch()` overload"]
     fn cape_tower_top_menu_branch(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CapeTowerSequence_unity2_raw::cape_tower_top_menu_branch(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CapeTowerSequence_unity2_raw::cape_tower_top_menu_branch(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ConfirmEnableOnline()` overload"]
     fn confirm_enable_online(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CapeTowerSequence_unity2_raw::confirm_enable_online(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CapeTowerSequence_unity2_raw::confirm_enable_online(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Login()` overload"]
     fn login(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::login(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoginBranch()` overload"]
     fn login_branch(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::login_branch(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShowNetTerms()` overload"]
     fn show_net_terms(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::show_net_terms(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateChallenge()` overload"]
     fn create_challenge(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CapeTowerSequence_unity2_raw::create_challenge(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CapeTowerSequence_unity2_raw::create_challenge(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRelay()` overload"]
     fn create_relay(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::create_relay(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateVersus()` overload"]
     fn create_versus(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::create_versus(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EndSequence()` overload"]
     fn end_sequence(self) -> () {
         unsafe {
-            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CapeTowerSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CapeTowerSequence_unity2_raw::end_sequence(__receiver, ::core::option::Option::None)
         }
     }
@@ -1175,10 +890,7 @@ impl<__T: ICapeTowerSequence> ICapeTowerSequenceMethods for __T {}
 #[cfg(feature = "app-capetowersequence")]
 impl CapeTowerSequence {
     #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, bool)` — overload selector"]
-    pub fn new(
-        initial_selected: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
-        from_debug_menu: bool,
-    ) -> Self {
+    pub fn new(initial_selected: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, from_debug_menu: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -1200,52 +912,64 @@ mod __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn get_name(
         this: CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn a_call(
@@ -1255,30 +979,35 @@ mod __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw {
         let inner: extern "C" fn(
             CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn b_call(
@@ -1288,99 +1017,86 @@ mod __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw {
         let inner: extern "C" fn(
             CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn ctor(
-        this: CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-capetowersequence")]
-pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods:
-    ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem
-{
+pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods: ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-capetowersequence")]
-impl<__T: ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem>
-    ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods for __T
-{
-}
+impl<__T: ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem> ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods for __T {}
 
 #[cfg(feature = "app-capetowersequence")]
 impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {
@@ -1407,52 +1123,64 @@ mod __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn get_name(
         this: CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn b_call(
@@ -1462,89 +1190,77 @@ mod __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw {
         let inner: extern "C" fn(
             CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn ctor(
-        this: CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-capetowersequence")]
-pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods:
-    ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem
-{
+pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods: ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-capetowersequence")]
-impl<__T: ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem>
-    ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods for __T
-{
-}
+impl<__T: ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem> ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods for __T {}
 
 #[cfg(feature = "app-capetowersequence")]
 impl CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem {
@@ -1565,40 +1281,34 @@ impl CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem {
 #[cfg(feature = "app-capetowersequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CapeTowerSequence;
-    pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog;
-    pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem;
-    pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem;
-    pub use super::CapeTowerSequence_Label2;
-    pub use super::ICapeTowerSequence;
-    pub use super::ICapeTowerSequenceMethods;
-    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog;
-    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem;
-    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods;
-    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem;
-    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use super::{
+        CapeTowerSequence, CapeTowerSequence_ConfirmEnableOnlineDialog, CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,
+        CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem, CapeTowerSequence_Label2, ICapeTowerSequence, ICapeTowerSequenceMethods,
+        ICapeTowerSequence_ConfirmEnableOnlineDialog, ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,
+        ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods, ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem,
+        ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods,
+    };
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     #[cfg(feature = "app-basicdialogitemno")]
     pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     #[cfg(feature = "app-basicdialogitemyes")]
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{
+            basicdialogitem::IBasicDialogItem, basicdialogitemno::IBasicDialogItemNo, basicdialogitemyes::IBasicDialogItemYes,
+            basicmenuitem::IBasicMenuItem, procinst::IProcInst,
+        },
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

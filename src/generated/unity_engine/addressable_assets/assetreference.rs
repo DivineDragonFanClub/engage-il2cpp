@@ -2,20 +2,24 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreference-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreference/AssetReference.md"))]
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "AssetReference")]
     #[parent(crate::system::object::Object)]
     pub struct AssetReference {
-# [rename (name = "m_AssetGUID")] pub m_asset_guid : :: unity2 :: Il2CppString ,
-# [rename (name = "m_SubObjectName")] pub m_sub_object_name : :: unity2 :: Il2CppString ,
-# [rename (name = "m_SubObjectType")] pub m_sub_object_type : :: unity2 :: Il2CppString ,
-# [rename (name = "m_Operation")] pub m_operation : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ,
-}
+        #[rename(name = "m_AssetGUID")]
+        pub m_asset_guid: ::unity2::Il2CppString,
+        #[rename(name = "m_SubObjectName")]
+        pub m_sub_object_name: ::unity2::Il2CppString,
+        #[rename(name = "m_SubObjectType")]
+        pub m_sub_object_type: ::unity2::Il2CppString,
+        #[rename(name = "m_Operation")]
+        pub m_operation: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+    }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreference-types")]
@@ -30,9 +34,7 @@ mod __AssetReference_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_operation_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -45,30 +47,33 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "get_OperationHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "get_OperationHandle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_operation_handle (this : AssetReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle{
-        let inner : extern "C" fn (AssetReference , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_operation_handle :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_operation_handle(
+        this: AssetReference,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle {
+        let inner: extern "C" fn(
+            AssetReference,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle =
+            ::core::mem::transmute(__lookup_get_operation_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_runtime_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -81,41 +86,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "get_RuntimeKey",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "get_RuntimeKey",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_runtime_key(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            AssetReference,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_runtime_key::get_offset() as isize),
-        );
+    pub unsafe fn get_runtime_key(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_runtime_key::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_asset_guid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -128,41 +119,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "get_AssetGUID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "get_AssetGUID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_asset_guid(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            AssetReference,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_asset_guid::get_offset() as isize),
-        );
+    pub unsafe fn get_asset_guid(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_asset_guid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sub_object_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -175,43 +152,28 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "get_SubObjectName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "get_SubObjectName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sub_object_name(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            AssetReference,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sub_object_name::get_offset() as isize),
-        );
+    pub unsafe fn get_sub_object_name(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_sub_object_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sub_object_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
                 "set_SubObjectName",
@@ -223,43 +185,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "set_SubObjectName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "set_SubObjectName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_sub_object_name(
-        this: AssetReference,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetReference,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sub_object_name::get_offset() as isize),
-        );
+    pub unsafe fn set_sub_object_name(this: AssetReference, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetReference, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_sub_object_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sub_ojbect_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -272,39 +218,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "get_SubOjbectType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "get_SubOjbectType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sub_ojbect_type(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
+    pub unsafe fn get_sub_ojbect_type(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
         let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sub_ojbect_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sub_ojbect_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -317,39 +251,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_valid(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_valid(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_done {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -362,39 +284,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "get_IsDone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "get_IsDone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_done(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_done(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_done::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_done::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -407,38 +317,28 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -450,43 +350,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: AssetReference,
-        guid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetReference,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+    pub unsafe fn ctor_2(this: AssetReference, guid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetReference, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, guid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -499,41 +383,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "get_Asset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "get_Asset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_asset(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            AssetReference,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_asset::get_offset() as isize),
-        );
+    pub unsafe fn get_asset(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 {
+        let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_get_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -546,41 +416,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            AssetReference,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_scene {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -593,30 +449,37 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "LoadScene",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "LoadScene",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn load_scene (this : AssetReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
-        let inner : extern "C" fn (AssetReference , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_scene :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn load_scene(
+        this: AssetReference,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
+        let inner: extern "C" fn(
+            AssetReference,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        > = ::core::mem::transmute(__lookup_load_scene::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_instantiate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -633,30 +496,43 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "Instantiate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "Instantiate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn instantiate (this : AssetReference , position : crate :: unity_engine :: vector3 :: Vector3 , rotation : crate :: unity_engine :: quaternion :: Quaternion , parent : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >{
-        let inner : extern "C" fn (AssetReference , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: quaternion :: Quaternion , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_instantiate :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn instantiate(
+        this: AssetReference,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        parent: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    > {
+        let inner: extern "C" fn(
+            AssetReference,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        > = ::core::mem::transmute(__lookup_instantiate::get_method_info().method_ptr);
         inner(this, position, rotation, parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_instantiate_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -672,36 +548,46 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "Instantiate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "Instantiate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn instantiate_2 (this : AssetReference , parent : crate :: unity_engine :: transform :: Transform , instantiate_in_world_space : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >{
-        let inner : extern "C" fn (AssetReference , crate :: unity_engine :: transform :: Transform , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_instantiate_2 :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            parent,
-            instantiate_in_world_space,
-            __unity2_method_info,
+    }
+    pub unsafe fn instantiate_2(
+        this: AssetReference,
+        parent: crate::unity_engine::transform::Transform,
+        instantiate_in_world_space: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    > {
+        let inner: extern "C" fn(
+            AssetReference,
+            crate::unity_engine::transform::Transform,
+            bool,
+            ::unity2::OptionalMethod,
         )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        > = ::core::mem::transmute(__lookup_instantiate_2::get_method_info().method_ptr);
+        inner(this, parent, instantiate_in_world_space, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_scene_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
                 "LoadSceneAsync",
@@ -713,36 +599,43 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "LoadSceneAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "LoadSceneAsync",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn load_scene_async (this : AssetReference , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
-        let inner : extern "C" fn (AssetReference , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , bool , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_scene_async :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            load_mode,
-            activate_on_load,
-            priority,
-            __unity2_method_info,
+    }
+    pub unsafe fn load_scene_async(
+        this: AssetReference,
+        load_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        activate_on_load: bool,
+        priority: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
+        let inner: extern "C" fn(
+            AssetReference,
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
         )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        > = ::core::mem::transmute(__lookup_load_scene_async::get_method_info().method_ptr);
+        inner(this, load_mode, activate_on_load, priority, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_un_load_scene {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -755,30 +648,37 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "UnLoadScene",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "UnLoadScene",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn un_load_scene (this : AssetReference , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
-        let inner : extern "C" fn (AssetReference , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_un_load_scene :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn un_load_scene(
+        this: AssetReference,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
+        let inner: extern "C" fn(
+            AssetReference,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        > = ::core::mem::transmute(__lookup_un_load_scene::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_instantiate_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -795,30 +695,43 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "InstantiateAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "InstantiateAsync",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn instantiate_async (this : AssetReference , position : crate :: unity_engine :: vector3 :: Vector3 , rotation : crate :: unity_engine :: quaternion :: Quaternion , parent : crate :: unity_engine :: transform :: Transform , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >{
-        let inner : extern "C" fn (AssetReference , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: quaternion :: Quaternion , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_instantiate_async :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn instantiate_async(
+        this: AssetReference,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        parent: crate::unity_engine::transform::Transform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    > {
+        let inner: extern "C" fn(
+            AssetReference,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            crate::unity_engine::transform::Transform,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        > = ::core::mem::transmute(__lookup_instantiate_async::get_method_info().method_ptr);
         inner(this, position, rotation, parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_instantiate_async_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -834,35 +747,41 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "InstantiateAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "InstantiateAsync",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn instantiate_async_2 (this : AssetReference , parent : crate :: unity_engine :: transform :: Transform , instantiate_in_world_space : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >{
-        let inner : extern "C" fn (AssetReference , crate :: unity_engine :: transform :: Transform , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_instantiate_async_2 :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            parent,
-            instantiate_in_world_space,
-            __unity2_method_info,
+    }
+    pub unsafe fn instantiate_async_2(
+        this: AssetReference,
+        parent: crate::unity_engine::transform::Transform,
+        instantiate_in_world_space: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    > {
+        let inner: extern "C" fn(
+            AssetReference,
+            crate::unity_engine::transform::Transform,
+            bool,
+            ::unity2::OptionalMethod,
         )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        > = ::core::mem::transmute(__lookup_instantiate_async_2::get_method_info().method_ptr);
+        inner(this, parent, instantiate_in_world_space, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_runtime_key_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -875,39 +794,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "RuntimeKeyIsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "RuntimeKeyIsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn runtime_key_is_valid(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn runtime_key_is_valid(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_runtime_key_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_runtime_key_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
@@ -920,39 +827,27 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseAsset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_asset(
-        this: AssetReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn release_asset(this: AssetReference, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AssetReference, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release_asset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_release_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -966,18 +861,15 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseInstance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseInstance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release_instance(
@@ -985,26 +877,16 @@ mod __AssetReference_unity2_raw {
         obj: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AssetReference,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_instance::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AssetReference, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_instance::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
                 "ValidateAsset",
@@ -1016,18 +898,15 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "ValidateAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "ValidateAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn validate_asset(
@@ -1035,26 +914,16 @@ mod __AssetReference_unity2_raw {
         obj: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            AssetReference,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_validate_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AssetReference, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_validate_asset::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate_asset_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReference as ::unity2::ClassIdentity>::class(),
                 "ValidateAsset",
@@ -1066,80 +935,60 @@ mod __AssetReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReference as ::unity2::ClassIdentity>::NAME,
-                    "ValidateAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReference as ::unity2::ClassIdentity>::NAME,
+                        "ValidateAsset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn validate_asset_2(
-        this: AssetReference,
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AssetReference,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_validate_asset_2::get_offset() as isize),
-        );
+    pub unsafe fn validate_asset_2(this: AssetReference, path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AssetReference, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_validate_asset_2::get_method_info().method_ptr);
         inner(this, path, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
 impl AssetReference {
-    pub fn create_failed_operation < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > () -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <AssetReference as ::unity2::ClassIdentity>::class(),
-                "CreateFailedOperation",
-                0,
-            )
+    pub fn create_failed_operation<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0> {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<AssetReference as ::unity2::ClassIdentity>::class(), "CreateFailedOperation", 0)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <AssetReference as ::unity2::ClassIdentity>::NAME,
-                "CreateFailedOperation",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetReference as ::unity2::ClassIdentity>::NAME,
+                    "CreateFailedOperation",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ;
+            let __f: extern "C" fn(
+                ::unity2::OptionalMethod,
+            )
+                -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(::core::option::Option::Some(__mi_opaque))
         }
@@ -1148,189 +997,153 @@ impl AssetReference {
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
 pub trait IAssetReferenceMethods: IAssetReference {
-    #[doc = "`get_OperationHandle()` overload"]    fn get_operation_handle (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle{
+    #[doc = "`get_OperationHandle()` overload"]
+    fn get_operation_handle(self) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::get_operation_handle(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::get_operation_handle(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_RuntimeKey()` overload"]
     fn get_runtime_key(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::get_runtime_key(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_AssetGUID()` overload"]
     fn get_asset_guid(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::get_asset_guid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SubObjectName()` overload"]
     fn get_sub_object_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::get_sub_object_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::get_sub_object_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SubObjectName(::unity2::Il2CppString)` overload"]
     fn set_sub_object_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::set_sub_object_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::set_sub_object_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SubOjbectType()` overload"]
     fn get_sub_ojbect_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::get_sub_ojbect_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::get_sub_ojbect_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsValid()` overload"]
     fn is_valid(self) -> bool {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsDone()` overload"]
     fn get_is_done(self) -> bool {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::get_is_done(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor_2(self, guid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(guid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(guid), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Asset()` overload"]
     fn get_asset(self) -> crate::unity_engine::object_2::Object_2 {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::get_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
-    }    fn load_asset < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <AssetReference as ::unity2::ClassIdentity>::class(),
-                "LoadAsset",
-                0,
-            )
+    }
+    fn load_asset<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0> {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<AssetReference as ::unity2::ClassIdentity>::class(), "LoadAsset", 0)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <AssetReference as ::unity2::ClassIdentity>::NAME,
-                "LoadAsset",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetReference as ::unity2::ClassIdentity>::NAME,
+                    "LoadAsset",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let __f : extern "C" fn (AssetReference , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ;
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let __f: extern "C" fn(
+                AssetReference,
+                ::unity2::OptionalMethod,
+            )
+                -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    #[doc = "`LoadScene()` overload"]    fn load_scene (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
+    #[doc = "`LoadScene()` overload"]
+    fn load_scene(
+        self,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::load_scene(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Instantiate(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::transform::Transform)` overload"]    fn instantiate (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rotation : impl :: core :: convert :: Into < crate :: unity_engine :: quaternion :: Quaternion > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >{
+    #[doc = "`Instantiate(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::transform::Transform)` overload"]
+    fn instantiate(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    > {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::instantiate(
                 __receiver,
                 ::core::convert::Into::into(position),
@@ -1340,11 +1153,16 @@ pub trait IAssetReferenceMethods: IAssetReference {
             )
         }
     }
-    #[doc = "`Instantiate(crate::unity_engine::transform::Transform, bool)` overload"]    fn instantiate_2 (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , instantiate_in_world_space : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >{
+    #[doc = "`Instantiate(crate::unity_engine::transform::Transform, bool)` overload"]
+    fn instantiate_2(
+        self,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        instantiate_in_world_space: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    > {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::instantiate_2(
                 __receiver,
                 ::core::convert::Into::into(parent),
@@ -1352,58 +1170,59 @@ pub trait IAssetReferenceMethods: IAssetReference {
                 ::core::option::Option::None,
             )
         }
-    }    fn load_asset_async < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 >{
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <AssetReference as ::unity2::ClassIdentity>::class(),
-                "LoadAssetAsync",
-                0,
-            )
+    }
+    fn load_asset_async<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0> {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<AssetReference as ::unity2::ClassIdentity>::class(), "LoadAssetAsync", 0)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <AssetReference as ::unity2::ClassIdentity>::NAME,
-                "LoadAssetAsync",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AssetReference as ::unity2::ClassIdentity>::NAME,
+                    "LoadAssetAsync",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let __f : extern "C" fn (AssetReference , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ;
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let __f: extern "C" fn(
+                AssetReference,
+                ::unity2::OptionalMethod,
+            )
+                -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
-    #[doc = "`LoadSceneAsync(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]    fn load_scene_async (self , load_mode : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode > , activate_on_load : impl :: core :: convert :: Into < bool > , priority : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
+    #[doc = "`LoadSceneAsync(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]
+    fn load_scene_async(
+        self,
+        load_mode: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>,
+        activate_on_load: impl ::core::convert::Into<bool>,
+        priority: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::load_scene_async(
                 __receiver,
                 ::core::convert::Into::into(load_mode),
@@ -1413,19 +1232,28 @@ pub trait IAssetReferenceMethods: IAssetReference {
             )
         }
     }
-    #[doc = "`UnLoadScene()` overload"]    fn un_load_scene (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
+    #[doc = "`UnLoadScene()` overload"]
+    fn un_load_scene(
+        self,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::un_load_scene(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`InstantiateAsync(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::transform::Transform)` overload"]    fn instantiate_async (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rotation : impl :: core :: convert :: Into < crate :: unity_engine :: quaternion :: Quaternion > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >{
+    #[doc = "`InstantiateAsync(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::transform::Transform)` overload"]
+    fn instantiate_async(
+        self,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    > {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::instantiate_async(
                 __receiver,
                 ::core::convert::Into::into(position),
@@ -1435,11 +1263,16 @@ pub trait IAssetReferenceMethods: IAssetReference {
             )
         }
     }
-    #[doc = "`InstantiateAsync(crate::unity_engine::transform::Transform, bool)` overload"]    fn instantiate_async_2 (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , instantiate_in_world_space : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >{
+    #[doc = "`InstantiateAsync(crate::unity_engine::transform::Transform, bool)` overload"]
+    fn instantiate_async_2(
+        self,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        instantiate_in_world_space: impl ::core::convert::Into<bool>,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    > {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::instantiate_async_2(
                 __receiver,
                 ::core::convert::Into::into(parent),
@@ -1451,67 +1284,36 @@ pub trait IAssetReferenceMethods: IAssetReference {
     #[doc = "`RuntimeKeyIsValid()` overload"]
     fn runtime_key_is_valid(self) -> bool {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::runtime_key_is_valid(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::runtime_key_is_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseAsset()` overload"]
     fn release_asset(self) -> () {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetReference_unity2_raw::release_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseInstance(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn release_instance(
-        self,
-        obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn release_instance(self, obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::release_instance(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::release_instance(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]
-    fn validate_asset(
-        self,
-        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> bool {
+    fn validate_asset(self, obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> bool {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::validate_asset(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::validate_asset(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`ValidateAsset(::unity2::Il2CppString)` overload"]
     fn validate_asset_2(self, path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReference_unity2_raw::validate_asset_2(
-                __receiver,
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetReference as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReference_unity2_raw::validate_asset_2(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)
         }
     }
 }
@@ -1551,9 +1353,7 @@ impl AssetReference {
 #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetReference;
-    pub use super::IAssetReference;
-    pub use super::IAssetReferenceMethods;
+    pub use super::{AssetReference, IAssetReference, IAssetReferenceMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

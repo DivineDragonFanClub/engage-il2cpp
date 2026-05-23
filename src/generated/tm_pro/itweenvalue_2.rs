@@ -2,9 +2,9 @@
 
 #[cfg(feature = "tm_pro-itweenvalue_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itweenvalue_2/ITweenValue_2.md"))]
     #[::unity2::class(namespace = "TMPro", name = "ITweenValue")]
@@ -23,11 +23,8 @@ mod __ITweenValue_2_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_tween_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ITweenValue_2 as ::unity2::ClassIdentity>::class(),
                 "TweenValue",
@@ -39,40 +36,27 @@ mod __ITweenValue_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ITweenValue_2 as ::unity2::ClassIdentity>::NAME,
-                    "TweenValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ITweenValue_2 as ::unity2::ClassIdentity>::NAME,
+                        "TweenValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tween_value(
-        this: ITweenValue_2,
-        float_percentage: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tween_value(this: ITweenValue_2, float_percentage: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ITweenValue_2, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tween_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tween_value::get_method_info().method_ptr);
         inner(this, float_percentage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ignore_time_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ITweenValue_2 as ::unity2::ClassIdentity>::class(),
@@ -85,39 +69,27 @@ mod __ITweenValue_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ITweenValue_2 as ::unity2::ClassIdentity>::NAME,
-                    "get_ignoreTimeScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ITweenValue_2 as ::unity2::ClassIdentity>::NAME,
+                        "get_ignoreTimeScale",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ignore_time_scale(
-        this: ITweenValue_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_ignore_time_scale(this: ITweenValue_2, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ignore_time_scale::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_ignore_time_scale::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ITweenValue_2 as ::unity2::ClassIdentity>::class(),
@@ -130,39 +102,27 @@ mod __ITweenValue_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ITweenValue_2 as ::unity2::ClassIdentity>::NAME,
-                    "get_duration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ITweenValue_2 as ::unity2::ClassIdentity>::NAME,
+                        "get_duration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_duration(
-        this: ITweenValue_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_duration(this: ITweenValue_2, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_valid_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ITweenValue_2 as ::unity2::ClassIdentity>::class(),
@@ -175,30 +135,20 @@ mod __ITweenValue_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ITweenValue_2 as ::unity2::ClassIdentity>::NAME,
-                    "ValidTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ITweenValue_2 as ::unity2::ClassIdentity>::NAME,
+                        "ValidTarget",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn valid_target(
-        this: ITweenValue_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn valid_target(this: ITweenValue_2, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_valid_target::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_valid_target::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -208,43 +158,28 @@ pub trait IITweenValue_2Methods: IITweenValue_2 {
     #[doc = "`TweenValue(f32)` overload"]
     fn tween_value(self, float_percentage: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <ITweenValue_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ITweenValue_2_unity2_raw::tween_value(
-                __receiver,
-                ::core::convert::Into::into(float_percentage),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ITweenValue_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ITweenValue_2_unity2_raw::tween_value(__receiver, ::core::convert::Into::into(float_percentage), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ignoreTimeScale()` overload"]
     fn get_ignore_time_scale(self) -> bool {
         unsafe {
-            let __receiver = <ITweenValue_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ITweenValue_2_unity2_raw::get_ignore_time_scale(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ITweenValue_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ITweenValue_2_unity2_raw::get_ignore_time_scale(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_duration()` overload"]
     fn get_duration(self) -> f32 {
         unsafe {
-            let __receiver = <ITweenValue_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ITweenValue_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ITweenValue_2_unity2_raw::get_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ValidTarget()` overload"]
     fn valid_target(self) -> bool {
         unsafe {
-            let __receiver = <ITweenValue_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ITweenValue_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ITweenValue_2_unity2_raw::valid_target(__receiver, ::core::option::Option::None)
         }
     }
@@ -256,7 +191,5 @@ impl<__T: IITweenValue_2> IITweenValue_2Methods for __T {}
 #[cfg(feature = "tm_pro-itweenvalue_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IITweenValue_2;
-    pub use super::IITweenValue_2Methods;
-    pub use super::ITweenValue_2;
+    pub use super::{IITweenValue_2, IITweenValue_2Methods, ITweenValue_2};
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-namespacedoc_10-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/io/namespacedoc_10/NamespaceDoc_10.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib.IO", name = "NamespaceDoc")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-namespacedoc_10")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INamespaceDoc_10;
-    pub use super::NamespaceDoc_10;
+    pub use super::{INamespaceDoc_10, NamespaceDoc_10};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

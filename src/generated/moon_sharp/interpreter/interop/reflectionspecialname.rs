@@ -2,11 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-reflectionspecialname-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/reflectionspecialname/ReflectionSpecialName.md"))]
     #[repr(C)]
@@ -14,9 +16,8 @@ mod __types {
     pub struct ReflectionSpecialName {}
 
     impl ::unity2::ClassIdentity for ReflectionSpecialName {
-        const NAMESPACE: &'static str = "MoonSharp.Interpreter.Interop";
-
         const NAME: &'static str = "ReflectionSpecialName";
+        const NAMESPACE: &'static str = "MoonSharp.Interpreter.Interop";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -27,10 +28,7 @@ mod __types {
 
     impl ::unity2::IlType for ReflectionSpecialName {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -47,9 +45,7 @@ mod __ReflectionSpecialName_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReflectionSpecialName as ::unity2::ClassIdentity>::class(),
@@ -62,36 +58,35 @@ mod __ReflectionSpecialName_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
-                    "get_Type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
+                        "get_Type",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_type(
         this: ReflectionSpecialName,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType
-    {
-        let inner : extern "C" fn (ReflectionSpecialName , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_type :: get_offset () as isize) ,) ;
+    ) -> crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType {
+        let inner: extern "C" fn(
+            ReflectionSpecialName,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType =
+            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReflectionSpecialName as ::unity2::ClassIdentity>::class(),
                 "set_Type",
@@ -103,35 +98,34 @@ mod __ReflectionSpecialName_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
-                    "set_Type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
+                        "set_Type",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_type(
         this: ReflectionSpecialName,
-        value : crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType,
+        value: crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ReflectionSpecialName , crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ReflectionSpecialName,
+            crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_argument {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReflectionSpecialName as ::unity2::ClassIdentity>::class(),
@@ -144,43 +138,28 @@ mod __ReflectionSpecialName_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
-                    "get_Argument",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
+                        "get_Argument",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_argument(
-        this: ReflectionSpecialName,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ReflectionSpecialName,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_argument::get_offset() as isize),
-        );
+    pub unsafe fn get_argument(this: ReflectionSpecialName, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ReflectionSpecialName, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_argument::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_argument {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReflectionSpecialName as ::unity2::ClassIdentity>::class(),
                 "set_Argument",
@@ -192,44 +171,31 @@ mod __ReflectionSpecialName_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
-                    "set_Argument",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
+                        "set_Argument",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_argument(
-        this: ReflectionSpecialName,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ReflectionSpecialName,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_argument::get_offset() as isize),
-        );
+    pub unsafe fn set_argument(this: ReflectionSpecialName, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ReflectionSpecialName, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_argument::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReflectionSpecialName as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -241,38 +207,37 @@ mod __ReflectionSpecialName_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: ReflectionSpecialName,
-        r#type : crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType,
+        r#type: crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType,
         argument: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ReflectionSpecialName , crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ReflectionSpecialName,
+            crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, r#type, argument, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReflectionSpecialName as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -284,34 +249,20 @@ mod __ReflectionSpecialName_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReflectionSpecialName as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: ReflectionSpecialName,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ReflectionSpecialName,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+    pub unsafe fn ctor_2(this: ReflectionSpecialName, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ReflectionSpecialName, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
 }
@@ -319,45 +270,32 @@ mod __ReflectionSpecialName_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-interop-reflectionspecialname")]
 impl ReflectionSpecialName {
     #[doc = "`get_Type()` overload"]
-    pub fn get_type(
-        self,
-    ) -> crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType
-    {
+    pub fn get_type(self) -> crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType {
         unsafe { __ReflectionSpecialName_unity2_raw::get_type(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_Type(crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType)` overload"]
     pub fn set_type(
         self,
-        value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType >,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType>,
     ) -> () {
-        unsafe {
-            __ReflectionSpecialName_unity2_raw::set_type(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ReflectionSpecialName_unity2_raw::set_type(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_Argument()` overload"]
     pub fn get_argument(self) -> ::unity2::Il2CppString {
-        unsafe {
-            __ReflectionSpecialName_unity2_raw::get_argument(self, ::core::option::Option::None)
-        }
+        unsafe { __ReflectionSpecialName_unity2_raw::get_argument(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_Argument(::unity2::Il2CppString)` overload"]
     pub fn set_argument(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __ReflectionSpecialName_unity2_raw::set_argument(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ReflectionSpecialName_unity2_raw::set_argument(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType, ::unity2::Il2CppString)` overload"]
     pub fn ctor(
         self,
-        r#type : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: reflectionspecialnametype :: ReflectionSpecialNameType >,
+        r#type: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::reflectionspecialnametype::ReflectionSpecialNameType>,
         argument: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
@@ -369,15 +307,10 @@ impl ReflectionSpecialName {
             )
         }
     }
+
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     pub fn ctor_2(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __ReflectionSpecialName_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ReflectionSpecialName_unity2_raw::ctor_2(self, ::core::convert::Into::into(name), ::core::option::Option::None) }
     }
 }
 
@@ -385,10 +318,9 @@ impl ReflectionSpecialName {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ReflectionSpecialName;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

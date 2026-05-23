@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-akroomawaremanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroomawaremanager/AkRoomAwareManager.md"))]
     #[::unity2::class(namespace = "", name = "AkRoomAwareManager")]
@@ -13,15 +13,11 @@ mod __types {
     pub struct AkRoomAwareManager {
         #[static_field]
         #[rename(name = "m_RoomAwareObjects")]
-        pub m_room_aware_objects: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::root::akroomawareobject::AkRoomAwareObject,
-        >,
+        pub m_room_aware_objects: crate::system::collections::generic::hashset_1::HashSet_1<crate::root::akroomawareobject::AkRoomAwareObject>,
         #[static_field]
         #[rename(name = "m_RoomAwareObjectToUpdate")]
         pub m_room_aware_object_to_update:
-            crate::system::collections::generic::hashset_1::HashSet_1<
-                crate::root::akroomawareobject::AkRoomAwareObject,
-            >,
+            crate::system::collections::generic::hashset_1::HashSet_1<crate::root::akroomawareobject::AkRoomAwareObject>,
     }
 }
 
@@ -37,12 +33,9 @@ mod __AkRoomAwareManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_register_room_aware_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akroomawareobject::AkRoomAwareObject as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akroomawareobject::AkRoomAwareObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRoomAwareManager as ::unity2::ClassIdentity>::class(),
                 "RegisterRoomAwareObject",
@@ -54,44 +47,32 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    "RegisterRoomAwareObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        "RegisterRoomAwareObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_room_aware_object(
         room_aware_object: crate::root::akroomawareobject::AkRoomAwareObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::root::akroomawareobject::AkRoomAwareObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_room_aware_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::akroomawareobject::AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_room_aware_object::get_method_info().method_ptr);
         inner(room_aware_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unregister_room_aware_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akroomawareobject::AkRoomAwareObject as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akroomawareobject::AkRoomAwareObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRoomAwareManager as ::unity2::ClassIdentity>::class(),
                 "UnregisterRoomAwareObject",
@@ -103,44 +84,32 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    "UnregisterRoomAwareObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        "UnregisterRoomAwareObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unregister_room_aware_object(
         room_aware_object: crate::root::akroomawareobject::AkRoomAwareObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::root::akroomawareobject::AkRoomAwareObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unregister_room_aware_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::akroomawareobject::AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unregister_room_aware_object::get_method_info().method_ptr);
         inner(room_aware_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_room_aware_object_for_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akroomawareobject::AkRoomAwareObject as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akroomawareobject::AkRoomAwareObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRoomAwareManager as ::unity2::ClassIdentity>::class(),
                 "RegisterRoomAwareObjectForUpdate",
@@ -152,41 +121,30 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    "RegisterRoomAwareObjectForUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        "RegisterRoomAwareObjectForUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_room_aware_object_for_update(
         room_aware_object: crate::root::akroomawareobject::AkRoomAwareObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::root::akroomawareobject::AkRoomAwareObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_room_aware_object_for_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::akroomawareobject::AkRoomAwareObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_room_aware_object_for_update::get_method_info().method_ptr);
         inner(room_aware_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_object_entered_room {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type(),
                 <crate::root::akroom::AkRoom as ::unity2::IlType>::il_type(),
@@ -202,18 +160,15 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    "ObjectEnteredRoom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        "ObjectEnteredRoom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn object_entered_room(
@@ -221,24 +176,15 @@ mod __AkRoomAwareManager_unity2_raw {
         room: crate::root::akroom::AkRoom,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::collider::Collider,
-            crate::root::akroom::AkRoom,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_object_entered_room::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::collider::Collider, crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_object_entered_room::get_method_info().method_ptr);
         inner(collider, room, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_object_entered_room_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::akroomawareobject::AkRoomAwareObject as ::unity2::IlType>::il_type(),
                 <crate::root::akroom::AkRoom as ::unity2::IlType>::il_type(),
@@ -254,18 +200,15 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    "ObjectEnteredRoom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        "ObjectEnteredRoom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn object_entered_room_2(
@@ -273,24 +216,15 @@ mod __AkRoomAwareManager_unity2_raw {
         room: crate::root::akroom::AkRoom,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::root::akroomawareobject::AkRoomAwareObject,
-            crate::root::akroom::AkRoom,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_object_entered_room_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::akroomawareobject::AkRoomAwareObject, crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_object_entered_room_2::get_method_info().method_ptr);
         inner(room_aware_object, room, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_object_exited_room {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type(),
                 <crate::root::akroom::AkRoom as ::unity2::IlType>::il_type(),
@@ -306,18 +240,15 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    "ObjectExitedRoom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        "ObjectExitedRoom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn object_exited_room(
@@ -325,24 +256,15 @@ mod __AkRoomAwareManager_unity2_raw {
         room: crate::root::akroom::AkRoom,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::collider::Collider,
-            crate::root::akroom::AkRoom,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_object_exited_room::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::collider::Collider, crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_object_exited_room::get_method_info().method_ptr);
         inner(collider, room, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_object_exited_room_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::akroomawareobject::AkRoomAwareObject as ::unity2::IlType>::il_type(),
                 <crate::root::akroom::AkRoom as ::unity2::IlType>::il_type(),
@@ -358,18 +280,15 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    "ObjectExitedRoom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        "ObjectExitedRoom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn object_exited_room_2(
@@ -377,24 +296,15 @@ mod __AkRoomAwareManager_unity2_raw {
         room: crate::root::akroom::AkRoom,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::root::akroomawareobject::AkRoomAwareObject,
-            crate::root::akroom::AkRoom,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_object_exited_room_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::akroomawareobject::AkRoomAwareObject, crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_object_exited_room_2::get_method_info().method_ptr);
         inner(room_aware_object, room, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_room_aware_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRoomAwareManager as ::unity2::ClassIdentity>::class(),
@@ -407,35 +317,27 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateRoomAwareObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateRoomAwareObjects",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_room_aware_objects(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_room_aware_objects::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_room_aware_objects::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRoomAwareManager as ::unity2::ClassIdentity>::class(),
@@ -448,26 +350,19 @@ mod __AkRoomAwareManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRoomAwareManager as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -475,20 +370,14 @@ mod __AkRoomAwareManager_unity2_raw {
 #[cfg(feature = "root-akroomawaremanager")]
 impl AkRoomAwareManager {
     #[doc = "`RegisterRoomAwareObject(crate::root::akroomawareobject::AkRoomAwareObject)` overload"]
-    pub fn register_room_aware_object(
-        room_aware_object: impl ::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>,
-    ) -> () {
+    pub fn register_room_aware_object(room_aware_object: impl ::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>) -> () {
         unsafe {
-            __AkRoomAwareManager_unity2_raw::register_room_aware_object(
-                ::core::convert::Into::into(room_aware_object),
-                ::core::option::Option::None,
-            )
+            __AkRoomAwareManager_unity2_raw::register_room_aware_object(::core::convert::Into::into(room_aware_object), ::core::option::Option::None)
         }
     }
+
     #[doc = "`UnregisterRoomAwareObject(crate::root::akroomawareobject::AkRoomAwareObject)` overload"]
-    pub fn unregister_room_aware_object(
-        room_aware_object: impl ::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>,
-    ) -> () {
+    pub fn unregister_room_aware_object(room_aware_object: impl ::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>) -> () {
         unsafe {
             __AkRoomAwareManager_unity2_raw::unregister_room_aware_object(
                 ::core::convert::Into::into(room_aware_object),
@@ -496,6 +385,7 @@ impl AkRoomAwareManager {
             )
         }
     }
+
     #[doc = "`RegisterRoomAwareObjectForUpdate(crate::root::akroomawareobject::AkRoomAwareObject)` overload"]
     pub fn register_room_aware_object_for_update(
         room_aware_object: impl ::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>,
@@ -507,6 +397,7 @@ impl AkRoomAwareManager {
             )
         }
     }
+
     #[doc = "`ObjectEnteredRoom(crate::unity_engine::collider::Collider, crate::root::akroom::AkRoom)` overload"]
     pub fn object_entered_room(
         collider: impl ::core::convert::Into<crate::unity_engine::collider::Collider>,
@@ -520,6 +411,7 @@ impl AkRoomAwareManager {
             )
         }
     }
+
     #[doc = "`ObjectEnteredRoom(crate::root::akroomawareobject::AkRoomAwareObject, crate::root::akroom::AkRoom)` overload"]
     pub fn object_entered_room_2(
         room_aware_object: impl ::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>,
@@ -533,6 +425,7 @@ impl AkRoomAwareManager {
             )
         }
     }
+
     #[doc = "`ObjectExitedRoom(crate::unity_engine::collider::Collider, crate::root::akroom::AkRoom)` overload"]
     pub fn object_exited_room(
         collider: impl ::core::convert::Into<crate::unity_engine::collider::Collider>,
@@ -546,6 +439,7 @@ impl AkRoomAwareManager {
             )
         }
     }
+
     #[doc = "`ObjectExitedRoom(crate::root::akroomawareobject::AkRoomAwareObject, crate::root::akroom::AkRoom)` overload"]
     pub fn object_exited_room_2(
         room_aware_object: impl ::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>,
@@ -559,12 +453,12 @@ impl AkRoomAwareManager {
             )
         }
     }
+
     #[doc = "`UpdateRoomAwareObjects()` overload"]
     pub fn update_room_aware_objects() -> () {
-        unsafe {
-            __AkRoomAwareManager_unity2_raw::update_room_aware_objects(::core::option::Option::None)
-        }
+        unsafe { __AkRoomAwareManager_unity2_raw::update_room_aware_objects(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __AkRoomAwareManager_unity2_raw::cctor(::core::option::Option::None) }
@@ -574,8 +468,7 @@ impl AkRoomAwareManager {
 #[cfg(feature = "root-akroomawaremanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkRoomAwareManager;
-    pub use super::IAkRoomAwareManager;
+    pub use super::{AkRoomAwareManager, IAkRoomAwareManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

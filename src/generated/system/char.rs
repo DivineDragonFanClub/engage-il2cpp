@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-char-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/char/Char.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for Char {
-        const NAMESPACE: &'static str = "System";
-
         const NAME: &'static str = "Char";
+        const NAMESPACE: &'static str = "System";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,10 +30,7 @@ mod __types {
 
     impl ::unity2::IlType for Char {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -49,603 +47,288 @@ mod __Char_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_latin1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsLatin1",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsLatin1", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsLatin1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsLatin1", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_latin1(ch: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_latin1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_latin1::get_method_info().method_ptr);
         inner(ch, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_ascii {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsAscii",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsAscii", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsAscii",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsAscii", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_ascii(ch: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_ascii::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_ascii::get_method_info().method_ptr);
         inner(ch, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "GetHashCode", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hash_code(this: Char, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Char, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hash_code::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Char, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "Equals", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: Char,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            Char,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: Char, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Char, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "Equals", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals_2(
-        this: Char,
-        obj: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn equals_2(this: Char, obj: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(Char, u16, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_equals_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "CompareTo",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "CompareTo", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "CompareTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "CompareTo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn compare_to(
-        this: Char,
-        value: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            Char,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_to::get_offset() as isize),
-        );
+    pub unsafe fn compare_to(this: Char, value: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Char, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_compare_to::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_to_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "CompareTo",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "CompareTo", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "CompareTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "CompareTo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn compare_to_2(
-        this: Char,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn compare_to_2(this: Char, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(Char, u16, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_compare_to_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_compare_to_2::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "ToString", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: Char,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: Char, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Char, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "ToString", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "ToString", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string_2(
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string_2(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string_2::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_parse {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "Parse",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "Parse", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "Parse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "Parse", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn parse(
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn parse(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_parse::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_parse::get_method_info().method_ptr);
         inner(s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_parse {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "TryParse",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "TryParse", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "TryParse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "TryParse", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_parse(
-        s: ::unity2::Il2CppString,
-        result: *mut u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut u16,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_parse::get_offset() as isize),
-        );
+    pub unsafe fn try_parse(s: ::unity2::Il2CppString, result: *mut u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_try_parse::get_method_info().method_ptr);
         inner(s, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_digit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsDigit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsDigit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsDigit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsDigit", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_digit(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_digit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_digit::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_letter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsLetter",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsLetter", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsLetter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsLetter", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_letter(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_letter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_letter::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_white_space_latin1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Char as ::unity2::ClassIdentity>::class(),
                 "IsWhiteSpaceLatin1",
@@ -657,295 +340,166 @@ mod __Char_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsWhiteSpaceLatin1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsWhiteSpaceLatin1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_white_space_latin1(
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_white_space_latin1::get_offset() as isize),
-        );
+    pub unsafe fn is_white_space_latin1(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_white_space_latin1::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_white_space {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsWhiteSpace",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsWhiteSpace", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsWhiteSpace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsWhiteSpace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_white_space(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_white_space::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_white_space::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_upper {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsUpper",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsUpper", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsUpper",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsUpper", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_upper(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_upper::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_upper::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_lower {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsLower",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsLower", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsLower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsLower", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_lower(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_lower::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_lower::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_punctuation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsPunctuation",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsPunctuation", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsPunctuation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsPunctuation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_punctuation(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_punctuation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_punctuation::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_letter_or_digit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsLetterOrDigit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsLetterOrDigit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsLetterOrDigit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsLetterOrDigit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_letter_or_digit(
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_letter_or_digit::get_offset() as isize),
-        );
+    pub unsafe fn is_letter_or_digit(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_letter_or_digit::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_upper {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "ToUpper",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "ToUpper", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "ToUpper",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "ToUpper", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn to_upper(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_upper::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(__lookup_to_upper::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_upper_invariant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Char as ::unity2::ClassIdentity>::class(),
                 "ToUpperInvariant",
@@ -957,82 +511,47 @@ mod __Char_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "ToUpperInvariant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "ToUpperInvariant",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_upper_invariant(
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_upper_invariant::get_offset() as isize),
-        );
+    pub unsafe fn to_upper_invariant(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_to_upper_invariant::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_lower {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "ToLower",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "ToLower", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "ToLower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "ToLower", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn to_lower(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_lower::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(__lookup_to_lower::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_lower_invariant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Char as ::unity2::ClassIdentity>::class(),
                 "ToLowerInvariant",
@@ -1044,173 +563,96 @@ mod __Char_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "ToLowerInvariant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "ToLowerInvariant",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_lower_invariant(
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_lower_invariant::get_offset() as isize),
-        );
+    pub unsafe fn to_lower_invariant(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_to_lower_invariant::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_control {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsControl",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsControl", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsControl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsControl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_control(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_control::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_control::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_number {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsNumber",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsNumber", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsNumber",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsNumber", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_number(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_number::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_number::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_number_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsNumber",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsNumber", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsNumber",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsNumber", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_number_2(
-        s: ::unity2::Il2CppString,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_number_2(s: ::unity2::Il2CppString, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_number_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_number_2::get_method_info().method_ptr);
         inner(s, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_separator_latin1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Char as ::unity2::ClassIdentity>::class(),
                 "IsSeparatorLatin1",
@@ -1222,400 +664,240 @@ mod __Char_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsSeparatorLatin1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsSeparatorLatin1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_separator_latin1(
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_separator_latin1::get_offset() as isize),
-        );
+    pub unsafe fn is_separator_latin1(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_separator_latin1::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_separator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsSeparator",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsSeparator", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsSeparator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsSeparator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_separator(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_separator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_separator::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_surrogate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsSurrogate",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsSurrogate", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsSurrogate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsSurrogate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_surrogate(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_surrogate::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_surrogate::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_surrogate_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsSurrogate",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsSurrogate", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsSurrogate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsSurrogate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_surrogate_2(
-        s: ::unity2::Il2CppString,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_surrogate_2(s: ::unity2::Il2CppString, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_surrogate_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_surrogate_2::get_method_info().method_ptr);
         inner(s, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_symbol {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsSymbol",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsSymbol", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsSymbol",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, "IsSymbol", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_symbol(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_symbol::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_symbol::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_high_surrogate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsHighSurrogate",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsHighSurrogate", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsHighSurrogate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsHighSurrogate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_high_surrogate(
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_high_surrogate::get_offset() as isize),
-        );
+    pub unsafe fn is_high_surrogate(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_high_surrogate::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_high_surrogate_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsHighSurrogate",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsHighSurrogate", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsHighSurrogate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsHighSurrogate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_high_surrogate_2(
-        s: ::unity2::Il2CppString,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_high_surrogate_2(s: ::unity2::Il2CppString, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_high_surrogate_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_high_surrogate_2::get_method_info().method_ptr);
         inner(s, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_low_surrogate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsLowSurrogate",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsLowSurrogate", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsLowSurrogate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsLowSurrogate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_low_surrogate(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_low_surrogate::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_low_surrogate::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_surrogate_pair {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u16 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "IsSurrogatePair",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "IsSurrogatePair", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "IsSurrogatePair",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "IsSurrogatePair",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_surrogate_pair(
-        high_surrogate: u16,
-        low_surrogate: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_surrogate_pair(high_surrogate: u16, low_surrogate: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(u16, u16, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_surrogate_pair::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_surrogate_pair::get_method_info().method_ptr);
         inner(high_surrogate, low_surrogate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_from_utf32 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Char as ::unity2::ClassIdentity>::class(),
                 "ConvertFromUtf32",
@@ -1627,120 +909,66 @@ mod __Char_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "ConvertFromUtf32",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "ConvertFromUtf32",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn convert_from_utf32(
-        utf32: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn convert_from_utf32(utf32: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_convert_from_utf32::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_convert_from_utf32::get_method_info().method_ptr);
         inner(utf32, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_to_utf32 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u16 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                "ConvertToUtf32",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), "ConvertToUtf32", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    "ConvertToUtf32",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Char as ::unity2::ClassIdentity>::NAME,
+                        "ConvertToUtf32",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn convert_to_utf32(
-        high_surrogate: u16,
-        low_surrogate: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn convert_to_utf32(high_surrogate: u16, low_surrogate: u16, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(u16, u16, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_convert_to_utf32::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_convert_to_utf32::get_method_info().method_ptr);
         inner(high_surrogate, low_surrogate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Char as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Char as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Char as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Char as ::unity2::ClassIdentity>::NAME, ".cctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1749,182 +977,105 @@ mod __Char_unity2_raw {
 impl Char {
     #[doc = "`IsLatin1(u16)` overload"]
     pub fn is_latin1(ch: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_latin1(
-                ::core::convert::Into::into(ch),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_latin1(::core::convert::Into::into(ch), ::core::option::Option::None) }
     }
+
     #[doc = "`IsAscii(u16)` overload"]
     pub fn is_ascii(ch: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_ascii(
-                ::core::convert::Into::into(ch),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_ascii(::core::convert::Into::into(ch), ::core::option::Option::None) }
     }
+
     #[doc = "`ToString(u16)` overload"]
     pub fn to_string_2(c: impl ::core::convert::Into<u16>) -> ::unity2::Il2CppString {
-        unsafe {
-            __Char_unity2_raw::to_string_2(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::to_string_2(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`Parse(::unity2::Il2CppString)` overload"]
     pub fn parse(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> u16 {
-        unsafe {
-            __Char_unity2_raw::parse(::core::convert::Into::into(s), ::core::option::Option::None)
-        }
+        unsafe { __Char_unity2_raw::parse(::core::convert::Into::into(s), ::core::option::Option::None) }
     }
+
     #[doc = "`TryParse(::unity2::Il2CppString, *mutu16)` overload"]
     pub fn try_parse(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, u16) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<u16>::uninit();
-            let __ret = {
-                __Char_unity2_raw::try_parse(
-                    ::core::convert::Into::into(s),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __ret = { __Char_unity2_raw::try_parse(::core::convert::Into::into(s), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`IsDigit(u16)` overload"]
     pub fn is_digit(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_digit(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_digit(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsLetter(u16)` overload"]
     pub fn is_letter(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_letter(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_letter(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsWhiteSpaceLatin1(u16)` overload"]
     pub fn is_white_space_latin1(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_white_space_latin1(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_white_space_latin1(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsWhiteSpace(u16)` overload"]
     pub fn is_white_space(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_white_space(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_white_space(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsUpper(u16)` overload"]
     pub fn is_upper(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_upper(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_upper(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsLower(u16)` overload"]
     pub fn is_lower(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_lower(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_lower(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsPunctuation(u16)` overload"]
     pub fn is_punctuation(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_punctuation(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_punctuation(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsLetterOrDigit(u16)` overload"]
     pub fn is_letter_or_digit(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_letter_or_digit(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_letter_or_digit(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`ToUpper(u16)` overload"]
     pub fn to_upper(c: impl ::core::convert::Into<u16>) -> u16 {
-        unsafe {
-            __Char_unity2_raw::to_upper(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::to_upper(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`ToUpperInvariant(u16)` overload"]
     pub fn to_upper_invariant(c: impl ::core::convert::Into<u16>) -> u16 {
-        unsafe {
-            __Char_unity2_raw::to_upper_invariant(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::to_upper_invariant(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`ToLower(u16)` overload"]
     pub fn to_lower(c: impl ::core::convert::Into<u16>) -> u16 {
-        unsafe {
-            __Char_unity2_raw::to_lower(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::to_lower(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`ToLowerInvariant(u16)` overload"]
     pub fn to_lower_invariant(c: impl ::core::convert::Into<u16>) -> u16 {
-        unsafe {
-            __Char_unity2_raw::to_lower_invariant(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::to_lower_invariant(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsControl(u16)` overload"]
     pub fn is_control(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_control(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_control(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsNumber(u16)` overload"]
     pub fn is_number(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_number(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_number(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsNumber(::unity2::Il2CppString, i32)` overload"]
-    pub fn is_number_2(
-        s: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    pub fn is_number_2(s: impl ::core::convert::Into<::unity2::Il2CppString>, index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
             __Char_unity2_raw::is_number_2(
                 ::core::convert::Into::into(s),
@@ -1933,38 +1084,24 @@ impl Char {
             )
         }
     }
+
     #[doc = "`IsSeparatorLatin1(u16)` overload"]
     pub fn is_separator_latin1(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_separator_latin1(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_separator_latin1(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSeparator(u16)` overload"]
     pub fn is_separator(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_separator(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_separator(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSurrogate(u16)` overload"]
     pub fn is_surrogate(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_surrogate(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_surrogate(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSurrogate(::unity2::Il2CppString, i32)` overload"]
-    pub fn is_surrogate_2(
-        s: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    pub fn is_surrogate_2(s: impl ::core::convert::Into<::unity2::Il2CppString>, index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
             __Char_unity2_raw::is_surrogate_2(
                 ::core::convert::Into::into(s),
@@ -1973,29 +1110,19 @@ impl Char {
             )
         }
     }
+
     #[doc = "`IsSymbol(u16)` overload"]
     pub fn is_symbol(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_symbol(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_symbol(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsHighSurrogate(u16)` overload"]
     pub fn is_high_surrogate(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_high_surrogate(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_high_surrogate(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsHighSurrogate(::unity2::Il2CppString, i32)` overload"]
-    pub fn is_high_surrogate_2(
-        s: impl ::core::convert::Into<::unity2::Il2CppString>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    pub fn is_high_surrogate_2(s: impl ::core::convert::Into<::unity2::Il2CppString>, index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
             __Char_unity2_raw::is_high_surrogate_2(
                 ::core::convert::Into::into(s),
@@ -2004,20 +1131,14 @@ impl Char {
             )
         }
     }
+
     #[doc = "`IsLowSurrogate(u16)` overload"]
     pub fn is_low_surrogate(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::is_low_surrogate(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::is_low_surrogate(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSurrogatePair(u16, u16)` overload"]
-    pub fn is_surrogate_pair(
-        high_surrogate: impl ::core::convert::Into<u16>,
-        low_surrogate: impl ::core::convert::Into<u16>,
-    ) -> bool {
+    pub fn is_surrogate_pair(high_surrogate: impl ::core::convert::Into<u16>, low_surrogate: impl ::core::convert::Into<u16>) -> bool {
         unsafe {
             __Char_unity2_raw::is_surrogate_pair(
                 ::core::convert::Into::into(high_surrogate),
@@ -2026,20 +1147,14 @@ impl Char {
             )
         }
     }
+
     #[doc = "`ConvertFromUtf32(i32)` overload"]
     pub fn convert_from_utf32(utf32: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            __Char_unity2_raw::convert_from_utf32(
-                ::core::convert::Into::into(utf32),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::convert_from_utf32(::core::convert::Into::into(utf32), ::core::option::Option::None) }
     }
+
     #[doc = "`ConvertToUtf32(u16, u16)` overload"]
-    pub fn convert_to_utf32(
-        high_surrogate: impl ::core::convert::Into<u16>,
-        low_surrogate: impl ::core::convert::Into<u16>,
-    ) -> i32 {
+    pub fn convert_to_utf32(high_surrogate: impl ::core::convert::Into<u16>, low_surrogate: impl ::core::convert::Into<u16>) -> i32 {
         unsafe {
             __Char_unity2_raw::convert_to_utf32(
                 ::core::convert::Into::into(high_surrogate),
@@ -2048,6 +1163,7 @@ impl Char {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Char_unity2_raw::cctor(::core::option::Option::None) }
@@ -2060,49 +1176,27 @@ impl Char {
     pub fn get_hash_code(self) -> i32 {
         unsafe { __Char_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __Char_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::equals(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(u16)` overload"]
     pub fn equals_2(self, obj: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Char_unity2_raw::equals_2(
-                self,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::equals_2(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`CompareTo(crate::system::object::Object)` overload"]
-    pub fn compare_to(
-        self,
-        value: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> i32 {
-        unsafe {
-            __Char_unity2_raw::compare_to(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn compare_to(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
+        unsafe { __Char_unity2_raw::compare_to(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`CompareTo(u16)` overload"]
     pub fn compare_to_2(self, value: impl ::core::convert::Into<u16>) -> i32 {
-        unsafe {
-            __Char_unity2_raw::compare_to_2(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Char_unity2_raw::compare_to_2(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`ToString()` overload"]
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __Char_unity2_raw::to_string(self, ::core::option::Option::None) }
@@ -2113,10 +1207,9 @@ impl Char {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Char;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-actioninvoke2_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::state::{IState, State};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::state::{IState, State},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actioninvoke2_1/ActionInvoke2_1.md"))]
     #[::unity2::class(namespace = "Combat", name = "ActionInvoke2`1")]
@@ -58,13 +60,10 @@ impl<T0: ::unity2::ClassIdentity> ActionInvoke2_1<T0> {
 #[cfg(feature = "combat-actioninvoke2_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionInvoke2_1;
-    pub use super::IActionInvoke2_1;
-    pub use super::IActionInvoke2_1Methods;
-    pub use crate::combat::state::IState;
+    pub use super::{ActionInvoke2_1, IActionInvoke2_1, IActionInvoke2_1Methods};
     #[cfg(feature = "combat-state")]
     pub use crate::combat::state::IStateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::state::IState, system::object::IObject};
 }

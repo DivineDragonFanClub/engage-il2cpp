@@ -16,17 +16,13 @@ pub mod networkinterfacewrapper;
 pub use networkinterfacewrapper::INetworkInterfaceWrapper_NetworkConnectedHandlerMethods;
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
 pub use networkinterfacewrapper::{
-    INetworkInterfaceWrapper, INetworkInterfaceWrapper_NetworkConnectedHandler,
-    NetworkInterfaceWrapper, NetworkInterfaceWrapper_NetworkConnectedHandler,
-    NetworkInterfaceWrapper_NetworkConnectedResult,
+    INetworkInterfaceWrapper, INetworkInterfaceWrapper_NetworkConnectedHandler, NetworkInterfaceWrapper,
+    NetworkInterfaceWrapper_NetworkConnectedHandler, NetworkInterfaceWrapper_NetworkConnectedResult,
 };
 #[cfg(any(feature = "unity_engine-switch-notification-types"))]
 pub mod notification;
 #[cfg(feature = "unity_engine-switch-notification-types")]
-pub use notification::{
-    INotification, Notification, Notification_FocusHandlingMode, Notification_FocusState,
-    Notification_Message,
-};
+pub use notification::{INotification, Notification, Notification_FocusHandlingMode, Notification_FocusState, Notification_Message};
 #[cfg(any(feature = "unity_engine-switch-operation-types"))]
 pub mod operation;
 #[cfg(feature = "unity_engine-switch-operation-types")]
@@ -35,8 +31,8 @@ pub use operation::{IOperation, Operation, Operation_OperationMode};
 pub mod performance;
 #[cfg(feature = "unity_engine-switch-performance-types")]
 pub use performance::{
-    IPerformance, IPerformance_Debug, Performance, Performance_CpuBoostMode, Performance_Debug,
-    Performance_Debug_HudMode, Performance_PerformanceMode,
+    IPerformance, IPerformance_Debug, Performance, Performance_CpuBoostMode, Performance_Debug, Performance_Debug_HudMode,
+    Performance_PerformanceMode,
 };
 #[cfg(any(feature = "unity_engine-switch-switchvideoplayer-types"))]
 pub mod switchvideoplayer;
@@ -44,8 +40,7 @@ pub mod switchvideoplayer;
 pub use switchvideoplayer::ISwitchVideoPlayer_MovieEventDelegateMethods;
 #[cfg(feature = "unity_engine-switch-switchvideoplayer-types")]
 pub use switchvideoplayer::{
-    ISwitchVideoPlayer, ISwitchVideoPlayer_MovieEventDelegate, SwitchVideoPlayer,
-    SwitchVideoPlayer_Event, SwitchVideoPlayer_MovieEventDelegate,
+    ISwitchVideoPlayer, ISwitchVideoPlayer_MovieEventDelegate, SwitchVideoPlayer, SwitchVideoPlayer_Event, SwitchVideoPlayer_MovieEventDelegate,
 };
 #[cfg(any(feature = "unity_engine-switch-utility-types"))]
 pub mod utility;

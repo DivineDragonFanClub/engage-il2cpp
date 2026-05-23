@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dmanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2dmanager/Light2DManager.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "Light2DManager"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "Light2DManager")]
     #[parent(crate::system::object::Object)]
     pub struct Light2DManager {
         #[static_field]
@@ -32,9 +29,7 @@ mod __Light2DManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_lights {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DManager as ::unity2::ClassIdentity>::class(),
@@ -47,44 +42,34 @@ mod __Light2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DManager as ::unity2::ClassIdentity>::NAME,
-                    "get_lights",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DManager as ::unity2::ClassIdentity>::NAME,
+                        "get_lights",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_lights(
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> {
         let inner: extern "C" fn(
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_lights::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_get_lights::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_light {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DManager as ::unity2::ClassIdentity>::class(),
                 "RegisterLight",
@@ -96,42 +81,32 @@ mod __Light2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DManager as ::unity2::ClassIdentity>::NAME,
-                    "RegisterLight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DManager as ::unity2::ClassIdentity>::NAME,
+                        "RegisterLight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_light(
         light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_light::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_light::get_method_info().method_ptr);
         inner(light, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deregister_light {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DManager as ::unity2::ClassIdentity>::class(),
                 "DeregisterLight",
@@ -143,42 +118,32 @@ mod __Light2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DManager as ::unity2::ClassIdentity>::NAME,
-                    "DeregisterLight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DManager as ::unity2::ClassIdentity>::NAME,
+                        "DeregisterLight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn deregister_light(
         light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deregister_light::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deregister_light::get_method_info().method_ptr);
         inner(light, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_error_if_duplicate_global_light {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DManager as ::unity2::ClassIdentity>::class(),
                 "ErrorIfDuplicateGlobalLight",
@@ -190,41 +155,30 @@ mod __Light2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DManager as ::unity2::ClassIdentity>::NAME,
-                    "ErrorIfDuplicateGlobalLight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DManager as ::unity2::ClassIdentity>::NAME,
+                        "ErrorIfDuplicateGlobalLight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn error_if_duplicate_global_light(
         light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_error_if_duplicate_global_light::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_error_if_duplicate_global_light::get_method_info().method_ptr);
         inner(light, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -241,18 +195,15 @@ mod __Light2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DManager as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DManager as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_color(
@@ -261,34 +212,16 @@ mod __Light2DManager_unity2_raw {
         color: *mut crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            i32,
-            i32,
-            *mut crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_color::get_offset() as isize),
-        );
-        inner(
-            sorting_layer_index,
-            blend_style_index,
-            color,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(i32, i32, *mut crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_global_color::get_method_info().method_ptr);
+        inner(sorting_layer_index, blend_style_index, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_contains_duplicate_global_light {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DManager as ::unity2::ClassIdentity>::class(),
                 "ContainsDuplicateGlobalLight",
@@ -300,18 +233,15 @@ mod __Light2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DManager as ::unity2::ClassIdentity>::NAME,
-                    "ContainsDuplicateGlobalLight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DManager as ::unity2::ClassIdentity>::NAME,
+                        "ContainsDuplicateGlobalLight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn contains_duplicate_global_light(
@@ -320,20 +250,14 @@ mod __Light2DManager_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_contains_duplicate_global_light::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_contains_duplicate_global_light::get_method_info().method_ptr);
         inner(sorting_layer_index, blend_style_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cached_sorting_layer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DManager as ::unity2::ClassIdentity>::class(),
@@ -346,41 +270,29 @@ mod __Light2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DManager as ::unity2::ClassIdentity>::NAME,
-                    "GetCachedSortingLayer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DManager as ::unity2::ClassIdentity>::NAME,
+                        "GetCachedSortingLayer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cached_sorting_layer(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::unity_engine::sortinglayer::SortingLayer,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cached_sorting_layer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer> =
+            ::core::mem::transmute(__lookup_get_cached_sorting_layer::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DManager as ::unity2::ClassIdentity>::class(),
@@ -393,26 +305,19 @@ mod __Light2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DManager as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -420,58 +325,35 @@ mod __Light2DManager_unity2_raw {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dmanager")]
 impl Light2DManager {
     #[doc = "`get_lights()` overload"]
-    pub fn get_lights() -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-    > {
+    pub fn get_lights(
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> {
         unsafe { __Light2DManager_unity2_raw::get_lights(::core::option::Option::None) }
     }
+
     #[doc = "`RegisterLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"]
-    pub fn register_light(
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
-    ) -> () {
-        unsafe {
-            __Light2DManager_unity2_raw::register_light(
-                ::core::convert::Into::into(light),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn register_light(light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>) -> () {
+        unsafe { __Light2DManager_unity2_raw::register_light(::core::convert::Into::into(light), ::core::option::Option::None) }
     }
+
     #[doc = "`DeregisterLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"]
-    pub fn deregister_light(
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
-    ) -> () {
-        unsafe {
-            __Light2DManager_unity2_raw::deregister_light(
-                ::core::convert::Into::into(light),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn deregister_light(light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>) -> () {
+        unsafe { __Light2DManager_unity2_raw::deregister_light(::core::convert::Into::into(light), ::core::option::Option::None) }
     }
+
     #[doc = "`ErrorIfDuplicateGlobalLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"]
     pub fn error_if_duplicate_global_light(
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
     ) -> () {
-        unsafe {
-            __Light2DManager_unity2_raw::error_if_duplicate_global_light(
-                ::core::convert::Into::into(light),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Light2DManager_unity2_raw::error_if_duplicate_global_light(::core::convert::Into::into(light), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalColor(i32, i32, *mutcrate::unity_engine::color::Color)` overload"]
     pub fn get_global_color(
         sorting_layer_index: impl ::core::convert::Into<i32>,
         blend_style_index: impl ::core::convert::Into<i32>,
     ) -> (bool, crate::unity_engine::color::Color) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
             let __ret = {
                 __Light2DManager_unity2_raw::get_global_color(
                     ::core::convert::Into::into(sorting_layer_index),
@@ -483,6 +365,7 @@ impl Light2DManager {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`ContainsDuplicateGlobalLight(i32, i32)` overload"]
     pub fn contains_duplicate_global_light(
         sorting_layer_index: impl ::core::convert::Into<i32>,
@@ -496,13 +379,12 @@ impl Light2DManager {
             )
         }
     }
+
     #[doc = "`GetCachedSortingLayer()` overload"]
-    pub fn get_cached_sorting_layer(
-    ) -> ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer> {
-        unsafe {
-            __Light2DManager_unity2_raw::get_cached_sorting_layer(::core::option::Option::None)
-        }
+    pub fn get_cached_sorting_layer() -> ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer> {
+        unsafe { __Light2DManager_unity2_raw::get_cached_sorting_layer(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Light2DManager_unity2_raw::cctor(::core::option::Option::None) }
@@ -512,8 +394,7 @@ impl Light2DManager {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILight2DManager;
-    pub use super::Light2DManager;
+    pub use super::{ILight2DManager, Light2DManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

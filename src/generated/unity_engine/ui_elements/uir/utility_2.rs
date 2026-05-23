@@ -2,18 +2,10 @@
 
 #[cfg(feature = "unity_engine-ui_elements-uir-utility_2-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UIElements.UIR", name = "Utility.GPUBuffer`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct Utility_GPUBuffer_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "buffer")]
-        pub buffer: ::unity2::IntPtr,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uir/utility_2/Utility_2.md"))]
     #[::unity2::class(namespace = "UnityEngine.UIElements.UIR", name = "Utility")]
@@ -30,8 +22,7 @@ mod __types {
         pub flush_pending_resources: crate::system::action::Action,
         #[static_field]
         #[rename(name = "RegisterIntermediateRenderers")]
-        pub register_intermediate_renderers:
-            crate::system::action_1::Action_1<crate::unity_engine::camera::Camera>,
+        pub register_intermediate_renderers: crate::system::action_1::Action_1<crate::unity_engine::camera::Camera>,
         #[static_field]
         #[rename(name = "RenderNodeAdd")]
         pub render_node_add: crate::system::action_1::Action_1<::unity2::IntPtr>,
@@ -41,6 +32,14 @@ mod __types {
         #[static_field]
         #[rename(name = "RenderNodeCleanup")]
         pub render_node_cleanup: crate::system::action_1::Action_1<::unity2::IntPtr>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UIElements.UIR", name = "Utility.GPUBuffer`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct Utility_GPUBuffer_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "buffer")]
+        pub buffer: ::unity2::IntPtr,
     }
 }
 
@@ -56,11 +55,8 @@ mod __Utility_2_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_raise_graphics_resources_recreate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Utility_2 as ::unity2::ClassIdentity>::class(),
                 "RaiseGraphicsResourcesRecreate",
@@ -72,38 +68,27 @@ mod __Utility_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility_2 as ::unity2::ClassIdentity>::NAME,
-                    "RaiseGraphicsResourcesRecreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility_2 as ::unity2::ClassIdentity>::NAME,
+                        "RaiseGraphicsResourcesRecreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn raise_graphics_resources_recreate(
-        recreate: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raise_graphics_resources_recreate::get_offset() as isize),
-        );
+    pub unsafe fn raise_graphics_resources_recreate(recreate: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_raise_graphics_resources_recreate::get_method_info().method_ptr);
         inner(recreate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raise_engine_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Utility_2 as ::unity2::ClassIdentity>::class(),
@@ -116,35 +101,26 @@ mod __Utility_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility_2 as ::unity2::ClassIdentity>::NAME,
-                    "RaiseEngineUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility_2 as ::unity2::ClassIdentity>::NAME,
+                        "RaiseEngineUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raise_engine_update(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raise_engine_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_raise_engine_update::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raise_flush_pending_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Utility_2 as ::unity2::ClassIdentity>::class(),
@@ -157,39 +133,28 @@ mod __Utility_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility_2 as ::unity2::ClassIdentity>::NAME,
-                    "RaiseFlushPendingResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility_2 as ::unity2::ClassIdentity>::NAME,
+                        "RaiseFlushPendingResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn raise_flush_pending_resources(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raise_flush_pending_resources::get_offset() as isize),
-        );
+    pub unsafe fn raise_flush_pending_resources(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_raise_flush_pending_resources::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raise_register_intermediate_renderers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Utility_2 as ::unity2::ClassIdentity>::class(),
                 "RaiseRegisterIntermediateRenderers",
@@ -201,43 +166,31 @@ mod __Utility_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility_2 as ::unity2::ClassIdentity>::NAME,
-                    "RaiseRegisterIntermediateRenderers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility_2 as ::unity2::ClassIdentity>::NAME,
+                        "RaiseRegisterIntermediateRenderers",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raise_register_intermediate_renderers(
         camera: crate::unity_engine::camera::Camera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raise_register_intermediate_renderers::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_raise_register_intermediate_renderers::get_method_info().method_ptr);
         inner(camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raise_render_node_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Utility_2 as ::unity2::ClassIdentity>::class(),
                 "RaiseRenderNodeAdd",
@@ -249,41 +202,28 @@ mod __Utility_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility_2 as ::unity2::ClassIdentity>::NAME,
-                    "RaiseRenderNodeAdd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility_2 as ::unity2::ClassIdentity>::NAME,
+                        "RaiseRenderNodeAdd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn raise_render_node_add(
-        user_data: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn raise_render_node_add(user_data: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_raise_render_node_add::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_raise_render_node_add::get_method_info().method_ptr);
         inner(user_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raise_render_node_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Utility_2 as ::unity2::ClassIdentity>::class(),
                 "RaiseRenderNodeExecute",
@@ -295,41 +235,28 @@ mod __Utility_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility_2 as ::unity2::ClassIdentity>::NAME,
-                    "RaiseRenderNodeExecute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility_2 as ::unity2::ClassIdentity>::NAME,
+                        "RaiseRenderNodeExecute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn raise_render_node_execute(
-        user_data: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn raise_render_node_execute(user_data: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_raise_render_node_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_raise_render_node_execute::get_method_info().method_ptr);
         inner(user_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raise_render_node_cleanup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Utility_2 as ::unity2::ClassIdentity>::class(),
                 "RaiseRenderNodeCleanup",
@@ -341,71 +268,46 @@ mod __Utility_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility_2 as ::unity2::ClassIdentity>::NAME,
-                    "RaiseRenderNodeCleanup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility_2 as ::unity2::ClassIdentity>::NAME,
+                        "RaiseRenderNodeCleanup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn raise_render_node_cleanup(
-        user_data: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn raise_render_node_cleanup(user_data: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_raise_render_node_cleanup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_raise_render_node_cleanup::get_method_info().method_ptr);
         inner(user_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Utility_2 as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Utility_2 as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Utility_2 as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Utility_2 as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -414,65 +316,39 @@ mod __Utility_2_unity2_raw {
 impl Utility_2 {
     #[doc = "`RaiseGraphicsResourcesRecreate(bool)` overload"]
     pub fn raise_graphics_resources_recreate(recreate: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __Utility_2_unity2_raw::raise_graphics_resources_recreate(
-                ::core::convert::Into::into(recreate),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Utility_2_unity2_raw::raise_graphics_resources_recreate(::core::convert::Into::into(recreate), ::core::option::Option::None) }
     }
+
     #[doc = "`RaiseEngineUpdate()` overload"]
     pub fn raise_engine_update() -> () {
         unsafe { __Utility_2_unity2_raw::raise_engine_update(::core::option::Option::None) }
     }
+
     #[doc = "`RaiseFlushPendingResources()` overload"]
     pub fn raise_flush_pending_resources() -> () {
-        unsafe {
-            __Utility_2_unity2_raw::raise_flush_pending_resources(::core::option::Option::None)
-        }
+        unsafe { __Utility_2_unity2_raw::raise_flush_pending_resources(::core::option::Option::None) }
     }
+
     #[doc = "`RaiseRegisterIntermediateRenderers(crate::unity_engine::camera::Camera)` overload"]
-    pub fn raise_register_intermediate_renderers(
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> () {
-        unsafe {
-            __Utility_2_unity2_raw::raise_register_intermediate_renderers(
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn raise_register_intermediate_renderers(camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> () {
+        unsafe { __Utility_2_unity2_raw::raise_register_intermediate_renderers(::core::convert::Into::into(camera), ::core::option::Option::None) }
     }
+
     #[doc = "`RaiseRenderNodeAdd(::unity2::IntPtr)` overload"]
     pub fn raise_render_node_add(user_data: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __Utility_2_unity2_raw::raise_render_node_add(
-                ::core::convert::Into::into(user_data),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Utility_2_unity2_raw::raise_render_node_add(::core::convert::Into::into(user_data), ::core::option::Option::None) }
     }
+
     #[doc = "`RaiseRenderNodeExecute(::unity2::IntPtr)` overload"]
-    pub fn raise_render_node_execute(
-        user_data: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __Utility_2_unity2_raw::raise_render_node_execute(
-                ::core::convert::Into::into(user_data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn raise_render_node_execute(user_data: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe { __Utility_2_unity2_raw::raise_render_node_execute(::core::convert::Into::into(user_data), ::core::option::Option::None) }
     }
+
     #[doc = "`RaiseRenderNodeCleanup(::unity2::IntPtr)` overload"]
-    pub fn raise_render_node_cleanup(
-        user_data: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            __Utility_2_unity2_raw::raise_render_node_cleanup(
-                ::core::convert::Into::into(user_data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn raise_render_node_cleanup(user_data: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe { __Utility_2_unity2_raw::raise_render_node_cleanup(::core::convert::Into::into(user_data), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Utility_2_unity2_raw::cctor(::core::option::Option::None) }
@@ -482,10 +358,7 @@ impl Utility_2 {
 #[cfg(feature = "unity_engine-ui_elements-uir-utility_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUtility_2;
-    pub use super::IUtility_GPUBuffer_1;
-    pub use super::Utility_2;
-    pub use super::Utility_GPUBuffer_1;
+    pub use super::{IUtility_2, IUtility_GPUBuffer_1, Utility_2, Utility_GPUBuffer_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,16 +2,20 @@
 
 #[cfg(feature = "unity_engine-ui-shadow-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::basemesheffect::{BaseMeshEffect, IBaseMeshEffect};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::basemesheffect::{BaseMeshEffect, IBaseMeshEffect},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/shadow/Shadow.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Shadow")]
@@ -41,50 +45,26 @@ mod __Shadow_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shadow as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Shadow as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Shadow as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: Shadow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Shadow, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Shadow, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_effect_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shadow as ::unity2::ClassIdentity>::class(),
@@ -97,43 +77,28 @@ mod __Shadow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "get_effectColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "get_effectColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_effect_color(
-        this: Shadow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            Shadow,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_effect_color::get_offset() as isize),
-        );
+    pub unsafe fn get_effect_color(this: Shadow, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(Shadow, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_effect_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_effect_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shadow as ::unity2::ClassIdentity>::class(),
                 "set_effectColor",
@@ -145,43 +110,27 @@ mod __Shadow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "set_effectColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "set_effectColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_effect_color(
-        this: Shadow,
-        value: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Shadow,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_effect_color::get_offset() as isize),
-        );
+    pub unsafe fn set_effect_color(this: Shadow, value: crate::unity_engine::color::Color, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Shadow, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_effect_color::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_effect_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shadow as ::unity2::ClassIdentity>::class(),
@@ -194,43 +143,28 @@ mod __Shadow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "get_effectDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "get_effectDistance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_effect_distance(
-        this: Shadow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            Shadow,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_effect_distance::get_offset() as isize),
-        );
+    pub unsafe fn get_effect_distance(this: Shadow, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(Shadow, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_effect_distance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_effect_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shadow as ::unity2::ClassIdentity>::class(),
                 "set_effectDistance",
@@ -242,18 +176,15 @@ mod __Shadow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "set_effectDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "set_effectDistance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_effect_distance(
@@ -261,24 +192,15 @@ mod __Shadow_unity2_raw {
         value: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Shadow,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_effect_distance::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Shadow, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_effect_distance::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_use_graphic_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shadow as ::unity2::ClassIdentity>::class(),
@@ -291,40 +213,28 @@ mod __Shadow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "get_useGraphicAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "get_useGraphicAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_use_graphic_alpha(
-        this: Shadow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Shadow, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_use_graphic_alpha::get_offset() as isize),
-        );
+    pub unsafe fn get_use_graphic_alpha(this: Shadow, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Shadow, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_use_graphic_alpha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_use_graphic_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shadow as ::unity2::ClassIdentity>::class(),
                 "set_useGraphicAlpha",
@@ -336,44 +246,29 @@ mod __Shadow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "set_useGraphicAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "set_useGraphicAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_use_graphic_alpha(
-        this: Shadow,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_use_graphic_alpha(this: Shadow, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Shadow, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_use_graphic_alpha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_use_graphic_alpha::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_shadow_zero_alloc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::uivertex::UIVertex,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -391,25 +286,20 @@ mod __Shadow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "ApplyShadowZeroAlloc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "ApplyShadowZeroAlloc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn apply_shadow_zero_alloc(
         this: Shadow,
-        verts: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uivertex::UIVertex,
-        >,
+        verts: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
         color: crate::unity_engine::color32::Color32,
         start: i32,
         end: i32,
@@ -419,69 +309,48 @@ mod __Shadow_unity2_raw {
     ) -> () {
         let inner: extern "C" fn(
             Shadow,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uivertex::UIVertex,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
             crate::unity_engine::color32::Color32,
             i32,
             i32,
             f32,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_apply_shadow_zero_alloc::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_apply_shadow_zero_alloc::get_method_info().method_ptr);
         inner(this, verts, color, start, end, x, y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_shadow {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::uivertex::UIVertex,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shadow as ::unity2::ClassIdentity>::class(),
-                "ApplyShadow",
-                6,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Shadow as ::unity2::ClassIdentity>::class(), "ApplyShadow", 6, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "ApplyShadow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "ApplyShadow",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn apply_shadow(
         this: Shadow,
-        verts: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uivertex::UIVertex,
-        >,
+        verts: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
         color: crate::unity_engine::color32::Color32,
         start: i32,
         end: i32,
@@ -491,56 +360,37 @@ mod __Shadow_unity2_raw {
     ) -> () {
         let inner: extern "C" fn(
             Shadow,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uivertex::UIVertex,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
             crate::unity_engine::color32::Color32,
             i32,
             i32,
             f32,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_apply_shadow::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_apply_shadow::get_method_info().method_ptr);
         inner(this, verts, color, start, end, x, y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_modify_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shadow as ::unity2::ClassIdentity>::class(),
-                "ModifyMesh",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shadow as ::unity2::ClassIdentity>::class(), "ModifyMesh", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shadow as ::unity2::ClassIdentity>::NAME,
-                    "ModifyMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shadow as ::unity2::ClassIdentity>::NAME,
+                        "ModifyMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn modify_mesh(
@@ -548,15 +398,8 @@ mod __Shadow_unity2_raw {
         vh: crate::unity_engine::ui::vertexhelper::VertexHelper,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Shadow,
-            crate::unity_engine::ui::vertexhelper::VertexHelper,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_modify_mesh::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Shadow, crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_modify_mesh::get_method_info().method_ptr);
         inner(this, vh, __unity2_method_info)
     }
 }
@@ -566,92 +409,56 @@ pub trait IShadowMethods: IShadow {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shadow_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_effectColor()` overload"]
     fn get_effect_color(self) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shadow_unity2_raw::get_effect_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_effectColor(crate::unity_engine::color::Color)` overload"]
-    fn set_effect_color(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
+    fn set_effect_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shadow_unity2_raw::set_effect_color(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shadow_unity2_raw::set_effect_color(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_effectDistance()` overload"]
     fn get_effect_distance(self) -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shadow_unity2_raw::get_effect_distance(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_effectDistance(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_effect_distance(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
+    fn set_effect_distance(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shadow_unity2_raw::set_effect_distance(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shadow_unity2_raw::set_effect_distance(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_useGraphicAlpha()` overload"]
     fn get_use_graphic_alpha(self) -> bool {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shadow_unity2_raw::get_use_graphic_alpha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_useGraphicAlpha(bool)` overload"]
     fn set_use_graphic_alpha(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shadow_unity2_raw::set_use_graphic_alpha(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shadow_unity2_raw::set_use_graphic_alpha(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`ApplyShadowZeroAlloc(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>, crate::unity_engine::color32::Color32, i32, i32, f32, f32)` overload"]
     fn apply_shadow_zero_alloc(
         self,
-        verts: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uivertex::UIVertex,
-            >,
-        >,
+        verts: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>>,
         color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
         start: impl ::core::convert::Into<i32>,
         end: impl ::core::convert::Into<i32>,
@@ -659,9 +466,7 @@ pub trait IShadowMethods: IShadow {
         y: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shadow_unity2_raw::apply_shadow_zero_alloc(
                 __receiver,
                 ::core::convert::Into::into(verts),
@@ -677,11 +482,7 @@ pub trait IShadowMethods: IShadow {
     #[doc = "`ApplyShadow(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>, crate::unity_engine::color32::Color32, i32, i32, f32, f32)` overload"]
     fn apply_shadow(
         self,
-        verts: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uivertex::UIVertex,
-            >,
-        >,
+        verts: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>>,
         color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
         start: impl ::core::convert::Into<i32>,
         end: impl ::core::convert::Into<i32>,
@@ -689,9 +490,7 @@ pub trait IShadowMethods: IShadow {
         y: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shadow_unity2_raw::apply_shadow(
                 __receiver,
                 ::core::convert::Into::into(verts),
@@ -705,19 +504,10 @@ pub trait IShadowMethods: IShadow {
         }
     }
     #[doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    fn modify_mesh(
-        self,
-        vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
-    ) -> () {
+    fn modify_mesh(self, vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>) -> () {
         unsafe {
-            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shadow_unity2_raw::modify_mesh(
-                __receiver,
-                ::core::convert::Into::into(vh),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shadow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shadow_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)
         }
     }
 }
@@ -729,13 +519,8 @@ impl<__T: IShadow> IShadowMethods for __T {}
 impl Shadow {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Shadow),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Shadow), ::core::stringify!(new),));
         <Self as IShadowMethods>::ctor(this);
         this
     }
@@ -744,28 +529,26 @@ impl Shadow {
 #[cfg(feature = "unity_engine-ui-shadow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShadow;
-    pub use super::IShadowMethods;
-    pub use super::Shadow;
-    pub use crate::system::object::IObject;
+    pub use super::{IShadow, IShadowMethods, Shadow};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffect;
     #[cfg(feature = "unity_engine-ui-basemesheffect")]
     pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
+            object_2::IObject_2, ui::basemesheffect::IBaseMeshEffect,
+        },
+    };
 }

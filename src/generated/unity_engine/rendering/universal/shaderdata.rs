@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderdata/ShaderData.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShaderData")]
@@ -37,51 +37,33 @@ mod __ShaderData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ShaderData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: ShaderData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShaderData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ShaderData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderData as ::unity2::ClassIdentity>::class(),
@@ -94,77 +76,54 @@ mod __ShaderData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    "get_instance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        "get_instance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_instance(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::universal::shaderdata::ShaderData {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: shaderdata :: ShaderData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_instance :: get_offset () as isize) ,) ;
+    pub unsafe fn get_instance(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rendering::universal::shaderdata::ShaderData {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendering::universal::shaderdata::ShaderData =
+            ::core::mem::transmute(__lookup_get_instance::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderData as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ShaderData as ::unity2::ClassIdentity>::class(), "Dispose", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispose(this: ShaderData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShaderData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ShaderData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_data_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderData as ::unity2::ClassIdentity>::class(),
                 "GetLightDataBuffer",
@@ -176,18 +135,15 @@ mod __ShaderData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    "GetLightDataBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        "GetLightDataBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_light_data_buffer(
@@ -195,26 +151,16 @@ mod __ShaderData_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::computebuffer::ComputeBuffer {
-        let inner: extern "C" fn(
-            ShaderData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::computebuffer::ComputeBuffer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_light_data_buffer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ShaderData, i32, ::unity2::OptionalMethod) -> crate::unity_engine::computebuffer::ComputeBuffer =
+            ::core::mem::transmute(__lookup_get_light_data_buffer::get_method_info().method_ptr);
         inner(this, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_indices_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderData as ::unity2::ClassIdentity>::class(),
                 "GetLightIndicesBuffer",
@@ -226,18 +172,15 @@ mod __ShaderData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    "GetLightIndicesBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        "GetLightIndicesBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_light_indices_buffer(
@@ -245,26 +188,16 @@ mod __ShaderData_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::computebuffer::ComputeBuffer {
-        let inner: extern "C" fn(
-            ShaderData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::computebuffer::ComputeBuffer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_light_indices_buffer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ShaderData, i32, ::unity2::OptionalMethod) -> crate::unity_engine::computebuffer::ComputeBuffer =
+            ::core::mem::transmute(__lookup_get_light_indices_buffer::get_method_info().method_ptr);
         inner(this, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_data_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderData as ::unity2::ClassIdentity>::class(),
                 "GetShadowDataBuffer",
@@ -276,18 +209,15 @@ mod __ShaderData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    "GetShadowDataBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        "GetShadowDataBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shadow_data_buffer(
@@ -295,26 +225,16 @@ mod __ShaderData_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::computebuffer::ComputeBuffer {
-        let inner: extern "C" fn(
-            ShaderData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::computebuffer::ComputeBuffer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shadow_data_buffer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ShaderData, i32, ::unity2::OptionalMethod) -> crate::unity_engine::computebuffer::ComputeBuffer =
+            ::core::mem::transmute(__lookup_get_shadow_data_buffer::get_method_info().method_ptr);
         inner(this, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_indices_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderData as ::unity2::ClassIdentity>::class(),
                 "GetShadowIndicesBuffer",
@@ -326,18 +246,15 @@ mod __ShaderData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    "GetShadowIndicesBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        "GetShadowIndicesBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shadow_indices_buffer(
@@ -345,27 +262,17 @@ mod __ShaderData_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::computebuffer::ComputeBuffer {
-        let inner: extern "C" fn(
-            ShaderData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::computebuffer::ComputeBuffer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shadow_indices_buffer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ShaderData, i32, ::unity2::OptionalMethod) -> crate::unity_engine::computebuffer::ComputeBuffer =
+            ::core::mem::transmute(__lookup_get_shadow_indices_buffer::get_method_info().method_ptr);
         inner(this, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderData as ::unity2::ClassIdentity>::class(),
                 "DisposeBuffer",
@@ -377,18 +284,15 @@ mod __ShaderData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    "DisposeBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        "DisposeBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispose_buffer(
@@ -396,56 +300,34 @@ mod __ShaderData_unity2_raw {
         buffer: *mut crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ShaderData,
-            *mut crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispose_buffer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ShaderData, *mut crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose_buffer::get_method_info().method_ptr);
         inner(this, buffer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderData as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ShaderData as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderData as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderData as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -456,6 +338,7 @@ impl ShaderData {
     pub fn get_instance() -> crate::unity_engine::rendering::universal::shaderdata::ShaderData {
         unsafe { __ShaderData_unity2_raw::get_instance(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __ShaderData_unity2_raw::cctor(::core::option::Option::None) }
@@ -467,141 +350,84 @@ pub trait IShaderDataMethods: IShaderData {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShaderData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShaderData_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetLightDataBuffer(i32)` overload"]
-    fn get_light_data_buffer(
-        self,
-        size: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::computebuffer::ComputeBuffer {
+    fn get_light_data_buffer(self, size: impl ::core::convert::Into<i32>) -> crate::unity_engine::computebuffer::ComputeBuffer {
         unsafe {
-            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShaderData_unity2_raw::get_light_data_buffer(
-                __receiver,
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderData_unity2_raw::get_light_data_buffer(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)
         }
     }
     #[doc = "`GetLightIndicesBuffer(i32)` overload"]
-    fn get_light_indices_buffer(
-        self,
-        size: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::computebuffer::ComputeBuffer {
+    fn get_light_indices_buffer(self, size: impl ::core::convert::Into<i32>) -> crate::unity_engine::computebuffer::ComputeBuffer {
         unsafe {
-            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShaderData_unity2_raw::get_light_indices_buffer(
-                __receiver,
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderData_unity2_raw::get_light_indices_buffer(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)
         }
     }
     #[doc = "`GetShadowDataBuffer(i32)` overload"]
-    fn get_shadow_data_buffer(
-        self,
-        size: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::computebuffer::ComputeBuffer {
+    fn get_shadow_data_buffer(self, size: impl ::core::convert::Into<i32>) -> crate::unity_engine::computebuffer::ComputeBuffer {
         unsafe {
-            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShaderData_unity2_raw::get_shadow_data_buffer(
-                __receiver,
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderData_unity2_raw::get_shadow_data_buffer(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)
         }
     }
     #[doc = "`GetShadowIndicesBuffer(i32)` overload"]
-    fn get_shadow_indices_buffer(
-        self,
-        size: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::computebuffer::ComputeBuffer {
+    fn get_shadow_indices_buffer(self, size: impl ::core::convert::Into<i32>) -> crate::unity_engine::computebuffer::ComputeBuffer {
         unsafe {
-            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShaderData_unity2_raw::get_shadow_indices_buffer(
-                __receiver,
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderData_unity2_raw::get_shadow_indices_buffer(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)
         }
     }
-    fn get_or_update_buffer<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+    fn get_or_update_buffer<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         buffer: impl ::core::convert::Into<*mut crate::unity_engine::computebuffer::ComputeBuffer>,
         size: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::computebuffer::ComputeBuffer {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ShaderData as ::unity2::ClassIdentity>::class(),
-                "GetOrUpdateBuffer",
-                2,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ShaderData as ::unity2::ClassIdentity>::class(), "GetOrUpdateBuffer", 2)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ShaderData as ::unity2::ClassIdentity>::NAME,
-                "GetOrUpdateBuffer",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShaderData as ::unity2::ClassIdentity>::NAME,
+                    "GetOrUpdateBuffer",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let __f: extern "C" fn(
                 ShaderData,
                 *mut crate::unity_engine::computebuffer::ComputeBuffer,
                 i32,
                 ::unity2::OptionalMethod,
-            )
-                -> crate::unity_engine::computebuffer::ComputeBuffer =
-                ::core::mem::transmute(__inflated.method_ptr);
+            ) -> crate::unity_engine::computebuffer::ComputeBuffer = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 __receiver,
@@ -614,17 +440,9 @@ pub trait IShaderDataMethods: IShaderData {
     #[doc = "`DisposeBuffer(*mutcrate::unity_engine::computebuffer::ComputeBuffer)` overload"]
     fn dispose_buffer(self) -> crate::unity_engine::computebuffer::ComputeBuffer {
         unsafe {
-            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::computebuffer::ComputeBuffer,
-            >::uninit();
-            __ShaderData_unity2_raw::dispose_buffer(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ShaderData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::computebuffer::ComputeBuffer>::uninit();
+            __ShaderData_unity2_raw::dispose_buffer(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -637,13 +455,8 @@ impl<__T: IShaderData> IShaderDataMethods for __T {}
 impl ShaderData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ShaderData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ShaderData), ::core::stringify!(new),));
         <Self as IShaderDataMethods>::ctor(this);
         this
     }
@@ -652,9 +465,7 @@ impl ShaderData {
 #[cfg(feature = "unity_engine-rendering-universal-shaderdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShaderData;
-    pub use super::IShaderDataMethods;
-    pub use super::ShaderData;
+    pub use super::{IShaderData, IShaderDataMethods, ShaderData};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

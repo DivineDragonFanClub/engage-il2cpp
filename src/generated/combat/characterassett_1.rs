@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-characterassett_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterassett_1/CharacterAssetT_1.md"))]
     #[::unity2::class(namespace = "Combat", name = "CharacterAssetT`1")]
@@ -177,9 +177,7 @@ impl<T0: ::unity2::ClassIdentity> CharacterAssetT_1<T0> {
 #[cfg(feature = "combat-characterassett_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterAssetT_1;
-    pub use super::ICharacterAssetT_1;
-    pub use super::ICharacterAssetT_1Methods;
+    pub use super::{CharacterAssetT_1, ICharacterAssetT_1, ICharacterAssetT_1Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,36 +2,19 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::moon_sharp::interpreter::tree::nodebase::{INodeBase, NodeBase};
-    use crate::moon_sharp::interpreter::tree::statement::{IStatement, Statement};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Tree.Statements",
-        name = "IfStatement"
-    )]
-    #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
-    pub struct IfStatement {
-        #[rename(name = "m_Ifs")]
-        pub m_ifs: crate::system::collections::generic::list_1::List_1<
-            crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock,
-        >,
-        #[rename(name = "m_Else")]
-        pub m_else:
-            crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock,
-        #[rename(name = "m_End")]
-        pub m_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-    }
+    use crate::{
+        moon_sharp::interpreter::tree::{
+            nodebase::{INodeBase, NodeBase},
+            statement::{IStatement, Statement},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement_IfBlock.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Tree.Statements",
-        name = "IfStatement.IfBlock"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "IfStatement.IfBlock")]
     #[parent(crate::system::object::Object)]
     pub struct IfStatement_IfBlock {
         #[rename(name = "Exp")]
@@ -39,299 +22,27 @@ mod __types {
         #[rename(name = "Block")]
         pub block: crate::moon_sharp::interpreter::tree::statement::Statement,
         #[rename(name = "StackFrame")]
-        pub stack_frame:
-            crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        pub stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
         #[rename(name = "Source")]
         pub source: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement.md"))]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "IfStatement")]
+    #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
+    pub struct IfStatement {
+        #[rename(name = "m_Ifs")]
+        pub m_ifs:
+            crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock>,
+        #[rename(name = "m_Else")]
+        pub m_else: crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock,
+        #[rename(name = "m_End")]
+        pub m_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement-types")]
 pub use __types::*;
-
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __IfStatement_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IfStatement as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IfStatement as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: IfStatement,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IfStatement,
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, lcontext, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_if_block {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IfStatement as ::unity2::ClassIdentity>::class(),
-                "CreateIfBlock",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IfStatement as ::unity2::ClassIdentity>::NAME,
-                    "CreateIfBlock",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_if_block(
-        this: IfStatement,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock {
-        let inner : extern "C" fn (IfStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: statements :: ifstatement :: IfStatement_IfBlock = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_if_block :: get_offset () as isize) ,) ;
-        inner(this, lcontext, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_else_block {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IfStatement as ::unity2::ClassIdentity>::class(),
-                "CreateElseBlock",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IfStatement as ::unity2::ClassIdentity>::NAME,
-                    "CreateElseBlock",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_else_block(
-        this: IfStatement,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock {
-        let inner : extern "C" fn (IfStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: statements :: ifstatement :: IfStatement_IfBlock = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_else_block :: get_offset () as isize) ,) ;
-        inner(this, lcontext, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IfStatement as ::unity2::ClassIdentity>::class(),
-                "Compile",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IfStatement as ::unity2::ClassIdentity>::NAME,
-                    "Compile",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compile(
-        this: IfStatement,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            IfStatement,
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile::get_offset() as isize),
-        );
-        inner(this, bc, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
-pub trait IIfStatementMethods: IIfStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    fn ctor(
-        self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <IfStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IfStatement_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateIfBlock(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    fn create_if_block(
-        self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock {
-        unsafe {
-            let __receiver = <IfStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IfStatement_unity2_raw::create_if_block(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateElseBlock(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    fn create_else_block(
-        self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock {
-        unsafe {
-            let __receiver = <IfStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IfStatement_unity2_raw::create_else_block(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(
-        self,
-        bc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <IfStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IfStatement_unity2_raw::compile(
-                __receiver,
-                ::core::convert::Into::into(bc),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
-impl<__T: IIfStatement> IIfStatementMethods for __T {}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
-impl IfStatement {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]
-    pub fn new(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(IfStatement),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IIfStatementMethods>::ctor(this, lcontext);
-        this
-    }
-}
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
 #[doc(hidden)]
@@ -342,9 +53,7 @@ mod __IfStatement_IfBlock_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IfStatement_IfBlock as ::unity2::ClassIdentity>::class(),
@@ -357,30 +66,20 @@ mod __IfStatement_IfBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IfStatement_IfBlock as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IfStatement_IfBlock as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: IfStatement_IfBlock,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: IfStatement_IfBlock, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(IfStatement_IfBlock, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -390,9 +89,7 @@ pub trait IIfStatement_IfBlockMethods: IIfStatement_IfBlock {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <IfStatement_IfBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IfStatement_IfBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IfStatement_IfBlock_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -419,20 +116,226 @@ impl IfStatement_IfBlock {
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __IfStatement_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<IfStatement as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IfStatement as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: IfStatement,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            IfStatement,
+            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, lcontext, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_if_block {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IfStatement as ::unity2::ClassIdentity>::class(),
+                "CreateIfBlock",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IfStatement as ::unity2::ClassIdentity>::NAME,
+                        "CreateIfBlock",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_if_block(
+        this: IfStatement,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock {
+        let inner: extern "C" fn(
+            IfStatement,
+            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock =
+            ::core::mem::transmute(__lookup_create_if_block::get_method_info().method_ptr);
+        inner(this, lcontext, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_else_block {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IfStatement as ::unity2::ClassIdentity>::class(),
+                "CreateElseBlock",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IfStatement as ::unity2::ClassIdentity>::NAME,
+                        "CreateElseBlock",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_else_block(
+        this: IfStatement,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock {
+        let inner: extern "C" fn(
+            IfStatement,
+            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock =
+            ::core::mem::transmute(__lookup_create_else_block::get_method_info().method_ptr);
+        inner(this, lcontext, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compile {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<IfStatement as ::unity2::ClassIdentity>::class(), "Compile", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IfStatement as ::unity2::ClassIdentity>::NAME,
+                        "Compile",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compile(
+        this: IfStatement,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(IfStatement, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
+        inner(this, bc, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+pub trait IIfStatementMethods: IIfStatement {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
+    fn ctor(self, lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>) -> () {
+        unsafe {
+            let __receiver = <IfStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IfStatement_unity2_raw::ctor(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateIfBlock(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
+    fn create_if_block(
+        self,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
+    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock {
+        unsafe {
+            let __receiver = <IfStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IfStatement_unity2_raw::create_if_block(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateElseBlock(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
+    fn create_else_block(
+        self,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
+    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock {
+        unsafe {
+            let __receiver = <IfStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IfStatement_unity2_raw::create_else_block(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
+    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
+        unsafe {
+            let __receiver = <IfStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IfStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+impl<__T: IIfStatement> IIfStatementMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+impl IfStatement {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]
+    pub fn new(lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(IfStatement), ::core::stringify!(new),));
+        <Self as IIfStatementMethods>::ctor(this, lcontext);
+        this
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IIfStatement;
-    pub use super::IIfStatementMethods;
-    pub use super::IIfStatement_IfBlock;
-    pub use super::IIfStatement_IfBlockMethods;
-    pub use super::IfStatement;
-    pub use super::IfStatement_IfBlock;
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+    pub use super::{IIfStatement, IIfStatementMethods, IIfStatement_IfBlock, IIfStatement_IfBlockMethods, IfStatement, IfStatement_IfBlock};
     #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
     pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    pub use crate::moon_sharp::interpreter::tree::statement::IStatement;
     #[cfg(feature = "moon_sharp-interpreter-tree-statement")]
     pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::tree::{nodebase::INodeBase, statement::IStatement},
+        system::object::IObject,
+    };
 }

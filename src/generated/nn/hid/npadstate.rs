@@ -2,11 +2,13 @@
 
 #[cfg(feature = "nn-hid-npadstate-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/npadstate/NpadState.md"))]
     #[repr(C)]
@@ -21,9 +23,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for NpadState {
-        const NAMESPACE: &'static str = "nn.hid";
-
         const NAME: &'static str = "NpadState";
+        const NAMESPACE: &'static str = "nn.hid";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -34,10 +35,7 @@ mod __types {
 
     impl ::unity2::IlType for NpadState {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -54,76 +52,48 @@ mod __NpadState_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NpadState as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<NpadState as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadState as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadState as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: NpadState, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NpadState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+        let inner: extern "C" fn(NpadState, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_button {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::nn::hid::npadbutton::NpadButton as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NpadState as ::unity2::ClassIdentity>::class(),
-                "GetButton",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::nn::hid::npadbutton::NpadButton as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<NpadState as ::unity2::ClassIdentity>::class(), "GetButton", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadState as ::unity2::ClassIdentity>::NAME,
-                    "GetButton",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadState as ::unity2::ClassIdentity>::NAME,
+                        "GetButton",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_button(
@@ -131,26 +101,16 @@ mod __NpadState_unity2_raw {
         button: crate::nn::hid::npadbutton::NpadButton,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            NpadState,
-            crate::nn::hid::npadbutton::NpadButton,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_button::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NpadState, crate::nn::hid::npadbutton::NpadButton, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_button::get_method_info().method_ptr);
         inner(this, button, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_button_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::nn::hid::npadbutton::NpadButton as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::nn::hid::npadbutton::NpadButton as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NpadState as ::unity2::ClassIdentity>::class(),
                 "GetButtonDown",
@@ -162,18 +122,15 @@ mod __NpadState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadState as ::unity2::ClassIdentity>::NAME,
-                    "GetButtonDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadState as ::unity2::ClassIdentity>::NAME,
+                        "GetButtonDown",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_button_down(
@@ -181,26 +138,16 @@ mod __NpadState_unity2_raw {
         button: crate::nn::hid::npadbutton::NpadButton,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            NpadState,
-            crate::nn::hid::npadbutton::NpadButton,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_button_down::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NpadState, crate::nn::hid::npadbutton::NpadButton, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_button_down::get_method_info().method_ptr);
         inner(this, button, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_button_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::nn::hid::npadbutton::NpadButton as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::nn::hid::npadbutton::NpadButton as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NpadState as ::unity2::ClassIdentity>::class(),
                 "GetButtonUp",
@@ -212,18 +159,15 @@ mod __NpadState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadState as ::unity2::ClassIdentity>::NAME,
-                    "GetButtonUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadState as ::unity2::ClassIdentity>::NAME,
+                        "GetButtonUp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_button_up(
@@ -231,60 +175,35 @@ mod __NpadState_unity2_raw {
         button: crate::nn::hid::npadbutton::NpadButton,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            NpadState,
-            crate::nn::hid::npadbutton::NpadButton,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_button_up::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NpadState, crate::nn::hid::npadbutton::NpadButton, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_button_up::get_method_info().method_ptr);
         inner(this, button, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NpadState as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<NpadState as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadState as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadState as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: NpadState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: NpadState, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(NpadState, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -295,45 +214,22 @@ impl NpadState {
     pub fn clear(self) -> () {
         unsafe { __NpadState_unity2_raw::clear(self, ::core::option::Option::None) }
     }
+
     #[doc = "`GetButton(crate::nn::hid::npadbutton::NpadButton)` overload"]
-    pub fn get_button(
-        self,
-        button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>,
-    ) -> bool {
-        unsafe {
-            __NpadState_unity2_raw::get_button(
-                self,
-                ::core::convert::Into::into(button),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_button(self, button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>) -> bool {
+        unsafe { __NpadState_unity2_raw::get_button(self, ::core::convert::Into::into(button), ::core::option::Option::None) }
     }
+
     #[doc = "`GetButtonDown(crate::nn::hid::npadbutton::NpadButton)` overload"]
-    pub fn get_button_down(
-        self,
-        button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>,
-    ) -> bool {
-        unsafe {
-            __NpadState_unity2_raw::get_button_down(
-                self,
-                ::core::convert::Into::into(button),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_button_down(self, button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>) -> bool {
+        unsafe { __NpadState_unity2_raw::get_button_down(self, ::core::convert::Into::into(button), ::core::option::Option::None) }
     }
+
     #[doc = "`GetButtonUp(crate::nn::hid::npadbutton::NpadButton)` overload"]
-    pub fn get_button_up(
-        self,
-        button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>,
-    ) -> bool {
-        unsafe {
-            __NpadState_unity2_raw::get_button_up(
-                self,
-                ::core::convert::Into::into(button),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_button_up(self, button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>) -> bool {
+        unsafe { __NpadState_unity2_raw::get_button_up(self, ::core::convert::Into::into(button), ::core::option::Option::None) }
     }
+
     #[doc = "`ToString()` overload"]
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __NpadState_unity2_raw::to_string(self, ::core::option::Option::None) }
@@ -344,10 +240,9 @@ impl NpadState {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::NpadState;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

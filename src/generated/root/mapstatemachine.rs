@@ -2,15 +2,17 @@
 
 #[cfg(feature = "root-mapstatemachine-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use crate::unity_engine::statemachinebehaviour::{
-        IStateMachineBehaviour, StateMachineBehaviour,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+            statemachinebehaviour::{IStateMachineBehaviour, StateMachineBehaviour},
+        },
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapstatemachine/MapStateMachine.md"))]
     #[::unity2::class(namespace = "", name = "MapStateMachine")]
@@ -36,10 +38,13 @@ mod __MapStateMachine_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_state_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animatorstateinfo::AnimatorStateInfo as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapStateMachine as ::unity2::ClassIdentity>::class(),
                 "OnStateEnter",
@@ -51,18 +56,15 @@ mod __MapStateMachine_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapStateMachine as ::unity2::ClassIdentity>::NAME,
-                    "OnStateEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapStateMachine as ::unity2::ClassIdentity>::NAME,
+                        "OnStateEnter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_state_enter(
@@ -70,7 +72,7 @@ mod __MapStateMachine_unity2_raw {
         animator: crate::unity_engine::animator::Animator,
         state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
         layer_index: i32,
-        controller : crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable,
+        controller: crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -80,28 +82,19 @@ mod __MapStateMachine_unity2_raw {
             i32,
             crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_state_enter::get_offset() as isize),
-        );
-        inner(
-            this,
-            animator,
-            state_info,
-            layer_index,
-            controller,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_on_state_enter::get_method_info().method_ptr);
+        inner(this, animator, state_info, layer_index, controller, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_state_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animatorstateinfo::AnimatorStateInfo as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapStateMachine as ::unity2::ClassIdentity>::class(),
                 "OnStateExit",
@@ -113,18 +106,15 @@ mod __MapStateMachine_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapStateMachine as ::unity2::ClassIdentity>::NAME,
-                    "OnStateExit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapStateMachine as ::unity2::ClassIdentity>::NAME,
+                        "OnStateExit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_state_exit(
@@ -140,27 +130,19 @@ mod __MapStateMachine_unity2_raw {
             crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_state_exit::get_offset() as isize),
-        );
-        inner(
-            this,
-            animator,
-            animator_state_info,
-            layer_index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_on_state_exit::get_method_info().method_ptr);
+        inner(this, animator, animator_state_info, layer_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_state_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animatorstateinfo::AnimatorStateInfo as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapStateMachine as ::unity2::ClassIdentity>::class(),
                 "OnStateUpdate",
@@ -172,18 +154,15 @@ mod __MapStateMachine_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapStateMachine as ::unity2::ClassIdentity>::NAME,
-                    "OnStateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapStateMachine as ::unity2::ClassIdentity>::NAME,
+                        "OnStateUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_state_update(
@@ -199,27 +178,18 @@ mod __MapStateMachine_unity2_raw {
             crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_state_update::get_offset() as isize),
-        );
-        inner(
-            this,
-            animator,
-            state_info,
-            layer_index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_on_state_update::get_method_info().method_ptr);
+        inner(this, animator, state_info, layer_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animatorstateinfo::AnimatorStateInfo as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapStateMachine as ::unity2::ClassIdentity>::class(),
                 "IsPlaying",
@@ -231,18 +201,15 @@ mod __MapStateMachine_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapStateMachine as ::unity2::ClassIdentity>::NAME,
-                    "IsPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapStateMachine as ::unity2::ClassIdentity>::NAME,
+                        "IsPlaying",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_playing(
@@ -254,22 +221,15 @@ mod __MapStateMachine_unity2_raw {
             crate::unity_engine::animator::Animator,
             crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_playing::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_playing::get_method_info().method_ptr);
         inner(animator, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapStateMachine as ::unity2::ClassIdentity>::class(),
                 "IsPlaying",
@@ -281,41 +241,27 @@ mod __MapStateMachine_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapStateMachine as ::unity2::ClassIdentity>::NAME,
-                    "IsPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapStateMachine as ::unity2::ClassIdentity>::NAME,
+                        "IsPlaying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing_2(
-        animator: crate::unity_engine::animator::Animator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::animator::Animator,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_playing_2::get_offset() as isize),
-        );
+    pub unsafe fn is_playing_2(animator: crate::unity_engine::animator::Animator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::animator::Animator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_playing_2::get_method_info().method_ptr);
         inner(animator, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapStateMachine as ::unity2::ClassIdentity>::class(),
@@ -328,39 +274,27 @@ mod __MapStateMachine_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapStateMachine as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapStateMachine as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapStateMachine,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapStateMachine, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapStateMachine, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapStateMachine as ::unity2::ClassIdentity>::class(),
@@ -373,26 +307,19 @@ mod __MapStateMachine_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapStateMachine as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapStateMachine as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -412,17 +339,12 @@ impl MapStateMachine {
             )
         }
     }
+
     #[doc = "`IsPlaying(crate::unity_engine::animator::Animator)` overload"]
-    pub fn is_playing_2(
-        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-    ) -> bool {
-        unsafe {
-            __MapStateMachine_unity2_raw::is_playing_2(
-                ::core::convert::Into::into(animator),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_playing_2(animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>) -> bool {
+        unsafe { __MapStateMachine_unity2_raw::is_playing_2(::core::convert::Into::into(animator), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __MapStateMachine_unity2_raw::cctor(::core::option::Option::None) }
@@ -435,18 +357,12 @@ pub trait IMapStateMachineMethods: IMapStateMachine {
     fn on_state_enter(
         self,
         animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        state_info: impl ::core::convert::Into<
-            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-        >,
+        state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
         layer_index: impl ::core::convert::Into<i32>,
-        controller: impl ::core::convert::Into<
-            crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,
-        >,
+        controller: impl ::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>,
     ) -> () {
         unsafe {
-            let __receiver = <MapStateMachine as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapStateMachine as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapStateMachine_unity2_raw::on_state_enter(
                 __receiver,
                 ::core::convert::Into::into(animator),
@@ -461,15 +377,11 @@ pub trait IMapStateMachineMethods: IMapStateMachine {
     fn on_state_exit(
         self,
         animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        animator_state_info: impl ::core::convert::Into<
-            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-        >,
+        animator_state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
         layer_index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapStateMachine as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapStateMachine as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapStateMachine_unity2_raw::on_state_exit(
                 __receiver,
                 ::core::convert::Into::into(animator),
@@ -483,15 +395,11 @@ pub trait IMapStateMachineMethods: IMapStateMachine {
     fn on_state_update(
         self,
         animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        state_info: impl ::core::convert::Into<
-            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-        >,
+        state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
         layer_index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapStateMachine as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapStateMachine as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapStateMachine_unity2_raw::on_state_update(
                 __receiver,
                 ::core::convert::Into::into(animator),
@@ -504,9 +412,7 @@ pub trait IMapStateMachineMethods: IMapStateMachine {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapStateMachine as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapStateMachine as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapStateMachine_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -534,19 +440,17 @@ impl MapStateMachine {
 #[cfg(feature = "root-mapstatemachine")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapStateMachine;
-    pub use super::IMapStateMachineMethods;
-    pub use super::MapStateMachine;
-    pub use crate::system::object::IObject;
+    pub use super::{IMapStateMachine, IMapStateMachineMethods, MapStateMachine};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviour;
     #[cfg(feature = "unity_engine-statemachinebehaviour")]
     pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviourMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject, statemachinebehaviour::IStateMachineBehaviour},
+    };
 }

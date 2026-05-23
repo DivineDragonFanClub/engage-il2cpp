@@ -2,64 +2,14 @@
 
 #[cfg(feature = "app-gameusergmapdata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameusergmapdata/GameUserGmapData_EncountCounterType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GameUserGmapData_EncountCounterType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GameUserGmapData_EncountCounterType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GameUserGmapData.EncountCounterType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GameUserGmapData_EncountCounterType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GameUserGmapData_EncountCounterType {
-        pub fn map_clear() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn network() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn minigame() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
-        }
-    }
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameusergmapdata/GameUserGmapData.md"))]
     #[::unity2::class(namespace = "App", name = "GameUserGmapData")]
@@ -85,6 +35,48 @@ mod __types {
         #[rename(name = "Version")]
         pub version: i32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameusergmapdata/GameUserGmapData_EncountCounterType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct GameUserGmapData_EncountCounterType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GameUserGmapData_EncountCounterType {
+        const NAME: &'static str = "GameUserGmapData.EncountCounterType";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GameUserGmapData_EncountCounterType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl GameUserGmapData_EncountCounterType {
+        pub fn map_clear() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn network() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn minigame() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 3 }
+        }
+    }
 }
 
 #[cfg(feature = "app-gameusergmapdata-types")]
@@ -99,9 +91,7 @@ mod __GameUserGmapData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -114,39 +104,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -159,39 +137,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -204,43 +170,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "get_Mode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "get_Mode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mode(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gmapmode::GmapMode_Mode {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gmapmode::GmapMode_Mode = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mode::get_offset() as isize),
-        );
+    pub unsafe fn get_mode(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::gmapmode::GmapMode_Mode {
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> crate::app::gmapmode::GmapMode_Mode =
+            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "set_Mode",
@@ -252,43 +203,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "set_Mode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "set_Mode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mode(
-        this: GameUserGmapData,
-        value: crate::app::gmapmode::GmapMode_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            crate::app::gmapmode::GmapMode_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mode::get_offset() as isize),
-        );
+    pub unsafe fn set_mode(this: GameUserGmapData, value: crate::app::gmapmode::GmapMode_Mode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserGmapData, crate::app::gmapmode::GmapMode_Mode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_now_spot_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -301,43 +236,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "get_NowSpotGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "get_NowSpotGod",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_now_spot_god(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_now_spot_god::get_offset() as isize),
-        );
+    pub unsafe fn get_now_spot_god(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_now_spot_god::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_now_spot_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "set_NowSpotGod",
@@ -349,43 +269,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "set_NowSpotGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "set_NowSpotGod",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_now_spot_god(
-        this: GameUserGmapData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_now_spot_god::get_offset() as isize),
-        );
+    pub unsafe fn set_now_spot_god(this: GameUserGmapData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_now_spot_god::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_now_spot_evil {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -398,43 +302,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "get_NowSpotEvil",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "get_NowSpotEvil",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_now_spot_evil(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_now_spot_evil::get_offset() as isize),
-        );
+    pub unsafe fn get_now_spot_evil(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_now_spot_evil::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_now_spot_evil {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "set_NowSpotEvil",
@@ -446,43 +335,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "set_NowSpotEvil",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "set_NowSpotEvil",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_now_spot_evil(
-        this: GameUserGmapData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_now_spot_evil::get_offset() as isize),
-        );
+    pub unsafe fn set_now_spot_evil(this: GameUserGmapData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_now_spot_evil::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_gmap_camera_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -495,41 +368,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "get_GmapCameraDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "get_GmapCameraDistance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_gmap_camera_distance(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_gmap_camera_distance(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_gmap_camera_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_gmap_camera_distance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_gmap_camera_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "set_GmapCameraDistance",
@@ -541,40 +401,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "set_GmapCameraDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "set_GmapCameraDistance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_gmap_camera_distance(
-        this: GameUserGmapData,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_gmap_camera_distance(this: GameUserGmapData, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GameUserGmapData, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_gmap_camera_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_gmap_camera_distance::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::encountmob::EncountMob as ::unity2::IlType>::il_type(),
@@ -590,18 +437,15 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "AddMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "AddMob",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_mob(
@@ -610,27 +454,16 @@ mod __GameUserGmapData_unity2_raw {
         mob: crate::app::encountmob::EncountMob,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::Il2CppString,
-            crate::app::encountmob::EncountMob,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_mob::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::Il2CppString, crate::app::encountmob::EncountMob, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_mob::get_method_info().method_ptr);
         inner(this, spot_id, mob, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "GetMob",
@@ -642,18 +475,15 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "GetMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "GetMob",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_mob(
@@ -661,26 +491,16 @@ mod __GameUserGmapData_unity2_raw {
         spot_id: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::encountmob::EncountMob {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::encountmob::EncountMob = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mob::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::encountmob::EncountMob =
+            ::core::mem::transmute(__lookup_get_mob::get_method_info().method_ptr);
         inner(this, spot_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "ClearMob",
@@ -692,45 +512,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "ClearMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "ClearMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_mob(
-        this: GameUserGmapData,
-        spot_id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_mob::get_offset() as isize),
-        );
+    pub unsafe fn clear_mob(this: GameUserGmapData, spot_id: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_mob::get_method_info().method_ptr);
         inner(this, spot_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pop_mob_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "PopMobList",
@@ -742,18 +545,15 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "PopMobList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "PopMobList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn pop_mob_list(
@@ -761,26 +561,16 @@ mod __GameUserGmapData_unity2_raw {
         num: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::gmapspot::GmapSpot> {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::gmapspot::GmapSpot> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pop_mob_list::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GameUserGmapData, i32, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::gmapspot::GmapSpot> =
+            ::core::mem::transmute(__lookup_pop_mob_list::get_method_info().method_ptr);
         inner(this, num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exists_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "ExistsMob",
@@ -792,43 +582,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "ExistsMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "ExistsMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exists_mob(
-        this: GameUserGmapData,
-        spot_id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exists_mob::get_offset() as isize),
-        );
+    pub unsafe fn exists_mob(this: GameUserGmapData, spot_id: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(GameUserGmapData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_exists_mob::get_method_info().method_ptr);
         inner(this, spot_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_count_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -841,39 +615,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "CountMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "CountMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn count_mob(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn count_mob(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_count_mob::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_count_mob::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_check_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -886,41 +648,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "IsCheckDispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "IsCheckDispos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_check_dispos(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_check_dispos(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_check_dispos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_check_dispos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dispos_count_from_delta_hours {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "GetDisposCountFromDeltaHours",
@@ -932,40 +681,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "GetDisposCountFromDeltaHours",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "GetDisposCountFromDeltaHours",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_dispos_count_from_delta_hours(
-        this: GameUserGmapData,
-        print_log: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_dispos_count_from_delta_hours(this: GameUserGmapData, print_log: bool, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GameUserGmapData, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_dispos_count_from_delta_hours::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_dispos_count_from_delta_hours::get_method_info().method_ptr);
         inner(this, print_log, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_check_dispos_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -978,39 +714,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "IsCheckDisposTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "IsCheckDisposTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_check_dispos_time(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_check_dispos_time(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_check_dispos_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_check_dispos_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize_dispos_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -1023,40 +747,29 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "InitializeDisposTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "InitializeDisposTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn initialize_dispos_time(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn initialize_dispos_time(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize_dispos_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_initialize_dispos_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_encount_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "AddEncountCounter",
@@ -1068,18 +781,15 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "AddEncountCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "AddEncountCounter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_encount_counter(
@@ -1091,20 +801,14 @@ mod __GameUserGmapData_unity2_raw {
             GameUserGmapData,
             crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_encount_counter::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_encount_counter::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dispos_encount_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -1117,39 +821,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "GetDisposEncountCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "GetDisposEncountCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_dispos_encount_count(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_dispos_encount_count(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_dispos_encount_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_dispos_encount_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_encount_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -1162,41 +854,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "ResetEncountCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "ResetEncountCounter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_encount_counter(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn reset_encount_counter(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_encount_counter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset_encount_counter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_encount_count_map_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "GetEncountCountMapClear",
@@ -1208,42 +887,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "GetEncountCountMapClear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "GetEncountCountMapClear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_encount_count_map_clear(
-        this: GameUserGmapData,
-        is_update: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_encount_count_map_clear(this: GameUserGmapData, is_update: bool, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GameUserGmapData, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_encount_count_map_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_encount_count_map_clear::get_method_info().method_ptr);
         inner(this, is_update, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_encount_count_network {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "GetEncountCountNetwork",
@@ -1255,42 +920,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "GetEncountCountNetwork",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "GetEncountCountNetwork",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_encount_count_network(
-        this: GameUserGmapData,
-        is_update: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_encount_count_network(this: GameUserGmapData, is_update: bool, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GameUserGmapData, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_encount_count_network::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_encount_count_network::get_method_info().method_ptr);
         inner(this, is_update, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_encount_count_minigame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "GetEncountCountMinigame",
@@ -1302,40 +953,27 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "GetEncountCountMinigame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "GetEncountCountMinigame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_encount_count_minigame(
-        this: GameUserGmapData,
-        is_update: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_encount_count_minigame(this: GameUserGmapData, is_update: bool, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GameUserGmapData, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_encount_count_minigame::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_encount_count_minigame::get_method_info().method_ptr);
         inner(this, is_update, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid_real_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
@@ -1348,40 +986,29 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "IsValidRealTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "IsValidRealTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_valid_real_time(
-        this: GameUserGmapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_valid_real_time(this: GameUserGmapData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GameUserGmapData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid_real_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_valid_real_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "IsValidCounter",
@@ -1393,18 +1020,15 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "IsValidCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "IsValidCounter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_valid_counter(
@@ -1416,21 +1040,16 @@ mod __GameUserGmapData_unity2_raw {
             GameUserGmapData,
             crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_valid_counter::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_valid_counter::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_encount_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "GetEncountCounter",
@@ -1442,18 +1061,15 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "GetEncountCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "GetEncountCounter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_encount_counter(
@@ -1465,21 +1081,18 @@ mod __GameUserGmapData_unity2_raw {
             GameUserGmapData,
             crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_encount_counter::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_encount_counter::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_encount_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "SetEncountCounter",
@@ -1491,18 +1104,15 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "SetEncountCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "SetEncountCounter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_encount_counter(
@@ -1516,22 +1126,15 @@ mod __GameUserGmapData_unity2_raw {
             crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_encount_counter::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_encount_counter::get_method_info().method_ptr);
         inner(this, r#type, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "Serialize",
@@ -1543,45 +1146,28 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn serialize(
-        this: GameUserGmapData,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+    pub unsafe fn serialize(this: GameUserGmapData, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserGmapData, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameUserGmapData as ::unity2::ClassIdentity>::class(),
                 "Deserialize",
@@ -1593,34 +1179,20 @@ mod __GameUserGmapData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGmapData as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deserialize(
-        this: GameUserGmapData,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameUserGmapData,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deserialize::get_offset() as isize),
-        );
+    pub unsafe fn deserialize(this: GameUserGmapData, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserGmapData, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
 }
@@ -1630,119 +1202,71 @@ pub trait IGameUserGmapDataMethods: IGameUserGmapData {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Mode()` overload"]
     fn get_mode(self) -> crate::app::gmapmode::GmapMode_Mode {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Mode(crate::app::gmapmode::GmapMode_Mode)` overload"]
-    fn set_mode(
-        self,
-        value: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
-    ) -> () {
+    fn set_mode(self, value: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::set_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::set_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NowSpotGod()` overload"]
     fn get_now_spot_god(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::get_now_spot_god(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::get_now_spot_god(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NowSpotGod(::unity2::Il2CppString)` overload"]
     fn set_now_spot_god(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::set_now_spot_god(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::set_now_spot_god(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NowSpotEvil()` overload"]
     fn get_now_spot_evil(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::get_now_spot_evil(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::get_now_spot_evil(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NowSpotEvil(::unity2::Il2CppString)` overload"]
     fn set_now_spot_evil(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::set_now_spot_evil(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::set_now_spot_evil(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_GmapCameraDistance()` overload"]
     fn get_gmap_camera_distance(self) -> f32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::get_gmap_camera_distance(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::get_gmap_camera_distance(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_GmapCameraDistance(f32)` overload"]
     fn set_gmap_camera_distance(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::set_gmap_camera_distance(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::set_gmap_camera_distance(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`AddMob(::unity2::Il2CppString, crate::app::encountmob::EncountMob)` overload"]
@@ -1752,9 +1276,7 @@ pub trait IGameUserGmapDataMethods: IGameUserGmapData {
         mob: impl ::core::convert::Into<crate::app::encountmob::EncountMob>,
     ) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::add_mob(
                 __receiver,
                 ::core::convert::Into::into(spot_id),
@@ -1764,87 +1286,51 @@ pub trait IGameUserGmapDataMethods: IGameUserGmapData {
         }
     }
     #[doc = "`GetMob(::unity2::Il2CppString)` overload"]
-    fn get_mob(
-        self,
-        spot_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::encountmob::EncountMob {
+    fn get_mob(self, spot_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::encountmob::EncountMob {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::get_mob(
-                __receiver,
-                ::core::convert::Into::into(spot_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::get_mob(__receiver, ::core::convert::Into::into(spot_id), ::core::option::Option::None)
         }
     }
     #[doc = "`ClearMob(::unity2::Il2CppString)` overload"]
     fn clear_mob(self, spot_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::clear_mob(
-                __receiver,
-                ::core::convert::Into::into(spot_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::clear_mob(__receiver, ::core::convert::Into::into(spot_id), ::core::option::Option::None)
         }
     }
     #[doc = "`PopMobList(i32)` overload"]
-    fn pop_mob_list(
-        self,
-        num: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<crate::app::gmapspot::GmapSpot> {
+    fn pop_mob_list(self, num: impl ::core::convert::Into<i32>) -> ::unity2::Array<crate::app::gmapspot::GmapSpot> {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::pop_mob_list(
-                __receiver,
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::pop_mob_list(__receiver, ::core::convert::Into::into(num), ::core::option::Option::None)
         }
     }
     #[doc = "`ExistsMob(::unity2::Il2CppString)` overload"]
     fn exists_mob(self, spot_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::exists_mob(
-                __receiver,
-                ::core::convert::Into::into(spot_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::exists_mob(__receiver, ::core::convert::Into::into(spot_id), ::core::option::Option::None)
         }
     }
     #[doc = "`CountMob()` overload"]
     fn count_mob(self) -> i32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::count_mob(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsCheckDispos()` overload"]
     fn is_check_dispos(self) -> bool {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::is_check_dispos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetDisposCountFromDeltaHours(bool)` overload"]
     fn get_dispos_count_from_delta_hours(self, print_log: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::get_dispos_count_from_delta_hours(
                 __receiver,
                 ::core::convert::Into::into(print_log),
@@ -1855,75 +1341,42 @@ pub trait IGameUserGmapDataMethods: IGameUserGmapData {
     #[doc = "`IsCheckDisposTime()` overload"]
     fn is_check_dispos_time(self) -> bool {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::is_check_dispos_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::is_check_dispos_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InitializeDisposTime()` overload"]
     fn initialize_dispos_time(self) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::initialize_dispos_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::initialize_dispos_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"]
-    fn add_encount_counter(
-        self,
-        r#type: impl ::core::convert::Into<
-            crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
-        >,
-    ) -> () {
+    fn add_encount_counter(self, r#type: impl ::core::convert::Into<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType>) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::add_encount_counter(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::add_encount_counter(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDisposEncountCount()` overload"]
     fn get_dispos_encount_count(self) -> i32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::get_dispos_encount_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::get_dispos_encount_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ResetEncountCounter()` overload"]
     fn reset_encount_counter(self) -> i32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::reset_encount_counter(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::reset_encount_counter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetEncountCountMapClear(bool)` overload"]
     fn get_encount_count_map_clear(self, is_update: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::get_encount_count_map_clear(
                 __receiver,
                 ::core::convert::Into::into(is_update),
@@ -1934,22 +1387,14 @@ pub trait IGameUserGmapDataMethods: IGameUserGmapData {
     #[doc = "`GetEncountCountNetwork(bool)` overload"]
     fn get_encount_count_network(self, is_update: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::get_encount_count_network(
-                __receiver,
-                ::core::convert::Into::into(is_update),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::get_encount_count_network(__receiver, ::core::convert::Into::into(is_update), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEncountCountMinigame(bool)` overload"]
     fn get_encount_count_minigame(self, is_update: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::get_encount_count_minigame(
                 __receiver,
                 ::core::convert::Into::into(is_update),
@@ -1960,63 +1405,32 @@ pub trait IGameUserGmapDataMethods: IGameUserGmapData {
     #[doc = "`IsValidRealTime()` overload"]
     fn is_valid_real_time(self) -> bool {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::is_valid_real_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::is_valid_real_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsValidCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"]
-    fn is_valid_counter(
-        self,
-        r#type: impl ::core::convert::Into<
-            crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
-        >,
-    ) -> bool {
+    fn is_valid_counter(self, r#type: impl ::core::convert::Into<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType>) -> bool {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::is_valid_counter(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::is_valid_counter(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"]
-    fn get_encount_counter(
-        self,
-        r#type: impl ::core::convert::Into<
-            crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
-        >,
-    ) -> i32 {
+    fn get_encount_counter(self, r#type: impl ::core::convert::Into<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType>) -> i32 {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::get_encount_counter(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::get_encount_counter(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
     #[doc = "`SetEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType, i32)` overload"]
     fn set_encount_counter(
         self,
-        r#type: impl ::core::convert::Into<
-            crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
-        >,
+        r#type: impl ::core::convert::Into<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType>,
         value: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameUserGmapData_unity2_raw::set_encount_counter(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -2028,27 +1442,15 @@ pub trait IGameUserGmapDataMethods: IGameUserGmapData {
     #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
     fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
     fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserGmapData_unity2_raw::deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GameUserGmapData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGmapData_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
 }
@@ -2075,17 +1477,12 @@ impl GameUserGmapData {
 #[cfg(feature = "app-gameusergmapdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameUserGmapData;
-    pub use super::GameUserGmapData_EncountCounterType;
-    pub use super::IGameUserGmapData;
-    pub use super::IGameUserGmapDataMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{GameUserGmapData, GameUserGmapData_EncountCounterType, IGameUserGmapData, IGameUserGmapDataMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

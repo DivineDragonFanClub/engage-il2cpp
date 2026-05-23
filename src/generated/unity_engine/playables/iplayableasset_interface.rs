@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-playables-iplayableasset_interface-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/iplayableasset_interface/IPlayableAsset_Interface.md"))]
     #[::unity2::class(namespace = "UnityEngine.Playables", name = "IPlayableAsset")]
@@ -23,10 +23,11 @@ mod __IPlayableAsset_Interface_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_playable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IPlayableAsset_Interface as ::unity2::ClassIdentity>::class(),
                 "CreatePlayable",
@@ -38,18 +39,15 @@ mod __IPlayableAsset_Interface_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IPlayableAsset_Interface as ::unity2::ClassIdentity>::NAME,
-                    "CreatePlayable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IPlayableAsset_Interface as ::unity2::ClassIdentity>::NAME,
+                        "CreatePlayable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_playable(
@@ -63,20 +61,14 @@ mod __IPlayableAsset_Interface_unity2_raw {
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_playable::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_playable::get_method_info().method_ptr);
         inner(this, graph, owner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IPlayableAsset_Interface as ::unity2::ClassIdentity>::class(),
@@ -89,30 +81,20 @@ mod __IPlayableAsset_Interface_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IPlayableAsset_Interface as ::unity2::ClassIdentity>::NAME,
-                    "get_duration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IPlayableAsset_Interface as ::unity2::ClassIdentity>::NAME,
+                        "get_duration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_duration(
-        this: IPlayableAsset_Interface,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_duration(this: IPlayableAsset_Interface, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(IPlayableAsset_Interface, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -127,9 +109,7 @@ pub trait IIPlayableAsset_InterfaceMethods: IIPlayableAsset_Interface {
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
             let __receiver =
-                <IPlayableAsset_Interface as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <IPlayableAsset_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IPlayableAsset_Interface_unity2_raw::create_playable(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -142,13 +122,8 @@ pub trait IIPlayableAsset_InterfaceMethods: IIPlayableAsset_Interface {
     fn get_duration(self) -> f64 {
         unsafe {
             let __receiver =
-                <IPlayableAsset_Interface as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IPlayableAsset_Interface_unity2_raw::get_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <IPlayableAsset_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IPlayableAsset_Interface_unity2_raw::get_duration(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -159,7 +134,5 @@ impl<__T: IIPlayableAsset_Interface> IIPlayableAsset_InterfaceMethods for __T {}
 #[cfg(feature = "unity_engine-playables-iplayableasset_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIPlayableAsset_Interface;
-    pub use super::IIPlayableAsset_InterfaceMethods;
-    pub use super::IPlayableAsset_Interface;
+    pub use super::{IIPlayableAsset_Interface, IIPlayableAsset_InterfaceMethods, IPlayableAsset_Interface};
 }

@@ -2,11 +2,18 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "ShadowUtility")]
+    #[parent(crate::system::object::Object)]
+    pub struct ShadowUtility {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility_Edge.md"))]
     #[repr(C)]
@@ -19,9 +26,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for ShadowUtility_Edge {
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
         const NAME: &'static str = "ShadowUtility.Edge";
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -32,211 +38,13 @@ mod __types {
 
     impl ::unity2::IlType for ShadowUtility_Edge {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "ShadowUtility"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ShadowUtility {}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShadowUtility_Edge_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_assign_vertex_indices {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
-                "AssignVertexIndices",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
-                    "AssignVertexIndices",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn assign_vertex_indices(
-        this: ShadowUtility_Edge,
-        vi0: i32,
-        vi1: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ShadowUtility_Edge, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_assign_vertex_indices::get_offset() as isize),
-            );
-        inner(this, vi0, vi1, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare(
-        this: ShadowUtility_Edge,
-        a : crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge,
-        b : crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner : extern "C" fn (ShadowUtility_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_compare :: get_offset () as isize) ,) ;
-        inner(this, a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
-                "CompareTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
-                    "CompareTo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_to(
-        this: ShadowUtility_Edge,
-        edge_to_compare : crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner : extern "C" fn (ShadowUtility_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_compare_to :: get_offset () as isize) ,) ;
-        inner(this, edge_to_compare, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
-impl ShadowUtility_Edge {
-    #[doc = "`AssignVertexIndices(i32, i32)` overload"]
-    pub fn assign_vertex_indices(
-        self,
-        vi0: impl ::core::convert::Into<i32>,
-        vi1: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __ShadowUtility_Edge_unity2_raw::assign_vertex_indices(
-                self,
-                ::core::convert::Into::into(vi0),
-                ::core::convert::Into::into(vi1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Compare(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge, crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]
-    pub fn compare(
-        self,
-        a : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
-        b : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
-    ) -> i32 {
-        unsafe {
-            __ShadowUtility_Edge_unity2_raw::compare(
-                self,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareTo(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]
-    pub fn compare_to(
-        self,
-        edge_to_compare : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
-    ) -> i32 {
-        unsafe {
-            __ShadowUtility_Edge_unity2_raw::compare_to(
-                self,
-                ::core::convert::Into::into(edge_to_compare),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
 #[doc(hidden)]
@@ -247,10 +55,13 @@ mod __ShadowUtility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_edge {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtility as ::unity2::ClassIdentity>::class(),
                 "CreateEdge",
@@ -262,47 +73,46 @@ mod __ShadowUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    "CreateEdge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        "CreateEdge",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_edge(
         triangle_index_a: i32,
         triangle_index_b: i32,
-        vertices: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
+        vertices: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge
-    {
-        let inner : extern "C" fn (i32 , i32 , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_edge :: get_offset () as isize) ,) ;
-        inner(
-            triangle_index_a,
-            triangle_index_b,
-            vertices,
-            triangles,
-            __unity2_method_info,
-        )
+    ) -> crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge {
+        let inner: extern "C" fn(
+            i32,
+            i32,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge =
+            ::core::mem::transmute(__lookup_create_edge::get_method_info().method_ptr);
+        inner(triangle_index_a, triangle_index_b, vertices, triangles, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_populate_edge_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtility as ::unity2::ClassIdentity>::class(),
                 "PopulateEdgeArray",
@@ -314,39 +124,46 @@ mod __ShadowUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    "PopulateEdgeArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        "PopulateEdgeArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn populate_edge_array(
-        vertices: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
+        vertices: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
-        edges : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
+        edges: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_populate_edge_array :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_populate_edge_array::get_method_info().method_ptr);
         inner(vertices, triangles, edges, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_outside_edge {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtility as ::unity2::ClassIdentity>::class(),
                 "IsOutsideEdge",
@@ -358,36 +175,41 @@ mod __ShadowUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    "IsOutsideEdge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        "IsOutsideEdge",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_outside_edge(
         edge_index: i32,
-        edges_to_process : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
+        edges_to_process: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (i32 , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_is_outside_edge :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_is_outside_edge::get_method_info().method_ptr);
         inner(edge_index, edges_to_process, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sort_edges {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtility as ::unity2::ClassIdentity>::class(),
                 "SortEdges",
@@ -399,35 +221,45 @@ mod __ShadowUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    "SortEdges",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        "SortEdges",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sort_edges(
-        edges_to_process : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
+        edges_to_process: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_sort_edges :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_sort_edges::get_method_info().method_ptr);
         inner(edges_to_process, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_shadow_triangles {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtility as ::unity2::ClassIdentity>::class(),
                 "CreateShadowTriangles",
@@ -439,52 +271,49 @@ mod __ShadowUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    "CreateShadowTriangles",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        "CreateShadowTriangles",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_shadow_triangles(
-        vertices: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
-        colors: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::color::Color,
-        >,
+        vertices: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        colors: crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
         triangles: crate::system::collections::generic::list_1::List_1<i32>,
-        tangents: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
+        tangents: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+        edges: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
         >,
-        edges : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_shadow_triangles :: get_offset () as isize) ,) ;
-        inner(
-            vertices,
-            colors,
-            triangles,
-            tangents,
-            edges,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_shadow_triangles::get_method_info().method_ptr);
+        inner(vertices, colors, triangles, tangents, edges, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_interp_custom_vertex_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtility as ::unity2::ClassIdentity>::class(),
                 "InterpCustomVertexData",
@@ -496,22 +325,19 @@ mod __ShadowUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    "InterpCustomVertexData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        "InterpCustomVertexData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn interp_custom_vertex_data(
-        position : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
+        position: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
         data: ::unity2::Array<crate::system::object::Object>,
         weights: ::unity2::Array<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -521,25 +347,17 @@ mod __ShadowUtility_unity2_raw {
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::Array<f32>,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_interp_custom_vertex_data::get_offset() as isize),
-        );
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_interp_custom_vertex_data::get_method_info().method_ptr);
         inner(position, data, weights, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize_tangents {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector4::Vector4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtility as ::unity2::ClassIdentity>::class(),
@@ -552,48 +370,38 @@ mod __ShadowUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    "InitializeTangents",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        "InitializeTangents",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn initialize_tangents(
         tangents_to_add: i32,
-        tangents: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
+        tangents: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize_tangents::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_initialize_tangents::get_method_info().method_ptr);
         inner(tangents_to_add, tangents, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_generate_shadow_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::vector3::Vector3> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtility as ::unity2::ClassIdentity>::class(),
                 "GenerateShadowMesh",
@@ -605,18 +413,15 @@ mod __ShadowUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    "GenerateShadowMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        "GenerateShadowMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn generate_shadow_mesh(
@@ -628,53 +433,33 @@ mod __ShadowUtility_unity2_raw {
             crate::unity_engine::mesh::Mesh,
             ::unity2::Array<crate::unity_engine::vector3::Vector3>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_generate_shadow_mesh::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_generate_shadow_mesh::get_method_info().method_ptr);
         inner(mesh, shape_path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowUtility as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ShadowUtility as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtility as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: ShadowUtility, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShadowUtility, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ShadowUtility, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -685,14 +470,9 @@ impl ShadowUtility {
     pub fn create_edge(
         triangle_index_a: impl ::core::convert::Into<i32>,
         triangle_index_b: impl ::core::convert::Into<i32>,
-        vertices: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector3::Vector3,
-            >,
-        >,
+        vertices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>>,
         triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
-    ) -> crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge
-    {
+    ) -> crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge {
         unsafe {
             __ShadowUtility_unity2_raw::create_edge(
                 ::core::convert::Into::into(triangle_index_a),
@@ -703,15 +483,16 @@ impl ShadowUtility {
             )
         }
     }
+
     #[doc = "`PopulateEdgeArray(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, crate::system::collections::generic::list_1::List_1<i32>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>)` overload"]
     pub fn populate_edge_array(
-        vertices: impl ::core::convert::Into<
+        vertices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>>,
+        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        edges: impl ::core::convert::Into<
             crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector3::Vector3,
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
             >,
         >,
-        triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
-        edges : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > >,
     ) -> () {
         unsafe {
             __ShadowUtility_unity2_raw::populate_edge_array(
@@ -722,10 +503,15 @@ impl ShadowUtility {
             )
         }
     }
+
     #[doc = "`IsOutsideEdge(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>)` overload"]
     pub fn is_outside_edge(
         edge_index: impl ::core::convert::Into<i32>,
-        edges_to_process : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > >,
+        edges_to_process: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            >,
+        >,
     ) -> bool {
         unsafe {
             __ShadowUtility_unity2_raw::is_outside_edge(
@@ -735,34 +521,29 @@ impl ShadowUtility {
             )
         }
     }
+
     #[doc = "`SortEdges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>)` overload"]
     pub fn sort_edges(
-        edges_to_process : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > >,
+        edges_to_process: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            >,
+        >,
     ) -> () {
-        unsafe {
-            __ShadowUtility_unity2_raw::sort_edges(
-                ::core::convert::Into::into(edges_to_process),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ShadowUtility_unity2_raw::sort_edges(::core::convert::Into::into(edges_to_process), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateShadowTriangles(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, crate::system::collections::generic::list_1::List_1<i32>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>)` overload"]
     pub fn create_shadow_triangles(
-        vertices: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector3::Vector3,
-            >,
-        >,
-        colors: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
-        >,
+        vertices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>>,
+        colors: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>>,
         triangles: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
-        tangents: impl ::core::convert::Into<
+        tangents: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>,
+        edges: impl ::core::convert::Into<
             crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
+                crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
             >,
         >,
-        edges : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge > >,
     ) -> () {
         unsafe {
             __ShadowUtility_unity2_raw::create_shadow_triangles(
@@ -775,11 +556,10 @@ impl ShadowUtility {
             )
         }
     }
+
     #[doc = "`InterpCustomVertexData(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, ::unity2::Array<crate::system::object::Object>, ::unity2::Array<f32>)` overload"]
     pub fn interp_custom_vertex_data(
-        position: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
-        >,
+        position: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>,
         data: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
         weights: impl ::core::convert::Into<::unity2::Array<f32>>,
     ) -> crate::system::object::Object {
@@ -792,14 +572,11 @@ impl ShadowUtility {
             )
         }
     }
+
     #[doc = "`InitializeTangents(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn initialize_tangents(
         tangents_to_add: impl ::core::convert::Into<i32>,
-        tangents: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
-        >,
+        tangents: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>,
     ) -> () {
         unsafe {
             __ShadowUtility_unity2_raw::initialize_tangents(
@@ -809,6 +586,7 @@ impl ShadowUtility {
             )
         }
     }
+
     #[doc = "`GenerateShadowMesh(crate::unity_engine::mesh::Mesh, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
     pub fn generate_shadow_mesh(
         mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
@@ -829,9 +607,7 @@ pub trait IShadowUtilityMethods: IShadowUtility {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ShadowUtility as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ShadowUtility as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowUtility_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -844,13 +620,8 @@ impl<__T: IShadowUtility> IShadowUtilityMethods for __T {}
 impl ShadowUtility {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ShadowUtility),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ShadowUtility), ::core::stringify!(new),));
         <Self as IShadowUtilityMethods>::ctor(this);
         this
     }
@@ -858,15 +629,176 @@ impl ShadowUtility {
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ShadowUtility_Edge_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_assign_vertex_indices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
+                "AssignVertexIndices",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
+                        "AssignVertexIndices",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn assign_vertex_indices(this: ShadowUtility_Edge, vi0: i32, vi1: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ShadowUtility_Edge, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_assign_vertex_indices::get_method_info().method_ptr);
+        inner(this, vi0, vi1, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compare(
+        this: ShadowUtility_Edge,
+        a: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        b: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ShadowUtility_Edge,
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
+        inner(this, a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
+                "CompareTo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
+                        "CompareTo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compare_to(
+        this: ShadowUtility_Edge,
+        edge_to_compare: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ShadowUtility_Edge,
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_compare_to::get_method_info().method_ptr);
+        inner(this, edge_to_compare, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
+impl ShadowUtility_Edge {
+    #[doc = "`AssignVertexIndices(i32, i32)` overload"]
+    pub fn assign_vertex_indices(self, vi0: impl ::core::convert::Into<i32>, vi1: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __ShadowUtility_Edge_unity2_raw::assign_vertex_indices(
+                self,
+                ::core::convert::Into::into(vi0),
+                ::core::convert::Into::into(vi1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Compare(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge, crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]
+    pub fn compare(
+        self,
+        a: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
+        b: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
+    ) -> i32 {
+        unsafe {
+            __ShadowUtility_Edge_unity2_raw::compare(
+                self,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CompareTo(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]
+    pub fn compare_to(
+        self,
+        edge_to_compare: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
+    ) -> i32 {
+        unsafe { __ShadowUtility_Edge_unity2_raw::compare_to(self, ::core::convert::Into::into(edge_to_compare), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IShadowUtility;
-    pub use super::IShadowUtilityMethods;
-    pub use super::ShadowUtility;
-    pub use super::ShadowUtility_Edge;
-    pub use crate::system::object::IObject;
+    pub use super::{IShadowUtility, IShadowUtilityMethods, ShadowUtility, ShadowUtility_Edge};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

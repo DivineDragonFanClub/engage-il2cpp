@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-reflection-emit-localbuilder-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::reflection::localvariableinfo::{ILocalVariableInfo, LocalVariableInfo};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        reflection::localvariableinfo::{ILocalVariableInfo, LocalVariableInfo},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/localbuilder/LocalBuilder.md"))]
     #[::unity2::class(namespace = "System.Reflection.Emit", name = "LocalBuilder")]
@@ -29,12 +31,10 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-localbuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILocalBuilder;
-    pub use super::LocalBuilder;
-    pub use crate::system::object::IObject;
+    pub use super::{ILocalBuilder, LocalBuilder};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::reflection::localvariableinfo::ILocalVariableInfo;
     #[cfg(feature = "system-reflection-localvariableinfo")]
     pub use crate::system::reflection::localvariableinfo::ILocalVariableInfoMethods;
+    pub use crate::system::{object::IObject, reflection::localvariableinfo::ILocalVariableInfo};
 }

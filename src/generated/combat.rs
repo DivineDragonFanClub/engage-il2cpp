@@ -99,9 +99,7 @@ pub mod actiongranenemyhittimepredicted;
 #[cfg(feature = "combat-actiongranenemyhittimepredicted")]
 pub use actiongranenemyhittimepredicted::IActionGranEnemyHitTimePredictedMethods;
 #[cfg(feature = "combat-actiongranenemyhittimepredicted-types")]
-pub use actiongranenemyhittimepredicted::{
-    ActionGranEnemyHitTimePredicted, IActionGranEnemyHitTimePredicted,
-};
+pub use actiongranenemyhittimepredicted::{ActionGranEnemyHitTimePredicted, IActionGranEnemyHitTimePredicted};
 #[cfg(any(feature = "combat-actiongranfarattack-types"))]
 pub mod actiongranfarattack;
 #[cfg(feature = "combat-actiongranfarattack")]
@@ -207,9 +205,7 @@ pub use actionwaittime::{ActionWaitTime, IActionWaitTime};
 #[cfg(any(feature = "combat-adhocassetloader-types"))]
 pub mod adhocassetloader;
 #[cfg(feature = "combat-adhocassetloader-types")]
-pub use adhocassetloader::{
-    AdhocAssetLoader, AdhocAssetLoader_Asset, IAdhocAssetLoader, IAdhocAssetLoader_Asset,
-};
+pub use adhocassetloader::{AdhocAssetLoader, AdhocAssetLoader_Asset, IAdhocAssetLoader, IAdhocAssetLoader_Asset};
 #[cfg(feature = "combat-adhocassetloader")]
 pub use adhocassetloader::{IAdhocAssetLoaderMethods, IAdhocAssetLoader_AssetMethods};
 #[cfg(any(feature = "combat-anibodyride-types"))]
@@ -333,9 +329,7 @@ pub mod basetransitioncameracontroller;
 #[cfg(feature = "combat-basetransitioncameracontroller")]
 pub use basetransitioncameracontroller::IBaseTransitionCameraControllerMethods;
 #[cfg(feature = "combat-basetransitioncameracontroller-types")]
-pub use basetransitioncameracontroller::{
-    BaseTransitionCameraController, IBaseTransitionCameraController,
-};
+pub use basetransitioncameracontroller::{BaseTransitionCameraController, IBaseTransitionCameraController};
 #[cfg(any(feature = "combat-bit-types"))]
 pub mod bit;
 #[cfg(feature = "combat-bit-types")]
@@ -349,9 +343,7 @@ pub use boxcaster::{IBoxCasterMethods, IBoxCaster_CastResultMethods};
 #[cfg(any(feature = "combat-bufferedgizmo-types"))]
 pub mod bufferedgizmo;
 #[cfg(feature = "combat-bufferedgizmo-types")]
-pub use bufferedgizmo::{
-    BufferedGizmo, BufferedGizmo_Segment, IBufferedGizmo, IBufferedGizmo_Segment,
-};
+pub use bufferedgizmo::{BufferedGizmo, BufferedGizmo_Segment, IBufferedGizmo, IBufferedGizmo_Segment};
 #[cfg(feature = "combat-bufferedgizmo")]
 pub use bufferedgizmo::{IBufferedGizmoMethods, IBufferedGizmo_SegmentMethods};
 #[cfg(any(feature = "combat-cameraboundingbox-types"))]
@@ -365,9 +357,7 @@ pub mod cameracontrollerauto;
 #[cfg(feature = "combat-cameracontrollerauto")]
 pub use cameracontrollerauto::ICameraControllerAutoMethods;
 #[cfg(feature = "combat-cameracontrollerauto-types")]
-pub use cameracontrollerauto::{
-    CameraControllerAuto, CameraControllerAuto_CamRotate, ICameraControllerAuto,
-};
+pub use cameracontrollerauto::{CameraControllerAuto, CameraControllerAuto_CamRotate, ICameraControllerAuto};
 #[cfg(any(feature = "combat-cameracontrollerbehind-types"))]
 pub mod cameracontrollerbehind;
 #[cfg(feature = "combat-cameracontrollerbehind")]
@@ -379,9 +369,7 @@ pub mod cameracontrollerbehindlastboss;
 #[cfg(feature = "combat-cameracontrollerbehindlastboss")]
 pub use cameracontrollerbehindlastboss::ICameraControllerBehindLastBossMethods;
 #[cfg(feature = "combat-cameracontrollerbehindlastboss-types")]
-pub use cameracontrollerbehindlastboss::{
-    CameraControllerBehindLastBoss, ICameraControllerBehindLastBoss,
-};
+pub use cameracontrollerbehindlastboss::{CameraControllerBehindLastBoss, ICameraControllerBehindLastBoss};
 #[cfg(any(feature = "combat-cameracontrollerbird-types"))]
 pub mod cameracontrollerbird;
 #[cfg(feature = "combat-cameracontrollerbird")]
@@ -393,9 +381,7 @@ pub mod cameracontrollerbullet;
 #[cfg(feature = "combat-cameracontrollerbullet")]
 pub use cameracontrollerbullet::ICameraControllerBulletMethods;
 #[cfg(feature = "combat-cameracontrollerbullet-types")]
-pub use cameracontrollerbullet::{
-    CameraControllerBullet, CameraControllerBullet_State, ICameraControllerBullet,
-};
+pub use cameracontrollerbullet::{CameraControllerBullet, CameraControllerBullet_State, ICameraControllerBullet};
 #[cfg(any(feature = "combat-cameracontrollerchainattack-types"))]
 pub mod cameracontrollerchainattack;
 #[cfg(feature = "combat-cameracontrollerchainattack")]
@@ -407,9 +393,7 @@ pub mod cameracontrollerconfrontation;
 #[cfg(feature = "combat-cameracontrollerconfrontation")]
 pub use cameracontrollerconfrontation::ICameraControllerConfrontationMethods;
 #[cfg(feature = "combat-cameracontrollerconfrontation-types")]
-pub use cameracontrollerconfrontation::{
-    CameraControllerConfrontation, ICameraControllerConfrontation,
-};
+pub use cameracontrollerconfrontation::{CameraControllerConfrontation, ICameraControllerConfrontation};
 #[cfg(any(feature = "combat-cameracontrollerdie-types"))]
 pub mod cameracontrollerdie;
 #[cfg(feature = "combat-cameracontrollerdie")]
@@ -421,9 +405,7 @@ pub mod cameracontrollerdollycart;
 #[cfg(feature = "combat-cameracontrollerdollycart")]
 pub use cameracontrollerdollycart::ICameraControllerDollyCartMethods;
 #[cfg(feature = "combat-cameracontrollerdollycart-types")]
-pub use cameracontrollerdollycart::{
-    CameraControllerDollyCart, CameraControllerDollyCart_State, ICameraControllerDollyCart,
-};
+pub use cameracontrollerdollycart::{CameraControllerDollyCart, CameraControllerDollyCart_State, ICameraControllerDollyCart};
 #[cfg(any(feature = "combat-cameracontrollerfreecamera-types"))]
 pub mod cameracontrollerfreecamera;
 #[cfg(feature = "combat-cameracontrollerfreecamera")]
@@ -490,13 +472,11 @@ pub use cameraposition::CameraPosition;
 pub mod camerapositiondata;
 #[cfg(feature = "combat-camerapositiondata-types")]
 pub use camerapositiondata::{
-    CameraPositionData, CameraPositionData_CameraShakeSettings, CameraPositionData_TargetJoint,
-    ICameraPositionData, ICameraPositionData_CameraShakeSettings,
+    CameraPositionData, CameraPositionData_CameraShakeSettings, CameraPositionData_TargetJoint, ICameraPositionData,
+    ICameraPositionData_CameraShakeSettings,
 };
 #[cfg(feature = "combat-camerapositiondata")]
-pub use camerapositiondata::{
-    ICameraPositionDataMethods, ICameraPositionData_CameraShakeSettingsMethods,
-};
+pub use camerapositiondata::{ICameraPositionDataMethods, ICameraPositionData_CameraShakeSettingsMethods};
 #[cfg(any(feature = "combat-camerasituation-types"))]
 pub mod camerasituation;
 #[cfg(feature = "combat-camerasituation-types")]
@@ -506,9 +486,7 @@ pub mod camerasituationconverter;
 #[cfg(feature = "combat-camerasituationconverter")]
 pub use camerasituationconverter::ICameraSituationConverterMethods;
 #[cfg(feature = "combat-camerasituationconverter-types")]
-pub use camerasituationconverter::{
-    CameraSituationConverter, CameraSituationConverter_CameraLocateStyle, ICameraSituationConverter,
-};
+pub use camerasituationconverter::{CameraSituationConverter, CameraSituationConverter_CameraLocateStyle, ICameraSituationConverter};
 #[cfg(any(feature = "combat-cameraswitch-types"))]
 pub mod cameraswitch;
 #[cfg(feature = "combat-cameraswitch")]
@@ -660,9 +638,7 @@ pub mod characterlyinghorse;
 #[cfg(feature = "combat-characterlyinghorse")]
 pub use characterlyinghorse::ICharacterLyingHorseMethods;
 #[cfg(feature = "combat-characterlyinghorse-types")]
-pub use characterlyinghorse::{
-    CharacterLyingHorse, CharacterLyingHorse_Progress, ICharacterLyingHorse,
-};
+pub use characterlyinghorse::{CharacterLyingHorse, CharacterLyingHorse_Progress, ICharacterLyingHorse};
 #[cfg(any(feature = "combat-characterlyinghuman-types"))]
 pub mod characterlyinghuman;
 #[cfg(feature = "combat-characterlyinghuman")]
@@ -680,17 +656,13 @@ pub mod charactermove;
 #[cfg(feature = "combat-charactermove")]
 pub use charactermove::ICharacterMoveMethods;
 #[cfg(feature = "combat-charactermove-types")]
-pub use charactermove::{
-    CharacterMove, CharacterMove_StartMode, CharacterMove_State, ICharacterMove,
-};
+pub use charactermove::{CharacterMove, CharacterMove_StartMode, CharacterMove_State, ICharacterMove};
 #[cfg(any(feature = "combat-characternodeconstraint-types"))]
 pub mod characternodeconstraint;
 #[cfg(feature = "combat-characternodeconstraint")]
 pub use characternodeconstraint::ICharacterNodeConstraintMethods;
 #[cfg(feature = "combat-characternodeconstraint-types")]
-pub use characternodeconstraint::{
-    CharacterNodeConstraint, CharacterNodeConstraint_State, ICharacterNodeConstraint,
-};
+pub use characternodeconstraint::{CharacterNodeConstraint, CharacterNodeConstraint_State, ICharacterNodeConstraint};
 #[cfg(any(feature = "combat-characterobservable-types"))]
 pub mod characterobservable;
 #[cfg(feature = "combat-characterobservable")]
@@ -744,9 +716,7 @@ pub mod classchangesequence;
 #[cfg(feature = "combat-classchangesequence")]
 pub use classchangesequence::IClassChangeSequenceMethods;
 #[cfg(feature = "combat-classchangesequence-types")]
-pub use classchangesequence::{
-    ClassChangeSequence, ClassChangeSequence_Label, IClassChangeSequence,
-};
+pub use classchangesequence::{ClassChangeSequence, ClassChangeSequence_Label, IClassChangeSequence};
 #[cfg(any(feature = "combat-combat_viewer_ex_methods-acts2i-types"))]
 pub mod combat_viewer_ex_methods;
 #[cfg(any(feature = "combat-combatconfig-types"))]
@@ -926,14 +896,9 @@ pub use combatviewer::{CombatViewer, ICombatViewer};
 #[cfg(any(feature = "combat-combatviewersettings-types"))]
 pub mod combatviewersettings;
 #[cfg(feature = "combat-combatviewersettings-types")]
-pub use combatviewersettings::{
-    CombatViewerSettings, CombatViewerSettings_ViewerPhase, ICombatViewerSettings,
-    ICombatViewerSettings_ViewerPhase,
-};
+pub use combatviewersettings::{CombatViewerSettings, CombatViewerSettings_ViewerPhase, ICombatViewerSettings, ICombatViewerSettings_ViewerPhase};
 #[cfg(feature = "combat-combatviewersettings")]
-pub use combatviewersettings::{
-    ICombatViewerSettingsMethods, ICombatViewerSettings_ViewerPhaseMethods,
-};
+pub use combatviewersettings::{ICombatViewerSettingsMethods, ICombatViewerSettings_ViewerPhaseMethods};
 #[cfg(any(feature = "combat-combatworld-types"))]
 pub mod combatworld;
 #[cfg(feature = "combat-combatworld")]
@@ -1083,17 +1048,13 @@ pub use effecthandle::{EffectHandle, IEffectHandle};
 #[cfg(any(feature = "combat-emittersconstraint-types"))]
 pub mod emittersconstraint;
 #[cfg(feature = "combat-emittersconstraint-types")]
-pub use emittersconstraint::{
-    EmittersConstraint, EmittersConstraint_Pair, IEmittersConstraint, IEmittersConstraint_Pair,
-};
+pub use emittersconstraint::{EmittersConstraint, EmittersConstraint_Pair, IEmittersConstraint, IEmittersConstraint_Pair};
 #[cfg(feature = "combat-emittersconstraint")]
 pub use emittersconstraint::{IEmittersConstraintMethods, IEmittersConstraint_PairMethods};
 #[cfg(any(feature = "combat-engagesequence-types"))]
 pub mod engagesequence;
 #[cfg(feature = "combat-engagesequence-types")]
-pub use engagesequence::{
-    EngageSequence, EngageSequence_Cast, EngageSequence_Mode, IEngageSequence, IEngageSequence_Cast,
-};
+pub use engagesequence::{EngageSequence, EngageSequence_Cast, EngageSequence_Mode, IEngageSequence, IEngageSequence_Cast};
 #[cfg(feature = "combat-engagesequence")]
 pub use engagesequence::{IEngageSequenceMethods, IEngageSequence_CastMethods};
 #[cfg(any(feature = "combat-engagestyle-types"))]
@@ -1264,8 +1225,7 @@ pub use intvec3::{IIntVec3, IntVec3};
 pub mod kaneko;
 #[cfg(feature = "combat-kaneko-types")]
 pub use kaneko::{
-    IKaneko, IKaneko_DummyDisposable, IKaneko_GUIFitScope, IKaneko_Screen, Kaneko,
-    Kaneko_DummyDisposable, Kaneko_GUIFitScope, Kaneko_Screen,
+    IKaneko, IKaneko_DummyDisposable, IKaneko_GUIFitScope, IKaneko_Screen, Kaneko, Kaneko_DummyDisposable, Kaneko_GUIFitScope, Kaneko_Screen,
 };
 #[cfg(feature = "combat-kaneko")]
 pub use kaneko::{IKaneko_DummyDisposableMethods, IKaneko_GUIFitScopeMethods};
@@ -1285,8 +1245,7 @@ pub mod locationparams;
 pub use locationparams::ILocationParamsMethods;
 #[cfg(feature = "combat-locationparams-types")]
 pub use locationparams::{
-    ILocationParams, LocationParams, LocationParams_DataType, LocationParams_EmblemType,
-    LocationParams_LocateStyle, LocationParams_UnitType,
+    ILocationParams, LocationParams, LocationParams_DataType, LocationParams_EmblemType, LocationParams_LocateStyle, LocationParams_UnitType,
 };
 #[cfg(any(feature = "combat-lookatikrotationlimit-types"))]
 pub mod lookatikrotationlimit;
@@ -1527,9 +1486,7 @@ pub use resourcecache::{IResourceCache, ResourceCache};
 #[cfg(any(feature = "combat-runtimeanimationeventutility-types"))]
 pub mod runtimeanimationeventutility;
 #[cfg(feature = "combat-runtimeanimationeventutility-types")]
-pub use runtimeanimationeventutility::{
-    IRuntimeAnimationEventUtility, RuntimeAnimationEventUtility,
-};
+pub use runtimeanimationeventutility::{IRuntimeAnimationEventUtility, RuntimeAnimationEventUtility};
 #[cfg(any(feature = "combat-runtimeanimutil-types"))]
 pub mod runtimeanimutil;
 #[cfg(feature = "combat-runtimeanimutil-types")]
@@ -1575,9 +1532,7 @@ pub use side::{ISide, Side};
 #[cfg(any(feature = "combat-signalargsreaderwriter_attackrange-types"))]
 pub mod signalargsreaderwriter_attackrange;
 #[cfg(feature = "combat-signalargsreaderwriter_attackrange-types")]
-pub use signalargsreaderwriter_attackrange::{
-    ISignalArgsReaderWriter_AttackRange, SignalArgsReaderWriter_AttackRange,
-};
+pub use signalargsreaderwriter_attackrange::{ISignalArgsReaderWriter_AttackRange, SignalArgsReaderWriter_AttackRange};
 #[cfg(any(feature = "combat-signalargsreaderwriter_hit-types"))]
 pub mod signalargsreaderwriter_hit;
 #[cfg(feature = "combat-signalargsreaderwriter_hit-types")]
@@ -1701,9 +1656,7 @@ pub mod unitdetailcameraposition;
 #[cfg(feature = "combat-unitdetailcameraposition")]
 pub use unitdetailcameraposition::IUnitDetailCameraPositionMethods;
 #[cfg(feature = "combat-unitdetailcameraposition-types")]
-pub use unitdetailcameraposition::{
-    IUnitDetailCameraPosition, UnitDetailCameraPosition, UnitDetailCameraPosition_CenterType,
-};
+pub use unitdetailcameraposition::{IUnitDetailCameraPosition, UnitDetailCameraPosition, UnitDetailCameraPosition_CenterType};
 #[cfg(any(feature = "combat-vcamshaker-types"))]
 pub mod vcamshaker;
 #[cfg(feature = "combat-vcamshaker")]

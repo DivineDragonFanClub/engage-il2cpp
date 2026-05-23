@@ -2,29 +2,37 @@
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervector2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::rendering::ui::debuguihandlerwidget::{
-        DebugUIHandlerWidget, IDebugUIHandlerWidget,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            rendering::ui::debuguihandlerwidget::{DebugUIHandlerWidget, IDebugUIHandlerWidget},
+        },
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlervector2/DebugUIHandlerVector2.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerVector2")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
     pub struct DebugUIHandlerVector2 {
-# [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
-# [rename (name = "valueToggle")] pub value_toggle : crate :: unity_engine :: rendering :: ui :: uifoldout :: UIFoldout ,
-# [rename (name = "fieldX")] pub field_x : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField ,
-# [rename (name = "fieldY")] pub field_y : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField ,
-# [rename (name = "m_Field")] pub m_field : crate :: unity_engine :: rendering :: debugui :: DebugUI_Vector2Field ,
-# [rename (name = "m_Container")] pub m_container : crate :: unity_engine :: rendering :: ui :: debuguihandlercontainer :: DebugUIHandlerContainer ,
-}
+        #[rename(name = "nameLabel")]
+        pub name_label: crate::unity_engine::ui::text::Text,
+        #[rename(name = "valueToggle")]
+        pub value_toggle: crate::unity_engine::rendering::ui::uifoldout::UIFoldout,
+        #[rename(name = "fieldX")]
+        pub field_x: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[rename(name = "fieldY")]
+        pub field_y: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[rename(name = "m_Field")]
+        pub m_field: crate::unity_engine::rendering::debugui::DebugUI_Vector2Field,
+        #[rename(name = "m_Container")]
+        pub m_container: crate::unity_engine::rendering::ui::debuguihandlercontainer::DebugUIHandlerContainer,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervector2-types")]
@@ -39,10 +47,9 @@ mod __DebugUIHandlerVector2_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_widget {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::debugui::DebugUI_Widget as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
                 "SetWidget",
@@ -54,18 +61,15 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "SetWidget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "SetWidget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_widget(
@@ -73,24 +77,15 @@ mod __DebugUIHandlerVector2_unity2_raw {
         widget: crate::unity_engine::rendering::debugui::DebugUI_Widget,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugUIHandlerVector2,
-            crate::unity_engine::rendering::debugui::DebugUI_Widget,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_widget::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugUIHandlerVector2, crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_widget::get_method_info().method_ptr);
         inner(this, widget, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -107,48 +102,31 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "SetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "SetValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value(
-        this: DebugUIHandlerVector2,
-        v: f32,
-        x: bool,
-        y: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugUIHandlerVector2,
-            f32,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_value::get_offset() as isize),
-        );
+    pub unsafe fn set_value(this: DebugUIHandlerVector2, v: f32, x: bool, y: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugUIHandlerVector2, f32, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
         inner(this, v, x, y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
                 "SetupSettings",
@@ -160,36 +138,38 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "SetupSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "SetupSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_settings(
         this: DebugUIHandlerVector2,
-        field : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField,
+        field: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (DebugUIHandlerVector2 , crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_setup_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            DebugUIHandlerVector2,
+            crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_setup_settings::get_method_info().method_ptr);
         inner(this, field, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
                 "OnSelection",
@@ -201,18 +181,15 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "OnSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "OnSelection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_selection(
@@ -226,20 +203,14 @@ mod __DebugUIHandlerVector2_unity2_raw {
             bool,
             crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_selection::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_on_selection::get_method_info().method_ptr);
         inner(this, from_next, previous, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_deselection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
@@ -252,41 +223,28 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "OnDeselection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "OnDeselection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_deselection(
-        this: DebugUIHandlerVector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_deselection(this: DebugUIHandlerVector2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugUIHandlerVector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_deselection::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_deselection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_increment {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
                 "OnIncrement",
@@ -298,42 +256,28 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "OnIncrement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "OnIncrement",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_increment(
-        this: DebugUIHandlerVector2,
-        fast: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_increment(this: DebugUIHandlerVector2, fast: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugUIHandlerVector2, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_increment::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_increment::get_method_info().method_ptr);
         inner(this, fast, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_decrement {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
                 "OnDecrement",
@@ -345,40 +289,27 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "OnDecrement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "OnDecrement",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_decrement(
-        this: DebugUIHandlerVector2,
-        fast: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_decrement(this: DebugUIHandlerVector2, fast: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugUIHandlerVector2, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_decrement::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_decrement::get_method_info().method_ptr);
         inner(this, fast, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
@@ -391,39 +322,27 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "OnAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "OnAction",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_action(
-        this: DebugUIHandlerVector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_action(this: DebugUIHandlerVector2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugUIHandlerVector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_action::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_action::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
@@ -436,34 +355,33 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    "Next",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        "Next",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn next(
         this: DebugUIHandlerVector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
-        let inner : extern "C" fn (DebugUIHandlerVector2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_next :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            DebugUIHandlerVector2,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget =
+            ::core::mem::transmute(__lookup_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::class(),
@@ -476,30 +394,20 @@ mod __DebugUIHandlerVector2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugUIHandlerVector2 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DebugUIHandlerVector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DebugUIHandlerVector2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugUIHandlerVector2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -507,32 +415,18 @@ mod __DebugUIHandlerVector2_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervector2")]
 pub trait IDebugUIHandlerVector2Methods: IDebugUIHandlerVector2 {
     #[doc = "`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]
-    fn set_widget(
-        self,
-        widget: impl ::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>,
-    ) -> () {
+    fn set_widget(self, widget: impl ::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>) -> () {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugUIHandlerVector2_unity2_raw::set_widget(
-                __receiver,
-                ::core::convert::Into::into(widget),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugUIHandlerVector2_unity2_raw::set_widget(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)
         }
     }
     #[doc = "`SetValue(f32, bool, bool)` overload"]
-    fn set_value(
-        self,
-        v: impl ::core::convert::Into<f32>,
-        x: impl ::core::convert::Into<bool>,
-        y: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_value(self, v: impl ::core::convert::Into<f32>, x: impl ::core::convert::Into<bool>, y: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugUIHandlerVector2_unity2_raw::set_value(
                 __receiver,
                 ::core::convert::Into::into(v),
@@ -545,31 +439,23 @@ pub trait IDebugUIHandlerVector2Methods: IDebugUIHandlerVector2 {
     #[doc = "`SetupSettings(crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField)` overload"]
     fn setup_settings(
         self,
-        field : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField >,
+        field: impl ::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugUIHandlerVector2_unity2_raw::setup_settings(
-                __receiver,
-                ::core::convert::Into::into(field),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugUIHandlerVector2_unity2_raw::setup_settings(__receiver, ::core::convert::Into::into(field), ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]
     fn on_selection(
         self,
         from_next: impl ::core::convert::Into<bool>,
-        previous: impl ::core::convert::Into<
-            crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
-        >,
+        previous: impl ::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>,
     ) -> bool {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugUIHandlerVector2_unity2_raw::on_selection(
                 __receiver,
                 ::core::convert::Into::into(from_next),
@@ -581,67 +467,48 @@ pub trait IDebugUIHandlerVector2Methods: IDebugUIHandlerVector2 {
     #[doc = "`OnDeselection()` overload"]
     fn on_deselection(self) -> () {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugUIHandlerVector2_unity2_raw::on_deselection(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugUIHandlerVector2_unity2_raw::on_deselection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnIncrement(bool)` overload"]
     fn on_increment(self, fast: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugUIHandlerVector2_unity2_raw::on_increment(
-                __receiver,
-                ::core::convert::Into::into(fast),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugUIHandlerVector2_unity2_raw::on_increment(__receiver, ::core::convert::Into::into(fast), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDecrement(bool)` overload"]
     fn on_decrement(self, fast: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugUIHandlerVector2_unity2_raw::on_decrement(
-                __receiver,
-                ::core::convert::Into::into(fast),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugUIHandlerVector2_unity2_raw::on_decrement(__receiver, ::core::convert::Into::into(fast), ::core::option::Option::None)
         }
     }
     #[doc = "`OnAction()` overload"]
     fn on_action(self) -> () {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugUIHandlerVector2_unity2_raw::on_action(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Next()` overload"]
-    fn next(
-        self,
-    ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
+    fn next(self) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugUIHandlerVector2_unity2_raw::next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugUIHandlerVector2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugUIHandlerVector2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -669,25 +536,24 @@ impl DebugUIHandlerVector2 {
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervector2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugUIHandlerVector2;
-    pub use super::IDebugUIHandlerVector2;
-    pub use super::IDebugUIHandlerVector2Methods;
-    pub use crate::system::object::IObject;
+    pub use super::{DebugUIHandlerVector2, IDebugUIHandlerVector2, IDebugUIHandlerVector2Methods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidget;
     #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerwidget")]
     pub use crate::unity_engine::rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidgetMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2,
+            rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidget,
+        },
+    };
 }

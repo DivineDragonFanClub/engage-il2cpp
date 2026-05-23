@@ -2,14 +2,18 @@
 
 #[cfg(feature = "root-mapinfoiconlocatorroot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfoiconlocatorroot/MapInfoIconLocatorRoot.md"))]
     #[::unity2::class(namespace = "", name = "MapInfoIconLocatorRoot")]
@@ -46,9 +50,7 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -61,41 +63,28 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: MapInfoIconLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: MapInfoIconLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoIconLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetIcon",
@@ -107,18 +96,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_icon(
@@ -126,24 +112,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         inspector: crate::app::mapinspector::MapInspector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoIconLocatorRoot,
-            crate::app::mapinspector::MapInspector,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoIconLocatorRoot, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_icon::get_method_info().method_ptr);
         inner(this, inspector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_set_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -156,39 +133,27 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsSetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsSetPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_set_position(
-        this: MapInfoIconLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_set_position(this: MapInfoIconLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapInfoIconLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_set_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_set_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_set_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -201,39 +166,27 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsSetParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsSetParam",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_set_param(
-        this: MapInfoIconLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_set_param(this: MapInfoIconLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapInfoIconLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_set_param::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_set_param::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -246,39 +199,27 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_visible(
-        this: MapInfoIconLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_visible(this: MapInfoIconLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoIconLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -291,41 +232,28 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_visible(
-        this: MapInfoIconLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_visible(this: MapInfoIconLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapInfoIconLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetPosition",
@@ -337,18 +265,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_position(
@@ -356,26 +281,16 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         inspector: crate::app::mapinspector::MapInspector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoIconLocatorRoot,
-            crate::app::mapinspector::MapInspector,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoIconLocatorRoot, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_position::get_method_info().method_ptr);
         inner(this, inspector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetScale",
@@ -387,18 +302,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetScale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_scale(
@@ -406,26 +318,16 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         inspector: crate::app::mapinspector::MapInspector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoIconLocatorRoot,
-            crate::app::mapinspector::MapInspector,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scale::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoIconLocatorRoot, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scale::get_method_info().method_ptr);
         inner(this, inspector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_baloon_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetBaloonIcon",
@@ -437,18 +339,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetBaloonIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetBaloonIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_baloon_icon(
@@ -456,26 +355,16 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         inspector: crate::app::mapinspector::MapInspector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoIconLocatorRoot,
-            crate::app::mapinspector::MapInspector,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_baloon_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoIconLocatorRoot, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_baloon_icon::get_method_info().method_ptr);
         inner(this, inspector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_gauge {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetHpGauge",
@@ -487,18 +376,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetHpGauge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetHpGauge",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_hp_gauge(
@@ -506,26 +392,16 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         inspector: crate::app::mapinspector::MapInspector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoIconLocatorRoot,
-            crate::app::mapinspector::MapInspector,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_gauge::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoIconLocatorRoot, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_gauge::get_method_info().method_ptr);
         inner(this, inspector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cannon_stock {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetCannonStock",
@@ -537,18 +413,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetCannonStock",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetCannonStock",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_cannon_stock(
@@ -556,24 +429,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         inspector: crate::app::mapinspector::MapInspector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoIconLocatorRoot,
-            crate::app::mapinspector::MapInspector,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cannon_stock::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoIconLocatorRoot, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cannon_stock::get_method_info().method_ptr);
         inner(this, inspector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -589,18 +453,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetActive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_active(
@@ -609,25 +470,15 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         enable: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoIconLocatorRoot,
-            crate::unity_engine::gameobject::GameObject,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_active::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoIconLocatorRoot, crate::unity_engine::gameobject::GameObject, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
         inner(this, obj, enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -640,30 +491,20 @@ mod __MapInfoIconLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapInfoIconLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapInfoIconLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoIconLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -673,154 +514,89 @@ pub trait IMapInfoIconLocatorRootMethods: IMapInfoIconLocatorRoot {
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoIconLocatorRoot_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetIcon(crate::app::mapinspector::MapInspector)` overload"]
-    fn set_icon(
-        self,
-        inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>,
-    ) -> () {
+    fn set_icon(self, inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::set_icon(
-                __receiver,
-                ::core::convert::Into::into(inspector),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::set_icon(__receiver, ::core::convert::Into::into(inspector), ::core::option::Option::None)
         }
     }
     #[doc = "`IsSetPosition()` overload"]
     fn is_set_position(self) -> bool {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::is_set_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::is_set_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsSetParam()` overload"]
     fn is_set_param(self) -> bool {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::is_set_param(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::is_set_param(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetVisible()` overload"]
     fn set_visible(self) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::set_visible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::set_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsVisible()` overload"]
     fn is_visible(self) -> bool {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::is_visible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::is_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetPosition(crate::app::mapinspector::MapInspector)` overload"]
-    fn set_position(
-        self,
-        inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>,
-    ) -> () {
+    fn set_position(self, inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::set_position(
-                __receiver,
-                ::core::convert::Into::into(inspector),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::set_position(__receiver, ::core::convert::Into::into(inspector), ::core::option::Option::None)
         }
     }
     #[doc = "`SetScale(crate::app::mapinspector::MapInspector)` overload"]
-    fn set_scale(
-        self,
-        inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>,
-    ) -> () {
+    fn set_scale(self, inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::set_scale(
-                __receiver,
-                ::core::convert::Into::into(inspector),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::set_scale(__receiver, ::core::convert::Into::into(inspector), ::core::option::Option::None)
         }
     }
     #[doc = "`SetBaloonIcon(crate::app::mapinspector::MapInspector)` overload"]
-    fn set_baloon_icon(
-        self,
-        inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>,
-    ) -> () {
+    fn set_baloon_icon(self, inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::set_baloon_icon(
-                __receiver,
-                ::core::convert::Into::into(inspector),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::set_baloon_icon(__receiver, ::core::convert::Into::into(inspector), ::core::option::Option::None)
         }
     }
     #[doc = "`SetHpGauge(crate::app::mapinspector::MapInspector)` overload"]
-    fn set_hp_gauge(
-        self,
-        inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>,
-    ) -> () {
+    fn set_hp_gauge(self, inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::set_hp_gauge(
-                __receiver,
-                ::core::convert::Into::into(inspector),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::set_hp_gauge(__receiver, ::core::convert::Into::into(inspector), ::core::option::Option::None)
         }
     }
     #[doc = "`SetCannonStock(crate::app::mapinspector::MapInspector)` overload"]
-    fn set_cannon_stock(
-        self,
-        inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>,
-    ) -> () {
+    fn set_cannon_stock(self, inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapInfoIconLocatorRoot_unity2_raw::set_cannon_stock(
-                __receiver,
-                ::core::convert::Into::into(inspector),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoIconLocatorRoot_unity2_raw::set_cannon_stock(__receiver, ::core::convert::Into::into(inspector), ::core::option::Option::None)
         }
     }
     #[doc = "`SetActive(crate::unity_engine::gameobject::GameObject, bool)` overload"]
@@ -830,9 +606,8 @@ pub trait IMapInfoIconLocatorRootMethods: IMapInfoIconLocatorRoot {
         enable: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoIconLocatorRoot_unity2_raw::set_active(
                 __receiver,
                 ::core::convert::Into::into(obj),
@@ -844,9 +619,8 @@ pub trait IMapInfoIconLocatorRootMethods: IMapInfoIconLocatorRoot {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapInfoIconLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoIconLocatorRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -874,22 +648,19 @@ impl MapInfoIconLocatorRoot {
 #[cfg(feature = "root-mapinfoiconlocatorroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapInfoIconLocatorRoot;
-    pub use super::IMapInfoIconLocatorRootMethods;
-    pub use super::MapInfoIconLocatorRoot;
-    pub use crate::system::object::IObject;
+    pub use super::{IMapInfoIconLocatorRoot, IMapInfoIconLocatorRootMethods, MapInfoIconLocatorRoot};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

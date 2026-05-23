@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-rendering-look_dev-idataprovider-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/look_dev/idataprovider/IDataProvider.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.LookDev", name = "IDataProvider")]
@@ -23,10 +23,9 @@ mod __IDataProvider_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_first_init_scene {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDataProvider as ::unity2::ClassIdentity>::class(),
                 "FirstInitScene",
@@ -38,44 +37,39 @@ mod __IDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "FirstInitScene",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "FirstInitScene",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn first_init_scene(
         this: IDataProvider,
-        stage : crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface,
+        stage: crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             IDataProvider,
             crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_first_init_scene::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_first_init_scene::get_method_info().method_ptr);
         inner(this, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_sky {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: look_dev :: sky :: Sky as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::look_dev::sky::Sky as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDataProvider as ::unity2::ClassIdentity>::class(),
                 "UpdateSky",
@@ -87,25 +81,22 @@ mod __IDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "UpdateSky",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "UpdateSky",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_sky(
         this: IDataProvider,
         camera: crate::unity_engine::camera::Camera,
         sky: crate::unity_engine::rendering::look_dev::sky::Sky,
-        stage : crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface,
+        stage: crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -114,20 +105,14 @@ mod __IDataProvider_unity2_raw {
             crate::unity_engine::rendering::look_dev::sky::Sky,
             crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_sky::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_update_sky::get_method_info().method_ptr);
         inner(this, camera, sky, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_supported_debug_modes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDataProvider as ::unity2::ClassIdentity>::class(),
@@ -140,37 +125,34 @@ mod __IDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "get_supportedDebugModes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "get_supportedDebugModes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_supported_debug_modes(
         this: IDataProvider,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
-        let inner : extern "C" fn (IDataProvider , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_supported_debug_modes :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            IDataProvider,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_supported_debug_modes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_debug_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDataProvider as ::unity2::ClassIdentity>::class(),
                 "UpdateDebugMode",
@@ -182,41 +164,31 @@ mod __IDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "UpdateDebugMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "UpdateDebugMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_debug_mode(
-        this: IDataProvider,
-        debug_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_debug_mode(this: IDataProvider, debug_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(IDataProvider, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_debug_mode::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_debug_mode::get_method_info().method_ptr);
         inner(this, debug_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertexture :: RenderTexture as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDataProvider as ::unity2::ClassIdentity>::class(),
                 "GetShadowMask",
@@ -228,24 +200,21 @@ mod __IDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "GetShadowMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "GetShadowMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shadow_mask(
         this: IDataProvider,
         output: *mut crate::unity_engine::rendertexture::RenderTexture,
-        stage : crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface,
+        stage: crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -253,21 +222,16 @@ mod __IDataProvider_unity2_raw {
             *mut crate::unity_engine::rendertexture::RenderTexture,
             crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shadow_mask::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_shadow_mask::get_method_info().method_ptr);
         inner(this, output, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_begin_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDataProvider as ::unity2::ClassIdentity>::class(),
                 "OnBeginRendering",
@@ -279,44 +243,36 @@ mod __IDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "OnBeginRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "OnBeginRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_begin_rendering(
         this: IDataProvider,
-        stage : crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface,
+        stage: crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             IDataProvider,
             crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_begin_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_begin_rendering::get_method_info().method_ptr);
         inner(this, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_end_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDataProvider as ::unity2::ClassIdentity>::class(),
                 "OnEndRendering",
@@ -328,44 +284,36 @@ mod __IDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "OnEndRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "OnEndRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_end_rendering(
         this: IDataProvider,
-        stage : crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface,
+        stage: crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             IDataProvider,
             crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_end_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_end_rendering::get_method_info().method_ptr);
         inner(this, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cleanup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: look_dev :: stageruntimeinterface :: StageRuntimeInterface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDataProvider as ::unity2::ClassIdentity>::class(),
                 "Cleanup",
@@ -377,18 +325,15 @@ mod __IDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "Cleanup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "Cleanup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cleanup(
@@ -400,11 +345,7 @@ mod __IDataProvider_unity2_raw {
             IDataProvider,
             crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cleanup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_cleanup::get_method_info().method_ptr);
         inner(this, sri, __unity2_method_info)
     }
 }
@@ -414,19 +355,11 @@ pub trait IIDataProviderMethods: IIDataProvider {
     #[doc = "`FirstInitScene(crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface)` overload"]
     fn first_init_scene(
         self,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
-        >,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface>,
     ) -> () {
         unsafe {
-            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDataProvider_unity2_raw::first_init_scene(
-                __receiver,
-                ::core::convert::Into::into(stage),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDataProvider_unity2_raw::first_init_scene(__receiver, ::core::convert::Into::into(stage), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateSky(crate::unity_engine::camera::Camera, crate::unity_engine::rendering::look_dev::sky::Sky, crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface)` overload"]
@@ -434,14 +367,10 @@ pub trait IIDataProviderMethods: IIDataProvider {
         self,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
         sky: impl ::core::convert::Into<crate::unity_engine::rendering::look_dev::sky::Sky>,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
-        >,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface>,
     ) -> () {
         unsafe {
-            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDataProvider_unity2_raw::update_sky(
                 __receiver,
                 ::core::convert::Into::into(camera),
@@ -452,47 +381,27 @@ pub trait IIDataProviderMethods: IIDataProvider {
         }
     }
     #[doc = "`get_supportedDebugModes()` overload"]
-    fn get_supported_debug_modes(
-        self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
+    fn get_supported_debug_modes(self) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDataProvider_unity2_raw::get_supported_debug_modes(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDataProvider_unity2_raw::get_supported_debug_modes(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateDebugMode(i32)` overload"]
     fn update_debug_mode(self, debug_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDataProvider_unity2_raw::update_debug_mode(
-                __receiver,
-                ::core::convert::Into::into(debug_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDataProvider_unity2_raw::update_debug_mode(__receiver, ::core::convert::Into::into(debug_index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetShadowMask(*mutcrate::unity_engine::rendertexture::RenderTexture, crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface)` overload"]
     fn get_shadow_mask(
         self,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
-        >,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface>,
     ) -> crate::unity_engine::rendertexture::RenderTexture {
         unsafe {
-            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendertexture::RenderTexture,
-            >::uninit();
+            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendertexture::RenderTexture>::uninit();
             __IDataProvider_unity2_raw::get_shadow_mask(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -505,55 +414,28 @@ pub trait IIDataProviderMethods: IIDataProvider {
     #[doc = "`OnBeginRendering(crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface)` overload"]
     fn on_begin_rendering(
         self,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
-        >,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface>,
     ) -> () {
         unsafe {
-            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDataProvider_unity2_raw::on_begin_rendering(
-                __receiver,
-                ::core::convert::Into::into(stage),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDataProvider_unity2_raw::on_begin_rendering(__receiver, ::core::convert::Into::into(stage), ::core::option::Option::None)
         }
     }
     #[doc = "`OnEndRendering(crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface)` overload"]
     fn on_end_rendering(
         self,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
-        >,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface>,
     ) -> () {
         unsafe {
-            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDataProvider_unity2_raw::on_end_rendering(
-                __receiver,
-                ::core::convert::Into::into(stage),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDataProvider_unity2_raw::on_end_rendering(__receiver, ::core::convert::Into::into(stage), ::core::option::Option::None)
         }
     }
     #[doc = "`Cleanup(crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface)` overload"]
-    fn cleanup(
-        self,
-        sri: impl ::core::convert::Into<
-            crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,
-        >,
-    ) -> () {
+    fn cleanup(self, sri: impl ::core::convert::Into<crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface>) -> () {
         unsafe {
-            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDataProvider_unity2_raw::cleanup(
-                __receiver,
-                ::core::convert::Into::into(sri),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDataProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDataProvider_unity2_raw::cleanup(__receiver, ::core::convert::Into::into(sri), ::core::option::Option::None)
         }
     }
 }
@@ -564,7 +446,5 @@ impl<__T: IIDataProvider> IIDataProviderMethods for __T {}
 #[cfg(feature = "unity_engine-rendering-look_dev-idataprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IDataProvider;
-    pub use super::IIDataProvider;
-    pub use super::IIDataProviderMethods;
+    pub use super::{IDataProvider, IIDataProvider, IIDataProviderMethods};
 }

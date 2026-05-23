@@ -2,22 +2,19 @@
 
 #[cfg(feature = "system-collections-generic-sbyteenumequalitycomparer_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::collections::generic::enumequalitycomparer_1::{
-        EnumEqualityComparer_1, IEnumEqualityComparer_1,
+    use super::*;
+    use crate::system::{
+        collections::generic::{
+            enumequalitycomparer_1::{EnumEqualityComparer_1, IEnumEqualityComparer_1},
+            equalitycomparer_1::{EqualityComparer_1, IEqualityComparer_1},
+        },
+        object::{IObject, Object},
     };
-    use crate::system::collections::generic::equalitycomparer_1::{
-        EqualityComparer_1, IEqualityComparer_1,
-    };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sbyteenumequalitycomparer_1/SByteEnumEqualityComparer_1.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Generic",
-        name = "SByteEnumEqualityComparer`1"
-    )]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "SByteEnumEqualityComparer`1")]
     # [parent (crate :: system :: collections :: generic :: enumequalitycomparer_1 :: EnumEqualityComparer_1 < T0 >)]
     # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < T0 >)]
     #[parent(crate::system::object::Object)]
@@ -58,16 +55,15 @@ impl<T0: ::unity2::ClassIdentity> SByteEnumEqualityComparer_1<T0> {
 #[cfg(feature = "system-collections-generic-sbyteenumequalitycomparer_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISByteEnumEqualityComparer_1;
-    pub use super::ISByteEnumEqualityComparer_1Methods;
-    pub use super::SByteEnumEqualityComparer_1;
-    pub use crate::system::collections::generic::enumequalitycomparer_1::IEnumEqualityComparer_1;
+    pub use super::{ISByteEnumEqualityComparer_1, ISByteEnumEqualityComparer_1Methods, SByteEnumEqualityComparer_1};
     #[cfg(feature = "system-collections-generic-enumequalitycomparer_1")]
     pub use crate::system::collections::generic::enumequalitycomparer_1::IEnumEqualityComparer_1Methods;
-    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1;
     #[cfg(feature = "system-collections-generic-equalitycomparer_1")]
     pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{
+        collections::generic::{enumequalitycomparer_1::IEnumEqualityComparer_1, equalitycomparer_1::IEqualityComparer_1},
+        object::IObject,
+    };
 }

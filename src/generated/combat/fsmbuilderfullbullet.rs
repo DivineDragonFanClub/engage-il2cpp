@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-fsmbuilderfullbullet-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::fsmbuilder::{FSMBuilder, IFSMBuilder};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::fsmbuilder::{FSMBuilder, IFSMBuilder},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderfullbullet/FSMBuilderFullBullet.md"))]
     #[::unity2::class(namespace = "Combat", name = "FSMBuilderFullBullet")]
@@ -26,9 +28,7 @@ mod __FSMBuilderFullBullet_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderFullBullet as ::unity2::ClassIdentity>::class(),
@@ -41,39 +41,27 @@ mod __FSMBuilderFullBullet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderFullBullet as ::unity2::ClassIdentity>::NAME,
-                    "Build",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderFullBullet as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build(
-        this: FSMBuilderFullBullet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build(this: FSMBuilderFullBullet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderFullBullet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_skipover {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderFullBullet as ::unity2::ClassIdentity>::class(),
@@ -86,39 +74,27 @@ mod __FSMBuilderFullBullet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderFullBullet as ::unity2::ClassIdentity>::NAME,
-                    "BuildSkipover",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderFullBullet as ::unity2::ClassIdentity>::NAME,
+                        "BuildSkipover",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_skipover(
-        this: FSMBuilderFullBullet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_skipover(this: FSMBuilderFullBullet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderFullBullet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_skipover::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_skipover::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderFullBullet as ::unity2::ClassIdentity>::class(),
@@ -131,30 +107,20 @@ mod __FSMBuilderFullBullet_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderFullBullet as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderFullBullet as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: FSMBuilderFullBullet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: FSMBuilderFullBullet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderFullBullet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -164,30 +130,24 @@ pub trait IFSMBuilderFullBulletMethods: IFSMBuilderFullBullet {
     #[doc = "`Build()` overload"]
     fn build(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderFullBullet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FSMBuilderFullBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FSMBuilderFullBullet_unity2_raw::build(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildSkipover()` overload"]
     fn build_skipover(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderFullBullet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FSMBuilderFullBullet_unity2_raw::build_skipover(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <FSMBuilderFullBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FSMBuilderFullBullet_unity2_raw::build_skipover(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderFullBullet as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <FSMBuilderFullBullet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FSMBuilderFullBullet_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -215,13 +175,10 @@ impl FSMBuilderFullBullet {
 #[cfg(feature = "combat-fsmbuilderfullbullet")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FSMBuilderFullBullet;
-    pub use super::IFSMBuilderFullBullet;
-    pub use super::IFSMBuilderFullBulletMethods;
-    pub use crate::combat::fsmbuilder::IFSMBuilder;
+    pub use super::{FSMBuilderFullBullet, IFSMBuilderFullBullet, IFSMBuilderFullBulletMethods};
     #[cfg(feature = "combat-fsmbuilder")]
     pub use crate::combat::fsmbuilder::IFSMBuilderMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::fsmbuilder::IFSMBuilder, system::object::IObject};
 }

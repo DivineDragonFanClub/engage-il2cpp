@@ -2,30 +2,149 @@
 
 #[cfg(feature = "app-mess-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Name.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Mess_TagID_Name {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Mess_TagID_Name {
+        const NAME: &'static str = "Mess.TagID_Name";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mess_TagID_Name {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl Mess_TagID_Name {
+        pub fn replace() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn publish() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn private() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn user() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn partner() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn mascot() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagGroup.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Mess_TagGroup {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Mess_TagGroup {
+        const NAME: &'static str = "Mess.TagGroup";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mess_TagGroup {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl Mess_TagGroup {
+        pub fn system() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn arg() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn talk_type() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn window() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn wait() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn expression() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn name() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn fade() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn icon() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn text() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn localize() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn picture() -> Self {
+            Self { value: 11 }
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Localize.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct Mess_TagID_Localize {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for Mess_TagID_Localize {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "Mess.TagID_Localize";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -36,10 +155,7 @@ mod __types {
 
     impl ::unity2::IlType for Mess_TagID_Localize {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -66,86 +182,6 @@ mod __types {
 
         pub fn k_rppn02() -> Self {
             Self { value: 5 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_ArgScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Mess_ArgScope {
-        pub current: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    impl ::unity2::ClassIdentity for Mess_ArgScope {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Mess.ArgScope";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mess_ArgScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_IconCategory.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Mess_IconCategory {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Mess_IconCategory {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Mess.IconCategory";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mess_IconCategory {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Mess_IconCategory {
-        pub fn item() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn skill() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn system() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn god_symbol_engrave() -> Self {
-            Self { value: 3 }
         }
     }
 
@@ -233,57 +269,32 @@ mod __types {
         pub replace_str_bracelets_uncap: ::unity2::Il2CppString,
         #[static_field]
         #[rename(name = "s_messFileDictionary")]
-        pub s_mess_file_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::msgfile::MsgFile,
-        >,
+        pub s_mess_file_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
         #[static_field]
         #[rename(name = "s_soundCmdFileDictionary")]
         pub s_sound_cmd_file_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::app::msgfile::MsgFile,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
         #[static_field]
         #[rename(name = "s_eventCmdFileDictionary")]
         pub s_event_cmd_file_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::app::msgfile::MsgFile,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
         #[static_field]
         #[rename(name = "s_messDataDictionary")]
-        pub s_mess_data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::IntPtr,
-        >,
+        pub s_mess_data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         #[static_field]
         #[rename(name = "s_soundCmdDataDictionary")]
-        pub s_sound_cmd_data_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::IntPtr,
-            >,
+        pub s_sound_cmd_data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         #[static_field]
         #[rename(name = "s_eventCmdDataDictionary")]
-        pub s_event_cmd_data_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::IntPtr,
-            >,
+        pub s_event_cmd_data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         #[static_field]
         #[rename(name = "s_pathDictionary")]
-        pub s_path_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-        >,
+        pub s_path_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "s_checkStack")]
         pub s_check_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                i32,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, i32>,
         >,
         #[static_field]
         #[rename(name = "s_mess")]
@@ -308,38 +319,62 @@ mod __types {
         pub s_arg_array: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "s_argStack")]
-        pub s_arg_stack: crate::system::collections::generic::stack_1::Stack_1<
-            ::unity2::Array<::unity2::Il2CppString>,
-        >,
+        pub s_arg_stack: crate::system::collections::generic::stack_1::Stack_1<::unity2::Array<::unity2::Il2CppString>>,
         #[static_field]
         #[rename(name = "s_partnerPid")]
         pub s_partner_pid: ::unity2::Il2CppString,
         #[static_field]
         #[rename(name = "s_spriteAssetHandleDictionary")]
         pub s_sprite_asset_handle_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::app::resourcehandle_2::ResourceHandle_2,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::resourcehandle_2::ResourceHandle_2>,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_LanguageScope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Mess_LanguageScope {
+        pub m_count: i32,
+        pub m_name: ::unity2::Il2CppString,
+        pub m_lang: crate::app::language::Language_Langs,
+    }
+
+    impl ::unity2::ClassIdentity for Mess_LanguageScope {
+        const NAME: &'static str = "Mess.LanguageScope";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mess_LanguageScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess_ReloadFileInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "Mess.ReloadFileInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct Mess_ReloadFileInfo {
+        #[rename(name = "m_fileName")]
+        pub m_file_name: ::unity2::Il2CppString,
+        #[rename(name = "m_refCount")]
+        pub m_ref_count: i32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Picture.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct Mess_TagID_Picture {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for Mess_TagID_Picture {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "Mess.TagID_Picture";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -350,10 +385,7 @@ mod __types {
 
     impl ::unity2::IlType for Mess_TagID_Picture {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -367,23 +399,16 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagGroup.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_IconCategory.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Mess_TagGroup {
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Mess_IconCategory {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagGroup {
+    impl ::unity2::ClassIdentity for Mess_IconCategory {
+        const NAME: &'static str = "Mess.IconCategory";
         const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Mess.TagGroup";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -392,118 +417,40 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Mess_TagGroup {
+    impl ::unity2::IlType for Mess_IconCategory {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    impl Mess_TagGroup {
-        pub fn system() -> Self {
+    impl Mess_IconCategory {
+        pub fn item() -> Self {
             Self { value: 0 }
         }
 
-        pub fn arg() -> Self {
+        pub fn skill() -> Self {
             Self { value: 1 }
         }
 
-        pub fn talk_type() -> Self {
+        pub fn system() -> Self {
             Self { value: 2 }
         }
 
-        pub fn window() -> Self {
+        pub fn god_symbol_engrave() -> Self {
             Self { value: 3 }
         }
-
-        pub fn wait() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn expression() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn name() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn fade() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn icon() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn text() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn localize() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn picture() -> Self {
-            Self { value: 11 }
-        }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Text.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Mess_TagID_Text {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Mess_TagID_Text {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Mess.TagID_Text";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mess_TagID_Text {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Mess_TagID_Text {
-        pub fn space() -> Self {
-            Self { value: 0 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_LanguageScope.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_ArgScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Mess_LanguageScope {
-        pub m_count: i32,
-        pub m_name: ::unity2::Il2CppString,
-        pub m_lang: crate::app::language::Language_Langs,
+    pub struct Mess_ArgScope {
+        pub current: ::unity2::Array<::unity2::Il2CppString>,
     }
 
-    impl ::unity2::ClassIdentity for Mess_LanguageScope {
+    impl ::unity2::ClassIdentity for Mess_ArgScope {
+        const NAME: &'static str = "Mess.ArgScope";
         const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Mess.LanguageScope";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -512,32 +459,22 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Mess_LanguageScope {
+    impl ::unity2::IlType for Mess_ArgScope {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Arg.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct Mess_TagID_Arg {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for Mess_TagID_Arg {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "Mess.TagID_Arg";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -548,10 +485,7 @@ mod __types {
 
     impl ::unity2::IlType for Mess_TagID_Arg {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -609,23 +543,16 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Name.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Text.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Mess_TagID_Name {
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Mess_TagID_Text {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagID_Name {
+    impl ::unity2::ClassIdentity for Mess_TagID_Text {
+        const NAME: &'static str = "Mess.TagID_Text";
         const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Mess.TagID_Name";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -634,171 +561,21 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Mess_TagID_Name {
+    impl ::unity2::IlType for Mess_TagID_Text {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    impl Mess_TagID_Name {
-        pub fn replace() -> Self {
+    impl Mess_TagID_Text {
+        pub fn space() -> Self {
             Self { value: 0 }
         }
-
-        pub fn publish() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn private() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn user() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn partner() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn mascot() -> Self {
-            Self { value: 5 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess_ReloadFileInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "Mess.ReloadFileInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct Mess_ReloadFileInfo {
-        #[rename(name = "m_fileName")]
-        pub m_file_name: ::unity2::Il2CppString,
-        #[rename(name = "m_refCount")]
-        pub m_ref_count: i32,
     }
 }
 
 #[cfg(feature = "app-mess-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mess")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Mess_ArgScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_ArgScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Mess_ArgScope,
-        dummy: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Mess_ArgScope, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, dummy, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_ArgScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: Mess_ArgScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Mess_ArgScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mess")]
-impl Mess_ArgScope {
-    #[doc = "`.ctor(i32)` overload"]
-    pub fn ctor(self, dummy: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __Mess_ArgScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(dummy),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __Mess_ArgScope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "app-mess")]
 #[doc(hidden)]
@@ -809,50 +586,33 @@ mod __Mess_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Initialize", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_replace_str {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
@@ -865,122 +625,79 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "UpdateReplaceStr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "UpdateReplaceStr",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_replace_str(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_replace_str::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update_replace_str::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_sprite_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "LoadSpriteAsset",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "LoadSpriteAsset", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "LoadSpriteAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "LoadSpriteAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_sprite_asset(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_sprite_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_sprite_asset::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_sprite_asset_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "LoadSpriteAsset",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "LoadSpriteAsset", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "LoadSpriteAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "LoadSpriteAsset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_sprite_asset_2(
-        sprite_asset_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_sprite_asset_2(sprite_asset_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_sprite_asset_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_sprite_asset_2::get_method_info().method_ptr);
         inner(sprite_asset_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_sprite_exist_in_sprite_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -996,18 +713,15 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsSpriteExistInSpriteAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsSpriteExistInSpriteAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_sprite_exist_in_sprite_asset(
@@ -1015,26 +729,16 @@ mod __Mess_unity2_raw {
         sprite_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_sprite_exist_in_sprite_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_sprite_exist_in_sprite_asset::get_method_info().method_ptr);
         inner(sprite_asset_name, sprite_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_sprite_assets_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "GetItemSpriteAssetsName",
@@ -1046,43 +750,31 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetItemSpriteAssetsName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetItemSpriteAssetsName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item_sprite_assets_name(
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item_sprite_assets_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_item_sprite_assets_name::get_method_info().method_ptr);
         inner(item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_skill_sprite_assets_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "GetSkillSpriteAssetsName",
@@ -1094,43 +786,31 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetSkillSpriteAssetsName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetSkillSpriteAssetsName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_skill_sprite_assets_name(
         skill: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_skill_sprite_assets_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_skill_sprite_assets_name::get_method_info().method_ptr);
         inner(skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_system_sprite_assets_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "GetSystemSpriteAssetsName",
@@ -1142,43 +822,31 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetSystemSpriteAssetsName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetSystemSpriteAssetsName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_system_sprite_assets_name(
         icon_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_system_sprite_assets_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_system_sprite_assets_name::get_method_info().method_ptr);
         inner(icon_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_god_symbol_engrave_sprite_assets_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "GetGodSymbolEngraveSpriteAssetsName",
@@ -1190,41 +858,30 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetGodSymbolEngraveSpriteAssetsName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetGodSymbolEngraveSpriteAssetsName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_god_symbol_engrave_sprite_assets_name(
         icon_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_god_symbol_engrave_sprite_assets_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_god_symbol_engrave_sprite_assets_name::get_method_info().method_ptr);
         inner(icon_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_sprite_asset_request_callback {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1240,18 +897,15 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "OnSpriteAssetRequestCallback",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "OnSpriteAssetRequestCallback",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_sprite_asset_request_callback(
@@ -1259,772 +913,374 @@ mod __Mess_unity2_raw {
         sprite_asset_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_sprite_asset_request_callback::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset =
+            ::core::mem::transmute(__lookup_on_sprite_asset_request_callback::get_method_info().method_ptr);
         inner(arg, sprite_asset_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_push_check {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "PushCheck",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "PushCheck", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "PushCheck",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "PushCheck",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn push_check(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push_check::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_push_check::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pop_check {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "PopCheck",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "PopCheck", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "PopCheck",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "PopCheck", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn pop_check(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pop_check::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_pop_check::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Load",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Load", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Load", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn load(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "TryLoad",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "TryLoad", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "TryLoad",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "TryLoad", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_load(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn try_load(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_load::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_load::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "LoadImpl",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "LoadImpl", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "LoadImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "LoadImpl", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_impl(
-        file_name: ::unity2::Il2CppString,
-        is_warning: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn load_impl(file_name: ::unity2::Il2CppString, is_warning: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_impl::get_method_info().method_ptr);
         inner(file_name, is_warning, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_impl_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    crate::app::msgfile::MsgFile,
-                > as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    ::unity2::IntPtr,
-                > as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "LoadImpl",
-                4,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "LoadImpl", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "LoadImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "LoadImpl", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_impl_2(
         file_path: ::unity2::Il2CppString,
-        file_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::msgfile::MsgFile,
-        >,
-        data_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::IntPtr,
-        >,
+        file_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
+        data_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         is_warning: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
-            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::app::msgfile::MsgFile,
-            >,
-            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::IntPtr,
-            >,
+            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
+            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
             bool,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_impl_2::get_offset() as isize),
-        );
-        inner(
-            file_path,
-            file_dictionary,
-            data_dictionary,
-            is_warning,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_load_impl_2::get_method_info().method_ptr);
+        inner(file_path, file_dictionary, data_dictionary, is_warning, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_free {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Free",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Free", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Free",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Free", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn free(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn free(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_free::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_free::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_free {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "TryFree",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "TryFree", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "TryFree",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "TryFree", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_free(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn try_free(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_free::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_free::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_free_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "FreeImpl",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "FreeImpl", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "FreeImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "FreeImpl", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn free_impl(
-        file_name: ::unity2::Il2CppString,
-        is_warning: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn free_impl(file_name: ::unity2::Il2CppString, is_warning: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_free_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_free_impl::get_method_info().method_ptr);
         inner(file_name, is_warning, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetReference",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetReference", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetReference",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reference(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_reference(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_reference::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_reference::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_free_impl_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    crate::app::msgfile::MsgFile,
-                > as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    ::unity2::IntPtr,
-                > as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "FreeImpl",
-                4,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "FreeImpl", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "FreeImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "FreeImpl", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn free_impl_2(
         file_name: ::unity2::Il2CppString,
-        file_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::msgfile::MsgFile,
-        >,
-        data_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::IntPtr,
-        >,
+        file_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
+        data_dictionary: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         is_warning: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
-            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::app::msgfile::MsgFile,
-            >,
-            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::IntPtr,
-            >,
+            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
+            *mut crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
             bool,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_free_impl_2::get_offset() as isize),
-        );
-        inner(
-            file_name,
-            file_dictionary,
-            data_dictionary,
-            is_warning,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_free_impl_2::get_method_info().method_ptr);
+        inner(file_name, file_dictionary, data_dictionary, is_warning, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reload {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Reload",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Reload", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Reload",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Reload", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reload(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reload::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_reload::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_load_done {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsLoadDone",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsLoadDone", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadDone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadDone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_load_done(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_load_done(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_load_done::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_load_done::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_file_exist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsFileExist",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsFileExist", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsFileExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsFileExist",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_file_exist(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_file_exist(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_file_exist::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_file_exist::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_hero_female {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsHeroFemale",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsHeroFemale", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsHeroFemale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsHeroFemale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_hero_female(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_hero_female::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_hero_female::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_language_directory_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
@@ -2037,40 +1293,28 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetLanguageDirectoryName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetLanguageDirectoryName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_language_directory_name(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_language_directory_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_language_directory_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_language_directory_name::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_mess_file_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "CreateMessFilePath",
@@ -2082,43 +1326,28 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateMessFilePath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateMessFilePath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_mess_file_path(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_mess_file_path::get_offset() as isize),
-        );
+    pub unsafe fn create_mess_file_path(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_mess_file_path::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_sound_cmd_file_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "CreateSoundCmdFilePath",
@@ -2130,43 +1359,31 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateSoundCmdFilePath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateSoundCmdFilePath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_sound_cmd_file_path(
         file_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_sound_cmd_file_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_sound_cmd_file_path::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_event_cmd_file_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "CreateEventCmdFilePath",
@@ -2178,139 +1395,85 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateEventCmdFilePath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateEventCmdFilePath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_event_cmd_file_path(
         file_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_event_cmd_file_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_event_cmd_file_path::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_file_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetFilePath",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetFilePath", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetFilePath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetFilePath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_file_path(
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_file_path::get_offset() as isize),
-        );
+    pub unsafe fn get_file_path(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_file_path::get_method_info().method_ptr);
         inner(label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_msg_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetMsgFile",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetMsgFile", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetMsgFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetMsgFile",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_msg_file(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::msgfile::MsgFile {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::msgfile::MsgFile = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_msg_file::get_offset() as isize),
-        );
+    pub unsafe fn get_msg_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::msgfile::MsgFile {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::msgfile::MsgFile =
+            ::core::mem::transmute(__lookup_get_msg_file::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_main_release_scenario_mess_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "IsMainReleaseScenarioMessFile",
@@ -2322,41 +1485,28 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsMainReleaseScenarioMessFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsMainReleaseScenarioMessFile",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_main_release_scenario_mess_file(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_main_release_scenario_mess_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_main_release_scenario_mess_file::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_main_release_scenario_mess_file::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_dlc_scenario_mess_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "IsDLCScenarioMessFile",
@@ -2368,41 +1518,28 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsDLCScenarioMessFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsDLCScenarioMessFile",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_dlc_scenario_mess_file(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_dlc_scenario_mess_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_dlc_scenario_mess_file::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_dlc_scenario_mess_file::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_reliance_mess_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "IsRelianceMessFile",
@@ -2414,41 +1551,28 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsRelianceMessFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsRelianceMessFile",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_reliance_mess_file(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_reliance_mess_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_reliance_mess_file::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_reliance_mess_file::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_god_reliance_mess_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "IsGodRelianceMessFile",
@@ -2460,243 +1584,132 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsGodRelianceMessFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsGodRelianceMessFile",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_god_reliance_mess_file(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_god_reliance_mess_file(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_god_reliance_mess_file::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_god_reliance_mess_file::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "DumpFile",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "DumpFile", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "DumpFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "DumpFile", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dump_file(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dump_file::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dump_file::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "DumpLabel",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "DumpLabel", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "DumpLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "DumpLabel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dump_label(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dump_label::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dump_label::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_all_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetAllLabel",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetAllLabel", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetAllLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetAllLabel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_all_label(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_all_label::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_all_label::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get(
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get::get_offset() as isize),
-        );
+    pub unsafe fn get(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
         inner(label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Get",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_2(
@@ -2704,52 +1717,27 @@ mod __Mess_unity2_raw {
         arg0: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_2::get_method_info().method_ptr);
         inner(label, arg0, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Get",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_3(
@@ -2763,49 +1751,27 @@ mod __Mess_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_3::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_3::get_method_info().method_ptr);
         inner(label, arg0, arg1, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Get",
-                4,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_4(
@@ -2821,47 +1787,25 @@ mod __Mess_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_4::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_4::get_method_info().method_ptr);
         inner(label, arg0, arg1, arg2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "Get",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "Get", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "Get", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_5(
@@ -2873,143 +1817,79 @@ mod __Mess_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Array<::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_5::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_5::get_method_info().method_ptr);
         inner(label, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_replace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "TryGetReplace",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "TryGetReplace", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "TryGetReplace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "TryGetReplace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_get_replace(
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_replace::get_offset() as isize),
-        );
+    pub unsafe fn try_get_replace(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_try_get_replace::get_method_info().method_ptr);
         inner(label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_int_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetIntPtr",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetIntPtr", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetIntPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetIntPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_int_ptr(
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_int_ptr::get_offset() as isize),
-        );
+    pub unsafe fn get_int_ptr(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_get_int_ptr::get_method_info().method_ptr);
         inner(label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetImpl",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetImpl", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "GetImpl", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_impl(
@@ -3017,100 +1897,61 @@ mod __Mess_unity2_raw {
         is_replace: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_impl::get_method_info().method_ptr);
         inner(label, is_replace, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sound_cmd_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetSoundCmdText",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetSoundCmdText", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetSoundCmdText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetSoundCmdText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sound_cmd_text(
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sound_cmd_text::get_offset() as isize),
-        );
+    pub unsafe fn get_sound_cmd_text(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_sound_cmd_text::get_method_info().method_ptr);
         inner(label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sound_cmd_text_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetSoundCmdText",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetSoundCmdText", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetSoundCmdText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetSoundCmdText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sound_cmd_text_2(
@@ -3119,106 +1960,61 @@ mod __Mess_unity2_raw {
         sound_cmd_exec_after: *mut ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sound_cmd_text_2::get_offset() as isize),
-        );
-        inner(
-            label,
-            sound_cmd_exec_before,
-            sound_cmd_exec_after,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut ::unity2::Il2CppString, *mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_sound_cmd_text_2::get_method_info().method_ptr);
+        inner(label, sound_cmd_exec_before, sound_cmd_exec_after, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event_cmd_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetEventCmdText",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetEventCmdText", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetEventCmdText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetEventCmdText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_event_cmd_text(
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event_cmd_text::get_offset() as isize),
-        );
+    pub unsafe fn get_event_cmd_text(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_event_cmd_text::get_method_info().method_ptr);
         inner(label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event_cmd_text_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetEventCmdText",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetEventCmdText", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetEventCmdText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetEventCmdText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_event_cmd_text_2(
@@ -3227,279 +2023,152 @@ mod __Mess_unity2_raw {
         event_cmd_exec_after: *mut ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event_cmd_text_2::get_offset() as isize),
-        );
-        inner(
-            label,
-            event_cmd_exec_before,
-            event_cmd_exec_after,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut ::unity2::Il2CppString, *mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_event_cmd_text_2::get_method_info().method_ptr);
+        inner(label, event_cmd_exec_before, event_cmd_exec_after, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cmd_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    ::unity2::IntPtr,
-                > as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetCmdImpl",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetCmdImpl", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetCmdImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetCmdImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cmd_impl(
         label: ::unity2::Il2CppString,
-        data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::IntPtr,
-        >,
+        data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::IntPtr,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cmd_impl::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_cmd_impl::get_method_info().method_ptr);
         inner(label, data_dictionary, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cmd_impl_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    ::unity2::IntPtr,
-                > as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetCmdImpl",
-                4,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetCmdImpl", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetCmdImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetCmdImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cmd_impl_2(
         label: ::unity2::Il2CppString,
-        data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::IntPtr,
-        >,
+        data_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         cmd_exec_before: *mut ::unity2::Il2CppString,
         cmd_exec_after: *mut ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::IntPtr,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
             *mut ::unity2::Il2CppString,
             *mut ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cmd_impl_2::get_offset() as isize),
-        );
-        inner(
-            label,
-            data_dictionary,
-            cmd_exec_before,
-            cmd_exec_after,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_get_cmd_impl_2::get_method_info().method_ptr);
+        inner(label, data_dictionary, cmd_exec_before, cmd_exec_after, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsExist",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsExist", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "IsExist", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_exist(
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_exist(label: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_exist::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
         inner(label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_nesting {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsNesting",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsNesting", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsNesting",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsNesting",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_nesting(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_nesting::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_nesting::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetString",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetString", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_string(
@@ -3508,76 +2177,37 @@ mod __Mess_unity2_raw {
         is_replace: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::IntPtr,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_string::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_string::get_method_info().method_ptr);
         inner(label, p_mess_data, is_replace, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_char {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "ReadChar",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "ReadChar", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "ReadChar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "ReadChar", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn read_char(
-        p: ::unity2::IntPtr,
-        offset: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn read_char(p: ::unity2::IntPtr, offset: i32, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_read_char::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_read_char::get_method_info().method_ptr);
         inner(p, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_talk_string_total_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "CalcTalkStringTotalWidth",
@@ -3589,41 +2219,28 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CalcTalkStringTotalWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CalcTalkStringTotalWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_talk_string_total_width(
-        mess_str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_talk_string_total_width(mess_str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_talk_string_total_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_talk_string_total_width::get_method_info().method_ptr);
         inner(mess_str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_wait_msec_for_talk_auto_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "CalcWaitMsecForTalkAutoPlay",
@@ -3635,67 +2252,39 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CalcWaitMsecForTalkAutoPlay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CalcWaitMsecForTalkAutoPlay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_wait_msec_for_talk_auto_play(
-        mess_str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_wait_msec_for_talk_auto_play(mess_str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_wait_msec_for_talk_auto_play::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_wait_msec_for_talk_auto_play::get_method_info().method_ptr);
         inner(mess_str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_split_cmd {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "SplitCmd",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "SplitCmd", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "SplitCmd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, "SplitCmd", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn split_cmd(
@@ -3704,78 +2293,47 @@ mod __Mess_unity2_raw {
         cmd_exec_after: *mut ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_split_cmd::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut ::unity2::Il2CppString, *mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_split_cmd::get_method_info().method_ptr);
         inner(cmd, cmd_exec_before, cmd_exec_after, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_tag_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u16 as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "AddTagString",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "AddTagString", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "AddTagString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "AddTagString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_tag_string(
-        tag_group_id: u16,
-        tag_id: u16,
-        param: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_tag_string(tag_group_id: u16, tag_id: u16, param: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(u16, u16, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_tag_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_tag_string::get_method_info().method_ptr);
         inner(tag_group_id, tag_id, param, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replace_arg_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mess::Mess_TagID_Arg as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mess::Mess_TagID_Arg as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "ReplaceArgString",
@@ -3787,43 +2345,29 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "ReplaceArgString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "ReplaceArgString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn replace_arg_string(
-        tag_id: crate::app::mess::Mess_TagID_Arg,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn replace_arg_string(tag_id: crate::app::mess::Mess_TagID_Arg, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::mess::Mess_TagID_Arg, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_replace_arg_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_replace_arg_string::get_method_info().method_ptr);
         inner(tag_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_tag_string_localize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u16 as ::unity2::IlType>::il_type(),
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type(), <::unity2::Array<u8> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "AddTagString_Localize",
@@ -3835,128 +2379,81 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "AddTagString_Localize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "AddTagString_Localize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_tag_string_localize(
-        tag_id: u16,
-        param: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_tag_string_localize(tag_id: u16, param: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(u16, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_tag_string_localize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_tag_string_localize::get_method_info().method_ptr);
         inner(tag_id, param, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_patchim1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsPatchim1",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsPatchim1", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsPatchim1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsPatchim1",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_patchim1(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_patchim1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_patchim1::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_patchim2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "IsPatchim2",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "IsPatchim2", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsPatchim2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsPatchim2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_patchim2(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_patchim2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_patchim2::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_patchim_str_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "IsPatchimStrCode",
@@ -3968,341 +2465,209 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "IsPatchimStrCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "IsPatchimStrCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_patchim_str_code(
-        chr_code: i32,
-        is_without2: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_patchim_str_code(chr_code: i32, is_without2: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(i32, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_patchim_str_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_patchim_str_code::get_method_info().method_ptr);
         inner(chr_code, is_without2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_argument {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "SetArgument",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "SetArgument", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "SetArgument",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "SetArgument",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_argument(
-        index: i32,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_argument::get_offset() as isize),
-        );
+    pub unsafe fn set_argument(index: i32, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_argument::get_method_info().method_ptr);
         inner(index, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_argument_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "SetArgument",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "SetArgument", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "SetArgument",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "SetArgument",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_argument_2(
-        index: i32,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_argument_2(index: i32, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_argument_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_argument_2::get_method_info().method_ptr);
         inner(index, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_argument {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "ClearArgument",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "ClearArgument", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "ClearArgument",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "ClearArgument",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_argument(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_argument::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear_argument::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_argument {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetArgument",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetArgument", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetArgument",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetArgument",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_argument(
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_argument(index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_argument::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_argument::get_method_info().method_ptr);
         inner(index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_new_arg_scope {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "get_NewArgScope",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "get_NewArgScope", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "get_NewArgScope",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "get_NewArgScope",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_new_arg_scope(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mess::Mess_ArgScope {
+    pub unsafe fn get_new_arg_scope(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mess::Mess_ArgScope {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::mess::Mess_ArgScope =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_new_arg_scope::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_new_arg_scope::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_space_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateSpaceTag",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "CreateSpaceTag", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateSpaceTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateSpaceTag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_space_tag(
-        pixel: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn create_space_tag(pixel: u32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(u32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_space_tag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_space_tag::get_method_info().method_ptr);
         inner(pixel, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_sprite_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mess::Mess_IconCategory as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateSpriteTag",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "CreateSpriteTag", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateSpriteTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateSpriteTag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_sprite_tag(
@@ -4310,51 +2675,33 @@ mod __Mess_unity2_raw {
         kind_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::mess::Mess_IconCategory,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_sprite_tag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::mess::Mess_IconCategory, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_sprite_tag::get_method_info().method_ptr);
         inner(icon_category, kind_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_sprite_tag_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "CreateSpriteTag",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "CreateSpriteTag", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateSpriteTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateSpriteTag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_sprite_tag_2(
@@ -4362,24 +2709,15 @@ mod __Mess_unity2_raw {
         icon_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_sprite_tag_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_sprite_tag_2::get_method_info().method_ptr);
         inner(sprite_asset_name, icon_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_item_sprite_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -4395,18 +2733,15 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateItemSpriteTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateItemSpriteTag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_item_sprite_tag(
@@ -4414,26 +2749,16 @@ mod __Mess_unity2_raw {
         for_system: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_item_sprite_tag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::itemdata::ItemData, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_item_sprite_tag::get_method_info().method_ptr);
         inner(item, for_system, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_skill_sprite_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "CreateSkillSpriteTag",
@@ -4445,43 +2770,31 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateSkillSpriteTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateSkillSpriteTag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_skill_sprite_tag(
         skill: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_skill_sprite_tag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_skill_sprite_tag::get_method_info().method_ptr);
         inner(skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_system_sprite_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "CreateSystemSpriteTag",
@@ -4493,43 +2806,31 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateSystemSpriteTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateSystemSpriteTag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_system_sprite_tag(
         icon_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_system_sprite_tag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_system_sprite_tag::get_method_info().method_ptr);
         inner(icon_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_god_symble_engrave_sprite_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess as ::unity2::ClassIdentity>::class(),
                 "CreateGodSymbleEngraveSpriteTag",
@@ -4541,296 +2842,169 @@ mod __Mess_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "CreateGodSymbleEngraveSpriteTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "CreateGodSymbleEngraveSpriteTag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_god_symble_engrave_sprite_tag(
         icon_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_god_symble_engrave_sprite_tag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_god_symble_engrave_sprite_tag::get_method_info().method_ptr);
         inner(icon_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_partner_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "SetPartnerPID",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "SetPartnerPID", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "SetPartnerPID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "SetPartnerPID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_partner_pid(
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_partner_pid(pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_partner_pid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_partner_pid::get_method_info().method_ptr);
         inner(pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_partner_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetPartnerPID",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetPartnerPID", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetPartnerPID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetPartnerPID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_partner_pid(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_partner_pid(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_partner_pid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_partner_pid::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_partner_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetPartnerName",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetPartnerName", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetPartnerName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetPartnerName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_partner_name(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_partner_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_partner_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_partner_name::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_data_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                "GetGameDataName",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), "GetGameDataName", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    "GetGameDataName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess as ::unity2::ClassIdentity>::NAME,
+                        "GetGameDataName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_game_data_name(
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_game_data_name::get_offset() as isize),
-        );
+    pub unsafe fn get_game_data_name(value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_game_data_name::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: Mess, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Mess, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Mess, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Mess as ::unity2::ClassIdentity>::NAME, ".cctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -4841,25 +3015,22 @@ impl Mess {
     pub fn initialize() -> () {
         unsafe { __Mess_unity2_raw::initialize(::core::option::Option::None) }
     }
+
     #[doc = "`UpdateReplaceStr()` overload"]
     pub fn update_replace_str() -> () {
         unsafe { __Mess_unity2_raw::update_replace_str(::core::option::Option::None) }
     }
+
     #[doc = "`LoadSpriteAsset()` overload"]
     pub fn load_sprite_asset() -> () {
         unsafe { __Mess_unity2_raw::load_sprite_asset(::core::option::Option::None) }
     }
+
     #[doc = "`LoadSpriteAsset(::unity2::Il2CppString)` overload"]
-    pub fn load_sprite_asset_2(
-        sprite_asset_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __Mess_unity2_raw::load_sprite_asset_2(
-                ::core::convert::Into::into(sprite_asset_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn load_sprite_asset_2(sprite_asset_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __Mess_unity2_raw::load_sprite_asset_2(::core::convert::Into::into(sprite_asset_name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSpriteExistInSpriteAsset(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn is_sprite_exist_in_sprite_asset(
         sprite_asset_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -4873,50 +3044,27 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`GetItemSpriteAssetsName(crate::app::itemdata::ItemData)` overload"]
-    pub fn get_item_sprite_assets_name(
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_item_sprite_assets_name(
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_item_sprite_assets_name(item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get_item_sprite_assets_name(::core::convert::Into::into(item), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSkillSpriteAssetsName(crate::app::skilldata::SkillData)` overload"]
-    pub fn get_skill_sprite_assets_name(
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_skill_sprite_assets_name(
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_skill_sprite_assets_name(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get_skill_sprite_assets_name(::core::convert::Into::into(skill), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSystemSpriteAssetsName(::unity2::Il2CppString)` overload"]
-    pub fn get_system_sprite_assets_name(
-        icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_system_sprite_assets_name(
-                ::core::convert::Into::into(icon_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_system_sprite_assets_name(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get_system_sprite_assets_name(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGodSymbolEngraveSpriteAssetsName(::unity2::Il2CppString)` overload"]
-    pub fn get_god_symbol_engrave_sprite_assets_name(
-        icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_god_symbol_engrave_sprite_assets_name(
-                ::core::convert::Into::into(icon_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_god_symbol_engrave_sprite_assets_name(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get_god_symbol_engrave_sprite_assets_name(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
     }
+
     #[doc = "`OnSpriteAssetRequestCallback(i32, ::unity2::Il2CppString)` overload"]
     pub fn on_sprite_asset_request_callback(
         arg: impl ::core::convert::Into<i32>,
@@ -4930,37 +3078,29 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`PushCheck()` overload"]
     pub fn push_check() -> () {
         unsafe { __Mess_unity2_raw::push_check(::core::option::Option::None) }
     }
+
     #[doc = "`PopCheck()` overload"]
     pub fn pop_check() -> () {
         unsafe { __Mess_unity2_raw::pop_check(::core::option::Option::None) }
     }
+
     #[doc = "`Load(::unity2::Il2CppString)` overload"]
     pub fn load(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::load(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::load(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`TryLoad(::unity2::Il2CppString)` overload"]
     pub fn try_load(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::try_load(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::try_load(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`LoadImpl(::unity2::Il2CppString, bool)` overload"]
-    pub fn load_impl(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_warning: impl ::core::convert::Into<bool>,
-    ) -> bool {
+    pub fn load_impl(file_name: impl ::core::convert::Into<::unity2::Il2CppString>, is_warning: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
             __Mess_unity2_raw::load_impl(
                 ::core::convert::Into::into(file_name),
@@ -4969,33 +3109,22 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`LoadImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"]
     pub fn load_impl_2(
         file_path: impl ::core::convert::Into<::unity2::Il2CppString>,
         is_warning: impl ::core::convert::Into<bool>,
     ) -> (
         bool,
-        crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::msgfile::MsgFile,
-        >,
-        crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::IntPtr,
-        >,
+        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
+        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
     ) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    crate::app::msgfile::MsgFile,
-                >,
+                crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
             >::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    ::unity2::IntPtr,
-                >,
+                crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
             >::uninit();
             let __ret = {
                 __Mess_unity2_raw::load_impl_2(
@@ -5009,29 +3138,19 @@ impl Mess {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`Free(::unity2::Il2CppString)` overload"]
     pub fn free(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::free(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::free(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`TryFree(::unity2::Il2CppString)` overload"]
     pub fn try_free(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::try_free(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::try_free(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`FreeImpl(::unity2::Il2CppString, bool)` overload"]
-    pub fn free_impl(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_warning: impl ::core::convert::Into<bool>,
-    ) -> bool {
+    pub fn free_impl(file_name: impl ::core::convert::Into<::unity2::Il2CppString>, is_warning: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
             __Mess_unity2_raw::free_impl(
                 ::core::convert::Into::into(file_name),
@@ -5040,42 +3159,27 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`GetReference(::unity2::Il2CppString)` overload"]
     pub fn get_reference(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __Mess_unity2_raw::get_reference(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::get_reference(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`FreeImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"]
     pub fn free_impl_2(
         file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         is_warning: impl ::core::convert::Into<bool>,
     ) -> (
         bool,
-        crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::msgfile::MsgFile,
-        >,
-        crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::IntPtr,
-        >,
+        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
+        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
     ) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    crate::app::msgfile::MsgFile,
-                >,
+                crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::msgfile::MsgFile>,
             >::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    ::unity2::IntPtr,
-                >,
+                crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
             >::uninit();
             let __ret = {
                 __Mess_unity2_raw::free_impl_2(
@@ -5089,159 +3193,97 @@ impl Mess {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`Reload()` overload"]
     pub fn reload() -> () {
         unsafe { __Mess_unity2_raw::reload(::core::option::Option::None) }
     }
+
     #[doc = "`IsLoadDone(::unity2::Il2CppString)` overload"]
     pub fn is_load_done(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_load_done(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::is_load_done(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsFileExist(::unity2::Il2CppString)` overload"]
     pub fn is_file_exist(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_file_exist(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::is_file_exist(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsHeroFemale()` overload"]
     pub fn is_hero_female() -> bool {
         unsafe { __Mess_unity2_raw::is_hero_female(::core::option::Option::None) }
     }
+
     #[doc = "`GetLanguageDirectoryName()` overload"]
     pub fn get_language_directory_name() -> ::unity2::Il2CppString {
         unsafe { __Mess_unity2_raw::get_language_directory_name(::core::option::Option::None) }
     }
+
     #[doc = "`CreateMessFilePath(::unity2::Il2CppString)` overload"]
-    pub fn create_mess_file_path(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_mess_file_path(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_mess_file_path(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::create_mess_file_path(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateSoundCmdFilePath(::unity2::Il2CppString)` overload"]
-    pub fn create_sound_cmd_file_path(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_sound_cmd_file_path(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_sound_cmd_file_path(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::create_sound_cmd_file_path(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateEventCmdFilePath(::unity2::Il2CppString)` overload"]
-    pub fn create_event_cmd_file_path(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_event_cmd_file_path(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_event_cmd_file_path(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::create_event_cmd_file_path(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetFilePath(::unity2::Il2CppString)` overload"]
-    pub fn get_file_path(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_file_path(
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_file_path(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get_file_path(::core::convert::Into::into(label), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMsgFile(::unity2::Il2CppString)` overload"]
-    pub fn get_msg_file(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::msgfile::MsgFile {
-        unsafe {
-            __Mess_unity2_raw::get_msg_file(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_msg_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::msgfile::MsgFile {
+        unsafe { __Mess_unity2_raw::get_msg_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsMainReleaseScenarioMessFile(::unity2::Il2CppString)` overload"]
-    pub fn is_main_release_scenario_mess_file(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_main_release_scenario_mess_file(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_main_release_scenario_mess_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __Mess_unity2_raw::is_main_release_scenario_mess_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsDLCScenarioMessFile(::unity2::Il2CppString)` overload"]
-    pub fn is_dlc_scenario_mess_file(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_dlc_scenario_mess_file(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_dlc_scenario_mess_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __Mess_unity2_raw::is_dlc_scenario_mess_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsRelianceMessFile(::unity2::Il2CppString)` overload"]
-    pub fn is_reliance_mess_file(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_reliance_mess_file(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_reliance_mess_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __Mess_unity2_raw::is_reliance_mess_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsGodRelianceMessFile(::unity2::Il2CppString)` overload"]
-    pub fn is_god_reliance_mess_file(
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_god_reliance_mess_file(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_god_reliance_mess_file(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __Mess_unity2_raw::is_god_reliance_mess_file(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
+
     #[doc = "`DumpFile()` overload"]
     pub fn dump_file() -> () {
         unsafe { __Mess_unity2_raw::dump_file(::core::option::Option::None) }
     }
+
     #[doc = "`DumpLabel()` overload"]
     pub fn dump_label() -> () {
         unsafe { __Mess_unity2_raw::dump_label(::core::option::Option::None) }
     }
+
     #[doc = "`GetAllLabel()` overload"]
-    pub fn get_all_label(
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+    pub fn get_all_label() -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
         unsafe { __Mess_unity2_raw::get_all_label(::core::option::Option::None) }
     }
+
     #[doc = "`Get(::unity2::Il2CppString)` overload"]
-    pub fn get(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get(
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get(::core::convert::Into::into(label), ::core::option::Option::None) }
     }
+
     #[doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn get_2(
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5255,6 +3297,7 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn get_3(
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5270,6 +3313,7 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn get_4(
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5287,6 +3331,7 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`Get(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
     pub fn get_5(
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5300,28 +3345,17 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`TryGetReplace(::unity2::Il2CppString)` overload"]
-    pub fn try_get_replace(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::try_get_replace(
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn try_get_replace(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::try_get_replace(::core::convert::Into::into(label), ::core::option::Option::None) }
     }
+
     #[doc = "`GetIntPtr(::unity2::Il2CppString)` overload"]
-    pub fn get_int_ptr(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __Mess_unity2_raw::get_int_ptr(
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_int_ptr(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::IntPtr {
+        unsafe { __Mess_unity2_raw::get_int_ptr(::core::convert::Into::into(label), ::core::option::Option::None) }
     }
+
     #[doc = "`GetImpl(::unity2::Il2CppString, bool)` overload"]
     pub fn get_impl(
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5335,21 +3369,14 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`GetSoundCmdText(::unity2::Il2CppString)` overload"]
-    pub fn get_sound_cmd_text(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_sound_cmd_text(
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_sound_cmd_text(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get_sound_cmd_text(::core::convert::Into::into(label), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSoundCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    pub fn get_sound_cmd_text_2(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
+    pub fn get_sound_cmd_text_2(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
@@ -5364,21 +3391,14 @@ impl Mess {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`GetEventCmdText(::unity2::Il2CppString)` overload"]
-    pub fn get_event_cmd_text(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_event_cmd_text(
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_event_cmd_text(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get_event_cmd_text(::core::convert::Into::into(label), ::core::option::Option::None) }
     }
+
     #[doc = "`GetEventCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    pub fn get_event_cmd_text_2(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
+    pub fn get_event_cmd_text_2(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
@@ -5393,14 +3413,12 @@ impl Mess {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>)` overload"]
     pub fn get_cmd_impl(
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
         data_dictionary: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::IntPtr,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         >,
     ) -> ::unity2::Il2CppString {
         unsafe {
@@ -5411,14 +3429,12 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
     pub fn get_cmd_impl_2(
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
         data_dictionary: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::IntPtr,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::IntPtr>,
         >,
     ) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
         unsafe {
@@ -5436,19 +3452,17 @@ impl Mess {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`IsExist(::unity2::Il2CppString)` overload"]
     pub fn is_exist(label: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_exist(
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::is_exist(::core::convert::Into::into(label), ::core::option::Option::None) }
     }
+
     #[doc = "`IsNesting()` overload"]
     pub fn is_nesting() -> bool {
         unsafe { __Mess_unity2_raw::is_nesting(::core::option::Option::None) }
     }
+
     #[doc = "`GetString(::unity2::Il2CppString, ::unity2::IntPtr, bool)` overload"]
     pub fn get_string(
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5464,11 +3478,9 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`ReadChar(::unity2::IntPtr, i32)` overload"]
-    pub fn read_char(
-        p: impl ::core::convert::Into<::unity2::IntPtr>,
-        offset: impl ::core::convert::Into<i32>,
-    ) -> u16 {
+    pub fn read_char(p: impl ::core::convert::Into<::unity2::IntPtr>, offset: impl ::core::convert::Into<i32>) -> u16 {
         unsafe {
             __Mess_unity2_raw::read_char(
                 ::core::convert::Into::into(p),
@@ -5477,32 +3489,19 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`CalcTalkStringTotalWidth(::unity2::Il2CppString)` overload"]
-    pub fn calc_talk_string_total_width(
-        mess_str: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> f32 {
-        unsafe {
-            __Mess_unity2_raw::calc_talk_string_total_width(
-                ::core::convert::Into::into(mess_str),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn calc_talk_string_total_width(mess_str: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
+        unsafe { __Mess_unity2_raw::calc_talk_string_total_width(::core::convert::Into::into(mess_str), ::core::option::Option::None) }
     }
+
     #[doc = "`CalcWaitMsecForTalkAutoPlay(::unity2::Il2CppString)` overload"]
-    pub fn calc_wait_msec_for_talk_auto_play(
-        mess_str: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> f32 {
-        unsafe {
-            __Mess_unity2_raw::calc_wait_msec_for_talk_auto_play(
-                ::core::convert::Into::into(mess_str),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn calc_wait_msec_for_talk_auto_play(mess_str: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
+        unsafe { __Mess_unity2_raw::calc_wait_msec_for_talk_auto_play(::core::convert::Into::into(mess_str), ::core::option::Option::None) }
     }
+
     #[doc = "`SplitCmd(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    pub fn split_cmd(
-        cmd: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
+    pub fn split_cmd(cmd: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
@@ -5517,6 +3516,7 @@ impl Mess {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`AddTagString(u16, u16, ::unity2::Array<u8>)` overload"]
     pub fn add_tag_string(
         tag_group_id: impl ::core::convert::Into<u16>,
@@ -5532,22 +3532,14 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`ReplaceArgString(crate::app::mess::Mess_TagID_Arg)` overload"]
-    pub fn replace_arg_string(
-        tag_id: impl ::core::convert::Into<crate::app::mess::Mess_TagID_Arg>,
-    ) -> () {
-        unsafe {
-            __Mess_unity2_raw::replace_arg_string(
-                ::core::convert::Into::into(tag_id),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn replace_arg_string(tag_id: impl ::core::convert::Into<crate::app::mess::Mess_TagID_Arg>) -> () {
+        unsafe { __Mess_unity2_raw::replace_arg_string(::core::convert::Into::into(tag_id), ::core::option::Option::None) }
     }
+
     #[doc = "`AddTagString_Localize(u16, ::unity2::Array<u8>)` overload"]
-    pub fn add_tag_string_localize(
-        tag_id: impl ::core::convert::Into<u16>,
-        param: impl ::core::convert::Into<::unity2::Array<u8>>,
-    ) -> () {
+    pub fn add_tag_string_localize(tag_id: impl ::core::convert::Into<u16>, param: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
         unsafe {
             __Mess_unity2_raw::add_tag_string_localize(
                 ::core::convert::Into::into(tag_id),
@@ -5556,29 +3548,19 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`IsPatchim1(u16)` overload"]
     pub fn is_patchim1(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_patchim1(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::is_patchim1(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsPatchim2(u16)` overload"]
     pub fn is_patchim2(c: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            __Mess_unity2_raw::is_patchim2(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::is_patchim2(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`IsPatchimStrCode(i32, bool)` overload"]
-    pub fn is_patchim_str_code(
-        chr_code: impl ::core::convert::Into<i32>,
-        is_without2: impl ::core::convert::Into<bool>,
-    ) -> bool {
+    pub fn is_patchim_str_code(chr_code: impl ::core::convert::Into<i32>, is_without2: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
             __Mess_unity2_raw::is_patchim_str_code(
                 ::core::convert::Into::into(chr_code),
@@ -5587,11 +3569,9 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`SetArgument(i32, i32)` overload"]
-    pub fn set_argument(
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn set_argument(index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __Mess_unity2_raw::set_argument(
                 ::core::convert::Into::into(index),
@@ -5600,11 +3580,9 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`SetArgument(i32, ::unity2::Il2CppString)` overload"]
-    pub fn set_argument_2(
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    pub fn set_argument_2(index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             __Mess_unity2_raw::set_argument_2(
                 ::core::convert::Into::into(index),
@@ -5613,32 +3591,27 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`ClearArgument()` overload"]
     pub fn clear_argument() -> () {
         unsafe { __Mess_unity2_raw::clear_argument(::core::option::Option::None) }
     }
+
     #[doc = "`GetArgument(i32)` overload"]
     pub fn get_argument(index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_argument(
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::get_argument(::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`get_NewArgScope()` overload"]
     pub fn get_new_arg_scope() -> crate::app::mess::Mess_ArgScope {
         unsafe { __Mess_unity2_raw::get_new_arg_scope(::core::option::Option::None) }
     }
+
     #[doc = "`CreateSpaceTag(u32)` overload"]
     pub fn create_space_tag(pixel: impl ::core::convert::Into<u32>) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_space_tag(
-                ::core::convert::Into::into(pixel),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::create_space_tag(::core::convert::Into::into(pixel), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateSpriteTag(crate::app::mess::Mess_IconCategory, ::unity2::Il2CppString)` overload"]
     pub fn create_sprite_tag(
         icon_category: impl ::core::convert::Into<crate::app::mess::Mess_IconCategory>,
@@ -5652,6 +3625,7 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`CreateSpriteTag(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn create_sprite_tag_2(
         sprite_asset_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -5665,6 +3639,7 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`CreateItemSpriteTag(crate::app::itemdata::ItemData, bool)` overload"]
     pub fn create_item_sprite_tag(
         item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
@@ -5678,67 +3653,42 @@ impl Mess {
             )
         }
     }
+
     #[doc = "`CreateSkillSpriteTag(crate::app::skilldata::SkillData)` overload"]
-    pub fn create_skill_sprite_tag(
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_skill_sprite_tag(
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_skill_sprite_tag(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::create_skill_sprite_tag(::core::convert::Into::into(skill), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateSystemSpriteTag(::unity2::Il2CppString)` overload"]
-    pub fn create_system_sprite_tag(
-        icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_system_sprite_tag(
-                ::core::convert::Into::into(icon_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_system_sprite_tag(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::create_system_sprite_tag(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateGodSymbleEngraveSpriteTag(::unity2::Il2CppString)` overload"]
-    pub fn create_god_symble_engrave_sprite_tag(
-        icon_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::create_god_symble_engrave_sprite_tag(
-                ::core::convert::Into::into(icon_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_god_symble_engrave_sprite_tag(icon_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::create_god_symble_engrave_sprite_tag(::core::convert::Into::into(icon_name), ::core::option::Option::None) }
     }
+
     #[doc = "`SetPartnerPID(::unity2::Il2CppString)` overload"]
     pub fn set_partner_pid(pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __Mess_unity2_raw::set_partner_pid(
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Mess_unity2_raw::set_partner_pid(::core::convert::Into::into(pid), ::core::option::Option::None) }
     }
+
     #[doc = "`GetPartnerPID()` overload"]
     pub fn get_partner_pid() -> ::unity2::Il2CppString {
         unsafe { __Mess_unity2_raw::get_partner_pid(::core::option::Option::None) }
     }
+
     #[doc = "`GetPartnerName()` overload"]
     pub fn get_partner_name() -> ::unity2::Il2CppString {
         unsafe { __Mess_unity2_raw::get_partner_name(::core::option::Option::None) }
     }
+
     #[doc = "`GetGameDataName(::unity2::Il2CppString)` overload"]
-    pub fn get_game_data_name(
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Mess_unity2_raw::get_game_data_name(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_game_data_name(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __Mess_unity2_raw::get_game_data_name(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Mess_unity2_raw::cctor(::core::option::Option::None) }
@@ -5750,9 +3700,7 @@ pub trait IMessMethods: IMess {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Mess as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Mess as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Mess_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -5765,13 +3713,8 @@ impl<__T: IMess> IMessMethods for __T {}
 impl Mess {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Mess),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Mess), ::core::stringify!(new),));
         <Self as IMessMethods>::ctor(this);
         this
     }
@@ -5786,9 +3729,7 @@ mod __Mess_LanguageScope_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::language::Language_Langs as ::unity2::IlType>::il_type(),
@@ -5804,18 +3745,15 @@ mod __Mess_LanguageScope_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -5824,25 +3762,15 @@ mod __Mess_LanguageScope_unity2_raw {
         lang: crate::app::language::Language_Langs,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Mess_LanguageScope,
-            ::unity2::Il2CppString,
-            crate::app::language::Language_Langs,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Mess_LanguageScope, ::unity2::Il2CppString, crate::app::language::Language_Langs, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, name, lang, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mess_LanguageScope as ::unity2::ClassIdentity>::class(),
@@ -5855,30 +3783,20 @@ mod __Mess_LanguageScope_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: Mess_LanguageScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: Mess_LanguageScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Mess_LanguageScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -5900,6 +3818,7 @@ impl Mess_LanguageScope {
             )
         }
     }
+
     #[doc = "`Dispose()` overload"]
     pub fn dispose(self) -> () {
         unsafe { __Mess_LanguageScope_unity2_raw::dispose(self, ::core::option::Option::None) }
@@ -5915,9 +3834,7 @@ mod __Mess_ReloadFileInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -5933,18 +3850,15 @@ mod __Mess_ReloadFileInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mess_ReloadFileInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_ReloadFileInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -5953,16 +3867,8 @@ mod __Mess_ReloadFileInfo_unity2_raw {
         ref_count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Mess_ReloadFileInfo,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Mess_ReloadFileInfo, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, file_name, ref_count, __unity2_method_info)
     }
 }
@@ -5970,15 +3876,9 @@ mod __Mess_ReloadFileInfo_unity2_raw {
 #[cfg(feature = "app-mess")]
 pub trait IMess_ReloadFileInfoMethods: IMess_ReloadFileInfo {
     #[doc = "`.ctor(::unity2::Il2CppString, i32)` overload"]
-    fn ctor(
-        self,
-        file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        ref_count: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor(self, file_name: impl ::core::convert::Into<::unity2::Il2CppString>, ref_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <Mess_ReloadFileInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Mess_ReloadFileInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Mess_ReloadFileInfo_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(file_name),
@@ -6010,29 +3910,96 @@ impl Mess_ReloadFileInfo {
 
 #[cfg(feature = "app-mess")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Mess_ArgScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess_ArgScope as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: Mess_ArgScope, dummy: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mess_ArgScope, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, dummy, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mess_ArgScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: Mess_ArgScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mess_ArgScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mess")]
+impl Mess_ArgScope {
+    #[doc = "`.ctor(i32)` overload"]
+    pub fn ctor(self, dummy: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __Mess_ArgScope_unity2_raw::ctor(self, ::core::convert::Into::into(dummy), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __Mess_ArgScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mess")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IMess;
-    pub use super::IMessMethods;
-    pub use super::IMess_ReloadFileInfo;
-    pub use super::IMess_ReloadFileInfoMethods;
-    pub use super::Mess;
-    pub use super::Mess_ArgScope;
-    pub use super::Mess_IconCategory;
-    pub use super::Mess_LanguageScope;
-    pub use super::Mess_ReloadFileInfo;
-    pub use super::Mess_TagGroup;
-    pub use super::Mess_TagID_Arg;
-    pub use super::Mess_TagID_Localize;
-    pub use super::Mess_TagID_Name;
-    pub use super::Mess_TagID_Picture;
-    pub use super::Mess_TagID_Text;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IMess, IMessMethods, IMess_ReloadFileInfo, IMess_ReloadFileInfoMethods, Mess, Mess_ArgScope, Mess_IconCategory, Mess_LanguageScope,
+        Mess_ReloadFileInfo, Mess_TagGroup, Mess_TagID_Arg, Mess_TagID_Localize, Mess_TagID_Name, Mess_TagID_Picture, Mess_TagID_Text,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

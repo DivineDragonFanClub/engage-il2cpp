@@ -2,26 +2,23 @@
 
 #[cfg(feature = "app-publicobject-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    use crate::{
+        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject_Func_1.md"))]
-    #[::unity2::class(namespace = "App", name = "PublicObject.Func`1")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct PublicObject_Func_1<T0: ::unity2::ClassIdentity> {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject.md"))]
     #[::unity2::class(namespace = "App", name = "PublicObject")]
@@ -37,11 +34,16 @@ mod __types {
         pub m_groups: ::unity2::Array<crate::app::publicobject::PublicObject_Group>,
         #[static_field]
         #[rename(name = "s_Dictionary")]
-        pub s_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::unity_engine::object_2::Object_2,
-        >,
+        pub s_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::object_2::Object_2>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject_Func_1.md"))]
+    #[::unity2::class(namespace = "App", name = "PublicObject.Func`1")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct PublicObject_Func_1<T0: ::unity2::ClassIdentity> {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject_Group.md"))]
     #[::unity2::class(namespace = "App", name = "PublicObject.Group")]
@@ -56,6 +58,548 @@ mod __types {
 
 #[cfg(feature = "app-publicobject-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-publicobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PublicObject_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PublicObject as ::unity2::ClassIdentity>::class(),
+                "LoadAsync",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject as ::unity2::ClassIdentity>::NAME,
+                        "LoadAsync",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_async::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warm_up_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PublicObject as ::unity2::ClassIdentity>::class(),
+                "WarmUpImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject as ::unity2::ClassIdentity>::NAME,
+                        "WarmUpImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn warm_up_impl(this: PublicObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PublicObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_warm_up_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_dictionary {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PublicObject as ::unity2::ClassIdentity>::class(),
+                "TryCreateDictionary",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateDictionary",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_create_dictionary(this: PublicObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PublicObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_create_dictionary::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PublicObject as ::unity2::ClassIdentity>::class(),
+                "DumpImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject as ::unity2::ClassIdentity>::NAME,
+                        "DumpImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dump_impl(this: PublicObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PublicObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dump_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_warm_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<PublicObject as ::unity2::ClassIdentity>::class(), "WarmUp", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject as ::unity2::ClassIdentity>::NAME,
+                        "WarmUp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn warm_up(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_warm_up::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<PublicObject as ::unity2::ClassIdentity>::class(), "Dump", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject as ::unity2::ClassIdentity>::NAME,
+                        "Dump",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dump(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dump::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<PublicObject as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: PublicObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PublicObject, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<PublicObject as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-publicobject")]
+impl PublicObject {
+    #[doc = "`LoadAsync()` overload"]
+    pub fn load_async() -> () {
+        unsafe { __PublicObject_unity2_raw::load_async(::core::option::Option::None) }
+    }
+
+    #[doc = "`WarmUp()` overload"]
+    pub fn warm_up() -> () {
+        unsafe { __PublicObject_unity2_raw::warm_up(::core::option::Option::None) }
+    }
+
+    pub fn get_asset<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
+            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<PublicObject as ::unity2::ClassIdentity>::class(), "GetAsset", 1));
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PublicObject as ::unity2::ClassIdentity>::NAME,
+                    "GetAsset",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::convert::Into::into(name), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+
+    pub fn instantiate<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PublicObject as ::unity2::ClassIdentity>::class(), "Instantiate", 2)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PublicObject as ::unity2::ClassIdentity>::NAME,
+                    "Instantiate",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+
+    pub fn instantiate_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PublicObject as ::unity2::ClassIdentity>::class(), "Instantiate", 2)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PublicObject as ::unity2::ClassIdentity>::NAME,
+                    "Instantiate",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+
+    pub fn for_each<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        func: impl ::core::convert::Into<crate::app::publicobject::PublicObject_Func_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
+            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<PublicObject as ::unity2::ClassIdentity>::class(), "ForEach", 1));
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PublicObject as ::unity2::ClassIdentity>::NAME,
+                    "ForEach",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(crate::app::publicobject::PublicObject_Func_1<M0>, ::unity2::OptionalMethod) -> () =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::convert::Into::into(func), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+
+    #[doc = "`Dump()` overload"]
+    pub fn dump() -> () {
+        unsafe { __PublicObject_unity2_raw::dump(::core::option::Option::None) }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __PublicObject_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-publicobject")]
+pub trait IPublicObjectMethods: IPublicObject {
+    fn for_each_impl<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+        func: impl ::core::convert::Into<crate::app::publicobject::PublicObject_Func_1<M0>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PublicObject as ::unity2::ClassIdentity>::class(), "ForEachImpl", 1)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PublicObject as ::unity2::ClassIdentity>::NAME,
+                    "ForEachImpl",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let __f: extern "C" fn(PublicObject, crate::app::publicobject::PublicObject_Func_1<M0>, ::unity2::OptionalMethod) -> () =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::convert::Into::into(func), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`WarmUpImpl()` overload"]
+    fn warm_up_impl(self) -> () {
+        unsafe {
+            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PublicObject_unity2_raw::warm_up_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryCreateDictionary()` overload"]
+    fn try_create_dictionary(self) -> () {
+        unsafe {
+            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PublicObject_unity2_raw::try_create_dictionary(__receiver, ::core::option::Option::None)
+        }
+    }
+    fn get_asset_impl<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PublicObject as ::unity2::ClassIdentity>::class(), "GetAssetImpl", 1)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = false;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PublicObject as ::unity2::ClassIdentity>::NAME,
+                    "GetAssetImpl",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let __f: extern "C" fn(PublicObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(__receiver, ::core::convert::Into::into(name), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+    #[doc = "`DumpImpl()` overload"]
+    fn dump_impl(self) -> () {
+        unsafe {
+            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PublicObject_unity2_raw::dump_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PublicObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-publicobject")]
+impl<__T: IPublicObject> IPublicObjectMethods for __T {}
+
+#[cfg(feature = "app-publicobject")]
+impl PublicObject {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(PublicObject), ::core::stringify!(new),));
+        <Self as IPublicObjectMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-publicobject")]
 #[::unity2::methods]
@@ -88,773 +632,13 @@ impl<T0: ::unity2::ClassIdentity> PublicObject_Func_1<T0> {
 #[cfg(feature = "app-publicobject")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PublicObject_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "LoadAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject as ::unity2::ClassIdentity>::NAME,
-                    "LoadAsync",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_async::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_warm_up_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "WarmUpImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject as ::unity2::ClassIdentity>::NAME,
-                    "WarmUpImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn warm_up_impl(
-        this: PublicObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PublicObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_warm_up_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_dictionary {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "TryCreateDictionary",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject as ::unity2::ClassIdentity>::NAME,
-                    "TryCreateDictionary",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_create_dictionary(
-        this: PublicObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PublicObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_create_dictionary::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dump_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "DumpImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject as ::unity2::ClassIdentity>::NAME,
-                    "DumpImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dump_impl(
-        this: PublicObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PublicObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dump_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_warm_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "WarmUp",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject as ::unity2::ClassIdentity>::NAME,
-                    "WarmUp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn warm_up(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_warm_up::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dump {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "Dump",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject as ::unity2::ClassIdentity>::NAME,
-                    "Dump",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dump(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dump::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: PublicObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PublicObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-publicobject")]
-impl PublicObject {
-    #[doc = "`LoadAsync()` overload"]
-    pub fn load_async() -> () {
-        unsafe { __PublicObject_unity2_raw::load_async(::core::option::Option::None) }
-    }
-    #[doc = "`WarmUp()` overload"]
-    pub fn warm_up() -> () {
-        unsafe { __PublicObject_unity2_raw::warm_up(::core::option::Option::None) }
-    }
-    pub fn get_asset<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "GetAsset",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PublicObject as ::unity2::ClassIdentity>::NAME,
-                "GetAsset",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> M0 =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn instantiate<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "Instantiate",
-                2,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PublicObject as ::unity2::ClassIdentity>::NAME,
-                "Instantiate",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                ::unity2::Il2CppString,
-                crate::unity_engine::transform::Transform,
-                ::unity2::OptionalMethod,
-            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(parent),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn instantiate_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "Instantiate",
-                2,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PublicObject as ::unity2::ClassIdentity>::NAME,
-                "Instantiate",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                ::unity2::Il2CppString,
-                crate::unity_engine::gameobject::GameObject,
-                ::unity2::OptionalMethod,
-            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(parent),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn for_each<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        func: impl ::core::convert::Into<crate::app::publicobject::PublicObject_Func_1<M0>>,
-    ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "ForEach",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PublicObject as ::unity2::ClassIdentity>::NAME,
-                "ForEach",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::app::publicobject::PublicObject_Func_1<M0>,
-                ::unity2::OptionalMethod,
-            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(func),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    #[doc = "`Dump()` overload"]
-    pub fn dump() -> () {
-        unsafe { __PublicObject_unity2_raw::dump(::core::option::Option::None) }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __PublicObject_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-publicobject")]
-pub trait IPublicObjectMethods: IPublicObject {
-    fn for_each_impl<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        self,
-        func: impl ::core::convert::Into<crate::app::publicobject::PublicObject_Func_1<M0>>,
-    ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "ForEachImpl",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = false;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PublicObject as ::unity2::ClassIdentity>::NAME,
-                "ForEachImpl",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let __f: extern "C" fn(
-                PublicObject,
-                crate::app::publicobject::PublicObject_Func_1<M0>,
-                ::unity2::OptionalMethod,
-            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                __receiver,
-                ::core::convert::Into::into(func),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    #[doc = "`WarmUpImpl()` overload"]
-    fn warm_up_impl(self) -> () {
-        unsafe {
-            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PublicObject_unity2_raw::warm_up_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryCreateDictionary()` overload"]
-    fn try_create_dictionary(self) -> () {
-        unsafe {
-            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PublicObject_unity2_raw::try_create_dictionary(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    fn get_asset_impl<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PublicObject as ::unity2::ClassIdentity>::class(),
-                "GetAssetImpl",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = false;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PublicObject as ::unity2::ClassIdentity>::NAME,
-                "GetAssetImpl",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let __f: extern "C" fn(
-                PublicObject,
-                ::unity2::Il2CppString,
-                ::unity2::OptionalMethod,
-            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    #[doc = "`DumpImpl()` overload"]
-    fn dump_impl(self) -> () {
-        unsafe {
-            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PublicObject_unity2_raw::dump_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PublicObject as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PublicObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-publicobject")]
-impl<__T: IPublicObject> IPublicObjectMethods for __T {}
-
-#[cfg(feature = "app-publicobject")]
-impl PublicObject {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PublicObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPublicObjectMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-publicobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __PublicObject_Group_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PublicObject_Group as ::unity2::ClassIdentity>::class(),
@@ -867,30 +651,20 @@ mod __PublicObject_Group_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject_Group as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PublicObject_Group as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PublicObject_Group,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PublicObject_Group, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PublicObject_Group, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -900,9 +674,7 @@ pub trait IPublicObject_GroupMethods: IPublicObject_Group {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PublicObject_Group as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PublicObject_Group as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PublicObject_Group_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -930,37 +702,29 @@ impl PublicObject_Group {
 #[cfg(feature = "app-publicobject")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPublicObject;
-    pub use super::IPublicObjectMethods;
-    pub use super::IPublicObject_Func_1;
-    pub use super::IPublicObject_Func_1Methods;
-    pub use super::IPublicObject_Group;
-    pub use super::IPublicObject_GroupMethods;
-    pub use super::PublicObject;
-    pub use super::PublicObject_Func_1;
-    pub use super::PublicObject_Group;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use super::{
+        IPublicObject, IPublicObjectMethods, IPublicObject_Func_1, IPublicObject_Func_1Methods, IPublicObject_Group, IPublicObject_GroupMethods,
+        PublicObject, PublicObject_Func_1, PublicObject_Group,
+    };
     #[cfg(feature = "app-singletonmonobehaviour_1")]
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-u2d-spriterenderergroup-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/u2d/spriterenderergroup/SpriteRendererGroup.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.U2D",
-        name = "SpriteRendererGroup"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.U2D", name = "SpriteRendererGroup")]
     #[parent(crate::system::object::Object)]
     pub struct SpriteRendererGroup {}
 }
@@ -22,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-experimental-u2d-spriterenderergroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISpriteRendererGroup;
-    pub use super::SpriteRendererGroup;
+    pub use super::{ISpriteRendererGroup, SpriteRendererGroup};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

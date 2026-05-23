@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-reflection-emit-customattributebuilder-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/customattributebuilder/CustomAttributeBuilder.md"))]
     #[::unity2::class(namespace = "System.Reflection.Emit", name = "CustomAttributeBuilder")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-customattributebuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomAttributeBuilder;
-    pub use super::ICustomAttributeBuilder;
+    pub use super::{CustomAttributeBuilder, ICustomAttributeBuilder};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

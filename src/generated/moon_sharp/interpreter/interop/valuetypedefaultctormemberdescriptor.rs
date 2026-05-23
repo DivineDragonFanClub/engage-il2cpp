@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/valuetypedefaultctormemberdescriptor/ValueTypeDefaultCtorMemberDescriptor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "ValueTypeDefaultCtorMemberDescriptor"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "ValueTypeDefaultCtorMemberDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct ValueTypeDefaultCtorMemberDescriptor {}
 }
@@ -28,9 +25,7 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_static {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -43,41 +38,27 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_IsStatic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_IsStatic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_static(
-        this: ValueTypeDefaultCtorMemberDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_static::get_offset() as isize),
-        );
+    pub unsafe fn get_is_static(this: ValueTypeDefaultCtorMemberDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_static::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -90,43 +71,28 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: ValueTypeDefaultCtorMemberDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: ValueTypeDefaultCtorMemberDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_Name",
@@ -138,18 +104,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_Name",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name(
@@ -157,24 +120,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_type_default_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -187,43 +141,31 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_ValueTypeDefaultCtor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_ValueTypeDefaultCtor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value_type_default_ctor(
         this: ValueTypeDefaultCtorMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value_type_default_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_value_type_default_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value_type_default_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_ValueTypeDefaultCtor",
@@ -235,18 +177,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_ValueTypeDefaultCtor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_ValueTypeDefaultCtor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_value_type_default_ctor(
@@ -254,24 +193,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         value: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_value_type_default_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_value_type_default_ctor::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_parameters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -284,31 +214,37 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_Parameters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_Parameters",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_parameters (this : ValueTypeDefaultCtorMemberDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >{
-        let inner : extern "C" fn (ValueTypeDefaultCtorMemberDescriptor , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_parameters :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_parameters(
+        this: ValueTypeDefaultCtorMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> {
+        let inner: extern "C" fn(
+            ValueTypeDefaultCtorMemberDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor,
+        > = ::core::mem::transmute(__lookup_get_parameters::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_parameters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_Parameters",
@@ -320,35 +256,34 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_Parameters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_Parameters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_parameters(
         this: ValueTypeDefaultCtorMemberDescriptor,
-        value : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >,
+        value: ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ValueTypeDefaultCtorMemberDescriptor , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_parameters :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ValueTypeDefaultCtorMemberDescriptor,
+            ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_parameters::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_extension_method_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -361,41 +296,30 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_ExtensionMethodType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_ExtensionMethodType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_extension_method_type(
         this: ValueTypeDefaultCtorMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_extension_method_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_extension_method_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_var_args_array_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -408,41 +332,30 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_VarArgsArrayType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_VarArgsArrayType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_var_args_array_type(
         this: ValueTypeDefaultCtorMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_var_args_array_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_var_args_array_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_var_args_element_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -455,43 +368,31 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_VarArgsElementType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_VarArgsElementType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_var_args_element_type(
         this: ValueTypeDefaultCtorMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_var_args_element_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_var_args_element_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -503,18 +404,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -522,25 +420,21 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         value_type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, value_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -552,18 +446,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
@@ -581,20 +472,14 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, script, obj, context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sort_discriminant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -607,41 +492,30 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_SortDiscriminant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_SortDiscriminant",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sort_discriminant(
         this: ValueTypeDefaultCtorMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sort_discriminant::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_sort_discriminant::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_member_access {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -654,30 +528,34 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_MemberAccess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_MemberAccess",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_member_access (this : ValueTypeDefaultCtorMemberDescriptor , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess{
-        let inner : extern "C" fn (ValueTypeDefaultCtorMemberDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_member_access :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_member_access(
+        this: ValueTypeDefaultCtorMemberDescriptor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess {
+        let inner: extern "C" fn(
+            ValueTypeDefaultCtorMemberDescriptor,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess =
+            ::core::mem::transmute(__lookup_get_member_access::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -693,18 +571,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "GetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "GetValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value(
@@ -718,20 +593,14 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, script, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -748,18 +617,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "SetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "SetValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_value(
@@ -775,20 +641,14 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
             crate::system::object::Object,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_value::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
         inner(this, script, obj, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_for_wiring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -802,18 +662,15 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PrepareForWiring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ValueTypeDefaultCtorMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PrepareForWiring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_for_wiring(
@@ -821,71 +678,56 @@ mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw {
         t: crate::moon_sharp::interpreter::table::Table,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ValueTypeDefaultCtorMemberDescriptor,
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_for_wiring::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_prepare_for_wiring::get_method_info().method_ptr);
         inner(this, t, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]
-pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
-    IValueTypeDefaultCtorMemberDescriptor
-{
+pub trait IValueTypeDefaultCtorMemberDescriptorMethods: IValueTypeDefaultCtorMemberDescriptor {
     #[doc = "`get_IsStatic()` overload"]
     fn get_is_static(self) -> bool {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_is_static(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
     fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::set_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ValueTypeDefaultCtor()` overload"]
     fn get_value_type_default_ctor(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_value_type_default_ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_value_type_default_ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ValueTypeDefaultCtor(::unity2::SystemType)` overload"]
-    fn set_value_type_default_ctor(
-        self,
-        value: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> () {
+    fn set_value_type_default_ctor(self, value: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::set_value_type_default_ctor(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -893,22 +735,26 @@ pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
             )
         }
     }
-    #[doc = "`get_Parameters()` overload"]    fn get_parameters (self ,) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >{
+    #[doc = "`get_Parameters()` overload"]
+    fn get_parameters(self) -> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_parameters(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_parameters(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Parameters(::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` overload"]
     fn set_parameters(
         self,
-        value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > >,
+        value: impl ::core::convert::Into<
+            ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::set_parameters(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -919,42 +765,37 @@ pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
     #[doc = "`get_ExtensionMethodType()` overload"]
     fn get_extension_method_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_extension_method_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_extension_method_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_VarArgsArrayType()` overload"]
     fn get_var_args_array_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_var_args_array_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_var_args_array_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_VarArgsElementType()` overload"]
     fn get_var_args_element_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_var_args_element_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_var_args_element_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::SystemType)` overload"]
     fn ctor(self, value_type: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(value_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::ctor(__receiver, ::core::convert::Into::into(value_type), ::core::option::Option::None)
         }
     }
     #[doc = "`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
@@ -962,15 +803,13 @@ pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
         self,
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
         obj: impl ::core::convert::Into<crate::system::object::Object>,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -984,20 +823,19 @@ pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
     #[doc = "`get_SortDiscriminant()` overload"]
     fn get_sort_discriminant(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_sort_discriminant(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_sort_discriminant(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`get_MemberAccess()` overload"]    fn get_member_access (self ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess{
+    #[doc = "`get_MemberAccess()` overload"]
+    fn get_member_access(self) -> crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_member_access(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_member_access(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]
@@ -1007,7 +845,9 @@ pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
         obj: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_value(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -1024,7 +864,9 @@ pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
         value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     ) -> () {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::set_value(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -1035,12 +877,11 @@ pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
         }
     }
     #[doc = "`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]
-    fn prepare_for_wiring(
-        self,
-        t: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> () {
+    fn prepare_for_wiring(self, t: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>) -> () {
         unsafe {
-            let __receiver = < ValueTypeDefaultCtorMemberDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ValueTypeDefaultCtorMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ValueTypeDefaultCtorMemberDescriptor_unity2_raw::prepare_for_wiring(
                 __receiver,
                 ::core::convert::Into::into(t),
@@ -1051,10 +892,7 @@ pub trait IValueTypeDefaultCtorMemberDescriptorMethods:
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]
-impl<__T: IValueTypeDefaultCtorMemberDescriptor> IValueTypeDefaultCtorMemberDescriptorMethods
-    for __T
-{
-}
+impl<__T: IValueTypeDefaultCtorMemberDescriptor> IValueTypeDefaultCtorMemberDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]
 impl ValueTypeDefaultCtorMemberDescriptor {
@@ -1075,9 +913,7 @@ impl ValueTypeDefaultCtorMemberDescriptor {
 #[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IValueTypeDefaultCtorMemberDescriptor;
-    pub use super::IValueTypeDefaultCtorMemberDescriptorMethods;
-    pub use super::ValueTypeDefaultCtorMemberDescriptor;
+    pub use super::{IValueTypeDefaultCtorMemberDescriptor, IValueTypeDefaultCtorMemberDescriptorMethods, ValueTypeDefaultCtorMemberDescriptor};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

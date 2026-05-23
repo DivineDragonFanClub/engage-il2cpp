@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-io-filesystemenumerablehelpers-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesystemenumerablehelpers/FileSystemEnumerableHelpers.md"))]
     #[::unity2::class(namespace = "System.IO", name = "FileSystemEnumerableHelpers")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "system-io-filesystemenumerablehelpers")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FileSystemEnumerableHelpers;
-    pub use super::IFileSystemEnumerableHelpers;
+    pub use super::{FileSystemEnumerableHelpers, IFileSystemEnumerableHelpers};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

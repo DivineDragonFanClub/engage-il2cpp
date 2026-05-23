@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-events-baseinvokablecall-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/baseinvokablecall/BaseInvokableCall.md"))]
     #[::unity2::class(namespace = "UnityEngine.Events", name = "BaseInvokableCall")]
@@ -25,9 +25,7 @@ mod __BaseInvokableCall_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BaseInvokableCall as ::unity2::ClassIdentity>::class(),
@@ -40,39 +38,27 @@ mod __BaseInvokableCall_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: BaseInvokableCall,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: BaseInvokableCall, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BaseInvokableCall, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::reflection::methodinfo::MethodInfo as ::unity2::IlType>::il_type(),
@@ -88,18 +74,15 @@ mod __BaseInvokableCall_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -113,20 +96,14 @@ mod __BaseInvokableCall_unity2_raw {
             crate::system::object::Object,
             crate::system::reflection::methodinfo::MethodInfo,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, target, function, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -140,18 +117,15 @@ mod __BaseInvokableCall_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -159,26 +133,16 @@ mod __BaseInvokableCall_unity2_raw {
         args: ::unity2::Array<crate::system::object::Object>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            BaseInvokableCall,
-            ::unity2::Array<crate::system::object::Object>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BaseInvokableCall, ::unity2::Array<crate::system::object::Object>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_allow_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BaseInvokableCall as ::unity2::ClassIdentity>::class(),
                 "AllowInvoke",
@@ -190,41 +154,27 @@ mod __BaseInvokableCall_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
-                    "AllowInvoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
+                        "AllowInvoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn allow_invoke(
-        delegate: crate::system::delegate::Delegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::delegate::Delegate,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_allow_invoke::get_offset() as isize),
-        );
+    pub unsafe fn allow_invoke(delegate: crate::system::delegate::Delegate, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::system::delegate::Delegate, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_allow_invoke::get_method_info().method_ptr);
         inner(delegate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::reflection::methodinfo::MethodInfo as ::unity2::IlType>::il_type(),
@@ -240,18 +190,15 @@ mod __BaseInvokableCall_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
+                        "Find",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find(
@@ -265,79 +212,52 @@ mod __BaseInvokableCall_unity2_raw {
             crate::system::object::Object,
             crate::system::reflection::methodinfo::MethodInfo,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_find::get_method_info().method_ptr);
         inner(this, target_obj, method, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-events-baseinvokablecall")]
 impl BaseInvokableCall {
-    pub fn throw_on_invalid_arg<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+    pub fn throw_on_invalid_arg<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         arg: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <BaseInvokableCall as ::unity2::ClassIdentity>::class(),
-                "ThrowOnInvalidArg",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<BaseInvokableCall as ::unity2::ClassIdentity>::class(), "ThrowOnInvalidArg", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
-                "ThrowOnInvalidArg",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BaseInvokableCall as ::unity2::ClassIdentity>::NAME,
+                    "ThrowOnInvalidArg",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(arg),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(arg), ::core::option::Option::Some(__mi_opaque))
         }
     }
+
     #[doc = "`AllowInvoke(crate::system::delegate::Delegate)` overload"]
-    pub fn allow_invoke(
-        delegate: impl ::core::convert::Into<crate::system::delegate::Delegate>,
-    ) -> bool {
-        unsafe {
-            __BaseInvokableCall_unity2_raw::allow_invoke(
-                ::core::convert::Into::into(delegate),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn allow_invoke(delegate: impl ::core::convert::Into<crate::system::delegate::Delegate>) -> bool {
+        unsafe { __BaseInvokableCall_unity2_raw::allow_invoke(::core::convert::Into::into(delegate), ::core::option::Option::None) }
     }
 }
 
@@ -346,9 +266,7 @@ pub trait IBaseInvokableCallMethods: IBaseInvokableCall {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <BaseInvokableCall as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BaseInvokableCall as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BaseInvokableCall_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -359,9 +277,7 @@ pub trait IBaseInvokableCallMethods: IBaseInvokableCall {
         function: impl ::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>,
     ) -> () {
         unsafe {
-            let __receiver = <BaseInvokableCall as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BaseInvokableCall as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BaseInvokableCall_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(target),
@@ -371,19 +287,10 @@ pub trait IBaseInvokableCallMethods: IBaseInvokableCall {
         }
     }
     #[doc = "`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]
-    fn invoke(
-        self,
-        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> () {
+    fn invoke(self, args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>) -> () {
         unsafe {
-            let __receiver = <BaseInvokableCall as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BaseInvokableCall_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BaseInvokableCall as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BaseInvokableCall_unity2_raw::invoke(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
     #[doc = "`Find(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]
@@ -393,9 +300,7 @@ pub trait IBaseInvokableCallMethods: IBaseInvokableCall {
         method: impl ::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>,
     ) -> bool {
         unsafe {
-            let __receiver = <BaseInvokableCall as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BaseInvokableCall as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BaseInvokableCall_unity2_raw::find(
                 __receiver,
                 ::core::convert::Into::into(target_obj),
@@ -425,10 +330,7 @@ impl BaseInvokableCall {
     }
 
     #[doc = "`.ctor(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` — overload selector"]
-    pub fn new_2(
-        target: crate::system::object::Object,
-        function: crate::system::reflection::methodinfo::MethodInfo,
-    ) -> Self {
+    pub fn new_2(target: crate::system::object::Object, function: crate::system::reflection::methodinfo::MethodInfo) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -444,9 +346,7 @@ impl BaseInvokableCall {
 #[cfg(feature = "unity_engine-events-baseinvokablecall")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BaseInvokableCall;
-    pub use super::IBaseInvokableCall;
-    pub use super::IBaseInvokableCallMethods;
+    pub use super::{BaseInvokableCall, IBaseInvokableCall, IBaseInvokableCallMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

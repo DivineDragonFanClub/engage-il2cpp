@@ -2,86 +2,33 @@
 
 #[cfg(feature = "app-unitinfoparamsetter-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct UnitInfoParamSetter_HPStockType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnitInfoParamSetter_HPStockType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl UnitInfoParamSetter_HPStockType {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn rampage() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn player() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn count() -> Self {
-            Self { value: 3 }
-        }
-    }
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_ForceType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct UnitInfoParamSetter_ForceType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for UnitInfoParamSetter_ForceType {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "UnitInfoParamSetter.ForceType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -92,10 +39,7 @@ mod __types {
 
     impl ::unity2::IlType for UnitInfoParamSetter_ForceType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -123,21 +67,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_WdwType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct UnitInfoParamSetter_WdwType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for UnitInfoParamSetter_WdwType {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "UnitInfoParamSetter.WdwType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -148,10 +85,7 @@ mod __types {
 
     impl ::unity2::IlType for UnitInfoParamSetter_WdwType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -186,6 +120,48 @@ mod __types {
 
         pub fn count() -> Self {
             Self { value: 7 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct UnitInfoParamSetter_HPStockType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType {
+        const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnitInfoParamSetter_HPStockType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl UnitInfoParamSetter_HPStockType {
+        pub fn normal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn rampage() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn player() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn count() -> Self {
+            Self { value: 3 }
         }
     }
 
@@ -301,21 +277,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_GodBuffType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct UnitInfoParamSetter_GodBuffType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for UnitInfoParamSetter_GodBuffType {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "UnitInfoParamSetter.GodBuffType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -326,10 +295,7 @@ mod __types {
 
     impl ::unity2::IlType for UnitInfoParamSetter_GodBuffType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -360,9 +326,7 @@ mod __UnitInfoParamSetter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -379,18 +343,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetTextColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_text_color(
@@ -400,26 +361,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         is_limit: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoParamSetter,
-            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoParamSetter, crate::tm_pro::textmeshprougui::TextMeshProUGUI, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_text_color::get_method_info().method_ptr);
         inner(this, text, dir, is_limit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_god_buff {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
@@ -436,18 +386,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetGodBuff",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetGodBuff",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_god_buff(
@@ -463,21 +410,20 @@ mod __UnitInfoParamSetter_unity2_raw {
             crate::unity_engine::ui::image::Image,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_god_buff::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_god_buff::get_method_info().method_ptr);
         inner(this, unit, image, dir, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_param_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitinfoparammanager :: UnitInfoParamManager_ValueType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
+                <crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoParamSetter as ::unity2::ClassIdentity>::class(),
                 "SetParamText",
@@ -489,18 +435,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetParamText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetParamText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_param_text(
@@ -518,28 +461,19 @@ mod __UnitInfoParamSetter_unity2_raw {
             crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_param_text::get_offset() as isize),
-        );
-        inner(
-            this,
-            text,
-            god_buff_image,
-            r#type,
-            ex_string,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_param_text::get_method_info().method_ptr);
+        inner(this, text, god_buff_image, r#type, ex_string, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_param_text_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: image :: Image as :: unity2 :: IlType > :: il_type () , < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ui::image::Image as ::unity2::IlType>::il_type(),
+                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoParamSetter as ::unity2::ClassIdentity>::class(),
                 "SetParamText",
@@ -551,18 +485,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetParamText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetParamText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_param_text_2(
@@ -578,22 +509,15 @@ mod __UnitInfoParamSetter_unity2_raw {
             crate::unity_engine::ui::image::Image,
             crate::app::capabilitydefinition::CapabilityDefinition_Type,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_param_text_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_param_text_2::get_method_info().method_ptr);
         inner(this, text, god_buff_image, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_icons {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoParamSetter as ::unity2::ClassIdentity>::class(),
                 "SetItemIcons",
@@ -605,45 +529,28 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetItemIcons",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetItemIcons",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item_icons(
-        this: UnitInfoParamSetter,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoParamSetter,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item_icons::get_offset() as isize),
-        );
+    pub unsafe fn set_item_icons(this: UnitInfoParamSetter, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitInfoParamSetter, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item_icons::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_efficacy_icons {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoParamSetter as ::unity2::ClassIdentity>::class(),
                 "SetEfficacyIcons",
@@ -655,43 +562,27 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetEfficacyIcons",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetEfficacyIcons",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_efficacy_icons(
-        this: UnitInfoParamSetter,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoParamSetter,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_efficacy_icons::get_offset() as isize),
-        );
+    pub unsafe fn set_efficacy_icons(this: UnitInfoParamSetter, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitInfoParamSetter, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_efficacy_icons::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_skill_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
@@ -708,18 +599,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetSkillIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetSkillIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_skill_icon(
@@ -729,28 +617,16 @@ mod __UnitInfoParamSetter_unity2_raw {
         is_active: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoParamSetter,
-            i32,
-            crate::app::skilldata::SkillData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_skill_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoParamSetter, i32, crate::app::skilldata::SkillData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_skill_icon::get_method_info().method_ptr);
         inner(this, icon_no, skill, is_active, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_skill_icons {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoParamSetter as ::unity2::ClassIdentity>::class(),
                 "SetSkillIcons",
@@ -762,43 +638,27 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetSkillIcons",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetSkillIcons",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_skill_icons(
-        this: UnitInfoParamSetter,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoParamSetter,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_skill_icons::get_offset() as isize),
-        );
+    pub unsafe fn set_skill_icons(this: UnitInfoParamSetter, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitInfoParamSetter, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_skill_icons::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_core {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -817,18 +677,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetUnit_Core",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetUnit_Core",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit_core(
@@ -848,20 +705,14 @@ mod __UnitInfoParamSetter_unity2_raw {
             bool,
             crate::app::godunit::GodUnit,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_core::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_unit_core::get_method_info().method_ptr);
         inner(this, unit, x, z, b_select_god, god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -878,18 +729,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit(
@@ -899,26 +747,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         z: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoParamSetter,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitInfoParamSetter, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
         inner(this, unit, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_select_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -936,18 +773,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetUnitSelectGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetUnitSelectGod",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit_select_god(
@@ -965,20 +799,14 @@ mod __UnitInfoParamSetter_unity2_raw {
             i32,
             crate::app::godunit::GodUnit,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_select_god::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_unit_select_god::get_method_info().method_ptr);
         inner(this, unit, x, z, god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -994,18 +822,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "GetEfficacySkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "GetEfficacySkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_efficacy_skill(
@@ -1013,24 +838,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         icon_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_efficacy_skill::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_efficacy_skill::get_method_info().method_ptr);
         inner(unit, icon_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_job_category {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1046,18 +862,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    "GetJobCategory",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        "GetJobCategory",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_job_category(
@@ -1065,24 +878,15 @@ mod __UnitInfoParamSetter_unity2_raw {
         icon_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job_category::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_job_category::get_method_info().method_ptr);
         inner(unit, icon_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitInfoParamSetter as ::unity2::ClassIdentity>::class(),
@@ -1095,30 +899,20 @@ mod __UnitInfoParamSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoParamSetter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: UnitInfoParamSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: UnitInfoParamSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitInfoParamSetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1138,6 +932,7 @@ impl UnitInfoParamSetter {
             )
         }
     }
+
     #[doc = "`GetJobCategory(crate::app::unit::Unit, i32)` overload"]
     pub fn get_job_category(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1163,9 +958,7 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
         is_limit: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::set_text_color(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -1183,9 +976,7 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
         dir: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::set_god_buff(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1200,15 +991,11 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
         self,
         text: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
         god_buff_image: impl ::core::convert::Into<crate::unity_engine::ui::image::Image>,
-        r#type: impl ::core::convert::Into<
-            crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType,
-        >,
+        r#type: impl ::core::convert::Into<crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType>,
         ex_string: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::set_param_text(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -1227,9 +1014,7 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
         r#type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::set_param_text_2(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -1242,27 +1027,15 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
     #[doc = "`SetItemIcons(crate::app::unit::Unit)` overload"]
     fn set_item_icons(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitInfoParamSetter_unity2_raw::set_item_icons(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoParamSetter_unity2_raw::set_item_icons(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetEfficacyIcons(crate::app::unit::Unit)` overload"]
     fn set_efficacy_icons(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitInfoParamSetter_unity2_raw::set_efficacy_icons(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoParamSetter_unity2_raw::set_efficacy_icons(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSkillIcon(i32, crate::app::skilldata::SkillData, bool)` overload"]
@@ -1273,9 +1046,7 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
         is_active: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::set_skill_icon(
                 __receiver,
                 ::core::convert::Into::into(icon_no),
@@ -1288,14 +1059,8 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
     #[doc = "`SetSkillIcons(crate::app::unit::Unit)` overload"]
     fn set_skill_icons(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitInfoParamSetter_unity2_raw::set_skill_icons(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoParamSetter_unity2_raw::set_skill_icons(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetUnit_Core(crate::app::unit::Unit, i32, i32, bool, crate::app::godunit::GodUnit)` overload"]
@@ -1308,9 +1073,7 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
         god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::set_unit_core(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1330,9 +1093,7 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
         z: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::set_unit(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1351,9 +1112,7 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
         god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::set_unit_select_god(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1367,9 +1126,7 @@ pub trait IUnitInfoParamSetterMethods: IUnitInfoParamSetter {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitInfoParamSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitInfoParamSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1397,32 +1154,26 @@ impl UnitInfoParamSetter {
 #[cfg(feature = "app-unitinfoparamsetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnitInfoParamSetter;
-    pub use super::IUnitInfoParamSetterMethods;
-    pub use super::UnitInfoParamSetter;
-    pub use super::UnitInfoParamSetter_ForceType;
-    pub use super::UnitInfoParamSetter_GodBuffType;
-    pub use super::UnitInfoParamSetter_HPStockType;
-    pub use super::UnitInfoParamSetter_WdwType;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IUnitInfoParamSetter, IUnitInfoParamSetterMethods, UnitInfoParamSetter, UnitInfoParamSetter_ForceType, UnitInfoParamSetter_GodBuffType,
+        UnitInfoParamSetter_HPStockType, UnitInfoParamSetter_WdwType,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,34 +2,33 @@
 
 #[cfg(feature = "unity_engine-timeline-trackasset-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::playables::playableasset::{IPlayableAsset, PlayableAsset};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            playables::playableasset::{IPlayableAsset, PlayableAsset},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/trackasset/TrackAsset_TransientBuildData.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
     pub struct TrackAsset_TransientBuildData {
-        pub track_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-        >,
-        pub clip_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-        >,
-        pub marker_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-        >,
+        pub track_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
+        pub clip_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::timelineclip::TimelineClip>,
+        pub marker_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>,
     }
 
     impl ::unity2::ClassIdentity for TrackAsset_TransientBuildData {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
         const NAME: &'static str = "TrackAsset.TransientBuildData";
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,10 +39,7 @@ mod __types {
 
     impl ::unity2::IlType for TrackAsset_TransientBuildData {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -89,14 +85,11 @@ mod __types {
         #[rename(name = "m_Parent")]
         pub m_parent: crate::unity_engine::playables::playableasset::PlayableAsset,
         #[rename(name = "m_Children")]
-        pub m_children: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::scriptableobject::ScriptableObject,
-        >,
+        pub m_children: crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>,
         #[rename(name = "m_ItemsHash")]
         pub m_items_hash: i32,
         #[rename(name = "m_ClipsCache")]
-        pub m_clips_cache:
-            ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>,
+        pub m_clips_cache: ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>,
         #[rename(name = "m_Start")]
         pub m_start: crate::unity_engine::timeline::discretetime::DiscreteTime,
         #[rename(name = "m_End")]
@@ -107,20 +100,16 @@ mod __types {
         #[rename(name = "s_EmptyCache")]
         pub s_empty_cache: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset>,
         #[rename(name = "m_ChildTrackCache")]
-        pub m_child_track_cache: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-        >,
+        pub m_child_track_cache:
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
         #[static_field]
         #[rename(name = "s_TrackBindingTypeAttributeCache")]
-        pub s_track_binding_type_attribute_cache:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::SystemType,
-                crate::unity_engine::timeline::trackbindingtypeattribute::TrackBindingTypeAttribute,
-            >,
-        #[rename(name = "m_Clips")]
-        pub m_clips: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
+        pub s_track_binding_type_attribute_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::SystemType,
+            crate::unity_engine::timeline::trackbindingtypeattribute::TrackBindingTypeAttribute,
         >,
+        #[rename(name = "m_Clips")]
+        pub m_clips: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::timelineclip::TimelineClip>,
         #[rename(name = "m_Markers")]
         pub m_markers: crate::unity_engine::timeline::markerlist::MarkerList,
     }
@@ -138,9 +127,7 @@ mod __TrackAsset_TransientBuildData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
@@ -153,33 +140,27 @@ mod __TrackAsset_TransientBuildData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset_TransientBuildData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
@@ -192,30 +173,20 @@ mod __TrackAsset_TransientBuildData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: TrackAsset_TransientBuildData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: TrackAsset_TransientBuildData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset_TransientBuildData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -232,9 +203,7 @@ impl TrackAsset_TransientBuildData {
 impl TrackAsset_TransientBuildData {
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
-        unsafe {
-            __TrackAsset_TransientBuildData_unity2_raw::clear(self, ::core::option::Option::None)
-        }
+        unsafe { __TrackAsset_TransientBuildData_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 
@@ -247,9 +216,7 @@ mod __TrackAsset_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_before_track_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -262,39 +229,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "OnBeforeTrackSerialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "OnBeforeTrackSerialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_before_track_serialize(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_before_track_serialize(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_before_track_serialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_before_track_serialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_after_track_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -307,41 +262,28 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "OnAfterTrackDeserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "OnAfterTrackDeserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_after_track_deserialize(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_after_track_deserialize(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_after_track_deserialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_after_track_deserialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_upgrade_from_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "OnUpgradeFromVersion",
@@ -353,40 +295,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "OnUpgradeFromVersion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "OnUpgradeFromVersion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_upgrade_from_version(
-        this: TrackAsset,
-        old_version: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_upgrade_from_version(this: TrackAsset, old_version: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_upgrade_from_version::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_upgrade_from_version::get_method_info().method_ptr);
         inner(this, old_version, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_i_serialization_callback_receiver_on_before_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -399,34 +328,30 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_i_serialization_callback_receiver_on_before_serialize(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_i_serialization_callback_receiver_on_before_serialize :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unity_engine_i_serialization_callback_receiver_on_before_serialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_i_serialization_callback_receiver_on_after_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -439,34 +364,30 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_i_serialization_callback_receiver_on_after_deserialize :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unity_engine_i_serialization_callback_receiver_on_after_deserialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_upgrade_to_latest_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -479,45 +400,32 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UpgradeToLatestVersion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UpgradeToLatestVersion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn upgrade_to_latest_version(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn upgrade_to_latest_version(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_upgrade_to_latest_version::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_upgrade_to_latest_version::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_on_clip_playable_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_3::Action_3<
-                    crate::unity_engine::timeline::timelineclip::TimelineClip,
-                    crate::unity_engine::gameobject::GameObject,
-                    crate::unity_engine::playables::playable::Playable,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_3::Action_3<
+                crate::unity_engine::timeline::timelineclip::TimelineClip,
+                crate::unity_engine::gameobject::GameObject,
+                crate::unity_engine::playables::playable::Playable,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "add_OnClipPlayableCreate",
@@ -529,18 +437,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "add_OnClipPlayableCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "add_OnClipPlayableCreate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_on_clip_playable_create(
@@ -558,26 +463,19 @@ mod __TrackAsset_unity2_raw {
                 crate::unity_engine::playables::playable::Playable,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_on_clip_playable_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_on_clip_playable_create::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_on_clip_playable_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_3::Action_3<
-                    crate::unity_engine::timeline::timelineclip::TimelineClip,
-                    crate::unity_engine::gameobject::GameObject,
-                    crate::unity_engine::playables::playable::Playable,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_3::Action_3<
+                crate::unity_engine::timeline::timelineclip::TimelineClip,
+                crate::unity_engine::gameobject::GameObject,
+                crate::unity_engine::playables::playable::Playable,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "remove_OnClipPlayableCreate",
@@ -589,18 +487,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "remove_OnClipPlayableCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "remove_OnClipPlayableCreate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_on_clip_playable_create(
@@ -618,26 +513,19 @@ mod __TrackAsset_unity2_raw {
                 crate::unity_engine::playables::playable::Playable,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_on_clip_playable_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_remove_on_clip_playable_create::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_on_track_animation_playable_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_3::Action_3<
-                    crate::unity_engine::timeline::trackasset::TrackAsset,
-                    crate::unity_engine::gameobject::GameObject,
-                    crate::unity_engine::playables::playable::Playable,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_3::Action_3<
+                crate::unity_engine::timeline::trackasset::TrackAsset,
+                crate::unity_engine::gameobject::GameObject,
+                crate::unity_engine::playables::playable::Playable,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "add_OnTrackAnimationPlayableCreate",
@@ -649,18 +537,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "add_OnTrackAnimationPlayableCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "add_OnTrackAnimationPlayableCreate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_on_track_animation_playable_create(
@@ -678,26 +563,19 @@ mod __TrackAsset_unity2_raw {
                 crate::unity_engine::playables::playable::Playable,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_on_track_animation_playable_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_on_track_animation_playable_create::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_on_track_animation_playable_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_3::Action_3<
-                    crate::unity_engine::timeline::trackasset::TrackAsset,
-                    crate::unity_engine::gameobject::GameObject,
-                    crate::unity_engine::playables::playable::Playable,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_3::Action_3<
+                crate::unity_engine::timeline::trackasset::TrackAsset,
+                crate::unity_engine::gameobject::GameObject,
+                crate::unity_engine::playables::playable::Playable,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "remove_OnTrackAnimationPlayableCreate",
@@ -709,18 +587,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "remove_OnTrackAnimationPlayableCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "remove_OnTrackAnimationPlayableCreate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_on_track_animation_playable_create(
@@ -738,20 +613,14 @@ mod __TrackAsset_unity2_raw {
                 crate::unity_engine::playables::playable::Playable,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_on_track_animation_playable_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_remove_on_track_animation_playable_create::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -764,81 +633,54 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_start(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_start(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                "get_end",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TrackAsset as ::unity2::ClassIdentity>::class(), "get_end", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_end",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_end",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_end(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -851,39 +693,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_duration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_duration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_duration(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_duration(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_muted {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -896,41 +726,28 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_muted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_muted",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_muted(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_muted(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_muted::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_muted::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_muted {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "set_muted",
@@ -942,40 +759,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "set_muted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "set_muted",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_muted(
-        this: TrackAsset,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_muted(this: TrackAsset, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_muted::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_muted::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_muted_in_hierarchy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -988,39 +792,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_mutedInHierarchy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_mutedInHierarchy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_muted_in_hierarchy(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_muted_in_hierarchy(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_muted_in_hierarchy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_muted_in_hierarchy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_timeline_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1033,42 +825,30 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_timelineAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_timelineAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_timeline_asset(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::timelineasset::TimelineAsset {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::timeline::timelineasset::TimelineAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_timeline_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::timelineasset::TimelineAsset =
+            ::core::mem::transmute(__lookup_get_timeline_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_parent {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1081,44 +861,32 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_parent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_parent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_parent(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playableasset::PlayableAsset {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playableasset::PlayableAsset =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_parent::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playableasset::PlayableAsset =
+            ::core::mem::transmute(__lookup_get_parent::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_parent {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableasset :: PlayableAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playableasset::PlayableAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "set_parent",
@@ -1130,18 +898,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "set_parent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "set_parent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_parent(
@@ -1149,66 +914,49 @@ mod __TrackAsset_unity2_raw {
         value: crate::unity_engine::playables::playableasset::PlayableAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::playables::playableasset::PlayableAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_parent::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::playables::playableasset::PlayableAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_parent::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clips {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                "GetClips",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TrackAsset as ::unity2::ClassIdentity>::class(), "GetClips", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetClips",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetClips",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clips(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::timeline::timelineclip::TimelineClip,
-    > {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_clips :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::timelineclip::TimelineClip> {
+        let inner: extern "C" fn(
+            TrackAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::unity_engine::timeline::timelineclip::TimelineClip,
+        > = ::core::mem::transmute(__lookup_get_clips::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1221,39 +969,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_isEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_isEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_empty(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_empty(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_empty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_clips {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1266,39 +1002,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_hasClips",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_hasClips",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_clips(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_clips(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_clips::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_clips::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1311,39 +1035,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_hasCurves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_hasCurves",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_curves(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_curves(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_curves::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_curves::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_sub_track {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1356,39 +1068,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_isSubTrack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_isSubTrack",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_sub_track(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_sub_track(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_sub_track::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_sub_track::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_outputs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1401,36 +1101,34 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_outputs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_outputs",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_outputs(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::playables::playablebinding::PlayableBinding,
-    > {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_outputs :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> {
+        let inner: extern "C" fn(
+            TrackAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::unity_engine::playables::playablebinding::PlayableBinding,
+        > = ::core::mem::transmute(__lookup_get_outputs::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_child_tracks {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1443,36 +1141,34 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetChildTracks",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetChildTracks",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_child_tracks(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::timeline::trackasset::TrackAsset,
-    > {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_child_tracks :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset> {
+        let inner: extern "C" fn(
+            TrackAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::unity_engine::timeline::trackasset::TrackAsset,
+        > = ::core::mem::transmute(__lookup_get_child_tracks::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_playable_typename {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1485,41 +1181,28 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_customPlayableTypename",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_customPlayableTypename",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_custom_playable_typename(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_custom_playable_typename(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_custom_playable_typename::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_custom_playable_typename::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_custom_playable_typename {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "set_customPlayableTypename",
@@ -1531,18 +1214,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "set_customPlayableTypename",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "set_customPlayableTypename",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_custom_playable_typename(
@@ -1550,24 +1230,15 @@ mod __TrackAsset_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_custom_playable_typename::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_custom_playable_typename::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1580,44 +1251,29 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_curves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_curves",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_curves(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animationclip::AnimationClip {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_curves::get_offset() as isize),
-        );
+    pub unsafe fn get_curves(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::animationclip::AnimationClip {
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::animationclip::AnimationClip =
+            ::core::mem::transmute(__lookup_get_curves::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "set_curves",
@@ -1629,18 +1285,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "set_curves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "set_curves",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_curves(
@@ -1648,24 +1301,15 @@ mod __TrackAsset_unity2_raw {
         value: crate::unity_engine::animationclip::AnimationClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::animationclip::AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_curves::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_curves::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_timeline_i_curves_owner_get_default_curves_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1678,34 +1322,30 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_timeline_i_curves_owner_get_default_curves_name(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_timeline_i_curves_owner_get_default_curves_name :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_unity_engine_timeline_i_curves_owner_get_default_curves_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_timeline_i_curves_owner_get_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1718,43 +1358,30 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.Timeline.ICurvesOwner.get_asset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.Timeline.ICurvesOwner.get_asset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_timeline_i_curves_owner_get_asset(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_unity_engine_timeline_i_curves_owner_get_asset::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_unity_engine_timeline_i_curves_owner_get_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_timeline_i_curves_owner_get_asset_owner {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1767,44 +1394,30 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.Timeline.ICurvesOwner.get_assetOwner",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.Timeline.ICurvesOwner.get_assetOwner",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_timeline_i_curves_owner_get_asset_owner(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_unity_engine_timeline_i_curves_owner_get_asset_owner::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_unity_engine_timeline_i_curves_owner_get_asset_owner::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_timeline_i_curves_owner_get_target_track {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1817,44 +1430,30 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.Timeline.ICurvesOwner.get_targetTrack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.Timeline.ICurvesOwner.get_targetTrack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_timeline_i_curves_owner_get_target_track(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::trackasset::TrackAsset {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::timeline::trackasset::TrackAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_unity_engine_timeline_i_curves_owner_get_target_track::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset =
+            ::core::mem::transmute(__lookup_unity_engine_timeline_i_curves_owner_get_target_track::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sub_tracks_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1867,45 +1466,34 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_subTracksObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_subTracksObjects",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sub_tracks_objects(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::scriptableobject::ScriptableObject,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> {
         let inner: extern "C" fn(
             TrackAsset,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::scriptableobject::ScriptableObject,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sub_tracks_objects::get_offset() as isize),
-        );
+        )
+            -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> =
+            ::core::mem::transmute(__lookup_get_sub_tracks_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_locked {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -1918,41 +1506,28 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_locked",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_locked",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_locked(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_locked(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_locked::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_locked::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_locked {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "set_locked",
@@ -1964,40 +1539,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "set_locked",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "set_locked",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_locked(
-        this: TrackAsset,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_locked(this: TrackAsset, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_locked::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_locked::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_locked_in_hierarchy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -2010,39 +1572,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_lockedInHierarchy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_lockedInHierarchy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_locked_in_hierarchy(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_locked_in_hierarchy(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_locked_in_hierarchy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_locked_in_hierarchy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_supports_notifications {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -2055,39 +1605,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "get_supportsNotifications",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "get_supportsNotifications",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_supports_notifications(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_supports_notifications(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_supports_notifications::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_supports_notifications::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -2100,41 +1638,28 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "__internalAwake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "__internalAwake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_awake(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn internal_awake(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_internal_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_internal_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreateCurves",
@@ -2146,44 +1671,32 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateCurves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateCurves",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_curves(
-        this: TrackAsset,
-        curves_clip_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_curves::get_offset() as isize),
-        );
+    pub unsafe fn create_curves(this: TrackAsset, curves_clip_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TrackAsset, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_curves::get_method_info().method_ptr);
         inner(this, curves_clip_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_track_mixer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreateTrackMixer",
@@ -2195,18 +1708,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateTrackMixer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateTrackMixer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_track_mixer(
@@ -2222,21 +1732,18 @@ mod __TrackAsset_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_track_mixer::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_track_mixer::get_method_info().method_ptr);
         inner(this, graph, go, input_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_playable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreatePlayable",
@@ -2248,18 +1755,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreatePlayable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreatePlayable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_playable(
@@ -2273,20 +1777,14 @@ mod __TrackAsset_unity2_raw {
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_playable::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_playable::get_method_info().method_ptr);
         inner(this, graph, go, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_default_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -2299,43 +1797,32 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateDefaultClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateDefaultClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_default_clip(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_default_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::timelineclip::TimelineClip =
+            ::core::mem::transmute(__lookup_create_default_clip::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "DeleteClip",
@@ -2347,18 +1834,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "DeleteClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "DeleteClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn delete_clip(
@@ -2366,24 +1850,15 @@ mod __TrackAsset_unity2_raw {
         clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_delete_clip::get_method_info().method_ptr);
         inner(this, clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_marker {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <f64 as ::unity2::IlType>::il_type(),
@@ -2399,18 +1874,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateMarker",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateMarker",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_marker(
@@ -2419,17 +1891,22 @@ mod __TrackAsset_unity2_raw {
         time: f64,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::imarker_interface::IMarker_Interface {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: SystemType , f64 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_marker :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TrackAsset,
+            ::unity2::SystemType,
+            f64,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::timeline::imarker_interface::IMarker_Interface =
+            ::core::mem::transmute(__lookup_create_marker::get_method_info().method_ptr);
         inner(this, r#type, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_marker {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::imarker_interface::IMarker_Interface as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "DeleteMarker",
@@ -2441,18 +1918,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "DeleteMarker",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "DeleteMarker",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn delete_marker(
@@ -2460,24 +1934,15 @@ mod __TrackAsset_unity2_raw {
         marker: crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_marker::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::timeline::imarker_interface::IMarker_Interface, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_delete_marker::get_method_info().method_ptr);
         inner(this, marker, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_markers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -2490,36 +1955,34 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetMarkers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetMarkers",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_markers(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-    > {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_markers :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface> {
+        let inner: extern "C" fn(
+            TrackAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
+        > = ::core::mem::transmute(__lookup_get_markers::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_marker_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -2532,41 +1995,28 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetMarkerCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetMarkerCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_marker_count(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_marker_count(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_marker_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_marker_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_marker {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "GetMarker",
@@ -2578,18 +2028,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetMarker",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetMarker",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_marker(
@@ -2597,18 +2044,16 @@ mod __TrackAsset_unity2_raw {
         idx: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::imarker_interface::IMarker_Interface {
-        let inner : extern "C" fn (TrackAsset , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_marker :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TrackAsset, i32, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::imarker_interface::IMarker_Interface =
+            ::core::mem::transmute(__lookup_get_marker::get_method_info().method_ptr);
         inner(this, idx, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_clip_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreateClip",
@@ -2620,18 +2065,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_clip_2(
@@ -2643,23 +2085,15 @@ mod __TrackAsset_unity2_raw {
             TrackAsset,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_clip_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(__lookup_create_clip_2::get_method_info().method_ptr);
         inner(this, requested_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_and_add_new_clip_of_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreateAndAddNewClipOfType",
@@ -2671,18 +2105,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateAndAddNewClipOfType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateAndAddNewClipOfType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_and_add_new_clip_of_type(
@@ -2694,23 +2125,16 @@ mod __TrackAsset_unity2_raw {
             TrackAsset,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_and_add_new_clip_of_type::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::timeline::timelineclip::TimelineClip =
+            ::core::mem::transmute(__lookup_create_and_add_new_clip_of_type::get_method_info().method_ptr);
         inner(this, requested_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_clip_of_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreateClipOfType",
@@ -2722,18 +2146,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateClipOfType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateClipOfType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_clip_of_type(
@@ -2745,22 +2166,17 @@ mod __TrackAsset_unity2_raw {
             TrackAsset,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_clip_of_type::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::timeline::timelineclip::TimelineClip =
+            ::core::mem::transmute(__lookup_create_clip_of_type::get_method_info().method_ptr);
         inner(this, requested_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_clip_from_playable_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: iplayableasset_interface :: IPlayableAsset_Interface as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::iplayableasset_interface::IPlayableAsset_Interface as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreateClipFromPlayableAsset",
@@ -2772,18 +2188,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateClipFromPlayableAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateClipFromPlayableAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_clip_from_playable_asset(
@@ -2795,22 +2208,17 @@ mod __TrackAsset_unity2_raw {
             TrackAsset,
             crate::unity_engine::playables::iplayableasset_interface::IPlayableAsset_Interface,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_clip_from_playable_asset::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::timeline::timelineclip::TimelineClip =
+            ::core::mem::transmute(__lookup_create_clip_from_playable_asset::get_method_info().method_ptr);
         inner(this, asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_clip_from_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scriptableobject :: ScriptableObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::scriptableobject::ScriptableObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreateClipFromAsset",
@@ -2822,18 +2230,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateClipFromAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateClipFromAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_clip_from_asset(
@@ -2845,21 +2250,15 @@ mod __TrackAsset_unity2_raw {
             TrackAsset,
             crate::unity_engine::scriptableobject::ScriptableObject,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_clip_from_asset::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::timeline::timelineclip::TimelineClip =
+            ::core::mem::transmute(__lookup_create_clip_from_asset::get_method_info().method_ptr);
         inner(this, playable_asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_markers_raw {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -2872,36 +2271,34 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetMarkersRaw",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetMarkersRaw",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_markers_raw(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::scriptableobject::ScriptableObject,
-    > {
-        let inner : extern "C" fn (TrackAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: scriptableobject :: ScriptableObject > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_markers_raw :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::scriptableobject::ScriptableObject> {
+        let inner: extern "C" fn(
+            TrackAsset,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::unity_engine::scriptableobject::ScriptableObject,
+        > = ::core::mem::transmute(__lookup_get_markers_raw::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_markers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -2914,40 +2311,29 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "ClearMarkers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "ClearMarkers",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_markers(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_markers(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_markers::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_markers::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_marker {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scriptableobject :: ScriptableObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::scriptableobject::ScriptableObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "AddMarker",
@@ -2959,18 +2345,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "AddMarker",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "AddMarker",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_marker(
@@ -2978,25 +2361,17 @@ mod __TrackAsset_unity2_raw {
         e: crate::unity_engine::scriptableobject::ScriptableObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::scriptableobject::ScriptableObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_marker::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::scriptableobject::ScriptableObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_marker::get_method_info().method_ptr);
         inner(this, e, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_marker_raw {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scriptableobject :: ScriptableObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::scriptableobject::ScriptableObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "DeleteMarkerRaw",
@@ -3008,18 +2383,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "DeleteMarkerRaw",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "DeleteMarkerRaw",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn delete_marker_raw(
@@ -3027,24 +2399,15 @@ mod __TrackAsset_unity2_raw {
         marker: crate::unity_engine::scriptableobject::ScriptableObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::scriptableobject::ScriptableObject,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_marker_raw::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::scriptableobject::ScriptableObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_delete_marker_raw::get_method_info().method_ptr);
         inner(this, marker, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_time_range_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3057,63 +2420,43 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetTimeRangeHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetTimeRangeHash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_time_range_hash(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_time_range_hash(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_time_range_hash::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_time_range_hash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                "AddClip",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TrackAsset as ::unity2::ClassIdentity>::class(), "AddClip", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "AddClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "AddClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_clip(
@@ -3121,25 +2464,21 @@ mod __TrackAsset_unity2_raw {
         new_clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_clip::get_method_info().method_ptr);
         inner(this, new_clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_notifications_playable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreateNotificationsPlayable",
@@ -3151,18 +2490,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateNotificationsPlayable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateNotificationsPlayable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_notifications_playable(
@@ -3180,27 +2516,15 @@ mod __TrackAsset_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::playables::playable::Playable,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_notifications_playable::get_offset() as isize),
-        );
-        inner(
-            this,
-            graph,
-            mixer_playable,
-            go,
-            timeline_playable,
-            __unity2_method_info,
-        )
+        ) -> crate::unity_engine::playables::playable::Playable =
+            ::core::mem::transmute(__lookup_create_notifications_playable::get_method_info().method_ptr);
+        inner(this, graph, mixer_playable, go, timeline_playable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_playable_graph {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: intervaltree_1 :: IntervalTree_1 < crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3213,27 +2537,22 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreatePlayableGraph",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreatePlayableGraph",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_playable_graph(
         this: TrackAsset,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         go: crate::unity_engine::gameobject::GameObject,
-        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-            crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-        >,
+        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         timeline_playable: crate::unity_engine::playables::playable::Playable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playable::Playable {
@@ -3241,32 +2560,18 @@ mod __TrackAsset_unity2_raw {
             TrackAsset,
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
             crate::unity_engine::playables::playable::Playable,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_playable_graph::get_offset() as isize),
-        );
-        inner(
-            this,
-            graph,
-            go,
-            tree,
-            timeline_playable,
-            __unity2_method_info,
-        )
+        ) -> crate::unity_engine::playables::playable::Playable =
+            ::core::mem::transmute(__lookup_create_playable_graph::get_method_info().method_ptr);
+        inner(this, graph, go, tree, timeline_playable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compile_clips {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: intervaltree_1 :: IntervalTree_1 < crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3279,18 +2584,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CompileClips",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CompileClips",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compile_clips(
@@ -3300,41 +2602,28 @@ mod __TrackAsset_unity2_raw {
         timeline_clips: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
             crate::unity_engine::timeline::timelineclip::TimelineClip,
         >,
-        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-            crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-        >,
+        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playable::Playable {
         let inner: extern "C" fn(
             TrackAsset,
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::gameobject::GameObject,
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::timeline::timelineclip::TimelineClip,
-            >,
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::timelineclip::TimelineClip>,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile_clips::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_compile_clips::get_method_info().method_ptr);
         inner(this, graph, go, timeline_clips, tree, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_gather_compilable_tracks {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
                     crate::unity_engine::timeline::trackasset::TrackAsset,
-                > as ::unity2::IlType>::il_type(),
-            ];
+                > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "GatherCompilableTracks",
@@ -3346,51 +2635,37 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GatherCompilableTracks",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GatherCompilableTracks",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn gather_compilable_tracks(
         this: TrackAsset,
-        tracks: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-        >,
+        tracks: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::trackasset::TrackAsset>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TrackAsset,
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::timeline::trackasset::TrackAsset,
-            >,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::trackasset::TrackAsset>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_gather_compilable_tracks::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_gather_compilable_tracks::get_method_info().method_ptr);
         inner(this, tracks, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_gather_notificiations {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "GatherNotificiations",
@@ -3402,47 +2677,34 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GatherNotificiations",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GatherNotificiations",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn gather_notificiations(
         this: TrackAsset,
-        markers: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-        >,
+        markers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TrackAsset,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_gather_notificiations::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_gather_notificiations::get_method_info().method_ptr);
         inner(this, markers, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create_clip_playable_graph {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: intervaltree_1 :: IntervalTree_1 < crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3455,58 +2717,40 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "OnCreateClipPlayableGraph",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "OnCreateClipPlayableGraph",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_create_clip_playable_graph(
         this: TrackAsset,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         go: crate::unity_engine::gameobject::GameObject,
-        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-            crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-        >,
+        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playable::Playable {
         let inner: extern "C" fn(
             TrackAsset,
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_create_clip_playable_graph::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable =
+            ::core::mem::transmute(__lookup_on_create_clip_playable_graph::get_method_info().method_ptr);
         inner(this, graph, go, tree, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_configure_track_animation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                    crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-                > as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: intervaltree_1 :: IntervalTree_1 < crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "ConfigureTrackAnimation",
@@ -3518,51 +2762,38 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "ConfigureTrackAnimation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "ConfigureTrackAnimation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure_track_animation(
         this: TrackAsset,
-        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-            crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-        >,
+        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         go: crate::unity_engine::gameobject::GameObject,
         blend: crate::unity_engine::playables::playable::Playable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TrackAsset,
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::playables::playable::Playable,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure_track_animation::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_configure_track_animation::get_method_info().method_ptr);
         inner(this, tree, go, blend, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sort_clips {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3575,39 +2806,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "SortClips",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "SortClips",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn sort_clips(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn sort_clips(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_sort_clips::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_sort_clips::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_clips_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3620,39 +2839,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "ClearClipsInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "ClearClipsInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_clips_internal(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_clips_internal(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_clips_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_clips_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_sub_tracks_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3665,39 +2872,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "ClearSubTracksInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "ClearSubTracksInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_sub_tracks_internal(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_sub_tracks_internal(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_sub_tracks_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_sub_tracks_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_clip_move {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3710,39 +2905,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "OnClipMove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "OnClipMove",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_clip_move(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_clip_move(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_clip_move::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_clip_move::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_new_clip_container_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -3755,66 +2938,46 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreateNewClipContainerInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreateNewClipContainerInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_new_clip_container_internal(
         this: TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::timeline::timelineclip::TimelineClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_new_clip_container_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::timelineclip::TimelineClip =
+            ::core::mem::transmute(__lookup_create_new_clip_container_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_child {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                "AddChild",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TrackAsset as ::unity2::ClassIdentity>::class(), "AddChild", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "AddChild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "AddChild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_child(
@@ -3822,25 +2985,17 @@ mod __TrackAsset_unity2_raw {
         child: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_child::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_child::get_method_info().method_ptr);
         inner(this, child, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_last_track_before {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "MoveLastTrackBefore",
@@ -3852,18 +3007,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "MoveLastTrackBefore",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "MoveLastTrackBefore",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn move_last_track_before(
@@ -3871,25 +3023,17 @@ mod __TrackAsset_unity2_raw {
         asset: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_last_track_before::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_move_last_track_before::get_method_info().method_ptr);
         inner(this, asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_sub_track {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "RemoveSubTrack",
@@ -3901,18 +3045,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "RemoveSubTrack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "RemoveSubTrack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_sub_track(
@@ -3920,25 +3061,17 @@ mod __TrackAsset_unity2_raw {
         child: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_sub_track::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remove_sub_track::get_method_info().method_ptr);
         inner(this, child, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "RemoveClip",
@@ -3950,18 +3083,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "RemoveClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "RemoveClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_clip(
@@ -3969,28 +3099,16 @@ mod __TrackAsset_unity2_raw {
         clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_clip::get_method_info().method_ptr);
         inner(this, clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_evaluation_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f64 as ::unity2::IlType>::il_type(),
-                <f64 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type(), <f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "GetEvaluationTime",
@@ -4002,18 +3120,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetEvaluationTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetEvaluationTime",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_evaluation_time(
@@ -4023,24 +3138,15 @@ mod __TrackAsset_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(TrackAsset, *mut f64, *mut f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_evaluation_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_evaluation_time::get_method_info().method_ptr);
         inner(this, out_start, out_duration, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sequence_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f64 as ::unity2::IlType>::il_type(),
-                <f64 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type(), <f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "GetSequenceTime",
@@ -4052,18 +3158,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetSequenceTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetSequenceTime",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sequence_time(
@@ -4073,21 +3176,18 @@ mod __TrackAsset_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(TrackAsset, *mut f64, *mut f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sequence_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sequence_time::get_method_info().method_ptr);
         inner(this, out_start, out_duration, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_gather_properties {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playabledirector :: PlayableDirector as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playabledirector::PlayableDirector as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::timeline::ipropertycollector::IPropertyCollector as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "GatherProperties",
@@ -4099,18 +3199,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GatherProperties",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GatherProperties",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn gather_properties(
@@ -4124,21 +3221,16 @@ mod __TrackAsset_unity2_raw {
             crate::unity_engine::playables::playabledirector::PlayableDirector,
             crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_gather_properties::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_gather_properties::get_method_info().method_ptr);
         inner(this, director, driver, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_object_binding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playabledirector :: PlayableDirector as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playabledirector::PlayableDirector as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "GetGameObjectBinding",
@@ -4150,18 +3242,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetGameObjectBinding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetGameObjectBinding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_game_object_binding(
@@ -4173,22 +3262,15 @@ mod __TrackAsset_unity2_raw {
             TrackAsset,
             crate::unity_engine::playables::playabledirector::PlayableDirector,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_game_object_binding::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_get_game_object_binding::get_method_info().method_ptr);
         inner(this, director, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate_clip_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "ValidateClipType",
@@ -4200,44 +3282,29 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "ValidateClipType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "ValidateClipType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn validate_clip_type(
-        this: TrackAsset,
-        clip_type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TrackAsset,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_validate_clip_type::get_offset() as isize),
-        );
+    pub unsafe fn validate_clip_type(this: TrackAsset, clip_type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TrackAsset, ::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_validate_clip_type::get_method_info().method_ptr);
         inner(this, clip_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "OnCreateClip",
@@ -4249,18 +3316,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "OnCreateClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "OnCreateClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_create_clip(
@@ -4268,24 +3332,15 @@ mod __TrackAsset_unity2_raw {
         clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TrackAsset,
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_create_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TrackAsset, crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_create_clip::get_method_info().method_ptr);
         inner(this, clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4298,39 +3353,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UpdateDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UpdateDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_duration(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_duration(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calculate_items_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4343,40 +3386,32 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CalculateItemsHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CalculateItemsHash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calculate_items_hash(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn calculate_items_hash(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calculate_items_hash::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calculate_items_hash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_playable_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "CreatePlayable",
@@ -4388,18 +3423,15 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CreatePlayable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CreatePlayable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_playable_2(
@@ -4415,20 +3447,14 @@ mod __TrackAsset_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::timeline::timelineclip::TimelineClip,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_playable_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_playable_2::get_method_info().method_ptr);
         inner(this, graph, game_object, clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invalidate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4441,39 +3467,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "Invalidate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "Invalidate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invalidate(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn invalidate(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invalidate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invalidate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_notification_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4486,39 +3500,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetNotificationDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetNotificationDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_notification_duration(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_notification_duration(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_notification_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_notification_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_compile_clips {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4531,39 +3533,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CanCompileClips",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CanCompileClips",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_compile_clips(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn can_compile_clips(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_compile_clips::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_can_compile_clips::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_compilable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4576,39 +3566,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "IsCompilable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "IsCompilable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_compilable(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_compilable(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_compilable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_compilable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_child_track_cache {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4621,81 +3599,53 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "UpdateChildTrackCache",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "UpdateChildTrackCache",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_child_track_cache(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_child_track_cache(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_child_track_cache::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_child_track_cache::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                "Hash",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TrackAsset as ::unity2::ClassIdentity>::class(), "Hash", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "Hash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "Hash",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hash(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hash::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_hash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clips_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4708,42 +3658,29 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetClipsHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetClipsHash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_clips_hash(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_clips_hash(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_clips_hash::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_clips_hash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_animation_clip_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
                 "GetAnimationClipHash",
@@ -4755,41 +3692,30 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "GetAnimationClipHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "GetAnimationClipHash",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_animation_clip_hash(
         clip: crate::unity_engine::animationclip::AnimationClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationclip::AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_animation_clip_hash::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_animation_clip_hash::get_method_info().method_ptr);
         inner(clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_has_notifications {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4802,39 +3728,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "HasNotifications",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "HasNotifications",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn has_notifications(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn has_notifications(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_has_notifications::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_has_notifications::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_compile_notifications {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4847,39 +3761,27 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CanCompileNotifications",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CanCompileNotifications",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_compile_notifications(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn can_compile_notifications(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_compile_notifications::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_can_compile_notifications::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_compile_clips_recursive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrackAsset as ::unity2::ClassIdentity>::class(),
@@ -4892,113 +3794,72 @@ mod __TrackAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    "CanCompileClipsRecursive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        "CanCompileClipsRecursive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_compile_clips_recursive(
-        this: TrackAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn can_compile_clips_recursive(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_compile_clips_recursive::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_can_compile_clips_recursive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TrackAsset as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: TrackAsset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TrackAsset as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -5015,13 +3876,9 @@ impl TrackAsset {
             >,
         >,
     ) -> () {
-        unsafe {
-            __TrackAsset_unity2_raw::add_on_clip_playable_create(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TrackAsset_unity2_raw::add_on_clip_playable_create(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`remove_OnClipPlayableCreate(crate::system::action_3::Action_3<crate::unity_engine::timeline::timelineclip::TimelineClip,crate::unity_engine::gameobject::GameObject,crate::unity_engine::playables::playable::Playable>)` overload"]
     pub fn remove_on_clip_playable_create(
         value: impl ::core::convert::Into<
@@ -5032,13 +3889,9 @@ impl TrackAsset {
             >,
         >,
     ) -> () {
-        unsafe {
-            __TrackAsset_unity2_raw::remove_on_clip_playable_create(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TrackAsset_unity2_raw::remove_on_clip_playable_create(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`add_OnTrackAnimationPlayableCreate(crate::system::action_3::Action_3<crate::unity_engine::timeline::trackasset::TrackAsset,crate::unity_engine::gameobject::GameObject,crate::unity_engine::playables::playable::Playable>)` overload"]
     pub fn add_on_track_animation_playable_create(
         value: impl ::core::convert::Into<
@@ -5049,13 +3902,9 @@ impl TrackAsset {
             >,
         >,
     ) -> () {
-        unsafe {
-            __TrackAsset_unity2_raw::add_on_track_animation_playable_create(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TrackAsset_unity2_raw::add_on_track_animation_playable_create(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`remove_OnTrackAnimationPlayableCreate(crate::system::action_3::Action_3<crate::unity_engine::timeline::trackasset::TrackAsset,crate::unity_engine::gameobject::GameObject,crate::unity_engine::playables::playable::Playable>)` overload"]
     pub fn remove_on_track_animation_playable_create(
         value: impl ::core::convert::Into<
@@ -5067,23 +3916,15 @@ impl TrackAsset {
         >,
     ) -> () {
         unsafe {
-            __TrackAsset_unity2_raw::remove_on_track_animation_playable_create(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            __TrackAsset_unity2_raw::remove_on_track_animation_playable_create(::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
+
     #[doc = "`GetAnimationClipHash(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    pub fn get_animation_clip_hash(
-        clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
-    ) -> i32 {
-        unsafe {
-            __TrackAsset_unity2_raw::get_animation_clip_hash(
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_animation_clip_hash(clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>) -> i32 {
+        unsafe { __TrackAsset_unity2_raw::get_animation_clip_hash(::core::convert::Into::into(clip), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TrackAsset_unity2_raw::cctor(::core::option::Option::None) }
@@ -5095,434 +3936,266 @@ pub trait ITrackAssetMethods: ITrackAsset {
     #[doc = "`OnBeforeTrackSerialize()` overload"]
     fn on_before_track_serialize(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::on_before_track_serialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::on_before_track_serialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnAfterTrackDeserialize()` overload"]
     fn on_after_track_deserialize(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::on_after_track_deserialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::on_after_track_deserialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnUpgradeFromVersion(i32)` overload"]
     fn on_upgrade_from_version(self, old_version: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::on_upgrade_from_version(
-                __receiver,
-                ::core::convert::Into::into(old_version),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::on_upgrade_from_version(__receiver, ::core::convert::Into::into(old_version), ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]
     fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw :: unity_engine_i_serialization_callback_receiver_on_before_serialize (__receiver , :: core :: option :: Option :: None)
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::unity_engine_i_serialization_callback_receiver_on_before_serialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]
     fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw :: unity_engine_i_serialization_callback_receiver_on_after_deserialize (__receiver , :: core :: option :: Option :: None)
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::unity_engine_i_serialization_callback_receiver_on_after_deserialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpgradeToLatestVersion()` overload"]
     fn upgrade_to_latest_version(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::upgrade_to_latest_version(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::upgrade_to_latest_version(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_start()` overload"]
     fn get_start(self) -> f64 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_end()` overload"]
     fn get_end(self) -> f64 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_end(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_duration()` overload"]
     fn get_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_muted()` overload"]
     fn get_muted(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_muted(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_muted(bool)` overload"]
     fn set_muted(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::set_muted(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::set_muted(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_mutedInHierarchy()` overload"]
     fn get_muted_in_hierarchy(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::get_muted_in_hierarchy(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::get_muted_in_hierarchy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_timelineAsset()` overload"]
     fn get_timeline_asset(self) -> crate::unity_engine::timeline::timelineasset::TimelineAsset {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_timeline_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_parent()` overload"]
     fn get_parent(self) -> crate::unity_engine::playables::playableasset::PlayableAsset {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_parent(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_parent(crate::unity_engine::playables::playableasset::PlayableAsset)` overload"]
-    fn set_parent(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset>,
-    ) -> () {
+    fn set_parent(self, value: impl ::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::set_parent(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::set_parent(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetClips()` overload"]
     fn get_clips(
         self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::timeline::timelineclip::TimelineClip,
-    > {
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::timelineclip::TimelineClip> {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_clips(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_isEmpty()` overload"]
     fn get_is_empty(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_is_empty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasClips()` overload"]
     fn get_has_clips(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_has_clips(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasCurves()` overload"]
     fn get_has_curves(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_has_curves(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_isSubTrack()` overload"]
     fn get_is_sub_track(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_is_sub_track(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_outputs()` overload"]
     fn get_outputs(
         self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::playables::playablebinding::PlayableBinding,
-    > {
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_outputs(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetChildTracks()` overload"]
     fn get_child_tracks(
         self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::timeline::trackasset::TrackAsset,
-    > {
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset> {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_child_tracks(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_customPlayableTypename()` overload"]
     fn get_custom_playable_typename(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::get_custom_playable_typename(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::get_custom_playable_typename(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_customPlayableTypename(::unity2::Il2CppString)` overload"]
-    fn set_custom_playable_typename(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_custom_playable_typename(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::set_custom_playable_typename(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::set_custom_playable_typename(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_curves()` overload"]
     fn get_curves(self) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_curves(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_curves(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    fn set_curves(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
-    ) -> () {
+    fn set_curves(self, value: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::set_curves(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::set_curves(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName()` overload"]
-    fn unity_engine_timeline_i_curves_owner_get_default_curves_name(
-        self,
-    ) -> ::unity2::Il2CppString {
+    fn unity_engine_timeline_i_curves_owner_get_default_curves_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_default_curves_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_default_curves_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.Timeline.ICurvesOwner.get_asset()` overload"]
-    fn unity_engine_timeline_i_curves_owner_get_asset(
-        self,
-    ) -> crate::unity_engine::object_2::Object_2 {
+    fn unity_engine_timeline_i_curves_owner_get_asset(self) -> crate::unity_engine::object_2::Object_2 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.Timeline.ICurvesOwner.get_assetOwner()` overload"]
-    fn unity_engine_timeline_i_curves_owner_get_asset_owner(
-        self,
-    ) -> crate::unity_engine::object_2::Object_2 {
+    fn unity_engine_timeline_i_curves_owner_get_asset_owner(self) -> crate::unity_engine::object_2::Object_2 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset_owner(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset_owner(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.Timeline.ICurvesOwner.get_targetTrack()` overload"]
-    fn unity_engine_timeline_i_curves_owner_get_target_track(
-        self,
-    ) -> crate::unity_engine::timeline::trackasset::TrackAsset {
+    fn unity_engine_timeline_i_curves_owner_get_target_track(self) -> crate::unity_engine::timeline::trackasset::TrackAsset {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_target_track(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_target_track(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_subTracksObjects()` overload"]
-    fn get_sub_tracks_objects(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::scriptableobject::ScriptableObject,
-    > {
+    fn get_sub_tracks_objects(self) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::get_sub_tracks_objects(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::get_sub_tracks_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_locked()` overload"]
     fn get_locked(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_locked(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_locked(bool)` overload"]
     fn set_locked(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::set_locked(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::set_locked(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_lockedInHierarchy()` overload"]
     fn get_locked_in_hierarchy(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::get_locked_in_hierarchy(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::get_locked_in_hierarchy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_supportsNotifications()` overload"]
     fn get_supports_notifications(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::get_supports_notifications(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::get_supports_notifications(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`__internalAwake()` overload"]
     fn internal_awake(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::internal_awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateCurves(::unity2::Il2CppString)` overload"]
-    fn create_curves(
-        self,
-        curves_clip_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn create_curves(self, curves_clip_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::create_curves(
-                __receiver,
-                ::core::convert::Into::into(curves_clip_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::create_curves(__receiver, ::core::convert::Into::into(curves_clip_name), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]
@@ -5533,9 +4206,7 @@ pub trait ITrackAssetMethods: ITrackAsset {
         input_count: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::create_track_mixer(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -5552,9 +4223,7 @@ pub trait ITrackAssetMethods: ITrackAsset {
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::create_playable(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -5566,80 +4235,51 @@ pub trait ITrackAssetMethods: ITrackAsset {
     #[doc = "`CreateDefaultClip()` overload"]
     fn create_default_clip(self) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::create_default_clip(__receiver, ::core::option::Option::None)
         }
     }
     fn create_clip<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                "CreateClip",
-                0,
-            )
-        });
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
+            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<TrackAsset as ::unity2::ClassIdentity>::class(), "CreateClip", 0));
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                "CreateClip",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                    "CreateClip",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let __f: extern "C" fn(
-                TrackAsset,
-                ::unity2::OptionalMethod,
-            )
-                -> crate::unity_engine::timeline::timelineclip::TimelineClip =
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let __f: extern "C" fn(TrackAsset, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::timelineclip::TimelineClip =
                 ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(__receiver, ::core::option::Option::Some(__mi_opaque))
         }
     }
     #[doc = "`DeleteClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    fn delete_clip(
-        self,
-        clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-    ) -> bool {
+    fn delete_clip(self, clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::delete_clip(
-                __receiver,
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::delete_clip(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateMarker(::unity2::SystemType, f64)` overload"]
@@ -5649,9 +4289,7 @@ pub trait ITrackAssetMethods: ITrackAsset {
         time: impl ::core::convert::Into<f64>,
     ) -> crate::unity_engine::timeline::imarker_interface::IMarker_Interface {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::create_marker(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -5660,115 +4298,68 @@ pub trait ITrackAssetMethods: ITrackAsset {
             )
         }
     }
-    fn create_marker_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        self,
-        time: impl ::core::convert::Into<f64>,
-    ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <TrackAsset as ::unity2::ClassIdentity>::class(),
-                "CreateMarker",
-                1,
-            )
+    fn create_marker_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(self, time: impl ::core::convert::Into<f64>) -> M0 {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<TrackAsset as ::unity2::ClassIdentity>::class(), "CreateMarker", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <TrackAsset as ::unity2::ClassIdentity>::NAME,
-                "CreateMarker",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackAsset as ::unity2::ClassIdentity>::NAME,
+                    "CreateMarker",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let __f: extern "C" fn(TrackAsset, f64, ::unity2::OptionalMethod) -> M0 =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let __f: extern "C" fn(TrackAsset, f64, ::unity2::OptionalMethod) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(__receiver, ::core::convert::Into::into(time), ::core::option::Option::Some(__mi_opaque))
         }
     }
     #[doc = "`DeleteMarker(crate::unity_engine::timeline::imarker_interface::IMarker_Interface)` overload"]
-    fn delete_marker(
-        self,
-        marker: impl ::core::convert::Into<
-            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-        >,
-    ) -> bool {
+    fn delete_marker(self, marker: impl ::core::convert::Into<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::delete_marker(
-                __receiver,
-                ::core::convert::Into::into(marker),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::delete_marker(__receiver, ::core::convert::Into::into(marker), ::core::option::Option::None)
         }
     }
     #[doc = "`GetMarkers()` overload"]
     fn get_markers(
         self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-    > {
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface> {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_markers(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMarkerCount()` overload"]
     fn get_marker_count(self) -> i32 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_marker_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMarker(i32)` overload"]
-    fn get_marker(
-        self,
-        idx: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::timeline::imarker_interface::IMarker_Interface {
+    fn get_marker(self, idx: impl ::core::convert::Into<i32>) -> crate::unity_engine::timeline::imarker_interface::IMarker_Interface {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::get_marker(
-                __receiver,
-                ::core::convert::Into::into(idx),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::get_marker(__receiver, ::core::convert::Into::into(idx), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateClip(::unity2::SystemType)` overload"]
@@ -5777,14 +4368,8 @@ pub trait ITrackAssetMethods: ITrackAsset {
         requested_type: impl ::core::convert::Into<::unity2::SystemType>,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::create_clip_2(
-                __receiver,
-                ::core::convert::Into::into(requested_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::create_clip_2(__receiver, ::core::convert::Into::into(requested_type), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateAndAddNewClipOfType(::unity2::SystemType)` overload"]
@@ -5793,9 +4378,7 @@ pub trait ITrackAssetMethods: ITrackAsset {
         requested_type: impl ::core::convert::Into<::unity2::SystemType>,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::create_and_add_new_clip_of_type(
                 __receiver,
                 ::core::convert::Into::into(requested_type),
@@ -5809,129 +4392,72 @@ pub trait ITrackAssetMethods: ITrackAsset {
         requested_type: impl ::core::convert::Into<::unity2::SystemType>,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::create_clip_of_type(
-                __receiver,
-                ::core::convert::Into::into(requested_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::create_clip_of_type(__receiver, ::core::convert::Into::into(requested_type), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateClipFromPlayableAsset(crate::unity_engine::playables::iplayableasset_interface::IPlayableAsset_Interface)` overload"]
     fn create_clip_from_playable_asset(
         self,
-        asset: impl ::core::convert::Into<
-            crate::unity_engine::playables::iplayableasset_interface::IPlayableAsset_Interface,
-        >,
+        asset: impl ::core::convert::Into<crate::unity_engine::playables::iplayableasset_interface::IPlayableAsset_Interface>,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::create_clip_from_playable_asset(
-                __receiver,
-                ::core::convert::Into::into(asset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::create_clip_from_playable_asset(__receiver, ::core::convert::Into::into(asset), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateClipFromAsset(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]
     fn create_clip_from_asset(
         self,
-        playable_asset: impl ::core::convert::Into<
-            crate::unity_engine::scriptableobject::ScriptableObject,
-        >,
+        playable_asset: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::create_clip_from_asset(
-                __receiver,
-                ::core::convert::Into::into(playable_asset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::create_clip_from_asset(__receiver, ::core::convert::Into::into(playable_asset), ::core::option::Option::None)
         }
     }
     #[doc = "`GetMarkersRaw()` overload"]
     fn get_markers_raw(
         self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::unity_engine::scriptableobject::ScriptableObject,
-    > {
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::scriptableobject::ScriptableObject> {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_markers_raw(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClearMarkers()` overload"]
     fn clear_markers(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::clear_markers(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddMarker(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]
-    fn add_marker(
-        self,
-        e: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>,
-    ) -> () {
+    fn add_marker(self, e: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::add_marker(
-                __receiver,
-                ::core::convert::Into::into(e),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::add_marker(__receiver, ::core::convert::Into::into(e), ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteMarkerRaw(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]
-    fn delete_marker_raw(
-        self,
-        marker: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>,
-    ) -> bool {
+    fn delete_marker_raw(self, marker: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::delete_marker_raw(
-                __receiver,
-                ::core::convert::Into::into(marker),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::delete_marker_raw(__receiver, ::core::convert::Into::into(marker), ::core::option::Option::None)
         }
     }
     #[doc = "`GetTimeRangeHash()` overload"]
     fn get_time_range_hash(self) -> i32 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_time_range_hash(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    fn add_clip(
-        self,
-        new_clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-    ) -> () {
+    fn add_clip(self, new_clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::add_clip(
-                __receiver,
-                ::core::convert::Into::into(new_clip),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::add_clip(__receiver, ::core::convert::Into::into(new_clip), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateNotificationsPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::playables::playable::Playable, crate::unity_engine::gameobject::GameObject, crate::unity_engine::playables::playable::Playable)` overload"]
@@ -5940,14 +4466,10 @@ pub trait ITrackAssetMethods: ITrackAsset {
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
         mixer_playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        timeline_playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playable::Playable,
-        >,
+        timeline_playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::create_notifications_playable(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -5964,18 +4486,12 @@ pub trait ITrackAssetMethods: ITrackAsset {
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         tree: impl ::core::convert::Into<
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         >,
-        timeline_playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playable::Playable,
-        >,
+        timeline_playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::create_playable_graph(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -5992,20 +4508,14 @@ pub trait ITrackAssetMethods: ITrackAsset {
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         timeline_clips: impl ::core::convert::Into<
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::timeline::timelineclip::TimelineClip,
-            >,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::timelineclip::TimelineClip>,
         >,
         tree: impl ::core::convert::Into<
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         >,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::compile_clips(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -6020,40 +4530,24 @@ pub trait ITrackAssetMethods: ITrackAsset {
     fn gather_compilable_tracks(
         self,
         tracks: impl ::core::convert::Into<
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::timeline::trackasset::TrackAsset,
-            >,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::trackasset::TrackAsset>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::gather_compilable_tracks(
-                __receiver,
-                ::core::convert::Into::into(tracks),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::gather_compilable_tracks(__receiver, ::core::convert::Into::into(tracks), ::core::option::Option::None)
         }
     }
     #[doc = "`GatherNotificiations(crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>)` overload"]
     fn gather_notificiations(
         self,
         markers: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::gather_notificiations(
-                __receiver,
-                ::core::convert::Into::into(markers),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::gather_notificiations(__receiver, ::core::convert::Into::into(markers), ::core::option::Option::None)
         }
     }
     #[doc = "`OnCreateClipPlayableGraph(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)` overload"]
@@ -6062,15 +4556,11 @@ pub trait ITrackAssetMethods: ITrackAsset {
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         tree: impl ::core::convert::Into<
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         >,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::on_create_clip_playable_graph(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -6084,17 +4574,13 @@ pub trait ITrackAssetMethods: ITrackAsset {
     fn configure_track_animation(
         self,
         tree: impl ::core::convert::Into<
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         >,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         blend: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
     ) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::configure_track_animation(
                 __receiver,
                 ::core::convert::Into::into(tree),
@@ -6107,168 +4593,94 @@ pub trait ITrackAssetMethods: ITrackAsset {
     #[doc = "`SortClips()` overload"]
     fn sort_clips(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::sort_clips(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClearClipsInternal()` overload"]
     fn clear_clips_internal(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::clear_clips_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClearSubTracksInternal()` overload"]
     fn clear_sub_tracks_internal(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::clear_sub_tracks_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::clear_sub_tracks_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnClipMove()` overload"]
     fn on_clip_move(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::on_clip_move(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateNewClipContainerInternal()` overload"]
-    fn create_new_clip_container_internal(
-        self,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
+    fn create_new_clip_container_internal(self) -> crate::unity_engine::timeline::timelineclip::TimelineClip {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::create_new_clip_container_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::create_new_clip_container_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddChild(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    fn add_child(
-        self,
-        child: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-    ) -> () {
+    fn add_child(self, child: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::add_child(
-                __receiver,
-                ::core::convert::Into::into(child),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::add_child(__receiver, ::core::convert::Into::into(child), ::core::option::Option::None)
         }
     }
     #[doc = "`MoveLastTrackBefore(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    fn move_last_track_before(
-        self,
-        asset: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-    ) -> () {
+    fn move_last_track_before(self, asset: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::move_last_track_before(
-                __receiver,
-                ::core::convert::Into::into(asset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::move_last_track_before(__receiver, ::core::convert::Into::into(asset), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveSubTrack(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    fn remove_sub_track(
-        self,
-        child: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-    ) -> bool {
+    fn remove_sub_track(self, child: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::remove_sub_track(
-                __receiver,
-                ::core::convert::Into::into(child),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::remove_sub_track(__receiver, ::core::convert::Into::into(child), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    fn remove_clip(
-        self,
-        clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-    ) -> () {
+    fn remove_clip(self, clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::remove_clip(
-                __receiver,
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::remove_clip(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEvaluationTime(*mutf64, *mutf64)` overload"]
     fn get_evaluation_time(self) -> (f64, f64) {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<f64>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<f64>::uninit();
-            __TrackAsset_unity2_raw::get_evaluation_time(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            __TrackAsset_unity2_raw::get_evaluation_time(__receiver, __out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
     #[doc = "`GetSequenceTime(*mutf64, *mutf64)` overload"]
     fn get_sequence_time(self) -> (f64, f64) {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<f64>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<f64>::uninit();
-            __TrackAsset_unity2_raw::get_sequence_time(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            __TrackAsset_unity2_raw::get_sequence_time(__receiver, __out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
     #[doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]
     fn gather_properties(
         self,
-        director: impl ::core::convert::Into<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
-        driver: impl ::core::convert::Into<
-            crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
-        >,
+        director: impl ::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector>,
+        driver: impl ::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>,
     ) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::gather_properties(
                 __receiver,
                 ::core::convert::Into::into(director),
@@ -6280,68 +4692,38 @@ pub trait ITrackAssetMethods: ITrackAsset {
     #[doc = "`GetGameObjectBinding(crate::unity_engine::playables::playabledirector::PlayableDirector)` overload"]
     fn get_game_object_binding(
         self,
-        director: impl ::core::convert::Into<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        director: impl ::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector>,
     ) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::get_game_object_binding(
-                __receiver,
-                ::core::convert::Into::into(director),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::get_game_object_binding(__receiver, ::core::convert::Into::into(director), ::core::option::Option::None)
         }
     }
     #[doc = "`ValidateClipType(::unity2::SystemType)` overload"]
-    fn validate_clip_type(
-        self,
-        clip_type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> bool {
+    fn validate_clip_type(self, clip_type: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::validate_clip_type(
-                __receiver,
-                ::core::convert::Into::into(clip_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::validate_clip_type(__receiver, ::core::convert::Into::into(clip_type), ::core::option::Option::None)
         }
     }
     #[doc = "`OnCreateClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    fn on_create_clip(
-        self,
-        clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-    ) -> () {
+    fn on_create_clip(self, clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::on_create_clip(
-                __receiver,
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::on_create_clip(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateDuration()` overload"]
     fn update_duration(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::update_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalculateItemsHash()` overload"]
     fn calculate_items_hash(self) -> i32 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::calculate_items_hash(__receiver, ::core::option::Option::None)
         }
     }
@@ -6353,9 +4735,7 @@ pub trait ITrackAssetMethods: ITrackAsset {
         clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::create_playable_2(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -6368,111 +4748,77 @@ pub trait ITrackAssetMethods: ITrackAsset {
     #[doc = "`Invalidate()` overload"]
     fn invalidate(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::invalidate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetNotificationDuration()` overload"]
     fn get_notification_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::get_notification_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::get_notification_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CanCompileClips()` overload"]
     fn can_compile_clips(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::can_compile_clips(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsCompilable()` overload"]
     fn is_compilable(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::is_compilable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateChildTrackCache()` overload"]
     fn update_child_track_cache(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::update_child_track_cache(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::update_child_track_cache(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Hash()` overload"]
     fn hash(self) -> i32 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::hash(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetClipsHash()` overload"]
     fn get_clips_hash(self) -> i32 {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::get_clips_hash(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HasNotifications()` overload"]
     fn has_notifications(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::has_notifications(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CanCompileNotifications()` overload"]
     fn can_compile_notifications(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::can_compile_notifications(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::can_compile_notifications(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CanCompileClipsRecursive()` overload"]
     fn can_compile_clips_recursive(self) -> bool {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TrackAsset_unity2_raw::can_compile_clips_recursive(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TrackAsset_unity2_raw::can_compile_clips_recursive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackAsset_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -6485,13 +4831,8 @@ impl<__T: ITrackAsset> ITrackAssetMethods for __T {}
 impl TrackAsset {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TrackAsset),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TrackAsset), ::core::stringify!(new),));
         <Self as ITrackAssetMethods>::ctor(this);
         this
     }
@@ -6500,23 +4841,19 @@ impl TrackAsset {
 #[cfg(feature = "unity_engine-timeline-trackasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITrackAsset;
-    pub use super::ITrackAssetMethods;
-    pub use super::TrackAsset;
-    pub use super::TrackAsset_TransientBuildData;
-    pub use crate::system::object::IObject;
+    pub use super::{ITrackAsset, ITrackAssetMethods, TrackAsset, TrackAsset_TransientBuildData};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
     #[cfg(feature = "unity_engine-playables-playableasset")]
     pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::{object::IObject, valuetype::IValueType},
+        unity_engine::{object_2::IObject_2, playables::playableasset::IPlayableAsset, scriptableobject::IScriptableObject},
+    };
 }

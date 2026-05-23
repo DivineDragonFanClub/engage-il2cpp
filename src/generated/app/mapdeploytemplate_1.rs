@@ -2,35 +2,34 @@
 
 #[cfg(feature = "app-mapdeploytemplate_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::bitfield64::{BitField64, IBitField64};
-    use crate::app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon};
-    use crate::app::bitfieldtemplate64_1::{BitFieldTemplate64_1, IBitFieldTemplate64_1};
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            bitfield64::{BitField64, IBitField64},
+            bitfieldcommon::{BitFieldCommon, IBitFieldCommon},
+            bitfieldtemplate64_1::{BitFieldTemplate64_1, IBitFieldTemplate64_1},
+            singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_DisplayType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapDeployTemplate_1_DisplayType<T0: ::unity2::ClassIdentity> {
         pub value: i32,
         pub _phantom: ::core::marker::PhantomData<(T0)>,
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_DisplayType<T0> {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapDeployTemplate`1.DisplayType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,10 +40,7 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_DisplayType<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -78,24 +74,257 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < T0 > >)]
+    #[parent(crate::app::bitfield64::BitField64)]
+    #[parent(crate::app::bitfieldcommon::BitFieldCommon)]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDeployTemplate_1_FlagField<T0: ::unity2::ClassIdentity> {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.Queue")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDeployTemplate_1_Queue<T0: ::unity2::ClassIdentity> {
+        #[static_field]
+        #[rename(name = "QueueSize")]
+        pub queue_size: i32,
+        #[rename(name = "m_Datas")]
+        pub m_datas: ::unity2::Array<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>>,
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDeployTemplate_1<T0: ::unity2::ClassIdentity> {
+        #[static_field]
+        #[rename(name = "MoveMax")]
+        pub move_max: i32,
+        #[rename(name = "m_QueueA")]
+        pub m_queue_a: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue<T0>,
+        #[rename(name = "m_QueueB")]
+        pub m_queue_b: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue<T0>,
+        #[rename(name = "m_ReadQueue")]
+        pub m_read_queue: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue<T0>,
+        #[rename(name = "m_WriteQueue")]
+        pub m_write_queue: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue<T0>,
+        #[rename(name = "m_QueueCount")]
+        pub m_queue_count: i32,
+        #[rename(name = "m_MoveImage")]
+        pub m_move_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        #[rename(name = "m_AttackImage")]
+        pub m_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
+        #[rename(name = "m_RodImage")]
+        pub m_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
+        #[rename(name = "m_HealImage")]
+        pub m_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
+        #[rename(name = "m_SupportImage")]
+        pub m_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
+        #[rename(name = "m_InterferenceImage")]
+        pub m_interference_image: crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
+        #[rename(name = "m_EngageImage")]
+        pub m_engage_image: crate::app::mapdeployengageimage::MapDeployEngageImage,
+        #[rename(name = "m_DrawMoveImage")]
+        pub m_draw_move_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_ActionImage")]
+        pub m_action_image: crate::app::mapdeployactionimage::MapDeployActionImage,
+        #[rename(name = "m_MaskImage")]
+        pub m_mask_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        #[rename(name = "m_MoveBufferA")]
+        pub m_move_buffer_a: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        #[rename(name = "m_MoveBufferB")]
+        pub m_move_buffer_b: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        #[rename(name = "m_DrawMoveBufferA")]
+        pub m_draw_move_buffer_a: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_DrawMoveBufferB")]
+        pub m_draw_move_buffer_b: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_AttackBufferA")]
+        pub m_attack_buffer_a: crate::app::mapdeployattackimage::MapDeployAttackImage,
+        #[rename(name = "m_AttackBufferB")]
+        pub m_attack_buffer_b: crate::app::mapdeployattackimage::MapDeployAttackImage,
+        #[rename(name = "m_RodBufferA")]
+        pub m_rod_buffer_a: crate::app::mapdeployrodimage::MapDeployRodImage,
+        #[rename(name = "m_RodBufferB")]
+        pub m_rod_buffer_b: crate::app::mapdeployrodimage::MapDeployRodImage,
+        #[rename(name = "m_HealBufferA")]
+        pub m_heal_buffer_a: crate::app::mapdeployhealimage::MapDeployHealImage,
+        #[rename(name = "m_HealBufferB")]
+        pub m_heal_buffer_b: crate::app::mapdeployhealimage::MapDeployHealImage,
+        #[rename(name = "m_SupportBufferA")]
+        pub m_support_buffer_a: crate::app::mapdeploysupportimage::MapDeploySupportImage,
+        #[rename(name = "m_SupportBufferB")]
+        pub m_support_buffer_b: crate::app::mapdeploysupportimage::MapDeploySupportImage,
+        #[rename(name = "m_InterferenceBufferA")]
+        pub m_interference_buffer_a: crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
+        #[rename(name = "m_InterferenceBufferB")]
+        pub m_interference_buffer_b: crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
+        #[rename(name = "m_ActionBufferA")]
+        pub m_action_buffer_a: crate::app::mapdeployactionimage::MapDeployActionImage,
+        #[rename(name = "m_ActionBufferB")]
+        pub m_action_buffer_b: crate::app::mapdeployactionimage::MapDeployActionImage,
+        #[rename(name = "m_EngageBufferA")]
+        pub m_engage_buffer_a: crate::app::mapdeployengageimage::MapDeployEngageImage,
+        #[rename(name = "m_EngageBufferB")]
+        pub m_engage_buffer_b: crate::app::mapdeployengageimage::MapDeployEngageImage,
+        #[rename(name = "m_MoveBufferWork")]
+        pub m_move_buffer_work: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        #[rename(name = "m_TrickBuffer")]
+        pub m_trick_buffer: crate::app::mapdeploytrickimage::MapDeployTrickImage,
+        #[rename(name = "m_TrickBuffer2")]
+        pub m_trick_buffer2: crate::app::mapdeploytrickimage::MapDeployTrickImage,
+        #[rename(name = "m_CostMaxImage")]
+        pub m_cost_max_image: crate::app::mapdeployzocimage::MapDeployZocImage,
+        #[rename(name = "m_CostMinImage")]
+        pub m_cost_min_image: crate::app::mapdeployzocimage::MapDeployZocImage,
+        #[rename(name = "m_NotMoveImage")]
+        pub m_not_move_image: crate::app::mapdeployzocimage::MapDeployZocImage,
+        #[rename(name = "m_TargetImage")]
+        pub m_target_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
+        #[rename(name = "m_RangeImage")]
+        pub m_range_image: crate::app::mapdeployrangeimage::MapDeployRangeImage,
+        #[rename(name = "m_OverlapImage")]
+        pub m_overlap_image: crate::app::mapdeployoverlapimage::MapDeployOverlapImage,
+        #[rename(name = "m_LandImage")]
+        pub m_land_image: crate::app::mapdeploylandimage::MapDeployLandImage,
+        #[rename(name = "m_SupportForUnitImage")]
+        pub m_support_for_unit_image: crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage,
+        #[rename(name = "m_DanceImage")]
+        pub m_dance_image: crate::app::mapdeploydanceimage::MapDeployDanceImage,
+        #[rename(name = "m_CannonImage")]
+        pub m_cannon_image: crate::app::mapdeploycannonimage::MapDeployCannonImage,
+        #[rename(name = "m_Flag")]
+        pub m_flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_FlagField<T0>,
+        #[rename(name = "m_ForceType")]
+        pub m_force_type: crate::app::force::Force_Type,
+        #[rename(name = "m_AreaX1")]
+        pub m_area_x1: u8,
+        #[rename(name = "m_AreaZ1")]
+        pub m_area_z1: u8,
+        #[rename(name = "m_AreaX2")]
+        pub m_area_x2: u8,
+        #[rename(name = "m_AreaZ2")]
+        pub m_area_z2: u8,
+        #[rename(name = "m_MovePower")]
+        pub m_move_power: u8,
+        #[rename(name = "m_MoveType")]
+        pub m_move_type: crate::app::jobdata::JobData_MoveTypes,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_NoCannonBit")]
+        pub m_no_cannon_bit: ::unity2::Array<u64>,
+        #[rename(name = "m_NoCannonMax")]
+        pub m_no_cannon_max: ::unity2::Array<i32>,
+        #[rename(name = "m_BitArray")]
+        pub m_bit_array: ::unity2::Array<u64>,
+        #[rename(name = "m_MaxArray")]
+        pub m_max_array: ::unity2::Array<i32>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_SwapBufferScope.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.SwapBufferScope")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDeployTemplate_1_SwapBufferScope<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Deploy")]
+        pub m_deploy: crate::app::imapdeploy_interface::IMapDeploy_Interface,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_ImageType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapDeployTemplate_1_ImageType<T0: ::unity2::ClassIdentity> {
+        pub value: i32,
+        pub _phantom: ::core::marker::PhantomData<(T0)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_ImageType<T0> {
+        const NAME: &'static str = "MapDeployTemplate`1.ImageType";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_ImageType<T0> {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_ImageType<T0> {
+        pub fn r#move() -> Self {
+            Self {
+                value: 0,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn attack() -> Self {
+            Self {
+                value: 1,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn rod() -> Self {
+            Self {
+                value: 2,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn heal() -> Self {
+            Self {
+                value: 3,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn support() -> Self {
+            Self {
+                value: 4,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn interference() -> Self {
+            Self {
+                value: 5,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn engage() -> Self {
+            Self {
+                value: 6,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn num() -> Self {
+            Self {
+                value: 7,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Flag.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapDeployTemplate_1_Flag<T0: ::unity2::ClassIdentity> {
         pub value: i32,
         pub _phantom: ::core::marker::PhantomData<(T0)>,
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_Flag<T0> {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapDeployTemplate`1.Flag";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -106,10 +335,7 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_Flag<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -403,9 +629,8 @@ mod __types {
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_Queue_Data<T0> {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapDeployTemplate`1.Queue.Data";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -420,266 +645,8 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_Queue_Data<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < T0 > >)]
-    #[parent(crate::app::bitfield64::BitField64)]
-    #[parent(crate::app::bitfieldcommon::BitFieldCommon)]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDeployTemplate_1_FlagField<T0: ::unity2::ClassIdentity> {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_ImageType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapDeployTemplate_1_ImageType<T0: ::unity2::ClassIdentity> {
-        pub value: i32,
-        pub _phantom: ::core::marker::PhantomData<(T0)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_ImageType<T0> {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapDeployTemplate`1.ImageType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_ImageType<T0> {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_ImageType<T0> {
-        pub fn r#move() -> Self {
-            Self {
-                value: 0,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn attack() -> Self {
-            Self {
-                value: 1,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn rod() -> Self {
-            Self {
-                value: 2,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn heal() -> Self {
-            Self {
-                value: 3,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn support() -> Self {
-            Self {
-                value: 4,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn interference() -> Self {
-            Self {
-                value: 5,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn engage() -> Self {
-            Self {
-                value: 6,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn num() -> Self {
-            Self {
-                value: 7,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_SwapBufferScope.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.SwapBufferScope")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDeployTemplate_1_SwapBufferScope<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Deploy")]
-        pub m_deploy: crate::app::imapdeploy_interface::IMapDeploy_Interface,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDeployTemplate_1<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "MoveMax")]
-        pub move_max: i32,
-        #[rename(name = "m_QueueA")]
-        pub m_queue_a: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue<T0>,
-        #[rename(name = "m_QueueB")]
-        pub m_queue_b: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue<T0>,
-        #[rename(name = "m_ReadQueue")]
-        pub m_read_queue: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue<T0>,
-        #[rename(name = "m_WriteQueue")]
-        pub m_write_queue: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue<T0>,
-        #[rename(name = "m_QueueCount")]
-        pub m_queue_count: i32,
-        #[rename(name = "m_MoveImage")]
-        pub m_move_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
-        #[rename(name = "m_AttackImage")]
-        pub m_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
-        #[rename(name = "m_RodImage")]
-        pub m_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
-        #[rename(name = "m_HealImage")]
-        pub m_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
-        #[rename(name = "m_SupportImage")]
-        pub m_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
-        #[rename(name = "m_InterferenceImage")]
-        pub m_interference_image:
-            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
-        #[rename(name = "m_EngageImage")]
-        pub m_engage_image: crate::app::mapdeployengageimage::MapDeployEngageImage,
-        #[rename(name = "m_DrawMoveImage")]
-        pub m_draw_move_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_ActionImage")]
-        pub m_action_image: crate::app::mapdeployactionimage::MapDeployActionImage,
-        #[rename(name = "m_MaskImage")]
-        pub m_mask_image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
-        #[rename(name = "m_MoveBufferA")]
-        pub m_move_buffer_a: crate::app::mapdeploymoveimage::MapDeployMoveImage,
-        #[rename(name = "m_MoveBufferB")]
-        pub m_move_buffer_b: crate::app::mapdeploymoveimage::MapDeployMoveImage,
-        #[rename(name = "m_DrawMoveBufferA")]
-        pub m_draw_move_buffer_a: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_DrawMoveBufferB")]
-        pub m_draw_move_buffer_b: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_AttackBufferA")]
-        pub m_attack_buffer_a: crate::app::mapdeployattackimage::MapDeployAttackImage,
-        #[rename(name = "m_AttackBufferB")]
-        pub m_attack_buffer_b: crate::app::mapdeployattackimage::MapDeployAttackImage,
-        #[rename(name = "m_RodBufferA")]
-        pub m_rod_buffer_a: crate::app::mapdeployrodimage::MapDeployRodImage,
-        #[rename(name = "m_RodBufferB")]
-        pub m_rod_buffer_b: crate::app::mapdeployrodimage::MapDeployRodImage,
-        #[rename(name = "m_HealBufferA")]
-        pub m_heal_buffer_a: crate::app::mapdeployhealimage::MapDeployHealImage,
-        #[rename(name = "m_HealBufferB")]
-        pub m_heal_buffer_b: crate::app::mapdeployhealimage::MapDeployHealImage,
-        #[rename(name = "m_SupportBufferA")]
-        pub m_support_buffer_a: crate::app::mapdeploysupportimage::MapDeploySupportImage,
-        #[rename(name = "m_SupportBufferB")]
-        pub m_support_buffer_b: crate::app::mapdeploysupportimage::MapDeploySupportImage,
-        #[rename(name = "m_InterferenceBufferA")]
-        pub m_interference_buffer_a:
-            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
-        #[rename(name = "m_InterferenceBufferB")]
-        pub m_interference_buffer_b:
-            crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
-        #[rename(name = "m_ActionBufferA")]
-        pub m_action_buffer_a: crate::app::mapdeployactionimage::MapDeployActionImage,
-        #[rename(name = "m_ActionBufferB")]
-        pub m_action_buffer_b: crate::app::mapdeployactionimage::MapDeployActionImage,
-        #[rename(name = "m_EngageBufferA")]
-        pub m_engage_buffer_a: crate::app::mapdeployengageimage::MapDeployEngageImage,
-        #[rename(name = "m_EngageBufferB")]
-        pub m_engage_buffer_b: crate::app::mapdeployengageimage::MapDeployEngageImage,
-        #[rename(name = "m_MoveBufferWork")]
-        pub m_move_buffer_work: crate::app::mapdeploymoveimage::MapDeployMoveImage,
-        #[rename(name = "m_TrickBuffer")]
-        pub m_trick_buffer: crate::app::mapdeploytrickimage::MapDeployTrickImage,
-        #[rename(name = "m_TrickBuffer2")]
-        pub m_trick_buffer2: crate::app::mapdeploytrickimage::MapDeployTrickImage,
-        #[rename(name = "m_CostMaxImage")]
-        pub m_cost_max_image: crate::app::mapdeployzocimage::MapDeployZocImage,
-        #[rename(name = "m_CostMinImage")]
-        pub m_cost_min_image: crate::app::mapdeployzocimage::MapDeployZocImage,
-        #[rename(name = "m_NotMoveImage")]
-        pub m_not_move_image: crate::app::mapdeployzocimage::MapDeployZocImage,
-        #[rename(name = "m_TargetImage")]
-        pub m_target_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
-        #[rename(name = "m_RangeImage")]
-        pub m_range_image: crate::app::mapdeployrangeimage::MapDeployRangeImage,
-        #[rename(name = "m_OverlapImage")]
-        pub m_overlap_image: crate::app::mapdeployoverlapimage::MapDeployOverlapImage,
-        #[rename(name = "m_LandImage")]
-        pub m_land_image: crate::app::mapdeploylandimage::MapDeployLandImage,
-        #[rename(name = "m_SupportForUnitImage")]
-        pub m_support_for_unit_image:
-            crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage,
-        #[rename(name = "m_DanceImage")]
-        pub m_dance_image: crate::app::mapdeploydanceimage::MapDeployDanceImage,
-        #[rename(name = "m_CannonImage")]
-        pub m_cannon_image: crate::app::mapdeploycannonimage::MapDeployCannonImage,
-        #[rename(name = "m_Flag")]
-        pub m_flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_FlagField<T0>,
-        #[rename(name = "m_ForceType")]
-        pub m_force_type: crate::app::force::Force_Type,
-        #[rename(name = "m_AreaX1")]
-        pub m_area_x1: u8,
-        #[rename(name = "m_AreaZ1")]
-        pub m_area_z1: u8,
-        #[rename(name = "m_AreaX2")]
-        pub m_area_x2: u8,
-        #[rename(name = "m_AreaZ2")]
-        pub m_area_z2: u8,
-        #[rename(name = "m_MovePower")]
-        pub m_move_power: u8,
-        #[rename(name = "m_MoveType")]
-        pub m_move_type: crate::app::jobdata::JobData_MoveTypes,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_NoCannonBit")]
-        pub m_no_cannon_bit: ::unity2::Array<u64>,
-        #[rename(name = "m_NoCannonMax")]
-        pub m_no_cannon_max: ::unity2::Array<i32>,
-        #[rename(name = "m_BitArray")]
-        pub m_bit_array: ::unity2::Array<u64>,
-        #[rename(name = "m_MaxArray")]
-        pub m_max_array: ::unity2::Array<i32>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.Queue")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDeployTemplate_1_Queue<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "QueueSize")]
-        pub queue_size: i32,
-        #[rename(name = "m_Datas")]
-        pub m_datas:
-            ::unity2::Array<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>>,
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
     }
 }
 
@@ -691,10 +658,7 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
     #[doc = "`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
     #[method(name = "ToLong", args = 1)]
-    pub fn to_long(
-        self,
-        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
-    ) -> i64;
+    pub fn to_long(self, value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>) -> i64;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -719,28 +683,76 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
 
 #[cfg(feature = "app-mapdeploytemplate_1")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_SwapBufferScope<T0> {
-    #[doc = "`.ctor(crate::app::imapdeploy_interface::IMapDeploy_Interface)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, deploy: crate::app::imapdeploy_interface::IMapDeploy_Interface) -> ();
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
+    #[doc = "`Set(i32, i32, crate::app::dir_2::Dir_Type, i32)` overload"]
+    #[method(name = "Set", args = 4)]
+    pub fn set(self, x: i32, z: i32, dir: crate::app::dir_2::Dir_Type, cost: i32) -> ();
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+    #[doc = "`Next()` overload"]
+    #[method(name = "Next", args = 0)]
+    pub fn next(self) -> ();
+
+    #[doc = "`ResetIndex()` overload"]
+    #[method(name = "ResetIndex", args = 0)]
+    pub fn reset_index(self) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>;
+
+    #[doc = "`set_Current(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>)` overload"]
+    #[method(name = "set_Current", args = 1)]
+    pub fn set_current(self, value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>) -> ();
+
+    #[doc = "`get_CurrentX()` overload"]
+    #[method(name = "get_CurrentX", args = 0)]
+    pub fn get_current_x(self) -> i32;
+
+    #[doc = "`set_CurrentX(i32)` overload"]
+    #[method(name = "set_CurrentX", args = 1)]
+    pub fn set_current_x(self, value: i32) -> ();
+
+    #[doc = "`get_CurrentZ()` overload"]
+    #[method(name = "get_CurrentZ", args = 0)]
+    pub fn get_current_z(self) -> i32;
+
+    #[doc = "`set_CurrentZ(i32)` overload"]
+    #[method(name = "set_CurrentZ", args = 1)]
+    pub fn set_current_z(self, value: i32) -> ();
+
+    #[doc = "`get_CurrentDir()` overload"]
+    #[method(name = "get_CurrentDir", args = 0)]
+    pub fn get_current_dir(self) -> crate::app::dir_2::Dir_Type;
+
+    #[doc = "`set_CurrentDir(crate::app::dir_2::Dir_Type)` overload"]
+    #[method(name = "set_CurrentDir", args = 1)]
+    pub fn set_current_dir(self, value: crate::app::dir_2::Dir_Type) -> ();
+
+    #[doc = "`get_CurrentCost()` overload"]
+    #[method(name = "get_CurrentCost", args = 0)]
+    pub fn get_current_cost(self) -> i32;
+
+    #[doc = "`set_CurrentCost(i32)` overload"]
+    #[method(name = "set_CurrentCost", args = 1)]
+    pub fn set_current_cost(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-mapdeploytemplate_1")]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_SwapBufferScope<T0> {
-    #[doc = "`.ctor(crate::app::imapdeploy_interface::IMapDeploy_Interface)` — overload selector"]
-    pub fn new(deploy: crate::app::imapdeploy_interface::IMapDeploy_Interface) -> Self {
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapDeployTemplate_1_SwapBufferScope),
+                ::core::stringify!(MapDeployTemplate_1_Queue),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapDeployTemplate_1_SwapBufferScopeMethods<T0>>::ctor(this, deploy);
+        <Self as IMapDeployTemplate_1_QueueMethods<T0>>::ctor(this);
         this
     }
 }
@@ -917,12 +929,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`UnitRewarp(crate::app::unit::Unit, i32, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
     #[method(name = "UnitRewarp", args = 3)]
-    pub fn unit_rewarp_3(
-        self,
-        unit: crate::app::unit::Unit,
-        range: i32,
-        flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
-    ) -> ();
+    pub fn unit_rewarp_3(self, unit: crate::app::unit::Unit, range: i32, flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>) -> ();
 
     #[doc = "`UnitRewarp(crate::app::unit::Unit, i32, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>, crate::app::mapdeployattackimage::MapDeployAttackImage)` overload"]
     #[method(name = "UnitRewarp", args = 4)]
@@ -955,19 +962,11 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`UnitAIMoveLimit(crate::app::unit::Unit, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
     #[method(name = "UnitAIMoveLimit", args = 2)]
-    pub fn unit_ai_move_limit(
-        self,
-        unit: crate::app::unit::Unit,
-        flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
-    ) -> ();
+    pub fn unit_ai_move_limit(self, unit: crate::app::unit::Unit, flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>) -> ();
 
     #[doc = "`UnitFill(crate::app::unit::Unit, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
     #[method(name = "UnitFill", args = 2)]
-    pub fn unit_fill(
-        self,
-        unit: crate::app::unit::Unit,
-        flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
-    ) -> ();
+    pub fn unit_fill(self, unit: crate::app::unit::Unit, flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>) -> ();
 
     #[doc = "`UnitFillItem(crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
     #[method(name = "UnitFillItem", args = 3)]
@@ -1032,21 +1031,11 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`UnitRangeImmobile(crate::app::unit::Unit, i32, i32, i32)` overload"]
     #[method(name = "UnitRangeImmobile", args = 4)]
-    pub fn unit_range_immobile(
-        self,
-        unit: crate::app::unit::Unit,
-        xx: i32,
-        zz: i32,
-        flag: i32,
-    ) -> ();
+    pub fn unit_range_immobile(self, unit: crate::app::unit::Unit, xx: i32, zz: i32, flag: i32) -> ();
 
     #[doc = "`TargetOnly(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
     #[method(name = "TargetOnly", args = 2)]
-    pub fn target_only(
-        self,
-        attacker: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> ();
+    pub fn target_only(self, attacker: crate::app::unit::Unit, unit_item: crate::app::unititem::UnitItem) -> ();
 
     #[doc = "`UnitTriangle(crate::app::unit::Unit)` overload"]
     #[method(name = "UnitTriangle", args = 1)]
@@ -1146,10 +1135,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`set_AttackImage(crate::app::mapdeployattackimage::MapDeployAttackImage)` overload"]
     #[method(name = "set_AttackImage", args = 1)]
-    pub fn set_attack_image(
-        self,
-        value: crate::app::mapdeployattackimage::MapDeployAttackImage,
-    ) -> ();
+    pub fn set_attack_image(self, value: crate::app::mapdeployattackimage::MapDeployAttackImage) -> ();
 
     #[doc = "`get_AttackImageA()` overload"]
     #[method(name = "get_AttackImageA", args = 0)]
@@ -1181,36 +1167,23 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`set_SupportImage(crate::app::mapdeploysupportimage::MapDeploySupportImage)` overload"]
     #[method(name = "set_SupportImage", args = 1)]
-    pub fn set_support_image(
-        self,
-        value: crate::app::mapdeploysupportimage::MapDeploySupportImage,
-    ) -> ();
+    pub fn set_support_image(self, value: crate::app::mapdeploysupportimage::MapDeploySupportImage) -> ();
 
     #[doc = "`get_SupportForUnitImage()` overload"]
     #[method(name = "get_SupportForUnitImage", args = 0)]
-    pub fn get_support_for_unit_image(
-        self,
-    ) -> crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage;
+    pub fn get_support_for_unit_image(self) -> crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage;
 
     #[doc = "`set_SupportForUnitImage(crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage)` overload"]
     #[method(name = "set_SupportForUnitImage", args = 1)]
-    pub fn set_support_for_unit_image(
-        self,
-        value: crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage,
-    ) -> ();
+    pub fn set_support_for_unit_image(self, value: crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage) -> ();
 
     #[doc = "`get_InterferenceImage()` overload"]
     #[method(name = "get_InterferenceImage", args = 0)]
-    pub fn get_interference_image(
-        self,
-    ) -> crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage;
+    pub fn get_interference_image(self) -> crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage;
 
     #[doc = "`set_InterferenceImage(crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage)` overload"]
     #[method(name = "set_InterferenceImage", args = 1)]
-    pub fn set_interference_image(
-        self,
-        value: crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
-    ) -> ();
+    pub fn set_interference_image(self, value: crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage) -> ();
 
     #[doc = "`get_ActionImage()` overload"]
     #[method(name = "get_ActionImage", args = 0)]
@@ -1218,10 +1191,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`set_ActionImage(crate::app::mapdeployactionimage::MapDeployActionImage)` overload"]
     #[method(name = "set_ActionImage", args = 1)]
-    pub fn set_action_image(
-        self,
-        value: crate::app::mapdeployactionimage::MapDeployActionImage,
-    ) -> ();
+    pub fn set_action_image(self, value: crate::app::mapdeployactionimage::MapDeployActionImage) -> ();
 
     #[doc = "`get_EngageImage()` overload"]
     #[method(name = "get_EngageImage", args = 0)]
@@ -1229,10 +1199,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`set_EngageImage(crate::app::mapdeployengageimage::MapDeployEngageImage)` overload"]
     #[method(name = "set_EngageImage", args = 1)]
-    pub fn set_engage_image(
-        self,
-        value: crate::app::mapdeployengageimage::MapDeployEngageImage,
-    ) -> ();
+    pub fn set_engage_image(self, value: crate::app::mapdeployengageimage::MapDeployEngageImage) -> ();
 
     #[doc = "`get_RangeImage()` overload"]
     #[method(name = "get_RangeImage", args = 0)]
@@ -1240,8 +1207,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`set_RangeImage(crate::app::mapdeployrangeimage::MapDeployRangeImage)` overload"]
     #[method(name = "set_RangeImage", args = 1)]
-    pub fn set_range_image(self, value: crate::app::mapdeployrangeimage::MapDeployRangeImage)
-        -> ();
+    pub fn set_range_image(self, value: crate::app::mapdeployrangeimage::MapDeployRangeImage) -> ();
 
     #[doc = "`get_OverlapImage()` overload"]
     #[method(name = "get_OverlapImage", args = 0)]
@@ -1249,10 +1215,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`set_OverlapImage(crate::app::mapdeployoverlapimage::MapDeployOverlapImage)` overload"]
     #[method(name = "set_OverlapImage", args = 1)]
-    pub fn set_overlap_image(
-        self,
-        value: crate::app::mapdeployoverlapimage::MapDeployOverlapImage,
-    ) -> ();
+    pub fn set_overlap_image(self, value: crate::app::mapdeployoverlapimage::MapDeployOverlapImage) -> ();
 
     #[doc = "`get_LandImage()` overload"]
     #[method(name = "get_LandImage", args = 0)]
@@ -1268,8 +1231,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`set_DanceImage(crate::app::mapdeploydanceimage::MapDeployDanceImage)` overload"]
     #[method(name = "set_DanceImage", args = 1)]
-    pub fn set_dance_image(self, value: crate::app::mapdeploydanceimage::MapDeployDanceImage)
-        -> ();
+    pub fn set_dance_image(self, value: crate::app::mapdeploydanceimage::MapDeployDanceImage) -> ();
 
     #[doc = "`get_CannonImage()` overload"]
     #[method(name = "get_CannonImage", args = 0)]
@@ -1277,10 +1239,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`set_CannonImage(crate::app::mapdeploycannonimage::MapDeployCannonImage)` overload"]
     #[method(name = "set_CannonImage", args = 1)]
-    pub fn set_cannon_image(
-        self,
-        value: crate::app::mapdeploycannonimage::MapDeployCannonImage,
-    ) -> ();
+    pub fn set_cannon_image(self, value: crate::app::mapdeploycannonimage::MapDeployCannonImage) -> ();
 
     #[doc = "`get_TrickImage()` overload"]
     #[method(name = "get_TrickImage", args = 0)]
@@ -1324,12 +1283,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`GetRangeBit(crate::app::unit::Unit, ::unity2::Array<u64>, ::unity2::Array<i32>)` overload"]
     #[method(name = "GetRangeBit", args = 3)]
-    pub fn get_range_bit(
-        self,
-        unit: crate::app::unit::Unit,
-        bit: ::unity2::Array<u64>,
-        max: ::unity2::Array<i32>,
-    ) -> ();
+    pub fn get_range_bit(self, unit: crate::app::unit::Unit, bit: ::unity2::Array<u64>, max: ::unity2::Array<i32>) -> ();
 
     #[doc = "`GetRangeBit(crate::app::unit::Unit, crate::app::skilldata::SkillData, ::unity2::Array<u64>, ::unity2::Array<i32>)` overload"]
     #[method(name = "GetRangeBit", args = 4)]
@@ -1347,12 +1301,7 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`Fill(crate::app::unit::Unit, crate::app::skilldata::SkillData, bool)` overload"]
     #[method(name = "Fill", args = 3)]
-    pub fn fill(
-        self,
-        unit: crate::app::unit::Unit,
-        skill: crate::app::skilldata::SkillData,
-        is_consider_cannon: bool,
-    ) -> ();
+    pub fn fill(self, unit: crate::app::unit::Unit, skill: crate::app::skilldata::SkillData, is_consider_cannon: bool) -> ();
 
     #[doc = "`FillAttack(crate::app::unit::Unit, u64, i32)` overload"]
     #[method(name = "FillAttack", args = 3)]
@@ -1380,22 +1329,12 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
     #[doc = "`FillRangeImageForCannon(crate::app::unit::Unit, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
     #[method(name = "FillRangeImageForCannon", args = 2)]
-    pub fn fill_range_image_for_cannon(
-        self,
-        unit: crate::app::unit::Unit,
-        flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
-    ) -> ();
+    pub fn fill_range_image_for_cannon(self, unit: crate::app::unit::Unit, flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)
+        -> ();
 
     #[doc = "`FillImage(crate::app::unit::Unit, u64, i32, i32, crate::app::mapimagecorebit::MapImageCoreBit)` overload"]
     #[method(name = "FillImage", args = 5)]
-    pub fn fill_image(
-        self,
-        unit: crate::app::unit::Unit,
-        bit: u64,
-        min: i32,
-        max: i32,
-        image: crate::app::mapimagecorebit::MapImageCoreBit,
-    ) -> ();
+    pub fn fill_image(self, unit: crate::app::unit::Unit, bit: u64, min: i32, max: i32, image: crate::app::mapimagecorebit::MapImageCoreBit) -> ();
 
     #[doc = "`Clear()` overload"]
     #[method(name = "Clear", args = 0)]
@@ -1428,80 +1367,28 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
 #[cfg(feature = "app-mapdeploytemplate_1")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
-    #[doc = "`Set(i32, i32, crate::app::dir_2::Dir_Type, i32)` overload"]
-    #[method(name = "Set", args = 4)]
-    pub fn set(self, x: i32, z: i32, dir: crate::app::dir_2::Dir_Type, cost: i32) -> ();
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_SwapBufferScope<T0> {
+    #[doc = "`.ctor(crate::app::imapdeploy_interface::IMapDeploy_Interface)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, deploy: crate::app::imapdeploy_interface::IMapDeploy_Interface) -> ();
 
-    #[doc = "`Next()` overload"]
-    #[method(name = "Next", args = 0)]
-    pub fn next(self) -> ();
-
-    #[doc = "`ResetIndex()` overload"]
-    #[method(name = "ResetIndex", args = 0)]
-    pub fn reset_index(self) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self)
-        -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>;
-
-    #[doc = "`set_Current(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>)` overload"]
-    #[method(name = "set_Current", args = 1)]
-    pub fn set_current(
-        self,
-        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>,
-    ) -> ();
-
-    #[doc = "`get_CurrentX()` overload"]
-    #[method(name = "get_CurrentX", args = 0)]
-    pub fn get_current_x(self) -> i32;
-
-    #[doc = "`set_CurrentX(i32)` overload"]
-    #[method(name = "set_CurrentX", args = 1)]
-    pub fn set_current_x(self, value: i32) -> ();
-
-    #[doc = "`get_CurrentZ()` overload"]
-    #[method(name = "get_CurrentZ", args = 0)]
-    pub fn get_current_z(self) -> i32;
-
-    #[doc = "`set_CurrentZ(i32)` overload"]
-    #[method(name = "set_CurrentZ", args = 1)]
-    pub fn set_current_z(self, value: i32) -> ();
-
-    #[doc = "`get_CurrentDir()` overload"]
-    #[method(name = "get_CurrentDir", args = 0)]
-    pub fn get_current_dir(self) -> crate::app::dir_2::Dir_Type;
-
-    #[doc = "`set_CurrentDir(crate::app::dir_2::Dir_Type)` overload"]
-    #[method(name = "set_CurrentDir", args = 1)]
-    pub fn set_current_dir(self, value: crate::app::dir_2::Dir_Type) -> ();
-
-    #[doc = "`get_CurrentCost()` overload"]
-    #[method(name = "get_CurrentCost", args = 0)]
-    pub fn get_current_cost(self) -> i32;
-
-    #[doc = "`set_CurrentCost(i32)` overload"]
-    #[method(name = "set_CurrentCost", args = 1)]
-    pub fn set_current_cost(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
 }
 
 #[cfg(feature = "app-mapdeploytemplate_1")]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_SwapBufferScope<T0> {
+    #[doc = "`.ctor(crate::app::imapdeploy_interface::IMapDeploy_Interface)` — overload selector"]
+    pub fn new(deploy: crate::app::imapdeploy_interface::IMapDeploy_Interface) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapDeployTemplate_1_Queue),
+                ::core::stringify!(MapDeployTemplate_1_SwapBufferScope),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapDeployTemplate_1_QueueMethods<T0>>::ctor(this);
+        <Self as IMapDeployTemplate_1_SwapBufferScopeMethods<T0>>::ctor(this, deploy);
         this
     }
 }
@@ -1509,41 +1396,32 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
 #[cfg(feature = "app-mapdeploytemplate_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapDeployTemplate_1;
-    pub use super::IMapDeployTemplate_1Methods;
-    pub use super::IMapDeployTemplate_1_FlagField;
-    pub use super::IMapDeployTemplate_1_FlagFieldMethods;
-    pub use super::IMapDeployTemplate_1_Queue;
-    pub use super::IMapDeployTemplate_1_QueueMethods;
-    pub use super::IMapDeployTemplate_1_SwapBufferScope;
-    pub use super::IMapDeployTemplate_1_SwapBufferScopeMethods;
-    pub use super::MapDeployTemplate_1;
-    pub use super::MapDeployTemplate_1_DisplayType;
-    pub use super::MapDeployTemplate_1_Flag;
-    pub use super::MapDeployTemplate_1_FlagField;
-    pub use super::MapDeployTemplate_1_ImageType;
-    pub use super::MapDeployTemplate_1_Queue;
-    pub use super::MapDeployTemplate_1_Queue_Data;
-    pub use super::MapDeployTemplate_1_SwapBufferScope;
-    pub use crate::app::bitfield64::IBitField64;
+    pub use super::{
+        IMapDeployTemplate_1, IMapDeployTemplate_1Methods, IMapDeployTemplate_1_FlagField, IMapDeployTemplate_1_FlagFieldMethods,
+        IMapDeployTemplate_1_Queue, IMapDeployTemplate_1_QueueMethods, IMapDeployTemplate_1_SwapBufferScope,
+        IMapDeployTemplate_1_SwapBufferScopeMethods, MapDeployTemplate_1, MapDeployTemplate_1_DisplayType, MapDeployTemplate_1_Flag,
+        MapDeployTemplate_1_FlagField, MapDeployTemplate_1_ImageType, MapDeployTemplate_1_Queue, MapDeployTemplate_1_Queue_Data,
+        MapDeployTemplate_1_SwapBufferScope,
+    };
     #[cfg(feature = "app-bitfield64")]
     pub use crate::app::bitfield64::IBitField64Methods;
-    pub use crate::app::bitfieldcommon::IBitFieldCommon;
     #[cfg(feature = "app-bitfieldcommon")]
     pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
-    pub use crate::app::bitfieldtemplate64_1::IBitFieldTemplate64_1;
     #[cfg(feature = "app-bitfieldtemplate64_1")]
     pub use crate::app::bitfieldtemplate64_1::IBitFieldTemplate64_1Methods;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{
+            bitfield64::IBitField64, bitfieldcommon::IBitFieldCommon, bitfieldtemplate64_1::IBitFieldTemplate64_1,
+            singletonclass_1::ISingletonClass_1,
+        },
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

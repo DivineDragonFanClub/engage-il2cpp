@@ -2,10 +2,10 @@
 
 #[cfg(feature = "tm_pro-tweenrunner_1_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tweenrunner_1_2/TweenRunner_1_2.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TweenRunner`1")]
@@ -30,8 +30,7 @@ impl<T0: ::unity2::ClassIdentity> TweenRunner_1_2<T0> {
 
     #[doc = "`Init(crate::unity_engine::monobehaviour::MonoBehaviour)` overload"]
     #[method(name = "Init", args = 1)]
-    pub fn init(self, coroutine_container: crate::unity_engine::monobehaviour::MonoBehaviour)
-        -> ();
+    pub fn init(self, coroutine_container: crate::unity_engine::monobehaviour::MonoBehaviour) -> ();
 
     #[doc = "`StartTween(T0)` overload"]
     #[method(name = "StartTween", args = 1)]
@@ -65,9 +64,7 @@ impl<T0: ::unity2::ClassIdentity> TweenRunner_1_2<T0> {
 #[cfg(feature = "tm_pro-tweenrunner_1_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITweenRunner_1_2;
-    pub use super::ITweenRunner_1_2Methods;
-    pub use super::TweenRunner_1_2;
+    pub use super::{ITweenRunner_1_2, ITweenRunner_1_2Methods, TweenRunner_1_2};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -3,75 +3,61 @@
 #[cfg(any(feature = "app-cooking_menu-confirmdialog-types"))]
 pub mod confirmdialog;
 #[cfg(feature = "app-cooking_menu-confirmdialog-types")]
-pub use confirmdialog::{
-    ConfirmDialog, ConfirmDialog_ConfirmDialogItemYes, IConfirmDialog,
-    IConfirmDialog_ConfirmDialogItemYes,
-};
+pub use confirmdialog::{ConfirmDialog, ConfirmDialog_ConfirmDialogItemYes, IConfirmDialog, IConfirmDialog_ConfirmDialogItemYes};
 #[cfg(feature = "app-cooking_menu-confirmdialog")]
 pub use confirmdialog::{IConfirmDialogMethods, IConfirmDialog_ConfirmDialogItemYesMethods};
 #[cfg(any(feature = "app-cooking_menu-dishallmenucontent-types"))]
 pub mod dishallmenucontent;
 #[cfg(feature = "app-cooking_menu-dishallmenucontent-types")]
 pub use dishallmenucontent::{
-    DishAllMenuContent, DishAllMenuContent_CookHistory, DishAllMenuContent_DishHistory,
-    DishAllMenuContent_EnhanceObject, DishAllMenuContent_FoodstuffsHistory,
-    DishAllMenuContent_HistoryObject, DishAllMenuContent_UnitsHistory, IDishAllMenuContent,
-    IDishAllMenuContent_CookHistory, IDishAllMenuContent_DishHistory,
-    IDishAllMenuContent_EnhanceObject, IDishAllMenuContent_FoodstuffsHistory,
+    DishAllMenuContent, DishAllMenuContent_CookHistory, DishAllMenuContent_DishHistory, DishAllMenuContent_EnhanceObject,
+    DishAllMenuContent_FoodstuffsHistory, DishAllMenuContent_HistoryObject, DishAllMenuContent_UnitsHistory, IDishAllMenuContent,
+    IDishAllMenuContent_CookHistory, IDishAllMenuContent_DishHistory, IDishAllMenuContent_EnhanceObject, IDishAllMenuContent_FoodstuffsHistory,
     IDishAllMenuContent_HistoryObject, IDishAllMenuContent_UnitsHistory,
 };
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
 pub use dishallmenucontent::{
-    IDishAllMenuContentMethods, IDishAllMenuContent_CookHistoryMethods,
-    IDishAllMenuContent_DishHistoryMethods, IDishAllMenuContent_EnhanceObjectMethods,
-    IDishAllMenuContent_FoodstuffsHistoryMethods, IDishAllMenuContent_HistoryObjectMethods,
+    IDishAllMenuContentMethods, IDishAllMenuContent_CookHistoryMethods, IDishAllMenuContent_DishHistoryMethods,
+    IDishAllMenuContent_EnhanceObjectMethods, IDishAllMenuContent_FoodstuffsHistoryMethods, IDishAllMenuContent_HistoryObjectMethods,
     IDishAllMenuContent_UnitsHistoryMethods,
 };
 #[cfg(any(feature = "app-cooking_menu-dishselectfoodinfocontent-types"))]
 pub mod dishselectfoodinfocontent;
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent-types")]
 pub use dishselectfoodinfocontent::{
-    DishSelectFoodInfoContent, DishSelectFoodInfoContent_EnhanceObject,
-    DishSelectFoodInfoContent_FoodstuffObject, DishSelectFoodInfoContent_UnitObject,
-    IDishSelectFoodInfoContent, IDishSelectFoodInfoContent_EnhanceObject,
+    DishSelectFoodInfoContent, DishSelectFoodInfoContent_EnhanceObject, DishSelectFoodInfoContent_FoodstuffObject,
+    DishSelectFoodInfoContent_UnitObject, IDishSelectFoodInfoContent, IDishSelectFoodInfoContent_EnhanceObject,
     IDishSelectFoodInfoContent_FoodstuffObject, IDishSelectFoodInfoContent_UnitObject,
 };
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
 pub use dishselectfoodinfocontent::{
-    IDishSelectFoodInfoContentMethods, IDishSelectFoodInfoContent_EnhanceObjectMethods,
-    IDishSelectFoodInfoContent_FoodstuffObjectMethods,
+    IDishSelectFoodInfoContentMethods, IDishSelectFoodInfoContent_EnhanceObjectMethods, IDishSelectFoodInfoContent_FoodstuffObjectMethods,
     IDishSelectFoodInfoContent_UnitObjectMethods,
 };
 #[cfg(any(feature = "app-cooking_menu-dishselectmenu-types"))]
 pub mod dishselectmenu;
 #[cfg(feature = "app-cooking_menu-dishselectmenu-types")]
 pub use dishselectmenu::{
-    DishSelectMenu, DishSelectMenu_CancelEventHandler, DishSelectMenu_DecideEventHandler,
-    DishSelectMenu_DishMenuCompare, DishSelectMenu_DishSelectMenuItem,
-    DishSelectMenu_DishSelectMenuManager, DishSelectMenu_SelectEventHandler, IDishSelectMenu,
-    IDishSelectMenu_CancelEventHandler, IDishSelectMenu_DecideEventHandler,
-    IDishSelectMenu_DishMenuCompare, IDishSelectMenu_DishSelectMenuItem,
+    DishSelectMenu, DishSelectMenu_CancelEventHandler, DishSelectMenu_DecideEventHandler, DishSelectMenu_DishMenuCompare,
+    DishSelectMenu_DishSelectMenuItem, DishSelectMenu_DishSelectMenuManager, DishSelectMenu_SelectEventHandler, IDishSelectMenu,
+    IDishSelectMenu_CancelEventHandler, IDishSelectMenu_DecideEventHandler, IDishSelectMenu_DishMenuCompare, IDishSelectMenu_DishSelectMenuItem,
     IDishSelectMenu_DishSelectMenuManager, IDishSelectMenu_SelectEventHandler,
 };
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
 pub use dishselectmenu::{
-    IDishSelectMenuMethods, IDishSelectMenu_CancelEventHandlerMethods,
-    IDishSelectMenu_DecideEventHandlerMethods, IDishSelectMenu_DishMenuCompareMethods,
-    IDishSelectMenu_DishSelectMenuItemMethods, IDishSelectMenu_DishSelectMenuManagerMethods,
+    IDishSelectMenuMethods, IDishSelectMenu_CancelEventHandlerMethods, IDishSelectMenu_DecideEventHandlerMethods,
+    IDishSelectMenu_DishMenuCompareMethods, IDishSelectMenu_DishSelectMenuItemMethods, IDishSelectMenu_DishSelectMenuManagerMethods,
     IDishSelectMenu_SelectEventHandlerMethods,
 };
 #[cfg(any(feature = "app-cooking_menu-dishselectmenucategorycontent-types"))]
 pub mod dishselectmenucategorycontent;
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent-types")]
 pub use dishselectmenucategorycontent::{
-    DishSelectMenuCategoryContent, DishSelectMenuCategoryContent_Category,
-    DishSelectMenuCategoryContent_CategoryObject, IDishSelectMenuCategoryContent,
-    IDishSelectMenuCategoryContent_CategoryObject,
+    DishSelectMenuCategoryContent, DishSelectMenuCategoryContent_Category, DishSelectMenuCategoryContent_CategoryObject,
+    IDishSelectMenuCategoryContent, IDishSelectMenuCategoryContent_CategoryObject,
 };
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
-pub use dishselectmenucategorycontent::{
-    IDishSelectMenuCategoryContentMethods, IDishSelectMenuCategoryContent_CategoryObjectMethods,
-};
+pub use dishselectmenucategorycontent::{IDishSelectMenuCategoryContentMethods, IDishSelectMenuCategoryContent_CategoryObjectMethods};
 #[cfg(any(feature = "app-cooking_menu-dishselectmenucontent-types"))]
 pub mod dishselectmenucontent;
 #[cfg(feature = "app-cooking_menu-dishselectmenucontent")]
@@ -88,31 +74,25 @@ pub use dishselectmenuitemcontent::{DishSelectMenuItemContent, IDishSelectMenuIt
 pub mod foodstuffmenu;
 #[cfg(feature = "app-cooking_menu-foodstuffmenu-types")]
 pub use foodstuffmenu::{
-    FoodstuffMenu, FoodstuffMenu_CancelEventHandler, FoodstuffMenu_DecideEventHandler,
-    FoodstuffMenu_FoodstuffMenuItem, FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
-    FoodstuffMenu_FoodstuffMenuItem_Type, FoodstuffMenu_FoodstuffSelectMenuManager, IFoodstuffMenu,
-    IFoodstuffMenu_CancelEventHandler, IFoodstuffMenu_DecideEventHandler,
-    IFoodstuffMenu_FoodstuffMenuItem, IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
-    IFoodstuffMenu_FoodstuffSelectMenuManager,
+    FoodstuffMenu, FoodstuffMenu_CancelEventHandler, FoodstuffMenu_DecideEventHandler, FoodstuffMenu_FoodstuffMenuItem,
+    FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected, FoodstuffMenu_FoodstuffMenuItem_Type, FoodstuffMenu_FoodstuffSelectMenuManager, IFoodstuffMenu,
+    IFoodstuffMenu_CancelEventHandler, IFoodstuffMenu_DecideEventHandler, IFoodstuffMenu_FoodstuffMenuItem,
+    IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelected, IFoodstuffMenu_FoodstuffSelectMenuManager,
 };
 #[cfg(feature = "app-cooking_menu-foodstuffmenu")]
 pub use foodstuffmenu::{
-    IFoodstuffMenuMethods, IFoodstuffMenu_CancelEventHandlerMethods,
-    IFoodstuffMenu_DecideEventHandlerMethods, IFoodstuffMenu_FoodstuffMenuItemMethods,
-    IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods,
+    IFoodstuffMenuMethods, IFoodstuffMenu_CancelEventHandlerMethods, IFoodstuffMenu_DecideEventHandlerMethods,
+    IFoodstuffMenu_FoodstuffMenuItemMethods, IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods,
     IFoodstuffMenu_FoodstuffSelectMenuManagerMethods,
 };
 #[cfg(any(feature = "app-cooking_menu-foodstuffmenucontent-types"))]
 pub mod foodstuffmenucontent;
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent-types")]
 pub use foodstuffmenucontent::{
-    FoodstuffMenuContent, FoodstuffMenuContent_CursorController, IFoodstuffMenuContent,
-    IFoodstuffMenuContent_CursorController,
+    FoodstuffMenuContent, FoodstuffMenuContent_CursorController, IFoodstuffMenuContent, IFoodstuffMenuContent_CursorController,
 };
 #[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-pub use foodstuffmenucontent::{
-    IFoodstuffMenuContentMethods, IFoodstuffMenuContent_CursorControllerMethods,
-};
+pub use foodstuffmenucontent::{IFoodstuffMenuContentMethods, IFoodstuffMenuContent_CursorControllerMethods};
 #[cfg(any(feature = "app-cooking_menu-foodstuffmenuitemcontent-types"))]
 pub mod foodstuffmenuitemcontent;
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
@@ -123,26 +103,21 @@ pub use foodstuffmenuitemcontent::{FoodstuffMenuItemContent, IFoodstuffMenuItemC
 pub mod hubcookingstartmenusequence;
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence-types")]
 pub use hubcookingstartmenusequence::{
-    HubCookingStartMenuSequence, HubCookingStartMenuSequence_DecideEventHandler,
-    HubCookingStartMenuSequence_Label, IHubCookingStartMenuSequence,
+    HubCookingStartMenuSequence, HubCookingStartMenuSequence_DecideEventHandler, HubCookingStartMenuSequence_Label, IHubCookingStartMenuSequence,
     IHubCookingStartMenuSequence_DecideEventHandler,
 };
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
-pub use hubcookingstartmenusequence::{
-    IHubCookingStartMenuSequenceMethods, IHubCookingStartMenuSequence_DecideEventHandlerMethods,
-};
+pub use hubcookingstartmenusequence::{IHubCookingStartMenuSequenceMethods, IHubCookingStartMenuSequence_DecideEventHandlerMethods};
 #[cfg(any(feature = "app-cooking_menu-unitselectmenu_2-types"))]
 pub mod unitselectmenu_2;
 #[cfg(feature = "app-cooking_menu-unitselectmenu_2-types")]
 pub use unitselectmenu_2::{
-    IUnitSelectMenu_2, IUnitSelectMenu_UnitSelectMenuItem,
-    IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler, UnitSelectMenu_2,
+    IUnitSelectMenu_2, IUnitSelectMenu_UnitSelectMenuItem, IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler, UnitSelectMenu_2,
     UnitSelectMenu_UnitSelectMenuItem, UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler,
 };
 #[cfg(feature = "app-cooking_menu-unitselectmenu_2")]
 pub use unitselectmenu_2::{
-    IUnitSelectMenu_2Methods, IUnitSelectMenu_UnitSelectMenuItemMethods,
-    IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods,
+    IUnitSelectMenu_2Methods, IUnitSelectMenu_UnitSelectMenuItemMethods, IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods,
 };
 #[cfg(any(feature = "app-cooking_menu-unitselectmenucontent_2-types"))]
 pub mod unitselectmenucontent_2;

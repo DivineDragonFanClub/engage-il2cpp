@@ -2,34 +2,43 @@
 
 #[cfg(feature = "app-refreshconfirmdialog-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog_DialogMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RefreshConfirmDialog.DialogMenuItem")]
+    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
+    pub struct RefreshConfirmDialog_DialogMenuItem {
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshconfirmdialog/RefreshConfirmDialog_Result2.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct RefreshConfirmDialog_Result2 {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for RefreshConfirmDialog_Result2 {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "RefreshConfirmDialog.Result2";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,10 +49,7 @@ mod __types {
 
     impl ::unity2::IlType for RefreshConfirmDialog_Result2 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -59,17 +65,6 @@ mod __types {
         pub fn cancel() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog_DialogMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshConfirmDialog.DialogMenuItem")]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct RefreshConfirmDialog_DialogMenuItem {
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshconfirmdialog/RefreshConfirmDialog_DecideEventHandler.md"))]
@@ -99,10 +94,12 @@ mod __RefreshConfirmDialog_DialogMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2 as ::unity2::IlType>::il_type(),
+                <crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -114,25 +111,22 @@ mod __RefreshConfirmDialog_DialogMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: RefreshConfirmDialog_DialogMenuItem,
         message: ::unity2::Il2CppString,
         result: crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,
-        decide_event_handler : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler,
+        decide_event_handler: crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -141,26 +135,14 @@ mod __RefreshConfirmDialog_DialogMenuItem_unity2_raw {
             crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,
             crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            message,
-            result,
-            decide_event_handler,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, message, result, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
@@ -173,41 +155,30 @@ mod __RefreshConfirmDialog_DialogMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: RefreshConfirmDialog_DialogMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefreshConfirmDialog_DialogMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefreshConfirmDialog_DialogMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
@@ -220,56 +191,40 @@ mod __RefreshConfirmDialog_DialogMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshConfirmDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn b_call(
         this: RefreshConfirmDialog_DialogMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefreshConfirmDialog_DialogMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefreshConfirmDialog_DialogMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refreshconfirmdialog")]
-pub trait IRefreshConfirmDialog_DialogMenuItemMethods:
-    IRefreshConfirmDialog_DialogMenuItem
-{
+pub trait IRefreshConfirmDialog_DialogMenuItemMethods: IRefreshConfirmDialog_DialogMenuItem {
     #[doc = "`.ctor(::unity2::Il2CppString, crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` overload"]
     fn ctor(
         self,
         message: impl ::core::convert::Into<::unity2::Il2CppString>,
-        result: impl ::core::convert::Into<
-            crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
-        >,
+        result: impl ::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <RefreshConfirmDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <RefreshConfirmDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefreshConfirmDialog_DialogMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(message),
@@ -282,36 +237,25 @@ pub trait IRefreshConfirmDialog_DialogMenuItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver =
-                <RefreshConfirmDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefreshConfirmDialog_DialogMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefreshConfirmDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshConfirmDialog_DialogMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver =
-                <RefreshConfirmDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefreshConfirmDialog_DialogMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefreshConfirmDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshConfirmDialog_DialogMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-refreshconfirmdialog")]
-impl<__T: IRefreshConfirmDialog_DialogMenuItem> IRefreshConfirmDialog_DialogMenuItemMethods
-    for __T
-{
-}
+impl<__T: IRefreshConfirmDialog_DialogMenuItem> IRefreshConfirmDialog_DialogMenuItemMethods for __T {}
 
 #[cfg(feature = "app-refreshconfirmdialog")]
 impl RefreshConfirmDialog_DialogMenuItem {
@@ -319,7 +263,7 @@ impl RefreshConfirmDialog_DialogMenuItem {
     pub fn new(
         message: ::unity2::Il2CppString,
         result: crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,
-        decide_event_handler : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler,
+        decide_event_handler: crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -328,12 +272,7 @@ impl RefreshConfirmDialog_DialogMenuItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefreshConfirmDialog_DialogMenuItemMethods>::ctor(
-            this,
-            message,
-            result,
-            decide_event_handler,
-        );
+        <Self as IRefreshConfirmDialog_DialogMenuItemMethods>::ctor(this, message, result, decide_event_handler);
         this
     }
 }
@@ -347,9 +286,7 @@ mod __RefreshConfirmDialog_DecideEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -365,18 +302,15 @@ mod __RefreshConfirmDialog_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -390,21 +324,16 @@ mod __RefreshConfirmDialog_DecideEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_Result2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -416,18 +345,15 @@ mod __RefreshConfirmDialog_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshConfirmDialog_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -439,27 +365,19 @@ mod __RefreshConfirmDialog_DecideEventHandler_unity2_raw {
             RefreshConfirmDialog_DecideEventHandler,
             crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, result, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refreshconfirmdialog")]
-pub trait IRefreshConfirmDialog_DecideEventHandlerMethods:
-    IRefreshConfirmDialog_DecideEventHandler
-{
+pub trait IRefreshConfirmDialog_DecideEventHandlerMethods: IRefreshConfirmDialog_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < RefreshConfirmDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefreshConfirmDialog_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefreshConfirmDialog_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -469,14 +387,11 @@ pub trait IRefreshConfirmDialog_DecideEventHandlerMethods:
         }
     }
     #[doc = "`Invoke(crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<
-            crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,
-        >,
-    ) -> () {
+    fn invoke(self, result: impl ::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2>) -> () {
         unsafe {
-            let __receiver = < RefreshConfirmDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefreshConfirmDialog_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefreshConfirmDialog_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(result),
@@ -487,10 +402,7 @@ pub trait IRefreshConfirmDialog_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-refreshconfirmdialog")]
-impl<__T: IRefreshConfirmDialog_DecideEventHandler> IRefreshConfirmDialog_DecideEventHandlerMethods
-    for __T
-{
-}
+impl<__T: IRefreshConfirmDialog_DecideEventHandler> IRefreshConfirmDialog_DecideEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-refreshconfirmdialog")]
 impl RefreshConfirmDialog_DecideEventHandler {
@@ -517,10 +429,11 @@ mod __RefreshConfirmDialog_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshConfirmDialog as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -532,43 +445,34 @@ mod __RefreshConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        decide_event_handler : crate :: app :: refreshconfirmdialog :: RefreshConfirmDialog_DecideEventHandler,
+        decide_event_handler: crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicdialog::BasicDialog {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
             crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicdialog::BasicDialog = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> crate::app::basicdialog::BasicDialog = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshConfirmDialog as ::unity2::ClassIdentity>::class(),
@@ -581,39 +485,27 @@ mod __RefreshConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RefreshConfirmDialog,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RefreshConfirmDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefreshConfirmDialog, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshConfirmDialog as ::unity2::ClassIdentity>::class(),
@@ -626,26 +518,19 @@ mod __RefreshConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -655,9 +540,7 @@ impl RefreshConfirmDialog {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,
-        >,
+        decide_event_handler: impl ::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler>,
     ) -> crate::app::basicdialog::BasicDialog {
         unsafe {
             __RefreshConfirmDialog_unity2_raw::create_bind(
@@ -667,6 +550,7 @@ impl RefreshConfirmDialog {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __RefreshConfirmDialog_unity2_raw::cctor(::core::option::Option::None) }
@@ -678,9 +562,8 @@ pub trait IRefreshConfirmDialogMethods: IRefreshConfirmDialog {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RefreshConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <RefreshConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefreshConfirmDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -708,35 +591,27 @@ impl RefreshConfirmDialog {
 #[cfg(feature = "app-refreshconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefreshConfirmDialog;
-    pub use super::IRefreshConfirmDialogMethods;
-    pub use super::IRefreshConfirmDialog_DecideEventHandler;
-    pub use super::IRefreshConfirmDialog_DecideEventHandlerMethods;
-    pub use super::IRefreshConfirmDialog_DialogMenuItem;
-    pub use super::IRefreshConfirmDialog_DialogMenuItemMethods;
-    pub use super::RefreshConfirmDialog;
-    pub use super::RefreshConfirmDialog_DecideEventHandler;
-    pub use super::RefreshConfirmDialog_DialogMenuItem;
-    pub use super::RefreshConfirmDialog_Result2;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use super::{
+        IRefreshConfirmDialog, IRefreshConfirmDialogMethods, IRefreshConfirmDialog_DecideEventHandler,
+        IRefreshConfirmDialog_DecideEventHandlerMethods, IRefreshConfirmDialog_DialogMenuItem, IRefreshConfirmDialog_DialogMenuItemMethods,
+        RefreshConfirmDialog, RefreshConfirmDialog_DecideEventHandler, RefreshConfirmDialog_DialogMenuItem, RefreshConfirmDialog_Result2,
+    };
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{basicdialogitem::IBasicDialogItem, basicmenuitem::IBasicMenuItem},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

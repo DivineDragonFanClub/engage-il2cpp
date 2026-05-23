@@ -2,15 +2,17 @@
 
 #[cfg(feature = "unity_engine-rendering-clampedfloatparameter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::floatparameter::{FloatParameter, IFloatParameter};
-    use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter, VolumeParameter};
-    use crate::unity_engine::rendering::volumeparameter_1::{
-        IVolumeParameter_1, VolumeParameter_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            floatparameter::{FloatParameter, IFloatParameter},
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/clampedfloatparameter/ClampedFloatParameter.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ClampedFloatParameter")]
@@ -35,9 +37,7 @@ mod __ClampedFloatParameter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClampedFloatParameter as ::unity2::ClassIdentity>::class(),
@@ -50,41 +50,28 @@ mod __ClampedFloatParameter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClampedFloatParameter as ::unity2::ClassIdentity>::NAME,
-                    "get_value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClampedFloatParameter as ::unity2::ClassIdentity>::NAME,
+                        "get_value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value(
-        this: ClampedFloatParameter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_value(this: ClampedFloatParameter, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(ClampedFloatParameter, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClampedFloatParameter as ::unity2::ClassIdentity>::class(),
                 "set_value",
@@ -96,40 +83,27 @@ mod __ClampedFloatParameter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClampedFloatParameter as ::unity2::ClassIdentity>::NAME,
-                    "set_value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClampedFloatParameter as ::unity2::ClassIdentity>::NAME,
+                        "set_value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value(
-        this: ClampedFloatParameter,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value(this: ClampedFloatParameter, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ClampedFloatParameter, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -147,18 +121,15 @@ mod __ClampedFloatParameter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClampedFloatParameter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClampedFloatParameter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -169,18 +140,8 @@ mod __ClampedFloatParameter_unity2_raw {
         override_state: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClampedFloatParameter,
-            f32,
-            f32,
-            f32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClampedFloatParameter, f32, f32, f32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, value, min, max, override_state, __unity2_method_info)
     }
 }
@@ -190,23 +151,17 @@ pub trait IClampedFloatParameterMethods: IClampedFloatParameter {
     #[doc = "`get_value()` overload"]
     fn get_value(self) -> f32 {
         unsafe {
-            let __receiver = <ClampedFloatParameter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ClampedFloatParameter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ClampedFloatParameter_unity2_raw::get_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_value(f32)` overload"]
     fn set_value(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <ClampedFloatParameter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ClampedFloatParameter_unity2_raw::set_value(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ClampedFloatParameter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClampedFloatParameter_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(f32, f32, f32, bool)` overload"]
@@ -218,9 +173,8 @@ pub trait IClampedFloatParameterMethods: IClampedFloatParameter {
         override_state: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ClampedFloatParameter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ClampedFloatParameter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ClampedFloatParameter_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -255,19 +209,17 @@ impl ClampedFloatParameter {
 #[cfg(feature = "unity_engine-rendering-clampedfloatparameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ClampedFloatParameter;
-    pub use super::IClampedFloatParameter;
-    pub use super::IClampedFloatParameterMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{ClampedFloatParameter, IClampedFloatParameter, IClampedFloatParameterMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::floatparameter::IFloatParameter;
     #[cfg(feature = "unity_engine-rendering-floatparameter")]
     pub use crate::unity_engine::rendering::floatparameter::IFloatParameterMethods;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
     #[cfg(feature = "unity_engine-rendering-volumeparameter")]
     pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
     #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
     pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{floatparameter::IFloatParameter, volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }

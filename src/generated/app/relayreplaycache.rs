@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-relayreplaycache-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaycache/RelayReplayCache.md"))]
     #[::unity2::class(namespace = "App", name = "RelayReplayCache")]
@@ -16,9 +16,7 @@ mod __types {
         #[rename(name = "m_IsNoNeed")]
         pub m_is_no_need: bool,
         #[rename(name = "m_Data")]
-        pub m_data: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
+        pub m_data: crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
     }
 }
 
@@ -34,9 +32,7 @@ mod __RelayReplayCache_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
@@ -49,43 +45,30 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RelayReplayCache,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RelayReplayCache, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayReplayCache, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::relayservermetadata::RelayServerMetaData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -97,51 +80,37 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
         this: RelayReplayCache,
-        search_results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
+        search_results: crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             RelayReplayCache,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(this, search_results, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::relayservermetadata::RelayServerMetaData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
                 "CopyTo",
@@ -153,55 +122,35 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to(
         this: RelayReplayCache,
-        search_results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
+        search_results: crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             RelayReplayCache,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
         inner(this, search_results, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_duplicate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::relayservermetadata::RelayServerMetaData,
-                > as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::relayservermetadata::RelayServerMetaData,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
                 "Duplicate",
@@ -213,57 +162,38 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    "Duplicate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        "Duplicate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn duplicate(
         this: RelayReplayCache,
-        src: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-        dst: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
+        src: crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
+        dst: crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             RelayReplayCache,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
+            crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_duplicate::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_duplicate::get_method_info().method_ptr);
         inner(this, src, dst, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
                 "Replace",
@@ -275,18 +205,15 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    "Replace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        "Replace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn replace(
@@ -294,24 +221,15 @@ mod __RelayReplayCache_unity2_raw {
         new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelayReplayCache,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_replace::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelayReplayCache, crate::app::relayservermetadata::RelayServerMetaData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_replace::get_method_info().method_ptr);
         inner(this, new_meta_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
@@ -324,39 +242,27 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: RelayReplayCache,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: RelayReplayCache, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayReplayCache, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
@@ -369,39 +275,27 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    "get_IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        "get_IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_valid(
-        this: RelayReplayCache,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_valid(this: RelayReplayCache, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(RelayReplayCache, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_no_need {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
@@ -414,41 +308,28 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    "get_IsNoNeed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        "get_IsNoNeed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_no_need(
-        this: RelayReplayCache,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_no_need(this: RelayReplayCache, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(RelayReplayCache, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_no_need::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_no_need::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_no_need {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayCache as ::unity2::ClassIdentity>::class(),
                 "set_IsNoNeed",
@@ -460,31 +341,20 @@ mod __RelayReplayCache_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
-                    "set_IsNoNeed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayCache as ::unity2::ClassIdentity>::NAME,
+                        "set_IsNoNeed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_no_need(
-        this: RelayReplayCache,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_no_need(this: RelayReplayCache, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayReplayCache, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_no_need::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_no_need::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -494,9 +364,7 @@ pub trait IRelayReplayCacheMethods: IRelayReplayCache {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayCache_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -504,60 +372,34 @@ pub trait IRelayReplayCacheMethods: IRelayReplayCache {
     fn create(
         self,
         search_results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayReplayCache_unity2_raw::create(
-                __receiver,
-                ::core::convert::Into::into(search_results),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayCache_unity2_raw::create(__receiver, ::core::convert::Into::into(search_results), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
     fn copy_to(
         self,
         search_results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayReplayCache_unity2_raw::copy_to(
-                __receiver,
-                ::core::convert::Into::into(search_results),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayCache_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(search_results), ::core::option::Option::None)
         }
     }
     #[doc = "`Duplicate(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
     fn duplicate(
         self,
-        src: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-        >,
-        dst: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-        >,
+        src: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>>,
+        dst: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>>,
     ) -> () {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayCache_unity2_raw::duplicate(
                 __receiver,
                 ::core::convert::Into::into(src),
@@ -567,59 +409,38 @@ pub trait IRelayReplayCacheMethods: IRelayReplayCache {
         }
     }
     #[doc = "`Replace(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    fn replace(
-        self,
-        new_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> () {
+    fn replace(self, new_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>) -> () {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayReplayCache_unity2_raw::replace(
-                __receiver,
-                ::core::convert::Into::into(new_meta_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayCache_unity2_raw::replace(__receiver, ::core::convert::Into::into(new_meta_data), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayCache_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsValid()` overload"]
     fn get_is_valid(self) -> bool {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayCache_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsNoNeed()` overload"]
     fn get_is_no_need(self) -> bool {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayCache_unity2_raw::get_is_no_need(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsNoNeed(bool)` overload"]
     fn set_is_no_need(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayReplayCache_unity2_raw::set_is_no_need(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayReplayCache as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayCache_unity2_raw::set_is_no_need(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -646,9 +467,7 @@ impl RelayReplayCache {
 #[cfg(feature = "app-relayreplaycache")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRelayReplayCache;
-    pub use super::IRelayReplayCacheMethods;
-    pub use super::RelayReplayCache;
+    pub use super::{IRelayReplayCache, IRelayReplayCacheMethods, RelayReplayCache};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

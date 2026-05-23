@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-guitargetattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guitargetattribute/GUITargetAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUITargetAttribute")]
@@ -26,9 +26,7 @@ mod __GUITargetAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_gui_target_attr_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -44,18 +42,15 @@ mod __GUITargetAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUITargetAttribute as ::unity2::ClassIdentity>::NAME,
-                    "GetGUITargetAttrValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUITargetAttribute as ::unity2::ClassIdentity>::NAME,
+                        "GetGUITargetAttrValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_gui_target_attr_value(
@@ -63,15 +58,8 @@ mod __GUITargetAttribute_unity2_raw {
         method_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_gui_target_attr_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_gui_target_attr_value::get_method_info().method_ptr);
         inner(klass, method_name, __unity2_method_info)
     }
 }
@@ -96,6 +84,5 @@ impl GUITargetAttribute {
 #[cfg(feature = "unity_engine-guitargetattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GUITargetAttribute;
-    pub use super::IGUITargetAttribute;
+    pub use super::{GUITargetAttribute, IGUITargetAttribute};
 }

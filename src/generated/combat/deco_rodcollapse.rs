@@ -2,12 +2,16 @@
 
 #[cfg(feature = "combat-deco_rodcollapse-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::deco_rod::{Deco_Rod, IDeco_Rod};
-    use crate::combat::decorator::{Decorator, IDecorator};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::{
+            deco_rod::{Deco_Rod, IDeco_Rod},
+            decorator::{Decorator, IDecorator},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rodcollapse/Deco_RodCollapse.md"))]
     #[::unity2::class(namespace = "Combat", name = "Deco_RodCollapse")]
@@ -27,9 +31,7 @@ mod __Deco_RodCollapse_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Deco_RodCollapse as ::unity2::ClassIdentity>::class(),
@@ -42,41 +44,27 @@ mod __Deco_RodCollapse_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Deco_RodCollapse as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Deco_RodCollapse as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: Deco_RodCollapse,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            Deco_RodCollapse,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: Deco_RodCollapse, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(Deco_RodCollapse, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_available {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::combat::decoratorargs::DecoratorArgs as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -90,45 +78,29 @@ mod __Deco_RodCollapse_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Deco_RodCollapse as ::unity2::ClassIdentity>::NAME,
-                    "IsAvailable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Deco_RodCollapse as ::unity2::ClassIdentity>::NAME,
+                        "IsAvailable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_available(
-        that: crate::combat::decoratorargs::DecoratorArgs,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::decoratorargs::DecoratorArgs,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_available::get_offset() as isize),
-        );
+    pub unsafe fn is_available(that: crate::combat::decoratorargs::DecoratorArgs, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::decoratorargs::DecoratorArgs, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_available::get_method_info().method_ptr);
         inner(that, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enemy_damage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Deco_RodCollapse as ::unity2::ClassIdentity>::class(),
                 "OnEnemyDamage_",
@@ -140,18 +112,15 @@ mod __Deco_RodCollapse_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Deco_RodCollapse as ::unity2::ClassIdentity>::NAME,
-                    "OnEnemyDamage_",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Deco_RodCollapse as ::unity2::ClassIdentity>::NAME,
+                        "OnEnemyDamage_",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_enemy_damage(
@@ -159,24 +128,15 @@ mod __Deco_RodCollapse_unity2_raw {
         ev: crate::unity_engine::animationevent::AnimationEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Deco_RodCollapse,
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_enemy_damage::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Deco_RodCollapse, crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_enemy_damage::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Deco_RodCollapse as ::unity2::ClassIdentity>::class(),
@@ -189,30 +149,20 @@ mod __Deco_RodCollapse_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Deco_RodCollapse as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Deco_RodCollapse as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: Deco_RodCollapse,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: Deco_RodCollapse, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Deco_RodCollapse, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -220,15 +170,8 @@ mod __Deco_RodCollapse_unity2_raw {
 #[cfg(feature = "combat-deco_rodcollapse")]
 impl Deco_RodCollapse {
     #[doc = "`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"]
-    pub fn is_available(
-        that: impl ::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>,
-    ) -> bool {
-        unsafe {
-            __Deco_RodCollapse_unity2_raw::is_available(
-                ::core::convert::Into::into(that),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_available(that: impl ::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>) -> bool {
+        unsafe { __Deco_RodCollapse_unity2_raw::is_available(::core::convert::Into::into(that), ::core::option::Option::None) }
     }
 }
 
@@ -237,34 +180,21 @@ pub trait IDeco_RodCollapseMethods: IDeco_RodCollapse {
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <Deco_RodCollapse as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Deco_RodCollapse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Deco_RodCollapse_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    fn on_enemy_damage(
-        self,
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> () {
+    fn on_enemy_damage(self, ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> () {
         unsafe {
-            let __receiver = <Deco_RodCollapse as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Deco_RodCollapse_unity2_raw::on_enemy_damage(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Deco_RodCollapse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Deco_RodCollapse_unity2_raw::on_enemy_damage(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Deco_RodCollapse as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Deco_RodCollapse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Deco_RodCollapse_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -292,16 +222,15 @@ impl Deco_RodCollapse {
 #[cfg(feature = "combat-deco_rodcollapse")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Deco_RodCollapse;
-    pub use super::IDeco_RodCollapse;
-    pub use super::IDeco_RodCollapseMethods;
-    pub use crate::combat::deco_rod::IDeco_Rod;
+    pub use super::{Deco_RodCollapse, IDeco_RodCollapse, IDeco_RodCollapseMethods};
     #[cfg(feature = "combat-deco_rod")]
     pub use crate::combat::deco_rod::IDeco_RodMethods;
-    pub use crate::combat::decorator::IDecorator;
     #[cfg(feature = "combat-decorator")]
     pub use crate::combat::decorator::IDecoratorMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::{deco_rod::IDeco_Rod, decorator::IDecorator},
+        system::object::IObject,
+    };
 }

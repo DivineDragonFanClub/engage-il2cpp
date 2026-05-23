@@ -2,41 +2,28 @@
 
 #[cfg(feature = "moon_sharp-interpreter-coroutine_2-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::moon_sharp::interpreter::refidobject::{IRefIdObject, RefIdObject};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Coroutine")]
-    #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
-    pub struct Coroutine_2 {
-        #[rename(name = "m_ClrCallback")]
-        pub m_clr_callback: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
-        #[rename(name = "m_Processor")]
-        pub m_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
-    }
+    use crate::{
+        moon_sharp::interpreter::refidobject::{IRefIdObject, RefIdObject},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/coroutine_2/Coroutine_CoroutineType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct Coroutine_CoroutineType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for Coroutine_CoroutineType {
-        const NAMESPACE: &'static str = "MoonSharp.Interpreter";
-
         const NAME: &'static str = "Coroutine.CoroutineType";
+        const NAMESPACE: &'static str = "MoonSharp.Interpreter";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -47,10 +34,7 @@ mod __types {
 
     impl ::unity2::IlType for Coroutine_CoroutineType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -67,6 +51,16 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Coroutine")]
+    #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
+    pub struct Coroutine_2 {
+        #[rename(name = "m_ClrCallback")]
+        pub m_clr_callback: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+        #[rename(name = "m_Processor")]
+        pub m_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-coroutine_2-types")]
@@ -81,9 +75,7 @@ mod __Coroutine_2_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
@@ -96,35 +88,32 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "get_Type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "get_Type",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_type(
         this: Coroutine_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType {
-        let inner : extern "C" fn (Coroutine_2 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: coroutine_2 :: Coroutine_CoroutineType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(Coroutine_2, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType =
+            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: coroutine_2 :: Coroutine_CoroutineType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
                 "set_Type",
@@ -136,18 +125,15 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "set_Type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "set_Type",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_type(
@@ -155,48 +141,31 @@ mod __Coroutine_2_unity2_raw {
         value: crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Coroutine_2,
-            crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Coroutine_2, crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Coroutine_2 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::callbackfunction::CallbackFunction as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -204,48 +173,31 @@ mod __Coroutine_2_unity2_raw {
         function: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Coroutine_2,
-            crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Coroutine_2, crate::moon_sharp::interpreter::callbackfunction::CallbackFunction, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, function, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: processor :: Processor as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Coroutine_2 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::vm::processor::Processor as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -253,24 +205,15 @@ mod __Coroutine_2_unity2_raw {
         proc: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Coroutine_2,
-            crate::moon_sharp::interpreter::execution::vm::processor::Processor,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Coroutine_2, crate::moon_sharp::interpreter::execution::vm::processor::Processor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, proc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mark_clr_callback_as_dead {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
@@ -283,39 +226,27 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "MarkClrCallbackAsDead",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "MarkClrCallbackAsDead",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn mark_clr_callback_as_dead(
-        this: Coroutine_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn mark_clr_callback_as_dead(this: Coroutine_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Coroutine_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_mark_clr_callback_as_dead::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_mark_clr_callback_as_dead::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_as_typed_enumerable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
@@ -328,36 +259,34 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "AsTypedEnumerable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "AsTypedEnumerable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn as_typed_enumerable(
         this: Coroutine_2,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::moon_sharp::interpreter::dynvalue::DynValue,
-    > {
-        let inner : extern "C" fn (Coroutine_2 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_as_typed_enumerable :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue> {
+        let inner: extern "C" fn(
+            Coroutine_2,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+        > = ::core::mem::transmute(__lookup_as_typed_enumerable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_as_enumerable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
@@ -370,36 +299,33 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "AsEnumerable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "AsEnumerable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn as_enumerable(
         this: Coroutine_2,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::system::object::Object,
-    > {
-        let inner : extern "C" fn (Coroutine_2 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: object :: Object > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_as_enumerable :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> {
+        let inner: extern "C" fn(
+            Coroutine_2,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> =
+            ::core::mem::transmute(__lookup_as_enumerable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_as_unity_coroutine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
@@ -412,68 +338,46 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "AsUnityCoroutine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "AsUnityCoroutine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn as_unity_coroutine(
         this: Coroutine_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            Coroutine_2,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_as_unity_coroutine::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Coroutine_2, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_as_unity_coroutine::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Coroutine_2 as ::unity2::ClassIdentity>::class(),
-                "Resume",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as ::unity2::ClassIdentity>::class(), "Resume", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "Resume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "Resume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resume(
@@ -485,44 +389,32 @@ mod __Coroutine_2_unity2_raw {
             Coroutine_2,
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_resume::get_method_info().method_ptr);
         inner(this, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Coroutine_2 as ::unity2::ClassIdentity>::class(),
-                "Resume",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as ::unity2::ClassIdentity>::class(), "Resume", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "Resume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "Resume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resume_2(
@@ -536,91 +428,57 @@ mod __Coroutine_2_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume_2::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_resume_2::get_method_info().method_ptr);
         inner(this, context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Coroutine_2 as ::unity2::ClassIdentity>::class(),
-                "Resume",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as ::unity2::ClassIdentity>::class(), "Resume", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "Resume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "Resume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn resume_3(
-        this: Coroutine_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner: extern "C" fn(
-            Coroutine_2,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume_3::get_offset() as isize),
-        );
+    pub unsafe fn resume_3(this: Coroutine_2, __unity2_method_info: ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let inner: extern "C" fn(Coroutine_2, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_resume_3::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Coroutine_2 as ::unity2::ClassIdentity>::class(),
-                "Resume",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as ::unity2::ClassIdentity>::class(), "Resume", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "Resume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "Resume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resume_4(
@@ -632,45 +490,30 @@ mod __Coroutine_2_unity2_raw {
             Coroutine_2,
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume_4::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_resume_4::get_method_info().method_ptr);
         inner(this, context, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Coroutine_2 as ::unity2::ClassIdentity>::class(),
-                "Resume",
-                1,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as ::unity2::ClassIdentity>::class(), "Resume", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "Resume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "Resume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resume_5(
@@ -682,44 +525,32 @@ mod __Coroutine_2_unity2_raw {
             Coroutine_2,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume_5::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_resume_5::get_method_info().method_ptr);
         inner(this, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Coroutine_2 as ::unity2::ClassIdentity>::class(),
-                "Resume",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as ::unity2::ClassIdentity>::class(), "Resume", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "Resume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "Resume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resume_6(
@@ -733,20 +564,14 @@ mod __Coroutine_2_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume_6::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_resume_6::get_method_info().method_ptr);
         inner(this, context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
@@ -759,44 +584,34 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "get_State",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "get_State",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_state(
         this: Coroutine_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::coroutinestate::CoroutineState {
-        let inner: extern "C" fn(
-            Coroutine_2,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::moon_sharp::interpreter::coroutinestate::CoroutineState =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_state::get_offset() as isize),
-            );
+        let inner: extern "C" fn(Coroutine_2, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::coroutinestate::CoroutineState =
+            ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stack_trace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
                 "GetStackTrace",
@@ -808,18 +623,15 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "GetStackTrace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "GetStackTrace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_stack_trace(
@@ -833,22 +645,15 @@ mod __Coroutine_2_unity2_raw {
             i32,
             crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stack_trace::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> =
+            ::core::mem::transmute(__lookup_get_stack_trace::get_method_info().method_ptr);
         inner(this, skip, entry_source_ref, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_owner_script {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
@@ -861,41 +666,30 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "get_OwnerScript",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "get_OwnerScript",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_owner_script(
         this: Coroutine_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::script::Script {
-        let inner: extern "C" fn(
-            Coroutine_2,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::script::Script = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_owner_script::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Coroutine_2, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::script::Script =
+            ::core::mem::transmute(__lookup_get_owner_script::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_owner_script {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -909,18 +703,15 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "set_OwnerScript",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "set_OwnerScript",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_owner_script(
@@ -928,24 +719,15 @@ mod __Coroutine_2_unity2_raw {
         value: crate::moon_sharp::interpreter::script::Script,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Coroutine_2,
-            crate::moon_sharp::interpreter::script::Script,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_owner_script::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Coroutine_2, crate::moon_sharp::interpreter::script::Script, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_owner_script::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_auto_yield_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
@@ -958,41 +740,28 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "get_AutoYieldCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "get_AutoYieldCounter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_auto_yield_counter(
-        this: Coroutine_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
+    pub unsafe fn get_auto_yield_counter(this: Coroutine_2, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
         let inner: extern "C" fn(Coroutine_2, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_auto_yield_counter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_auto_yield_counter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_auto_yield_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Coroutine_2 as ::unity2::ClassIdentity>::class(),
                 "set_AutoYieldCounter",
@@ -1004,31 +773,20 @@ mod __Coroutine_2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
-                    "set_AutoYieldCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Coroutine_2 as ::unity2::ClassIdentity>::NAME,
+                        "set_AutoYieldCounter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_auto_yield_counter(
-        this: Coroutine_2,
-        value: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_auto_yield_counter(this: Coroutine_2, value: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Coroutine_2, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_auto_yield_counter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_auto_yield_counter::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -1038,145 +796,79 @@ pub trait ICoroutine_2Methods: ICoroutine_2 {
     #[doc = "`get_Type()` overload"]
     fn get_type(self) -> crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::get_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Type(crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType)` overload"]
-    fn set_type(
-        self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType,
-        >,
-    ) -> () {
+    fn set_type(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType>) -> () {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::set_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::set_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::callbackfunction::CallbackFunction)` overload"]
-    fn ctor(
-        self,
-        function: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
-        >,
-    ) -> () {
+    fn ctor(self, function: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackfunction::CallbackFunction>) -> () {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(function),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::ctor(__receiver, ::core::convert::Into::into(function), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::vm::processor::Processor)` overload"]
-    fn ctor_2(
-        self,
-        proc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::processor::Processor,
-        >,
-    ) -> () {
+    fn ctor_2(self, proc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::processor::Processor>) -> () {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(proc),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(proc), ::core::option::Option::None)
         }
     }
     #[doc = "`MarkClrCallbackAsDead()` overload"]
     fn mark_clr_callback_as_dead(self) -> () {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::mark_clr_callback_as_dead(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::mark_clr_callback_as_dead(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AsTypedEnumerable()` overload"]
     fn as_typed_enumerable(
         self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::moon_sharp::interpreter::dynvalue::DynValue,
-    > {
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::dynvalue::DynValue> {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::as_typed_enumerable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AsEnumerable()` overload"]
-    fn as_enumerable(
-        self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::system::object::Object,
-    > {
+    fn as_enumerable(self) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::as_enumerable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AsUnityCoroutine()` overload"]
     fn as_unity_coroutine(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::as_unity_coroutine(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Resume(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     fn resume(
         self,
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::resume(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::resume(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
     #[doc = "`Resume(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     fn resume_2(
         self,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::resume_2(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -1188,28 +880,18 @@ pub trait ICoroutine_2Methods: ICoroutine_2 {
     #[doc = "`Resume()` overload"]
     fn resume_3(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::resume_3(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Resume(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
     fn resume_4(
         self,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::resume_4(
-                __receiver,
-                ::core::convert::Into::into(context),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::resume_4(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)
         }
     }
     #[doc = "`Resume(::unity2::Array<crate::system::object::Object>)` overload"]
@@ -1218,28 +900,18 @@ pub trait ICoroutine_2Methods: ICoroutine_2 {
         args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::resume_5(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::resume_5(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
     #[doc = "`Resume(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::Array<crate::system::object::Object>)` overload"]
     fn resume_6(
         self,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
         args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::resume_6(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -1251,9 +923,7 @@ pub trait ICoroutine_2Methods: ICoroutine_2 {
     #[doc = "`get_State()` overload"]
     fn get_state(self) -> crate::moon_sharp::interpreter::coroutinestate::CoroutineState {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::get_state(__receiver, ::core::option::Option::None)
         }
     }
@@ -1261,14 +931,10 @@ pub trait ICoroutine_2Methods: ICoroutine_2 {
     fn get_stack_trace(
         self,
         skip: impl ::core::convert::Into<i32>,
-        entry_source_ref: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
+        entry_source_ref: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>,
     ) -> ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::get_stack_trace(
                 __receiver,
                 ::core::convert::Into::into(skip),
@@ -1280,51 +946,29 @@ pub trait ICoroutine_2Methods: ICoroutine_2 {
     #[doc = "`get_OwnerScript()` overload"]
     fn get_owner_script(self) -> crate::moon_sharp::interpreter::script::Script {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Coroutine_2_unity2_raw::get_owner_script(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_OwnerScript(crate::moon_sharp::interpreter::script::Script)` overload"]
-    fn set_owner_script(
-        self,
-        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-    ) -> () {
+    fn set_owner_script(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>) -> () {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::set_owner_script(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::set_owner_script(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AutoYieldCounter()` overload"]
     fn get_auto_yield_counter(self) -> i64 {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::get_auto_yield_counter(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::get_auto_yield_counter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AutoYieldCounter(i64)` overload"]
     fn set_auto_yield_counter(self, value: impl ::core::convert::Into<i64>) -> () {
         unsafe {
-            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Coroutine_2_unity2_raw::set_auto_yield_counter(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Coroutine_2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Coroutine_2_unity2_raw::set_auto_yield_counter(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -1335,31 +979,17 @@ impl<__T: ICoroutine_2> ICoroutine_2Methods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-coroutine_2")]
 impl Coroutine_2 {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::callbackfunction::CallbackFunction)` — overload selector"]
-    pub fn new(
-        function: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Coroutine_2),
-                ::core::stringify!(new),
-            )
-        });
+    pub fn new(function: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Coroutine_2), ::core::stringify!(new),));
         <Self as ICoroutine_2Methods>::ctor(this, function);
         this
     }
 
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::vm::processor::Processor)` — overload selector"]
-    pub fn new_2(
-        proc: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Coroutine_2),
-                ::core::stringify!(new_2),
-            )
-        });
+    pub fn new_2(proc: crate::moon_sharp::interpreter::execution::vm::processor::Processor) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Coroutine_2), ::core::stringify!(new_2),));
         <Self as ICoroutine_2Methods>::ctor_2(this, proc);
         this
     }
@@ -1368,20 +998,17 @@ impl Coroutine_2 {
 #[cfg(feature = "moon_sharp-interpreter-coroutine_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Coroutine_2;
-    pub use super::Coroutine_CoroutineType;
-    pub use super::ICoroutine_2;
-    pub use super::ICoroutine_2Methods;
-    pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
+    pub use super::{Coroutine_2, Coroutine_CoroutineType, ICoroutine_2, ICoroutine_2Methods};
     #[cfg(feature = "moon_sharp-interpreter-refidobject")]
     pub use crate::moon_sharp::interpreter::refidobject::IRefIdObjectMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        moon_sharp::interpreter::refidobject::IRefIdObject,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

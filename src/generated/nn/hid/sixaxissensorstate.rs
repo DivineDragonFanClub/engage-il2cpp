@@ -2,11 +2,13 @@
 
 #[cfg(feature = "nn-hid-sixaxissensorstate-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/sixaxissensorstate/SixAxisSensorState.md"))]
     #[repr(C)]
@@ -14,9 +16,8 @@ mod __types {
     pub struct SixAxisSensorState {}
 
     impl ::unity2::ClassIdentity for SixAxisSensorState {
-        const NAMESPACE: &'static str = "nn.hid";
-
         const NAME: &'static str = "SixAxisSensorState";
+        const NAMESPACE: &'static str = "nn.hid";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -27,10 +28,7 @@ mod __types {
 
     impl ::unity2::IlType for SixAxisSensorState {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -47,9 +45,7 @@ mod __SixAxisSensorState_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensorState as ::unity2::ClassIdentity>::class(),
@@ -62,41 +58,27 @@ mod __SixAxisSensorState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensorState as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensorState as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: SixAxisSensorState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            SixAxisSensorState,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: SixAxisSensorState, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(SixAxisSensorState, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_quaternion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -114,18 +96,15 @@ mod __SixAxisSensorState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensorState as ::unity2::ClassIdentity>::NAME,
-                    "GetQuaternion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensorState as ::unity2::ClassIdentity>::NAME,
+                        "GetQuaternion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_quaternion(
@@ -136,28 +115,22 @@ mod __SixAxisSensorState_unity2_raw {
         w: *mut f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SixAxisSensorState,
-            *mut f32,
-            *mut f32,
-            *mut f32,
-            *mut f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_quaternion::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SixAxisSensorState, *mut f32, *mut f32, *mut f32, *mut f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_quaternion::get_method_info().method_ptr);
         inner(this, x, y, z, w, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_quaternion_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::sixaxissensorstate::SixAxisSensorState as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensorState as ::unity2::ClassIdentity>::class(),
                 "GetQuaternion",
@@ -169,18 +142,15 @@ mod __SixAxisSensorState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensorState as ::unity2::ClassIdentity>::NAME,
-                    "GetQuaternion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensorState as ::unity2::ClassIdentity>::NAME,
+                        "GetQuaternion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_quaternion_2(
@@ -198,36 +168,17 @@ mod __SixAxisSensorState_unity2_raw {
             *mut f32,
             *mut f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_quaternion_2::get_offset() as isize),
-        );
-        inner(
-            state,
-            p_out_x,
-            p_out_y,
-            p_out_z,
-            p_out_w,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_get_quaternion_2::get_method_info().method_ptr);
+        inner(state, p_out_x, p_out_y, p_out_z, p_out_w, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "nn-hid-sixaxissensorstate")]
 impl SixAxisSensorState {
     #[doc = "`GetQuaternion(*mutcrate::nn::hid::sixaxissensorstate::SixAxisSensorState, *mutf32, *mutf32, *mutf32, *mutf32)` overload"]
-    pub fn get_quaternion_2() -> (
-        crate::nn::hid::sixaxissensorstate::SixAxisSensorState,
-        f32,
-        f32,
-        f32,
-        f32,
-    ) {
+    pub fn get_quaternion_2() -> (crate::nn::hid::sixaxissensorstate::SixAxisSensorState, f32, f32, f32, f32) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::nn::hid::sixaxissensorstate::SixAxisSensorState,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<f32>::uninit();
             let mut __out_2 = ::core::mem::MaybeUninit::<f32>::uninit();
             let mut __out_3 = ::core::mem::MaybeUninit::<f32>::uninit();
@@ -257,6 +208,7 @@ impl SixAxisSensorState {
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __SixAxisSensorState_unity2_raw::to_string(self, ::core::option::Option::None) }
     }
+
     #[doc = "`GetQuaternion(*mutf32, *mutf32, *mutf32, *mutf32)` overload"]
     pub fn get_quaternion(self) -> (f32, f32, f32, f32) {
         unsafe {
@@ -272,12 +224,7 @@ impl SixAxisSensorState {
                 __out_3.as_mut_ptr(),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init(), __out_3.assume_init())
         }
     }
 }
@@ -286,10 +233,9 @@ impl SixAxisSensorState {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SixAxisSensorState;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

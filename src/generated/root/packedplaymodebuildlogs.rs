@@ -2,11 +2,13 @@
 
 #[cfg(feature = "root-packedplaymodebuildlogs-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/packedplaymodebuildlogs/PackedPlayModeBuildLogs_RuntimeBuildLog.md"))]
     #[repr(C)]
@@ -17,9 +19,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for PackedPlayModeBuildLogs_RuntimeBuildLog {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "PackedPlayModeBuildLogs.RuntimeBuildLog";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -30,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for PackedPlayModeBuildLogs_RuntimeBuildLog {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -42,9 +40,8 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct PackedPlayModeBuildLogs {
         #[rename(name = "m_RuntimeBuildLogs")]
-        pub m_runtime_build_logs: crate::system::collections::generic::list_1::List_1<
-            crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
-        >,
+        pub m_runtime_build_logs:
+            crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog>,
     }
 }
 
@@ -60,9 +57,7 @@ mod __PackedPlayModeBuildLogs_RuntimeBuildLog_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::logtype::LogType as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -78,18 +73,15 @@ mod __PackedPlayModeBuildLogs_RuntimeBuildLog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PackedPlayModeBuildLogs_RuntimeBuildLog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PackedPlayModeBuildLogs_RuntimeBuildLog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -103,11 +95,7 @@ mod __PackedPlayModeBuildLogs_RuntimeBuildLog_unity2_raw {
             crate::unity_engine::logtype::LogType,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, r#type, message, __unity2_method_info)
     }
 }
@@ -140,9 +128,7 @@ mod __PackedPlayModeBuildLogs_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_runtime_build_logs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::class(),
@@ -155,49 +141,37 @@ mod __PackedPlayModeBuildLogs_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::NAME,
-                    "get_RuntimeBuildLogs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::NAME,
+                        "get_RuntimeBuildLogs",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_runtime_build_logs(
         this: PackedPlayModeBuildLogs,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog> {
         let inner: extern "C" fn(
             PackedPlayModeBuildLogs,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_runtime_build_logs::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_get_runtime_build_logs::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_runtime_build_logs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::class(),
                 "set_RuntimeBuildLogs",
@@ -209,47 +183,34 @@ mod __PackedPlayModeBuildLogs_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::NAME,
-                    "set_RuntimeBuildLogs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::NAME,
+                        "set_RuntimeBuildLogs",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_runtime_build_logs(
         this: PackedPlayModeBuildLogs,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PackedPlayModeBuildLogs,
-            crate::system::collections::generic::list_1::List_1<
-                crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_runtime_build_logs::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_runtime_build_logs::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::class(),
@@ -262,30 +223,20 @@ mod __PackedPlayModeBuildLogs_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PackedPlayModeBuildLogs as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PackedPlayModeBuildLogs,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PackedPlayModeBuildLogs, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PackedPlayModeBuildLogs, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -295,48 +246,31 @@ pub trait IPackedPlayModeBuildLogsMethods: IPackedPlayModeBuildLogs {
     #[doc = "`get_RuntimeBuildLogs()` overload"]
     fn get_runtime_build_logs(
         self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog> {
         unsafe {
             let __receiver =
-                <PackedPlayModeBuildLogs as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PackedPlayModeBuildLogs_unity2_raw::get_runtime_build_logs(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PackedPlayModeBuildLogs as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PackedPlayModeBuildLogs_unity2_raw::get_runtime_build_logs(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_RuntimeBuildLogs(crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog>)` overload"]
     fn set_runtime_build_logs(
         self,
         value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog>,
         >,
     ) -> () {
         unsafe {
             let __receiver =
-                <PackedPlayModeBuildLogs as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PackedPlayModeBuildLogs_unity2_raw::set_runtime_build_logs(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <PackedPlayModeBuildLogs as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PackedPlayModeBuildLogs_unity2_raw::set_runtime_build_logs(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <PackedPlayModeBuildLogs as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PackedPlayModeBuildLogs as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PackedPlayModeBuildLogs_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -364,14 +298,10 @@ impl PackedPlayModeBuildLogs {
 #[cfg(feature = "root-packedplaymodebuildlogs")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPackedPlayModeBuildLogs;
-    pub use super::IPackedPlayModeBuildLogsMethods;
-    pub use super::PackedPlayModeBuildLogs;
-    pub use super::PackedPlayModeBuildLogs_RuntimeBuildLog;
-    pub use crate::system::object::IObject;
+    pub use super::{IPackedPlayModeBuildLogs, IPackedPlayModeBuildLogsMethods, PackedPlayModeBuildLogs, PackedPlayModeBuildLogs_RuntimeBuildLog};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

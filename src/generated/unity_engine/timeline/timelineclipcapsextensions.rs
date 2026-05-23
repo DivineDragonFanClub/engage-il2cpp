@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclipcapsextensions/TimelineClipCapsExtensions.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Timeline",
-        name = "TimelineClipCapsExtensions"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClipCapsExtensions")]
     #[parent(crate::system::object::Object)]
     pub struct TimelineClipCapsExtensions {}
 }
@@ -28,10 +25,9 @@ mod __TimelineClipCapsExtensions_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_supports_extrapolation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClipCapsExtensions as ::unity2::ClassIdentity>::class(),
                 "SupportsExtrapolation",
@@ -43,41 +39,30 @@ mod __TimelineClipCapsExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClipCapsExtensions as ::unity2::ClassIdentity>::NAME,
-                    "SupportsExtrapolation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClipCapsExtensions as ::unity2::ClassIdentity>::NAME,
+                        "SupportsExtrapolation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn supports_extrapolation(
         clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_supports_extrapolation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_supports_extrapolation::get_method_info().method_ptr);
         inner(clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_has_any {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::timeline::clipcaps::ClipCaps as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::timeline::clipcaps::ClipCaps as ::unity2::IlType>::il_type(),
@@ -93,18 +78,15 @@ mod __TimelineClipCapsExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClipCapsExtensions as ::unity2::ClassIdentity>::NAME,
-                    "HasAny",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClipCapsExtensions as ::unity2::ClassIdentity>::NAME,
+                        "HasAny",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn has_any(
@@ -116,11 +98,7 @@ mod __TimelineClipCapsExtensions_unity2_raw {
             crate::unity_engine::timeline::clipcaps::ClipCaps,
             crate::unity_engine::timeline::clipcaps::ClipCaps,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_has_any::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_has_any::get_method_info().method_ptr);
         inner(caps, flags, __unity2_method_info)
     }
 }
@@ -128,16 +106,10 @@ mod __TimelineClipCapsExtensions_unity2_raw {
 #[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions")]
 impl TimelineClipCapsExtensions {
     #[doc = "`SupportsExtrapolation(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    pub fn supports_extrapolation(
-        clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-    ) -> bool {
-        unsafe {
-            __TimelineClipCapsExtensions_unity2_raw::supports_extrapolation(
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn supports_extrapolation(clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>) -> bool {
+        unsafe { __TimelineClipCapsExtensions_unity2_raw::supports_extrapolation(::core::convert::Into::into(clip), ::core::option::Option::None) }
     }
+
     #[doc = "`HasAny(crate::unity_engine::timeline::clipcaps::ClipCaps, crate::unity_engine::timeline::clipcaps::ClipCaps)` overload"]
     pub fn has_any(
         caps: impl ::core::convert::Into<crate::unity_engine::timeline::clipcaps::ClipCaps>,
@@ -156,8 +128,7 @@ impl TimelineClipCapsExtensions {
 #[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITimelineClipCapsExtensions;
-    pub use super::TimelineClipCapsExtensions;
+    pub use super::{ITimelineClipCapsExtensions, TimelineClipCapsExtensions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,31 +2,62 @@
 
 #[cfg(feature = "app-hubrefineshopsequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubrefineshopsequence/HubRefineShopSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "HubRefineShopSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubRefineShopSequence {
+        #[rename(name = "m_WeaponModelRenderer")]
+        pub m_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        #[rename(name = "m_RefineShopRefineBaseRoot")]
+        pub m_refine_shop_refine_base_root: crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot,
+        #[rename(name = "m_RefineShopRefineTargetRoot")]
+        pub m_refine_shop_refine_target_root: crate::app::refineshoprefinetargetroot::RefineShopRefineTargetRoot,
+        #[rename(name = "m_RefineShopEngraveItemSelectRoot")]
+        pub m_refine_shop_engrave_item_select_root: crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot,
+        #[rename(name = "m_RefineShopEngraveGodRoot")]
+        pub m_refine_shop_engrave_god_root: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot,
+        #[rename(name = "m_RefineShopEngraveDemoRoot")]
+        pub m_refine_shop_engrave_demo_root: crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot,
+        #[rename(name = "m_RefineShopExchangeMenuTop")]
+        pub m_refine_shop_exchange_menu_top: crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop,
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_OwnerItemIndex")]
+        pub m_owner_item_index: i32,
+        #[rename(name = "m_BaseUnitItem")]
+        pub m_base_unit_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_AfterUnitItem")]
+        pub m_after_unit_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_GodData")]
+        pub m_god_data: crate::app::goddata::GodData,
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::itemdata::ItemData_Kinds,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubrefineshopsequence/HubRefineShopSequence_Label2.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct HubRefineShopSequence_Label2 {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for HubRefineShopSequence_Label2 {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "HubRefineShopSequence.Label2";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,10 +68,7 @@ mod __types {
 
     impl ::unity2::IlType for HubRefineShopSequence_Label2 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -89,46 +117,6 @@ mod __types {
             Self { value: 10 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubrefineshopsequence/HubRefineShopSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "HubRefineShopSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubRefineShopSequence {
-        #[rename(name = "m_WeaponModelRenderer")]
-        pub m_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        #[rename(name = "m_RefineShopRefineBaseRoot")]
-        pub m_refine_shop_refine_base_root:
-            crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot,
-        #[rename(name = "m_RefineShopRefineTargetRoot")]
-        pub m_refine_shop_refine_target_root:
-            crate::app::refineshoprefinetargetroot::RefineShopRefineTargetRoot,
-        #[rename(name = "m_RefineShopEngraveItemSelectRoot")]
-        pub m_refine_shop_engrave_item_select_root:
-            crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot,
-        #[rename(name = "m_RefineShopEngraveGodRoot")]
-        pub m_refine_shop_engrave_god_root:
-            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot,
-        #[rename(name = "m_RefineShopEngraveDemoRoot")]
-        pub m_refine_shop_engrave_demo_root:
-            crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot,
-        #[rename(name = "m_RefineShopExchangeMenuTop")]
-        pub m_refine_shop_exchange_menu_top:
-            crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_OwnerItemIndex")]
-        pub m_owner_item_index: i32,
-        #[rename(name = "m_BaseUnitItem")]
-        pub m_base_unit_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_AfterUnitItem")]
-        pub m_after_unit_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_GodData")]
-        pub m_god_data: crate::app::goddata::GodData,
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::itemdata::ItemData_Kinds,
-    }
 }
 
 #[cfg(feature = "app-hubrefineshopsequence-types")]
@@ -143,9 +131,7 @@ mod __HubRefineShopSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_top_menu_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -158,43 +144,32 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_m_TopMenuResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_m_TopMenuResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_m_top_menu_result(
         this: HubRefineShopSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::refineshoptopmenu::RefineShopTopMenu_Result2 {
-        let inner: extern "C" fn(
-            HubRefineShopSequence,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::refineshoptopmenu::RefineShopTopMenu_Result2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_top_menu_result::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> crate::app::refineshoptopmenu::RefineShopTopMenu_Result2 =
+            ::core::mem::transmute(__lookup_get_m_top_menu_result::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_top_menu_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
                 "set_m_TopMenuResult",
@@ -206,18 +181,15 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_m_TopMenuResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_m_TopMenuResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_m_top_menu_result(
@@ -225,26 +197,16 @@ mod __HubRefineShopSequence_unity2_raw {
         value: crate::app::refineshoptopmenu::RefineShopTopMenu_Result2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubRefineShopSequence,
-            crate::app::refineshoptopmenu::RefineShopTopMenu_Result2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_top_menu_result::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubRefineShopSequence, crate::app::refineshoptopmenu::RefineShopTopMenu_Result2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_top_menu_result::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -256,39 +218,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -301,39 +251,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_desc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -346,41 +284,30 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_desc(
         this: HubRefineShopSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            HubRefineShopSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -393,39 +320,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_resources(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_resources(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -438,39 +353,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_resources(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_resources(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -483,39 +386,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start_sequence(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start_sequence(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_refine_shop_top_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -528,39 +419,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRefineShopTopMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRefineShopTopMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_refine_shop_top_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_refine_shop_top_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_refine_shop_top_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_refine_shop_top_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_refine_shop_refine_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -573,39 +452,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRefineShopRefineMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRefineShopRefineMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_refine_shop_refine_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_refine_shop_refine_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_refine_shop_refine_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_refine_shop_refine_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_refine_shop_refine_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -618,39 +485,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRefineShopRefineMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRefineShopRefineMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_refine_shop_refine_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_refine_shop_refine_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_refine_shop_refine_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_refine_shop_refine_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_refine_shop_refine_target_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -663,39 +518,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRefineShopRefineTargetMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRefineShopRefineTargetMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_refine_shop_refine_target_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_refine_shop_refine_target_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_refine_shop_refine_target_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_refine_shop_refine_target_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_refine_shop_refine_target_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -708,39 +551,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRefineShopRefineTargetMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRefineShopRefineTargetMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_refine_shop_refine_target_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_refine_shop_refine_target_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_refine_shop_refine_target_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_refine_shop_refine_target_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_refine_shop_engrave_item_select_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -753,41 +584,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRefineShopEngraveItemSelectMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRefineShopEngraveItemSelectMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_refine_shop_engrave_item_select_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_refine_shop_engrave_item_select_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_create_refine_shop_engrave_item_select_menu::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_create_refine_shop_engrave_item_select_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_refine_shop_engrave_item_select_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -800,42 +617,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRefineShopEngraveItemSelectMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRefineShopEngraveItemSelectMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_refine_shop_engrave_item_select_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_refine_shop_engrave_item_select_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_destroy_refine_shop_engrave_item_select_menu::get_offset()
-                            as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_destroy_refine_shop_engrave_item_select_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_refine_shop_engrave_god_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -848,39 +650,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRefineShopEngraveGodMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRefineShopEngraveGodMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_refine_shop_engrave_god_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_refine_shop_engrave_god_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_refine_shop_engrave_god_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_refine_shop_engrave_god_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_refine_shop_engrave_god_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -893,39 +683,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRefineShopEngraveGodMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRefineShopEngraveGodMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_refine_shop_engrave_god_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_refine_shop_engrave_god_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_refine_shop_engrave_god_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_refine_shop_engrave_god_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_refine_shop_engrave_demo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -938,39 +716,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "PrepareRefineShopEngraveDemo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "PrepareRefineShopEngraveDemo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn prepare_refine_shop_engrave_demo(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn prepare_refine_shop_engrave_demo(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare_refine_shop_engrave_demo::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_prepare_refine_shop_engrave_demo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_preparing_refine_shop_engrave_demo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -983,41 +749,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitPreparingRefineShopEngraveDemo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "WaitPreparingRefineShopEngraveDemo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn wait_preparing_refine_shop_engrave_demo(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn wait_preparing_refine_shop_engrave_demo(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_wait_preparing_refine_shop_engrave_demo::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_wait_preparing_refine_shop_engrave_demo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_refine_shop_engrave_demo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -1030,39 +782,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRefineShopEngraveDemo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRefineShopEngraveDemo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_refine_shop_engrave_demo(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_refine_shop_engrave_demo(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_refine_shop_engrave_demo::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_refine_shop_engrave_demo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_refine_shop_engrave_demo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -1075,39 +815,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRefineShopEngraveDemo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRefineShopEngraveDemo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_refine_shop_engrave_demo(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_refine_shop_engrave_demo(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_refine_shop_engrave_demo::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_refine_shop_engrave_demo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_refine_shop_exchange_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -1120,39 +848,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRefineShopExchangeMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRefineShopExchangeMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_refine_shop_exchange_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_refine_shop_exchange_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_refine_shop_exchange_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_refine_shop_exchange_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_refine_shop_exchange_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -1165,39 +881,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRefineShopExchangeMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRefineShopExchangeMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_refine_shop_exchange_menu(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_refine_shop_exchange_menu(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_refine_shop_exchange_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_refine_shop_exchange_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_title {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -1210,39 +914,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "HideTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "HideTitle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_title(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_title(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_title::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_title::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_title {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -1255,39 +947,27 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "ShowTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "ShowTitle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show_title(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show_title(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_title::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show_title::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubRefineShopSequence as ::unity2::ClassIdentity>::class(),
@@ -1300,30 +980,20 @@ mod __HubRefineShopSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubRefineShopSequence as ::unity2::ClassIdentity>::NAME,
+                        "EndSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn end_sequence(
-        this: HubRefineShopSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn end_sequence(this: HubRefineShopSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubRefineShopSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_end_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1332,12 +1002,7 @@ mod __HubRefineShopSequence_unity2_raw {
 impl HubRefineShopSequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __HubRefineShopSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __HubRefineShopSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -1346,296 +1011,201 @@ pub trait IHubRefineShopSequenceMethods: IHubRefineShopSequence {
     #[doc = "`get_m_TopMenuResult()` overload"]
     fn get_m_top_menu_result(self) -> crate::app::refineshoptopmenu::RefineShopTopMenu_Result2 {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::get_m_top_menu_result(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::get_m_top_menu_result(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_TopMenuResult(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"]
-    fn set_m_top_menu_result(
-        self,
-        value: impl ::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2>,
-    ) -> () {
+    fn set_m_top_menu_result(self, value: impl ::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2>) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::set_m_top_menu_result(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::set_m_top_menu_result(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRefineShopSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateDesc()` overload"]
     fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::create_desc(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadResources()` overload"]
     fn load_resources(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::load_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingResources()` overload"]
     fn is_loading_resources(self) -> bool {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::is_loading_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::is_loading_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartSequence()` overload"]
     fn start_sequence(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::start_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::start_sequence(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRefineShopTopMenu()` overload"]
     fn create_refine_shop_top_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::create_refine_shop_top_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::create_refine_shop_top_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRefineShopRefineMenu()` overload"]
     fn create_refine_shop_refine_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::create_refine_shop_refine_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::create_refine_shop_refine_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRefineShopRefineMenu()` overload"]
     fn destroy_refine_shop_refine_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_refine_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_refine_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRefineShopRefineTargetMenu()` overload"]
     fn create_refine_shop_refine_target_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::create_refine_shop_refine_target_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::create_refine_shop_refine_target_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRefineShopRefineTargetMenu()` overload"]
     fn destroy_refine_shop_refine_target_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_refine_target_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_refine_target_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRefineShopEngraveItemSelectMenu()` overload"]
     fn create_refine_shop_engrave_item_select_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::create_refine_shop_engrave_item_select_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::create_refine_shop_engrave_item_select_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRefineShopEngraveItemSelectMenu()` overload"]
     fn destroy_refine_shop_engrave_item_select_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_engrave_item_select_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_engrave_item_select_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRefineShopEngraveGodMenu()` overload"]
     fn create_refine_shop_engrave_god_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::create_refine_shop_engrave_god_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::create_refine_shop_engrave_god_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRefineShopEngraveGodMenu()` overload"]
     fn destroy_refine_shop_engrave_god_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_engrave_god_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_engrave_god_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareRefineShopEngraveDemo()` overload"]
     fn prepare_refine_shop_engrave_demo(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::prepare_refine_shop_engrave_demo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::prepare_refine_shop_engrave_demo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`WaitPreparingRefineShopEngraveDemo()` overload"]
     fn wait_preparing_refine_shop_engrave_demo(self) -> bool {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::wait_preparing_refine_shop_engrave_demo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::wait_preparing_refine_shop_engrave_demo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRefineShopEngraveDemo()` overload"]
     fn create_refine_shop_engrave_demo(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::create_refine_shop_engrave_demo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::create_refine_shop_engrave_demo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRefineShopEngraveDemo()` overload"]
     fn destroy_refine_shop_engrave_demo(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_engrave_demo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_engrave_demo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRefineShopExchangeMenu()` overload"]
     fn create_refine_shop_exchange_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::create_refine_shop_exchange_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::create_refine_shop_exchange_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRefineShopExchangeMenu()` overload"]
     fn destroy_refine_shop_exchange_menu(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_exchange_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::destroy_refine_shop_exchange_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HideTitle()` overload"]
     fn hide_title(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRefineShopSequence_unity2_raw::hide_title(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShowTitle()` overload"]
     fn show_title(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubRefineShopSequence_unity2_raw::show_title(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EndSequence()` overload"]
     fn end_sequence(self) -> () {
         unsafe {
-            let __receiver = <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubRefineShopSequence_unity2_raw::end_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubRefineShopSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubRefineShopSequence_unity2_raw::end_sequence(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1662,20 +1232,17 @@ impl HubRefineShopSequence {
 #[cfg(feature = "app-hubrefineshopsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubRefineShopSequence;
-    pub use super::HubRefineShopSequence_Label2;
-    pub use super::IHubRefineShopSequence;
-    pub use super::IHubRefineShopSequenceMethods;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{HubRefineShopSequence, HubRefineShopSequence_Label2, IHubRefineShopSequence, IHubRefineShopSequenceMethods};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

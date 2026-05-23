@@ -2,27 +2,25 @@
 
 #[cfg(feature = "unity_engine-xr-xrinputsubsystem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::integratedsubsystem::{IIntegratedSubsystem, IntegratedSubsystem};
-    use crate::unity_engine::integratedsubsystem_1::{
-        IIntegratedSubsystem_1, IntegratedSubsystem_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            integratedsubsystem::{IIntegratedSubsystem, IntegratedSubsystem},
+            integratedsubsystem_1::{IIntegratedSubsystem_1, IntegratedSubsystem_1},
+        },
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrinputsubsystem/XRInputSubsystem.md"))]
     #[::unity2::class(namespace = "UnityEngine.XR", name = "XRInputSubsystem")]
     # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrinputsubsystemdescriptor :: XRInputSubsystemDescriptor >)]
     pub struct XRInputSubsystem {
         #[rename(name = "trackingOriginUpdated")]
-        pub tracking_origin_updated: crate::system::action_1::Action_1<
-            crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem,
-        >,
+        pub tracking_origin_updated: crate::system::action_1::Action_1<crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem>,
         #[rename(name = "boundaryChanged")]
-        pub boundary_changed: crate::system::action_1::Action_1<
-            crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem,
-        >,
+        pub boundary_changed: crate::system::action_1::Action_1<crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem>,
     }
 }
 
@@ -38,11 +36,8 @@ mod __XRInputSubsystem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_tracking_origin_updated_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRInputSubsystem as ::unity2::ClassIdentity>::class(),
                 "InvokeTrackingOriginUpdatedEvent",
@@ -54,41 +49,28 @@ mod __XRInputSubsystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRInputSubsystem as ::unity2::ClassIdentity>::NAME,
-                    "InvokeTrackingOriginUpdatedEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRInputSubsystem as ::unity2::ClassIdentity>::NAME,
+                        "InvokeTrackingOriginUpdatedEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke_tracking_origin_updated_event(
-        internal_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn invoke_tracking_origin_updated_event(internal_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_tracking_origin_updated_event::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke_tracking_origin_updated_event::get_method_info().method_ptr);
         inner(internal_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_boundary_changed_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRInputSubsystem as ::unity2::ClassIdentity>::class(),
                 "InvokeBoundaryChangedEvent",
@@ -100,39 +82,27 @@ mod __XRInputSubsystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRInputSubsystem as ::unity2::ClassIdentity>::NAME,
-                    "InvokeBoundaryChangedEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRInputSubsystem as ::unity2::ClassIdentity>::NAME,
+                        "InvokeBoundaryChangedEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke_boundary_changed_event(
-        internal_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn invoke_boundary_changed_event(internal_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_boundary_changed_event::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke_boundary_changed_event::get_method_info().method_ptr);
         inner(internal_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRInputSubsystem as ::unity2::ClassIdentity>::class(),
@@ -145,30 +115,20 @@ mod __XRInputSubsystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRInputSubsystem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRInputSubsystem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: XRInputSubsystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: XRInputSubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(XRInputSubsystem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -176,9 +136,7 @@ mod __XRInputSubsystem_unity2_raw {
 #[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
 impl XRInputSubsystem {
     #[doc = "`InvokeTrackingOriginUpdatedEvent(::unity2::IntPtr)` overload"]
-    pub fn invoke_tracking_origin_updated_event(
-        internal_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    pub fn invoke_tracking_origin_updated_event(internal_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             __XRInputSubsystem_unity2_raw::invoke_tracking_origin_updated_event(
                 ::core::convert::Into::into(internal_ptr),
@@ -186,15 +144,11 @@ impl XRInputSubsystem {
             )
         }
     }
+
     #[doc = "`InvokeBoundaryChangedEvent(::unity2::IntPtr)` overload"]
-    pub fn invoke_boundary_changed_event(
-        internal_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    pub fn invoke_boundary_changed_event(internal_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            __XRInputSubsystem_unity2_raw::invoke_boundary_changed_event(
-                ::core::convert::Into::into(internal_ptr),
-                ::core::option::Option::None,
-            )
+            __XRInputSubsystem_unity2_raw::invoke_boundary_changed_event(::core::convert::Into::into(internal_ptr), ::core::option::Option::None)
         }
     }
 }
@@ -204,9 +158,7 @@ pub trait IXRInputSubsystemMethods: IXRInputSubsystem {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <XRInputSubsystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <XRInputSubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __XRInputSubsystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -234,18 +186,18 @@ impl XRInputSubsystem {
 #[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IXRInputSubsystem;
-    pub use super::IXRInputSubsystemMethods;
-    pub use super::XRInputSubsystem;
-    pub use crate::system::object::IObject;
+    pub use super::{IXRInputSubsystem, IXRInputSubsystemMethods, XRInputSubsystem};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystem;
     #[cfg(feature = "unity_engine-integratedsubsystem")]
     pub use crate::unity_engine::integratedsubsystem::IIntegratedSubsystemMethods;
-    pub use crate::unity_engine::integratedsubsystem::IntegratedSubsystem;
-    pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1;
     #[cfg(feature = "unity_engine-integratedsubsystem_1")]
     pub use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1Methods;
-    pub use crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            integratedsubsystem::{IIntegratedSubsystem, IntegratedSubsystem},
+            integratedsubsystem_1::{IIntegratedSubsystem_1, IntegratedSubsystem_1},
+        },
+    };
 }

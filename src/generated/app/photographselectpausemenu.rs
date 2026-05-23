@@ -2,14 +2,25 @@
 
 #[cfg(feature = "app-photographselectpausemenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectpausemenu/PhotographSelectPauseMenu_UpdateUIObjHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographSelectPauseMenu.UpdateUIObjHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct PhotographSelectPauseMenu_UpdateUIObjHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectpausemenu/PhotographSelectPauseMenu.md"))]
     #[::unity2::class(namespace = "App", name = "PhotographSelectPauseMenu")]
@@ -20,434 +31,18 @@ mod __types {
         #[rename(name = "m_PauseDataOld")]
         pub m_pause_data_old: crate::app::photographpausedata::PhotographPauseData,
         #[rename(name = "m_CategoryList")]
-        pub m_category_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub m_category_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "m_CurCategoryIdx")]
         pub m_cur_category_idx: i32,
         #[rename(name = "m_MenuSelectList")]
         pub m_menu_select_list: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
         #[rename(name = "m_UpdateUIObjHandler")]
-        pub m_update_ui_obj_handler:
-            crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
+        pub m_update_ui_obj_handler: crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectpausemenu/PhotographSelectPauseMenu_UpdateUIObjHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "PhotographSelectPauseMenu.UpdateUIObjHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct PhotographSelectPauseMenu_UpdateUIObjHandler {}
 }
 
 #[cfg(feature = "app-photographselectpausemenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-photographselectpausemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographSelectPauseMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographdisposmanager :: PhotographDisposManager as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographselectpausemenu :: PhotographSelectPauseMenu_UpdateUIObjHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PhotographSelectPauseMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        update_ui_obj_handler : crate :: app :: photographselectpausemenu :: PhotographSelectPauseMenu_UpdateUIObjHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectPauseMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::basicmenucontent::BasicMenuContent,
-            crate::app::photographdisposmanager::PhotographDisposManager,
-            crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            dispos_manager,
-            update_ui_obj_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographdisposmanager :: PhotographDisposManager as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographselectpausemenu :: PhotographSelectPauseMenu_UpdateUIObjHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        update_ui_obj_handler : crate :: app :: photographselectpausemenu :: PhotographSelectPauseMenu_UpdateUIObjHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::basicmenucontent::BasicMenuContent,
-            crate::app::photographdisposmanager::PhotographDisposManager,
-            crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            menu_content,
-            dispos_manager,
-            update_ui_obj_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
-                "KeyLeft",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyLeft",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn key_left(
-        this: PhotographSelectPauseMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PhotographSelectPauseMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_left::get_offset() as isize),
-            );
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
-                "KeyRight",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyRight",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn key_right(
-        this: PhotographSelectPauseMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PhotographSelectPauseMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_right::get_offset() as isize),
-            );
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: PhotographSelectPauseMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PhotographSelectPauseMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-photographselectpausemenu")]
-impl PhotographSelectPauseMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        dispos_manager: impl ::core::convert::Into<
-            crate::app::photographdisposmanager::PhotographDisposManager,
-        >,
-        update_ui_obj_handler: impl ::core::convert::Into<
-            crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
-        >,
-    ) -> () {
-        unsafe {
-            __PhotographSelectPauseMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(dispos_manager),
-                ::core::convert::Into::into(update_ui_obj_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-photographselectpausemenu")]
-pub trait IPhotographSelectPauseMenuMethods: IPhotographSelectPauseMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        dispos_manager: impl ::core::convert::Into<
-            crate::app::photographdisposmanager::PhotographDisposManager,
-        >,
-        update_ui_obj_handler: impl ::core::convert::Into<
-            crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographSelectPauseMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectPauseMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(dispos_manager),
-                ::core::convert::Into::into(update_ui_obj_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`KeyLeft(bool)` overload"]
-    fn key_left(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographSelectPauseMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectPauseMenu_unity2_raw::key_left(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`KeyRight(bool)` overload"]
-    fn key_right(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographSelectPauseMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectPauseMenu_unity2_raw::key_right(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <PhotographSelectPauseMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectPauseMenu_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-photographselectpausemenu")]
-impl<__T: IPhotographSelectPauseMenu> IPhotographSelectPauseMenuMethods for __T {}
-
-#[cfg(feature = "app-photographselectpausemenu")]
-impl PhotographSelectPauseMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        update_ui_obj_handler : crate :: app :: photographselectpausemenu :: PhotographSelectPauseMenu_UpdateUIObjHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectPauseMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectPauseMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            dispos_manager,
-            update_ui_obj_handler,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "app-photographselectpausemenu")]
 #[doc(hidden)]
@@ -458,9 +53,7 @@ mod __PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -476,18 +69,15 @@ mod __PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -501,21 +91,18 @@ mod __PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -527,18 +114,15 @@ mod __PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -552,27 +136,19 @@ mod __PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw {
             crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, category_list, cur_category_idx, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-photographselectpausemenu")]
-pub trait IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods:
-    IPhotographSelectPauseMenu_UpdateUIObjHandler
-{
+pub trait IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods: IPhotographSelectPauseMenu_UpdateUIObjHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < PhotographSelectPauseMenu_UpdateUIObjHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -584,13 +160,13 @@ pub trait IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods:
     #[doc = "`Invoke(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, i32)` overload"]
     fn invoke(
         self,
-        category_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        >,
+        category_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>>,
         cur_category_idx: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = < PhotographSelectPauseMenu_UpdateUIObjHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(category_list),
@@ -602,10 +178,7 @@ pub trait IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods:
 }
 
 #[cfg(feature = "app-photographselectpausemenu")]
-impl<__T: IPhotographSelectPauseMenu_UpdateUIObjHandler>
-    IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods for __T
-{
-}
+impl<__T: IPhotographSelectPauseMenu_UpdateUIObjHandler> IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods for __T {}
 
 #[cfg(feature = "app-photographselectpausemenu")]
 impl PhotographSelectPauseMenu_UpdateUIObjHandler {
@@ -625,26 +198,330 @@ impl PhotographSelectPauseMenu_UpdateUIObjHandler {
 
 #[cfg(feature = "app-photographselectpausemenu")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhotographSelectPauseMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::photographdisposmanager::PhotographDisposManager as ::unity2::IlType>::il_type(),
+                <crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhotographSelectPauseMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        update_ui_obj_handler: crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PhotographSelectPauseMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::app::photographdisposmanager::PhotographDisposManager,
+            crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            dispos_manager,
+            update_ui_obj_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::photographdisposmanager::PhotographDisposManager as ::unity2::IlType>::il_type(),
+                <crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        update_ui_obj_handler: crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::app::photographdisposmanager::PhotographDisposManager,
+            crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, menu_content, dispos_manager, update_ui_obj_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_key_left {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
+                "KeyLeft",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyLeft",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn key_left(this: PhotographSelectPauseMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographSelectPauseMenu, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_key_left::get_method_info().method_ptr);
+        inner(this, is_trigger, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_key_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
+                "KeyRight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyRight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn key_right(this: PhotographSelectPauseMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographSelectPauseMenu, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_key_right::get_method_info().method_ptr);
+        inner(this, is_trigger, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectPauseMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: PhotographSelectPauseMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PhotographSelectPauseMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-photographselectpausemenu")]
+impl PhotographSelectPauseMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+        dispos_manager: impl ::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>,
+        update_ui_obj_handler: impl ::core::convert::Into<crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler>,
+    ) -> () {
+        unsafe {
+            __PhotographSelectPauseMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(dispos_manager),
+                ::core::convert::Into::into(update_ui_obj_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-photographselectpausemenu")]
+pub trait IPhotographSelectPauseMenuMethods: IPhotographSelectPauseMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+        dispos_manager: impl ::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>,
+        update_ui_obj_handler: impl ::core::convert::Into<crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographSelectPauseMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectPauseMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(dispos_manager),
+                ::core::convert::Into::into(update_ui_obj_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`KeyLeft(bool)` overload"]
+    fn key_left(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographSelectPauseMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectPauseMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`KeyRight(bool)` overload"]
+    fn key_right(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographSelectPauseMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectPauseMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <PhotographSelectPauseMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectPauseMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-photographselectpausemenu")]
+impl<__T: IPhotographSelectPauseMenu> IPhotographSelectPauseMenuMethods for __T {}
+
+#[cfg(feature = "app-photographselectpausemenu")]
+impl PhotographSelectPauseMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        update_ui_obj_handler: crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectPauseMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectPauseMenuMethods>::ctor(this, menu_item_list, menu_content, dispos_manager, update_ui_obj_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-photographselectpausemenu")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IPhotographSelectPauseMenu;
-    pub use super::IPhotographSelectPauseMenuMethods;
-    pub use super::IPhotographSelectPauseMenu_UpdateUIObjHandler;
-    pub use super::IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods;
-    pub use super::PhotographSelectPauseMenu;
-    pub use super::PhotographSelectPauseMenu_UpdateUIObjHandler;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        IPhotographSelectPauseMenu, IPhotographSelectPauseMenuMethods, IPhotographSelectPauseMenu_UpdateUIObjHandler,
+        IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods, PhotographSelectPauseMenu, PhotographSelectPauseMenu_UpdateUIObjHandler,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, procinst::IProcInst},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+    };
 }

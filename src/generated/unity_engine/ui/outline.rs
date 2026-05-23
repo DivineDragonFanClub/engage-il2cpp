@@ -2,17 +2,23 @@
 
 #[cfg(feature = "unity_engine-ui-outline-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::basemesheffect::{BaseMeshEffect, IBaseMeshEffect};
-    use crate::unity_engine::ui::shadow::{IShadow, Shadow};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::{
+                basemesheffect::{BaseMeshEffect, IBaseMeshEffect},
+                shadow::{IShadow, Shadow},
+            },
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/outline/Outline.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Outline")]
@@ -32,77 +38,42 @@ mod __Outline_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Outline as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Outline as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Outline as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Outline as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: Outline, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Outline, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Outline, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_modify_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Outline as ::unity2::ClassIdentity>::class(),
-                "ModifyMesh",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Outline as ::unity2::ClassIdentity>::class(), "ModifyMesh", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Outline as ::unity2::ClassIdentity>::NAME,
-                    "ModifyMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Outline as ::unity2::ClassIdentity>::NAME,
+                        "ModifyMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn modify_mesh(
@@ -110,15 +81,8 @@ mod __Outline_unity2_raw {
         vh: crate::unity_engine::ui::vertexhelper::VertexHelper,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Outline,
-            crate::unity_engine::ui::vertexhelper::VertexHelper,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_modify_mesh::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Outline, crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_modify_mesh::get_method_info().method_ptr);
         inner(this, vh, __unity2_method_info)
     }
 }
@@ -128,26 +92,15 @@ pub trait IOutlineMethods: IOutline {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Outline as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Outline as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Outline_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    fn modify_mesh(
-        self,
-        vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
-    ) -> () {
+    fn modify_mesh(self, vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>) -> () {
         unsafe {
-            let __receiver = <Outline as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Outline_unity2_raw::modify_mesh(
-                __receiver,
-                ::core::convert::Into::into(vh),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Outline as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Outline_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)
         }
     }
 }
@@ -159,13 +112,8 @@ impl<__T: IOutline> IOutlineMethods for __T {}
 impl Outline {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Outline),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Outline), ::core::stringify!(new),));
         <Self as IOutlineMethods>::ctor(this);
         this
     }
@@ -174,31 +122,32 @@ impl Outline {
 #[cfg(feature = "unity_engine-ui-outline")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IOutline;
-    pub use super::IOutlineMethods;
-    pub use super::Outline;
-    pub use crate::system::object::IObject;
+    pub use super::{IOutline, IOutlineMethods, Outline};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffect;
     #[cfg(feature = "unity_engine-ui-basemesheffect")]
     pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffectMethods;
-    pub use crate::unity_engine::ui::shadow::IShadow;
     #[cfg(feature = "unity_engine-ui-shadow")]
     pub use crate::unity_engine::ui::shadow::IShadowMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::uibehaviour::IUIBehaviour,
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+            ui::{basemesheffect::IBaseMeshEffect, shadow::IShadow},
+        },
+    };
 }

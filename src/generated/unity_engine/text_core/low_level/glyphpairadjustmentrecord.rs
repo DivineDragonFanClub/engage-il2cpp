@@ -2,25 +2,26 @@
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphpairadjustmentrecord-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/glyphpairadjustmentrecord/GlyphPairAdjustmentRecord.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
     pub struct GlyphPairAdjustmentRecord {
-    pub m_first_adjustment_record: crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord,
-    pub m_second_adjustment_record: crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord,
-    pub m_feature_lookup_flags: crate :: unity_engine :: text_core :: low_level :: fontfeaturelookupflags :: FontFeatureLookupFlags,
-}
+        pub m_first_adjustment_record: crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord,
+        pub m_second_adjustment_record: crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord,
+        pub m_feature_lookup_flags: crate::unity_engine::text_core::low_level::fontfeaturelookupflags::FontFeatureLookupFlags,
+    }
 
     impl ::unity2::ClassIdentity for GlyphPairAdjustmentRecord {
-        const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
-
         const NAME: &'static str = "GlyphPairAdjustmentRecord";
+        const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -31,10 +32,7 @@ mod __types {
 
     impl ::unity2::IlType for GlyphPairAdjustmentRecord {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -51,9 +49,7 @@ mod __GlyphPairAdjustmentRecord_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_first_adjustment_record {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
@@ -66,35 +62,33 @@ mod __GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_firstAdjustmentRecord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_firstAdjustmentRecord",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_first_adjustment_record(
         this: GlyphPairAdjustmentRecord,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord
-    {
-        let inner : extern "C" fn (GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_first_adjustment_record :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord {
+        let inner: extern "C" fn(
+            GlyphPairAdjustmentRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord =
+            ::core::mem::transmute(__lookup_get_first_adjustment_record::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_second_adjustment_record {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::class(),
@@ -107,26 +101,26 @@ mod __GlyphPairAdjustmentRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_secondAdjustmentRecord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GlyphPairAdjustmentRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_secondAdjustmentRecord",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_second_adjustment_record(
         this: GlyphPairAdjustmentRecord,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord
-    {
-        let inner : extern "C" fn (GlyphPairAdjustmentRecord , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_second_adjustment_record :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord {
+        let inner: extern "C" fn(
+            GlyphPairAdjustmentRecord,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord =
+            ::core::mem::transmute(__lookup_get_second_adjustment_record::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -134,28 +128,13 @@ mod __GlyphPairAdjustmentRecord_unity2_raw {
 #[cfg(feature = "unity_engine-text_core-low_level-glyphpairadjustmentrecord")]
 impl GlyphPairAdjustmentRecord {
     #[doc = "`get_firstAdjustmentRecord()` overload"]
-    pub fn get_first_adjustment_record(
-        self,
-    ) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord
-    {
-        unsafe {
-            __GlyphPairAdjustmentRecord_unity2_raw::get_first_adjustment_record(
-                self,
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_first_adjustment_record(self) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord {
+        unsafe { __GlyphPairAdjustmentRecord_unity2_raw::get_first_adjustment_record(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_secondAdjustmentRecord()` overload"]
-    pub fn get_second_adjustment_record(
-        self,
-    ) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord
-    {
-        unsafe {
-            __GlyphPairAdjustmentRecord_unity2_raw::get_second_adjustment_record(
-                self,
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_second_adjustment_record(self) -> crate::unity_engine::text_core::low_level::glyphadjustmentrecord::GlyphAdjustmentRecord {
+        unsafe { __GlyphPairAdjustmentRecord_unity2_raw::get_second_adjustment_record(self, ::core::option::Option::None) }
     }
 }
 
@@ -163,10 +142,9 @@ impl GlyphPairAdjustmentRecord {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphPairAdjustmentRecord;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

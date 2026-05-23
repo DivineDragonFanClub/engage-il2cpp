@@ -2,15 +2,12 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-disallowmultiplerendererfeature-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/disallowmultiplerendererfeature/DisallowMultipleRendererFeature.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "DisallowMultipleRendererFeature"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "DisallowMultipleRendererFeature")]
     pub struct DisallowMultipleRendererFeature {}
 }
 
@@ -26,9 +23,7 @@ mod __DisallowMultipleRendererFeature_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DisallowMultipleRendererFeature as ::unity2::ClassIdentity>::class(),
@@ -41,30 +36,20 @@ mod __DisallowMultipleRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DisallowMultipleRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DisallowMultipleRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DisallowMultipleRendererFeature,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DisallowMultipleRendererFeature, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DisallowMultipleRendererFeature, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -75,13 +60,8 @@ pub trait IDisallowMultipleRendererFeatureMethods: IDisallowMultipleRendererFeat
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <DisallowMultipleRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DisallowMultipleRendererFeature_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DisallowMultipleRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DisallowMultipleRendererFeature_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -108,7 +88,5 @@ impl DisallowMultipleRendererFeature {
 #[cfg(feature = "unity_engine-rendering-universal-disallowmultiplerendererfeature")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DisallowMultipleRendererFeature;
-    pub use super::IDisallowMultipleRendererFeature;
-    pub use super::IDisallowMultipleRendererFeatureMethods;
+    pub use super::{DisallowMultipleRendererFeature, IDisallowMultipleRendererFeature, IDisallowMultipleRendererFeatureMethods};
 }

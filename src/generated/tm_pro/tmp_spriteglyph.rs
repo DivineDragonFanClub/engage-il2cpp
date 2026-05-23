@@ -2,11 +2,13 @@
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::text_core::glyph::{Glyph, IGlyph};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::text_core::glyph::{Glyph, IGlyph},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spriteglyph/TMP_SpriteGlyph.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_SpriteGlyph")]
@@ -29,9 +31,7 @@ mod __TMP_SpriteGlyph_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SpriteGlyph as ::unity2::ClassIdentity>::class(),
@@ -44,40 +44,34 @@ mod __TMP_SpriteGlyph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TMP_SpriteGlyph,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TMP_SpriteGlyph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SpriteGlyph, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::text_core::glyphmetrics::GlyphMetrics as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::text_core::glyphrect::GlyphRect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SpriteGlyph as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -89,18 +83,15 @@ mod __TMP_SpriteGlyph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -120,29 +111,22 @@ mod __TMP_SpriteGlyph_unity2_raw {
             f32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            index,
-            metrics,
-            glyph_rect,
-            scale,
-            atlas_index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, index, metrics, glyph_rect, scale, atlas_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphmetrics :: GlyphMetrics as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sprite :: Sprite as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::text_core::glyphmetrics::GlyphMetrics as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::text_core::glyphrect::GlyphRect as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SpriteGlyph as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -154,18 +138,15 @@ mod __TMP_SpriteGlyph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SpriteGlyph as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -187,21 +168,8 @@ mod __TMP_SpriteGlyph_unity2_raw {
             i32,
             crate::unity_engine::sprite::Sprite,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
-        inner(
-            this,
-            index,
-            metrics,
-            glyph_rect,
-            scale,
-            atlas_index,
-            sprite,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
+        inner(this, index, metrics, glyph_rect, scale, atlas_index, sprite, __unity2_method_info)
     }
 }
 
@@ -210,9 +178,7 @@ pub trait ITMP_SpriteGlyphMethods: ITMP_SpriteGlyph {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SpriteGlyph_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -226,9 +192,7 @@ pub trait ITMP_SpriteGlyphMethods: ITMP_SpriteGlyph {
         atlas_index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SpriteGlyph_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -251,9 +215,7 @@ pub trait ITMP_SpriteGlyphMethods: ITMP_SpriteGlyph {
         sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SpriteGlyph as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SpriteGlyph_unity2_raw::ctor_3(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -301,14 +263,7 @@ impl TMP_SpriteGlyph {
                 ::core::stringify!(new_2),
             )
         });
-        <Self as ITMP_SpriteGlyphMethods>::ctor_2(
-            this,
-            index,
-            metrics,
-            glyph_rect,
-            scale,
-            atlas_index,
-        );
+        <Self as ITMP_SpriteGlyphMethods>::ctor_2(this, index, metrics, glyph_rect, scale, atlas_index);
         this
     }
 
@@ -328,15 +283,7 @@ impl TMP_SpriteGlyph {
                 ::core::stringify!(new_3),
             )
         });
-        <Self as ITMP_SpriteGlyphMethods>::ctor_3(
-            this,
-            index,
-            metrics,
-            glyph_rect,
-            scale,
-            atlas_index,
-            sprite,
-        );
+        <Self as ITMP_SpriteGlyphMethods>::ctor_3(this, index, metrics, glyph_rect, scale, atlas_index, sprite);
         this
     }
 }
@@ -344,13 +291,10 @@ impl TMP_SpriteGlyph {
 #[cfg(feature = "tm_pro-tmp_spriteglyph")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_SpriteGlyph;
-    pub use super::ITMP_SpriteGlyphMethods;
-    pub use super::TMP_SpriteGlyph;
-    pub use crate::system::object::IObject;
+    pub use super::{ITMP_SpriteGlyph, ITMP_SpriteGlyphMethods, TMP_SpriteGlyph};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::text_core::glyph::IGlyph;
     #[cfg(feature = "unity_engine-text_core-glyph")]
     pub use crate::unity_engine::text_core::glyph::IGlyphMethods;
+    pub use crate::{system::object::IObject, unity_engine::text_core::glyph::IGlyph};
 }

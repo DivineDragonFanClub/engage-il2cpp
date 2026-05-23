@@ -2,64 +2,14 @@
 
 #[cfg(feature = "unity_engine-timeline-timelineclip-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Timeline",
-        name = "TimelineClip.TimelineClipUpgrade"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct TimelineClip_TimelineClipUpgrade {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TimelineClip_BlendCurveMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TimelineClip_BlendCurveMode {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-        const NAME: &'static str = "TimelineClip.BlendCurveMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TimelineClip_BlendCurveMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TimelineClip_BlendCurveMode {
-        pub fn auto() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn manual() -> Self {
-            Self { value: 1 }
-        }
-    }
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClip")]
@@ -116,24 +66,19 @@ mod __types {
         #[rename(name = "m_MixOutCurve")]
         pub m_mix_out_curve: crate::unity_engine::animationcurve::AnimationCurve,
         #[rename(name = "m_BlendInCurveMode")]
-        pub m_blend_in_curve_mode:
-            crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode,
+        pub m_blend_in_curve_mode: crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode,
         #[rename(name = "m_BlendOutCurveMode")]
-        pub m_blend_out_curve_mode:
-            crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode,
+        pub m_blend_out_curve_mode: crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode,
         #[rename(name = "m_ExposedParameterNames")]
-        pub m_exposed_parameter_names:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub m_exposed_parameter_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "m_AnimationCurves")]
         pub m_animation_curves: crate::unity_engine::animationclip::AnimationClip,
         #[rename(name = "m_Recordable")]
         pub m_recordable: bool,
         #[rename(name = "m_PostExtrapolationMode")]
-        pub m_post_extrapolation_mode:
-            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        pub m_post_extrapolation_mode: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
         #[rename(name = "m_PreExtrapolationMode")]
-        pub m_pre_extrapolation_mode:
-            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        pub m_pre_extrapolation_mode: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
         #[rename(name = "m_PostExtrapolationTime")]
         pub m_post_extrapolation_time: f64,
         #[rename(name = "m_PreExtrapolationTime")]
@@ -144,21 +89,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TimelineClip_ClipExtrapolation {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TimelineClip_ClipExtrapolation {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
         const NAME: &'static str = "TimelineClip.ClipExtrapolation";
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -169,10 +107,7 @@ mod __types {
 
     impl ::unity2::IlType for TimelineClip_ClipExtrapolation {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -197,79 +132,49 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClip.TimelineClipUpgrade")]
+    #[parent(crate::system::object::Object)]
+    pub struct TimelineClip_TimelineClipUpgrade {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TimelineClip_BlendCurveMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TimelineClip_BlendCurveMode {
+        const NAME: &'static str = "TimelineClip.BlendCurveMode";
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TimelineClip_BlendCurveMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TimelineClip_BlendCurveMode {
+        pub fn auto() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn manual() -> Self {
+            Self { value: 1 }
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineclip-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-timeline-timelineclip")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TimelineClip_TimelineClipUpgrade_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upgrade_clip_in_from_global_to_local {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimelineClip_TimelineClipUpgrade as ::unity2::ClassIdentity>::class(),
-                "UpgradeClipInFromGlobalToLocal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip_TimelineClipUpgrade as ::unity2::ClassIdentity>::NAME,
-                    "UpgradeClipInFromGlobalToLocal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upgrade_clip_in_from_global_to_local(
-        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_upgrade_clip_in_from_global_to_local::get_offset() as isize),
-        );
-        inner(clip, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-timelineclip")]
-impl TimelineClip_TimelineClipUpgrade {
-    #[doc = "`UpgradeClipInFromGlobalToLocal(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    pub fn upgrade_clip_in_from_global_to_local(
-        clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-    ) -> () {
-        unsafe {
-            __TimelineClip_TimelineClipUpgrade_unity2_raw::upgrade_clip_in_from_global_to_local(
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "unity_engine-timeline-timelineclip")]
 #[doc(hidden)]
@@ -280,9 +185,7 @@ mod __TimelineClip_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_upgrade_to_latest_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -295,63 +198,43 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "UpgradeToLatestVersion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "UpgradeToLatestVersion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn upgrade_to_latest_version(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn upgrade_to_latest_version(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_upgrade_to_latest_version::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_upgrade_to_latest_version::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimelineClip as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TimelineClip as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -359,24 +242,15 @@ mod __TimelineClip_unity2_raw {
         parent: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TimelineClip,
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_time_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -389,39 +263,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_timeScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_timeScale",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_time_scale(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_time_scale(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_time_scale::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_time_scale::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -434,41 +296,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_start(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_start(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_start",
@@ -480,40 +329,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_start(
-        this: TimelineClip,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_start(this: TimelineClip, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_start::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -526,41 +362,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_duration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_duration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_duration(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_duration(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_duration",
@@ -572,40 +395,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_duration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_duration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_duration(
-        this: TimelineClip,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_duration(this: TimelineClip, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_duration::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -618,39 +428,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_end",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_end",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_end(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_end(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clip_in {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -663,39 +461,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_clipIn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_clipIn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_clip_in(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_clip_in(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_clip_in::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_clip_in::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_display_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -708,41 +494,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_displayName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_displayName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_display_name(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_display_name(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_display_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_display_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_display_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_displayName",
@@ -754,43 +527,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_displayName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_displayName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_display_name(
-        this: TimelineClip,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_display_name::get_offset() as isize),
-        );
+    pub unsafe fn set_display_name(this: TimelineClip, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TimelineClip, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_display_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -803,41 +560,30 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_curves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_curves",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_curves(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationclip::AnimationClip {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_curves::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::animationclip::AnimationClip =
+            ::core::mem::transmute(__lookup_get_curves::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_timeline_i_curves_owner_get_default_curves_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -850,34 +596,30 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_timeline_i_curves_owner_get_default_curves_name(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner : extern "C" fn (TimelineClip , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_timeline_i_curves_owner_get_default_curves_name :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_unity_engine_timeline_i_curves_owner_get_default_curves_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -890,43 +632,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_asset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_asset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_asset(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_asset::get_offset() as isize),
-        );
+    pub unsafe fn get_asset(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 {
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_get_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_asset",
@@ -938,18 +665,15 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_asset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_asset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_asset(
@@ -957,24 +681,15 @@ mod __TimelineClip_unity2_raw {
         value: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TimelineClip,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_asset::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_timeline_i_curves_owner_get_asset_owner {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -987,44 +702,30 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.Timeline.ICurvesOwner.get_assetOwner",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.Timeline.ICurvesOwner.get_assetOwner",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_timeline_i_curves_owner_get_asset_owner(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_unity_engine_timeline_i_curves_owner_get_asset_owner::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_unity_engine_timeline_i_curves_owner_get_asset_owner::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_timeline_i_curves_owner_get_target_track {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1037,44 +738,30 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.Timeline.ICurvesOwner.get_targetTrack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.Timeline.ICurvesOwner.get_targetTrack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_timeline_i_curves_owner_get_target_track(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::trackasset::TrackAsset {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::timeline::trackasset::TrackAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_unity_engine_timeline_i_curves_owner_get_target_track::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset =
+            ::core::mem::transmute(__lookup_unity_engine_timeline_i_curves_owner_get_target_track::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_parent_track {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1087,42 +774,32 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_parentTrack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_parentTrack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_parent_track(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::trackasset::TrackAsset {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::timeline::trackasset::TrackAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_parent_track::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset =
+            ::core::mem::transmute(__lookup_get_parent_track::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_parent_track {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_parentTrack",
@@ -1134,18 +811,15 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_parentTrack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_parentTrack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_parent_track(
@@ -1153,24 +827,15 @@ mod __TimelineClip_unity2_raw {
         value: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TimelineClip,
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_parent_track::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_parent_track::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ease_in_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1183,39 +848,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_easeInDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_easeInDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ease_in_duration(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_ease_in_duration(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ease_in_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_ease_in_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ease_out_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1228,39 +881,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_easeOutDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_easeOutDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ease_out_duration(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_ease_out_duration(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ease_out_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_ease_out_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_blend_in_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1273,39 +914,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_blendInDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_blendInDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_blend_in_duration(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_blend_in_duration(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_blend_in_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_blend_in_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_blend_out_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1318,39 +947,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_blendOutDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_blendOutDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_blend_out_duration(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_blend_out_duration(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_blend_out_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_blend_out_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_blend_in {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1363,39 +980,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_hasBlendIn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_hasBlendIn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_blend_in(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_blend_in(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_blend_in::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_blend_in::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_blend_out {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1408,39 +1013,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_hasBlendOut",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_hasBlendOut",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_blend_out(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_blend_out(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_blend_out::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_blend_out::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mix_in_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1453,45 +1046,32 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_mixInCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_mixInCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_mix_in_curve(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mix_in_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_mix_in_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mix_in_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_mixInCurve",
@@ -1503,18 +1083,15 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_mixInCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_mixInCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mix_in_curve(
@@ -1522,24 +1099,15 @@ mod __TimelineClip_unity2_raw {
         value: crate::unity_engine::animationcurve::AnimationCurve,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TimelineClip,
-            crate::unity_engine::animationcurve::AnimationCurve,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mix_in_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, crate::unity_engine::animationcurve::AnimationCurve, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mix_in_curve::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mix_in_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1552,39 +1120,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_mixInDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_mixInDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mix_in_duration(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_mix_in_duration(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_mix_in_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_mix_in_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mix_out_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1597,45 +1153,32 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_mixOutCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_mixOutCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_mix_out_curve(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mix_out_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_mix_out_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mix_out_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_mixOutCurve",
@@ -1647,18 +1190,15 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_mixOutCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_mixOutCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mix_out_curve(
@@ -1666,24 +1206,15 @@ mod __TimelineClip_unity2_raw {
         value: crate::unity_engine::animationcurve::AnimationCurve,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TimelineClip,
-            crate::unity_engine::animationcurve::AnimationCurve,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mix_out_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, crate::unity_engine::animationcurve::AnimationCurve, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mix_out_curve::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mix_out_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1696,39 +1227,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_mixOutTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_mixOutTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mix_out_time(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_mix_out_time(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_mix_out_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_mix_out_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mix_out_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1741,39 +1260,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_mixOutDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_mixOutDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mix_out_duration(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_mix_out_duration(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_mix_out_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_mix_out_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_recordable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1786,41 +1293,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_recordable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_recordable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_recordable(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_recordable(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_recordable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_recordable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_recordable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_recordable",
@@ -1832,40 +1326,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_recordable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_recordable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_recordable(
-        this: TimelineClip,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_recordable(this: TimelineClip, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TimelineClip, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_recordable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_recordable::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clip_caps {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -1878,85 +1359,57 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_clipCaps",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_clipCaps",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clip_caps(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::timeline::clipcaps::ClipCaps = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clip_caps::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::clipcaps::ClipCaps =
+            ::core::mem::transmute(__lookup_get_clip_caps::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimelineClip as ::unity2::ClassIdentity>::class(),
-                "Hash",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TimelineClip as ::unity2::ClassIdentity>::class(), "Hash", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "Hash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "Hash",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hash(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hash::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_hash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate_mix_out {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "EvaluateMixOut",
@@ -1968,42 +1421,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "EvaluateMixOut",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "EvaluateMixOut",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn evaluate_mix_out(
-        this: TimelineClip,
-        time: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn evaluate_mix_out(this: TimelineClip, time: f64, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_evaluate_mix_out::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_evaluate_mix_out::get_method_info().method_ptr);
         inner(this, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate_mix_in {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "EvaluateMixIn",
@@ -2015,40 +1454,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "EvaluateMixIn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "EvaluateMixIn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn evaluate_mix_in(
-        this: TimelineClip,
-        time: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn evaluate_mix_in(this: TimelineClip, time: f64, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_evaluate_mix_in::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_evaluate_mix_in::get_method_info().method_ptr);
         inner(this, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_mix_in_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2061,39 +1487,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "GetDefaultMixInCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "GetDefaultMixInCurve",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_default_mix_in_curve(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_default_mix_in_curve::get_offset() as isize),
-        );
+    pub unsafe fn get_default_mix_in_curve(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_default_mix_in_curve::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_mix_out_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2106,41 +1520,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "GetDefaultMixOutCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "GetDefaultMixOutCurve",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_default_mix_out_curve(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_default_mix_out_curve::get_offset() as isize),
-        );
+    pub unsafe fn get_default_mix_out_curve(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_default_mix_out_curve::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_local_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "ToLocalTime",
@@ -2152,40 +1553,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "ToLocalTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "ToLocalTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_local_time(
-        this: TimelineClip,
-        time: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn to_local_time(this: TimelineClip, time: f64, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_local_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_local_time::get_method_info().method_ptr);
         inner(this, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_animation_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2198,45 +1586,31 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_animationClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_animationClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_animation_clip(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationclip::AnimationClip {
-        let inner: extern "C" fn(
-            TimelineClip,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_animation_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> crate::unity_engine::animationclip::AnimationClip =
+            ::core::mem::transmute(__lookup_get_animation_clip::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sanitize_time_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f64 as ::unity2::IlType>::il_type(),
-                <f64 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type(), <f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "SanitizeTimeValue",
@@ -2248,40 +1622,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "SanitizeTimeValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "SanitizeTimeValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn sanitize_time_value(
-        value: f64,
-        default_value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn sanitize_time_value(value: f64, default_value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(f64, f64, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_sanitize_time_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_sanitize_time_value::get_method_info().method_ptr);
         inner(value, default_value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_post_extrapolation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2294,35 +1655,35 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_postExtrapolationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_postExtrapolationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_post_extrapolation_mode(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
-        let inner : extern "C" fn (TimelineClip , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_post_extrapolation_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TimelineClip,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation =
+            ::core::mem::transmute(__lookup_get_post_extrapolation_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_post_extrapolation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_postExtrapolationMode",
@@ -2334,18 +1695,15 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_postExtrapolationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_postExtrapolationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_post_extrapolation_mode(
@@ -2357,20 +1715,14 @@ mod __TimelineClip_unity2_raw {
             TimelineClip,
             crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_post_extrapolation_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_post_extrapolation_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pre_extrapolation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2383,35 +1735,35 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_preExtrapolationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_preExtrapolationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pre_extrapolation_mode(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
-        let inner : extern "C" fn (TimelineClip , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_pre_extrapolation_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TimelineClip,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation =
+            ::core::mem::transmute(__lookup_get_pre_extrapolation_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pre_extrapolation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "set_preExtrapolationMode",
@@ -2423,18 +1775,15 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "set_preExtrapolationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "set_preExtrapolationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pre_extrapolation_mode(
@@ -2446,22 +1795,15 @@ mod __TimelineClip_unity2_raw {
             TimelineClip,
             crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pre_extrapolation_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_pre_extrapolation_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_post_extrapolation_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "SetPostExtrapolationTime",
@@ -2473,42 +1815,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "SetPostExtrapolationTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "SetPostExtrapolationTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_post_extrapolation_time(
-        this: TimelineClip,
-        time: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_post_extrapolation_time(this: TimelineClip, time: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_post_extrapolation_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_post_extrapolation_time::get_method_info().method_ptr);
         inner(this, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pre_extrapolation_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "SetPreExtrapolationTime",
@@ -2520,42 +1848,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "SetPreExtrapolationTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "SetPreExtrapolationTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_pre_extrapolation_time(
-        this: TimelineClip,
-        time: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_pre_extrapolation_time(this: TimelineClip, time: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_pre_extrapolation_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_pre_extrapolation_time::get_method_info().method_ptr);
         inner(this, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_pre_extrapolated_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "IsPreExtrapolatedTime",
@@ -2567,42 +1881,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "IsPreExtrapolatedTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "IsPreExtrapolatedTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_pre_extrapolated_time(
-        this: TimelineClip,
-        sequence_time: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_pre_extrapolated_time(this: TimelineClip, sequence_time: f64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_pre_extrapolated_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_pre_extrapolated_time::get_method_info().method_ptr);
         inner(this, sequence_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_post_extrapolated_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "IsPostExtrapolatedTime",
@@ -2614,40 +1914,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "IsPostExtrapolatedTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "IsPostExtrapolatedTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_post_extrapolated_time(
-        this: TimelineClip,
-        sequence_time: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_post_extrapolated_time(this: TimelineClip, sequence_time: f64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TimelineClip, f64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_post_extrapolated_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_post_extrapolated_time::get_method_info().method_ptr);
         inner(this, sequence_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_extrapolated_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2660,39 +1947,27 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_extrapolatedStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_extrapolatedStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_extrapolated_start(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_extrapolated_start(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_extrapolated_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_extrapolated_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_extrapolated_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2705,40 +1980,32 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "get_extrapolatedDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "get_extrapolatedDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_extrapolated_duration(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_extrapolated_duration(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_extrapolated_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_extrapolated_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_extrapolated_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f64 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip_ClipExtrapolation as :: unity2 :: IlType > :: il_type () , < f64 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f64 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation as ::unity2::IlType>::il_type(),
+                <f64 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "GetExtrapolatedTime",
@@ -2750,18 +2017,15 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "GetExtrapolatedTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "GetExtrapolatedTime",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_extrapolated_time(
@@ -2775,20 +2039,14 @@ mod __TimelineClip_unity2_raw {
             crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
             f64,
             ::unity2::OptionalMethod,
-        ) -> f64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_extrapolated_time::get_offset() as isize),
-        );
+        ) -> f64 = ::core::mem::transmute(__lookup_get_extrapolated_time::get_method_info().method_ptr);
         inner(time, mode, duration, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_i_serialization_callback_receiver_on_before_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2801,34 +2059,30 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_i_serialization_callback_receiver_on_before_serialize(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (TimelineClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_i_serialization_callback_receiver_on_before_serialize :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unity_engine_i_serialization_callback_receiver_on_before_serialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_i_serialization_callback_receiver_on_after_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2841,34 +2095,30 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(
         this: TimelineClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (TimelineClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_i_serialization_callback_receiver_on_after_deserialize :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unity_engine_i_serialization_callback_receiver_on_after_deserialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
@@ -2881,43 +2131,28 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: TimelineClip, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(TimelineClip, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f64 as ::unity2::IlType>::il_type(),
-                <f64 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type(), <f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineClip as ::unity2::ClassIdentity>::class(),
                 "UpdateDirty",
@@ -2929,73 +2164,46 @@ mod __TimelineClip_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    "UpdateDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        "UpdateDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_dirty(
-        this: TimelineClip,
-        old_value: f64,
-        new_value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_dirty(this: TimelineClip, old_value: f64, new_value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TimelineClip, f64, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_dirty::get_method_info().method_ptr);
         inner(this, old_value, new_value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimelineClip as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TimelineClip as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineClip as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -3006,17 +2214,14 @@ impl TimelineClip {
     pub fn get_default_mix_in_curve() -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe { __TimelineClip_unity2_raw::get_default_mix_in_curve(::core::option::Option::None) }
     }
+
     #[doc = "`GetDefaultMixOutCurve()` overload"]
     pub fn get_default_mix_out_curve() -> crate::unity_engine::animationcurve::AnimationCurve {
-        unsafe {
-            __TimelineClip_unity2_raw::get_default_mix_out_curve(::core::option::Option::None)
-        }
+        unsafe { __TimelineClip_unity2_raw::get_default_mix_out_curve(::core::option::Option::None) }
     }
+
     #[doc = "`SanitizeTimeValue(f64, f64)` overload"]
-    pub fn sanitize_time_value(
-        value: impl ::core::convert::Into<f64>,
-        default_value: impl ::core::convert::Into<f64>,
-    ) -> f64 {
+    pub fn sanitize_time_value(value: impl ::core::convert::Into<f64>, default_value: impl ::core::convert::Into<f64>) -> f64 {
         unsafe {
             __TimelineClip_unity2_raw::sanitize_time_value(
                 ::core::convert::Into::into(value),
@@ -3025,12 +2230,11 @@ impl TimelineClip {
             )
         }
     }
+
     #[doc = "`GetExtrapolatedTime(f64, crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, f64)` overload"]
     pub fn get_extrapolated_time(
         time: impl ::core::convert::Into<f64>,
-        mode: impl ::core::convert::Into<
-            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
-        >,
+        mode: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation>,
         duration: impl ::core::convert::Into<f64>,
     ) -> f64 {
         unsafe {
@@ -3042,6 +2246,7 @@ impl TimelineClip {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TimelineClip_unity2_raw::cctor(::core::option::Option::None) }
@@ -3053,636 +2258,384 @@ pub trait ITimelineClipMethods: ITimelineClip {
     #[doc = "`UpgradeToLatestVersion()` overload"]
     fn upgrade_to_latest_version(self) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::upgrade_to_latest_version(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::upgrade_to_latest_version(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    fn ctor(
-        self,
-        parent: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-    ) -> () {
+    fn ctor(self, parent: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(parent),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::ctor(__receiver, ::core::convert::Into::into(parent), ::core::option::Option::None)
         }
     }
     #[doc = "`get_timeScale()` overload"]
     fn get_time_scale(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_time_scale(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_start()` overload"]
     fn get_start(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_start(f64)` overload"]
     fn set_start(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_start(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_start(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_duration()` overload"]
     fn get_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_duration(f64)` overload"]
     fn set_duration(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_duration(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_duration(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_end()` overload"]
     fn get_end(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_end(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_clipIn()` overload"]
     fn get_clip_in(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_clip_in(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_displayName()` overload"]
     fn get_display_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_display_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_displayName(::unity2::Il2CppString)` overload"]
     fn set_display_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_display_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_display_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_curves()` overload"]
     fn get_curves(self) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_curves(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName()` overload"]
-    fn unity_engine_timeline_i_curves_owner_get_default_curves_name(
-        self,
-    ) -> ::unity2::Il2CppString {
+    fn unity_engine_timeline_i_curves_owner_get_default_curves_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_default_curves_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_default_curves_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_asset()` overload"]
     fn get_asset(self) -> crate::unity_engine::object_2::Object_2 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_asset(crate::unity_engine::object_2::Object_2)` overload"]
-    fn set_asset(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
+    fn set_asset(self, value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_asset(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_asset(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.Timeline.ICurvesOwner.get_assetOwner()` overload"]
-    fn unity_engine_timeline_i_curves_owner_get_asset_owner(
-        self,
-    ) -> crate::unity_engine::object_2::Object_2 {
+    fn unity_engine_timeline_i_curves_owner_get_asset_owner(self) -> crate::unity_engine::object_2::Object_2 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset_owner(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset_owner(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.Timeline.ICurvesOwner.get_targetTrack()` overload"]
-    fn unity_engine_timeline_i_curves_owner_get_target_track(
-        self,
-    ) -> crate::unity_engine::timeline::trackasset::TrackAsset {
+    fn unity_engine_timeline_i_curves_owner_get_target_track(self) -> crate::unity_engine::timeline::trackasset::TrackAsset {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_target_track(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_target_track(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_parentTrack()` overload"]
     fn get_parent_track(self) -> crate::unity_engine::timeline::trackasset::TrackAsset {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_parent_track(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_parentTrack(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    fn set_parent_track(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-    ) -> () {
+    fn set_parent_track(self, value: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_parent_track(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_parent_track(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_easeInDuration()` overload"]
     fn get_ease_in_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_ease_in_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_ease_in_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_easeOutDuration()` overload"]
     fn get_ease_out_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_ease_out_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_ease_out_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_blendInDuration()` overload"]
     fn get_blend_in_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_blend_in_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_blend_in_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_blendOutDuration()` overload"]
     fn get_blend_out_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_blend_out_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_blend_out_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasBlendIn()` overload"]
     fn get_has_blend_in(self) -> bool {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_has_blend_in(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hasBlendOut()` overload"]
     fn get_has_blend_out(self) -> bool {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_has_blend_out(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_mixInCurve()` overload"]
     fn get_mix_in_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_mix_in_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_mixInCurve(crate::unity_engine::animationcurve::AnimationCurve)` overload"]
-    fn set_mix_in_curve(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
-    ) -> () {
+    fn set_mix_in_curve(self, value: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_mix_in_curve(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_mix_in_curve(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_mixInDuration()` overload"]
     fn get_mix_in_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_mix_in_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_mixOutCurve()` overload"]
     fn get_mix_out_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_mix_out_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_mixOutCurve(crate::unity_engine::animationcurve::AnimationCurve)` overload"]
-    fn set_mix_out_curve(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
-    ) -> () {
+    fn set_mix_out_curve(self, value: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_mix_out_curve(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_mix_out_curve(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_mixOutTime()` overload"]
     fn get_mix_out_time(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_mix_out_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_mixOutDuration()` overload"]
     fn get_mix_out_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_mix_out_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_mix_out_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_recordable()` overload"]
     fn get_recordable(self) -> bool {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_recordable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_recordable(bool)` overload"]
     fn set_recordable(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_recordable(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_recordable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_clipCaps()` overload"]
     fn get_clip_caps(self) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_clip_caps(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Hash()` overload"]
     fn hash(self) -> i32 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::hash(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EvaluateMixOut(f64)` overload"]
     fn evaluate_mix_out(self, time: impl ::core::convert::Into<f64>) -> f32 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::evaluate_mix_out(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::evaluate_mix_out(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)
         }
     }
     #[doc = "`EvaluateMixIn(f64)` overload"]
     fn evaluate_mix_in(self, time: impl ::core::convert::Into<f64>) -> f32 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::evaluate_mix_in(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::evaluate_mix_in(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)
         }
     }
     #[doc = "`ToLocalTime(f64)` overload"]
     fn to_local_time(self, time: impl ::core::convert::Into<f64>) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::to_local_time(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::to_local_time(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)
         }
     }
     #[doc = "`get_animationClip()` overload"]
     fn get_animation_clip(self) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::get_animation_clip(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_postExtrapolationMode()` overload"]
-    fn get_post_extrapolation_mode(
-        self,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+    fn get_post_extrapolation_mode(self) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_post_extrapolation_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_post_extrapolation_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_postExtrapolationMode(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
     fn set_post_extrapolation_mode(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_post_extrapolation_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_post_extrapolation_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_preExtrapolationMode()` overload"]
-    fn get_pre_extrapolation_mode(
-        self,
-    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
+    fn get_pre_extrapolation_mode(self) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_pre_extrapolation_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_pre_extrapolation_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_preExtrapolationMode(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)` overload"]
     fn set_pre_extrapolation_mode(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_pre_extrapolation_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_pre_extrapolation_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SetPostExtrapolationTime(f64)` overload"]
     fn set_post_extrapolation_time(self, time: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_post_extrapolation_time(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_post_extrapolation_time(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)
         }
     }
     #[doc = "`SetPreExtrapolationTime(f64)` overload"]
     fn set_pre_extrapolation_time(self, time: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::set_pre_extrapolation_time(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::set_pre_extrapolation_time(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)
         }
     }
     #[doc = "`IsPreExtrapolatedTime(f64)` overload"]
     fn is_pre_extrapolated_time(self, sequence_time: impl ::core::convert::Into<f64>) -> bool {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::is_pre_extrapolated_time(
-                __receiver,
-                ::core::convert::Into::into(sequence_time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::is_pre_extrapolated_time(__receiver, ::core::convert::Into::into(sequence_time), ::core::option::Option::None)
         }
     }
     #[doc = "`IsPostExtrapolatedTime(f64)` overload"]
     fn is_post_extrapolated_time(self, sequence_time: impl ::core::convert::Into<f64>) -> bool {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::is_post_extrapolated_time(
-                __receiver,
-                ::core::convert::Into::into(sequence_time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::is_post_extrapolated_time(__receiver, ::core::convert::Into::into(sequence_time), ::core::option::Option::None)
         }
     }
     #[doc = "`get_extrapolatedStart()` overload"]
     fn get_extrapolated_start(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_extrapolated_start(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_extrapolated_start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_extrapolatedDuration()` overload"]
     fn get_extrapolated_duration(self) -> f64 {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw::get_extrapolated_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::get_extrapolated_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]
     fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw :: unity_engine_i_serialization_callback_receiver_on_before_serialize (__receiver , :: core :: option :: Option :: None)
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::unity_engine_i_serialization_callback_receiver_on_before_serialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]
     fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TimelineClip_unity2_raw :: unity_engine_i_serialization_callback_receiver_on_after_deserialize (__receiver , :: core :: option :: Option :: None)
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TimelineClip_unity2_raw::unity_engine_i_serialization_callback_receiver_on_after_deserialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateDirty(f64, f64)` overload"]
-    fn update_dirty(
-        self,
-        old_value: impl ::core::convert::Into<f64>,
-        new_value: impl ::core::convert::Into<f64>,
-    ) -> () {
+    fn update_dirty(self, old_value: impl ::core::convert::Into<f64>, new_value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelineClip as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelineClip_unity2_raw::update_dirty(
                 __receiver,
                 ::core::convert::Into::into(old_value),
@@ -3700,13 +2653,8 @@ impl<__T: ITimelineClip> ITimelineClipMethods for __T {}
 impl TimelineClip {
     #[doc = "`.ctor(crate::unity_engine::timeline::trackasset::TrackAsset)` — overload selector"]
     pub fn new(parent: crate::unity_engine::timeline::trackasset::TrackAsset) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TimelineClip),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TimelineClip), ::core::stringify!(new),));
         <Self as ITimelineClipMethods>::ctor(this, parent);
         this
     }
@@ -3714,21 +2662,73 @@ impl TimelineClip {
 
 #[cfg(feature = "unity_engine-timeline-timelineclip")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TimelineClip_TimelineClipUpgrade_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upgrade_clip_in_from_global_to_local {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimelineClip_TimelineClipUpgrade as ::unity2::ClassIdentity>::class(),
+                "UpgradeClipInFromGlobalToLocal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip_TimelineClipUpgrade as ::unity2::ClassIdentity>::NAME,
+                        "UpgradeClipInFromGlobalToLocal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn upgrade_clip_in_from_global_to_local(
+        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_upgrade_clip_in_from_global_to_local::get_method_info().method_ptr);
+        inner(clip, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timelineclip")]
+impl TimelineClip_TimelineClipUpgrade {
+    #[doc = "`UpgradeClipInFromGlobalToLocal(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
+    pub fn upgrade_clip_in_from_global_to_local(clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>) -> () {
+        unsafe {
+            __TimelineClip_TimelineClipUpgrade_unity2_raw::upgrade_clip_in_from_global_to_local(
+                ::core::convert::Into::into(clip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timelineclip")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::ITimelineClip;
-    pub use super::ITimelineClipMethods;
-    pub use super::ITimelineClip_TimelineClipUpgrade;
-    pub use super::TimelineClip;
-    pub use super::TimelineClip_BlendCurveMode;
-    pub use super::TimelineClip_ClipExtrapolation;
-    pub use super::TimelineClip_TimelineClipUpgrade;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ITimelineClip, ITimelineClipMethods, ITimelineClip_TimelineClipUpgrade, TimelineClip, TimelineClip_BlendCurveMode,
+        TimelineClip_ClipExtrapolation, TimelineClip_TimelineClipUpgrade,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

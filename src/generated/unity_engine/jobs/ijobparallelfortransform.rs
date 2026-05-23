@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransform-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransform/IJobParallelForTransform.md"))]
     #[::unity2::class(namespace = "UnityEngine.Jobs", name = "IJobParallelForTransform")]
@@ -23,10 +23,11 @@ mod __IJobParallelForTransform_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: jobs :: transformaccess :: TransformAccess as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::jobs::transformaccess::TransformAccess as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IJobParallelForTransform as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -38,18 +39,15 @@ mod __IJobParallelForTransform_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IJobParallelForTransform as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IJobParallelForTransform as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
@@ -63,11 +61,7 @@ mod __IJobParallelForTransform_unity2_raw {
             i32,
             crate::unity_engine::jobs::transformaccess::TransformAccess,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, index, transform, __unity2_method_info)
     }
 }
@@ -78,15 +72,11 @@ pub trait IIJobParallelForTransformMethods: IIJobParallelForTransform {
     fn execute(
         self,
         index: impl ::core::convert::Into<i32>,
-        transform: impl ::core::convert::Into<
-            crate::unity_engine::jobs::transformaccess::TransformAccess,
-        >,
+        transform: impl ::core::convert::Into<crate::unity_engine::jobs::transformaccess::TransformAccess>,
     ) -> () {
         unsafe {
             let __receiver =
-                <IJobParallelForTransform as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <IJobParallelForTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IJobParallelForTransform_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -103,7 +93,5 @@ impl<__T: IIJobParallelForTransform> IIJobParallelForTransformMethods for __T {}
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransform")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIJobParallelForTransform;
-    pub use super::IIJobParallelForTransformMethods;
-    pub use super::IJobParallelForTransform;
+    pub use super::{IIJobParallelForTransform, IIJobParallelForTransformMethods, IJobParallelForTransform};
 }

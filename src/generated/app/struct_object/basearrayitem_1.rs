@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-struct_object-basearrayitem_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::struct_object::baseitem::{BaseItem, IBaseItem};
-    use crate::app::struct_object::basepiece::{BasePiece, IBasePiece};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::struct_object::{
+            baseitem::{BaseItem, IBaseItem},
+            basepiece::{BasePiece, IBasePiece},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/struct_object/basearrayitem_1/BaseArrayItem_1.md"))]
     #[::unity2::class(namespace = "App.StructObject", name = "BaseArrayItem`1")]
@@ -62,16 +66,15 @@ impl<T0: ::unity2::ClassIdentity> BaseArrayItem_1<T0> {
 #[cfg(feature = "app-struct_object-basearrayitem_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BaseArrayItem_1;
-    pub use super::IBaseArrayItem_1;
-    pub use super::IBaseArrayItem_1Methods;
-    pub use crate::app::struct_object::baseitem::IBaseItem;
+    pub use super::{BaseArrayItem_1, IBaseArrayItem_1, IBaseArrayItem_1Methods};
     #[cfg(feature = "app-struct_object-baseitem")]
     pub use crate::app::struct_object::baseitem::IBaseItemMethods;
-    pub use crate::app::struct_object::basepiece::IBasePiece;
     #[cfg(feature = "app-struct_object-basepiece")]
     pub use crate::app::struct_object::basepiece::IBasePieceMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::struct_object::{baseitem::IBaseItem, basepiece::IBasePiece},
+        system::object::IObject,
+    };
 }

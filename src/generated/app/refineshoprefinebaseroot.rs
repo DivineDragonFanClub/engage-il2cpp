@@ -2,22 +2,25 @@
 
 #[cfg(feature = "app-refineshoprefinebaseroot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot_ReturnEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopRefineBaseRoot.ReturnEventHandler"
-    )]
+    #[::unity2::class(namespace = "App", name = "RefineShopRefineBaseRoot.ReturnEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct RefineShopRefineBaseRoot_ReturnEventHandler {}
 
@@ -45,16 +48,13 @@ mod __types {
         #[rename(name = "m_WeaponRotWaitTimeCount")]
         pub m_weapon_rot_wait_time_count: f32,
         #[rename(name = "m_ReturnEventHandler")]
-        pub m_return_event_handler:
-            crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
+        pub m_return_event_handler: crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
         #[rename(name = "m_RefineShopRefineBaseMenu")]
-        pub m_refine_shop_refine_base_menu:
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu,
+        pub m_refine_shop_refine_base_menu: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu,
         #[rename(name = "m_ItemMenuDetailSetter")]
         pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
         #[rename(name = "m_ShopWeaponModelRenderer")]
-        pub m_shop_weapon_model_renderer:
-            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        pub m_shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
         #[rename(name = "m_OwnerItemIndex")]
@@ -74,9 +74,7 @@ mod __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -92,18 +90,15 @@ mod __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -117,20 +112,14 @@ mod __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::basicmenu::BasicMenu_Result as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -148,18 +137,15 @@ mod __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -177,34 +163,19 @@ mod __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw {
             i32,
             crate::app::itemdata::ItemData_Kinds,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(
-            this,
-            result,
-            unit,
-            owner_item_index,
-            kind,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, result, unit, owner_item_index, kind, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refineshoprefinebaseroot")]
-pub trait IRefineShopRefineBaseRoot_ReturnEventHandlerMethods:
-    IRefineShopRefineBaseRoot_ReturnEventHandler
-{
+pub trait IRefineShopRefineBaseRoot_ReturnEventHandlerMethods: IRefineShopRefineBaseRoot_ReturnEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < RefineShopRefineBaseRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineShopRefineBaseRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -222,7 +193,9 @@ pub trait IRefineShopRefineBaseRoot_ReturnEventHandlerMethods:
         kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
     ) -> () {
         unsafe {
-            let __receiver = < RefineShopRefineBaseRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineShopRefineBaseRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(result),
@@ -236,10 +209,7 @@ pub trait IRefineShopRefineBaseRoot_ReturnEventHandlerMethods:
 }
 
 #[cfg(feature = "app-refineshoprefinebaseroot")]
-impl<__T: IRefineShopRefineBaseRoot_ReturnEventHandler>
-    IRefineShopRefineBaseRoot_ReturnEventHandlerMethods for __T
-{
-}
+impl<__T: IRefineShopRefineBaseRoot_ReturnEventHandler> IRefineShopRefineBaseRoot_ReturnEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-refineshoprefinebaseroot")]
 impl RefineShopRefineBaseRoot_ReturnEventHandler {
@@ -266,9 +236,7 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load_prefab_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
@@ -281,35 +249,26 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "LoadPrefabAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "LoadPrefabAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_prefab_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
@@ -322,35 +281,26 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
@@ -363,36 +313,34 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "UnloadPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "UnloadPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -404,18 +352,15 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -424,7 +369,7 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         default_unit: crate::app::unit::Unit,
         default_item_index: i32,
         default_item_kind: crate::app::itemdata::ItemData_Kinds,
-        return_event_handler : crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler,
+        return_event_handler: crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot {
         let inner: extern "C" fn(
@@ -435,13 +380,8 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
             crate::app::itemdata::ItemData_Kinds,
             crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+        ) -> crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(
             super_,
             shop_weapon_model_renderer,
@@ -456,10 +396,15 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -471,18 +416,15 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -492,7 +434,7 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         default_unit: crate::app::unit::Unit,
         default_item_index: i32,
         default_item_kind: crate::app::itemdata::ItemData_Kinds,
-        return_event_handler : crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler,
+        return_event_handler: crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -504,11 +446,7 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
             crate::app::itemdata::ItemData_Kinds,
             crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(
             this,
             super_,
@@ -524,9 +462,7 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
@@ -539,39 +475,27 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy(
-        this: RefineShopRefineBaseRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy(this: RefineShopRefineBaseRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
@@ -584,39 +508,27 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RefineShopRefineBaseRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RefineShopRefineBaseRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
@@ -629,39 +541,27 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: RefineShopRefineBaseRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: RefineShopRefineBaseRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -677,18 +577,15 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnSelectMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnSelectMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_select_menu_item(
@@ -697,25 +594,15 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         unit_item: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RefineShopRefineBaseRoot,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select_menu_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineShopRefineBaseRoot, crate::app::unit::Unit, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select_menu_item::get_method_info().method_ptr);
         inner(this, unit, unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_decide_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -732,18 +619,15 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnDecideMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnDecideMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_decide_menu_item(
@@ -759,20 +643,14 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
             i32,
             crate::app::itemdata::ItemData_Kinds,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_decide_menu_item::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_decide_menu_item::get_method_info().method_ptr);
         inner(this, unit, owner_item_index, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_request_close_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
@@ -785,39 +663,27 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnRequestCloseMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnRequestCloseMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_request_close_menu(
-        this: RefineShopRefineBaseRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_request_close_menu(this: RefineShopRefineBaseRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_request_close_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_request_close_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::class(),
@@ -830,30 +696,20 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineBaseRoot as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close(
-        this: RefineShopRefineBaseRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close(this: RefineShopRefineBaseRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -862,34 +718,27 @@ mod __RefineShopRefineBaseRoot_unity2_raw {
 impl RefineShopRefineBaseRoot {
     #[doc = "`LoadPrefabAsync()` overload"]
     pub fn load_prefab_async() -> () {
-        unsafe {
-            __RefineShopRefineBaseRoot_unity2_raw::load_prefab_async(::core::option::Option::None)
-        }
+        unsafe { __RefineShopRefineBaseRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
     }
+
     #[doc = "`IsLoadingPrefab()` overload"]
     pub fn is_loading_prefab() -> bool {
-        unsafe {
-            __RefineShopRefineBaseRoot_unity2_raw::is_loading_prefab(::core::option::Option::None)
-        }
+        unsafe { __RefineShopRefineBaseRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`UnloadPrefab()` overload"]
     pub fn unload_prefab() -> () {
-        unsafe {
-            __RefineShopRefineBaseRoot_unity2_raw::unload_prefab(::core::option::Option::None)
-        }
+        unsafe { __RefineShopRefineBaseRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        shop_weapon_model_renderer: impl ::core::convert::Into<
-            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        >,
+        shop_weapon_model_renderer: impl ::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer>,
         default_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         default_item_index: impl ::core::convert::Into<i32>,
         default_item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-        return_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
-        >,
+        return_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>,
     ) -> crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot {
         unsafe {
             __RefineShopRefineBaseRoot_unity2_raw::create_bind(
@@ -911,21 +760,15 @@ pub trait IRefineShopRefineBaseRootMethods: IRefineShopRefineBaseRoot {
     fn create(
         self,
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        shop_weapon_model_renderer: impl ::core::convert::Into<
-            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        >,
+        shop_weapon_model_renderer: impl ::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer>,
         default_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         default_item_index: impl ::core::convert::Into<i32>,
         default_item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-        return_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
-        >,
+        return_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>,
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopRefineBaseRoot_unity2_raw::create(
                 __receiver,
                 ::core::convert::Into::into(super_),
@@ -942,9 +785,7 @@ pub trait IRefineShopRefineBaseRootMethods: IRefineShopRefineBaseRoot {
     fn destroy(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopRefineBaseRoot_unity2_raw::destroy(__receiver, ::core::option::Option::None)
         }
     }
@@ -952,9 +793,7 @@ pub trait IRefineShopRefineBaseRootMethods: IRefineShopRefineBaseRoot {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopRefineBaseRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -962,9 +801,7 @@ pub trait IRefineShopRefineBaseRootMethods: IRefineShopRefineBaseRoot {
     fn update(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopRefineBaseRoot_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
@@ -976,9 +813,7 @@ pub trait IRefineShopRefineBaseRootMethods: IRefineShopRefineBaseRoot {
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopRefineBaseRoot_unity2_raw::on_select_menu_item(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -996,9 +831,7 @@ pub trait IRefineShopRefineBaseRootMethods: IRefineShopRefineBaseRoot {
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopRefineBaseRoot_unity2_raw::on_decide_menu_item(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1012,22 +845,15 @@ pub trait IRefineShopRefineBaseRootMethods: IRefineShopRefineBaseRoot {
     fn on_request_close_menu(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopRefineBaseRoot_unity2_raw::on_request_close_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopRefineBaseRoot_unity2_raw::on_request_close_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Close()` overload"]
     fn close(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopRefineBaseRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopRefineBaseRoot_unity2_raw::close(__receiver, ::core::option::Option::None)
         }
     }
@@ -1055,31 +881,26 @@ impl RefineShopRefineBaseRoot {
 #[cfg(feature = "app-refineshoprefinebaseroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefineShopRefineBaseRoot;
-    pub use super::IRefineShopRefineBaseRootMethods;
-    pub use super::IRefineShopRefineBaseRoot_ReturnEventHandler;
-    pub use super::IRefineShopRefineBaseRoot_ReturnEventHandlerMethods;
-    pub use super::RefineShopRefineBaseRoot;
-    pub use super::RefineShopRefineBaseRoot_ReturnEventHandler;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        IRefineShopRefineBaseRoot, IRefineShopRefineBaseRootMethods, IRefineShopRefineBaseRoot_ReturnEventHandler,
+        IRefineShopRefineBaseRoot_ReturnEventHandlerMethods, RefineShopRefineBaseRoot, RefineShopRefineBaseRoot_ReturnEventHandler,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

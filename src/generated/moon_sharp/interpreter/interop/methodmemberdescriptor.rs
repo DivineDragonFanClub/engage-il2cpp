@@ -2,20 +2,17 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-methodmemberdescriptor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::{
-        FunctionMemberDescriptorBase, IFunctionMemberDescriptorBase,
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::interop::functionmemberdescriptorbase::{FunctionMemberDescriptorBase, IFunctionMemberDescriptorBase},
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/methodmemberdescriptor/MethodMemberDescriptor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "MethodMemberDescriptor"
-    )]
-    # [parent (crate :: moon_sharp :: interpreter :: interop :: functionmemberdescriptorbase :: FunctionMemberDescriptorBase)]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "MethodMemberDescriptor")]
+    #[parent(crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::FunctionMemberDescriptorBase)]
     pub struct MethodMemberDescriptor {
         #[rename(name = "m_OptimizedFunc")]
         pub m_optimized_func: crate::system::func_3::Func_3<
@@ -24,10 +21,7 @@ mod __types {
             crate::system::object::Object,
         >,
         #[rename(name = "m_OptimizedAction")]
-        pub m_optimized_action: crate::system::action_2::Action_2<
-            crate::system::object::Object,
-            ::unity2::Array<crate::system::object::Object>,
-        >,
+        pub m_optimized_action: crate::system::action_2::Action_2<crate::system::object::Object, ::unity2::Array<crate::system::object::Object>>,
         #[rename(name = "m_IsAction")]
         pub m_is_action: bool,
         #[rename(name = "m_IsArrayCtor")]
@@ -47,9 +41,7 @@ mod __MethodMemberDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -62,44 +54,32 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_MethodInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_MethodInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_method_info(
         this: MethodMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::methodbase::MethodBase {
-        let inner: extern "C" fn(
-            MethodMemberDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::methodbase::MethodBase = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method_info::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MethodMemberDescriptor, ::unity2::OptionalMethod) -> crate::system::reflection::methodbase::MethodBase =
+            ::core::mem::transmute(__lookup_get_method_info::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_method_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::methodbase::MethodBase as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::methodbase::MethodBase as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_MethodInfo",
@@ -111,18 +91,15 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_MethodInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_MethodInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_method_info(
@@ -130,24 +107,15 @@ mod __MethodMemberDescriptor_unity2_raw {
         value: crate::system::reflection::methodbase::MethodBase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MethodMemberDescriptor,
-            crate::system::reflection::methodbase::MethodBase,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_method_info::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MethodMemberDescriptor, crate::system::reflection::methodbase::MethodBase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_method_info::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_access_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -160,35 +128,35 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_AccessMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_AccessMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_access_mode(
         this: MethodMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
-        let inner : extern "C" fn (MethodMemberDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_access_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            MethodMemberDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode =
+            ::core::mem::transmute(__lookup_get_access_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_access_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_AccessMode",
@@ -200,18 +168,15 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_AccessMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_AccessMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_access_mode(
@@ -223,20 +188,14 @@ mod __MethodMemberDescriptor_unity2_raw {
             MethodMemberDescriptor,
             crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_access_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_access_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_constructor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -249,41 +208,28 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_IsConstructor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_IsConstructor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_constructor(
-        this: MethodMemberDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_constructor(this: MethodMemberDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MethodMemberDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_constructor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_constructor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_constructor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_IsConstructor",
@@ -295,41 +241,31 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_IsConstructor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_IsConstructor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_constructor(
-        this: MethodMemberDescriptor,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_constructor(this: MethodMemberDescriptor, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MethodMemberDescriptor, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_constructor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_constructor::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: methodbase :: MethodBase as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::methodbase::MethodBase as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -341,18 +277,15 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -366,21 +299,19 @@ mod __MethodMemberDescriptor_unity2_raw {
             crate::system::reflection::methodbase::MethodBase,
             crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, method_base, access_mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_create_if_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: methodbase :: MethodBase as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::methodbase::MethodBase as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "TryCreateIfVisible",
@@ -392,18 +323,15 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "TryCreateIfVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateIfVisible",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_create_if_visible(
@@ -411,23 +339,21 @@ mod __MethodMemberDescriptor_unity2_raw {
         access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
         force_visibility: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::interop::methodmemberdescriptor::MethodMemberDescriptor
-    {
-        let inner : extern "C" fn (crate :: system :: reflection :: methodbase :: MethodBase , crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: methodmemberdescriptor :: MethodMemberDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_try_create_if_visible :: get_offset () as isize) ,) ;
-        inner(
-            method_base,
-            access_mode,
-            force_visibility,
-            __unity2_method_info,
-        )
+    ) -> crate::moon_sharp::interpreter::interop::methodmemberdescriptor::MethodMemberDescriptor {
+        let inner: extern "C" fn(
+            crate::system::reflection::methodbase::MethodBase,
+            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::methodmemberdescriptor::MethodMemberDescriptor =
+            ::core::mem::transmute(__lookup_try_create_if_visible::get_method_info().method_ptr);
+        inner(method_base, access_mode, force_visibility, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_method_is_compatible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::reflection::methodbase::MethodBase as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -443,18 +369,15 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CheckMethodIsCompatible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CheckMethodIsCompatible",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_method_is_compatible(
@@ -462,25 +385,21 @@ mod __MethodMemberDescriptor_unity2_raw {
         throw_exception: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::reflection::methodbase::MethodBase,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_method_is_compatible::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::reflection::methodbase::MethodBase, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_check_method_is_compatible::get_method_info().method_ptr);
         inner(method_base, throw_exception, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -492,18 +411,15 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
@@ -521,20 +437,14 @@ mod __MethodMemberDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, script, obj, context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MethodMemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -545,28 +455,33 @@ mod __MethodMemberDescriptor_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MethodMemberDescriptor as :: unity2 :: ClassIdentity > :: NAME , "MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(
         this: MethodMemberDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (MethodMemberDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(MethodMemberDescriptor, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            __lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize::get_method_info().method_ptr,
+        );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_for_wiring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -580,18 +495,15 @@ mod __MethodMemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PrepareForWiring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MethodMemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PrepareForWiring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_for_wiring(
@@ -599,15 +511,8 @@ mod __MethodMemberDescriptor_unity2_raw {
         t: crate::moon_sharp::interpreter::table::Table,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MethodMemberDescriptor,
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_for_wiring::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MethodMemberDescriptor, crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_prepare_for_wiring::get_method_info().method_ptr);
         inner(this, t, __unity2_method_info)
     }
 }
@@ -617,12 +522,9 @@ impl MethodMemberDescriptor {
     #[doc = "`TryCreateIfVisible(crate::system::reflection::methodbase::MethodBase, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, bool)` overload"]
     pub fn try_create_if_visible(
         method_base: impl ::core::convert::Into<crate::system::reflection::methodbase::MethodBase>,
-        access_mode: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        >,
+        access_mode: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>,
         force_visibility: impl ::core::convert::Into<bool>,
-    ) -> crate::moon_sharp::interpreter::interop::methodmemberdescriptor::MethodMemberDescriptor
-    {
+    ) -> crate::moon_sharp::interpreter::interop::methodmemberdescriptor::MethodMemberDescriptor {
         unsafe {
             __MethodMemberDescriptor_unity2_raw::try_create_if_visible(
                 ::core::convert::Into::into(method_base),
@@ -632,6 +534,7 @@ impl MethodMemberDescriptor {
             )
         }
     }
+
     #[doc = "`CheckMethodIsCompatible(crate::system::reflection::methodbase::MethodBase, bool)` overload"]
     pub fn check_method_is_compatible(
         method_base: impl ::core::convert::Into<crate::system::reflection::methodbase::MethodBase>,
@@ -652,100 +555,60 @@ pub trait IMethodMemberDescriptorMethods: IMethodMemberDescriptor {
     #[doc = "`get_MethodInfo()` overload"]
     fn get_method_info(self) -> crate::system::reflection::methodbase::MethodBase {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MethodMemberDescriptor_unity2_raw::get_method_info(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MethodMemberDescriptor_unity2_raw::get_method_info(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MethodInfo(crate::system::reflection::methodbase::MethodBase)` overload"]
-    fn set_method_info(
-        self,
-        value: impl ::core::convert::Into<crate::system::reflection::methodbase::MethodBase>,
-    ) -> () {
+    fn set_method_info(self, value: impl ::core::convert::Into<crate::system::reflection::methodbase::MethodBase>) -> () {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MethodMemberDescriptor_unity2_raw::set_method_info(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MethodMemberDescriptor_unity2_raw::set_method_info(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AccessMode()` overload"]
-    fn get_access_mode(
-        self,
-    ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
+    fn get_access_mode(self) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MethodMemberDescriptor_unity2_raw::get_access_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MethodMemberDescriptor_unity2_raw::get_access_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
-    fn set_access_mode(
-        self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        >,
-    ) -> () {
+    fn set_access_mode(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>) -> () {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MethodMemberDescriptor_unity2_raw::set_access_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MethodMemberDescriptor_unity2_raw::set_access_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsConstructor()` overload"]
     fn get_is_constructor(self) -> bool {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MethodMemberDescriptor_unity2_raw::get_is_constructor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MethodMemberDescriptor_unity2_raw::get_is_constructor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsConstructor(bool)` overload"]
     fn set_is_constructor(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MethodMemberDescriptor_unity2_raw::set_is_constructor(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MethodMemberDescriptor_unity2_raw::set_is_constructor(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::system::reflection::methodbase::MethodBase, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
     fn ctor(
         self,
         method_base: impl ::core::convert::Into<crate::system::reflection::methodbase::MethodBase>,
-        access_mode: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        >,
+        access_mode: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>,
     ) -> () {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MethodMemberDescriptor_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(method_base),
@@ -759,17 +622,12 @@ pub trait IMethodMemberDescriptorMethods: IMethodMemberDescriptor {
         self,
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
         obj: impl ::core::convert::Into<crate::system::object::Object>,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MethodMemberDescriptor_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -781,30 +639,22 @@ pub trait IMethodMemberDescriptorMethods: IMethodMemberDescriptor {
         }
     }
     #[doc = "`MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize()` overload"]
-    fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(
-        self,
-    ) -> () {
+    fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(self) -> () {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MethodMemberDescriptor_unity2_raw :: moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize (__receiver , :: core :: option :: Option :: None)
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MethodMemberDescriptor_unity2_raw::moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
     #[doc = "`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]
-    fn prepare_for_wiring(
-        self,
-        t: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> () {
+    fn prepare_for_wiring(self, t: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>) -> () {
         unsafe {
-            let __receiver = <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MethodMemberDescriptor_unity2_raw::prepare_for_wiring(
-                __receiver,
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MethodMemberDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MethodMemberDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)
         }
     }
 }
@@ -834,13 +684,10 @@ impl MethodMemberDescriptor {
 #[cfg(feature = "moon_sharp-interpreter-interop-methodmemberdescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMethodMemberDescriptor;
-    pub use super::IMethodMemberDescriptorMethods;
-    pub use super::MethodMemberDescriptor;
-    pub use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBase;
+    pub use super::{IMethodMemberDescriptor, IMethodMemberDescriptorMethods, MethodMemberDescriptor};
     #[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase")]
     pub use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBase, system::object::IObject};
 }

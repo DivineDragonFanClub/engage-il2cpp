@@ -36,8 +36,7 @@ pub mod unitywebrequest;
 pub use unitywebrequest::IUnityWebRequestMethods;
 #[cfg(feature = "unity_engine-networking-unitywebrequest-types")]
 pub use unitywebrequest::{
-    IUnityWebRequest, UnityWebRequest, UnityWebRequest_Result,
-    UnityWebRequest_UnityWebRequestError, UnityWebRequest_UnityWebRequestMethod,
+    IUnityWebRequest, UnityWebRequest, UnityWebRequest_Result, UnityWebRequest_UnityWebRequestError, UnityWebRequest_UnityWebRequestMethod,
 };
 #[cfg(any(feature = "unity_engine-networking-unitywebrequestassetbundle-types"))]
 pub mod unitywebrequestassetbundle;
@@ -48,9 +47,7 @@ pub mod unitywebrequestasyncoperation;
 #[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
 pub use unitywebrequestasyncoperation::IUnityWebRequestAsyncOperationMethods;
 #[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation-types")]
-pub use unitywebrequestasyncoperation::{
-    IUnityWebRequestAsyncOperation, UnityWebRequestAsyncOperation,
-};
+pub use unitywebrequestasyncoperation::{IUnityWebRequestAsyncOperation, UnityWebRequestAsyncOperation};
 #[cfg(any(feature = "unity_engine-networking-uploadhandler-types"))]
 pub mod uploadhandler;
 #[cfg(feature = "unity_engine-networking-uploadhandler")]

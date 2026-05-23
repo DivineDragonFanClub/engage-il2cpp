@@ -2,15 +2,17 @@
 
 #[cfg(feature = "app-refineshopengraveitemselectmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::refineshoprefinebasemenu::{
-        IRefineShopRefineBaseMenu, RefineShopRefineBaseMenu,
+    use super::*;
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            procinst::{IProcInst, ProcInst},
+            refineshoprefinebasemenu::{IRefineShopRefineBaseMenu, RefineShopRefineBaseMenu},
+        },
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengraveitemselectmenu/RefineShopEngraveItemSelectMenu.md"))]
     #[::unity2::class(namespace = "App", name = "RefineShopEngraveItemSelectMenu")]
@@ -30,10 +32,17 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -45,18 +54,15 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -65,12 +71,23 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
         default_unit: crate::app::unit::Unit,
         default_item_index: i32,
         default_item_kind: crate::app::itemdata::ItemData_Kinds,
-        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
-        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+        select_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::refineshopengraveitemselectmenu::RefineShopEngraveItemSelectMenu {
-        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: unit :: Unit , i32 , crate :: app :: itemdata :: ItemData_Kinds , crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler , crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler , crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopengraveitemselectmenu :: RefineShopEngraveItemSelectMenu = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::unit::Unit,
+            i32,
+            crate::app::itemdata::ItemData_Kinds,
+            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
+            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
+            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::refineshopengraveitemselectmenu::RefineShopEngraveItemSelectMenu =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(
             super_,
             menu_object,
@@ -87,10 +104,13 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_menu_item_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "CreateMenuItemList",
@@ -102,56 +122,39 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateMenuItemList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenuItemList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_menu_item_list(
         show_row_num: i32,
         kind: crate::app::itemdata::ItemData_Kinds,
-        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+        select_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
         let inner: extern "C" fn(
             i32,
             crate::app::itemdata::ItemData_Kinds,
             crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
             crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_menu_item_list::get_offset() as isize),
-        );
-        inner(
-            show_row_num,
-            kind,
-            select_event_handler,
-            decide_event_handler,
-            __unity2_method_info,
-        )
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> =
+            ::core::mem::transmute(__lookup_create_menu_item_list::get_method_info().method_ptr);
+        inner(show_row_num, kind, select_event_handler, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid_unit_item_to_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
@@ -167,18 +170,15 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "IsValidUnitItemToMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "IsValidUnitItemToMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_valid_unit_item_to_menu_item(
@@ -186,25 +186,25 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
         kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::unititem::UnitItem,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_valid_unit_item_to_menu_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unititem::UnitItem, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_valid_unit_item_to_menu_item::get_method_info().method_ptr);
         inner(unit_item, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenucontent :: RefineShopRefineBaseMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData_Kinds as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -216,39 +216,32 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: RefineShopEngraveItemSelectMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent,
         default_unit: crate::app::unit::Unit,
         default_item_index: i32,
         kind: crate::app::itemdata::ItemData_Kinds,
-        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
-        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+        select_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             RefineShopEngraveItemSelectMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent,
             crate::app::unit::Unit,
             i32,
@@ -257,11 +250,7 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
             crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
             crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             menu_item_list,
@@ -279,9 +268,7 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_rebuild_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -294,30 +281,20 @@ mod __RefineShopEngraveItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "RebuildMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "RebuildMenuItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rebuild_menu_item(
-        this: RefineShopEngraveItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn rebuild_menu_item(this: RefineShopEngraveItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopEngraveItemSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_rebuild_menu_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_rebuild_menu_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -331,15 +308,9 @@ impl RefineShopEngraveItemSelectMenu {
         default_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         default_item_index: impl ::core::convert::Into<i32>,
         default_item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
-        >,
-        request_close_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler,
-        >,
+        select_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler>,
+        request_close_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler>,
     ) -> crate::app::refineshopengraveitemselectmenu::RefineShopEngraveItemSelectMenu {
         unsafe {
             __RefineShopEngraveItemSelectMenu_unity2_raw::create_bind(
@@ -355,18 +326,14 @@ impl RefineShopEngraveItemSelectMenu {
             )
         }
     }
+
     #[doc = "`CreateMenuItemList(i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler)` overload"]
     pub fn create_menu_item_list(
         show_row_num: impl ::core::convert::Into<i32>,
         kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
-        >,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>
-    {
+        select_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
         unsafe {
             __RefineShopEngraveItemSelectMenu_unity2_raw::create_menu_item_list(
                 ::core::convert::Into::into(show_row_num),
@@ -377,6 +344,7 @@ impl RefineShopEngraveItemSelectMenu {
             )
         }
     }
+
     #[doc = "`IsValidUnitItemToMenuItem(crate::app::unititem::UnitItem, crate::app::itemdata::ItemData_Kinds)` overload"]
     pub fn is_valid_unit_item_to_menu_item(
         unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
@@ -397,32 +365,18 @@ pub trait IRefineShopEngraveItemSelectMenuMethods: IRefineShopEngraveItemSelectM
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler)` overload"]
     fn ctor(
         self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent,
-        >,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent>,
         default_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         default_item_index: impl ::core::convert::Into<i32>,
         kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
-        >,
-        request_close_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler,
-        >,
+        select_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler>,
+        request_close_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler>,
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopEngraveItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopEngraveItemSelectMenu_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_item_list),
@@ -441,13 +395,8 @@ pub trait IRefineShopEngraveItemSelectMenuMethods: IRefineShopEngraveItemSelectM
     fn rebuild_menu_item(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopEngraveItemSelectMenu_unity2_raw::rebuild_menu_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopEngraveItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopEngraveItemSelectMenu_unity2_raw::rebuild_menu_item(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -459,16 +408,14 @@ impl<__T: IRefineShopEngraveItemSelectMenu> IRefineShopEngraveItemSelectMenuMeth
 impl RefineShopEngraveItemSelectMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent,
         default_unit: crate::app::unit::Unit,
         default_item_index: i32,
         kind: crate::app::itemdata::ItemData_Kinds,
-        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
-        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+        select_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -495,19 +442,17 @@ impl RefineShopEngraveItemSelectMenu {
 #[cfg(feature = "app-refineshopengraveitemselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefineShopEngraveItemSelectMenu;
-    pub use super::IRefineShopEngraveItemSelectMenuMethods;
-    pub use super::RefineShopEngraveItemSelectMenu;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{IRefineShopEngraveItemSelectMenu, IRefineShopEngraveItemSelectMenuMethods, RefineShopEngraveItemSelectMenu};
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::refineshoprefinebasemenu::IRefineShopRefineBaseMenu;
     #[cfg(feature = "app-refineshoprefinebasemenu")]
     pub use crate::app::refineshoprefinebasemenu::IRefineShopRefineBaseMenuMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, procinst::IProcInst, refineshoprefinebasemenu::IRefineShopRefineBaseMenu},
+        system::object::IObject,
+    };
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-characterasset-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::characterassett_1::{CharacterAssetT_1, ICharacterAssetT_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::characterassett_1::{CharacterAssetT_1, ICharacterAssetT_1},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterasset/CharacterAsset.md"))]
     #[::unity2::class(namespace = "Combat", name = "CharacterAsset")]
@@ -26,11 +28,8 @@ mod __CharacterAsset_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::assettype::AssetType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::assettype::AssetType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterAsset as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -42,43 +41,27 @@ mod __CharacterAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterAsset as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterAsset as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CharacterAsset,
-        asset_type: crate::combat::assettype::AssetType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CharacterAsset,
-            crate::combat::assettype::AssetType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: CharacterAsset, asset_type: crate::combat::assettype::AssetType, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CharacterAsset, crate::combat::assettype::AssetType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, asset_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::combat::characterasset::CharacterAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -92,18 +75,15 @@ mod __CharacterAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterAsset as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterAsset as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -111,26 +91,16 @@ mod __CharacterAsset_unity2_raw {
         rhs: crate::combat::characterasset::CharacterAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterAsset,
-            crate::combat::characterasset::CharacterAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterAsset, crate::combat::characterasset::CharacterAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_nml {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterAsset as ::unity2::ClassIdentity>::class(),
                 "ChangeNML",
@@ -142,31 +112,20 @@ mod __CharacterAsset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterAsset as ::unity2::ClassIdentity>::NAME,
-                    "ChangeNML",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterAsset as ::unity2::ClassIdentity>::NAME,
+                        "ChangeNML",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn change_nml(
-        this: CharacterAsset,
-        mode: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn change_nml(this: CharacterAsset, mode: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterAsset, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change_nml::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_change_nml::get_method_info().method_ptr);
         inner(this, mode, __unity2_method_info)
     }
 }
@@ -174,48 +133,24 @@ mod __CharacterAsset_unity2_raw {
 #[cfg(feature = "combat-characterasset")]
 pub trait ICharacterAssetMethods: ICharacterAsset {
     #[doc = "`.ctor(crate::combat::assettype::AssetType)` overload"]
-    fn ctor(
-        self,
-        asset_type: impl ::core::convert::Into<crate::combat::assettype::AssetType>,
-    ) -> () {
+    fn ctor(self, asset_type: impl ::core::convert::Into<crate::combat::assettype::AssetType>) -> () {
         unsafe {
-            let __receiver = <CharacterAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterAsset_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(asset_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterAsset_unity2_raw::ctor(__receiver, ::core::convert::Into::into(asset_type), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::combat::characterasset::CharacterAsset)` overload"]
-    fn ctor_2(
-        self,
-        rhs: impl ::core::convert::Into<crate::combat::characterasset::CharacterAsset>,
-    ) -> () {
+    fn ctor_2(self, rhs: impl ::core::convert::Into<crate::combat::characterasset::CharacterAsset>) -> () {
         unsafe {
-            let __receiver = <CharacterAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterAsset_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterAsset_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(rhs), ::core::option::Option::None)
         }
     }
     #[doc = "`ChangeNML(u16)` overload"]
     fn change_nml(self, mode: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <CharacterAsset as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterAsset_unity2_raw::change_nml(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterAsset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterAsset_unity2_raw::change_nml(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
         }
     }
 }
@@ -255,13 +190,10 @@ impl CharacterAsset {
 #[cfg(feature = "combat-characterasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterAsset;
-    pub use super::ICharacterAsset;
-    pub use super::ICharacterAssetMethods;
-    pub use crate::combat::characterassett_1::ICharacterAssetT_1;
+    pub use super::{CharacterAsset, ICharacterAsset, ICharacterAssetMethods};
     #[cfg(feature = "combat-characterassett_1")]
     pub use crate::combat::characterassett_1::ICharacterAssetT_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::characterassett_1::ICharacterAssetT_1, system::object::IObject};
 }

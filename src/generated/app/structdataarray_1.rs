@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-structdataarray_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdataarray_1/StructDataArray_1.md"))]
     #[::unity2::class(namespace = "App", name = "StructDataArray`1")]
@@ -48,24 +52,15 @@ impl<T0: ::unity2::ClassIdentity> StructDataArray_1<T0> {
 
     #[doc = "`Load(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
     #[method(name = "Load", args = 3)]
-    pub fn load(
-        path: ::unity2::Il2CppString,
-        sheet_name: ::unity2::Il2CppString,
-        completed: crate::system::action::Action,
-    ) -> ();
+    pub fn load(path: ::unity2::Il2CppString, sheet_name: ::unity2::Il2CppString, completed: crate::system::action::Action) -> ();
 
     #[doc = "`Import(::unity2::Array<u8>, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     #[method(name = "Import", args = 3)]
-    pub fn import(
-        data: ::unity2::Array<u8>,
-        path: ::unity2::Il2CppString,
-        sheet_name: ::unity2::Il2CppString,
-    ) -> ();
+    pub fn import(data: ::unity2::Array<u8>, path: ::unity2::Il2CppString, sheet_name: ::unity2::Il2CppString) -> ();
 
     #[doc = "`AddArrayList(crate::app::structdataarraylist_1::StructDataArrayList_1<T0>)` overload"]
     #[method(name = "AddArrayList", args = 1)]
-    pub fn add_array_list(list: crate::app::structdataarraylist_1::StructDataArrayList_1<T0>)
-        -> ();
+    pub fn add_array_list(list: crate::app::structdataarraylist_1::StructDataArrayList_1<T0>) -> ();
 
     #[doc = "`Completed()` overload"]
     #[method(name = "Completed", args = 0)]
@@ -77,9 +72,7 @@ impl<T0: ::unity2::ClassIdentity> StructDataArray_1<T0> {
 
     #[doc = "`Get(::unity2::Il2CppString)` overload"]
     #[method(name = "Get", args = 1)]
-    pub fn get(
-        name: ::unity2::Il2CppString,
-    ) -> crate::app::structdataarraylist_1::StructDataArrayList_1<T0>;
+    pub fn get(name: ::unity2::Il2CppString) -> crate::app::structdataarraylist_1::StructDataArrayList_1<T0>;
 
     #[doc = "`Get(i32)` overload"]
     #[method(name = "Get", args = 1)]
@@ -87,9 +80,7 @@ impl<T0: ::unity2::ClassIdentity> StructDataArray_1<T0> {
 
     #[doc = "`TryGet(::unity2::Il2CppString)` overload"]
     #[method(name = "TryGet", args = 1)]
-    pub fn try_get(
-        name: ::unity2::Il2CppString,
-    ) -> crate::app::structdataarraylist_1::StructDataArrayList_1<T0>;
+    pub fn try_get(name: ::unity2::Il2CppString) -> crate::app::structdataarraylist_1::StructDataArrayList_1<T0>;
 
     #[doc = "`TryGet(i32)` overload"]
     #[method(name = "TryGet", args = 1)]
@@ -97,9 +88,7 @@ impl<T0: ::unity2::ClassIdentity> StructDataArray_1<T0> {
 
     #[doc = "`TryGetFromHash(i32)` overload"]
     #[method(name = "TryGetFromHash", args = 1)]
-    pub fn try_get_from_hash(
-        hash: i32,
-    ) -> crate::app::structdataarraylist_1::StructDataArrayList_1<T0>;
+    pub fn try_get_from_hash(hash: i32) -> crate::app::structdataarraylist_1::StructDataArrayList_1<T0>;
 
     #[doc = "`GetIndex(::unity2::Il2CppString)` overload"]
     #[method(name = "GetIndex", args = 1)]
@@ -145,16 +134,15 @@ impl<T0: ::unity2::ClassIdentity> StructDataArray_1<T0> {
 #[cfg(feature = "app-structdataarray_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStructDataArray_1;
-    pub use super::IStructDataArray_1Methods;
-    pub use super::StructDataArray_1;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{IStructDataArray_1, IStructDataArray_1Methods, StructDataArray_1};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

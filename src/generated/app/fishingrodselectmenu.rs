@@ -2,40 +2,59 @@
 
 #[cfg(feature = "app-fishingrodselectmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodBItem.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodBItem")]
+    #[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
+    pub struct FishingRodSelectMenu_RodBItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct FishingRodSelectMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodAItem.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodAItem")]
+    #[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
+    pub struct FishingRodSelectMenu_RodAItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodCItem.md"))]
     #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodCItem")]
     #[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
     pub struct FishingRodSelectMenu_RodCItem {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct FishingRodSelectMenu {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingrodselectmenu/FishingRodSelectMenu_Result2.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct FishingRodSelectMenu_Result2 {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for FishingRodSelectMenu_Result2 {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "FishingRodSelectMenu.Result2";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -46,10 +65,7 @@ mod __types {
 
     impl ::unity2::IlType for FishingRodSelectMenu_Result2 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -71,26 +87,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodAItem.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodAItem")]
-    #[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
-    pub struct FishingRodSelectMenu_RodAItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct FishingRodSelectMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct FishingRodSelectMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodBItem.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodBItem")]
-    #[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
-    pub struct FishingRodSelectMenu_RodBItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodItem.md"))]
     #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -111,14 +107,11 @@ mod __types {
         #[rename(name = "cTextureSmall")]
         pub c_texture_small: ::unity2::Il2CppString,
         #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        pub m_decide_event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
         #[rename(name = "m_MenuObj")]
         pub m_menu_obj: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_FishList")]
-        pub m_fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
+        pub m_fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         #[rename(name = "m_Result")]
         pub m_result: crate::app::fishing::sticktype::StickType,
         #[rename(name = "m_Label")]
@@ -126,9 +119,7 @@ mod __types {
         #[rename(name = "m_ItemTrans")]
         pub m_item_trans: crate::unity_engine::transform::Transform,
         #[rename(name = "m_Sprites")]
-        pub m_sprites: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::sprite::Sprite,
-        >,
+        pub m_sprites: crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite>,
     }
 }
 
@@ -138,18 +129,16 @@ pub use __types::*;
 #[cfg(feature = "app-fishingrodselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingRodSelectMenu_RodCItem_unity2_raw {
+mod __FishingRodSelectMenu_RodBItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: fishing :: forecastfishdata :: ForecastFishData > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::class(),
+                <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 4,
                 param_types,
@@ -159,63 +148,43 @@ mod __FishingRodSelectMenu_RodCItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: FishingRodSelectMenu_RodCItem,
+        this: FishingRodSelectMenu_RodBItem,
         event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
         menu_obj: crate::unity_engine::gameobject::GameObject,
         item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
+        fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            FishingRodSelectMenu_RodCItem,
+            FishingRodSelectMenu_RodBItem,
             crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::transform::Transform,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_handler,
-            menu_obj,
-            item_trans,
-            fish_list,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, event_handler, menu_obj, item_trans, fish_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::class(),
+                <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -225,44 +194,33 @@ mod __FishingRodSelectMenu_RodCItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build_attribute(
-        this: FishingRodSelectMenu_RodCItem,
+        this: FishingRodSelectMenu_RodBItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodCItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingRodSelectMenu_RodBItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::class(),
+                <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -272,44 +230,30 @@ mod __FishingRodSelectMenu_RodCItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: FishingRodSelectMenu_RodCItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodCItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: FishingRodSelectMenu_RodBItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(FishingRodSelectMenu_RodBItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_cursor_move_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::class(),
+                <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::class(),
                 "OnCursorMoveEnd",
                 0,
                 param_types,
@@ -319,56 +263,40 @@ mod __FishingRodSelectMenu_RodCItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::NAME,
-                    "OnCursorMoveEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::NAME,
+                        "OnCursorMoveEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_cursor_move_end(
-        this: FishingRodSelectMenu_RodCItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingRodSelectMenu_RodCItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_cursor_move_end::get_offset() as isize),
-            );
+    pub unsafe fn on_cursor_move_end(this: FishingRodSelectMenu_RodBItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingRodSelectMenu_RodBItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_cursor_move_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-fishingrodselectmenu")]
-pub trait IFishingRodSelectMenu_RodCItemMethods: IFishingRodSelectMenu_RodCItem {
+pub trait IFishingRodSelectMenu_RodBItemMethods: IFishingRodSelectMenu_RodBItem {
     #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
     fn ctor(
         self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        >,
+        event_handler: impl ::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler>,
         menu_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         item_trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
         fish_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         >,
     ) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodCItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodCItem_unity2_raw::ctor(
+                <FishingRodSelectMenu_RodBItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodBItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(event_handler),
                 ::core::convert::Into::into(menu_obj),
@@ -382,998 +310,48 @@ pub trait IFishingRodSelectMenu_RodCItemMethods: IFishingRodSelectMenu_RodCItem 
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodCItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodCItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodBItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodBItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodCItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodCItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodBItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodBItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnCursorMoveEnd()` overload"]
     fn on_cursor_move_end(self) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodCItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodCItem_unity2_raw::on_cursor_move_end(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodBItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodBItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-fishingrodselectmenu")]
-impl<__T: IFishingRodSelectMenu_RodCItem> IFishingRodSelectMenu_RodCItemMethods for __T {}
+impl<__T: IFishingRodSelectMenu_RodBItem> IFishingRodSelectMenu_RodBItemMethods for __T {}
 
 #[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu_RodCItem {
+impl FishingRodSelectMenu_RodBItem {
     #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
     pub fn new(
         event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
         menu_obj: crate::unity_engine::gameobject::GameObject,
         item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
+        fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(FishingRodSelectMenu_RodCItem),
+                ::core::stringify!(FishingRodSelectMenu_RodBItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFishingRodSelectMenu_RodCItemMethods>::ctor(
-            this,
-            event_handler,
-            menu_obj,
-            item_trans,
-            fish_list,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingRodSelectMenu_RodAItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: fishing :: forecastfishdata :: ForecastFishData > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FishingRodSelectMenu_RodAItem,
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodAItem,
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-            crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::transform::Transform,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_handler,
-            menu_obj,
-            item_trans,
-            fish_list,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: FishingRodSelectMenu_RodAItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodAItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: FishingRodSelectMenu_RodAItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodAItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_cursor_move_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::class(),
-                "OnCursorMoveEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::NAME,
-                    "OnCursorMoveEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_cursor_move_end(
-        this: FishingRodSelectMenu_RodAItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingRodSelectMenu_RodAItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_cursor_move_end::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-pub trait IFishingRodSelectMenu_RodAItemMethods: IFishingRodSelectMenu_RodAItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
-    fn ctor(
-        self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        >,
-        menu_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        item_trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-        fish_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FishingRodSelectMenu_RodAItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodAItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(event_handler),
-                ::core::convert::Into::into(menu_obj),
-                ::core::convert::Into::into(item_trans),
-                ::core::convert::Into::into(fish_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <FishingRodSelectMenu_RodAItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodAItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <FishingRodSelectMenu_RodAItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodAItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnCursorMoveEnd()` overload"]
-    fn on_cursor_move_end(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingRodSelectMenu_RodAItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodAItem_unity2_raw::on_cursor_move_end(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl<__T: IFishingRodSelectMenu_RodAItem> IFishingRodSelectMenu_RodAItemMethods for __T {}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu_RodAItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingRodSelectMenu_RodAItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingRodSelectMenu_RodAItemMethods>::ctor(
-            this,
-            event_handler,
-            menu_obj,
-            item_trans,
-            fish_list,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingRodSelectMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_decide_event_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                "get_m_DecideEventHandler",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_m_DecideEventHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_m_decide_event_handler(
-        this: FishingRodSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler {
-        let inner : extern "C" fn (FishingRodSelectMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_m_decide_event_handler :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_decide_event_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                "set_m_DecideEventHandler",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_m_DecideEventHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_m_decide_event_handler(
-        this: FishingRodSelectMenu,
-        value: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu,
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_decide_event_handler::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: FishingRodSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_x_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                "XCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "XCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn x_call(
-        this: FishingRodSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_x_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: fishing :: sticktype :: StickType as :: unity2 :: IlType > :: il_type () , < crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FishingRodSelectMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        initial_selected: crate::app::fishing::sticktype::StickType,
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::basicmenucontent::BasicMenuContent,
-            crate::app::fishing::sticktype::StickType,
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            initial_selected,
-            event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: FishingRodSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                "OnClose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnClose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_close(
-        this: FishingRodSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingRodSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_close::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: fishing :: sticktype :: StickType as :: unity2 :: IlType > :: il_type () , < crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        initial_selected: crate::app::fishing::sticktype::StickType,
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::fishing::sticktype::StickType,
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            initial_selected,
-            event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_after_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
-                "AfterBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "AfterBuild",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn after_build(
-        this: FishingRodSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingRodSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_after_build::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::fishing::sticktype::StickType, crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        initial_selected: impl ::core::convert::Into<crate::app::fishing::sticktype::StickType>,
-        event_handler: impl ::core::convert::Into<
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            __FishingRodSelectMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(initial_selected),
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-pub trait IFishingRodSelectMenuMethods: IFishingRodSelectMenu {
-    #[doc = "`get_m_DecideEventHandler()` overload"]
-    fn get_m_decide_event_handler(
-        self,
-    ) -> crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler {
-        unsafe {
-            let __receiver = <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingRodSelectMenu_unity2_raw::get_m_decide_event_handler(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_m_DecideEventHandler(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` overload"]
-    fn set_m_decide_event_handler(
-        self,
-        value: impl ::core::convert::Into<
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingRodSelectMenu_unity2_raw::set_m_decide_event_handler(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingRodSelectMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`XCall()` overload"]
-    fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingRodSelectMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::fishing::sticktype::StickType, crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        initial_selected: impl ::core::convert::Into<crate::app::fishing::sticktype::StickType>,
-        event_handler: impl ::core::convert::Into<
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingRodSelectMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(initial_selected),
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingRodSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnClose()` overload"]
-    fn on_close(self) -> () {
-        unsafe {
-            let __receiver = <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingRodSelectMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AfterBuild()` overload"]
-    fn after_build(self) -> () {
-        unsafe {
-            let __receiver = <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingRodSelectMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl<__T: IFishingRodSelectMenu> IFishingRodSelectMenuMethods for __T {}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::fishing::sticktype::StickType, crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        initial_selected: crate::app::fishing::sticktype::StickType,
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingRodSelectMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingRodSelectMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            initial_selected,
-            event_handler,
-        );
+        <Self as IFishingRodSelectMenu_RodBItemMethods>::ctor(this, event_handler, menu_obj, item_trans, fish_list);
         this
     }
 }
@@ -1387,9 +365,7 @@ mod __FishingRodSelectMenu_DecideEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -1405,18 +381,15 @@ mod __FishingRodSelectMenu_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1430,22 +403,15 @@ mod __FishingRodSelectMenu_DecideEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::fishing::sticktype::StickType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fishing::sticktype::StickType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingRodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -1457,18 +423,15 @@ mod __FishingRodSelectMenu_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -1476,31 +439,20 @@ mod __FishingRodSelectMenu_DecideEventHandler_unity2_raw {
         result: crate::app::fishing::sticktype::StickType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_DecideEventHandler,
-            crate::app::fishing::sticktype::StickType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingRodSelectMenu_DecideEventHandler, crate::app::fishing::sticktype::StickType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, result, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-fishingrodselectmenu")]
-pub trait IFishingRodSelectMenu_DecideEventHandlerMethods:
-    IFishingRodSelectMenu_DecideEventHandler
-{
+pub trait IFishingRodSelectMenu_DecideEventHandlerMethods: IFishingRodSelectMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < FishingRodSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <FishingRodSelectMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __FishingRodSelectMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -1510,12 +462,11 @@ pub trait IFishingRodSelectMenu_DecideEventHandlerMethods:
         }
     }
     #[doc = "`Invoke(crate::app::fishing::sticktype::StickType)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::fishing::sticktype::StickType>,
-    ) -> () {
+    fn invoke(self, result: impl ::core::convert::Into<crate::app::fishing::sticktype::StickType>) -> () {
         unsafe {
-            let __receiver = < FishingRodSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <FishingRodSelectMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __FishingRodSelectMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(result),
@@ -1526,10 +477,7 @@ pub trait IFishingRodSelectMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-fishingrodselectmenu")]
-impl<__T: IFishingRodSelectMenu_DecideEventHandler> IFishingRodSelectMenu_DecideEventHandlerMethods
-    for __T
-{
-}
+impl<__T: IFishingRodSelectMenu_DecideEventHandler> IFishingRodSelectMenu_DecideEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-fishingrodselectmenu")]
 impl FishingRodSelectMenu_DecideEventHandler {
@@ -1550,18 +498,16 @@ impl FishingRodSelectMenu_DecideEventHandler {
 #[cfg(feature = "app-fishingrodselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingRodSelectMenu_RodBItem_unity2_raw {
+mod __FishingRodSelectMenu_RodAItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: fishing :: forecastfishdata :: ForecastFishData > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::class(),
+                <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 4,
                 param_types,
@@ -1571,63 +517,43 @@ mod __FishingRodSelectMenu_RodBItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: FishingRodSelectMenu_RodBItem,
+        this: FishingRodSelectMenu_RodAItem,
         event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
         menu_obj: crate::unity_engine::gameobject::GameObject,
         item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
+        fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            FishingRodSelectMenu_RodBItem,
+            FishingRodSelectMenu_RodAItem,
             crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::transform::Transform,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_handler,
-            menu_obj,
-            item_trans,
-            fish_list,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, event_handler, menu_obj, item_trans, fish_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::class(),
+                <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -1637,44 +563,33 @@ mod __FishingRodSelectMenu_RodBItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build_attribute(
-        this: FishingRodSelectMenu_RodBItem,
+        this: FishingRodSelectMenu_RodAItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodBItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingRodSelectMenu_RodAItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::class(),
+                <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -1684,44 +599,30 @@ mod __FishingRodSelectMenu_RodBItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: FishingRodSelectMenu_RodBItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodBItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: FishingRodSelectMenu_RodAItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(FishingRodSelectMenu_RodAItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_cursor_move_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::class(),
+                <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::class(),
                 "OnCursorMoveEnd",
                 0,
                 param_types,
@@ -1731,56 +632,40 @@ mod __FishingRodSelectMenu_RodBItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodBItem as ::unity2::ClassIdentity>::NAME,
-                    "OnCursorMoveEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodAItem as ::unity2::ClassIdentity>::NAME,
+                        "OnCursorMoveEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_cursor_move_end(
-        this: FishingRodSelectMenu_RodBItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingRodSelectMenu_RodBItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_cursor_move_end::get_offset() as isize),
-            );
+    pub unsafe fn on_cursor_move_end(this: FishingRodSelectMenu_RodAItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingRodSelectMenu_RodAItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_cursor_move_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-fishingrodselectmenu")]
-pub trait IFishingRodSelectMenu_RodBItemMethods: IFishingRodSelectMenu_RodBItem {
+pub trait IFishingRodSelectMenu_RodAItemMethods: IFishingRodSelectMenu_RodAItem {
     #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
     fn ctor(
         self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        >,
+        event_handler: impl ::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler>,
         menu_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         item_trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
         fish_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         >,
     ) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodBItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodBItem_unity2_raw::ctor(
+                <FishingRodSelectMenu_RodAItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodAItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(event_handler),
                 ::core::convert::Into::into(menu_obj),
@@ -1794,11 +679,708 @@ pub trait IFishingRodSelectMenu_RodBItemMethods: IFishingRodSelectMenu_RodBItem 
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodBItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodBItem_unity2_raw::build_attribute(
+                <FishingRodSelectMenu_RodAItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodAItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu_RodAItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodAItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnCursorMoveEnd()` overload"]
+    fn on_cursor_move_end(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu_RodAItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodAItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl<__T: IFishingRodSelectMenu_RodAItem> IFishingRodSelectMenu_RodAItemMethods for __T {}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl FishingRodSelectMenu_RodAItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        item_trans: crate::unity_engine::transform::Transform,
+        fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingRodSelectMenu_RodAItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingRodSelectMenu_RodAItemMethods>::ctor(this, event_handler, menu_obj, item_trans, fish_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FishingRodSelectMenu_RodCItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: fishing :: forecastfishdata :: ForecastFishData > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FishingRodSelectMenu_RodCItem,
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        item_trans: crate::unity_engine::transform::Transform,
+        fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FishingRodSelectMenu_RodCItem,
+            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::transform::Transform,
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, event_handler, menu_obj, item_trans, fish_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: FishingRodSelectMenu_RodCItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(FishingRodSelectMenu_RodCItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: FishingRodSelectMenu_RodCItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(FishingRodSelectMenu_RodCItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_cursor_move_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::class(),
+                "OnCursorMoveEnd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodCItem as ::unity2::ClassIdentity>::NAME,
+                        "OnCursorMoveEnd",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_cursor_move_end(this: FishingRodSelectMenu_RodCItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingRodSelectMenu_RodCItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_cursor_move_end::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+pub trait IFishingRodSelectMenu_RodCItemMethods: IFishingRodSelectMenu_RodCItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
+    fn ctor(
+        self,
+        event_handler: impl ::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler>,
+        menu_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        item_trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
+        fish_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu_RodCItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodCItem_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(event_handler),
+                ::core::convert::Into::into(menu_obj),
+                ::core::convert::Into::into(item_trans),
+                ::core::convert::Into::into(fish_list),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu_RodCItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodCItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu_RodCItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodCItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnCursorMoveEnd()` overload"]
+    fn on_cursor_move_end(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu_RodCItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodCItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl<__T: IFishingRodSelectMenu_RodCItem> IFishingRodSelectMenu_RodCItemMethods for __T {}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl FishingRodSelectMenu_RodCItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        item_trans: crate::unity_engine::transform::Transform,
+        fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingRodSelectMenu_RodCItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingRodSelectMenu_RodCItemMethods>::ctor(this, event_handler, menu_obj, item_trans, fish_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FishingRodSelectMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_decide_event_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                "get_m_DecideEventHandler",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_m_DecideEventHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_m_decide_event_handler(
+        this: FishingRodSelectMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler {
+        let inner: extern "C" fn(
+            FishingRodSelectMenu,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler =
+            ::core::mem::transmute(__lookup_get_m_decide_event_handler::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_decide_event_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                "set_m_DecideEventHandler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_m_DecideEventHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_m_decide_event_handler(
+        this: FishingRodSelectMenu,
+        value: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FishingRodSelectMenu,
+            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_m_decide_event_handler::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(this: FishingRodSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(FishingRodSelectMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_x_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                "XCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "XCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn x_call(this: FishingRodSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(FishingRodSelectMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_x_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::fishing::sticktype::StickType as ::unity2::IlType>::il_type(),
+                <crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FishingRodSelectMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        initial_selected: crate::app::fishing::sticktype::StickType,
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FishingRodSelectMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::app::fishing::sticktype::StickType,
+            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, menu_content, initial_selected, event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: FishingRodSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(FishingRodSelectMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                "OnClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnClose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_close(this: FishingRodSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingRodSelectMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_close::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::fishing::sticktype::StickType as ::unity2::IlType>::il_type(),
+                <crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        initial_selected: crate::app::fishing::sticktype::StickType,
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::fishing::sticktype::StickType,
+            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, initial_selected, event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_after_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingRodSelectMenu as ::unity2::ClassIdentity>::class(),
+                "AfterBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "AfterBuild",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn after_build(this: FishingRodSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingRodSelectMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_after_build::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl FishingRodSelectMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::fishing::sticktype::StickType, crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        initial_selected: impl ::core::convert::Into<crate::app::fishing::sticktype::StickType>,
+        event_handler: impl ::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler>,
+    ) -> () {
+        unsafe {
+            __FishingRodSelectMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(initial_selected),
+                ::core::convert::Into::into(event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+pub trait IFishingRodSelectMenuMethods: IFishingRodSelectMenu {
+    #[doc = "`get_m_DecideEventHandler()` overload"]
+    fn get_m_decide_event_handler(self) -> crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_unity2_raw::get_m_decide_event_handler(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_m_DecideEventHandler(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` overload"]
+    fn set_m_decide_event_handler(
+        self,
+        value: impl ::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_unity2_raw::set_m_decide_event_handler(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`XCall()` overload"]
+    fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::fishing::sticktype::StickType, crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+        initial_selected: impl ::core::convert::Into<crate::app::fishing::sticktype::StickType>,
+        event_handler: impl ::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(initial_selected),
+                ::core::convert::Into::into(event_handler),
                 ::core::option::Option::None,
             )
         }
@@ -1807,58 +1389,48 @@ pub trait IFishingRodSelectMenu_RodBItemMethods: IFishingRodSelectMenu_RodBItem 
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodBItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodBItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`OnCursorMoveEnd()` overload"]
-    fn on_cursor_move_end(self) -> () {
+    #[doc = "`OnClose()` overload"]
+    fn on_close(self) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodBItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodBItem_unity2_raw::on_cursor_move_end(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AfterBuild()` overload"]
+    fn after_build(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingRodSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-fishingrodselectmenu")]
-impl<__T: IFishingRodSelectMenu_RodBItem> IFishingRodSelectMenu_RodBItemMethods for __T {}
+impl<__T: IFishingRodSelectMenu> IFishingRodSelectMenuMethods for __T {}
 
 #[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu_RodBItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
+impl FishingRodSelectMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::fishing::sticktype::StickType, crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` — overload selector"]
     pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        initial_selected: crate::app::fishing::sticktype::StickType,
         event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(FishingRodSelectMenu_RodBItem),
+                ::core::stringify!(FishingRodSelectMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFishingRodSelectMenu_RodBItemMethods>::ctor(
-            this,
-            event_handler,
-            menu_obj,
-            item_trans,
-            fish_list,
-        );
+        <Self as IFishingRodSelectMenuMethods>::ctor(this, menu_item_list, menu_content, initial_selected, event_handler);
         this
     }
 }
@@ -1872,9 +1444,7 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishingrodselectmenu :: FishingRodSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: app :: fishing :: sticktype :: StickType as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: fishing :: forecastfishdata :: ForecastFishData > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::class(),
@@ -1887,18 +1457,15 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1907,9 +1474,7 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
         menu_obj: crate::unity_engine::gameobject::GameObject,
         trans: crate::unity_engine::transform::Transform,
         result: crate::app::fishing::sticktype::StickType,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
+        fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -1918,32 +1483,16 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::transform::Transform,
             crate::app::fishing::sticktype::StickType,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_handler,
-            menu_obj,
-            trans,
-            result,
-            fish_list,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, event_handler, menu_obj, trans, result, fish_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::class(),
@@ -1956,39 +1505,27 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
-                    "OnBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
+                        "OnBuild",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_build(
-        this: FishingRodSelectMenu_RodItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_build(this: FishingRodSelectMenu_RodItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingRodSelectMenu_RodItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_build::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::class(),
@@ -2001,41 +1538,30 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build_attribute(
         this: FishingRodSelectMenu_RodItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingRodSelectMenu_RodItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::class(),
@@ -2048,39 +1574,27 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: FishingRodSelectMenu_RodItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: FishingRodSelectMenu_RodItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingRodSelectMenu_RodItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_deselect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::class(),
@@ -2093,39 +1607,27 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
-                    "OnDeselect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
+                        "OnDeselect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_deselect(
-        this: FishingRodSelectMenu_RodItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_deselect(this: FishingRodSelectMenu_RodItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingRodSelectMenu_RodItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_deselect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_deselect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::class(),
@@ -2138,41 +1640,30 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: FishingRodSelectMenu_RodItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            FishingRodSelectMenu_RodItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingRodSelectMenu_RodItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::class(),
@@ -2185,30 +1676,20 @@ mod __FishingRodSelectMenu_RodItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
-                    "OnClose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingRodSelectMenu_RodItem as ::unity2::ClassIdentity>::NAME,
+                        "OnClose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_close(
-        this: FishingRodSelectMenu_RodItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_close(this: FishingRodSelectMenu_RodItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingRodSelectMenu_RodItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2218,23 +1699,17 @@ pub trait IFishingRodSelectMenu_RodItemMethods: IFishingRodSelectMenu_RodItem {
     #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::app::fishing::sticktype::StickType, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
     fn ctor(
         self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        >,
+        event_handler: impl ::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler>,
         menu_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         trans: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
         result: impl ::core::convert::Into<crate::app::fishing::sticktype::StickType>,
         fish_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         >,
     ) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingRodSelectMenu_RodItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(event_handler),
@@ -2250,78 +1725,48 @@ pub trait IFishingRodSelectMenu_RodItemMethods: IFishingRodSelectMenu_RodItem {
     fn on_build(self) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodItem_unity2_raw::on_build(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelect()` overload"]
     fn on_select(self) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDeselect()` overload"]
     fn on_deselect(self) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodItem_unity2_raw::on_deselect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnClose()` overload"]
     fn on_close(self) -> () {
         unsafe {
             let __receiver =
-                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FishingRodSelectMenu_RodItem_unity2_raw::on_close(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <FishingRodSelectMenu_RodItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingRodSelectMenu_RodItem_unity2_raw::on_close(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -2337,9 +1782,7 @@ impl FishingRodSelectMenu_RodItem {
         menu_obj: crate::unity_engine::gameobject::GameObject,
         trans: crate::unity_engine::transform::Transform,
         result: crate::app::fishing::sticktype::StickType,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
+        fish_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -2348,14 +1791,7 @@ impl FishingRodSelectMenu_RodItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IFishingRodSelectMenu_RodItemMethods>::ctor(
-            this,
-            event_handler,
-            menu_obj,
-            trans,
-            result,
-            fish_list,
-        );
+        <Self as IFishingRodSelectMenu_RodItemMethods>::ctor(this, event_handler, menu_obj, trans, result, fish_list);
         this
     }
 }
@@ -2363,47 +1799,31 @@ impl FishingRodSelectMenu_RodItem {
 #[cfg(feature = "app-fishingrodselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingRodSelectMenu;
-    pub use super::FishingRodSelectMenu_DecideEventHandler;
-    pub use super::FishingRodSelectMenu_Result2;
-    pub use super::FishingRodSelectMenu_RodAItem;
-    pub use super::FishingRodSelectMenu_RodBItem;
-    pub use super::FishingRodSelectMenu_RodCItem;
-    pub use super::FishingRodSelectMenu_RodItem;
-    pub use super::IFishingRodSelectMenu;
-    pub use super::IFishingRodSelectMenuMethods;
-    pub use super::IFishingRodSelectMenu_DecideEventHandler;
-    pub use super::IFishingRodSelectMenu_DecideEventHandlerMethods;
-    pub use super::IFishingRodSelectMenu_RodAItem;
-    pub use super::IFishingRodSelectMenu_RodAItemMethods;
-    pub use super::IFishingRodSelectMenu_RodBItem;
-    pub use super::IFishingRodSelectMenu_RodBItemMethods;
-    pub use super::IFishingRodSelectMenu_RodCItem;
-    pub use super::IFishingRodSelectMenu_RodCItemMethods;
-    pub use super::IFishingRodSelectMenu_RodItem;
-    pub use super::IFishingRodSelectMenu_RodItemMethods;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        FishingRodSelectMenu, FishingRodSelectMenu_DecideEventHandler, FishingRodSelectMenu_Result2, FishingRodSelectMenu_RodAItem,
+        FishingRodSelectMenu_RodBItem, FishingRodSelectMenu_RodCItem, FishingRodSelectMenu_RodItem, IFishingRodSelectMenu,
+        IFishingRodSelectMenuMethods, IFishingRodSelectMenu_DecideEventHandler, IFishingRodSelectMenu_DecideEventHandlerMethods,
+        IFishingRodSelectMenu_RodAItem, IFishingRodSelectMenu_RodAItemMethods, IFishingRodSelectMenu_RodBItem, IFishingRodSelectMenu_RodBItemMethods,
+        IFishingRodSelectMenu_RodCItem, IFishingRodSelectMenu_RodCItemMethods, IFishingRodSelectMenu_RodItem, IFishingRodSelectMenu_RodItemMethods,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, basicmenuitem::IBasicMenuItem, procinst::IProcInst},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

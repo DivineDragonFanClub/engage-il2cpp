@@ -71,17 +71,13 @@ pub mod debuguihandlerindirectfloatfield;
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirectfloatfield")]
 pub use debuguihandlerindirectfloatfield::IDebugUIHandlerIndirectFloatFieldMethods;
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirectfloatfield-types")]
-pub use debuguihandlerindirectfloatfield::{
-    DebugUIHandlerIndirectFloatField, IDebugUIHandlerIndirectFloatField,
-};
+pub use debuguihandlerindirectfloatfield::{DebugUIHandlerIndirectFloatField, IDebugUIHandlerIndirectFloatField};
 #[cfg(any(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle-types"))]
 pub mod debuguihandlerindirecttoggle;
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle")]
 pub use debuguihandlerindirecttoggle::IDebugUIHandlerIndirectToggleMethods;
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle-types")]
-pub use debuguihandlerindirecttoggle::{
-    DebugUIHandlerIndirectToggle, IDebugUIHandlerIndirectToggle,
-};
+pub use debuguihandlerindirecttoggle::{DebugUIHandlerIndirectToggle, IDebugUIHandlerIndirectToggle};
 #[cfg(any(feature = "unity_engine-rendering-ui-debuguihandlerintfield-types"))]
 pub mod debuguihandlerintfield;
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerintfield")]
@@ -99,9 +95,7 @@ pub mod debuguihandlerpersistentcanvas;
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpersistentcanvas")]
 pub use debuguihandlerpersistentcanvas::IDebugUIHandlerPersistentCanvasMethods;
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpersistentcanvas-types")]
-pub use debuguihandlerpersistentcanvas::{
-    DebugUIHandlerPersistentCanvas, IDebugUIHandlerPersistentCanvas,
-};
+pub use debuguihandlerpersistentcanvas::{DebugUIHandlerPersistentCanvas, IDebugUIHandlerPersistentCanvas};
 #[cfg(any(feature = "unity_engine-rendering-ui-debuguihandlerrow-types"))]
 pub mod debuguihandlerrow;
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerrow")]

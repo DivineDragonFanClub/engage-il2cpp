@@ -2,25 +2,25 @@
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scene_management/loadsceneparameters/LoadSceneParameters.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
     pub struct LoadSceneParameters {
         pub m_load_scene_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        pub m_local_physics_mode:
-            crate::unity_engine::scene_management::localphysicsmode::LocalPhysicsMode,
+        pub m_local_physics_mode: crate::unity_engine::scene_management::localphysicsmode::LocalPhysicsMode,
     }
 
     impl ::unity2::ClassIdentity for LoadSceneParameters {
-        const NAMESPACE: &'static str = "UnityEngine.SceneManagement";
-
         const NAME: &'static str = "LoadSceneParameters";
+        const NAMESPACE: &'static str = "UnityEngine.SceneManagement";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -31,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for LoadSceneParameters {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -51,10 +48,9 @@ mod __LoadSceneParameters_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_load_scene_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LoadSceneParameters as ::unity2::ClassIdentity>::class(),
                 "set_loadSceneMode",
@@ -66,18 +62,15 @@ mod __LoadSceneParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LoadSceneParameters as ::unity2::ClassIdentity>::NAME,
-                    "set_loadSceneMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LoadSceneParameters as ::unity2::ClassIdentity>::NAME,
+                        "set_loadSceneMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_load_scene_mode(
@@ -89,11 +82,7 @@ mod __LoadSceneParameters_unity2_raw {
             LoadSceneParameters,
             crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_load_scene_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_load_scene_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -101,19 +90,8 @@ mod __LoadSceneParameters_unity2_raw {
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
 impl LoadSceneParameters {
     #[doc = "`set_loadSceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
-    pub fn set_load_scene_mode(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        >,
-    ) -> () {
-        unsafe {
-            __LoadSceneParameters_unity2_raw::set_load_scene_mode(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_load_scene_mode(self, value: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>) -> () {
+        unsafe { __LoadSceneParameters_unity2_raw::set_load_scene_mode(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 }
 
@@ -121,10 +99,9 @@ impl LoadSceneParameters {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::LoadSceneParameters;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

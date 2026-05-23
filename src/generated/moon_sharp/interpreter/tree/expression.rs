@@ -2,11 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expression-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::tree::nodebase::{INodeBase, NodeBase};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::tree::nodebase::{INodeBase, NodeBase},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expression/Expression.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree", name = "Expression")]
@@ -26,58 +28,42 @@ mod __Expression_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Expression as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Expression as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: Expression,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             Expression,
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_friendly_debug_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Expression as ::unity2::ClassIdentity>::class(),
@@ -90,63 +76,43 @@ mod __Expression_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "GetFriendlyDebugName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "GetFriendlyDebugName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_friendly_debug_name(
-        this: Expression,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_friendly_debug_name(this: Expression, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Expression, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_friendly_debug_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_friendly_debug_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_eval {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Expression as ::unity2::ClassIdentity>::class(),
-                "Eval",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Expression as ::unity2::ClassIdentity>::class(), "Eval", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "Eval",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "Eval",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn eval(
@@ -158,21 +124,16 @@ mod __Expression_unity2_raw {
             Expression,
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_eval::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_eval::get_method_info().method_ptr);
         inner(this, context, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_dynamic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Expression as ::unity2::ClassIdentity>::class(),
                 "FindDynamic",
@@ -184,18 +145,15 @@ mod __Expression_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "FindDynamic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "FindDynamic",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_dynamic(
@@ -207,21 +165,18 @@ mod __Expression_unity2_raw {
             Expression,
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_dynamic::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(__lookup_find_dynamic::get_method_info().method_ptr);
         inner(this, context, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_expr_list_after_first_expr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::expression::Expression as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Expression as ::unity2::ClassIdentity>::class(),
                 "ExprListAfterFirstExpr",
@@ -233,175 +188,126 @@ mod __Expression_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "ExprListAfterFirstExpr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "ExprListAfterFirstExpr",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn expr_list_after_first_expr(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         expr1: crate::moon_sharp::interpreter::tree::expression::Expression,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::moon_sharp::interpreter::tree::expression::Expression,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression> {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             crate::moon_sharp::interpreter::tree::expression::Expression,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::moon_sharp::interpreter::tree::expression::Expression,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_expr_list_after_first_expr::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_expr_list_after_first_expr::get_method_info().method_ptr);
         inner(lcontext, expr1, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_expr_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Expression as ::unity2::ClassIdentity>::class(),
-                "ExprList",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Expression as ::unity2::ClassIdentity>::class(), "ExprList", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "ExprList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "ExprList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn expr_list(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::moon_sharp::interpreter::tree::expression::Expression,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression> {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::moon_sharp::interpreter::tree::expression::Expression,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_expr_list::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_expr_list::get_method_info().method_ptr);
         inner(lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_expr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Expression as ::unity2::ClassIdentity>::class(),
-                "Expr",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Expression as ::unity2::ClassIdentity>::class(), "Expr", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "Expr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "Expr",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn expr(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        )
-            -> crate::moon_sharp::interpreter::tree::expression::Expression =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_expr::get_offset() as isize),
-            );
+        ) -> crate::moon_sharp::interpreter::tree::expression::Expression = ::core::mem::transmute(__lookup_expr::get_method_info().method_ptr);
         inner(lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sub_expr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Expression as ::unity2::ClassIdentity>::class(),
-                "SubExpr",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Expression as ::unity2::ClassIdentity>::class(), "SubExpr", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "SubExpr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "SubExpr",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sub_expr(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         is_primary: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
@@ -409,72 +315,49 @@ mod __Expression_unity2_raw {
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             bool,
             ::unity2::OptionalMethod,
-        )
-            -> crate::moon_sharp::interpreter::tree::expression::Expression =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_sub_expr::get_offset() as isize),
-            );
+        ) -> crate::moon_sharp::interpreter::tree::expression::Expression = ::core::mem::transmute(__lookup_sub_expr::get_method_info().method_ptr);
         inner(lcontext, is_primary, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_simple_exp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Expression as ::unity2::ClassIdentity>::class(),
-                "SimpleExp",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Expression as ::unity2::ClassIdentity>::class(), "SimpleExp", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "SimpleExp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "SimpleExp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn simple_exp(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        )
-            -> crate::moon_sharp::interpreter::tree::expression::Expression =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_simple_exp::get_offset() as isize),
-            );
+        ) -> crate::moon_sharp::interpreter::tree::expression::Expression = ::core::mem::transmute(__lookup_simple_exp::get_method_info().method_ptr);
         inner(lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_primary_exp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Expression as ::unity2::ClassIdentity>::class(),
                 "PrimaryExp",
@@ -486,83 +369,59 @@ mod __Expression_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "PrimaryExp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "PrimaryExp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn primary_exp(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        )
-            -> crate::moon_sharp::interpreter::tree::expression::Expression =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_primary_exp::get_offset() as isize),
-            );
+        ) -> crate::moon_sharp::interpreter::tree::expression::Expression =
+            ::core::mem::transmute(__lookup_primary_exp::get_method_info().method_ptr);
         inner(lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prefix_exp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Expression as ::unity2::ClassIdentity>::class(),
-                "PrefixExp",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Expression as ::unity2::ClassIdentity>::class(), "PrefixExp", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Expression as ::unity2::ClassIdentity>::NAME,
-                    "PrefixExp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Expression as ::unity2::ClassIdentity>::NAME,
+                        "PrefixExp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prefix_exp(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        )
-            -> crate::moon_sharp::interpreter::tree::expression::Expression =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prefix_exp::get_offset() as isize),
-            );
+        ) -> crate::moon_sharp::interpreter::tree::expression::Expression = ::core::mem::transmute(__lookup_prefix_exp::get_method_info().method_ptr);
         inner(lcontext, __unity2_method_info)
     }
 }
@@ -571,13 +430,9 @@ mod __Expression_unity2_raw {
 impl Expression {
     #[doc = "`ExprListAfterFirstExpr(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression)` overload"]
     pub fn expr_list_after_first_expr(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
         expr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::moon_sharp::interpreter::tree::expression::Expression,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression> {
         unsafe {
             __Expression_unity2_raw::expr_list_after_first_expr(
                 ::core::convert::Into::into(lcontext),
@@ -586,39 +441,24 @@ impl Expression {
             )
         }
     }
+
     #[doc = "`ExprList(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     pub fn expr_list(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::moon_sharp::interpreter::tree::expression::Expression,
-    > {
-        unsafe {
-            __Expression_unity2_raw::expr_list(
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
-        }
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression> {
+        unsafe { __Expression_unity2_raw::expr_list(::core::convert::Into::into(lcontext), ::core::option::Option::None) }
     }
+
     #[doc = "`Expr(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     pub fn expr(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
-        unsafe {
-            __Expression_unity2_raw::expr(
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Expression_unity2_raw::expr(::core::convert::Into::into(lcontext), ::core::option::Option::None) }
     }
+
     #[doc = "`SubExpr(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, bool)` overload"]
     pub fn sub_expr(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
         is_primary: impl ::core::convert::Into<bool>,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
         unsafe {
@@ -629,113 +469,63 @@ impl Expression {
             )
         }
     }
+
     #[doc = "`SimpleExp(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     pub fn simple_exp(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
-        unsafe {
-            __Expression_unity2_raw::simple_exp(
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Expression_unity2_raw::simple_exp(::core::convert::Into::into(lcontext), ::core::option::Option::None) }
     }
+
     #[doc = "`PrimaryExp(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     pub fn primary_exp(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
-        unsafe {
-            __Expression_unity2_raw::primary_exp(
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Expression_unity2_raw::primary_exp(::core::convert::Into::into(lcontext), ::core::option::Option::None) }
     }
+
     #[doc = "`PrefixExp(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     pub fn prefix_exp(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
     ) -> crate::moon_sharp::interpreter::tree::expression::Expression {
-        unsafe {
-            __Expression_unity2_raw::prefix_exp(
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Expression_unity2_raw::prefix_exp(::core::convert::Into::into(lcontext), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expression")]
 pub trait IExpressionMethods: IExpression {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    fn ctor(
-        self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-    ) -> () {
+    fn ctor(self, lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>) -> () {
         unsafe {
-            let __receiver = <Expression as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Expression_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Expression as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Expression_unity2_raw::ctor(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
         }
     }
     #[doc = "`GetFriendlyDebugName()` overload"]
     fn get_friendly_debug_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <Expression as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Expression_unity2_raw::get_friendly_debug_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <Expression as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Expression_unity2_raw::get_friendly_debug_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
     fn eval(
         self,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <Expression as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Expression_unity2_raw::eval(
-                __receiver,
-                ::core::convert::Into::into(context),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Expression as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Expression_unity2_raw::eval(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)
         }
     }
     #[doc = "`FindDynamic(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
     fn find_dynamic(
         self,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
     ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
         unsafe {
-            let __receiver = <Expression as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Expression_unity2_raw::find_dynamic(
-                __receiver,
-                ::core::convert::Into::into(context),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Expression as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Expression_unity2_raw::find_dynamic(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)
         }
     }
 }
@@ -746,16 +536,9 @@ impl<__T: IExpression> IExpressionMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-tree-expression")]
 impl Expression {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]
-    pub fn new(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Expression),
-                ::core::stringify!(new),
-            )
-        });
+    pub fn new(lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Expression), ::core::stringify!(new),));
         <Self as IExpressionMethods>::ctor(this, lcontext);
         this
     }
@@ -764,13 +547,10 @@ impl Expression {
 #[cfg(feature = "moon_sharp-interpreter-tree-expression")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Expression;
-    pub use super::IExpression;
-    pub use super::IExpressionMethods;
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+    pub use super::{Expression, IExpression, IExpressionMethods};
     #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
     pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{moon_sharp::interpreter::tree::nodebase::INodeBase, system::object::IObject};
 }

@@ -2,15 +2,12 @@
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moonsharpuserdataattribute/MoonSharpUserDataAttribute.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter",
-        name = "MoonSharpUserDataAttribute"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "MoonSharpUserDataAttribute")]
     pub struct MoonSharpUserDataAttribute {}
 }
 
@@ -26,9 +23,7 @@ mod __MoonSharpUserDataAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_access_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::class(),
@@ -41,35 +36,35 @@ mod __MoonSharpUserDataAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
-                    "get_AccessMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
+                        "get_AccessMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_access_mode(
         this: MoonSharpUserDataAttribute,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
-        let inner : extern "C" fn (MoonSharpUserDataAttribute , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_access_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            MoonSharpUserDataAttribute,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode =
+            ::core::mem::transmute(__lookup_get_access_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_access_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::class(),
                 "set_AccessMode",
@@ -81,18 +76,15 @@ mod __MoonSharpUserDataAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
-                    "set_AccessMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
+                        "set_AccessMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_access_mode(
@@ -104,20 +96,14 @@ mod __MoonSharpUserDataAttribute_unity2_raw {
             MoonSharpUserDataAttribute,
             crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_access_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_access_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::class(),
@@ -130,30 +116,20 @@ mod __MoonSharpUserDataAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpUserDataAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MoonSharpUserDataAttribute,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MoonSharpUserDataAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MoonSharpUserDataAttribute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -161,46 +137,26 @@ mod __MoonSharpUserDataAttribute_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
 pub trait IMoonSharpUserDataAttributeMethods: IMoonSharpUserDataAttribute {
     #[doc = "`get_AccessMode()` overload"]
-    fn get_access_mode(
-        self,
-    ) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
+    fn get_access_mode(self) -> crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode {
         unsafe {
             let __receiver =
-                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MoonSharpUserDataAttribute_unity2_raw::get_access_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoonSharpUserDataAttribute_unity2_raw::get_access_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
-    fn set_access_mode(
-        self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-        >,
-    ) -> () {
+    fn set_access_mode(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>) -> () {
         unsafe {
             let __receiver =
-                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MoonSharpUserDataAttribute_unity2_raw::set_access_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoonSharpUserDataAttribute_unity2_raw::set_access_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MoonSharpUserDataAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoonSharpUserDataAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -228,7 +184,5 @@ impl MoonSharpUserDataAttribute {
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMoonSharpUserDataAttribute;
-    pub use super::IMoonSharpUserDataAttributeMethods;
-    pub use super::MoonSharpUserDataAttribute;
+    pub use super::{IMoonSharpUserDataAttribute, IMoonSharpUserDataAttributeMethods, MoonSharpUserDataAttribute};
 }

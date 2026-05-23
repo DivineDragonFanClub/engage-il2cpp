@@ -2,26 +2,20 @@
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-unityassetsscriptloader-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::loaders::scriptloaderbase::{
-        IScriptLoaderBase, ScriptLoaderBase,
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::loaders::scriptloaderbase::{IScriptLoaderBase, ScriptLoaderBase},
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/loaders/unityassetsscriptloader/UnityAssetsScriptLoader.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Loaders",
-        name = "UnityAssetsScriptLoader"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Loaders", name = "UnityAssetsScriptLoader")]
     #[parent(crate::moon_sharp::interpreter::loaders::scriptloaderbase::ScriptLoaderBase)]
     pub struct UnityAssetsScriptLoader {
         #[rename(name = "m_Resources")]
-        pub m_resources: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-        >,
+        pub m_resources: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "DEFAULT_PATH")]
         pub default_path: ::unity2::Il2CppString,
@@ -40,11 +34,8 @@ mod __UnityAssetsScriptLoader_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -56,49 +47,31 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: UnityAssetsScriptLoader,
-        assets_path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnityAssetsScriptLoader,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: UnityAssetsScriptLoader, assets_path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnityAssetsScriptLoader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, assets_path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    ::unity2::Il2CppString,
-                    ::unity2::Il2CppString,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::dictionary_2::Dictionary_2<
+                ::unity2::Il2CppString,
+                ::unity2::Il2CppString,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -110,51 +83,35 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
         this: UnityAssetsScriptLoader,
-        script_to_code_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-        >,
+        script_to_code_map: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             UnityAssetsScriptLoader,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::Il2CppString,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, script_to_code_map, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_resources_with_reflection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::class(),
                 "LoadResourcesWithReflection",
@@ -166,18 +123,15 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
-                    "LoadResourcesWithReflection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
+                        "LoadResourcesWithReflection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_resources_with_reflection(
@@ -185,26 +139,16 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         assets_path: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnityAssetsScriptLoader,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_resources_with_reflection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnityAssetsScriptLoader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_resources_with_reflection::get_method_info().method_ptr);
         inner(this, assets_path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_file_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::class(),
                 "GetFileName",
@@ -216,18 +160,15 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
-                    "GetFileName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
+                        "GetFileName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_file_name(
@@ -235,24 +176,15 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         filename: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnityAssetsScriptLoader,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_file_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnityAssetsScriptLoader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_file_name::get_method_info().method_ptr);
         inner(this, filename, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
@@ -268,18 +200,15 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
-                    "LoadFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
+                        "LoadFile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_file(
@@ -293,22 +222,15 @@ mod __UnityAssetsScriptLoader_unity2_raw {
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_file::get_offset() as isize),
-        );
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_load_file::get_method_info().method_ptr);
         inner(this, file, global_context, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_script_file_exists {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::class(),
                 "ScriptFileExists",
@@ -320,18 +242,15 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
-                    "ScriptFileExists",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
+                        "ScriptFileExists",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn script_file_exists(
@@ -339,24 +258,15 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         file: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            UnityAssetsScriptLoader,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_script_file_exists::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnityAssetsScriptLoader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_script_file_exists::get_method_info().method_ptr);
         inner(this, file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_loaded_scripts {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::class(),
@@ -369,32 +279,23 @@ mod __UnityAssetsScriptLoader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
-                    "GetLoadedScripts",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityAssetsScriptLoader as ::unity2::ClassIdentity>::NAME,
+                        "GetLoadedScripts",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_loaded_scripts(
         this: UnityAssetsScriptLoader,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            UnityAssetsScriptLoader,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_loaded_scripts::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnityAssetsScriptLoader, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_loaded_scripts::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -405,48 +306,28 @@ pub trait IUnityAssetsScriptLoaderMethods: IUnityAssetsScriptLoader {
     fn ctor(self, assets_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnityAssetsScriptLoader_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(assets_path),
-                ::core::option::Option::None,
-            )
+                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnityAssetsScriptLoader_unity2_raw::ctor(__receiver, ::core::convert::Into::into(assets_path), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"]
     fn ctor_2(
         self,
         script_to_code_map: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::Il2CppString,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
         >,
     ) -> () {
         unsafe {
             let __receiver =
-                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnityAssetsScriptLoader_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(script_to_code_map),
-                ::core::option::Option::None,
-            )
+                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnityAssetsScriptLoader_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(script_to_code_map), ::core::option::Option::None)
         }
     }
     #[doc = "`LoadResourcesWithReflection(::unity2::Il2CppString)` overload"]
-    fn load_resources_with_reflection(
-        self,
-        assets_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn load_resources_with_reflection(self, assets_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnityAssetsScriptLoader_unity2_raw::load_resources_with_reflection(
                 __receiver,
                 ::core::convert::Into::into(assets_path),
@@ -455,20 +336,11 @@ pub trait IUnityAssetsScriptLoaderMethods: IUnityAssetsScriptLoader {
         }
     }
     #[doc = "`GetFileName(::unity2::Il2CppString)` overload"]
-    fn get_file_name(
-        self,
-        filename: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
+    fn get_file_name(self, filename: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnityAssetsScriptLoader_unity2_raw::get_file_name(
-                __receiver,
-                ::core::convert::Into::into(filename),
-                ::core::option::Option::None,
-            )
+                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnityAssetsScriptLoader_unity2_raw::get_file_name(__receiver, ::core::convert::Into::into(filename), ::core::option::Option::None)
         }
     }
     #[doc = "`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]
@@ -479,9 +351,7 @@ pub trait IUnityAssetsScriptLoaderMethods: IUnityAssetsScriptLoader {
     ) -> crate::system::object::Object {
         unsafe {
             let __receiver =
-                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnityAssetsScriptLoader_unity2_raw::load_file(
                 __receiver,
                 ::core::convert::Into::into(file),
@@ -494,27 +364,16 @@ pub trait IUnityAssetsScriptLoaderMethods: IUnityAssetsScriptLoader {
     fn script_file_exists(self, file: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
             let __receiver =
-                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnityAssetsScriptLoader_unity2_raw::script_file_exists(
-                __receiver,
-                ::core::convert::Into::into(file),
-                ::core::option::Option::None,
-            )
+                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnityAssetsScriptLoader_unity2_raw::script_file_exists(__receiver, ::core::convert::Into::into(file), ::core::option::Option::None)
         }
     }
     #[doc = "`GetLoadedScripts()` overload"]
     fn get_loaded_scripts(self) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
             let __receiver =
-                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnityAssetsScriptLoader_unity2_raw::get_loaded_scripts(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UnityAssetsScriptLoader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnityAssetsScriptLoader_unity2_raw::get_loaded_scripts(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -539,10 +398,7 @@ impl UnityAssetsScriptLoader {
 
     #[doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::Il2CppString>)` — overload selector"]
     pub fn new_2(
-        script_to_code_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-        >,
+        script_to_code_map: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -559,13 +415,10 @@ impl UnityAssetsScriptLoader {
 #[cfg(feature = "moon_sharp-interpreter-loaders-unityassetsscriptloader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnityAssetsScriptLoader;
-    pub use super::IUnityAssetsScriptLoaderMethods;
-    pub use super::UnityAssetsScriptLoader;
-    pub use crate::moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBase;
+    pub use super::{IUnityAssetsScriptLoader, IUnityAssetsScriptLoaderMethods, UnityAssetsScriptLoader};
     #[cfg(feature = "moon_sharp-interpreter-loaders-scriptloaderbase")]
     pub use crate::moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBase, system::object::IObject};
 }

@@ -4,13 +4,10 @@
 pub mod musclesquatsequence;
 #[cfg(feature = "app-squat-musclesquatsequence-types")]
 pub use musclesquatsequence::{
-    IMuscleSquatSequence, IMuscleSquatSequence_RandomPack, MuscleSquatSequence,
-    MuscleSquatSequence_Label, MuscleSquatSequence_RandomPack,
+    IMuscleSquatSequence, IMuscleSquatSequence_RandomPack, MuscleSquatSequence, MuscleSquatSequence_Label, MuscleSquatSequence_RandomPack,
 };
 #[cfg(feature = "app-squat-musclesquatsequence")]
-pub use musclesquatsequence::{
-    IMuscleSquatSequenceMethods, IMuscleSquatSequence_RandomPackMethods,
-};
+pub use musclesquatsequence::{IMuscleSquatSequenceMethods, IMuscleSquatSequence_RandomPackMethods};
 #[cfg(any(feature = "app-squat-note-types"))]
 pub mod note;
 #[cfg(feature = "app-squat-note")]

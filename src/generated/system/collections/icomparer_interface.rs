@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-icomparer_interface-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/icomparer_interface/IComparer_Interface.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "IComparer")]
@@ -23,9 +23,7 @@ mod __IComparer_Interface_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_compare {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -41,18 +39,15 @@ mod __IComparer_Interface_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IComparer_Interface as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IComparer_Interface as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare(
@@ -61,16 +56,8 @@ mod __IComparer_Interface_unity2_raw {
         y: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            IComparer_Interface,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
+        let inner: extern "C" fn(IComparer_Interface, crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
         inner(this, x, y, __unity2_method_info)
     }
 }
@@ -84,9 +71,7 @@ pub trait IIComparer_InterfaceMethods: IIComparer_Interface {
         y: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> i32 {
         unsafe {
-            let __receiver = <IComparer_Interface as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IComparer_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IComparer_Interface_unity2_raw::compare(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -103,7 +88,5 @@ impl<__T: IIComparer_Interface> IIComparer_InterfaceMethods for __T {}
 #[cfg(feature = "system-collections-icomparer_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IComparer_Interface;
-    pub use super::IIComparer_Interface;
-    pub use super::IIComparer_InterfaceMethods;
+    pub use super::{IComparer_Interface, IIComparer_Interface, IIComparer_InterfaceMethods};
 }

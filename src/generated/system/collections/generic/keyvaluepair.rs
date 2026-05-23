@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-collections-generic-keyvaluepair-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/keyvaluepair/KeyValuePair.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "KeyValuePair")]
@@ -25,9 +25,7 @@ mod __KeyValuePair_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_pair_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -43,18 +41,15 @@ mod __KeyValuePair_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <KeyValuePair as ::unity2::ClassIdentity>::NAME,
-                    "PairToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <KeyValuePair as ::unity2::ClassIdentity>::NAME,
+                        "PairToString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn pair_to_string(
@@ -62,15 +57,8 @@ mod __KeyValuePair_unity2_raw {
         value: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pair_to_string::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_pair_to_string::get_method_info().method_ptr);
         inner(key, value, __unity2_method_info)
     }
 }
@@ -95,8 +83,7 @@ impl KeyValuePair {
 #[cfg(feature = "system-collections-generic-keyvaluepair")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IKeyValuePair;
-    pub use super::KeyValuePair;
+    pub use super::{IKeyValuePair, KeyValuePair};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

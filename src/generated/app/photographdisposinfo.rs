@@ -2,15 +2,76 @@
 
 #[cfg(feature = "app-photographdisposinfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::bitfield32::{BitField32, IBitField32};
-    use crate::app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon};
-    use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1, IBitFieldTemplate32_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            bitfield32::{BitField32, IBitField32},
+            bitfieldcommon::{BitFieldCommon, IBitFieldCommon},
+            bitfieldtemplate32_1::{BitFieldTemplate32_1, IBitFieldTemplate32_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographDisposInfo.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)]
+    pub struct PhotographDisposInfo_FlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct PhotographDisposInfo_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for PhotographDisposInfo_Flags {
+        const NAME: &'static str = "PhotographDisposInfo.Flags";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PhotographDisposInfo_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl PhotographDisposInfo_Flags {
+        pub fn training() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn pool_side() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn in_pool() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn can_dispos_god() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn mascot() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn sitting() -> Self {
+            Self { value: 32 }
+        }
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo.md"))]
     #[::unity2::class(namespace = "App", name = "PhotographDisposInfo")]
@@ -43,8 +104,7 @@ mod __types {
         #[rename(name = "m_IsLoadingCharacter")]
         pub m_is_loading_character: bool,
         #[rename(name = "m_CharacterIdList")]
-        pub m_character_id_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub m_character_id_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "m_CurrentCharacterId")]
         pub m_current_character_id: ::unity2::Il2CppString,
         #[rename(name = "m_CharacterType")]
@@ -56,9 +116,7 @@ mod __types {
         #[rename(name = "m_LookAtRate")]
         pub m_look_at_rate: f32,
         #[rename(name = "m_PauseDataList")]
-        pub m_pause_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::photographpausedata::PhotographPauseData,
-        >,
+        pub m_pause_data_list: crate::system::collections::generic::list_1::List_1<crate::app::photographpausedata::PhotographPauseData>,
         #[rename(name = "m_CurrentPauseData")]
         pub m_current_pause_data: crate::app::photographpausedata::PhotographPauseData,
         #[rename(name = "m_HoldItem")]
@@ -73,28 +131,16 @@ mod __types {
         pub m_is_loading_weapon: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographDisposInfo.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)]
-    pub struct PhotographDisposInfo_FlagField {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_CharacterType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct PhotographDisposInfo_CharacterType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for PhotographDisposInfo_CharacterType {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "PhotographDisposInfo.CharacterType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -105,10 +151,7 @@ mod __types {
 
     impl ::unity2::IlType for PhotographDisposInfo_CharacterType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -137,70 +180,130 @@ mod __types {
             Self { value: 5 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct PhotographDisposInfo_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for PhotographDisposInfo_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "PhotographDisposInfo.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PhotographDisposInfo_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl PhotographDisposInfo_Flags {
-        pub fn training() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn pool_side() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn in_pool() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn can_dispos_god() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn mascot() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn sitting() -> Self {
-            Self { value: 32 }
-        }
-    }
 }
 
 #[cfg(feature = "app-photographdisposinfo-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-photographdisposinfo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhotographDisposInfo_FlagField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::photographdisposinfo::PhotographDisposInfo_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::NAME,
+                        "ToInt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_int(
+        this: PhotographDisposInfo_FlagField,
+        value: crate::app::photographdisposinfo::PhotographDisposInfo_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            PhotographDisposInfo_FlagField,
+            crate::app::photographdisposinfo::PhotographDisposInfo_Flags,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: PhotographDisposInfo_FlagField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographDisposInfo_FlagField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-photographdisposinfo")]
+pub trait IPhotographDisposInfo_FlagFieldMethods: IPhotographDisposInfo_FlagField {
+    #[doc = "`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]
+    fn to_int(self, value: impl ::core::convert::Into<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>) -> i32 {
+        unsafe {
+            let __receiver =
+                <PhotographDisposInfo_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposInfo_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_FlagField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-photographdisposinfo")]
+impl<__T: IPhotographDisposInfo_FlagField> IPhotographDisposInfo_FlagFieldMethods for __T {}
+
+#[cfg(feature = "app-photographdisposinfo")]
+impl PhotographDisposInfo_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographDisposInfo_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographDisposInfo_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-photographdisposinfo")]
 #[doc(hidden)]
@@ -211,9 +314,7 @@ mod __PhotographDisposInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_pause_group_name_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -226,41 +327,30 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_PauseGroupNameList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_PauseGroupNameList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pause_group_name_list(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pause_group_name_list::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_pause_group_name_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -273,34 +363,30 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_Flag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_Flag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_flag(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::photographdisposinfo::PhotographDisposInfo_FlagField {
-        let inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographdisposinfo :: PhotographDisposInfo_FlagField = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_flag :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> crate::app::photographdisposinfo::PhotographDisposInfo_FlagField =
+            ::core::mem::transmute(__lookup_get_flag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_loading {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -313,39 +399,27 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_IsLoading",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_IsLoading",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_loading(
-        this: PhotographDisposInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_loading(this: PhotographDisposInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_loading::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_loading::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character_id_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -358,18 +432,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_CharacterIdList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_CharacterIdList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_character_id_list(
@@ -379,22 +450,15 @@ mod __PhotographDisposInfo_unity2_raw {
         let inner: extern "C" fn(
             PhotographDisposInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_character_id_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_character_id_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current_character_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -407,43 +471,28 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_CurrentCharacterId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_CurrentCharacterId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_current_character_id(
-        this: PhotographDisposInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current_character_id::get_offset() as isize),
-        );
+    pub unsafe fn get_current_character_id(this: PhotographDisposInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_current_character_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_current_character_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_CurrentCharacterId",
@@ -455,18 +504,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_CurrentCharacterId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_CurrentCharacterId",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_current_character_id(
@@ -474,24 +520,15 @@ mod __PhotographDisposInfo_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_current_character_id::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_current_character_id::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_chara_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -504,34 +541,33 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_CharaType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_CharaType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_chara_type(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType {
-        let inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographdisposinfo :: PhotographDisposInfo_CharacterType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_chara_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            PhotographDisposInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType =
+            ::core::mem::transmute(__lookup_get_chara_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pause_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -544,45 +580,34 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_PauseDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_PauseDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pause_data_list(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::photographpausedata::PhotographPauseData,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::photographpausedata::PhotographPauseData> {
         let inner: extern "C" fn(
             PhotographDisposInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::photographpausedata::PhotographPauseData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pause_data_list::get_offset() as isize),
-        );
+        )
+            -> crate::system::collections::generic::list_1::List_1<crate::app::photographpausedata::PhotographPauseData> =
+            ::core::mem::transmute(__lookup_get_pause_data_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current_pause_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -595,41 +620,30 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_CurrentPauseData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_CurrentPauseData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_current_pause_data(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::photographpausedata::PhotographPauseData {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::photographpausedata::PhotographPauseData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current_pause_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> crate::app::photographpausedata::PhotographPauseData =
+            ::core::mem::transmute(__lookup_get_current_pause_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_look_at_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -642,41 +656,28 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_IsLookAtCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_IsLookAtCamera",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_look_at_camera(
-        this: PhotographDisposInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_look_at_camera(this: PhotographDisposInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_look_at_camera::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_look_at_camera::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_look_at_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_IsLookAtCamera",
@@ -688,42 +689,28 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_IsLookAtCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_IsLookAtCamera",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_look_at_camera(
-        this: PhotographDisposInfo,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_look_at_camera(this: PhotographDisposInfo, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographDisposInfo, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_look_at_camera::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_look_at_camera::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_look_at_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_LookAtRate",
@@ -735,40 +722,27 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_LookAtRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_LookAtRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_look_at_rate(
-        this: PhotographDisposInfo,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_look_at_rate(this: PhotographDisposInfo, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographDisposInfo, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_look_at_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_look_at_rate::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_body_acc_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -781,48 +755,36 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_BodyAccDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_BodyAccDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_body_acc_data_list(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> {
         let inner: extern "C" fn(
             PhotographDisposInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::accessorydata::AccessoryData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_body_acc_data_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> =
+            ::core::mem::transmute(__lookup_get_body_acc_data_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_body_acc_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::accessorydata::AccessoryData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::accessorydata::AccessoryData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_BodyAccDataList",
@@ -834,47 +796,34 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_BodyAccDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_BodyAccDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_body_acc_data_list(
         this: PhotographDisposInfo,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::accessorydata::AccessoryData,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PhotographDisposInfo,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::accessorydata::AccessoryData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_body_acc_data_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_body_acc_data_list::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_body_acc_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -887,43 +836,31 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_BodyAccData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_BodyAccData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_body_acc_data(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::accessorydata::AccessoryData {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::accessorydata::AccessoryData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_body_acc_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> crate::app::accessorydata::AccessoryData =
+            ::core::mem::transmute(__lookup_get_body_acc_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_body_acc_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_BodyAccData",
@@ -935,18 +872,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_BodyAccData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_BodyAccData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_body_acc_data(
@@ -954,24 +888,15 @@ mod __PhotographDisposInfo_unity2_raw {
         value: crate::app::accessorydata::AccessoryData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            crate::app::accessorydata::AccessoryData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_body_acc_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographDisposInfo, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_body_acc_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_face_acc_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -984,48 +909,36 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_FaceAccDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_FaceAccDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_face_acc_data_list(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> {
         let inner: extern "C" fn(
             PhotographDisposInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::accessorydata::AccessoryData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_face_acc_data_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> =
+            ::core::mem::transmute(__lookup_get_face_acc_data_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_face_acc_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::accessorydata::AccessoryData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::accessorydata::AccessoryData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_FaceAccDataList",
@@ -1037,47 +950,34 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_FaceAccDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_FaceAccDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_face_acc_data_list(
         this: PhotographDisposInfo,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::accessorydata::AccessoryData,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PhotographDisposInfo,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::accessorydata::AccessoryData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_face_acc_data_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_face_acc_data_list::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_face_acc_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1090,43 +990,31 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_FaceAccData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_FaceAccData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_face_acc_data(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::accessorydata::AccessoryData {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::accessorydata::AccessoryData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_face_acc_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> crate::app::accessorydata::AccessoryData =
+            ::core::mem::transmute(__lookup_get_face_acc_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_face_acc_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_FaceAccData",
@@ -1138,18 +1026,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_FaceAccData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_FaceAccData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_face_acc_data(
@@ -1157,24 +1042,15 @@ mod __PhotographDisposInfo_unity2_raw {
         value: crate::app::accessorydata::AccessoryData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            crate::app::accessorydata::AccessoryData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_face_acc_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographDisposInfo, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_face_acc_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weapon_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1187,18 +1063,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_WeaponDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_WeaponDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_weapon_data_list(
@@ -1208,26 +1081,17 @@ mod __PhotographDisposInfo_unity2_raw {
         let inner: extern "C" fn(
             PhotographDisposInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::itemdata::ItemData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_weapon_data_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> =
+            ::core::mem::transmute(__lookup_get_weapon_data_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weapon_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::itemdata::ItemData,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_WeaponDataList",
@@ -1239,18 +1103,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_WeaponDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_WeaponDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_weapon_data_list(
@@ -1262,20 +1123,14 @@ mod __PhotographDisposInfo_unity2_raw {
             PhotographDisposInfo,
             crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_weapon_data_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_weapon_data_list::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weapon_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1288,43 +1143,28 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_WeaponData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_WeaponData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weapon_data(
-        this: PhotographDisposInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_weapon_data::get_offset() as isize),
-        );
+    pub unsafe fn get_weapon_data(this: PhotographDisposInfo, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData =
+            ::core::mem::transmute(__lookup_get_weapon_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weapon_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_WeaponData",
@@ -1336,18 +1176,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_WeaponData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_WeaponData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_weapon_data(
@@ -1355,26 +1192,16 @@ mod __PhotographDisposInfo_unity2_raw {
         value: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_weapon_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographDisposInfo, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_weapon_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "set_IsVisible",
@@ -1386,40 +1213,27 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_IsVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_IsVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_visible(
-        this: PhotographDisposInfo,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_visible(this: PhotographDisposInfo, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographDisposInfo, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_visible::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_female {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1432,43 +1246,30 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_Female",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_Female",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_female(
         this: PhotographDisposInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::accessoryshoputility::AccessoryShopUtility_Female {
-        let inner: extern "C" fn(
-            PhotographDisposInfo,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::accessoryshoputility::AccessoryShopUtility_Female =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_female::get_offset() as isize),
-            );
+        let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> crate::app::accessoryshoputility::AccessoryShopUtility_Female =
+            ::core::mem::transmute(__lookup_get_female::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::app::photographspotdata::PhotographSpotData as ::unity2::IlType>::il_type(),
@@ -1489,18 +1290,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1524,29 +1322,15 @@ mod __PhotographDisposInfo_unity2_raw {
                 crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            locator,
-            select_spot,
-            locator_no,
-            anime_controller_dic,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, locator, select_spot, locator_no, anime_controller_dic, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_random_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
                 "GetRandomPause",
@@ -1558,18 +1342,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetRandomPause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetRandomPause",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_random_pause(
@@ -1581,24 +1362,17 @@ mod __PhotographDisposInfo_unity2_raw {
             PhotographDisposInfo,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::app::photographpausedata::PhotographPauseData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_random_pause::get_offset() as isize),
-        );
+        ) -> crate::app::photographpausedata::PhotographPauseData = ::core::mem::transmute(__lookup_get_random_pause::get_method_info().method_ptr);
         inner(this, chara_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_up_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::photographpausedata::PhotographPauseData as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::photographpausedata::PhotographPauseData as ::unity2::IlType>::il_type(),
                 <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
                 <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -1615,18 +1389,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "SetUpCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "SetUpCharacter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_up_character(
@@ -1648,11 +1419,7 @@ mod __PhotographDisposInfo_unity2_raw {
             crate::app::itemdata::ItemData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_up_character::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_up_character::get_method_info().method_ptr);
         inner(
             this,
             character_id,
@@ -1668,9 +1435,7 @@ mod __PhotographDisposInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_update_look {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1683,43 +1448,30 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "UpdateLook",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "UpdateLook",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_look(
-        this: PhotographDisposInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_look(this: PhotographDisposInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_look::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_look::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::photographpausedata::PhotographPauseData as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::photographpausedata::PhotographPauseData as ::unity2::IlType>::il_type(),
                 <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
                 <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -1736,18 +1488,15 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "InitCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "InitCharacter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init_character(
@@ -1769,11 +1518,7 @@ mod __PhotographDisposInfo_unity2_raw {
             crate::app::itemdata::ItemData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init_character::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_init_character::get_method_info().method_ptr);
         inner(
             this,
             character_id,
@@ -1789,9 +1534,7 @@ mod __PhotographDisposInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_up_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1804,39 +1547,27 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "SetUpPause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "SetUpPause",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_up_pause(
-        this: PhotographDisposInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_up_pause(this: PhotographDisposInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_up_pause::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_up_pause::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1849,39 +1580,27 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "SetupWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "SetupWeapon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_weapon(
-        this: PhotographDisposInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn setup_weapon(this: PhotographDisposInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup_weapon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup_weapon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1894,39 +1613,27 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    "DestroyWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        "DestroyWeapon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_weapon(
-        this: PhotographDisposInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_weapon(this: PhotographDisposInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographDisposInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_weapon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_weapon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographDisposInfo as ::unity2::ClassIdentity>::class(),
@@ -1939,26 +1646,19 @@ mod __PhotographDisposInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographDisposInfo as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1976,363 +1676,217 @@ pub trait IPhotographDisposInfoMethods: IPhotographDisposInfo {
     #[doc = "`get_PauseGroupNameList()` overload"]
     fn get_pause_group_name_list(self) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_pause_group_name_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_pause_group_name_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Flag()` overload"]
     fn get_flag(self) -> crate::app::photographdisposinfo::PhotographDisposInfo_FlagField {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographDisposInfo_unity2_raw::get_flag(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsLoading()` overload"]
     fn get_is_loading(self) -> bool {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_is_loading(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_is_loading(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CharacterIdList()` overload"]
-    fn get_character_id_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+    fn get_character_id_list(self) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_character_id_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_character_id_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CurrentCharacterId()` overload"]
     fn get_current_character_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_current_character_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_current_character_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CurrentCharacterId(::unity2::Il2CppString)` overload"]
-    fn set_current_character_id(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_current_character_id(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_current_character_id(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_current_character_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_CharaType()` overload"]
-    fn get_chara_type(
-        self,
-    ) -> crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType {
+    fn get_chara_type(self) -> crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_chara_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_chara_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_PauseDataList()` overload"]
-    fn get_pause_data_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::photographpausedata::PhotographPauseData,
-    > {
+    fn get_pause_data_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::photographpausedata::PhotographPauseData> {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_pause_data_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_pause_data_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CurrentPauseData()` overload"]
     fn get_current_pause_data(self) -> crate::app::photographpausedata::PhotographPauseData {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_current_pause_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_current_pause_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsLookAtCamera()` overload"]
     fn get_is_look_at_camera(self) -> bool {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_is_look_at_camera(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_is_look_at_camera(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsLookAtCamera(bool)` overload"]
     fn set_is_look_at_camera(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_is_look_at_camera(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_is_look_at_camera(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`set_LookAtRate(f32)` overload"]
     fn set_look_at_rate(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_look_at_rate(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_look_at_rate(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_BodyAccDataList()` overload"]
-    fn get_body_acc_data_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>
-    {
+    fn get_body_acc_data_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_body_acc_data_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_body_acc_data_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_BodyAccDataList(crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>)` overload"]
     fn set_body_acc_data_list(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::accessorydata::AccessoryData,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>>,
     ) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_body_acc_data_list(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_body_acc_data_list(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_BodyAccData()` overload"]
     fn get_body_acc_data(self) -> crate::app::accessorydata::AccessoryData {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_body_acc_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_body_acc_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_BodyAccData(crate::app::accessorydata::AccessoryData)` overload"]
-    fn set_body_acc_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
-    ) -> () {
+    fn set_body_acc_data(self, value: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_body_acc_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_body_acc_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_FaceAccDataList()` overload"]
-    fn get_face_acc_data_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>
-    {
+    fn get_face_acc_data_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_face_acc_data_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_face_acc_data_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_FaceAccDataList(crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>)` overload"]
     fn set_face_acc_data_list(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::accessorydata::AccessoryData,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>>,
     ) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_face_acc_data_list(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_face_acc_data_list(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_FaceAccData()` overload"]
     fn get_face_acc_data(self) -> crate::app::accessorydata::AccessoryData {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_face_acc_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_face_acc_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_FaceAccData(crate::app::accessorydata::AccessoryData)` overload"]
-    fn set_face_acc_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
-    ) -> () {
+    fn set_face_acc_data(self, value: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_face_acc_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_face_acc_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_WeaponDataList()` overload"]
-    fn get_weapon_data_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
+    fn get_weapon_data_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_weapon_data_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_weapon_data_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_WeaponDataList(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]
     fn set_weapon_data_list(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
     ) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_weapon_data_list(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_weapon_data_list(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_WeaponData()` overload"]
     fn get_weapon_data(self) -> crate::app::itemdata::ItemData {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_weapon_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_weapon_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_WeaponData(crate::app::itemdata::ItemData)` overload"]
-    fn set_weapon_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> () {
+    fn set_weapon_data(self, value: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_weapon_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_weapon_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsVisible(bool)` overload"]
     fn set_is_visible(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_is_visible(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_is_visible(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Female()` overload"]
     fn get_female(self) -> crate::app::accessoryshoputility::AccessoryShopUtility_Female {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographDisposInfo_unity2_raw::get_female(__receiver, ::core::option::Option::None)
         }
     }
@@ -2350,9 +1904,8 @@ pub trait IPhotographDisposInfoMethods: IPhotographDisposInfo {
         >,
     ) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographDisposInfo_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(locator),
@@ -2364,19 +1917,11 @@ pub trait IPhotographDisposInfoMethods: IPhotographDisposInfo {
         }
     }
     #[doc = "`GetRandomPause(::unity2::Il2CppString)` overload"]
-    fn get_random_pause(
-        self,
-        chara_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::photographpausedata::PhotographPauseData {
+    fn get_random_pause(self, chara_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::photographpausedata::PhotographPauseData {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::get_random_pause(
-                __receiver,
-                ::core::convert::Into::into(chara_id),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::get_random_pause(__receiver, ::core::convert::Into::into(chara_id), ::core::option::Option::None)
         }
     }
     #[doc = "`SetUpCharacter(::unity2::Il2CppString, crate::app::photographpausedata::PhotographPauseData, crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData, crate::app::itemdata::ItemData, bool)` overload"]
@@ -2390,9 +1935,8 @@ pub trait IPhotographDisposInfoMethods: IPhotographDisposInfo {
         is_random: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographDisposInfo_unity2_raw::set_up_character(
                 __receiver,
                 ::core::convert::Into::into(character_id),
@@ -2408,9 +1952,8 @@ pub trait IPhotographDisposInfoMethods: IPhotographDisposInfo {
     #[doc = "`UpdateLook()` overload"]
     fn update_look(self) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographDisposInfo_unity2_raw::update_look(__receiver, ::core::option::Option::None)
         }
     }
@@ -2425,9 +1968,8 @@ pub trait IPhotographDisposInfoMethods: IPhotographDisposInfo {
         is_random: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographDisposInfo_unity2_raw::init_character(
                 __receiver,
                 ::core::convert::Into::into(character_id),
@@ -2443,37 +1985,25 @@ pub trait IPhotographDisposInfoMethods: IPhotographDisposInfo {
     #[doc = "`SetUpPause()` overload"]
     fn set_up_pause(self) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::set_up_pause(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::set_up_pause(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupWeapon()` overload"]
     fn setup_weapon(self) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::setup_weapon(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::setup_weapon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyWeapon()` overload"]
     fn destroy_weapon(self) -> () {
         unsafe {
-            let __receiver = <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PhotographDisposInfo_unity2_raw::destroy_weapon(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PhotographDisposInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographDisposInfo_unity2_raw::destroy_weapon(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -2500,167 +2030,7 @@ impl PhotographDisposInfo {
                 ::core::stringify!(new),
             )
         });
-        <Self as IPhotographDisposInfoMethods>::ctor(
-            this,
-            locator,
-            select_spot,
-            locator_no,
-            anime_controller_dic,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-photographdisposinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographDisposInfo_FlagField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: PhotographDisposInfo_FlagField,
-        value: crate::app::photographdisposinfo::PhotographDisposInfo_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            PhotographDisposInfo_FlagField,
-            crate::app::photographdisposinfo::PhotographDisposInfo_Flags,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PhotographDisposInfo_FlagField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PhotographDisposInfo_FlagField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-photographdisposinfo")]
-pub trait IPhotographDisposInfo_FlagFieldMethods: IPhotographDisposInfo_FlagField {
-    #[doc = "`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]
-    fn to_int(
-        self,
-        value: impl ::core::convert::Into<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <PhotographDisposInfo_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographDisposInfo_FlagField_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographDisposInfo_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographDisposInfo_FlagField_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-photographdisposinfo")]
-impl<__T: IPhotographDisposInfo_FlagField> IPhotographDisposInfo_FlagFieldMethods for __T {}
-
-#[cfg(feature = "app-photographdisposinfo")]
-impl PhotographDisposInfo_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographDisposInfo_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographDisposInfo_FlagFieldMethods>::ctor(this);
+        <Self as IPhotographDisposInfoMethods>::ctor(this, locator, select_spot, locator_no, anime_controller_dic);
         this
     }
 }
@@ -2668,30 +2038,24 @@ impl PhotographDisposInfo_FlagField {
 #[cfg(feature = "app-photographdisposinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPhotographDisposInfo;
-    pub use super::IPhotographDisposInfoMethods;
-    pub use super::IPhotographDisposInfo_FlagField;
-    pub use super::IPhotographDisposInfo_FlagFieldMethods;
-    pub use super::PhotographDisposInfo;
-    pub use super::PhotographDisposInfo_CharacterType;
-    pub use super::PhotographDisposInfo_FlagField;
-    pub use super::PhotographDisposInfo_Flags;
-    pub use crate::app::bitfield32::IBitField32;
+    pub use super::{
+        IPhotographDisposInfo, IPhotographDisposInfoMethods, IPhotographDisposInfo_FlagField, IPhotographDisposInfo_FlagFieldMethods,
+        PhotographDisposInfo, PhotographDisposInfo_CharacterType, PhotographDisposInfo_FlagField, PhotographDisposInfo_Flags,
+    };
     #[cfg(feature = "app-bitfield32")]
     pub use crate::app::bitfield32::IBitField32Methods;
-    pub use crate::app::bitfieldcommon::IBitFieldCommon;
     #[cfg(feature = "app-bitfieldcommon")]
     pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
-    pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
     #[cfg(feature = "app-bitfieldtemplate32_1")]
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{bitfield32::IBitField32, bitfieldcommon::IBitFieldCommon, bitfieldtemplate32_1::IBitFieldTemplate32_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

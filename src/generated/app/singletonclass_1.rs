@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-singletonclass_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonclass_1/SingletonClass_1.md"))]
     #[::unity2::class(namespace = "App", name = "SingletonClass`1")]
@@ -157,9 +157,7 @@ impl<T0: ::unity2::ClassIdentity> SingletonClass_1<T0> {
 #[cfg(feature = "app-singletonclass_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISingletonClass_1;
-    pub use super::ISingletonClass_1Methods;
-    pub use super::SingletonClass_1;
+    pub use super::{ISingletonClass_1, ISingletonClass_1Methods, SingletonClass_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

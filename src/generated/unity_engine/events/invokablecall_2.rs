@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-events-invokablecall_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::events::baseinvokablecall::{BaseInvokableCall, IBaseInvokableCall};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::events::baseinvokablecall::{BaseInvokableCall, IBaseInvokableCall},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/invokablecall_2/InvokableCall_2.md"))]
     #[::unity2::class(namespace = "UnityEngine.Events", name = "InvokableCall`2")]
@@ -26,32 +28,19 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> InvokableCall_2<T0, T1> {
     #[doc = "`add_Delegate(crate::unity_engine::events::unityaction_2::UnityAction_2<T0,T1>)` overload"]
     #[method(name = "add_Delegate", args = 1)]
-    pub fn add_delegate(
-        self,
-        value: crate::unity_engine::events::unityaction_2::UnityAction_2<T0, T1>,
-    ) -> ();
+    pub fn add_delegate(self, value: crate::unity_engine::events::unityaction_2::UnityAction_2<T0, T1>) -> ();
 
     #[doc = "`remove_Delegate(crate::unity_engine::events::unityaction_2::UnityAction_2<T0,T1>)` overload"]
     #[method(name = "remove_Delegate", args = 1)]
-    pub fn remove_delegate(
-        self,
-        value: crate::unity_engine::events::unityaction_2::UnityAction_2<T0, T1>,
-    ) -> ();
+    pub fn remove_delegate(self, value: crate::unity_engine::events::unityaction_2::UnityAction_2<T0, T1>) -> ();
 
     #[doc = "`.ctor(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        target: crate::system::object::Object,
-        the_function: crate::system::reflection::methodinfo::MethodInfo,
-    ) -> ();
+    pub fn ctor(self, target: crate::system::object::Object, the_function: crate::system::reflection::methodinfo::MethodInfo) -> ();
 
     #[doc = "`.ctor(crate::unity_engine::events::unityaction_2::UnityAction_2<T0,T1>)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(
-        self,
-        action: crate::unity_engine::events::unityaction_2::UnityAction_2<T0, T1>,
-    ) -> ();
+    pub fn ctor_2(self, action: crate::unity_engine::events::unityaction_2::UnityAction_2<T0, T1>) -> ();
 
     #[doc = "`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]
     #[method(name = "Invoke", args = 1)]
@@ -63,20 +52,13 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> InvokableCall_2<T
 
     #[doc = "`Find(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]
     #[method(name = "Find", args = 2)]
-    pub fn find(
-        self,
-        target_obj: crate::system::object::Object,
-        method: crate::system::reflection::methodinfo::MethodInfo,
-    ) -> bool;
+    pub fn find(self, target_obj: crate::system::object::Object, method: crate::system::reflection::methodinfo::MethodInfo) -> bool;
 }
 
 #[cfg(feature = "unity_engine-events-invokablecall_2")]
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> InvokableCall_2<T0, T1> {
     #[doc = "`.ctor(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` — overload selector"]
-    pub fn new(
-        target: crate::system::object::Object,
-        the_function: crate::system::reflection::methodinfo::MethodInfo,
-    ) -> Self {
+    pub fn new(target: crate::system::object::Object, the_function: crate::system::reflection::methodinfo::MethodInfo) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -89,9 +71,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> InvokableCall_2<T
     }
 
     #[doc = "`.ctor(crate::unity_engine::events::unityaction_2::UnityAction_2<T0,T1>)` — overload selector"]
-    pub fn new_2(
-        action: crate::unity_engine::events::unityaction_2::UnityAction_2<T0, T1>,
-    ) -> Self {
+    pub fn new_2(action: crate::unity_engine::events::unityaction_2::UnityAction_2<T0, T1>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -107,13 +87,10 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> InvokableCall_2<T
 #[cfg(feature = "unity_engine-events-invokablecall_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInvokableCall_2;
-    pub use super::IInvokableCall_2Methods;
-    pub use super::InvokableCall_2;
-    pub use crate::system::object::IObject;
+    pub use super::{IInvokableCall_2, IInvokableCall_2Methods, InvokableCall_2};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCall;
     #[cfg(feature = "unity_engine-events-baseinvokablecall")]
     pub use crate::unity_engine::events::baseinvokablecall::IBaseInvokableCallMethods;
+    pub use crate::{system::object::IObject, unity_engine::events::baseinvokablecall::IBaseInvokableCall};
 }

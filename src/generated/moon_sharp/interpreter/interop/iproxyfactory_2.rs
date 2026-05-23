@@ -2,9 +2,9 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/iproxyfactory_2/IProxyFactory_2.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "IProxyFactory`2")]
@@ -25,7 +25,5 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IProxyFactory_2<T
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIProxyFactory_2;
-    pub use super::IIProxyFactory_2Methods;
-    pub use super::IProxyFactory_2;
+    pub use super::{IIProxyFactory_2, IIProxyFactory_2Methods, IProxyFactory_2};
 }

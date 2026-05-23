@@ -2,15 +2,12 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/ipropertytableassigner_interface/IPropertyTableAssigner_Interface.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "IPropertyTableAssigner"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "IPropertyTableAssigner")]
     pub struct IPropertyTableAssigner_Interface {}
 }
 
@@ -26,9 +23,7 @@ mod __IPropertyTableAssigner_Interface_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_assign_object_unchecked {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
@@ -44,18 +39,15 @@ mod __IPropertyTableAssigner_Interface_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IPropertyTableAssigner_Interface as ::unity2::ClassIdentity>::NAME,
-                    "AssignObjectUnchecked",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IPropertyTableAssigner_Interface as ::unity2::ClassIdentity>::NAME,
+                        "AssignObjectUnchecked",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn assign_object_unchecked(
@@ -69,11 +61,7 @@ mod __IPropertyTableAssigner_Interface_unity2_raw {
             crate::system::object::Object,
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_assign_object_unchecked::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_assign_object_unchecked::get_method_info().method_ptr);
         inner(this, o, data, __unity2_method_info)
     }
 }
@@ -88,9 +76,7 @@ pub trait IIPropertyTableAssigner_InterfaceMethods: IIPropertyTableAssigner_Inte
     ) -> () {
         unsafe {
             let __receiver =
-                <IPropertyTableAssigner_Interface as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <IPropertyTableAssigner_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IPropertyTableAssigner_Interface_unity2_raw::assign_object_unchecked(
                 __receiver,
                 ::core::convert::Into::into(o),
@@ -107,7 +93,5 @@ impl<__T: IIPropertyTableAssigner_Interface> IIPropertyTableAssigner_InterfaceMe
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIPropertyTableAssigner_Interface;
-    pub use super::IIPropertyTableAssigner_InterfaceMethods;
-    pub use super::IPropertyTableAssigner_Interface;
+    pub use super::{IIPropertyTableAssigner_Interface, IIPropertyTableAssigner_InterfaceMethods, IPropertyTableAssigner_Interface};
 }

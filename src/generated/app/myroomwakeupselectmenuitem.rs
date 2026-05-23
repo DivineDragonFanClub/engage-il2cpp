@@ -2,12 +2,21 @@
 
 #[cfg(feature = "app-myroomwakeupselectmenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::object::{IObject, Object},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitem/MyRoomWakeupSelectMenuItem_SimpleFade.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectMenuItem.SimpleFade")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MyRoomWakeupSelectMenuItem_SimpleFade {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitem/MyRoomWakeupSelectMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectMenuItem")]
@@ -18,15 +27,215 @@ mod __types {
         #[rename(name = "m_UnitR")]
         pub m_unit_r: crate::app::unit::Unit,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitem/MyRoomWakeupSelectMenuItem_SimpleFade.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectMenuItem.SimpleFade")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MyRoomWakeupSelectMenuItem_SimpleFade {}
 }
 
 #[cfg(feature = "app-myroomwakeupselectmenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-myroomwakeupselectmenuitem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_crate_black_out_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::class(),
+                "CrateBlackOutBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::NAME,
+                        "CrateBlackOutBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn crate_black_out_bind(parent: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_crate_black_out_bind::get_method_info().method_ptr);
+        inner(parent, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::class(),
+                "CreateDesc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_desc(
+        this: MyRoomWakeupSelectMenuItem_SimpleFade,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem_SimpleFade, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_parent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::class(),
+                "DeleteParent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::NAME,
+                        "DeleteParent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete_parent(this: MyRoomWakeupSelectMenuItem_SimpleFade, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem_SimpleFade, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_parent::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MyRoomWakeupSelectMenuItem_SimpleFade, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem_SimpleFade, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-myroomwakeupselectmenuitem")]
+impl MyRoomWakeupSelectMenuItem_SimpleFade {
+    #[doc = "`CrateBlackOutBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn crate_black_out_bind(parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw::crate_black_out_bind(
+                ::core::convert::Into::into(parent),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-myroomwakeupselectmenuitem")]
+pub trait IMyRoomWakeupSelectMenuItem_SimpleFadeMethods: IMyRoomWakeupSelectMenuItem_SimpleFade {
+    #[doc = "`CreateDesc()` overload"]
+    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DeleteParent()` overload"]
+    fn delete_parent(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw::delete_parent(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-myroomwakeupselectmenuitem")]
+impl<__T: IMyRoomWakeupSelectMenuItem_SimpleFade> IMyRoomWakeupSelectMenuItem_SimpleFadeMethods for __T {}
+
+#[cfg(feature = "app-myroomwakeupselectmenuitem")]
+impl MyRoomWakeupSelectMenuItem_SimpleFade {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomWakeupSelectMenuItem_SimpleFade),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomWakeupSelectMenuItem_SimpleFadeMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-myroomwakeupselectmenuitem")]
 #[doc(hidden)]
@@ -37,9 +246,7 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_selected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -52,41 +259,28 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_IsSelected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSelected",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_selected(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_selected(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_selected::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_selected::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_selected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
                 "set_IsSelected",
@@ -98,40 +292,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "set_IsSelected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_IsSelected",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_selected(
-        this: MyRoomWakeupSelectMenuItem,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_selected(this: MyRoomWakeupSelectMenuItem, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_selected::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_selected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_talk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -144,41 +325,28 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_IsTalk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsTalk",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_talk(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_talk(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_talk::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_talk::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_talk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
                 "set_IsTalk",
@@ -190,40 +358,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "set_IsTalk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_IsTalk",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_talk(
-        this: MyRoomWakeupSelectMenuItem,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_talk(this: MyRoomWakeupSelectMenuItem, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_talk::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_talk::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cursor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -236,34 +391,33 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_Cursor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_Cursor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cursor(
         this: MyRoomWakeupSelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop {
-        let inner : extern "C" fn (MyRoomWakeupSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: myroomwakeupselectroot :: MyRoomWakeupSelectRoot_CursorTop = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_cursor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            MyRoomWakeupSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop =
+            ::core::mem::transmute(__lookup_get_cursor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_blank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -276,39 +430,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_IsBlank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsBlank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_blank(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_blank(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_blank::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_blank::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_a_plus {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -321,39 +463,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_IsAPlus",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAPlus",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_a_plus(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_a_plus(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_a_plus::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_a_plus::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_command_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -366,45 +496,33 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetCommandColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetCommandColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_command_color(
         this: MyRoomWakeupSelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_command_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_command_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type(),
-                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -417,18 +535,15 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "CanStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "CanStart",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_start(
@@ -442,20 +557,14 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
             crate::app::reliancedata::RelianceData_Level,
             crate::app::gamesound::GameSound_WakeupVoicePattern,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_start::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_can_start::get_method_info().method_ptr);
         inner(this, level, pattern, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sort_order {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -468,39 +577,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetSortOrder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetSortOrder",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sort_order(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_sort_order(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sort_order::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sort_order::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_open_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -513,39 +610,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetOpenCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetOpenCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_open_count(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_open_count(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_open_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_open_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -561,18 +646,15 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -581,25 +663,15 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         unit_r: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, unit_l, unit_r, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_talk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -612,39 +684,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTalk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTalk",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_talk(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_talk(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_talk::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_talk::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -657,41 +717,30 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build_attribute(
         this: MyRoomWakeupSelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -704,39 +753,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -749,45 +786,33 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: MyRoomWakeupSelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_rank_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type(),
-                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -800,18 +825,15 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "StartRankSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "StartRankSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start_rank_select(
@@ -825,20 +847,14 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
             crate::app::reliancedata::RelianceData_Level,
             crate::app::gamesound::GameSound_WakeupVoicePattern,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_rank_select::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_start_rank_select::get_method_info().method_ptr);
         inner(this, level, pattern, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -851,41 +867,30 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn b_call(
         this: MyRoomWakeupSelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_l {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -898,41 +903,27 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitL",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitL",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit_l(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_l::get_offset() as isize),
-        );
+    pub unsafe fn get_unit_l(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit_l::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_r {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -945,32 +936,20 @@ mod __MyRoomWakeupSelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitR",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitR",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit_r(
-        this: MyRoomWakeupSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_r::get_offset() as isize),
-        );
+    pub unsafe fn get_unit_r(this: MyRoomWakeupSelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(MyRoomWakeupSelectMenuItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit_r::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -981,106 +960,64 @@ pub trait IMyRoomWakeupSelectMenuItemMethods: IMyRoomWakeupSelectMenuItem {
     fn get_is_selected(self) -> bool {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_is_selected(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_is_selected(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsSelected(bool)` overload"]
     fn set_is_selected(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::set_is_selected(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::set_is_selected(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsTalk()` overload"]
     fn get_is_talk(self) -> bool {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_is_talk(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_is_talk(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsTalk(bool)` overload"]
     fn set_is_talk(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::set_is_talk(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::set_is_talk(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Cursor()` overload"]
     fn get_cursor(self) -> crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_cursor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_cursor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsBlank()` overload"]
     fn get_is_blank(self) -> bool {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_is_blank(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_is_blank(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsAPlus()` overload"]
     fn get_is_a_plus(self) -> bool {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_is_a_plus(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_is_a_plus(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCommandColor()` overload"]
     fn get_command_color(self) -> crate::unity_engine::color::Color {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_command_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_command_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CanStart(crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]
@@ -1091,9 +1028,7 @@ pub trait IMyRoomWakeupSelectMenuItemMethods: IMyRoomWakeupSelectMenuItem {
     ) -> bool {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSelectMenuItem_unity2_raw::can_start(
                 __receiver,
                 ::core::convert::Into::into(level),
@@ -1106,39 +1041,23 @@ pub trait IMyRoomWakeupSelectMenuItemMethods: IMyRoomWakeupSelectMenuItem {
     fn get_sort_order(self) -> i32 {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_sort_order(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_sort_order(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetOpenCount()` overload"]
     fn get_open_count(self) -> i32 {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_open_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_open_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn ctor(
-        self,
-        unit_l: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit_r: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+    fn ctor(self, unit_l: impl ::core::convert::Into<crate::app::unit::Unit>, unit_r: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSelectMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(unit_l),
@@ -1151,52 +1070,32 @@ pub trait IMyRoomWakeupSelectMenuItemMethods: IMyRoomWakeupSelectMenuItem {
     fn update_talk(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::update_talk(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::update_talk(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelect()` overload"]
     fn on_select(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartRankSelect(crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]
@@ -1207,9 +1106,7 @@ pub trait IMyRoomWakeupSelectMenuItemMethods: IMyRoomWakeupSelectMenuItem {
     ) -> () {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSelectMenuItem_unity2_raw::start_rank_select(
                 __receiver,
                 ::core::convert::Into::into(level),
@@ -1222,39 +1119,24 @@ pub trait IMyRoomWakeupSelectMenuItemMethods: IMyRoomWakeupSelectMenuItem {
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetUnitL()` overload"]
     fn get_unit_l(self) -> crate::app::unit::Unit {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_unit_l(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_unit_l(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetUnitR()` overload"]
     fn get_unit_r(self) -> crate::app::unit::Unit {
         unsafe {
             let __receiver =
-                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSelectMenuItem_unity2_raw::get_unit_r(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomWakeupSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSelectMenuItem_unity2_raw::get_unit_r(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1280,287 +1162,19 @@ impl MyRoomWakeupSelectMenuItem {
 
 #[cfg(feature = "app-myroomwakeupselectmenuitem")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_crate_black_out_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::class(),
-                "CrateBlackOutBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::NAME,
-                    "CrateBlackOutBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn crate_black_out_bind(
-        parent: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_crate_black_out_bind::get_offset() as isize),
-            );
-        inner(parent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: MyRoomWakeupSelectMenuItem_SimpleFade,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem_SimpleFade,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_parent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::class(),
-                "DeleteParent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::NAME,
-                    "DeleteParent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete_parent(
-        this: MyRoomWakeupSelectMenuItem_SimpleFade,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem_SimpleFade,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_parent::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSelectMenuItem_SimpleFade as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MyRoomWakeupSelectMenuItem_SimpleFade,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSelectMenuItem_SimpleFade,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-myroomwakeupselectmenuitem")]
-impl MyRoomWakeupSelectMenuItem_SimpleFade {
-    #[doc = "`CrateBlackOutBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn crate_black_out_bind(
-        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw::crate_black_out_bind(
-                ::core::convert::Into::into(parent),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-myroomwakeupselectmenuitem")]
-pub trait IMyRoomWakeupSelectMenuItem_SimpleFadeMethods:
-    IMyRoomWakeupSelectMenuItem_SimpleFade
-{
-    #[doc = "`CreateDesc()` overload"]
-    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver = < MyRoomWakeupSelectMenuItem_SimpleFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw::create_desc(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DeleteParent()` overload"]
-    fn delete_parent(self) -> () {
-        unsafe {
-            let __receiver = < MyRoomWakeupSelectMenuItem_SimpleFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw::delete_parent(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < MyRoomWakeupSelectMenuItem_SimpleFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MyRoomWakeupSelectMenuItem_SimpleFade_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-myroomwakeupselectmenuitem")]
-impl<__T: IMyRoomWakeupSelectMenuItem_SimpleFade> IMyRoomWakeupSelectMenuItem_SimpleFadeMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-myroomwakeupselectmenuitem")]
-impl MyRoomWakeupSelectMenuItem_SimpleFade {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomWakeupSelectMenuItem_SimpleFade),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomWakeupSelectMenuItem_SimpleFadeMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroomwakeupselectmenuitem")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IMyRoomWakeupSelectMenuItem;
-    pub use super::IMyRoomWakeupSelectMenuItemMethods;
-    pub use super::IMyRoomWakeupSelectMenuItem_SimpleFade;
-    pub use super::IMyRoomWakeupSelectMenuItem_SimpleFadeMethods;
-    pub use super::MyRoomWakeupSelectMenuItem;
-    pub use super::MyRoomWakeupSelectMenuItem_SimpleFade;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{
+        IMyRoomWakeupSelectMenuItem, IMyRoomWakeupSelectMenuItemMethods, IMyRoomWakeupSelectMenuItem_SimpleFade,
+        IMyRoomWakeupSelectMenuItem_SimpleFadeMethods, MyRoomWakeupSelectMenuItem, MyRoomWakeupSelectMenuItem_SimpleFade,
+    };
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenuitem::IBasicMenuItem, procinst::IProcInst},
+        system::object::IObject,
+    };
 }

@@ -2,10 +2,22 @@
 
 #[cfg(feature = "system-reflection-customattributedata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/customattributedata/CustomAttributeData_LazyCAttrData.md"))]
+    #[::unity2::class(namespace = "System.Reflection", name = "CustomAttributeData.LazyCAttrData")]
+    #[parent(crate::system::object::Object)]
+    pub struct CustomAttributeData_LazyCAttrData {
+        #[rename(name = "assembly")]
+        pub assembly: crate::system::reflection::assembly::Assembly,
+        #[rename(name = "data")]
+        pub data: ::unity2::IntPtr,
+        #[rename(name = "data_length")]
+        pub data_length: u32,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/customattributedata/CustomAttributeData.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "CustomAttributeData")]
@@ -22,28 +34,84 @@ mod __types {
             crate::system::reflection::customattributenamedargument::CustomAttributeNamedArgument,
         >,
         #[rename(name = "lazyData")]
-        pub lazy_data:
-            crate::system::reflection::customattributedata::CustomAttributeData_LazyCAttrData,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/customattributedata/CustomAttributeData_LazyCAttrData.md"))]
-    #[::unity2::class(
-        namespace = "System.Reflection",
-        name = "CustomAttributeData.LazyCAttrData"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct CustomAttributeData_LazyCAttrData {
-        #[rename(name = "assembly")]
-        pub assembly: crate::system::reflection::assembly::Assembly,
-        #[rename(name = "data")]
-        pub data: ::unity2::IntPtr,
-        #[rename(name = "data_length")]
-        pub data_length: u32,
+        pub lazy_data: crate::system::reflection::customattributedata::CustomAttributeData_LazyCAttrData,
     }
 }
 
 #[cfg(feature = "system-reflection-customattributedata-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-reflection-customattributedata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CustomAttributeData_LazyCAttrData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomAttributeData_LazyCAttrData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData_LazyCAttrData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: CustomAttributeData_LazyCAttrData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CustomAttributeData_LazyCAttrData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-reflection-customattributedata")]
+pub trait ICustomAttributeData_LazyCAttrDataMethods: ICustomAttributeData_LazyCAttrData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CustomAttributeData_LazyCAttrData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CustomAttributeData_LazyCAttrData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-customattributedata")]
+impl<__T: ICustomAttributeData_LazyCAttrData> ICustomAttributeData_LazyCAttrDataMethods for __T {}
+
+#[cfg(feature = "system-reflection-customattributedata")]
+impl CustomAttributeData_LazyCAttrData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomAttributeData_LazyCAttrData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomAttributeData_LazyCAttrDataMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "system-reflection-customattributedata")]
 #[doc(hidden)]
@@ -54,9 +122,7 @@ mod __CustomAttributeData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
@@ -69,40 +135,33 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CustomAttributeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CustomAttributeData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomAttributeData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: constructorinfo :: ConstructorInfo as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: assembly :: Assembly as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::constructorinfo::ConstructorInfo as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::assembly::Assembly as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -114,18 +173,15 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -143,28 +199,22 @@ mod __CustomAttributeData_unity2_raw {
             ::unity2::IntPtr,
             u32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            ctor_info,
-            assembly,
-            data,
-            data_length,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, ctor_info, assembly, data, data_length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resolve_arguments_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: constructorinfo :: ConstructorInfo as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: assembly :: Assembly as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::constructorinfo::ConstructorInfo as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::assembly::Assembly as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
                 "ResolveArgumentsInternal",
@@ -176,18 +226,15 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "ResolveArgumentsInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "ResolveArgumentsInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resolve_arguments_internal(
@@ -207,28 +254,14 @@ mod __CustomAttributeData_unity2_raw {
             *mut ::unity2::Array<crate::system::object::Object>,
             *mut ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resolve_arguments_internal::get_offset() as isize),
-        );
-        inner(
-            ctor,
-            assembly,
-            data,
-            data_length,
-            ctor_args,
-            named_args,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_resolve_arguments_internal::get_method_info().method_ptr);
+        inner(ctor, assembly, data, data_length, ctor_args, named_args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resolve_arguments {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
@@ -241,39 +274,27 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "ResolveArguments",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "ResolveArguments",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn resolve_arguments(
-        this: CustomAttributeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn resolve_arguments(this: CustomAttributeData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomAttributeData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resolve_arguments::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_resolve_arguments::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_constructor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
@@ -286,42 +307,30 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Constructor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Constructor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_constructor(
         this: CustomAttributeData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::constructorinfo::ConstructorInfo {
-        let inner: extern "C" fn(
-            CustomAttributeData,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::reflection::constructorinfo::ConstructorInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_constructor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CustomAttributeData, ::unity2::OptionalMethod) -> crate::system::reflection::constructorinfo::ConstructorInfo =
+            ::core::mem::transmute(__lookup_get_constructor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_constructor_arguments {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
@@ -334,18 +343,15 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "get_ConstructorArguments",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "get_ConstructorArguments",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_constructor_arguments(
@@ -354,16 +360,19 @@ mod __CustomAttributeData_unity2_raw {
     ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
         crate::system::reflection::customattributetypedargument::CustomAttributeTypedArgument,
     > {
-        let inner : extern "C" fn (CustomAttributeData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributetypedargument :: CustomAttributeTypedArgument > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_constructor_arguments :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            CustomAttributeData,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::reflection::customattributetypedargument::CustomAttributeTypedArgument,
+        > = ::core::mem::transmute(__lookup_get_constructor_arguments::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_named_arguments {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
@@ -376,18 +385,15 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NamedArguments",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NamedArguments",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_named_arguments(
@@ -396,16 +402,19 @@ mod __CustomAttributeData_unity2_raw {
     ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
         crate::system::reflection::customattributenamedargument::CustomAttributeNamedArgument,
     > {
-        let inner : extern "C" fn (CustomAttributeData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributenamedargument :: CustomAttributeNamedArgument > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_named_arguments :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            CustomAttributeData,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::reflection::customattributenamedargument::CustomAttributeNamedArgument,
+        > = ::core::mem::transmute(__lookup_get_named_arguments::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_attributes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::system::reflection::assembly::Assembly as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -419,39 +428,37 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "GetCustomAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_custom_attributes(
         target: crate::system::reflection::assembly::Assembly,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        let inner : extern "C" fn (crate :: system :: reflection :: assembly :: Assembly , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_custom_attributes :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        let inner: extern "C" fn(
+            crate::system::reflection::assembly::Assembly,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::reflection::customattributedata::CustomAttributeData,
+        > = ::core::mem::transmute(__lookup_get_custom_attributes::get_method_info().method_ptr);
         inner(target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_attributes_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::reflection::memberinfo::MemberInfo as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::memberinfo::MemberInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
                 "GetCustomAttributes",
@@ -463,38 +470,36 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "GetCustomAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_custom_attributes_2(
         target: crate::system::reflection::memberinfo::MemberInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        let inner : extern "C" fn (crate :: system :: reflection :: memberinfo :: MemberInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_custom_attributes_2 :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        let inner: extern "C" fn(
+            crate::system::reflection::memberinfo::MemberInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::reflection::customattributedata::CustomAttributeData,
+        > = ::core::mem::transmute(__lookup_get_custom_attributes_2::get_method_info().method_ptr);
         inner(target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_attributes_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::runtimetype::RuntimeType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::runtimetype::RuntimeType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
                 "GetCustomAttributesInternal",
@@ -506,38 +511,36 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "GetCustomAttributesInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "GetCustomAttributesInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_custom_attributes_internal(
         target: crate::system::runtimetype::RuntimeType,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        let inner : extern "C" fn (crate :: system :: runtimetype :: RuntimeType , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_custom_attributes_internal :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        let inner: extern "C" fn(
+            crate::system::runtimetype::RuntimeType,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::reflection::customattributedata::CustomAttributeData,
+        > = ::core::mem::transmute(__lookup_get_custom_attributes_internal::get_method_info().method_ptr);
         inner(target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_attributes_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::reflection::module::Module as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::reflection::module::Module as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
                 "GetCustomAttributes",
@@ -549,37 +552,37 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "GetCustomAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_custom_attributes_3(
         target: crate::system::reflection::module::Module,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        let inner : extern "C" fn (crate :: system :: reflection :: module :: Module , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_custom_attributes_3 :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        let inner: extern "C" fn(
+            crate::system::reflection::module::Module,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::reflection::customattributedata::CustomAttributeData,
+        > = ::core::mem::transmute(__lookup_get_custom_attributes_3::get_method_info().method_ptr);
         inner(target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_attributes_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: parameterinfo :: ParameterInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::parameterinfo::ParameterInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
                 "GetCustomAttributes",
@@ -591,36 +594,35 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "GetCustomAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_custom_attributes_4(
         target: crate::system::reflection::parameterinfo::ParameterInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        let inner : extern "C" fn (crate :: system :: reflection :: parameterinfo :: ParameterInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_custom_attributes_4 :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        let inner: extern "C" fn(
+            crate::system::reflection::parameterinfo::ParameterInfo,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::reflection::customattributedata::CustomAttributeData,
+        > = ::core::mem::transmute(__lookup_get_custom_attributes_4::get_method_info().method_ptr);
         inner(target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attribute_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
@@ -633,41 +635,27 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "get_AttributeType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "get_AttributeType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_attribute_type(
-        this: CustomAttributeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            CustomAttributeData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attribute_type::get_offset() as isize),
-        );
+    pub unsafe fn get_attribute_type(this: CustomAttributeData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(CustomAttributeData, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_attribute_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
@@ -680,43 +668,28 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: CustomAttributeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CustomAttributeData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: CustomAttributeData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(CustomAttributeData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
                 "Equals",
@@ -728,43 +701,27 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: CustomAttributeData,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            CustomAttributeData,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: CustomAttributeData, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(CustomAttributeData, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomAttributeData as ::unity2::ClassIdentity>::class(),
@@ -777,30 +734,20 @@ mod __CustomAttributeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: CustomAttributeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: CustomAttributeData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CustomAttributeData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -818,12 +765,8 @@ impl CustomAttributeData {
         ::unity2::Array<crate::system::object::Object>,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                ::unity2::Array<crate::system::object::Object>,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                ::unity2::Array<crate::system::object::Object>,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<crate::system::object::Object>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Array<crate::system::object::Object>>::uninit();
             __CustomAttributeData_unity2_raw::resolve_arguments_internal(
                 ::core::convert::Into::into(ctor),
                 ::core::convert::Into::into(assembly),
@@ -836,121 +779,81 @@ impl CustomAttributeData {
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`GetCustomAttributes(crate::system::reflection::assembly::Assembly)` overload"]
     pub fn get_custom_attributes(
         target: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        unsafe {
-            __CustomAttributeData_unity2_raw::get_custom_attributes(
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        unsafe { __CustomAttributeData_unity2_raw::get_custom_attributes(::core::convert::Into::into(target), ::core::option::Option::None) }
     }
+
     #[doc = "`GetCustomAttributes(crate::system::reflection::memberinfo::MemberInfo)` overload"]
     pub fn get_custom_attributes_2(
         target: impl ::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        unsafe {
-            __CustomAttributeData_unity2_raw::get_custom_attributes_2(
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        unsafe { __CustomAttributeData_unity2_raw::get_custom_attributes_2(::core::convert::Into::into(target), ::core::option::Option::None) }
     }
+
     #[doc = "`GetCustomAttributesInternal(crate::system::runtimetype::RuntimeType)` overload"]
     pub fn get_custom_attributes_internal(
         target: impl ::core::convert::Into<crate::system::runtimetype::RuntimeType>,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        unsafe {
-            __CustomAttributeData_unity2_raw::get_custom_attributes_internal(
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        unsafe { __CustomAttributeData_unity2_raw::get_custom_attributes_internal(::core::convert::Into::into(target), ::core::option::Option::None) }
     }
+
     #[doc = "`GetCustomAttributes(crate::system::reflection::module::Module)` overload"]
     pub fn get_custom_attributes_3(
         target: impl ::core::convert::Into<crate::system::reflection::module::Module>,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        unsafe {
-            __CustomAttributeData_unity2_raw::get_custom_attributes_3(
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        unsafe { __CustomAttributeData_unity2_raw::get_custom_attributes_3(::core::convert::Into::into(target), ::core::option::Option::None) }
     }
+
     #[doc = "`GetCustomAttributes(crate::system::reflection::parameterinfo::ParameterInfo)` overload"]
     pub fn get_custom_attributes_4(
         target: impl ::core::convert::Into<crate::system::reflection::parameterinfo::ParameterInfo>,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::system::reflection::customattributedata::CustomAttributeData,
-    > {
-        unsafe {
-            __CustomAttributeData_unity2_raw::get_custom_attributes_4(
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>
+    {
+        unsafe { __CustomAttributeData_unity2_raw::get_custom_attributes_4(::core::convert::Into::into(target), ::core::option::Option::None) }
     }
+
     pub fn unbox_values<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         values: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
     ) -> ::unity2::Array<M0> {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <CustomAttributeData as ::unity2::ClassIdentity>::class(),
-                "UnboxValues",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<CustomAttributeData as ::unity2::ClassIdentity>::class(), "UnboxValues", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
-                "UnboxValues",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomAttributeData as ::unity2::ClassIdentity>::NAME,
+                    "UnboxValues",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(
-                ::unity2::Array<crate::system::object::Object>,
-                ::unity2::OptionalMethod,
-            ) -> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(::unity2::Array<crate::system::object::Object>, ::unity2::OptionalMethod) -> ::unity2::Array<M0> =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(values),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(values), ::core::option::Option::Some(__mi_opaque))
         }
     }
 }
@@ -960,26 +863,20 @@ pub trait ICustomAttributeDataMethods: ICustomAttributeData {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomAttributeData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::assembly::Assembly, ::unity2::IntPtr, u32)` overload"]
     fn ctor_2(
         self,
-        ctor_info: impl ::core::convert::Into<
-            crate::system::reflection::constructorinfo::ConstructorInfo,
-        >,
+        ctor_info: impl ::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo>,
         assembly: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
         data: impl ::core::convert::Into<::unity2::IntPtr>,
         data_length: impl ::core::convert::Into<u32>,
     ) -> () {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomAttributeData_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(ctor_info),
@@ -993,25 +890,15 @@ pub trait ICustomAttributeDataMethods: ICustomAttributeData {
     #[doc = "`ResolveArguments()` overload"]
     fn resolve_arguments(self) -> () {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomAttributeData_unity2_raw::resolve_arguments(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomAttributeData_unity2_raw::resolve_arguments(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Constructor()` overload"]
     fn get_constructor(self) -> crate::system::reflection::constructorinfo::ConstructorInfo {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomAttributeData_unity2_raw::get_constructor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomAttributeData_unity2_raw::get_constructor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ConstructorArguments()` overload"]
@@ -1021,13 +908,8 @@ pub trait ICustomAttributeDataMethods: ICustomAttributeData {
         crate::system::reflection::customattributetypedargument::CustomAttributeTypedArgument,
     > {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomAttributeData_unity2_raw::get_constructor_arguments(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomAttributeData_unity2_raw::get_constructor_arguments(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_NamedArguments()` overload"]
@@ -1037,59 +919,36 @@ pub trait ICustomAttributeDataMethods: ICustomAttributeData {
         crate::system::reflection::customattributenamedargument::CustomAttributeNamedArgument,
     > {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomAttributeData_unity2_raw::get_named_arguments(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomAttributeData_unity2_raw::get_named_arguments(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_AttributeType()` overload"]
     fn get_attribute_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomAttributeData_unity2_raw::get_attribute_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomAttributeData_unity2_raw::get_attribute_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomAttributeData_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomAttributeData_unity2_raw::equals(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomAttributeData_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`GetHashCode()` overload"]
     fn get_hash_code(self) -> i32 {
         unsafe {
-            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomAttributeData_unity2_raw::get_hash_code(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomAttributeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomAttributeData_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1133,103 +992,11 @@ impl CustomAttributeData {
 
 #[cfg(feature = "system-reflection-customattributedata")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CustomAttributeData_LazyCAttrData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomAttributeData_LazyCAttrData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomAttributeData_LazyCAttrData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CustomAttributeData_LazyCAttrData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CustomAttributeData_LazyCAttrData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-reflection-customattributedata")]
-pub trait ICustomAttributeData_LazyCAttrDataMethods: ICustomAttributeData_LazyCAttrData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <CustomAttributeData_LazyCAttrData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CustomAttributeData_LazyCAttrData_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-reflection-customattributedata")]
-impl<__T: ICustomAttributeData_LazyCAttrData> ICustomAttributeData_LazyCAttrDataMethods for __T {}
-
-#[cfg(feature = "system-reflection-customattributedata")]
-impl CustomAttributeData_LazyCAttrData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CustomAttributeData_LazyCAttrData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICustomAttributeData_LazyCAttrDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "system-reflection-customattributedata")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomAttributeData;
-    pub use super::CustomAttributeData_LazyCAttrData;
-    pub use super::ICustomAttributeData;
-    pub use super::ICustomAttributeDataMethods;
-    pub use super::ICustomAttributeData_LazyCAttrData;
-    pub use super::ICustomAttributeData_LazyCAttrDataMethods;
+    pub use super::{
+        CustomAttributeData, CustomAttributeData_LazyCAttrData, ICustomAttributeData, ICustomAttributeDataMethods,
+        ICustomAttributeData_LazyCAttrData, ICustomAttributeData_LazyCAttrDataMethods,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

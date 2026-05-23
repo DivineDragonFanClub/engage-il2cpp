@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-singletonprocinst_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonprocinst_1/SingletonProcInst_1.md"))]
     #[::unity2::class(namespace = "App", name = "SingletonProcInst`1")]
@@ -81,17 +83,11 @@ impl<T0: ::unity2::ClassIdentity> SingletonProcInst_1<T0> {
 
     #[doc = "`InstantiateGlobalAsset(crate::unity_engine::gameobject::GameObject)` overload"]
     #[method(name = "InstantiateGlobalAsset", args = 1)]
-    pub fn instantiate_global_asset(
-        self,
-        parent: crate::unity_engine::gameobject::GameObject,
-    ) -> crate::unity_engine::gameobject::GameObject;
+    pub fn instantiate_global_asset(self, parent: crate::unity_engine::gameobject::GameObject) -> crate::unity_engine::gameobject::GameObject;
 
     #[doc = "`InstantiateGlobalAsset(crate::unity_engine::transform::Transform)` overload"]
     #[method(name = "InstantiateGlobalAsset", args = 1)]
-    pub fn instantiate_global_asset_2(
-        self,
-        parent: crate::unity_engine::transform::Transform,
-    ) -> crate::unity_engine::gameobject::GameObject;
+    pub fn instantiate_global_asset_2(self, parent: crate::unity_engine::transform::Transform) -> crate::unity_engine::gameobject::GameObject;
 
     #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
     #[method(name = "OnSerialize", args = 1)]
@@ -133,13 +129,10 @@ impl<T0: ::unity2::ClassIdentity> SingletonProcInst_1<T0> {
 #[cfg(feature = "app-singletonprocinst_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISingletonProcInst_1;
-    pub use super::ISingletonProcInst_1Methods;
-    pub use super::SingletonProcInst_1;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{ISingletonProcInst_1, ISingletonProcInst_1Methods, SingletonProcInst_1};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::procinst::IProcInst, system::object::IObject};
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-imageconversion-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/imageconversion/ImageConversion.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ImageConversion")]
@@ -25,11 +25,8 @@ mod __ImageConversion_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_encode_to_png {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ImageConversion as ::unity2::ClassIdentity>::class(),
                 "EncodeToPNG",
@@ -41,41 +38,30 @@ mod __ImageConversion_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                    "EncodeToPNG",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
+                        "EncodeToPNG",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn encode_to_png(
         tex: crate::unity_engine::texture2d::Texture2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(
-            crate::unity_engine::texture2d::Texture2D,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_encode_to_png::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(__lookup_encode_to_png::get_method_info().method_ptr);
         inner(tex, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_encode_to_jpg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -91,18 +77,15 @@ mod __ImageConversion_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                    "EncodeToJPG",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
+                        "EncodeToJPG",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn encode_to_jpg(
@@ -110,26 +93,16 @@ mod __ImageConversion_unity2_raw {
         quality: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(
-            crate::unity_engine::texture2d::Texture2D,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_encode_to_jpg::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, i32, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(__lookup_encode_to_jpg::get_method_info().method_ptr);
         inner(tex, quality, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_encode_to_jpg_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ImageConversion as ::unity2::ClassIdentity>::class(),
                 "EncodeToJPG",
@@ -141,41 +114,30 @@ mod __ImageConversion_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                    "EncodeToJPG",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
+                        "EncodeToJPG",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn encode_to_jpg_2(
         tex: crate::unity_engine::texture2d::Texture2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(
-            crate::unity_engine::texture2d::Texture2D,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_encode_to_jpg_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(__lookup_encode_to_jpg_2::get_method_info().method_ptr);
         inner(tex, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
@@ -192,18 +154,15 @@ mod __ImageConversion_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                    "LoadImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
+                        "LoadImage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_image(
@@ -212,25 +171,15 @@ mod __ImageConversion_unity2_raw {
         mark_non_readable: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::texture2d::Texture2D,
-            ::unity2::Array<u8>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_image::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_load_image::get_method_info().method_ptr);
         inner(tex, data, mark_non_readable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_image_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
@@ -246,18 +195,15 @@ mod __ImageConversion_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ImageConversion as ::unity2::ClassIdentity>::NAME,
-                    "LoadImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ImageConversion as ::unity2::ClassIdentity>::NAME,
+                        "LoadImage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_image_2(
@@ -265,15 +211,8 @@ mod __ImageConversion_unity2_raw {
         data: ::unity2::Array<u8>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::texture2d::Texture2D,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_image_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_load_image_2::get_method_info().method_ptr);
         inner(tex, data, __unity2_method_info)
     }
 }
@@ -281,16 +220,10 @@ mod __ImageConversion_unity2_raw {
 #[cfg(feature = "unity_engine-imageconversion")]
 impl ImageConversion {
     #[doc = "`EncodeToPNG(crate::unity_engine::texture2d::Texture2D)` overload"]
-    pub fn encode_to_png(
-        tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
-    ) -> ::unity2::Array<u8> {
-        unsafe {
-            __ImageConversion_unity2_raw::encode_to_png(
-                ::core::convert::Into::into(tex),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn encode_to_png(tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>) -> ::unity2::Array<u8> {
+        unsafe { __ImageConversion_unity2_raw::encode_to_png(::core::convert::Into::into(tex), ::core::option::Option::None) }
     }
+
     #[doc = "`EncodeToJPG(crate::unity_engine::texture2d::Texture2D, i32)` overload"]
     pub fn encode_to_jpg(
         tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
@@ -304,17 +237,12 @@ impl ImageConversion {
             )
         }
     }
+
     #[doc = "`EncodeToJPG(crate::unity_engine::texture2d::Texture2D)` overload"]
-    pub fn encode_to_jpg_2(
-        tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
-    ) -> ::unity2::Array<u8> {
-        unsafe {
-            __ImageConversion_unity2_raw::encode_to_jpg_2(
-                ::core::convert::Into::into(tex),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn encode_to_jpg_2(tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>) -> ::unity2::Array<u8> {
+        unsafe { __ImageConversion_unity2_raw::encode_to_jpg_2(::core::convert::Into::into(tex), ::core::option::Option::None) }
     }
+
     #[doc = "`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, bool)` overload"]
     pub fn load_image(
         tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
@@ -330,6 +258,7 @@ impl ImageConversion {
             )
         }
     }
+
     #[doc = "`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>)` overload"]
     pub fn load_image_2(
         tex: impl ::core::convert::Into<crate::unity_engine::texture2d::Texture2D>,
@@ -348,8 +277,7 @@ impl ImageConversion {
 #[cfg(feature = "unity_engine-imageconversion")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IImageConversion;
-    pub use super::ImageConversion;
+    pub use super::{IImageConversion, ImageConversion};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

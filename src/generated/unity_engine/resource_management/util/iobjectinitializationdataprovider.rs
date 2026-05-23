@@ -2,21 +2,16 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/iobjectinitializationdataprovider/IObjectInitializationDataProvider.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.Util",
-        name = "IObjectInitializationDataProvider"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "IObjectInitializationDataProvider")]
     pub struct IObjectInitializationDataProvider {}
 }
 
-#[cfg(
-    feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types"
-)]
+#[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
@@ -28,9 +23,7 @@ mod __IObjectInitializationDataProvider_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IObjectInitializationDataProvider as ::unity2::ClassIdentity>::class(),
@@ -43,41 +36,27 @@ mod __IObjectInitializationDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IObjectInitializationDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IObjectInitializationDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: IObjectInitializationDataProvider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            IObjectInitializationDataProvider,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: IObjectInitializationDataProvider, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_object_initialization_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IObjectInitializationDataProvider as ::unity2::ClassIdentity>::class(),
@@ -90,21 +69,26 @@ mod __IObjectInitializationDataProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IObjectInitializationDataProvider as ::unity2::ClassIdentity>::NAME,
-                    "CreateObjectInitializationData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IObjectInitializationDataProvider as ::unity2::ClassIdentity>::NAME,
+                        "CreateObjectInitializationData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn create_object_initialization_data (this : IObjectInitializationDataProvider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData{
-        let inner : extern "C" fn (IObjectInitializationDataProvider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_object_initialization_data :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn create_object_initialization_data(
+        this: IObjectInitializationDataProvider,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData {
+        let inner: extern "C" fn(
+            IObjectInitializationDataProvider,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData =
+            ::core::mem::transmute(__lookup_create_object_initialization_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -114,26 +98,19 @@ pub trait IIObjectInitializationDataProviderMethods: IIObjectInitializationDataP
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <IObjectInitializationDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IObjectInitializationDataProvider_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <IObjectInitializationDataProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IObjectInitializationDataProvider_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`CreateObjectInitializationData()` overload"]    fn create_object_initialization_data (self ,) -> crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData{
+    #[doc = "`CreateObjectInitializationData()` overload"]
+    fn create_object_initialization_data(self) -> crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData {
         unsafe {
-            let __receiver =
-                <IObjectInitializationDataProvider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IObjectInitializationDataProvider_unity2_raw::create_object_initialization_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <IObjectInitializationDataProvider as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IObjectInitializationDataProvider_unity2_raw::create_object_initialization_data(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -144,7 +121,5 @@ impl<__T: IIObjectInitializationDataProvider> IIObjectInitializationDataProvider
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIObjectInitializationDataProvider;
-    pub use super::IIObjectInitializationDataProviderMethods;
-    pub use super::IObjectInitializationDataProvider;
+    pub use super::{IIObjectInitializationDataProvider, IIObjectInitializationDataProviderMethods, IObjectInitializationDataProvider};
 }

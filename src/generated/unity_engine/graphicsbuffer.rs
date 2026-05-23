@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-graphicsbuffer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/graphicsbuffer/GraphicsBuffer.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GraphicsBuffer")]
@@ -22,8 +22,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-graphicsbuffer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GraphicsBuffer;
-    pub use super::IGraphicsBuffer;
+    pub use super::{GraphicsBuffer, IGraphicsBuffer};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

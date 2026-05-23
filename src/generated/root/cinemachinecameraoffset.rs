@@ -2,9 +2,9 @@
 
 #[cfg(feature = "root-cinemachinecameraoffset-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinecameraoffset/CinemachineCameraOffset.md"))]
     #[::unity2::class(namespace = "", name = "CinemachineCameraOffset")]
@@ -28,9 +28,7 @@ mod __CinemachineCameraOffset_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineCameraOffset as ::unity2::ClassIdentity>::class(),
@@ -43,30 +41,20 @@ mod __CinemachineCameraOffset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineCameraOffset as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineCameraOffset as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CinemachineCameraOffset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CinemachineCameraOffset, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CinemachineCameraOffset, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -77,9 +65,7 @@ pub trait ICinemachineCameraOffsetMethods: ICinemachineCameraOffset {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <CinemachineCameraOffset as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <CinemachineCameraOffset as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CinemachineCameraOffset_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -107,7 +93,5 @@ impl CinemachineCameraOffset {
 #[cfg(feature = "root-cinemachinecameraoffset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CinemachineCameraOffset;
-    pub use super::ICinemachineCameraOffset;
-    pub use super::ICinemachineCameraOffsetMethods;
+    pub use super::{CinemachineCameraOffset, ICinemachineCameraOffset, ICinemachineCameraOffsetMethods};
 }

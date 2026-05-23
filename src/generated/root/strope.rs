@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-strope-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/strope/StrOpe.md"))]
     #[::unity2::class(namespace = "", name = "StrOpe")]
@@ -31,579 +31,311 @@ mod __StrOpe_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, ".cctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: StrOpe,
-        capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(StrOpe, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: StrOpe, capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(StrOpe, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, capacity, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Create",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Create", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Create", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn create(capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(capacity, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_small {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "get_small",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "get_small", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "get_small",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "get_small",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_small(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn get_small(__unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_small::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_small::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_medium {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "get_medium",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "get_medium", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "get_medium",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "get_medium",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_medium(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn get_medium(__unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_medium::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_medium::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_large {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "get_large",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "get_large", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "get_large",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "get_large",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_large(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn get_large(__unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_large::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_large::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_i {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "get_i",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "get_i", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "get_i",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "get_i", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_i(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn get_i(__unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_i::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_i::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_capacity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "set_Capacity",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "set_Capacity", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "set_Capacity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "set_Capacity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_capacity(
-        this: StrOpe,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_capacity(this: StrOpe, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StrOpe, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_capacity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_capacity::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_capacity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "get_Capacity",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "get_Capacity", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "get_Capacity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "get_Capacity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_capacity(
-        this: StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_capacity::get_offset() as isize),
-        );
+    pub unsafe fn get_capacity(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_capacity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "set_Length",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "set_Length", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "set_Length",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "set_Length",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_length(
-        this: StrOpe,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_length(this: StrOpe, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StrOpe, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_length::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "get_Length",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "get_Length", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "get_Length",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "get_Length",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_length(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_length::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_length::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Remove", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Remove", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove(
-        this: StrOpe,
-        start_index: i32,
-        length: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            StrOpe,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
+    pub unsafe fn remove(this: StrOpe, start_index: i32, length: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
+        let inner: extern "C" fn(StrOpe, i32, i32, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
         inner(this, start_index, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Replace",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Replace", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Replace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "Replace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn replace(
@@ -612,52 +344,30 @@ mod __StrOpe_unity2_raw {
         new_value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            StrOpe,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_replace::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StrOpe, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_replace::get_method_info().method_ptr);
         inner(this, old_value, new_value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sub_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "SubString",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "SubString", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "SubString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "SubString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sub_string(
@@ -666,52 +376,26 @@ mod __StrOpe_unity2_raw {
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            StrOpe,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sub_string::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StrOpe, i32, i32, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_sub_string::get_method_info().method_ptr);
         inner(this, start_index, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_append {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Append",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Append", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Append",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Append", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn append(
@@ -720,408 +404,227 @@ mod __StrOpe_unity2_raw {
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            StrOpe,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_append::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StrOpe, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_append::get_method_info().method_ptr);
         inner(this, str, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Clear", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_lower {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "ToLower",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "ToLower", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "ToLower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "ToLower",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_lower(
-        this: StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn to_lower(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_lower::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_lower::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_upper {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "ToUpper",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "ToUpper", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "ToUpper",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "ToUpper",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_upper(
-        this: StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn to_upper(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_upper::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_upper::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_trim {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Trim",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Trim", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Trim",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Trim", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn trim(
-        this: StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn trim(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_trim::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_trim::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_trim_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "TrimStart",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "TrimStart", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "TrimStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "TrimStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn trim_start(
-        this: StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn trim_start(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_trim_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_trim_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_trim_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "TrimEnd",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "TrimEnd", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "TrimEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "TrimEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn trim_end(
-        this: StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::strope::StrOpe {
+    pub unsafe fn trim_end(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> crate::root::strope::StrOpe {
         let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_trim_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_trim_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_chars {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "ToChars",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "ToChars", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "ToChars",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "ToChars",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_chars(
-        this: StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u16> {
+    pub unsafe fn to_chars(this: StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u16> {
         let inner: extern "C" fn(StrOpe, ::unity2::OptionalMethod) -> ::unity2::Array<u16> =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_chars::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_chars::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_format {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Format",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Format", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Format",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Format", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn format(
@@ -1133,47 +636,25 @@ mod __StrOpe_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_format::get_offset() as isize),
-        );
+        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(__lookup_format::get_method_info().method_ptr);
         inner(format, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_format_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Format",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Format", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Format",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Format", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn format_2(
@@ -1181,52 +662,27 @@ mod __StrOpe_unity2_raw {
         arg: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_format_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::system::object::Object, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_format_2::get_method_info().method_ptr);
         inner(format, arg, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_format_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Format",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Format", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Format",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Format", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn format_3(
@@ -1240,49 +696,27 @@ mod __StrOpe_unity2_raw {
             crate::system::object::Object,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_format_3::get_offset() as isize),
-        );
+        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(__lookup_format_3::get_method_info().method_ptr);
         inner(format, arg0, arg1, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_format_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "Format",
-                4,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "Format", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "Format",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <StrOpe as ::unity2::ClassIdentity>::NAME, "Format", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn format_4(
@@ -1298,95 +732,59 @@ mod __StrOpe_unity2_raw {
             crate::system::object::Object,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_format_4::get_offset() as isize),
-        );
+        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(__lookup_format_4::get_method_info().method_ptr);
         inner(format, arg0, arg1, arg2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::strope::StrOpe as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::strope::StrOpe as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_implicit(
-        t: crate::root::strope::StrOpe,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit::get_offset() as isize),
-        );
+    pub unsafe fn op_implicit(t: crate::root::strope::StrOpe, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::root::strope::StrOpe, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition(
@@ -1394,51 +792,33 @@ mod __StrOpe_unity2_raw {
         v: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, bool, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition::get_method_info().method_ptr);
         inner(t, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_2(
@@ -1446,51 +826,33 @@ mod __StrOpe_unity2_raw {
         v: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, i32, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_2::get_method_info().method_ptr);
         inner(t, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <i16 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_3(
@@ -1498,51 +860,33 @@ mod __StrOpe_unity2_raw {
         v: i16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            i16,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, i16, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_3::get_method_info().method_ptr);
         inner(t, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <u8 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_4(
@@ -1550,51 +894,33 @@ mod __StrOpe_unity2_raw {
         v: u8,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            u8,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, u8, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_4::get_method_info().method_ptr);
         inner(t, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_5(
@@ -1602,51 +928,33 @@ mod __StrOpe_unity2_raw {
         v: i64,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            i64,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_5::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, i64, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_5::get_method_info().method_ptr);
         inner(t, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_6(
@@ -1654,51 +962,33 @@ mod __StrOpe_unity2_raw {
         v: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_6::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, f32, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_6::get_method_info().method_ptr);
         inner(t, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <f64 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_7(
@@ -1706,51 +996,33 @@ mod __StrOpe_unity2_raw {
         v: f64,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            f64,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_7::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, f64, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_7::get_method_info().method_ptr);
         inner(t, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_8(
@@ -1758,51 +1030,33 @@ mod __StrOpe_unity2_raw {
         c: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_8::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, u16, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_8::get_method_info().method_ptr);
         inner(t, c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_9(
@@ -1810,51 +1064,33 @@ mod __StrOpe_unity2_raw {
         c: ::unity2::Array<u16>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            ::unity2::Array<u16>,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_9::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, ::unity2::Array<u16>, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_9::get_method_info().method_ptr);
         inner(t, c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_10 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_10(
@@ -1862,51 +1098,33 @@ mod __StrOpe_unity2_raw {
         str: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::strope::StrOpe {
-        let inner: extern "C" fn(
-            crate::root::strope::StrOpe,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_10::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::strope::StrOpe, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::root::strope::StrOpe =
+            ::core::mem::transmute(__lookup_op_addition_10::get_method_info().method_ptr);
         inner(t, str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_11 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::root::strope::StrOpe as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StrOpe as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<StrOpe as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StrOpe as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StrOpe as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_11(
@@ -1918,11 +1136,7 @@ mod __StrOpe_unity2_raw {
             crate::root::strope::StrOpe,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_11::get_offset() as isize),
-        );
+        ) -> crate::root::strope::StrOpe = ::core::mem::transmute(__lookup_op_addition_11::get_method_info().method_ptr);
         inner(t, obj, __unity2_method_info)
     }
 }
@@ -1933,31 +1147,32 @@ impl StrOpe {
     pub fn cctor() -> () {
         unsafe { __StrOpe_unity2_raw::cctor(::core::option::Option::None) }
     }
+
     #[doc = "`Create(i32)` overload"]
     pub fn create(capacity: impl ::core::convert::Into<i32>) -> crate::root::strope::StrOpe {
-        unsafe {
-            __StrOpe_unity2_raw::create(
-                ::core::convert::Into::into(capacity),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __StrOpe_unity2_raw::create(::core::convert::Into::into(capacity), ::core::option::Option::None) }
     }
+
     #[doc = "`get_small()` overload"]
     pub fn get_small() -> crate::root::strope::StrOpe {
         unsafe { __StrOpe_unity2_raw::get_small(::core::option::Option::None) }
     }
+
     #[doc = "`get_medium()` overload"]
     pub fn get_medium() -> crate::root::strope::StrOpe {
         unsafe { __StrOpe_unity2_raw::get_medium(::core::option::Option::None) }
     }
+
     #[doc = "`get_large()` overload"]
     pub fn get_large() -> crate::root::strope::StrOpe {
         unsafe { __StrOpe_unity2_raw::get_large(::core::option::Option::None) }
     }
+
     #[doc = "`get_i()` overload"]
     pub fn get_i() -> crate::root::strope::StrOpe {
         unsafe { __StrOpe_unity2_raw::get_i(::core::option::Option::None) }
     }
+
     #[doc = "`Format(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
     pub fn format(
         format: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1971,6 +1186,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`Format(::unity2::Il2CppString, crate::system::object::Object)` overload"]
     pub fn format_2(
         format: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1984,6 +1200,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`Format(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]
     pub fn format_3(
         format: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1999,6 +1216,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`Format(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
     pub fn format_4(
         format: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -2016,17 +1234,12 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Implicit(crate::root::strope::StrOpe)` overload"]
-    pub fn op_implicit(
-        t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __StrOpe_unity2_raw::op_implicit(
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_implicit(t: impl ::core::convert::Into<crate::root::strope::StrOpe>) -> ::unity2::Il2CppString {
+        unsafe { __StrOpe_unity2_raw::op_implicit(::core::convert::Into::into(t), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, bool)` overload"]
     pub fn op_addition(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2040,6 +1253,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, i32)` overload"]
     pub fn op_addition_2(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2053,6 +1267,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, i16)` overload"]
     pub fn op_addition_3(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2066,6 +1281,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, u8)` overload"]
     pub fn op_addition_4(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2079,6 +1295,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, i64)` overload"]
     pub fn op_addition_5(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2092,6 +1309,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, f32)` overload"]
     pub fn op_addition_6(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2105,6 +1323,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, f64)` overload"]
     pub fn op_addition_7(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2118,6 +1337,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, u16)` overload"]
     pub fn op_addition_8(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2131,6 +1351,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, ::unity2::Array<u16>)` overload"]
     pub fn op_addition_9(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2144,6 +1365,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, ::unity2::Il2CppString)` overload"]
     pub fn op_addition_10(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2157,6 +1379,7 @@ impl StrOpe {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::root::strope::StrOpe, crate::system::object::Object)` overload"]
     pub fn op_addition_11(
         t: impl ::core::convert::Into<crate::root::strope::StrOpe>,
@@ -2177,70 +1400,42 @@ pub trait IStrOpeMethods: IStrOpe {
     #[doc = "`.ctor(i32)` overload"]
     fn ctor(self, capacity: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StrOpe_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(capacity),
-                ::core::option::Option::None,
-            )
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StrOpe_unity2_raw::ctor(__receiver, ::core::convert::Into::into(capacity), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Capacity(i32)` overload"]
     fn set_capacity(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StrOpe_unity2_raw::set_capacity(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StrOpe_unity2_raw::set_capacity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Capacity()` overload"]
     fn get_capacity(self) -> i32 {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::get_capacity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Length(i32)` overload"]
     fn set_length(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StrOpe_unity2_raw::set_length(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StrOpe_unity2_raw::set_length(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Length()` overload"]
     fn get_length(self) -> i32 {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::get_length(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Remove(i32, i32)` overload"]
-    fn remove(
-        self,
-        start_index: impl ::core::convert::Into<i32>,
-        length: impl ::core::convert::Into<i32>,
-    ) -> crate::root::strope::StrOpe {
+    fn remove(self, start_index: impl ::core::convert::Into<i32>, length: impl ::core::convert::Into<i32>) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::remove(
                 __receiver,
                 ::core::convert::Into::into(start_index),
@@ -2256,9 +1451,7 @@ pub trait IStrOpeMethods: IStrOpe {
         new_value: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::replace(
                 __receiver,
                 ::core::convert::Into::into(old_value),
@@ -2268,15 +1461,9 @@ pub trait IStrOpeMethods: IStrOpe {
         }
     }
     #[doc = "`SubString(i32, i32)` overload"]
-    fn sub_string(
-        self,
-        start_index: impl ::core::convert::Into<i32>,
-        length: impl ::core::convert::Into<i32>,
-    ) -> crate::root::strope::StrOpe {
+    fn sub_string(self, start_index: impl ::core::convert::Into<i32>, length: impl ::core::convert::Into<i32>) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::sub_string(
                 __receiver,
                 ::core::convert::Into::into(start_index),
@@ -2286,15 +1473,9 @@ pub trait IStrOpeMethods: IStrOpe {
         }
     }
     #[doc = "`Append(::unity2::Il2CppString, i32)` overload"]
-    fn append(
-        self,
-        str: impl ::core::convert::Into<::unity2::Il2CppString>,
-        length: impl ::core::convert::Into<i32>,
-    ) -> crate::root::strope::StrOpe {
+    fn append(self, str: impl ::core::convert::Into<::unity2::Il2CppString>, length: impl ::core::convert::Into<i32>) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::append(
                 __receiver,
                 ::core::convert::Into::into(str),
@@ -2306,72 +1487,56 @@ pub trait IStrOpeMethods: IStrOpe {
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToLower()` overload"]
     fn to_lower(self) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::to_lower(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToUpper()` overload"]
     fn to_upper(self) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::to_upper(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Trim()` overload"]
     fn trim(self) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::trim(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TrimStart()` overload"]
     fn trim_start(self) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::trim_start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TrimEnd()` overload"]
     fn trim_end(self) -> crate::root::strope::StrOpe {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::trim_end(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToChars()` overload"]
     fn to_chars(self) -> ::unity2::Array<u16> {
         unsafe {
-            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <StrOpe as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StrOpe_unity2_raw::to_chars(__receiver, ::core::option::Option::None)
         }
     }
@@ -2384,13 +1549,8 @@ impl<__T: IStrOpe> IStrOpeMethods for __T {}
 impl StrOpe {
     #[doc = "`.ctor(i32)` — overload selector"]
     pub fn new(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StrOpe),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(StrOpe), ::core::stringify!(new),));
         <Self as IStrOpeMethods>::ctor(this, capacity);
         this
     }
@@ -2399,9 +1559,7 @@ impl StrOpe {
 #[cfg(feature = "root-strope")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStrOpe;
-    pub use super::IStrOpeMethods;
-    pub use super::StrOpe;
+    pub use super::{IStrOpe, IStrOpeMethods, StrOpe};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

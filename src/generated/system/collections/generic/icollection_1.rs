@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-generic-icollection_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/icollection_1/ICollection_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "ICollection`1")]
@@ -49,7 +49,5 @@ impl<T0: ::unity2::ClassIdentity> ICollection_1<T0> {
 #[cfg(feature = "system-collections-generic-icollection_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ICollection_1;
-    pub use super::IICollection_1;
-    pub use super::IICollection_1Methods;
+    pub use super::{ICollection_1, IICollection_1, IICollection_1Methods};
 }

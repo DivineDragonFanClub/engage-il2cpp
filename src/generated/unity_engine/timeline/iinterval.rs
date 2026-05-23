@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-timeline-iinterval-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/iinterval/IInterval.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "IInterval")]
@@ -23,9 +23,7 @@ mod __IInterval_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_interval_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IInterval as ::unity2::ClassIdentity>::class(),
@@ -38,39 +36,27 @@ mod __IInterval_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IInterval as ::unity2::ClassIdentity>::NAME,
-                    "get_intervalStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IInterval as ::unity2::ClassIdentity>::NAME,
+                        "get_intervalStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_interval_start(
-        this: IInterval,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
+    pub unsafe fn get_interval_start(this: IInterval, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
         let inner: extern "C" fn(IInterval, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_interval_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_interval_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_interval_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IInterval as ::unity2::ClassIdentity>::class(),
@@ -83,30 +69,20 @@ mod __IInterval_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IInterval as ::unity2::ClassIdentity>::NAME,
-                    "get_intervalEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IInterval as ::unity2::ClassIdentity>::NAME,
+                        "get_intervalEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_interval_end(
-        this: IInterval,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
+    pub unsafe fn get_interval_end(this: IInterval, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
         let inner: extern "C" fn(IInterval, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_interval_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_interval_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -116,18 +92,14 @@ pub trait IIIntervalMethods: IIInterval {
     #[doc = "`get_intervalStart()` overload"]
     fn get_interval_start(self) -> i64 {
         unsafe {
-            let __receiver = <IInterval as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IInterval as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IInterval_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_intervalEnd()` overload"]
     fn get_interval_end(self) -> i64 {
         unsafe {
-            let __receiver = <IInterval as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IInterval as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IInterval_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)
         }
     }
@@ -139,7 +111,5 @@ impl<__T: IIInterval> IIIntervalMethods for __T {}
 #[cfg(feature = "unity_engine-timeline-iinterval")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIInterval;
-    pub use super::IIIntervalMethods;
-    pub use super::IInterval;
+    pub use super::{IIInterval, IIIntervalMethods, IInterval};
 }

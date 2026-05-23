@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-situation_converter-convertengageattack-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::situation_converter::baseconverter::{BaseConverter, IBaseConverter};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::situation_converter::baseconverter::{BaseConverter, IBaseConverter},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertengageattack/ConvertEngageAttack.md"))]
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertEngageAttack")]
@@ -33,10 +35,9 @@ mod __ConvertEngageAttack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::situation_converter::cameradataset::CameraDataSet as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConvertEngageAttack as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -48,18 +49,15 @@ mod __ConvertEngageAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -71,20 +69,14 @@ mod __ConvertEngageAttack_unity2_raw {
             ConvertEngageAttack,
             crate::combat::situation_converter::cameradataset::CameraDataSet,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::camerasituation::CameraSituation as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -100,18 +92,15 @@ mod __ConvertEngageAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
-                    "Convert",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
+                        "Convert",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert(
@@ -125,20 +114,14 @@ mod __ConvertEngageAttack_unity2_raw {
             crate::combat::camerasituation::CameraSituation,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert::get_offset() as isize),
-        );
+        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(__lookup_convert::get_method_info().method_ptr);
         inner(this, situation, arg, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_enemy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::cameraposition::CameraPosition as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -155,18 +138,15 @@ mod __ConvertEngageAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
-                    "CheckEnemy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertEngageAttack as ::unity2::ClassIdentity>::NAME,
+                        "CheckEnemy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_enemy(
@@ -176,17 +156,8 @@ mod __ConvertEngageAttack_unity2_raw {
         inv_cam: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConvertEngageAttack,
-            crate::combat::cameraposition::CameraPosition,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_enemy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertEngageAttack, crate::combat::cameraposition::CameraPosition, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_check_enemy::get_method_info().method_ptr);
         inner(this, cam_pos, inv_side, inv_cam, __unity2_method_info)
     }
 }
@@ -194,21 +165,10 @@ mod __ConvertEngageAttack_unity2_raw {
 #[cfg(feature = "combat-situation_converter-convertengageattack")]
 pub trait IConvertEngageAttackMethods: IConvertEngageAttack {
     #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    fn ctor(
-        self,
-        data: impl ::core::convert::Into<
-            crate::combat::situation_converter::cameradataset::CameraDataSet,
-        >,
-    ) -> () {
+    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
         unsafe {
-            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConvertEngageAttack_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConvertEngageAttack_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]
@@ -218,9 +178,7 @@ pub trait IConvertEngageAttackMethods: IConvertEngageAttack {
         arg: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::combat::cameraposition::CameraPosition {
         unsafe {
-            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConvertEngageAttack_unity2_raw::convert(
                 __receiver,
                 ::core::convert::Into::into(situation),
@@ -237,9 +195,7 @@ pub trait IConvertEngageAttackMethods: IConvertEngageAttack {
         inv_cam: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConvertEngageAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConvertEngageAttack_unity2_raw::check_enemy(
                 __receiver,
                 ::core::convert::Into::into(cam_pos),
@@ -273,13 +229,10 @@ impl ConvertEngageAttack {
 #[cfg(feature = "combat-situation_converter-convertengageattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertEngageAttack;
-    pub use super::IConvertEngageAttack;
-    pub use super::IConvertEngageAttackMethods;
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    pub use super::{ConvertEngageAttack, IConvertEngageAttack, IConvertEngageAttackMethods};
     #[cfg(feature = "combat-situation_converter-baseconverter")]
     pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::situation_converter::baseconverter::IBaseConverter, system::object::IObject};
 }

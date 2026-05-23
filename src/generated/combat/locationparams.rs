@@ -2,34 +2,167 @@
 
 #[cfg(feature = "combat-locationparams-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_UnitType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct LocationParams_UnitType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for LocationParams_UnitType {
+        const NAME: &'static str = "LocationParams.UnitType";
+        const NAMESPACE: &'static str = "Combat";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for LocationParams_UnitType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl LocationParams_UnitType {
+        pub fn walk() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn horce() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn pegasus() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn dragon() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_EmblemType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct LocationParams_EmblemType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for LocationParams_EmblemType {
+        const NAME: &'static str = "LocationParams.EmblemType";
+        const NAMESPACE: &'static str = "Combat";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for LocationParams_EmblemType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl LocationParams_EmblemType {
+        pub fn normal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn sigurd() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn flying() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_DataType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct LocationParams_DataType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for LocationParams_DataType {
+        const NAME: &'static str = "LocationParams.DataType";
+        const NAMESPACE: &'static str = "Combat";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for LocationParams_DataType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl LocationParams_DataType {
+        pub fn distance() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn degree1() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn degree2() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn height() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 4 }
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_LocateStyle.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct LocationParams_LocateStyle {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for LocationParams_LocateStyle {
-        const NAMESPACE: &'static str = "Combat";
-
         const NAME: &'static str = "LocationParams.LocateStyle";
+        const NAMESPACE: &'static str = "Combat";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,10 +173,7 @@ mod __types {
 
     impl ::unity2::IlType for LocationParams_LocateStyle {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -102,170 +232,6 @@ mod __types {
         #[rename(name = "s_RefletDegree")]
         pub s_reflet_degree: crate::app::gameparam::GameParam_Holder,
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_UnitType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct LocationParams_UnitType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for LocationParams_UnitType {
-        const NAMESPACE: &'static str = "Combat";
-
-        const NAME: &'static str = "LocationParams.UnitType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for LocationParams_UnitType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl LocationParams_UnitType {
-        pub fn walk() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn horce() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn pegasus() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn dragon() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_EmblemType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct LocationParams_EmblemType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for LocationParams_EmblemType {
-        const NAMESPACE: &'static str = "Combat";
-
-        const NAME: &'static str = "LocationParams.EmblemType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for LocationParams_EmblemType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl LocationParams_EmblemType {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn sigurd() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn flying() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_DataType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct LocationParams_DataType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for LocationParams_DataType {
-        const NAMESPACE: &'static str = "Combat";
-
-        const NAME: &'static str = "LocationParams.DataType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for LocationParams_DataType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl LocationParams_DataType {
-        pub fn distance() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn degree1() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn degree2() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn height() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
-    }
 }
 
 #[cfg(feature = "combat-locationparams-types")]
@@ -280,9 +246,7 @@ mod __LocationParams_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LocationParams as ::unity2::ClassIdentity>::class(),
@@ -295,40 +259,33 @@ mod __LocationParams_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LocationParams as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LocationParams as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: LocationParams,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: LocationParams, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LocationParams, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: locationparams :: LocationParams_LocateStyle as :: unity2 :: IlType > :: il_type () , < crate :: combat :: locationparams :: LocationParams_UnitType as :: unity2 :: IlType > :: il_type () , < crate :: combat :: locationparams :: LocationParams_EmblemType as :: unity2 :: IlType > :: il_type () , < crate :: combat :: locationparams :: LocationParams_DataType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::locationparams::LocationParams_LocateStyle as ::unity2::IlType>::il_type(),
+                <crate::combat::locationparams::LocationParams_UnitType as ::unity2::IlType>::il_type(),
+                <crate::combat::locationparams::LocationParams_EmblemType as ::unity2::IlType>::il_type(),
+                <crate::combat::locationparams::LocationParams_DataType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LocationParams as ::unity2::ClassIdentity>::class(),
                 "GetIndex",
@@ -340,18 +297,15 @@ mod __LocationParams_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LocationParams as ::unity2::ClassIdentity>::NAME,
-                    "GetIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LocationParams as ::unity2::ClassIdentity>::NAME,
+                        "GetIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_index(
@@ -367,20 +321,14 @@ mod __LocationParams_unity2_raw {
             crate::combat::locationparams::LocationParams_EmblemType,
             crate::combat::locationparams::LocationParams_DataType,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_index::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
         inner(l, u, e, d, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_emblem_ground_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
@@ -396,18 +344,15 @@ mod __LocationParams_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LocationParams as ::unity2::ClassIdentity>::NAME,
-                    "GetEmblemGroundLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LocationParams as ::unity2::ClassIdentity>::NAME,
+                        "GetEmblemGroundLevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_emblem_ground_level(
@@ -415,25 +360,22 @@ mod __LocationParams_unity2_raw {
         emblem: crate::combat::character::Character,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::character::Character,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_emblem_ground_level::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::character::Character, crate::combat::character::Character, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_emblem_ground_level::get_method_info().method_ptr);
         inner(master, emblem, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_locate_emblem {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: combat :: character :: Character as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: combat :: locationparams :: LocationParams_LocateStyle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::combat::locationparams::LocationParams_LocateStyle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LocationParams as ::unity2::ClassIdentity>::class(),
                 "LocateEmblem",
@@ -445,18 +387,15 @@ mod __LocationParams_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LocationParams as ::unity2::ClassIdentity>::NAME,
-                    "LocateEmblem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LocationParams as ::unity2::ClassIdentity>::NAME,
+                        "LocateEmblem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn locate_emblem(
@@ -474,27 +413,14 @@ mod __LocationParams_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::combat::locationparams::LocationParams_LocateStyle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_locate_emblem::get_offset() as isize),
-        );
-        inner(
-            master,
-            emblem,
-            master_pos,
-            master_dir,
-            style,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_locate_emblem::get_method_info().method_ptr);
+        inner(master, emblem, master_pos, master_dir, style, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LocationParams as ::unity2::ClassIdentity>::class(),
@@ -507,36 +433,27 @@ mod __LocationParams_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LocationParams as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LocationParams as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: LocationParams, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LocationParams, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LocationParams as ::unity2::ClassIdentity>::class(),
@@ -549,26 +466,19 @@ mod __LocationParams_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LocationParams as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LocationParams as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -592,6 +502,7 @@ impl LocationParams {
             )
         }
     }
+
     #[doc = "`GetEmblemGroundLevel(crate::combat::character::Character, crate::combat::character::Character)` overload"]
     pub fn get_emblem_ground_level(
         master: impl ::core::convert::Into<crate::combat::character::Character>,
@@ -605,6 +516,7 @@ impl LocationParams {
             )
         }
     }
+
     #[doc = "`LocateEmblem(crate::combat::character::Character, crate::combat::character::Character, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]
     pub fn locate_emblem(
         master: impl ::core::convert::Into<crate::combat::character::Character>,
@@ -624,6 +536,7 @@ impl LocationParams {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __LocationParams_unity2_raw::cctor(::core::option::Option::None) }
@@ -635,18 +548,14 @@ pub trait ILocationParamsMethods: ILocationParams {
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <LocationParams as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LocationParams as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LocationParams_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <LocationParams as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LocationParams as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LocationParams_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -674,32 +583,26 @@ impl LocationParams {
 #[cfg(feature = "combat-locationparams")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILocationParams;
-    pub use super::ILocationParamsMethods;
-    pub use super::LocationParams;
-    pub use super::LocationParams_DataType;
-    pub use super::LocationParams_EmblemType;
-    pub use super::LocationParams_LocateStyle;
-    pub use super::LocationParams_UnitType;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ILocationParams, ILocationParamsMethods, LocationParams, LocationParams_DataType, LocationParams_EmblemType, LocationParams_LocateStyle,
+        LocationParams_UnitType,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

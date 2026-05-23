@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmapperutils-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/global_illumination/lightmapperutils/LightmapperUtils.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.GlobalIllumination",
-        name = "LightmapperUtils"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.GlobalIllumination", name = "LightmapperUtils")]
     #[parent(crate::system::object::Object)]
     pub struct LightmapperUtils {}
 }
@@ -28,10 +25,9 @@ mod __LightmapperUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_extract {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: lightmapbaketype :: LightmapBakeType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::lightmapbaketype::LightmapBakeType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "Extract",
@@ -43,36 +39,34 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "Extract",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "Extract",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract(
         baketype: crate::unity_engine::lightmapbaketype::LightmapBakeType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::experimental::global_illumination::lightmode::LightMode {
-        let inner : extern "C" fn (crate :: unity_engine :: lightmapbaketype :: LightmapBakeType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: global_illumination :: lightmode :: LightMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_extract :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::lightmapbaketype::LightmapBakeType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::global_illumination::lightmode::LightMode =
+            ::core::mem::transmute(__lookup_extract::get_method_info().method_ptr);
         inner(baketype, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_indirect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::light::Light as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::light::Light as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "ExtractIndirect",
@@ -84,36 +78,34 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "ExtractIndirect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "ExtractIndirect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_indirect(
         l: crate::unity_engine::light::Light,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor {
-        let inner : extern "C" fn (crate :: unity_engine :: light :: Light , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_extract_indirect :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::light::Light,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor =
+            ::core::mem::transmute(__lookup_extract_indirect::get_method_info().method_ptr);
         inner(l, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_inner_cone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::light::Light as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::light::Light as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "ExtractInnerCone",
@@ -125,43 +117,28 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "ExtractInnerCone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "ExtractInnerCone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn extract_inner_cone(
-        l: crate::unity_engine::light::Light,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::light::Light,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_inner_cone::get_offset() as isize),
-        );
+    pub unsafe fn extract_inner_cone(l: crate::unity_engine::light::Light, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::unity_engine::light::Light, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_extract_inner_cone::get_method_info().method_ptr);
         inner(l, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_color_temperature {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::light::Light as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::light::Light as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "ExtractColorTemperature",
@@ -173,42 +150,34 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "ExtractColorTemperature",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "ExtractColorTemperature",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_color_temperature(
         l: crate::unity_engine::light::Light,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            crate::unity_engine::light::Light,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_color_temperature::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::light::Light, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_extract_color_temperature::get_method_info().method_ptr);
         inner(l, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_color_temperature {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "ApplyColorTemperature",
@@ -220,44 +189,38 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "ApplyColorTemperature",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "ApplyColorTemperature",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn apply_color_temperature(
         cct: crate::unity_engine::color::Color,
-        light_color : * mut crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor,
+        light_color: *mut crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::unity_engine::color::Color,
             *mut crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_apply_color_temperature::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_apply_color_temperature::get_method_info().method_ptr);
         inner(cct, light_color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: light :: Light as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::light::Light as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "Extract",
@@ -269,36 +232,38 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "Extract",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "Extract",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_2(
         l: crate::unity_engine::light::Light,
-        dir : * mut crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight,
+        dir: *mut crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: light :: Light , * mut crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_extract_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::light::Light,
+            *mut crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_extract_2::get_method_info().method_ptr);
         inner(l, dir, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: light :: Light as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: global_illumination :: pointlight :: PointLight as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::light::Light as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::global_illumination::pointlight::PointLight as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "Extract",
@@ -310,18 +275,15 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "Extract",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "Extract",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_3(
@@ -333,21 +295,18 @@ mod __LightmapperUtils_unity2_raw {
             crate::unity_engine::light::Light,
             *mut crate::unity_engine::experimental::global_illumination::pointlight::PointLight,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_extract_3::get_method_info().method_ptr);
         inner(l, point, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: light :: Light as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: global_illumination :: spotlight :: SpotLight as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::light::Light as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::global_illumination::spotlight::SpotLight as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "Extract",
@@ -359,18 +318,15 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "Extract",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "Extract",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_4(
@@ -382,21 +338,18 @@ mod __LightmapperUtils_unity2_raw {
             crate::unity_engine::light::Light,
             *mut crate::unity_engine::experimental::global_illumination::spotlight::SpotLight,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_extract_4::get_method_info().method_ptr);
         inner(l, spot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: light :: Light as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::light::Light as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "Extract",
@@ -408,36 +361,38 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "Extract",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "Extract",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_5(
         l: crate::unity_engine::light::Light,
-        rect : * mut crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight,
+        rect: *mut crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: light :: Light , * mut crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_extract_5 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::light::Light,
+            *mut crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_extract_5::get_method_info().method_ptr);
         inner(l, rect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: light :: Light as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: global_illumination :: disclight :: DiscLight as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::light::Light as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::global_illumination::disclight::DiscLight as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "Extract",
@@ -449,18 +404,15 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "Extract",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "Extract",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_6(
@@ -472,21 +424,18 @@ mod __LightmapperUtils_unity2_raw {
             crate::unity_engine::light::Light,
             *mut crate::unity_engine::experimental::global_illumination::disclight::DiscLight,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_6::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_extract_6::get_method_info().method_ptr);
         inner(l, disc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: light :: Light as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::light::Light as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::global_illumination::cookie::Cookie as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightmapperUtils as ::unity2::ClassIdentity>::class(),
                 "Extract",
@@ -498,18 +447,15 @@ mod __LightmapperUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
-                    "Extract",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightmapperUtils as ::unity2::ClassIdentity>::NAME,
+                        "Extract",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_7(
@@ -521,11 +467,7 @@ mod __LightmapperUtils_unity2_raw {
             crate::unity_engine::light::Light,
             *mut crate::unity_engine::experimental::global_illumination::cookie::Cookie,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_7::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_extract_7::get_method_info().method_ptr);
         inner(l, cookie, __unity2_method_info)
     }
 }
@@ -536,54 +478,32 @@ impl LightmapperUtils {
     pub fn extract(
         baketype: impl ::core::convert::Into<crate::unity_engine::lightmapbaketype::LightmapBakeType>,
     ) -> crate::unity_engine::experimental::global_illumination::lightmode::LightMode {
-        unsafe {
-            __LightmapperUtils_unity2_raw::extract(
-                ::core::convert::Into::into(baketype),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __LightmapperUtils_unity2_raw::extract(::core::convert::Into::into(baketype), ::core::option::Option::None) }
     }
+
     #[doc = "`ExtractIndirect(crate::unity_engine::light::Light)` overload"]
     pub fn extract_indirect(
         l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
     ) -> crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor {
-        unsafe {
-            __LightmapperUtils_unity2_raw::extract_indirect(
-                ::core::convert::Into::into(l),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __LightmapperUtils_unity2_raw::extract_indirect(::core::convert::Into::into(l), ::core::option::Option::None) }
     }
+
     #[doc = "`ExtractInnerCone(crate::unity_engine::light::Light)` overload"]
-    pub fn extract_inner_cone(
-        l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
-    ) -> f32 {
-        unsafe {
-            __LightmapperUtils_unity2_raw::extract_inner_cone(
-                ::core::convert::Into::into(l),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn extract_inner_cone(l: impl ::core::convert::Into<crate::unity_engine::light::Light>) -> f32 {
+        unsafe { __LightmapperUtils_unity2_raw::extract_inner_cone(::core::convert::Into::into(l), ::core::option::Option::None) }
     }
+
     #[doc = "`ExtractColorTemperature(crate::unity_engine::light::Light)` overload"]
-    pub fn extract_color_temperature(
-        l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
-    ) -> crate::unity_engine::color::Color {
-        unsafe {
-            __LightmapperUtils_unity2_raw::extract_color_temperature(
-                ::core::convert::Into::into(l),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn extract_color_temperature(l: impl ::core::convert::Into<crate::unity_engine::light::Light>) -> crate::unity_engine::color::Color {
+        unsafe { __LightmapperUtils_unity2_raw::extract_color_temperature(::core::convert::Into::into(l), ::core::option::Option::None) }
     }
+
     #[doc = "`ApplyColorTemperature(crate::unity_engine::color::Color, *mutcrate::unity_engine::experimental::global_illumination::linearcolor::LinearColor)` overload"]
     pub fn apply_color_temperature(
         cct: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor>::uninit();
             __LightmapperUtils_unity2_raw::apply_color_temperature(
                 ::core::convert::Into::into(cct),
                 __out_0.as_mut_ptr(),
@@ -592,97 +512,71 @@ impl LightmapperUtils {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Extract(crate::unity_engine::light::Light, *mutcrate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight)` overload"]
     pub fn extract_2(
         l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
-    ) -> crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight
-    {
+    ) -> crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight {
         unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight > :: uninit () ;
-            __LightmapperUtils_unity2_raw::extract_2(
-                ::core::convert::Into::into(l),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight>::uninit();
+            __LightmapperUtils_unity2_raw::extract_2(::core::convert::Into::into(l), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Extract(crate::unity_engine::light::Light, *mutcrate::unity_engine::experimental::global_illumination::pointlight::PointLight)` overload"]
     pub fn extract_3(
         l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
     ) -> crate::unity_engine::experimental::global_illumination::pointlight::PointLight {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::experimental::global_illumination::pointlight::PointLight,
-            >::uninit();
-            __LightmapperUtils_unity2_raw::extract_3(
-                ::core::convert::Into::into(l),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::experimental::global_illumination::pointlight::PointLight>::uninit();
+            __LightmapperUtils_unity2_raw::extract_3(::core::convert::Into::into(l), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Extract(crate::unity_engine::light::Light, *mutcrate::unity_engine::experimental::global_illumination::spotlight::SpotLight)` overload"]
     pub fn extract_4(
         l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
     ) -> crate::unity_engine::experimental::global_illumination::spotlight::SpotLight {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::experimental::global_illumination::spotlight::SpotLight,
-            >::uninit();
-            __LightmapperUtils_unity2_raw::extract_4(
-                ::core::convert::Into::into(l),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::experimental::global_illumination::spotlight::SpotLight>::uninit();
+            __LightmapperUtils_unity2_raw::extract_4(::core::convert::Into::into(l), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Extract(crate::unity_engine::light::Light, *mutcrate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight)` overload"]
     pub fn extract_5(
         l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
-    ) -> crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight
-    {
+    ) -> crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight {
         unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight > :: uninit () ;
-            __LightmapperUtils_unity2_raw::extract_5(
-                ::core::convert::Into::into(l),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight>::uninit();
+            __LightmapperUtils_unity2_raw::extract_5(::core::convert::Into::into(l), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Extract(crate::unity_engine::light::Light, *mutcrate::unity_engine::experimental::global_illumination::disclight::DiscLight)` overload"]
     pub fn extract_6(
         l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
     ) -> crate::unity_engine::experimental::global_illumination::disclight::DiscLight {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::experimental::global_illumination::disclight::DiscLight,
-            >::uninit();
-            __LightmapperUtils_unity2_raw::extract_6(
-                ::core::convert::Into::into(l),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::experimental::global_illumination::disclight::DiscLight>::uninit();
+            __LightmapperUtils_unity2_raw::extract_6(::core::convert::Into::into(l), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Extract(crate::unity_engine::light::Light, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]
     pub fn extract_7(
         l: impl ::core::convert::Into<crate::unity_engine::light::Light>,
     ) -> crate::unity_engine::experimental::global_illumination::cookie::Cookie {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::experimental::global_illumination::cookie::Cookie,
-            >::uninit();
-            __LightmapperUtils_unity2_raw::extract_7(
-                ::core::convert::Into::into(l),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::experimental::global_illumination::cookie::Cookie>::uninit();
+            __LightmapperUtils_unity2_raw::extract_7(::core::convert::Into::into(l), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -691,8 +585,7 @@ impl LightmapperUtils {
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmapperutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILightmapperUtils;
-    pub use super::LightmapperUtils;
+    pub use super::{ILightmapperUtils, LightmapperUtils};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

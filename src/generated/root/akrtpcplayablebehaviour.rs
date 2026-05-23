@@ -2,13 +2,13 @@
 
 #[cfg(feature = "root-akrtpcplayablebehaviour-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::playables::playablebehaviour::{
-        IPlayableBehaviour, PlayableBehaviour,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akrtpcplayablebehaviour/AkRTPCPlayableBehaviour.md"))]
     #[::unity2::class(namespace = "", name = "AkRTPCPlayableBehaviour")]
@@ -31,11 +31,8 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_set_rtpc_globally {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::class(),
                 "set_setRTPCGlobally",
@@ -47,40 +44,27 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_setRTPCGlobally",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_setRTPCGlobally",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_set_rtpc_globally(
-        this: AkRTPCPlayableBehaviour,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_set_rtpc_globally(this: AkRTPCPlayableBehaviour, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkRTPCPlayableBehaviour, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_set_rtpc_globally::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_set_rtpc_globally::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_set_rtpc_globally {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::class(),
@@ -93,41 +77,28 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_setRTPCGlobally",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_setRTPCGlobally",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_set_rtpc_globally(
-        this: AkRTPCPlayableBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_set_rtpc_globally(this: AkRTPCPlayableBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AkRTPCPlayableBehaviour, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_set_rtpc_globally::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_set_rtpc_globally::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_override_track_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::class(),
                 "set_overrideTrackObject",
@@ -139,40 +110,27 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_overrideTrackObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_overrideTrackObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_override_track_object(
-        this: AkRTPCPlayableBehaviour,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_override_track_object(this: AkRTPCPlayableBehaviour, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkRTPCPlayableBehaviour, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_override_track_object::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_override_track_object::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_override_track_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::class(),
@@ -185,39 +143,27 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_overrideTrackObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_overrideTrackObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_override_track_object(
-        this: AkRTPCPlayableBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_override_track_object(this: AkRTPCPlayableBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AkRTPCPlayableBehaviour, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_override_track_object::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_override_track_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rtpc_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -231,18 +177,15 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_rtpcObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_rtpcObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_rtpc_object(
@@ -250,24 +193,15 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         value: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkRTPCPlayableBehaviour,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_rtpc_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkRTPCPlayableBehaviour, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_rtpc_object::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rtpc_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::class(),
@@ -280,45 +214,33 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_rtpcObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_rtpcObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rtpc_object(
         this: AkRTPCPlayableBehaviour,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            AkRTPCPlayableBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rtpc_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkRTPCPlayableBehaviour, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_rtpc_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -332,18 +254,15 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "ProcessFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "ProcessFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn process_frame(
@@ -359,20 +278,14 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
             crate::unity_engine::playables::framedata::FrameData,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_process_frame::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_process_frame::get_method_info().method_ptr);
         inner(this, playable, info, player_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::class(),
@@ -385,30 +298,20 @@ mod __AkRTPCPlayableBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkRTPCPlayableBehaviour as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkRTPCPlayableBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkRTPCPlayableBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkRTPCPlayableBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -419,36 +322,23 @@ pub trait IAkRTPCPlayableBehaviourMethods: IAkRTPCPlayableBehaviour {
     fn set_set_rtpc_globally(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkRTPCPlayableBehaviour_unity2_raw::set_set_rtpc_globally(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkRTPCPlayableBehaviour_unity2_raw::set_set_rtpc_globally(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_setRTPCGlobally()` overload"]
     fn get_set_rtpc_globally(self) -> bool {
         unsafe {
             let __receiver =
-                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkRTPCPlayableBehaviour_unity2_raw::get_set_rtpc_globally(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkRTPCPlayableBehaviour_unity2_raw::get_set_rtpc_globally(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_overrideTrackObject(bool)` overload"]
     fn set_override_track_object(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkRTPCPlayableBehaviour_unity2_raw::set_override_track_object(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -460,43 +350,24 @@ pub trait IAkRTPCPlayableBehaviourMethods: IAkRTPCPlayableBehaviour {
     fn get_override_track_object(self) -> bool {
         unsafe {
             let __receiver =
-                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkRTPCPlayableBehaviour_unity2_raw::get_override_track_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkRTPCPlayableBehaviour_unity2_raw::get_override_track_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_rtpcObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_rtpc_object(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn set_rtpc_object(self, value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
             let __receiver =
-                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkRTPCPlayableBehaviour_unity2_raw::set_rtpc_object(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkRTPCPlayableBehaviour_unity2_raw::set_rtpc_object(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_rtpcObject()` overload"]
     fn get_rtpc_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
             let __receiver =
-                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkRTPCPlayableBehaviour_unity2_raw::get_rtpc_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkRTPCPlayableBehaviour_unity2_raw::get_rtpc_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]
@@ -508,9 +379,7 @@ pub trait IAkRTPCPlayableBehaviourMethods: IAkRTPCPlayableBehaviour {
     ) -> () {
         unsafe {
             let __receiver =
-                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkRTPCPlayableBehaviour_unity2_raw::process_frame(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -524,9 +393,7 @@ pub trait IAkRTPCPlayableBehaviourMethods: IAkRTPCPlayableBehaviour {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkRTPCPlayableBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkRTPCPlayableBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -554,13 +421,10 @@ impl AkRTPCPlayableBehaviour {
 #[cfg(feature = "root-akrtpcplayablebehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkRTPCPlayableBehaviour;
-    pub use super::IAkRTPCPlayableBehaviour;
-    pub use super::IAkRTPCPlayableBehaviourMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AkRTPCPlayableBehaviour, IAkRTPCPlayableBehaviour, IAkRTPCPlayableBehaviourMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
     #[cfg(feature = "unity_engine-playables-playablebehaviour")]
     pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
 }

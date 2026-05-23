@@ -2,68 +2,27 @@
 
 #[cfg(feature = "app-talksound-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talksound/TalkSound_SoundType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TalkSound_SoundType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TalkSound_SoundType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TalkSound.SoundType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TalkSound_SoundType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TalkSound_SoundType {
-        pub fn se() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn voice() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn general() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn bgm() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn env() -> Self {
-            Self { value: 2 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))]
+    #[::unity2::class(namespace = "App", name = "TalkSound.WaitSE")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TalkSound_WaitSE {
+        #[static_field]
+        #[rename(name = "MinimumWaitSec")]
+        pub minimum_wait_sec: f32,
+        #[rename(name = "m_Sec")]
+        pub m_sec: f32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound.md"))]
@@ -88,1810 +47,55 @@ mod __types {
         pub m_person_voice: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))]
-    #[::unity2::class(namespace = "App", name = "TalkSound.WaitSE")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TalkSound_WaitSE {
-        #[static_field]
-        #[rename(name = "MinimumWaitSec")]
-        pub minimum_wait_sec: f32,
-        #[rename(name = "m_Sec")]
-        pub m_sec: f32,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talksound/TalkSound_SoundType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TalkSound_SoundType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TalkSound_SoundType {
+        const NAME: &'static str = "TalkSound.SoundType";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TalkSound_SoundType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TalkSound_SoundType {
+        pub fn se() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn voice() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn general() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn bgm() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn env() -> Self {
+            Self { value: 2 }
+        }
     }
 }
 
 #[cfg(feature = "app-talksound-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-talksound")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkSound_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_person_voice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetPersonVoice",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetPersonVoice",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_person_voice(
-        this: TalkSound,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_person_voice::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "Init",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn init(
-        this: TalkSound,
-        mid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkSound,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init::get_offset() as isize),
-        );
-        inner(this, mid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick_before {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "TickBefore",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "TickBefore",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn tick_before(
-        this: TalkSound,
-        parent_proc: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TalkSound,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tick_before::get_offset() as isize),
-        );
-        inner(this, parent_proc, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick_after {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "TickAfter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "TickAfter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn tick_after(
-        this: TalkSound,
-        parent_proc: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TalkSound,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tick_after::get_offset() as isize),
-        );
-        inner(this, parent_proc, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_talk_start_sound_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "PostTalkStartSoundEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "PostTalkStartSoundEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn post_talk_start_sound_event(
-        this: TalkSound,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_post_talk_start_sound_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_talk_end_sound_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "PostTalkEndSoundEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "PostTalkEndSoundEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn post_talk_end_sound_event(
-        this: TalkSound,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_post_talk_end_sound_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_args {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetArgs",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetArgs",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_args(
-        this: TalkSound,
-        line: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            TalkSound,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_args::get_offset() as isize),
-        );
-        inner(this, line, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sound_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetSoundType",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetSoundType",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sound_type(
-        this: TalkSound,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::talksound::TalkSound_SoundType {
-        let inner: extern "C" fn(
-            TalkSound,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::talksound::TalkSound_SoundType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sound_type::get_offset() as isize),
-        );
-        inner(this, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exec_line {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "ExecLine",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "ExecLine",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exec_line(
-        this: TalkSound,
-        line: ::unity2::Il2CppString,
-        parent_proc: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TalkSound,
-            ::unity2::Il2CppString,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exec_line::get_offset() as isize),
-        );
-        inner(this, line, parent_proc, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_line {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetLine",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetLine",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_line(
-        this: TalkSound,
-        str: ::unity2::Il2CppString,
-        line: *mut ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TalkSound,
-            ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_line::get_offset() as isize),
-        );
-        inner(this, str, line, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_play_reserved_voice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "TryPlayReservedVoice",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "TryPlayReservedVoice",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_play_reserved_voice(
-        this: TalkSound,
-        character: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkSound,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_play_reserved_voice::get_offset() as isize),
-        );
-        inner(this, character, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_play_reserved_talk_voice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "TryPlayReservedTalkVoice",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "TryPlayReservedTalkVoice",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_play_reserved_talk_voice(
-        this: TalkSound,
-        character: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TalkSound,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_play_reserved_talk_voice::get_offset() as isize),
-        );
-        inner(this, character, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_play_reserved_person_voice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "TryPlayReservedPersonVoice",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "TryPlayReservedPersonVoice",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_play_reserved_person_voice(
-        this: TalkSound,
-        character: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkSound,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_play_reserved_person_voice::get_offset() as isize),
-        );
-        inner(this, character, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_all_voice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "StopAllVoice",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "StopAllVoice",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn stop_all_voice(
-        this: TalkSound,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_all_voice::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_draw_monitor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::debugmonitor::DebugMonitor as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "OnDrawMonitor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "OnDrawMonitor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_draw_monitor(
-        this: TalkSound,
-        monitor: crate::app::debugmonitor::DebugMonitor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkSound,
-            crate::app::debugmonitor::DebugMonitor,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_draw_monitor::get_offset() as isize),
-        );
-        inner(this, monitor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mess_file_name_to_sound_bank_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "MessFileNameToSoundBankName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "MessFileNameToSoundBankName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn mess_file_name_to_sound_bank_name(
-        mess_file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mess_file_name_to_sound_bank_name::get_offset() as isize),
-        );
-        inner(mess_file_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reliance_sound_bank_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetRelianceSoundBankName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetRelianceSoundBankName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_reliance_sound_bank_name(
-        patch_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_reliance_sound_bank_name::get_offset() as isize),
-            );
-        inner(patch_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reliance_sound_bank_name_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetRelianceSoundBankNameAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetRelianceSoundBankNameAll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_reliance_sound_bank_name_all(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reliance_sound_bank_name_all::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god_reliance_sound_bank_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetGodRelianceSoundBankName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetGodRelianceSoundBankName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_god_reliance_sound_bank_name(
-        patch_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_god_reliance_sound_bank_name::get_offset() as isize),
-            );
-        inner(patch_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god_reliance_sound_bank_name_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetGodRelianceSoundBankNameAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetGodRelianceSoundBankNameAll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_god_reliance_sound_bank_name_all(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_god_reliance_sound_bank_name_all::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hub_common_sound_bank_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetHubCommonSoundBankName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetHubCommonSoundBankName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_hub_common_sound_bank_name(
-        patch_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hub_common_sound_bank_name::get_offset() as isize),
-            );
-        inner(patch_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hub_common_sound_bank_name_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetHubCommonSoundBankNameAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetHubCommonSoundBankNameAll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_hub_common_sound_bank_name_all(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hub_common_sound_bank_name_all::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mid_to_sound_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "MidToSoundEvent",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "MidToSoundEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn mid_to_sound_event(
-        mid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mid_to_sound_event::get_offset() as isize),
-        );
-        inner(mid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetInt",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_int(
-        str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_int::get_offset() as isize),
-            );
-        inner(str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_float {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetFloat",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetFloat",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_float(
-        str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_float::get_offset() as isize),
-            );
-        inner(str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_fade_speed_msec {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetFadeSpeedMsec",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetFadeSpeedMsec",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_fade_speed_msec(
-        str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_fade_speed_msec::get_offset() as isize),
-            );
-        inner(str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_force_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "GetForceType",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "GetForceType",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_force_type(
-        str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::force::Force_Type {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::force::Force_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_force_type::get_offset() as isize),
-        );
-        inner(str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_exec_action {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                "TryExecAction",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    "TryExecAction",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_exec_action(
-        this: TalkSound,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TalkSound,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_exec_action::get_offset() as isize),
-        );
-        inner(this, args, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkSound as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: TalkSound, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talksound")]
-impl TalkSound {
-    #[doc = "`MessFileNameToSoundBankName(::unity2::Il2CppString)` overload"]
-    pub fn mess_file_name_to_sound_bank_name(
-        mess_file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        unsafe {
-            __TalkSound_unity2_raw::mess_file_name_to_sound_bank_name(
-                ::core::convert::Into::into(mess_file_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetRelianceSoundBankName(i32)` overload"]
-    pub fn get_reliance_sound_bank_name(
-        patch_index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TalkSound_unity2_raw::get_reliance_sound_bank_name(
-                ::core::convert::Into::into(patch_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetRelianceSoundBankNameAll()` overload"]
-    pub fn get_reliance_sound_bank_name_all(
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        unsafe {
-            __TalkSound_unity2_raw::get_reliance_sound_bank_name_all(::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetGodRelianceSoundBankName(i32)` overload"]
-    pub fn get_god_reliance_sound_bank_name(
-        patch_index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TalkSound_unity2_raw::get_god_reliance_sound_bank_name(
-                ::core::convert::Into::into(patch_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetGodRelianceSoundBankNameAll()` overload"]
-    pub fn get_god_reliance_sound_bank_name_all(
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        unsafe {
-            __TalkSound_unity2_raw::get_god_reliance_sound_bank_name_all(
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetHubCommonSoundBankName(i32)` overload"]
-    pub fn get_hub_common_sound_bank_name(
-        patch_index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TalkSound_unity2_raw::get_hub_common_sound_bank_name(
-                ::core::convert::Into::into(patch_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetHubCommonSoundBankNameAll()` overload"]
-    pub fn get_hub_common_sound_bank_name_all(
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        unsafe {
-            __TalkSound_unity2_raw::get_hub_common_sound_bank_name_all(::core::option::Option::None)
-        }
-    }
-    #[doc = "`MidToSoundEvent(::unity2::Il2CppString)` overload"]
-    pub fn mid_to_sound_event(
-        mid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TalkSound_unity2_raw::mid_to_sound_event(
-                ::core::convert::Into::into(mid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetInt(::unity2::Il2CppString)` overload"]
-    pub fn get_int(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __TalkSound_unity2_raw::get_int(
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetFloat(::unity2::Il2CppString)` overload"]
-    pub fn get_float(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
-        unsafe {
-            __TalkSound_unity2_raw::get_float(
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetFadeSpeedMsec(::unity2::Il2CppString)` overload"]
-    pub fn get_fade_speed_msec(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __TalkSound_unity2_raw::get_fade_speed_msec(
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetForceType(::unity2::Il2CppString)` overload"]
-    pub fn get_force_type(
-        str: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::force::Force_Type {
-        unsafe {
-            __TalkSound_unity2_raw::get_force_type(
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talksound")]
-pub trait ITalkSoundMethods: ITalkSound {
-    #[doc = "`GetPersonVoice()` overload"]
-    fn get_person_voice(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::get_person_voice(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init(::unity2::Il2CppString)` overload"]
-    fn init(self, mid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(mid),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TickBefore(crate::app::procinst::ProcInst)` overload"]
-    fn tick_before(
-        self,
-        parent_proc: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::tick_before(
-                __receiver,
-                ::core::convert::Into::into(parent_proc),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TickAfter(crate::app::procinst::ProcInst)` overload"]
-    fn tick_after(
-        self,
-        parent_proc: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::tick_after(
-                __receiver,
-                ::core::convert::Into::into(parent_proc),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PostTalkStartSoundEvent()` overload"]
-    fn post_talk_start_sound_event(self) -> () {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::post_talk_start_sound_event(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PostTalkEndSoundEvent()` overload"]
-    fn post_talk_end_sound_event(self) -> () {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::post_talk_end_sound_event(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetArgs(::unity2::Il2CppString)` overload"]
-    fn get_args(
-        self,
-        line: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::get_args(
-                __receiver,
-                ::core::convert::Into::into(line),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSoundType(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn get_sound_type(
-        self,
-        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> crate::app::talksound::TalkSound_SoundType {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::get_sound_type(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ExecLine(::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"]
-    fn exec_line(
-        self,
-        line: impl ::core::convert::Into<::unity2::Il2CppString>,
-        parent_proc: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::exec_line(
-                __receiver,
-                ::core::convert::Into::into(line),
-                ::core::convert::Into::into(parent_proc),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetLine(::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    fn get_line(
-        self,
-        str: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (::unity2::Il2CppString, ::unity2::Il2CppString) {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = {
-                __TalkSound_unity2_raw::get_line(
-                    __receiver,
-                    ::core::convert::Into::into(str),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`TryPlayReservedVoice(crate::combat::character::Character)` overload"]
-    fn try_play_reserved_voice(
-        self,
-        character: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::try_play_reserved_voice(
-                __receiver,
-                ::core::convert::Into::into(character),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TryPlayReservedTalkVoice(crate::combat::character::Character)` overload"]
-    fn try_play_reserved_talk_voice(
-        self,
-        character: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::try_play_reserved_talk_voice(
-                __receiver,
-                ::core::convert::Into::into(character),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TryPlayReservedPersonVoice(crate::combat::character::Character)` overload"]
-    fn try_play_reserved_person_voice(
-        self,
-        character: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::try_play_reserved_person_voice(
-                __receiver,
-                ::core::convert::Into::into(character),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StopAllVoice()` overload"]
-    fn stop_all_voice(self) -> () {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::stop_all_voice(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"]
-    fn on_draw_monitor(
-        self,
-        monitor: impl ::core::convert::Into<crate::app::debugmonitor::DebugMonitor>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::on_draw_monitor(
-                __receiver,
-                ::core::convert::Into::into(monitor),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TryExecAction(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn try_exec_action(
-        self,
-        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::try_exec_action(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkSound_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-talksound")]
-impl<__T: ITalkSound> ITalkSoundMethods for __T {}
-
-#[cfg(feature = "app-talksound")]
-impl TalkSound {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkSound),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkSoundMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-talksound")]
 #[doc(hidden)]
@@ -1902,9 +106,7 @@ mod __TalkSound_WaitSE_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkSound_WaitSE as ::unity2::ClassIdentity>::class(),
@@ -1917,39 +119,27 @@ mod __TalkSound_WaitSE_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound_WaitSE as ::unity2::ClassIdentity>::NAME,
-                    "OnTick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound_WaitSE as ::unity2::ClassIdentity>::NAME,
+                        "OnTick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_tick(
-        this: TalkSound_WaitSE,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_tick(this: TalkSound_WaitSE, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkSound_WaitSE, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_tick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkSound_WaitSE as ::unity2::ClassIdentity>::class(),
@@ -1962,30 +152,20 @@ mod __TalkSound_WaitSE_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkSound_WaitSE as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound_WaitSE as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TalkSound_WaitSE,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TalkSound_WaitSE, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkSound_WaitSE, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1995,18 +175,14 @@ pub trait ITalkSound_WaitSEMethods: ITalkSound_WaitSE {
     #[doc = "`OnTick()` overload"]
     fn on_tick(self) -> () {
         unsafe {
-            let __receiver = <TalkSound_WaitSE as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkSound_WaitSE as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkSound_WaitSE_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TalkSound_WaitSE as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkSound_WaitSE as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkSound_WaitSE_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2033,24 +209,1214 @@ impl TalkSound_WaitSE {
 
 #[cfg(feature = "app-talksound")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkSound_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_person_voice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetPersonVoice",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetPersonVoice",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_person_voice(this: TalkSound, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_person_voice::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkSound as ::unity2::ClassIdentity>::class(), "Init", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn init(this: TalkSound, mid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkSound, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
+        inner(this, mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_before {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "TickBefore",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "TickBefore",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn tick_before(this: TalkSound, parent_proc: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkSound, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_tick_before::get_method_info().method_ptr);
+        inner(this, parent_proc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_after {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkSound as ::unity2::ClassIdentity>::class(), "TickAfter", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "TickAfter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn tick_after(this: TalkSound, parent_proc: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkSound, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_tick_after::get_method_info().method_ptr);
+        inner(this, parent_proc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_talk_start_sound_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "PostTalkStartSoundEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "PostTalkStartSoundEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn post_talk_start_sound_event(this: TalkSound, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_post_talk_start_sound_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_talk_end_sound_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "PostTalkEndSoundEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "PostTalkEndSoundEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn post_talk_end_sound_event(this: TalkSound, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_post_talk_end_sound_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_args {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkSound as ::unity2::ClassIdentity>::class(), "GetArgs", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetArgs",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_args(
+        this: TalkSound,
+        line: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(TalkSound, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_args::get_method_info().method_ptr);
+        inner(this, line, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sound_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetSoundType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetSoundType",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sound_type(
+        this: TalkSound,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::talksound::TalkSound_SoundType {
+        let inner: extern "C" fn(
+            TalkSound,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::talksound::TalkSound_SoundType = ::core::mem::transmute(__lookup_get_sound_type::get_method_info().method_ptr);
+        inner(this, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec_line {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkSound as ::unity2::ClassIdentity>::class(), "ExecLine", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "ExecLine",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exec_line(
+        this: TalkSound,
+        line: ::unity2::Il2CppString,
+        parent_proc: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TalkSound, ::unity2::Il2CppString, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_exec_line::get_method_info().method_ptr);
+        inner(this, line, parent_proc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_line {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkSound as ::unity2::ClassIdentity>::class(), "GetLine", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetLine",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_line(
+        this: TalkSound,
+        str: ::unity2::Il2CppString,
+        line: *mut ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TalkSound, ::unity2::Il2CppString, *mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_line::get_method_info().method_ptr);
+        inner(this, str, line, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_play_reserved_voice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "TryPlayReservedVoice",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "TryPlayReservedVoice",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_play_reserved_voice(
+        this: TalkSound,
+        character: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkSound, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_play_reserved_voice::get_method_info().method_ptr);
+        inner(this, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_play_reserved_talk_voice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "TryPlayReservedTalkVoice",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "TryPlayReservedTalkVoice",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_play_reserved_talk_voice(
+        this: TalkSound,
+        character: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TalkSound, crate::combat::character::Character, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_try_play_reserved_talk_voice::get_method_info().method_ptr);
+        inner(this, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_play_reserved_person_voice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "TryPlayReservedPersonVoice",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "TryPlayReservedPersonVoice",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_play_reserved_person_voice(
+        this: TalkSound,
+        character: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkSound, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_play_reserved_person_voice::get_method_info().method_ptr);
+        inner(this, character, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_all_voice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "StopAllVoice",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "StopAllVoice",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn stop_all_voice(this: TalkSound, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_all_voice::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_draw_monitor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::debugmonitor::DebugMonitor as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "OnDrawMonitor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "OnDrawMonitor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_draw_monitor(
+        this: TalkSound,
+        monitor: crate::app::debugmonitor::DebugMonitor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkSound, crate::app::debugmonitor::DebugMonitor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_draw_monitor::get_method_info().method_ptr);
+        inner(this, monitor, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mess_file_name_to_sound_bank_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "MessFileNameToSoundBankName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "MessFileNameToSoundBankName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn mess_file_name_to_sound_bank_name(
+        mess_file_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_mess_file_name_to_sound_bank_name::get_method_info().method_ptr);
+        inner(mess_file_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_reliance_sound_bank_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetRelianceSoundBankName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetRelianceSoundBankName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_reliance_sound_bank_name(patch_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_reliance_sound_bank_name::get_method_info().method_ptr);
+        inner(patch_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_reliance_sound_bank_name_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetRelianceSoundBankNameAll",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetRelianceSoundBankNameAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_reliance_sound_bank_name_all(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_reliance_sound_bank_name_all::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god_reliance_sound_bank_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetGodRelianceSoundBankName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetGodRelianceSoundBankName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_god_reliance_sound_bank_name(patch_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_god_reliance_sound_bank_name::get_method_info().method_ptr);
+        inner(patch_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god_reliance_sound_bank_name_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetGodRelianceSoundBankNameAll",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetGodRelianceSoundBankNameAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_god_reliance_sound_bank_name_all(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_god_reliance_sound_bank_name_all::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hub_common_sound_bank_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetHubCommonSoundBankName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetHubCommonSoundBankName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_hub_common_sound_bank_name(patch_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_hub_common_sound_bank_name::get_method_info().method_ptr);
+        inner(patch_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hub_common_sound_bank_name_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetHubCommonSoundBankNameAll",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetHubCommonSoundBankNameAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_hub_common_sound_bank_name_all(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_hub_common_sound_bank_name_all::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mid_to_sound_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "MidToSoundEvent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "MidToSoundEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn mid_to_sound_event(mid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_mid_to_sound_event::get_method_info().method_ptr);
+        inner(mid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkSound as ::unity2::ClassIdentity>::class(), "GetInt", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetInt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_int(str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_int::get_method_info().method_ptr);
+        inner(str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_float {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkSound as ::unity2::ClassIdentity>::class(), "GetFloat", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetFloat",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_float(str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_float::get_method_info().method_ptr);
+        inner(str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fade_speed_msec {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetFadeSpeedMsec",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetFadeSpeedMsec",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_fade_speed_msec(str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_fade_speed_msec::get_method_info().method_ptr);
+        inner(str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_force_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "GetForceType",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "GetForceType",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_force_type(str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::force::Force_Type {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::force::Force_Type =
+            ::core::mem::transmute(__lookup_get_force_type::get_method_info().method_ptr);
+        inner(str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_exec_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkSound as ::unity2::ClassIdentity>::class(),
+                "TryExecAction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        "TryExecAction",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_exec_action(
+        this: TalkSound,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TalkSound, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_try_exec_action::get_method_info().method_ptr);
+        inner(this, args, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkSound as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkSound as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TalkSound, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkSound, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talksound")]
+impl TalkSound {
+    #[doc = "`MessFileNameToSoundBankName(::unity2::Il2CppString)` overload"]
+    pub fn mess_file_name_to_sound_bank_name(
+        mess_file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        unsafe {
+            __TalkSound_unity2_raw::mess_file_name_to_sound_bank_name(::core::convert::Into::into(mess_file_name), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`GetRelianceSoundBankName(i32)` overload"]
+    pub fn get_reliance_sound_bank_name(patch_index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
+        unsafe { __TalkSound_unity2_raw::get_reliance_sound_bank_name(::core::convert::Into::into(patch_index), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetRelianceSoundBankNameAll()` overload"]
+    pub fn get_reliance_sound_bank_name_all() -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        unsafe { __TalkSound_unity2_raw::get_reliance_sound_bank_name_all(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetGodRelianceSoundBankName(i32)` overload"]
+    pub fn get_god_reliance_sound_bank_name(patch_index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
+        unsafe { __TalkSound_unity2_raw::get_god_reliance_sound_bank_name(::core::convert::Into::into(patch_index), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetGodRelianceSoundBankNameAll()` overload"]
+    pub fn get_god_reliance_sound_bank_name_all() -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        unsafe { __TalkSound_unity2_raw::get_god_reliance_sound_bank_name_all(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetHubCommonSoundBankName(i32)` overload"]
+    pub fn get_hub_common_sound_bank_name(patch_index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
+        unsafe { __TalkSound_unity2_raw::get_hub_common_sound_bank_name(::core::convert::Into::into(patch_index), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetHubCommonSoundBankNameAll()` overload"]
+    pub fn get_hub_common_sound_bank_name_all() -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        unsafe { __TalkSound_unity2_raw::get_hub_common_sound_bank_name_all(::core::option::Option::None) }
+    }
+
+    #[doc = "`MidToSoundEvent(::unity2::Il2CppString)` overload"]
+    pub fn mid_to_sound_event(mid: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __TalkSound_unity2_raw::mid_to_sound_event(::core::convert::Into::into(mid), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetInt(::unity2::Il2CppString)` overload"]
+    pub fn get_int(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
+        unsafe { __TalkSound_unity2_raw::get_int(::core::convert::Into::into(str), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetFloat(::unity2::Il2CppString)` overload"]
+    pub fn get_float(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
+        unsafe { __TalkSound_unity2_raw::get_float(::core::convert::Into::into(str), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetFadeSpeedMsec(::unity2::Il2CppString)` overload"]
+    pub fn get_fade_speed_msec(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
+        unsafe { __TalkSound_unity2_raw::get_fade_speed_msec(::core::convert::Into::into(str), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetForceType(::unity2::Il2CppString)` overload"]
+    pub fn get_force_type(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::force::Force_Type {
+        unsafe { __TalkSound_unity2_raw::get_force_type(::core::convert::Into::into(str), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-talksound")]
+pub trait ITalkSoundMethods: ITalkSound {
+    #[doc = "`GetPersonVoice()` overload"]
+    fn get_person_voice(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::get_person_voice(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Init(::unity2::Il2CppString)` overload"]
+    fn init(self, mid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::init(__receiver, ::core::convert::Into::into(mid), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TickBefore(crate::app::procinst::ProcInst)` overload"]
+    fn tick_before(self, parent_proc: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> bool {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::tick_before(__receiver, ::core::convert::Into::into(parent_proc), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TickAfter(crate::app::procinst::ProcInst)` overload"]
+    fn tick_after(self, parent_proc: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> bool {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::tick_after(__receiver, ::core::convert::Into::into(parent_proc), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PostTalkStartSoundEvent()` overload"]
+    fn post_talk_start_sound_event(self) -> () {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::post_talk_start_sound_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PostTalkEndSoundEvent()` overload"]
+    fn post_talk_end_sound_event(self) -> () {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::post_talk_end_sound_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetArgs(::unity2::Il2CppString)` overload"]
+    fn get_args(self, line: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::get_args(__receiver, ::core::convert::Into::into(line), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSoundType(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    fn get_sound_type(self, args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> crate::app::talksound::TalkSound_SoundType {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::get_sound_type(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExecLine(::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"]
+    fn exec_line(
+        self,
+        line: impl ::core::convert::Into<::unity2::Il2CppString>,
+        parent_proc: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::exec_line(
+                __receiver,
+                ::core::convert::Into::into(line),
+                ::core::convert::Into::into(parent_proc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLine(::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
+    fn get_line(self, str: impl ::core::convert::Into<::unity2::Il2CppString>) -> (::unity2::Il2CppString, ::unity2::Il2CppString) {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
+            let __ret = {
+                __TalkSound_unity2_raw::get_line(
+                    __receiver,
+                    ::core::convert::Into::into(str),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryPlayReservedVoice(crate::combat::character::Character)` overload"]
+    fn try_play_reserved_voice(self, character: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::try_play_reserved_voice(__receiver, ::core::convert::Into::into(character), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryPlayReservedTalkVoice(crate::combat::character::Character)` overload"]
+    fn try_play_reserved_talk_voice(self, character: impl ::core::convert::Into<crate::combat::character::Character>) -> bool {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::try_play_reserved_talk_voice(__receiver, ::core::convert::Into::into(character), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryPlayReservedPersonVoice(crate::combat::character::Character)` overload"]
+    fn try_play_reserved_person_voice(self, character: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::try_play_reserved_person_voice(__receiver, ::core::convert::Into::into(character), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StopAllVoice()` overload"]
+    fn stop_all_voice(self) -> () {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::stop_all_voice(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"]
+    fn on_draw_monitor(self, monitor: impl ::core::convert::Into<crate::app::debugmonitor::DebugMonitor>) -> () {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::on_draw_monitor(__receiver, ::core::convert::Into::into(monitor), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryExecAction(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    fn try_exec_action(self, args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> bool {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::try_exec_action(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TalkSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkSound_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-talksound")]
+impl<__T: ITalkSound> ITalkSoundMethods for __T {}
+
+#[cfg(feature = "app-talksound")]
+impl TalkSound {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TalkSound), ::core::stringify!(new),));
+        <Self as ITalkSoundMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-talksound")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::ITalkSound;
-    pub use super::ITalkSoundMethods;
-    pub use super::ITalkSound_WaitSE;
-    pub use super::ITalkSound_WaitSEMethods;
-    pub use super::TalkSound;
-    pub use super::TalkSound_SoundType;
-    pub use super::TalkSound_WaitSE;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{ITalkSound, ITalkSoundMethods, ITalkSound_WaitSE, ITalkSound_WaitSEMethods, TalkSound, TalkSound_SoundType, TalkSound_WaitSE};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

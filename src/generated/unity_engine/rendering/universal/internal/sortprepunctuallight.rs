@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/sortprepunctuallight/SortPrePunctualLight.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "SortPrePunctualLight"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "SortPrePunctualLight")]
     #[parent(crate::system::object::Object)]
     pub struct SortPrePunctualLight {}
 }
@@ -28,10 +25,11 @@ mod __SortPrePunctualLight_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_compare {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortPrePunctualLight as ::unity2::ClassIdentity>::class(),
                 "Compare",
@@ -43,36 +41,36 @@ mod __SortPrePunctualLight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortPrePunctualLight as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortPrePunctualLight as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare(
         this: SortPrePunctualLight,
-        a : crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight,
-        b : crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight,
+        a: crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight,
+        b: crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner : extern "C" fn (SortPrePunctualLight , crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight , crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_compare :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            SortPrePunctualLight,
+            crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight,
+            crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
         inner(this, a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortPrePunctualLight as ::unity2::ClassIdentity>::class(),
@@ -85,30 +83,20 @@ mod __SortPrePunctualLight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortPrePunctualLight as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortPrePunctualLight as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SortPrePunctualLight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SortPrePunctualLight, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortPrePunctualLight, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -118,13 +106,12 @@ pub trait ISortPrePunctualLightMethods: ISortPrePunctualLight {
     #[doc = "`Compare(crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight, crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight)` overload"]
     fn compare(
         self,
-        a : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight >,
-        b : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: internal :: deferredtiler :: DeferredTiler_PrePunctualLight >,
+        a: impl ::core::convert::Into<crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight>,
+        b: impl ::core::convert::Into<crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight>,
     ) -> i32 {
         unsafe {
-            let __receiver = <SortPrePunctualLight as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SortPrePunctualLight as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortPrePunctualLight_unity2_raw::compare(
                 __receiver,
                 ::core::convert::Into::into(a),
@@ -136,9 +123,8 @@ pub trait ISortPrePunctualLightMethods: ISortPrePunctualLight {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <SortPrePunctualLight as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SortPrePunctualLight as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortPrePunctualLight_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -166,9 +152,7 @@ impl SortPrePunctualLight {
 #[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISortPrePunctualLight;
-    pub use super::ISortPrePunctualLightMethods;
-    pub use super::SortPrePunctualLight;
+    pub use super::{ISortPrePunctualLight, ISortPrePunctualLightMethods, SortPrePunctualLight};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-event_systems-idraghandler-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/idraghandler/IDragHandler.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IDragHandler")]
@@ -23,33 +23,23 @@ mod __IDragHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IDragHandler as ::unity2::ClassIdentity>::class(),
-                "OnDrag",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<IDragHandler as ::unity2::ClassIdentity>::class(), "OnDrag", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDragHandler as ::unity2::ClassIdentity>::NAME,
-                    "OnDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDragHandler as ::unity2::ClassIdentity>::NAME,
+                        "OnDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_drag(
@@ -61,11 +51,7 @@ mod __IDragHandler_unity2_raw {
             IDragHandler,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
 }
@@ -73,21 +59,10 @@ mod __IDragHandler_unity2_raw {
 #[cfg(feature = "unity_engine-event_systems-idraghandler")]
 pub trait IIDragHandlerMethods: IIDragHandler {
     #[doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <IDragHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IDragHandler_unity2_raw::on_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IDragHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IDragHandler_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
 }
@@ -98,7 +73,5 @@ impl<__T: IIDragHandler> IIDragHandlerMethods for __T {}
 #[cfg(feature = "unity_engine-event_systems-idraghandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IDragHandler;
-    pub use super::IIDragHandler;
-    pub use super::IIDragHandlerMethods;
+    pub use super::{IDragHandler, IIDragHandler, IIDragHandlerMethods};
 }

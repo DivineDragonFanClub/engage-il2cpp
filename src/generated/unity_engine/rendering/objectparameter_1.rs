@@ -2,14 +2,16 @@
 
 #[cfg(feature = "unity_engine-rendering-objectparameter_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter, VolumeParameter};
-    use crate::unity_engine::rendering::volumeparameter_1::{
-        IVolumeParameter_1, VolumeParameter_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectparameter_1/ObjectParameter_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ObjectParameter`1")]
@@ -91,16 +93,15 @@ impl<T0: ::unity2::ClassIdentity> ObjectParameter_1<T0> {
 #[cfg(feature = "unity_engine-rendering-objectparameter_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IObjectParameter_1;
-    pub use super::IObjectParameter_1Methods;
-    pub use super::ObjectParameter_1;
-    pub use crate::system::object::IObject;
+    pub use super::{IObjectParameter_1, IObjectParameter_1Methods, ObjectParameter_1};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
     #[cfg(feature = "unity_engine-rendering-volumeparameter")]
     pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
     #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
     pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }

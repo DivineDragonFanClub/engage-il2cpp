@@ -4,18 +4,12 @@
 pub mod subsystemdescriptorstore;
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorstore-types")]
 pub use subsystemdescriptorstore::{ISubsystemDescriptorStore, SubsystemDescriptorStore};
-#[cfg(any(
-    feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider-types"
-))]
+#[cfg(any(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider-types"))]
 pub mod subsystemdescriptorwithprovider;
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
 pub use subsystemdescriptorwithprovider::ISubsystemDescriptorWithProviderMethods;
-#[cfg(
-    feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider-types"
-)]
-pub use subsystemdescriptorwithprovider::{
-    ISubsystemDescriptorWithProvider, SubsystemDescriptorWithProvider,
-};
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider-types")]
+pub use subsystemdescriptorwithprovider::{ISubsystemDescriptorWithProvider, SubsystemDescriptorWithProvider};
 #[cfg(any(feature = "unity_engine-subsystems_implementation-subsystemwithprovider-types"))]
 pub mod subsystemwithprovider;
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemwithprovider")]

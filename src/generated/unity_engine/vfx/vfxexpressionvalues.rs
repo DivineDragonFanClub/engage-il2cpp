@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-vfx-vfxexpressionvalues-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxexpressionvalues/VFXExpressionValues.md"))]
     #[::unity2::class(namespace = "UnityEngine.VFX", name = "VFXExpressionValues")]
@@ -28,9 +28,7 @@ mod __VFXExpressionValues_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VFXExpressionValues as ::unity2::ClassIdentity>::class(),
@@ -43,41 +41,28 @@ mod __VFXExpressionValues_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VFXExpressionValues as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VFXExpressionValues as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: VFXExpressionValues,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: VFXExpressionValues, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VFXExpressionValues, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_expression_values_wrapper {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VFXExpressionValues as ::unity2::ClassIdentity>::class(),
                 "CreateExpressionValuesWrapper",
@@ -89,25 +74,23 @@ mod __VFXExpressionValues_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VFXExpressionValues as ::unity2::ClassIdentity>::NAME,
-                    "CreateExpressionValuesWrapper",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VFXExpressionValues as ::unity2::ClassIdentity>::NAME,
+                        "CreateExpressionValuesWrapper",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_expression_values_wrapper(
         ptr: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues {
-        let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_expression_values_wrapper :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues =
+            ::core::mem::transmute(__lookup_create_expression_values_wrapper::get_method_info().method_ptr);
         inner(ptr, __unity2_method_info)
     }
 }
@@ -118,12 +101,7 @@ impl VFXExpressionValues {
     pub fn create_expression_values_wrapper(
         ptr: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues {
-        unsafe {
-            __VFXExpressionValues_unity2_raw::create_expression_values_wrapper(
-                ::core::convert::Into::into(ptr),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __VFXExpressionValues_unity2_raw::create_expression_values_wrapper(::core::convert::Into::into(ptr), ::core::option::Option::None) }
     }
 }
 
@@ -132,9 +110,7 @@ pub trait IVFXExpressionValuesMethods: IVFXExpressionValues {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <VFXExpressionValues as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VFXExpressionValues as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VFXExpressionValues_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -162,9 +138,7 @@ impl VFXExpressionValues {
 #[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IVFXExpressionValues;
-    pub use super::IVFXExpressionValuesMethods;
-    pub use super::VFXExpressionValues;
+    pub use super::{IVFXExpressionValues, IVFXExpressionValuesMethods, VFXExpressionValues};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

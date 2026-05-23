@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-tprofilingsampler_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::profilingsampler::{IProfilingSampler, ProfilingSampler};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::profilingsampler::{IProfilingSampler, ProfilingSampler},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/tprofilingsampler_1/TProfilingSampler_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "TProfilingSampler`1")]
@@ -56,13 +58,10 @@ impl<T0: ::unity2::ClassIdentity> TProfilingSampler_1<T0> {
 #[cfg(feature = "unity_engine-rendering-tprofilingsampler_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITProfilingSampler_1;
-    pub use super::ITProfilingSampler_1Methods;
-    pub use super::TProfilingSampler_1;
-    pub use crate::system::object::IObject;
+    pub use super::{ITProfilingSampler_1, ITProfilingSampler_1Methods, TProfilingSampler_1};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::profilingsampler::IProfilingSampler;
     #[cfg(feature = "unity_engine-rendering-profilingsampler")]
     pub use crate::unity_engine::rendering::profilingsampler::IProfilingSamplerMethods;
+    pub use crate::{system::object::IObject, unity_engine::rendering::profilingsampler::IProfilingSampler};
 }

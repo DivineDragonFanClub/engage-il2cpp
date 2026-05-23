@@ -2,30 +2,37 @@
 
 #[cfg(feature = "app-refineshopexchangesourcemenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu.md"))]
     #[::unity2::class(namespace = "App", name = "RefineShopExchangeSourceMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct RefineShopExchangeSourceMenu {
-# [rename (name = "m_TargetMaterialId")] pub m_target_material_id : :: unity2 :: Il2CppString ,
-# [rename (name = "m_SourceMaterialId")] pub m_source_material_id : :: unity2 :: Il2CppString ,
-# [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler ,
-# [rename (name = "m_CloseEventHandler")] pub m_close_event_handler : crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler ,
-}
+        #[rename(name = "m_TargetMaterialId")]
+        pub m_target_material_id: ::unity2::Il2CppString,
+        #[rename(name = "m_SourceMaterialId")]
+        pub m_source_material_id: ::unity2::Il2CppString,
+        #[rename(name = "m_SelectEventHandler")]
+        pub m_select_event_handler: crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
+        #[rename(name = "m_CloseEventHandler")]
+        pub m_close_event_handler: crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu_CloseEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopExchangeSourceMenu.CloseEventHandler"
-    )]
+    #[::unity2::class(namespace = "App", name = "RefineShopExchangeSourceMenu.CloseEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct RefineShopExchangeSourceMenu_CloseEventHandler {}
 }
@@ -42,9 +49,7 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_target_material_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -57,18 +62,15 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_m_TargetMaterialData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_m_TargetMaterialData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_m_target_material_data(
@@ -78,22 +80,17 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         let inner: extern "C" fn(
             RefineShopExchangeSourceMenu,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::itemrefineexchangedata::ItemRefineExchangeData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_target_material_data::get_offset() as isize),
-        );
+        ) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData =
+            ::core::mem::transmute(__lookup_get_m_target_material_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_target_material_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemrefineexchangedata::ItemRefineExchangeData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
                 "set_m_TargetMaterialData",
@@ -105,18 +102,15 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_m_TargetMaterialData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_m_TargetMaterialData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_m_target_material_data(
@@ -128,20 +122,14 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
             RefineShopExchangeSourceMenu,
             crate::app::itemrefineexchangedata::ItemRefineExchangeData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_target_material_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_m_target_material_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_source_material_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -154,18 +142,15 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_m_SourceMaterialData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_m_SourceMaterialData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_m_source_material_data(
@@ -175,22 +160,17 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         let inner: extern "C" fn(
             RefineShopExchangeSourceMenu,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::itemrefineexchangedata::ItemRefineExchangeData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_source_material_data::get_offset() as isize),
-        );
+        ) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData =
+            ::core::mem::transmute(__lookup_get_m_source_material_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_source_material_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemrefineexchangedata::ItemRefineExchangeData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
                 "set_m_SourceMaterialData",
@@ -202,18 +182,15 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_m_SourceMaterialData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_m_SourceMaterialData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_m_source_material_data(
@@ -225,20 +202,14 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
             RefineShopExchangeSourceMenu,
             crate::app::itemrefineexchangedata::ItemRefineExchangeData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_source_material_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_m_source_material_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_target_material_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -251,41 +222,28 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_m_TargetMaterialRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_m_TargetMaterialRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_m_target_material_rate(
-        this: RefineShopExchangeSourceMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_m_target_material_rate(this: RefineShopExchangeSourceMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(RefineShopExchangeSourceMenu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_m_target_material_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_m_target_material_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_target_material_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
                 "set_m_TargetMaterialRate",
@@ -297,43 +255,27 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_m_TargetMaterialRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_m_TargetMaterialRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_m_target_material_rate(
-        this: RefineShopExchangeSourceMenu,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopExchangeSourceMenu,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_target_material_rate::get_offset() as isize),
-        );
+    pub unsafe fn set_m_target_material_rate(this: RefineShopExchangeSourceMenu, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineShopExchangeSourceMenu, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_target_material_rate::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_source_material_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -346,41 +288,28 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_m_SourceMaterialRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_m_SourceMaterialRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_m_source_material_rate(
-        this: RefineShopExchangeSourceMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_m_source_material_rate(this: RefineShopExchangeSourceMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(RefineShopExchangeSourceMenu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_m_source_material_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_m_source_material_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_source_material_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
                 "set_m_SourceMaterialRate",
@@ -392,43 +321,27 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_m_SourceMaterialRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_m_SourceMaterialRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_m_source_material_rate(
-        this: RefineShopExchangeSourceMenu,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopExchangeSourceMenu,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_source_material_rate::get_offset() as isize),
-        );
+    pub unsafe fn set_m_source_material_rate(this: RefineShopExchangeSourceMenu, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineShopExchangeSourceMenu, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_source_material_rate::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_enough_source_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -441,41 +354,28 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_m_EnoughSourceCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_m_EnoughSourceCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_m_enough_source_count(
-        this: RefineShopExchangeSourceMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_m_enough_source_count(this: RefineShopExchangeSourceMenu, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(RefineShopExchangeSourceMenu, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_m_enough_source_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_m_enough_source_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_enough_source_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
                 "set_m_EnoughSourceCount",
@@ -487,44 +387,36 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_m_EnoughSourceCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_m_EnoughSourceCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_m_enough_source_count(
-        this: RefineShopExchangeSourceMenu,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopExchangeSourceMenu,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_enough_source_count::get_offset() as isize),
-        );
+    pub unsafe fn set_m_enough_source_count(this: RefineShopExchangeSourceMenu, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineShopExchangeSourceMenu, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_enough_source_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopexchangesourcemenucontent :: RefineShopExchangeSourceMenuContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -536,31 +428,38 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        menu_content : crate :: app :: refineshopexchangesourcemenucontent :: RefineShopExchangeSourceMenuContent,
+        menu_content: crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent,
         target_material_id: ::unity2::Il2CppString,
         initial_source_material_id: ::unity2::Il2CppString,
         select_event_handler: crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
         decide_event_handler: crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,
-        close_event_handler : crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler,
+        close_event_handler: crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu {
-        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: refineshopexchangesourcemenucontent :: RefineShopExchangeSourceMenuContent , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler , crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler , crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
+            crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,
+            crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(
             super_,
             menu_content,
@@ -576,10 +475,15 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopexchangesourcemenucontent :: RefineShopExchangeSourceMenuContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -591,48 +495,37 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: RefineShopExchangeSourceMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content : crate :: app :: refineshopexchangesourcemenucontent :: RefineShopExchangeSourceMenuContent,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent,
         target_material_id: ::unity2::Il2CppString,
         initial_select_index: i32,
         select_event_handler: crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
-        close_event_handler : crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler,
+        close_event_handler: crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             RefineShopExchangeSourceMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent,
             ::unity2::Il2CppString,
             i32,
             crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
             crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             menu_item_list,
@@ -648,9 +541,7 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -663,43 +554,28 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: RefineShopExchangeSourceMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RefineShopExchangeSourceMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: RefineShopExchangeSourceMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RefineShopExchangeSourceMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
                 "OnSelectMenuItem",
@@ -711,18 +587,15 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnSelectMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnSelectMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_select_menu_item(
@@ -730,24 +603,15 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         material_id: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RefineShopExchangeSourceMenu,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select_menu_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineShopExchangeSourceMenu, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select_menu_item::get_method_info().method_ptr);
         inner(this, material_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -760,39 +624,27 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnClose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnClose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_close(
-        this: RefineShopExchangeSourceMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_close(this: RefineShopExchangeSourceMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopExchangeSourceMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -805,39 +657,27 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: RefineShopExchangeSourceMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: RefineShopExchangeSourceMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopExchangeSourceMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::class(),
@@ -850,30 +690,20 @@ mod __RefineShopExchangeSourceMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
-                    "CalcRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu as ::unity2::ClassIdentity>::NAME,
+                        "CalcRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_rate(
-        this: RefineShopExchangeSourceMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calc_rate(this: RefineShopExchangeSourceMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopExchangeSourceMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -883,18 +713,12 @@ impl RefineShopExchangeSourceMenu {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler, crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_content: impl ::core::convert::Into<
-            crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent,
-        >,
+        menu_content: impl ::core::convert::Into<crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent>,
         target_material_id: impl ::core::convert::Into<::unity2::Il2CppString>,
         initial_source_material_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,
-        >,
-        close_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler >,
+        select_event_handler: impl ::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler>,
+        close_event_handler: impl ::core::convert::Into<crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler>,
     ) -> crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu {
         unsafe {
             __RefineShopExchangeSourceMenu_unity2_raw::create_bind(
@@ -914,30 +738,18 @@ impl RefineShopExchangeSourceMenu {
 #[cfg(feature = "app-refineshopexchangesourcemenu")]
 pub trait IRefineShopExchangeSourceMenuMethods: IRefineShopExchangeSourceMenu {
     #[doc = "`get_m_TargetMaterialData()` overload"]
-    fn get_m_target_material_data(
-        self,
-    ) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData {
+    fn get_m_target_material_data(self) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::get_m_target_material_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::get_m_target_material_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_TargetMaterialData(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"]
-    fn set_m_target_material_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>,
-    ) -> () {
+    fn set_m_target_material_data(self, value: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopExchangeSourceMenu_unity2_raw::set_m_target_material_data(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -946,30 +758,18 @@ pub trait IRefineShopExchangeSourceMenuMethods: IRefineShopExchangeSourceMenu {
         }
     }
     #[doc = "`get_m_SourceMaterialData()` overload"]
-    fn get_m_source_material_data(
-        self,
-    ) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData {
+    fn get_m_source_material_data(self) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::get_m_source_material_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::get_m_source_material_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_SourceMaterialData(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"]
-    fn set_m_source_material_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>,
-    ) -> () {
+    fn set_m_source_material_data(self, value: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopExchangeSourceMenu_unity2_raw::set_m_source_material_data(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -981,22 +781,15 @@ pub trait IRefineShopExchangeSourceMenuMethods: IRefineShopExchangeSourceMenu {
     fn get_m_target_material_rate(self) -> i32 {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::get_m_target_material_rate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::get_m_target_material_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_TargetMaterialRate(i32)` overload"]
     fn set_m_target_material_rate(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopExchangeSourceMenu_unity2_raw::set_m_target_material_rate(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1008,22 +801,15 @@ pub trait IRefineShopExchangeSourceMenuMethods: IRefineShopExchangeSourceMenu {
     fn get_m_source_material_rate(self) -> i32 {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::get_m_source_material_rate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::get_m_source_material_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_SourceMaterialRate(i32)` overload"]
     fn set_m_source_material_rate(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopExchangeSourceMenu_unity2_raw::set_m_source_material_rate(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1035,22 +821,15 @@ pub trait IRefineShopExchangeSourceMenuMethods: IRefineShopExchangeSourceMenu {
     fn get_m_enough_source_count(self) -> bool {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::get_m_enough_source_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::get_m_enough_source_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_EnoughSourceCount(bool)` overload"]
     fn set_m_enough_source_count(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopExchangeSourceMenu_unity2_raw::set_m_enough_source_count(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1061,26 +840,16 @@ pub trait IRefineShopExchangeSourceMenuMethods: IRefineShopExchangeSourceMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent, ::unity2::Il2CppString, i32, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler)` overload"]
     fn ctor(
         self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<
-            crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent,
-        >,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent>,
         target_material_id: impl ::core::convert::Into<::unity2::Il2CppString>,
         initial_select_index: impl ::core::convert::Into<i32>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
-        >,
-        close_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler >,
+        select_event_handler: impl ::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler>,
+        close_event_handler: impl ::core::convert::Into<crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler>,
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopExchangeSourceMenu_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_item_list),
@@ -1097,25 +866,15 @@ pub trait IRefineShopExchangeSourceMenuMethods: IRefineShopExchangeSourceMenu {
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelectMenuItem(::unity2::Il2CppString)` overload"]
-    fn on_select_menu_item(
-        self,
-        material_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn on_select_menu_item(self, material_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopExchangeSourceMenu_unity2_raw::on_select_menu_item(
                 __receiver,
                 ::core::convert::Into::into(material_id),
@@ -1127,39 +886,24 @@ pub trait IRefineShopExchangeSourceMenuMethods: IRefineShopExchangeSourceMenu {
     fn on_close(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::on_close(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcRate()` overload"]
     fn calc_rate(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopExchangeSourceMenu_unity2_raw::calc_rate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopExchangeSourceMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopExchangeSourceMenu_unity2_raw::calc_rate(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1171,14 +915,12 @@ impl<__T: IRefineShopExchangeSourceMenu> IRefineShopExchangeSourceMenuMethods fo
 impl RefineShopExchangeSourceMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent, ::unity2::Il2CppString, i32, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content : crate :: app :: refineshopexchangesourcemenucontent :: RefineShopExchangeSourceMenuContent,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent,
         target_material_id: ::unity2::Il2CppString,
         initial_select_index: i32,
         select_event_handler: crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
-        close_event_handler : crate :: app :: refineshopexchangesourcemenu :: RefineShopExchangeSourceMenu_CloseEventHandler,
+        close_event_handler: crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -1209,16 +951,13 @@ mod __RefineShopExchangeSourceMenu_CloseEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(
-                ),
+                <RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1226,12 +965,17 @@ mod __RefineShopExchangeSourceMenu_CloseEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeSourceMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn ctor(
@@ -1245,24 +989,17 @@ mod __RefineShopExchangeSourceMenu_CloseEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(
-                ),
+                <RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 0,
                 param_types,
@@ -1270,42 +1007,34 @@ mod __RefineShopExchangeSourceMenu_CloseEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopExchangeSourceMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn invoke(
-        this: RefineShopExchangeSourceMenu_CloseEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopExchangeSourceMenu_CloseEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+    pub unsafe fn invoke(this: RefineShopExchangeSourceMenu_CloseEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineShopExchangeSourceMenu_CloseEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refineshopexchangesourcemenu")]
-pub trait IRefineShopExchangeSourceMenu_CloseEventHandlerMethods:
-    IRefineShopExchangeSourceMenu_CloseEventHandler
-{
+pub trait IRefineShopExchangeSourceMenu_CloseEventHandlerMethods: IRefineShopExchangeSourceMenu_CloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < RefineShopExchangeSourceMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineShopExchangeSourceMenu_CloseEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -1317,20 +1046,16 @@ pub trait IRefineShopExchangeSourceMenu_CloseEventHandlerMethods:
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> () {
         unsafe {
-            let __receiver = < RefineShopExchangeSourceMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopExchangeSourceMenu_CloseEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineShopExchangeSourceMenu_CloseEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopExchangeSourceMenu_CloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-refineshopexchangesourcemenu")]
-impl<__T: IRefineShopExchangeSourceMenu_CloseEventHandler>
-    IRefineShopExchangeSourceMenu_CloseEventHandlerMethods for __T
-{
-}
+impl<__T: IRefineShopExchangeSourceMenu_CloseEventHandler> IRefineShopExchangeSourceMenu_CloseEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-refineshopexchangesourcemenu")]
 impl RefineShopExchangeSourceMenu_CloseEventHandler {
@@ -1343,9 +1068,7 @@ impl RefineShopExchangeSourceMenu_CloseEventHandler {
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefineShopExchangeSourceMenu_CloseEventHandlerMethods>::ctor(
-            this, object, method,
-        );
+        <Self as IRefineShopExchangeSourceMenu_CloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1353,25 +1076,22 @@ impl RefineShopExchangeSourceMenu_CloseEventHandler {
 #[cfg(feature = "app-refineshopexchangesourcemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefineShopExchangeSourceMenu;
-    pub use super::IRefineShopExchangeSourceMenuMethods;
-    pub use super::IRefineShopExchangeSourceMenu_CloseEventHandler;
-    pub use super::IRefineShopExchangeSourceMenu_CloseEventHandlerMethods;
-    pub use super::RefineShopExchangeSourceMenu;
-    pub use super::RefineShopExchangeSourceMenu_CloseEventHandler;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        IRefineShopExchangeSourceMenu, IRefineShopExchangeSourceMenuMethods, IRefineShopExchangeSourceMenu_CloseEventHandler,
+        IRefineShopExchangeSourceMenu_CloseEventHandlerMethods, RefineShopExchangeSourceMenu, RefineShopExchangeSourceMenu_CloseEventHandler,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, procinst::IProcInst},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+    };
 }

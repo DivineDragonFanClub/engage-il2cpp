@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-timeline-extrapolation-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/extrapolation/Extrapolation.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "Extrapolation")]
@@ -29,10 +29,9 @@ mod __Extrapolation_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_calculate_extrapolation_times {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Extrapolation as ::unity2::ClassIdentity>::class(),
                 "CalculateExtrapolationTimes",
@@ -44,45 +43,32 @@ mod __Extrapolation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Extrapolation as ::unity2::ClassIdentity>::NAME,
-                    "CalculateExtrapolationTimes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Extrapolation as ::unity2::ClassIdentity>::NAME,
+                        "CalculateExtrapolationTimes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calculate_extrapolation_times(
         asset: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calculate_extrapolation_times::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calculate_extrapolation_times::get_method_info().method_ptr);
         inner(asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sort_clips_by_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::timeline::timelineclip::TimelineClip,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Extrapolation as ::unity2::ClassIdentity>::class(),
                 "SortClipsByStartTime",
@@ -94,18 +80,15 @@ mod __Extrapolation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Extrapolation as ::unity2::ClassIdentity>::NAME,
-                    "SortClipsByStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Extrapolation as ::unity2::ClassIdentity>::NAME,
+                        "SortClipsByStartTime",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sort_clips_by_start_time(
@@ -115,54 +98,34 @@ mod __Extrapolation_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sort_clips_by_start_time::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip> =
+            ::core::mem::transmute(__lookup_sort_clips_by_start_time::get_method_info().method_ptr);
         inner(clips, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Extrapolation as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Extrapolation as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Extrapolation as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Extrapolation as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -170,29 +133,17 @@ mod __Extrapolation_unity2_raw {
 #[cfg(feature = "unity_engine-timeline-extrapolation")]
 impl Extrapolation {
     #[doc = "`CalculateExtrapolationTimes(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    pub fn calculate_extrapolation_times(
-        asset: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-    ) -> () {
-        unsafe {
-            __Extrapolation_unity2_raw::calculate_extrapolation_times(
-                ::core::convert::Into::into(asset),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn calculate_extrapolation_times(asset: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> () {
+        unsafe { __Extrapolation_unity2_raw::calculate_extrapolation_times(::core::convert::Into::into(asset), ::core::option::Option::None) }
     }
+
     #[doc = "`SortClipsByStartTime(::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>)` overload"]
     pub fn sort_clips_by_start_time(
-        clips: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-        >,
+        clips: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>>,
     ) -> ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip> {
-        unsafe {
-            __Extrapolation_unity2_raw::sort_clips_by_start_time(
-                ::core::convert::Into::into(clips),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Extrapolation_unity2_raw::sort_clips_by_start_time(::core::convert::Into::into(clips), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Extrapolation_unity2_raw::cctor(::core::option::Option::None) }
@@ -202,8 +153,7 @@ impl Extrapolation {
 #[cfg(feature = "unity_engine-timeline-extrapolation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Extrapolation;
-    pub use super::IExtrapolation;
+    pub use super::{Extrapolation, IExtrapolation};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

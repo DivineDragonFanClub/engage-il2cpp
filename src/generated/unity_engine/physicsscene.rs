@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-physicsscene-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/physicsscene/PhysicsScene.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for PhysicsScene {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "PhysicsScene";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,10 +30,7 @@ mod __types {
 
     impl ::unity2::IlType for PhysicsScene {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -49,9 +47,7 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
@@ -64,39 +60,27 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: PhysicsScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: PhysicsScene, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(PhysicsScene, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
@@ -109,115 +93,70 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: PhysicsScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: PhysicsScene, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(PhysicsScene, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhysicsScene as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<PhysicsScene as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: PhysicsScene,
-        other: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            PhysicsScene,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: PhysicsScene, other: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(PhysicsScene, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhysicsScene as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<PhysicsScene as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals_2(
@@ -225,25 +164,22 @@ mod __PhysicsScene_unity2_raw {
         other: crate::unity_engine::physicsscene::PhysicsScene,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            PhysicsScene,
-            crate::unity_engine::physicsscene::PhysicsScene,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhysicsScene, crate::unity_engine::physicsscene::PhysicsScene, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raycast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Raycast",
@@ -255,18 +191,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Raycast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Raycast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast(
@@ -275,7 +208,7 @@ mod __PhysicsScene_unity2_raw {
         direction: crate::unity_engine::vector3::Vector3,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -286,11 +219,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_raycast::get_method_info().method_ptr);
         inner(
             this,
             origin,
@@ -305,10 +234,14 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_raycast_test {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_RaycastTest",
@@ -320,18 +253,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_RaycastTest",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_RaycastTest",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_raycast_test(
@@ -339,7 +269,7 @@ mod __PhysicsScene_unity2_raw {
         ray: crate::unity_engine::ray::Ray,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -349,11 +279,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_raycast_test::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_internal_raycast_test::get_method_info().method_ptr);
         inner(
             physics_scene,
             ray,
@@ -367,10 +293,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_raycast_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Raycast",
@@ -382,18 +313,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Raycast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Raycast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast_2(
@@ -403,7 +331,7 @@ mod __PhysicsScene_unity2_raw {
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -415,11 +343,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_raycast_2::get_method_info().method_ptr);
         inner(
             this,
             origin,
@@ -435,10 +359,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_raycast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_Raycast",
@@ -450,18 +379,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_Raycast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_Raycast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_raycast(
@@ -470,7 +396,7 @@ mod __PhysicsScene_unity2_raw {
         max_distance: f32,
         hit: *mut crate::unity_engine::raycasthit::RaycastHit,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -481,11 +407,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_raycast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_internal_raycast::get_method_info().method_ptr);
         inner(
             physics_scene,
             ray,
@@ -500,10 +422,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_raycast_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Raycast",
@@ -515,18 +442,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Raycast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Raycast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast_3(
@@ -536,7 +460,7 @@ mod __PhysicsScene_unity2_raw {
         raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -548,11 +472,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast_3::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_raycast_3::get_method_info().method_ptr);
         inner(
             this,
             origin,
@@ -568,10 +488,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_raycast_non_alloc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_RaycastNonAlloc",
@@ -583,18 +508,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_RaycastNonAlloc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_RaycastNonAlloc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_raycast_non_alloc(
@@ -603,7 +525,7 @@ mod __PhysicsScene_unity2_raw {
         raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
         max_distance: f32,
         mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -614,11 +536,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_raycast_non_alloc::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_internal_raycast_non_alloc::get_method_info().method_ptr);
         inner(
             physics_scene,
             ray,
@@ -633,10 +551,18 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_query_capsule_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Query_CapsuleCast",
@@ -648,18 +574,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Query_CapsuleCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Query_CapsuleCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn query_capsule_cast(
@@ -671,7 +594,7 @@ mod __PhysicsScene_unity2_raw {
         max_distance: f32,
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -685,11 +608,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_query_capsule_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_query_capsule_cast::get_method_info().method_ptr);
         inner(
             physics_scene,
             point1,
@@ -707,10 +626,18 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_capsule_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_CapsuleCast",
@@ -722,18 +649,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_CapsuleCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_CapsuleCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_capsule_cast(
@@ -745,7 +669,7 @@ mod __PhysicsScene_unity2_raw {
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -759,11 +683,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_capsule_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_internal_capsule_cast::get_method_info().method_ptr);
         inner(
             physics_scene,
             point1,
@@ -781,10 +701,17 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_capsule_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "CapsuleCast",
@@ -796,18 +723,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "CapsuleCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "CapsuleCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn capsule_cast(
@@ -819,7 +743,7 @@ mod __PhysicsScene_unity2_raw {
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -833,11 +757,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_capsule_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_capsule_cast::get_method_info().method_ptr);
         inner(
             this,
             point1,
@@ -855,10 +775,17 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_query_sphere_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Query_SphereCast",
@@ -870,18 +797,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Query_SphereCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Query_SphereCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn query_sphere_cast(
@@ -892,7 +816,7 @@ mod __PhysicsScene_unity2_raw {
         max_distance: f32,
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -905,11 +829,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_query_sphere_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_query_sphere_cast::get_method_info().method_ptr);
         inner(
             physics_scene,
             origin,
@@ -926,10 +846,17 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_sphere_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_SphereCast",
@@ -941,18 +868,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_SphereCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_SphereCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_sphere_cast(
@@ -963,7 +887,7 @@ mod __PhysicsScene_unity2_raw {
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -976,11 +900,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_sphere_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_internal_sphere_cast::get_method_info().method_ptr);
         inner(
             physics_scene,
             origin,
@@ -997,10 +917,16 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_sphere_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "SphereCast",
@@ -1012,18 +938,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "SphereCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "SphereCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sphere_cast(
@@ -1034,7 +957,7 @@ mod __PhysicsScene_unity2_raw {
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -1047,11 +970,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sphere_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_sphere_cast::get_method_info().method_ptr);
         inner(
             this,
             origin,
@@ -1068,10 +987,17 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_sphere_cast_non_alloc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_SphereCastNonAlloc",
@@ -1083,18 +1009,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_SphereCastNonAlloc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_SphereCastNonAlloc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_sphere_cast_non_alloc(
@@ -1105,7 +1028,7 @@ mod __PhysicsScene_unity2_raw {
         raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
         max_distance: f32,
         mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -1118,11 +1041,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_sphere_cast_non_alloc::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_internal_sphere_cast_non_alloc::get_method_info().method_ptr);
         inner(
             physics_scene,
             origin,
@@ -1139,10 +1058,16 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_sphere_cast_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "SphereCast",
@@ -1154,18 +1079,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "SphereCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "SphereCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sphere_cast_2(
@@ -1176,7 +1098,7 @@ mod __PhysicsScene_unity2_raw {
         results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -1189,11 +1111,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sphere_cast_2::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_sphere_cast_2::get_method_info().method_ptr);
         inner(
             this,
             origin,
@@ -1210,10 +1128,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_overlap_sphere_non_alloc_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::collider::Collider> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "OverlapSphereNonAlloc_Internal",
@@ -1225,18 +1148,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "OverlapSphereNonAlloc_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "OverlapSphereNonAlloc_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn overlap_sphere_non_alloc_internal(
@@ -1245,7 +1165,7 @@ mod __PhysicsScene_unity2_raw {
         radius: f32,
         results: ::unity2::Array<crate::unity_engine::collider::Collider>,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -1256,11 +1176,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_overlap_sphere_non_alloc_internal::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_overlap_sphere_non_alloc_internal::get_method_info().method_ptr);
         inner(
             physics_scene,
             position,
@@ -1275,10 +1191,14 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_overlap_sphere {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::collider::Collider> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "OverlapSphere",
@@ -1290,18 +1210,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "OverlapSphere",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "OverlapSphere",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn overlap_sphere(
@@ -1310,7 +1227,7 @@ mod __PhysicsScene_unity2_raw {
         radius: f32,
         results: ::unity2::Array<crate::unity_engine::collider::Collider>,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -1321,11 +1238,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_overlap_sphere::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_overlap_sphere::get_method_info().method_ptr);
         inner(
             this,
             position,
@@ -1340,10 +1253,18 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_query_box_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Query_BoxCast",
@@ -1355,18 +1276,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Query_BoxCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Query_BoxCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn query_box_cast(
@@ -1378,7 +1296,7 @@ mod __PhysicsScene_unity2_raw {
         max_distance: f32,
         out_hit: *mut crate::unity_engine::raycasthit::RaycastHit,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -1392,11 +1310,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_query_box_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_query_box_cast::get_method_info().method_ptr);
         inner(
             physics_scene,
             center,
@@ -1414,10 +1328,18 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_box_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_BoxCast",
@@ -1429,18 +1351,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_BoxCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_BoxCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_box_cast(
@@ -1452,7 +1371,7 @@ mod __PhysicsScene_unity2_raw {
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -1466,11 +1385,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_box_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_internal_box_cast::get_method_info().method_ptr);
         inner(
             physics_scene,
             center,
@@ -1488,10 +1403,17 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_box_cast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "BoxCast",
@@ -1503,18 +1425,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "BoxCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "BoxCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn box_cast(
@@ -1526,7 +1445,7 @@ mod __PhysicsScene_unity2_raw {
         orientation: crate::unity_engine::quaternion::Quaternion,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -1540,11 +1459,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_box_cast::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_box_cast::get_method_info().method_ptr);
         inner(
             this,
             center,
@@ -1562,10 +1477,16 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_overlap_box_non_alloc_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::collider::Collider> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "OverlapBoxNonAlloc_Internal",
@@ -1577,18 +1498,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "OverlapBoxNonAlloc_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "OverlapBoxNonAlloc_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn overlap_box_non_alloc_internal(
@@ -1598,7 +1516,7 @@ mod __PhysicsScene_unity2_raw {
         results: ::unity2::Array<crate::unity_engine::collider::Collider>,
         orientation: crate::unity_engine::quaternion::Quaternion,
         mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -1610,11 +1528,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_overlap_box_non_alloc_internal::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_overlap_box_non_alloc_internal::get_method_info().method_ptr);
         inner(
             physics_scene,
             center,
@@ -1630,10 +1544,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_overlap_box {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::collider::Collider> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "OverlapBox",
@@ -1645,18 +1564,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "OverlapBox",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "OverlapBox",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn overlap_box(
@@ -1666,7 +1582,7 @@ mod __PhysicsScene_unity2_raw {
         results: ::unity2::Array<crate::unity_engine::collider::Collider>,
         orientation: crate::unity_engine::quaternion::Quaternion,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -1678,11 +1594,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_overlap_box::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_overlap_box::get_method_info().method_ptr);
         inner(
             this,
             center,
@@ -1698,10 +1610,18 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_box_cast_non_alloc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_BoxCastNonAlloc",
@@ -1713,18 +1633,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_BoxCastNonAlloc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_BoxCastNonAlloc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_box_cast_non_alloc(
@@ -1736,7 +1653,7 @@ mod __PhysicsScene_unity2_raw {
         orientation: crate::unity_engine::quaternion::Quaternion,
         max_distance: f32,
         mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -1750,11 +1667,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_box_cast_non_alloc::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_internal_box_cast_non_alloc::get_method_info().method_ptr);
         inner(
             physics_scene,
             center,
@@ -1772,10 +1685,17 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_box_cast_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "BoxCast",
@@ -1787,18 +1707,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "BoxCast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "BoxCast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn box_cast_2(
@@ -1810,7 +1727,7 @@ mod __PhysicsScene_unity2_raw {
         orientation: crate::unity_engine::quaternion::Quaternion,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -1824,11 +1741,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_box_cast_2::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_box_cast_2::get_method_info().method_ptr);
         inner(
             this,
             center,
@@ -1846,10 +1759,14 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_raycast_test_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_RaycastTest_Injected",
@@ -1861,18 +1778,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_RaycastTest_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_RaycastTest_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_raycast_test_injected(
@@ -1880,7 +1794,7 @@ mod __PhysicsScene_unity2_raw {
         ray: *mut crate::unity_engine::ray::Ray,
         max_distance: f32,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -1890,11 +1804,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_raycast_test_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_internal_raycast_test_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             ray,
@@ -1908,10 +1818,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_raycast_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_Raycast_Injected",
@@ -1923,18 +1838,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_Raycast_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_Raycast_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_raycast_injected(
@@ -1943,7 +1855,7 @@ mod __PhysicsScene_unity2_raw {
         max_distance: f32,
         hit: *mut crate::unity_engine::raycasthit::RaycastHit,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -1954,11 +1866,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_raycast_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_internal_raycast_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             ray,
@@ -1973,10 +1881,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_raycast_non_alloc_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_RaycastNonAlloc_Injected",
@@ -1988,18 +1901,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_RaycastNonAlloc_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_RaycastNonAlloc_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_raycast_non_alloc_injected(
@@ -2008,7 +1918,7 @@ mod __PhysicsScene_unity2_raw {
         raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
         max_distance: f32,
         mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -2019,11 +1929,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_raycast_non_alloc_injected::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_internal_raycast_non_alloc_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             ray,
@@ -2038,10 +1944,18 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_query_capsule_cast_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Query_CapsuleCast_Injected",
@@ -2053,18 +1967,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Query_CapsuleCast_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Query_CapsuleCast_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn query_capsule_cast_injected(
@@ -2076,7 +1987,7 @@ mod __PhysicsScene_unity2_raw {
         max_distance: f32,
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -2090,11 +2001,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_query_capsule_cast_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_query_capsule_cast_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             point1,
@@ -2112,10 +2019,17 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_query_sphere_cast_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Query_SphereCast_Injected",
@@ -2127,18 +2041,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Query_SphereCast_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Query_SphereCast_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn query_sphere_cast_injected(
@@ -2149,7 +2060,7 @@ mod __PhysicsScene_unity2_raw {
         max_distance: f32,
         hit_info: *mut crate::unity_engine::raycasthit::RaycastHit,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -2162,11 +2073,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_query_sphere_cast_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_query_sphere_cast_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             origin,
@@ -2183,10 +2090,17 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_sphere_cast_non_alloc_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_SphereCastNonAlloc_Injected",
@@ -2198,18 +2112,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_SphereCastNonAlloc_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_SphereCastNonAlloc_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_sphere_cast_non_alloc_injected(
@@ -2220,7 +2131,7 @@ mod __PhysicsScene_unity2_raw {
         raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
         max_distance: f32,
         mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -2233,11 +2144,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_sphere_cast_non_alloc_injected::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_internal_sphere_cast_non_alloc_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             origin,
@@ -2254,10 +2161,15 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_overlap_sphere_non_alloc_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::collider::Collider> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "OverlapSphereNonAlloc_Internal_Injected",
@@ -2269,18 +2181,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "OverlapSphereNonAlloc_Internal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "OverlapSphereNonAlloc_Internal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn overlap_sphere_non_alloc_internal_injected(
@@ -2289,7 +2198,7 @@ mod __PhysicsScene_unity2_raw {
         radius: f32,
         results: ::unity2::Array<crate::unity_engine::collider::Collider>,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -2300,11 +2209,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_overlap_sphere_non_alloc_internal_injected::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_overlap_sphere_non_alloc_internal_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             position,
@@ -2319,10 +2224,18 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_query_box_cast_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Query_BoxCast_Injected",
@@ -2334,18 +2247,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Query_BoxCast_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Query_BoxCast_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn query_box_cast_injected(
@@ -2357,7 +2267,7 @@ mod __PhysicsScene_unity2_raw {
         max_distance: f32,
         out_hit: *mut crate::unity_engine::raycasthit::RaycastHit,
         layer_mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -2371,11 +2281,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_query_box_cast_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_query_box_cast_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             center,
@@ -2393,10 +2299,16 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_overlap_box_non_alloc_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::collider::Collider> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "OverlapBoxNonAlloc_Internal_Injected",
@@ -2408,18 +2320,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "OverlapBoxNonAlloc_Internal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "OverlapBoxNonAlloc_Internal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn overlap_box_non_alloc_internal_injected(
@@ -2429,7 +2338,7 @@ mod __PhysicsScene_unity2_raw {
         results: ::unity2::Array<crate::unity_engine::collider::Collider>,
         orientation: *mut crate::unity_engine::quaternion::Quaternion,
         mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -2441,11 +2350,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_overlap_box_non_alloc_internal_injected::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_overlap_box_non_alloc_internal_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             center,
@@ -2461,10 +2366,18 @@ mod __PhysicsScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_box_cast_non_alloc_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: physicsscene :: PhysicsScene as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit :: RaycastHit > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::physicsscene::PhysicsScene as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhysicsScene as ::unity2::ClassIdentity>::class(),
                 "Internal_BoxCastNonAlloc_Injected",
@@ -2476,18 +2389,15 @@ mod __PhysicsScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhysicsScene as ::unity2::ClassIdentity>::NAME,
-                    "Internal_BoxCastNonAlloc_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhysicsScene as ::unity2::ClassIdentity>::NAME,
+                        "Internal_BoxCastNonAlloc_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_box_cast_non_alloc_injected(
@@ -2499,7 +2409,7 @@ mod __PhysicsScene_unity2_raw {
         orientation: *mut crate::unity_engine::quaternion::Quaternion,
         max_distance: f32,
         mask: i32,
-        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+        query_trigger_interaction: crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -2513,11 +2423,7 @@ mod __PhysicsScene_unity2_raw {
             i32,
             crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_box_cast_non_alloc_injected::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_internal_box_cast_non_alloc_injected::get_method_info().method_ptr);
         inner(
             physics_scene,
             center,
@@ -2541,9 +2447,7 @@ impl PhysicsScene {
         ray: impl ::core::convert::Into<crate::unity_engine::ray::Ray>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> bool {
         unsafe {
             __PhysicsScene_unity2_raw::internal_raycast_test(
@@ -2556,19 +2460,17 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Internal_Raycast(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::ray::Ray, f32, *mutcrate::unity_engine::raycasthit::RaycastHit, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_raycast(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
         ray: impl ::core::convert::Into<crate::unity_engine::ray::Ray>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_raycast(
                     ::core::convert::Into::into(physics_scene),
@@ -2583,18 +2485,15 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Internal_RaycastNonAlloc(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_raycast_non_alloc(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
         ray: impl ::core::convert::Into<crate::unity_engine::ray::Ray>,
-        raycast_hits: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        raycast_hits: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         max_distance: impl ::core::convert::Into<f32>,
         mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::internal_raycast_non_alloc(
@@ -2608,6 +2507,7 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Query_CapsuleCast(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::raycasthit::RaycastHit, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn query_capsule_cast(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
@@ -2617,13 +2517,10 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::query_capsule_cast(
                     ::core::convert::Into::into(physics_scene),
@@ -2641,6 +2538,7 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Internal_CapsuleCast(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_capsule_cast(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
@@ -2650,13 +2548,10 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_capsule_cast(
                     ::core::convert::Into::into(physics_scene),
@@ -2674,6 +2569,7 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Query_SphereCast(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::raycasthit::RaycastHit, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn query_sphere_cast(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
@@ -2682,13 +2578,10 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::query_sphere_cast(
                     ::core::convert::Into::into(physics_scene),
@@ -2705,6 +2598,7 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Internal_SphereCast(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_sphere_cast(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
@@ -2713,13 +2607,10 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_sphere_cast(
                     ::core::convert::Into::into(physics_scene),
@@ -2736,20 +2627,17 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Internal_SphereCastNonAlloc(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_sphere_cast_non_alloc(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
         origin: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         radius: impl ::core::convert::Into<f32>,
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        raycast_hits: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        raycast_hits: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         max_distance: impl ::core::convert::Into<f32>,
         mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::internal_sphere_cast_non_alloc(
@@ -2765,6 +2653,7 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`OverlapSphereNonAlloc_Internal(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, f32, ::unity2::Array<crate::unity_engine::collider::Collider>, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn overlap_sphere_non_alloc_internal(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
@@ -2772,9 +2661,7 @@ impl PhysicsScene {
         radius: impl ::core::convert::Into<f32>,
         results: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::collider::Collider>>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::overlap_sphere_non_alloc_internal(
@@ -2788,6 +2675,7 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Query_BoxCast(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, f32, *mutcrate::unity_engine::raycasthit::RaycastHit, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn query_box_cast(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
@@ -2797,13 +2685,10 @@ impl PhysicsScene {
         orientation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::query_box_cast(
                     ::core::convert::Into::into(physics_scene),
@@ -2821,6 +2706,7 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Internal_BoxCast(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_box_cast(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
@@ -2830,13 +2716,10 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_box_cast(
                     ::core::convert::Into::into(physics_scene),
@@ -2854,6 +2737,7 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`OverlapBoxNonAlloc_Internal(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::collider::Collider>, crate::unity_engine::quaternion::Quaternion, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn overlap_box_non_alloc_internal(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
@@ -2862,9 +2746,7 @@ impl PhysicsScene {
         results: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::collider::Collider>>,
         orientation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
         mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::overlap_box_non_alloc_internal(
@@ -2879,21 +2761,18 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Internal_BoxCastNonAlloc(crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, crate::unity_engine::quaternion::Quaternion, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_box_cast_non_alloc(
         physics_scene: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
         center: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         half_extents: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        raycast_hits: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        raycast_hits: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         orientation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
         max_distance: impl ::core::convert::Into<f32>,
         mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::internal_box_cast_non_alloc(
@@ -2910,22 +2789,15 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Internal_RaycastTest_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::ray::Ray, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_raycast_test_injected(
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
-    ) -> (
-        bool,
-        crate::unity_engine::physicsscene::PhysicsScene,
-        crate::unity_engine::ray::Ray,
-    ) {
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
+    ) -> (bool, crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::ray::Ray) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::ray::Ray>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_raycast_test_injected(
@@ -2940,13 +2812,12 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`Internal_Raycast_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::ray::Ray, f32, *mutcrate::unity_engine::raycasthit::RaycastHit, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_raycast_injected(
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (
         bool,
         crate::unity_engine::physicsscene::PhysicsScene,
@@ -2954,12 +2825,9 @@ impl PhysicsScene {
         crate::unity_engine::raycasthit::RaycastHit,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::ray::Ray>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_raycast_injected(
                     __out_0.as_mut_ptr(),
@@ -2971,33 +2839,19 @@ impl PhysicsScene {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`Internal_RaycastNonAlloc_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_raycast_non_alloc_injected(
-        raycast_hits: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        raycast_hits: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         max_distance: impl ::core::convert::Into<f32>,
         mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
-    ) -> (
-        i32,
-        crate::unity_engine::physicsscene::PhysicsScene,
-        crate::unity_engine::ray::Ray,
-    ) {
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
+    ) -> (i32, crate::unity_engine::physicsscene::PhysicsScene, crate::unity_engine::ray::Ray) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::ray::Ray>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_raycast_non_alloc_injected(
@@ -3013,14 +2867,13 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`Query_CapsuleCast_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::raycasthit::RaycastHit, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn query_capsule_cast_injected(
         radius: impl ::core::convert::Into<f32>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (
         bool,
         crate::unity_engine::physicsscene::PhysicsScene,
@@ -3030,17 +2883,11 @@ impl PhysicsScene {
         crate::unity_engine::raycasthit::RaycastHit,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_4 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::query_capsule_cast_injected(
                     __out_0.as_mut_ptr(),
@@ -3065,14 +2912,13 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Query_SphereCast_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::raycasthit::RaycastHit, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn query_sphere_cast_injected(
         radius: impl ::core::convert::Into<f32>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (
         bool,
         crate::unity_engine::physicsscene::PhysicsScene,
@@ -3081,15 +2927,10 @@ impl PhysicsScene {
         crate::unity_engine::raycasthit::RaycastHit,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::query_sphere_cast_injected(
                     __out_0.as_mut_ptr(),
@@ -3112,17 +2953,14 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Internal_SphereCastNonAlloc_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_sphere_cast_non_alloc_injected(
         radius: impl ::core::convert::Into<f32>,
-        raycast_hits: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        raycast_hits: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         max_distance: impl ::core::convert::Into<f32>,
         mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (
         i32,
         crate::unity_engine::physicsscene::PhysicsScene,
@@ -3130,13 +2968,9 @@ impl PhysicsScene {
         crate::unity_engine::vector3::Vector3,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_sphere_cast_non_alloc_injected(
                     __out_0.as_mut_ptr(),
@@ -3150,33 +2984,24 @@ impl PhysicsScene {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`OverlapSphereNonAlloc_Internal_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::vector3::Vector3, f32, ::unity2::Array<crate::unity_engine::collider::Collider>, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn overlap_sphere_non_alloc_internal_injected(
         radius: impl ::core::convert::Into<f32>,
         results: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::collider::Collider>>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (
         i32,
         crate::unity_engine::physicsscene::PhysicsScene,
         crate::unity_engine::vector3::Vector3,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::overlap_sphere_non_alloc_internal_injected(
                     __out_0.as_mut_ptr(),
@@ -3191,13 +3016,12 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`Query_BoxCast_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, f32, *mutcrate::unity_engine::raycasthit::RaycastHit, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn query_box_cast_injected(
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (
         bool,
         crate::unity_engine::physicsscene::PhysicsScene,
@@ -3208,19 +3032,12 @@ impl PhysicsScene {
         crate::unity_engine::raycasthit::RaycastHit,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_4 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
-            let mut __out_5 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_5 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::query_box_cast_injected(
                     __out_0.as_mut_ptr(),
@@ -3246,13 +3063,12 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`OverlapBoxNonAlloc_Internal_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::collider::Collider>, *mutcrate::unity_engine::quaternion::Quaternion, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn overlap_box_non_alloc_internal_injected(
         results: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::collider::Collider>>,
         mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (
         i32,
         crate::unity_engine::physicsscene::PhysicsScene,
@@ -3261,15 +3077,10 @@ impl PhysicsScene {
         crate::unity_engine::quaternion::Quaternion,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::overlap_box_non_alloc_internal_injected(
                     __out_0.as_mut_ptr(),
@@ -3291,16 +3102,13 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Internal_BoxCastNonAlloc_Injected(*mutcrate::unity_engine::physicsscene::PhysicsScene, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, *mutcrate::unity_engine::quaternion::Quaternion, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn internal_box_cast_non_alloc_injected(
-        raycast_hits: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        raycast_hits: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         max_distance: impl ::core::convert::Into<f32>,
         mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (
         i32,
         crate::unity_engine::physicsscene::PhysicsScene,
@@ -3310,17 +3118,11 @@ impl PhysicsScene {
         crate::unity_engine::quaternion::Quaternion,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::physicsscene::PhysicsScene,
-            >::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_4 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::physicsscene::PhysicsScene>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::internal_box_cast_non_alloc_injected(
                     __out_0.as_mut_ptr(),
@@ -3353,33 +3155,22 @@ impl PhysicsScene {
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __PhysicsScene_unity2_raw::to_string(self, ::core::option::Option::None) }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __PhysicsScene_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals(self, other: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __PhysicsScene_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PhysicsScene_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::unity_engine::physicsscene::PhysicsScene)` overload"]
-    pub fn equals_2(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>,
-    ) -> bool {
-        unsafe {
-            __PhysicsScene_unity2_raw::equals_2(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals_2(self, other: impl ::core::convert::Into<crate::unity_engine::physicsscene::PhysicsScene>) -> bool {
+        unsafe { __PhysicsScene_unity2_raw::equals_2(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`Raycast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn raycast(
         self,
@@ -3387,9 +3178,7 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> bool {
         unsafe {
             __PhysicsScene_unity2_raw::raycast(
@@ -3403,6 +3192,7 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`Raycast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn raycast_2(
         self,
@@ -3410,13 +3200,10 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::raycast_2(
                     self,
@@ -3432,19 +3219,16 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Raycast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn raycast_3(
         self,
         origin: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        raycast_hits: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        raycast_hits: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::raycast_3(
@@ -3459,6 +3243,7 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`CapsuleCast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn capsule_cast(
         self,
@@ -3468,13 +3253,10 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::capsule_cast(
                     self,
@@ -3492,6 +3274,7 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`SphereCast(crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn sphere_cast(
         self,
@@ -3500,13 +3283,10 @@ impl PhysicsScene {
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::sphere_cast(
                     self,
@@ -3523,20 +3303,17 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`SphereCast(crate::unity_engine::vector3::Vector3, f32, crate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn sphere_cast_2(
         self,
         origin: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         radius: impl ::core::convert::Into<f32>,
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        results: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        results: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::sphere_cast_2(
@@ -3552,6 +3329,7 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`OverlapSphere(crate::unity_engine::vector3::Vector3, f32, ::unity2::Array<crate::unity_engine::collider::Collider>, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn overlap_sphere(
         self,
@@ -3559,9 +3337,7 @@ impl PhysicsScene {
         radius: impl ::core::convert::Into<f32>,
         results: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::collider::Collider>>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::overlap_sphere(
@@ -3575,6 +3351,7 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`BoxCast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::raycasthit::RaycastHit, crate::unity_engine::quaternion::Quaternion, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn box_cast(
         self,
@@ -3584,13 +3361,10 @@ impl PhysicsScene {
         orientation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
             let __ret = {
                 __PhysicsScene_unity2_raw::box_cast(
                     self,
@@ -3608,6 +3382,7 @@ impl PhysicsScene {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`OverlapBox(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::collider::Collider>, crate::unity_engine::quaternion::Quaternion, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn overlap_box(
         self,
@@ -3616,9 +3391,7 @@ impl PhysicsScene {
         results: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::collider::Collider>>,
         orientation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::overlap_box(
@@ -3633,21 +3406,18 @@ impl PhysicsScene {
             )
         }
     }
+
     #[doc = "`BoxCast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, crate::unity_engine::quaternion::Quaternion, f32, i32, crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction)` overload"]
     pub fn box_cast_2(
         self,
         center: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         half_extents: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         direction: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        results: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        >,
+        results: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>>,
         orientation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
         max_distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-        query_trigger_interaction: impl ::core::convert::Into<
-            crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction,
-        >,
+        query_trigger_interaction: impl ::core::convert::Into<crate::unity_engine::querytriggerinteraction::QueryTriggerInteraction>,
     ) -> i32 {
         unsafe {
             __PhysicsScene_unity2_raw::box_cast_2(
@@ -3670,10 +3440,9 @@ impl PhysicsScene {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::PhysicsScene;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

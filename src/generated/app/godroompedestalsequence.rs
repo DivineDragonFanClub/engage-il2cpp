@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-godroompedestalsequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestalsequence/GodRoomPedestalSequence.md"))]
     #[::unity2::class(namespace = "App", name = "GodRoomPedestalSequence")]
@@ -19,18 +23,15 @@ mod __types {
         #[rename(name = "m_Result")]
         pub m_result: crate::app::basicmenu::BasicMenu_Result,
         #[rename(name = "m_RefineRingUnitSelectMenu")]
-        pub m_refine_ring_unit_select_menu:
-            crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu,
+        pub m_refine_ring_unit_select_menu: crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu,
         #[rename(name = "m_RefineRingTimesSelectMenu")]
-        pub m_refine_ring_times_select_menu:
-            crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu,
+        pub m_refine_ring_times_select_menu: crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu,
         #[rename(name = "m_GodUnit")]
         pub m_god_unit: crate::app::godunit::GodUnit,
         #[rename(name = "m_RingGachaTimes")]
         pub m_ring_gacha_times: i32,
         #[rename(name = "m_UnitRingList")]
-        pub m_unit_ring_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
+        pub m_unit_ring_list: crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
         #[rename(name = "m_NewRingList")]
         pub m_new_ring_list: crate::system::collections::generic::list_1::List_1<bool>,
         #[rename(name = "m_SynthesisRingMenu")]
@@ -43,21 +44,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godroompedestalsequence/GodRoomPedestalSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GodRoomPedestalSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GodRoomPedestalSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "GodRoomPedestalSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -68,10 +62,7 @@ mod __types {
 
     impl ::unity2::IlType for GodRoomPedestalSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -150,11 +141,8 @@ mod __GodRoomPedestalSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -166,39 +154,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -211,39 +187,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_desc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -256,41 +220,30 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_desc(
         this: GodRoomPedestalSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            GodRoomPedestalSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -303,39 +256,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_resources(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_resources(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -348,39 +289,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_resources(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_resources(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -393,39 +322,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start_sequence(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start_sequence(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_top_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -438,39 +355,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateTopMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateTopMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_top_menu(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_top_menu(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_top_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_top_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_skill_inheritance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -483,39 +388,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateSkillInheritance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateSkillInheritance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_skill_inheritance(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_skill_inheritance(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_skill_inheritance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_skill_inheritance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_skill_inheritance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -528,39 +421,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroySkillInheritance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroySkillInheritance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_skill_inheritance(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_skill_inheritance(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_skill_inheritance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_skill_inheritance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_resources_for_refine_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -573,39 +454,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResourcesForRefineRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadResourcesForRefineRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_resources_for_refine_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_resources_for_refine_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_resources_for_refine_ring::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_resources_for_refine_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_resources_for_refine_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -618,39 +487,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingResourcesForRefineRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingResourcesForRefineRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_resources_for_refine_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_resources_for_refine_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_resources_for_refine_ring::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_resources_for_refine_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_god_select_menu_for_refine_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -663,39 +520,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateGodSelectMenuForRefineRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateGodSelectMenuForRefineRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_god_select_menu_for_refine_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_god_select_menu_for_refine_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_god_select_menu_for_refine_ring::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_god_select_menu_for_refine_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_god_select_menu_for_refine_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -708,41 +553,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyGodSelectMenuForRefineRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyGodSelectMenuForRefineRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_god_select_menu_for_refine_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_god_select_menu_for_refine_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_destroy_god_select_menu_for_refine_ring::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_destroy_god_select_menu_for_refine_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_ring_gacha_times_select_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -755,39 +586,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRingGachaTimesSelectMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRingGachaTimesSelectMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_ring_gacha_times_select_menu(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_ring_gacha_times_select_menu(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_ring_gacha_times_select_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_ring_gacha_times_select_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_ring_gacha_times_select_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -800,39 +619,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRingGachaTimesSelectMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRingGachaTimesSelectMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_ring_gacha_times_select_menu(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_ring_gacha_times_select_menu(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_ring_gacha_times_select_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_ring_gacha_times_select_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute_ring_gacha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -845,39 +652,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteRingGacha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExecuteRingGacha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn execute_ring_gacha(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn execute_ring_gacha(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute_ring_gacha::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_execute_ring_gacha::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_ring_gacha_demo_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -890,39 +685,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRingGachaDemoSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRingGachaDemoSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_ring_gacha_demo_sequence(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_ring_gacha_demo_sequence(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_ring_gacha_demo_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_ring_gacha_demo_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_achieve_of_refine_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -935,39 +718,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "AddAchieveOfRefineRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "AddAchieveOfRefineRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_achieve_of_refine_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_achieve_of_refine_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_achieve_of_refine_ring::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_achieve_of_refine_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_resources_for_refine_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -980,39 +751,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "UnloadResourcesForRefineRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "UnloadResourcesForRefineRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload_resources_for_refine_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn unload_resources_for_refine_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload_resources_for_refine_ring::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_unload_resources_for_refine_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_resources_for_synthesis_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1025,39 +784,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResourcesForSynthesisRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadResourcesForSynthesisRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_resources_for_synthesis_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_resources_for_synthesis_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_resources_for_synthesis_ring::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_resources_for_synthesis_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_resources_for_synthesis_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1070,41 +817,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingResourcesForSynthesisRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingResourcesForSynthesisRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_resources_for_synthesis_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_resources_for_synthesis_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_is_loading_resources_for_synthesis_ring::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_is_loading_resources_for_synthesis_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_synthesis_ring_menu_top {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1117,39 +850,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateSynthesisRingMenuTop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateSynthesisRingMenuTop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_synthesis_ring_menu_top(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_synthesis_ring_menu_top(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_synthesis_ring_menu_top::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_synthesis_ring_menu_top::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_synthesis_ring_menu_top {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1162,39 +883,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroySynthesisRingMenuTop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroySynthesisRingMenuTop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_synthesis_ring_menu_top(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_synthesis_ring_menu_top(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_synthesis_ring_menu_top::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_synthesis_ring_menu_top::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute_ring_merge {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1207,39 +916,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteRingMerge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExecuteRingMerge",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn execute_ring_merge(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn execute_ring_merge(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute_ring_merge::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_execute_ring_merge::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_ring_merge_demo_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1252,39 +949,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRingMergeDemoSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRingMergeDemoSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_ring_merge_demo_sequence(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_ring_merge_demo_sequence(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_ring_merge_demo_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_ring_merge_demo_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_resources_for_synthesis_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1297,39 +982,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "UnloadResourcesForSynthesisRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "UnloadResourcesForSynthesisRing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload_resources_for_synthesis_ring(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn unload_resources_for_synthesis_ring(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload_resources_for_synthesis_ring::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_unload_resources_for_synthesis_ring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_ring_cleaning_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1342,39 +1015,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRingCleaningMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRingCleaningMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_ring_cleaning_menu(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_ring_cleaning_menu(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_ring_cleaning_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_ring_cleaning_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_ring_cleaning_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1387,39 +1048,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRingCleaningMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRingCleaningMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_ring_cleaning_menu(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_ring_cleaning_menu(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_ring_cleaning_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_ring_cleaning_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_refine_god_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1432,39 +1081,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRefineGodWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRefineGodWeapon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_refine_god_weapon(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_refine_god_weapon(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_refine_god_weapon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_refine_god_weapon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_refine_god_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1477,39 +1114,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "DestroyRefineGodWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "DestroyRefineGodWeapon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_refine_god_weapon(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_refine_god_weapon(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_refine_god_weapon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_refine_god_weapon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1522,39 +1147,27 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "EndSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn end_sequence(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn end_sequence(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_end_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_transit_top_title {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodRoomPedestalSequence as ::unity2::ClassIdentity>::class(),
@@ -1567,30 +1180,20 @@ mod __GodRoomPedestalSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
-                    "TransitTopTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodRoomPedestalSequence as ::unity2::ClassIdentity>::NAME,
+                        "TransitTopTitle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn transit_top_title(
-        this: GodRoomPedestalSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn transit_top_title(this: GodRoomPedestalSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodRoomPedestalSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_transit_top_title::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_transit_top_title::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1599,12 +1202,7 @@ mod __GodRoomPedestalSequence_unity2_raw {
 impl GodRoomPedestalSequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __GodRoomPedestalSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GodRoomPedestalSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -1614,9 +1212,7 @@ pub trait IGodRoomPedestalSequenceMethods: IGodRoomPedestalSequence {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodRoomPedestalSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1624,390 +1220,240 @@ pub trait IGodRoomPedestalSequenceMethods: IGodRoomPedestalSequence {
     fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_desc(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadResources()` overload"]
     fn load_resources(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::load_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingResources()` overload"]
     fn is_loading_resources(self) -> bool {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::is_loading_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::is_loading_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartSequence()` overload"]
     fn start_sequence(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::start_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::start_sequence(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateTopMenu()` overload"]
     fn create_top_menu(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_top_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_top_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateSkillInheritance()` overload"]
     fn create_skill_inheritance(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_skill_inheritance(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_skill_inheritance(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroySkillInheritance()` overload"]
     fn destroy_skill_inheritance(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::destroy_skill_inheritance(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::destroy_skill_inheritance(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadResourcesForRefineRing()` overload"]
     fn load_resources_for_refine_ring(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::load_resources_for_refine_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::load_resources_for_refine_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingResourcesForRefineRing()` overload"]
     fn is_loading_resources_for_refine_ring(self) -> bool {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::is_loading_resources_for_refine_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::is_loading_resources_for_refine_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateGodSelectMenuForRefineRing()` overload"]
     fn create_god_select_menu_for_refine_ring(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_god_select_menu_for_refine_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_god_select_menu_for_refine_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyGodSelectMenuForRefineRing()` overload"]
     fn destroy_god_select_menu_for_refine_ring(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::destroy_god_select_menu_for_refine_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::destroy_god_select_menu_for_refine_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRingGachaTimesSelectMenu()` overload"]
     fn create_ring_gacha_times_select_menu(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_ring_gacha_times_select_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_ring_gacha_times_select_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRingGachaTimesSelectMenu()` overload"]
     fn destroy_ring_gacha_times_select_menu(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::destroy_ring_gacha_times_select_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::destroy_ring_gacha_times_select_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ExecuteRingGacha()` overload"]
     fn execute_ring_gacha(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::execute_ring_gacha(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::execute_ring_gacha(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRingGachaDemoSequence()` overload"]
     fn create_ring_gacha_demo_sequence(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_ring_gacha_demo_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_ring_gacha_demo_sequence(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddAchieveOfRefineRing()` overload"]
     fn add_achieve_of_refine_ring(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::add_achieve_of_refine_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::add_achieve_of_refine_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnloadResourcesForRefineRing()` overload"]
     fn unload_resources_for_refine_ring(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::unload_resources_for_refine_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::unload_resources_for_refine_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadResourcesForSynthesisRing()` overload"]
     fn load_resources_for_synthesis_ring(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::load_resources_for_synthesis_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::load_resources_for_synthesis_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingResourcesForSynthesisRing()` overload"]
     fn is_loading_resources_for_synthesis_ring(self) -> bool {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::is_loading_resources_for_synthesis_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::is_loading_resources_for_synthesis_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateSynthesisRingMenuTop()` overload"]
     fn create_synthesis_ring_menu_top(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_synthesis_ring_menu_top(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_synthesis_ring_menu_top(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroySynthesisRingMenuTop()` overload"]
     fn destroy_synthesis_ring_menu_top(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::destroy_synthesis_ring_menu_top(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::destroy_synthesis_ring_menu_top(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ExecuteRingMerge()` overload"]
     fn execute_ring_merge(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::execute_ring_merge(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::execute_ring_merge(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRingMergeDemoSequence()` overload"]
     fn create_ring_merge_demo_sequence(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_ring_merge_demo_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_ring_merge_demo_sequence(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnloadResourcesForSynthesisRing()` overload"]
     fn unload_resources_for_synthesis_ring(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::unload_resources_for_synthesis_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::unload_resources_for_synthesis_ring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRingCleaningMenu()` overload"]
     fn create_ring_cleaning_menu(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_ring_cleaning_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_ring_cleaning_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRingCleaningMenu()` overload"]
     fn destroy_ring_cleaning_menu(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::destroy_ring_cleaning_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::destroy_ring_cleaning_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateRefineGodWeapon()` overload"]
     fn create_refine_god_weapon(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::create_refine_god_weapon(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::create_refine_god_weapon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyRefineGodWeapon()` overload"]
     fn destroy_refine_god_weapon(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::destroy_refine_god_weapon(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::destroy_refine_god_weapon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EndSequence()` overload"]
     fn end_sequence(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::end_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::end_sequence(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TransitTopTitle()` overload"]
     fn transit_top_title(self) -> () {
         unsafe {
             let __receiver =
-                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GodRoomPedestalSequence_unity2_raw::transit_top_title(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <GodRoomPedestalSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodRoomPedestalSequence_unity2_raw::transit_top_title(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -2034,20 +1480,17 @@ impl GodRoomPedestalSequence {
 #[cfg(feature = "app-godroompedestalsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodRoomPedestalSequence;
-    pub use super::GodRoomPedestalSequence_Label;
-    pub use super::IGodRoomPedestalSequence;
-    pub use super::IGodRoomPedestalSequenceMethods;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{GodRoomPedestalSequence, GodRoomPedestalSequence_Label, IGodRoomPedestalSequence, IGodRoomPedestalSequenceMethods};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

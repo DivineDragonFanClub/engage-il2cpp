@@ -2,14 +2,13 @@
 
 #[cfg(feature = "system-collections-generic-idictionary_2_interface-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/idictionary_2_interface/IDictionary_2_Interface.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "IDictionary`2")]
-    pub struct IDictionary_2_Interface<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-    }
+    pub struct IDictionary_2_Interface<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
 }
 
 #[cfg(feature = "system-collections-generic-idictionary_2_interface-types")]
@@ -24,9 +23,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IDictionary_2_Int
 
     #[doc = "`get_Values()` overload"]
     #[method(name = "get_Values", args = 0)]
-    pub fn get_values(
-        self,
-    ) -> crate::system::collections::generic::icollection_1::ICollection_1<T1>;
+    pub fn get_values(self) -> crate::system::collections::generic::icollection_1::ICollection_1<T1>;
 
     #[doc = "`Add(T0, T1)` overload"]
     #[method(name = "Add", args = 2)]
@@ -36,7 +33,5 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IDictionary_2_Int
 #[cfg(feature = "system-collections-generic-idictionary_2_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IDictionary_2_Interface;
-    pub use super::IIDictionary_2_Interface;
-    pub use super::IIDictionary_2_InterfaceMethods;
+    pub use super::{IDictionary_2_Interface, IIDictionary_2_Interface, IIDictionary_2_InterfaceMethods};
 }

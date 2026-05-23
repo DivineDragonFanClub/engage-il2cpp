@@ -2,36 +2,40 @@
 
 #[cfg(feature = "app-battlecalculator-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::bitfield32::{BitField32, IBitField32};
-    use crate::app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon};
-    use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1, IBitFieldTemplate32_1};
-    use crate::app::pool::{IPool_List_1, IPool_Node, Pool_List_1, Pool_Node};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            bitfield32::{BitField32, IBitField32},
+            bitfieldcommon::{BitFieldCommon, IBitFieldCommon},
+            bitfieldtemplate32_1::{BitFieldTemplate32_1, IBitFieldTemplate32_1},
+            pool::{IPool_List_1, IPool_Node, Pool_List_1, Pool_Node},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkillPool.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleCalculator.HitSkillPool")]
+    # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_HitSkill >)]
+    pub struct BattleCalculator_HitSkillPool {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TrainingResult.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct BattleCalculator_TrainingResult {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for BattleCalculator_TrainingResult {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "BattleCalculator.TrainingResult";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -42,10 +46,7 @@ mod __types {
 
     impl ::unity2::IlType for BattleCalculator_TrainingResult {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -56,41 +57,6 @@ mod __types {
 
         pub fn lose() -> Self {
             Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp1.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleCalculator.FuncExp1")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct BattleCalculator_FuncExp1 {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TargetScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct BattleCalculator_TargetScope {
-        pub m_current: crate::app::battleinfoside::BattleInfoSide,
-        pub m_reverse: crate::app::battleinfoside::BattleInfoSide,
-        pub m_is_dump: bool,
-    }
-
-    impl ::unity2::ClassIdentity for BattleCalculator_TargetScope {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "BattleCalculator.TargetScope";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for BattleCalculator_TargetScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
         }
     }
 
@@ -106,122 +72,18 @@ mod __types {
         pub skill: crate::app::skilldata::SkillData,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct BattleCalculator_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for BattleCalculator_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "BattleCalculator.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for BattleCalculator_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl BattleCalculator_Mode {
-        pub fn battle() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn job_intro() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn class_change() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_Order.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleCalculator.Order")]
-    #[parent(crate::app::pool::Pool_Node)]
-    pub struct BattleCalculator_Order {
-        #[rename(name = "Side")]
-        pub side: crate::app::battleside::BattleSide_Type,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleCalculator")]
-    #[parent(crate::system::object::Object)]
-    pub struct BattleCalculator {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::battlecalculator::BattleCalculator_Mode,
-        #[rename(name = "m_Info")]
-        pub m_info: crate::app::battleinfo::BattleInfo,
-        #[rename(name = "m_Flag")]
-        pub m_flag: crate::app::battlecalculator::BattleCalculator_FlagField,
-        #[rename(name = "m_SceneList")]
-        pub m_scene_list: crate::app::battlescenelist::BattleSceneList,
-        #[rename(name = "m_Orders")]
-        pub m_orders: crate::app::battlecalculator::BattleCalculator_OrderList,
-        #[rename(name = "m_NextOrderIndex")]
-        pub m_next_order_index: i32,
-        #[rename(name = "m_EquipSkill")]
-        pub m_equip_skill: crate::app::skilldata::SkillData,
-        #[rename(name = "m_ChainOffenses")]
-        pub m_chain_offenses: crate::system::collections::generic::list_1::List_1<
-            crate::app::battleinfoside::BattleInfoSide,
-        >,
-        #[rename(name = "m_ChainDefenses")]
-        pub m_chain_defenses: crate::system::collections::generic::list_1::List_1<
-            crate::app::battleinfoside::BattleInfoSide,
-        >,
-        #[rename(name = "m_HitSkillPool")]
-        pub m_hit_skill_pool: crate::app::battlecalculator::BattleCalculator_HitSkillPool,
-        #[rename(name = "m_CommitSkillUnits")]
-        pub m_commit_skill_units: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
-        #[static_field]
-        #[rename(name = "CannonConditions")]
-        pub cannon_conditions: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "DanceConditions")]
-        pub dance_conditions: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "EngageSummon3")]
-        pub engage_summon3: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "EngageSummon5")]
-        pub engage_summon5: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_SeparatorScope.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TargetScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct BattleCalculator_SeparatorScope {
-        pub m_calc: crate::app::battlecalculator::BattleCalculator,
-        pub m_push: crate::app::battlescene::BattleScene_Kind,
-        pub m_pop: crate::app::battlescene::BattleScene_Kind,
-        pub m_side: crate::app::battleside::BattleSide_Type,
-        pub m_equip_skill: crate::app::skilldata::SkillData,
+    pub struct BattleCalculator_TargetScope {
+        pub m_current: crate::app::battleinfoside::BattleInfoSide,
+        pub m_reverse: crate::app::battleinfoside::BattleInfoSide,
         pub m_is_dump: bool,
     }
 
-    impl ::unity2::ClassIdentity for BattleCalculator_SeparatorScope {
+    impl ::unity2::ClassIdentity for BattleCalculator_TargetScope {
+        const NAME: &'static str = "BattleCalculator.TargetScope";
         const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "BattleCalculator.SeparatorScope";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -230,32 +92,46 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for BattleCalculator_SeparatorScope {
+    impl ::unity2::IlType for BattleCalculator_TargetScope {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_DetailScope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct BattleCalculator_DetailScope {
+        pub m_info: crate::app::battleinfo::BattleInfo,
+    }
+
+    impl ::unity2::ClassIdentity for BattleCalculator_DetailScope {
+        const NAME: &'static str = "BattleCalculator.DetailScope";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for BattleCalculator_DetailScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Flags.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct BattleCalculator_Flags {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for BattleCalculator_Flags {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "BattleCalculator.Flags";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -266,10 +142,7 @@ mod __types {
 
     impl ::unity2::IlType for BattleCalculator_Flags {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -311,33 +184,121 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp2.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleCalculator.FuncExp2")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct BattleCalculator_FuncExp2 {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleCalculator")]
+    #[parent(crate::system::object::Object)]
+    pub struct BattleCalculator {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::battlecalculator::BattleCalculator_Mode,
+        #[rename(name = "m_Info")]
+        pub m_info: crate::app::battleinfo::BattleInfo,
+        #[rename(name = "m_Flag")]
+        pub m_flag: crate::app::battlecalculator::BattleCalculator_FlagField,
+        #[rename(name = "m_SceneList")]
+        pub m_scene_list: crate::app::battlescenelist::BattleSceneList,
+        #[rename(name = "m_Orders")]
+        pub m_orders: crate::app::battlecalculator::BattleCalculator_OrderList,
+        #[rename(name = "m_NextOrderIndex")]
+        pub m_next_order_index: i32,
+        #[rename(name = "m_EquipSkill")]
+        pub m_equip_skill: crate::app::skilldata::SkillData,
+        #[rename(name = "m_ChainOffenses")]
+        pub m_chain_offenses: crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide>,
+        #[rename(name = "m_ChainDefenses")]
+        pub m_chain_defenses: crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide>,
+        #[rename(name = "m_HitSkillPool")]
+        pub m_hit_skill_pool: crate::app::battlecalculator::BattleCalculator_HitSkillPool,
+        #[rename(name = "m_CommitSkillUnits")]
+        pub m_commit_skill_units: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+        #[static_field]
+        #[rename(name = "CannonConditions")]
+        pub cannon_conditions: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "DanceConditions")]
+        pub dance_conditions: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "EngageSummon3")]
+        pub engage_summon3: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "EngageSummon5")]
+        pub engage_summon5: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_OrderList.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleCalculator.OrderList")]
+    # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_Order >)]
+    pub struct BattleCalculator_OrderList {
+        #[static_field]
+        #[rename(name = "MaxOrder")]
+        pub max_order: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Mode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct BattleCalculator_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for BattleCalculator_Mode {
+        const NAME: &'static str = "BattleCalculator.Mode";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for BattleCalculator_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl BattleCalculator_Mode {
+        pub fn battle() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn job_intro() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn class_change() -> Self {
+            Self { value: 2 }
+        }
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FlagField.md"))]
     #[::unity2::class(namespace = "App", name = "BattleCalculator.FlagField")]
     # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlecalculator :: BattleCalculator_Flags >)]
     pub struct BattleCalculator_FlagField {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp1.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleCalculator.FuncExp1")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct BattleCalculator_FuncExp1 {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_Order.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleCalculator.Order")]
+    #[parent(crate::app::pool::Pool_Node)]
+    pub struct BattleCalculator_Order {
+        #[rename(name = "Side")]
+        pub side: crate::app::battleside::BattleSide_Type,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Attributes.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct BattleCalculator_Attributes {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for BattleCalculator_Attributes {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "BattleCalculator.Attributes";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -348,10 +309,7 @@ mod __types {
 
     impl ::unity2::IlType for BattleCalculator_Attributes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -369,26 +327,26 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_OrderList.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleCalculator.OrderList")]
-    # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_Order >)]
-    pub struct BattleCalculator_OrderList {
-        #[static_field]
-        #[rename(name = "MaxOrder")]
-        pub max_order: i32,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp2.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleCalculator.FuncExp2")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct BattleCalculator_FuncExp2 {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_DetailScope.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_SeparatorScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct BattleCalculator_DetailScope {
-        pub m_info: crate::app::battleinfo::BattleInfo,
+    pub struct BattleCalculator_SeparatorScope {
+        pub m_calc: crate::app::battlecalculator::BattleCalculator,
+        pub m_push: crate::app::battlescene::BattleScene_Kind,
+        pub m_pop: crate::app::battlescene::BattleScene_Kind,
+        pub m_side: crate::app::battleside::BattleSide_Type,
+        pub m_equip_skill: crate::app::skilldata::SkillData,
+        pub m_is_dump: bool,
     }
 
-    impl ::unity2::ClassIdentity for BattleCalculator_DetailScope {
+    impl ::unity2::ClassIdentity for BattleCalculator_SeparatorScope {
+        const NAME: &'static str = "BattleCalculator.SeparatorScope";
         const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "BattleCalculator.DetailScope";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -397,9322 +355,15 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for BattleCalculator_DetailScope {
+    impl ::unity2::IlType for BattleCalculator_SeparatorScope {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkillPool.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleCalculator.HitSkillPool")]
-    # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_HitSkill >)]
-    pub struct BattleCalculator_HitSkillPool {}
 }
 
 #[cfg(feature = "app-battlecalculator-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_FuncExp1_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_FuncExp1 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_FuncExp1 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_FuncExp1,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator_FuncExp1,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_FuncExp1 as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_FuncExp1 as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: BattleCalculator_FuncExp1,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            BattleCalculator_FuncExp1,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, current, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_FuncExp1Methods: IBattleCalculator_FuncExp1 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_FuncExp1 as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_FuncExp1_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn invoke(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_FuncExp1 as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_FuncExp1_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl<__T: IBattleCalculator_FuncExp1> IBattleCalculator_FuncExp1Methods for __T {}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FuncExp1 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_FuncExp1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_FuncExp1Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_TargetScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_TargetScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_TargetScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_TargetScope,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        is_dump: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator_TargetScope,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, current, reverse, is_dump, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_TargetScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_TargetScope as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: BattleCalculator_TargetScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_TargetScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_TargetScope {
-    #[doc = "`.ctor(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, bool)` overload"]
-    pub fn ctor(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        is_dump: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __BattleCalculator_TargetScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::convert::Into::into(is_dump),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe {
-            __BattleCalculator_TargetScope_unity2_raw::dispose(self, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_HitSkill_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
-                "OnEnter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
-                    "OnEnter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_enter(
-        this: BattleCalculator_HitSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enter::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
-                "OnExit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
-                    "OnExit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_exit(
-        this: BattleCalculator_HitSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_exit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(
-        this: BattleCalculator_HitSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sort_key {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
-                "get_SortKey",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
-                    "get_SortKey",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sort_key(
-        this: BattleCalculator_HitSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sort_key::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_HitSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_HitSkillMethods: IBattleCalculator_HitSkill {
-    #[doc = "`OnEnter()` overload"]
-    fn on_enter(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_HitSkill_unity2_raw::on_enter(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnExit()` overload"]
-    fn on_exit(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_HitSkill_unity2_raw::on_exit(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_HitSkill_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_SortKey()` overload"]
-    fn get_sort_key(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_HitSkill_unity2_raw::get_sort_key(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_HitSkill_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl<__T: IBattleCalculator_HitSkill> IBattleCalculator_HitSkillMethods for __T {}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_HitSkill {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_HitSkill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_HitSkillMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_Order_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_Order as ::unity2::ClassIdentity>::class(),
-                "OnEnter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_Order as ::unity2::ClassIdentity>::NAME,
-                    "OnEnter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_enter(
-        this: BattleCalculator_Order,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_Order, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enter::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_Order as ::unity2::ClassIdentity>::class(),
-                "OnExit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_Order as ::unity2::ClassIdentity>::NAME,
-                    "OnExit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_exit(
-        this: BattleCalculator_Order,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_Order, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_exit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_Order as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_Order as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_Order,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_Order, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_OrderMethods: IBattleCalculator_Order {
-    #[doc = "`OnEnter()` overload"]
-    fn on_enter(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator_Order as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_Order_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnExit()` overload"]
-    fn on_exit(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator_Order as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_Order_unity2_raw::on_exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator_Order as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_Order_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl<__T: IBattleCalculator_Order> IBattleCalculator_OrderMethods for __T {}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_Order {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_Order),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_OrderMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator,
-        info: crate::app::battleinfo::BattleInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfo::BattleInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_mode(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlecalculator::BattleCalculator_Mode {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlecalculator::BattleCalculator_Mode = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mode::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcBattle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcBattle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_battle(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlecalculator::BattleCalculator {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlecalculator::BattleCalculator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_battle::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dump {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "Dump",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "Dump",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dump(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dump::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_add_skill_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "TryAddSkillScene",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "TryAddSkillScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_add_skill_scene(
-        this: BattleCalculator,
-        kind: crate::app::battlescene::BattleScene_Kind,
-        side: crate::app::battleside::BattleSide_Type,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battlescene::BattleScene_Kind,
-            crate::app::battleside::BattleSide_Type,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_add_skill_scene::get_offset() as isize),
-        );
-        inner(this, kind, side, skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_engage_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcEngageStart",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcEngageStart",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_engage_start(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_engage_start::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_invoke_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcInvokeSkill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcInvokeSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_invoke_skill(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_invoke_skill::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_engage_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcEngageEnd",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcEngageEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_engage_end(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_engage_end::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_detail_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcDetailSkill",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcDetailSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_detail_skill(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_detail_skill::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcBranch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcBranch",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_branch(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_branch::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_late_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsLateOrder",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsLateOrder",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_late_order(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_late_order::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_separator_total_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "SeparatorTotalOrder",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "SeparatorTotalOrder",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn separator_total_order(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_separator_total_order::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_normal_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcNormalBattle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcNormalBattle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_normal_battle(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_normal_battle::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcDestroy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_destroy(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_destroy::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_skill_scene_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddSkillSceneResult",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddSkillSceneResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_skill_scene_result(
-        this: BattleCalculator,
-        result: crate::app::battlescene::BattleScene_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battlescene::BattleScene_Result,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_skill_scene_result::get_offset() as isize),
-        );
-        inner(this, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_destroy_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcDestroyAttack",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcDestroyAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_destroy_attack(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_destroy_attack::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_warmup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcWarmup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcWarmup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_warmup(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlecalculator::BattleCalculator {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlecalculator::BattleCalculator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_warmup::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_simulation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcSimulation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcSimulation",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_simulation(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlecalculator::BattleCalculator {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlecalculator::BattleCalculator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_simulation::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_job_intro {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcJobIntro",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcJobIntro",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_job_intro(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlecalculator::BattleCalculator {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlecalculator::BattleCalculator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_job_intro::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_class_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcClassChange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcClassChange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_class_change(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlecalculator::BattleCalculator {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlecalculator::BattleCalculator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_class_change::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetHp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetHp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_hp(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hp::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_status {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetStatus",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetStatus",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_status(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleinfoside::BattleInfoSide_BitFieldStatus {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::battleinfoside::BattleInfoSide_BitFieldStatus = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_status::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "get_Info",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "get_Info",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_info(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleinfo::BattleInfo {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleinfo::BattleInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_info::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_scene_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "get_SceneList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "get_SceneList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_scene_list(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescenelist::BattleSceneList {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescenelist::BattleSceneList = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scene_list::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_active_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type(),
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcActiveSkill",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcActiveSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_active_skill(
-        this: BattleCalculator,
-        timing: crate::app::skilldata::SkillData_Timings,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData_Timings,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_active_skill::get_offset() as isize),
-        );
-        inner(this, timing, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CanAttack",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CanAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_attack(
-        this: BattleCalculator,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_attack::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_skill_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddSkillScene",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddSkillScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_skill_scene(
-        this: BattleCalculator,
-        skill: crate::app::skilldata::SkillData,
-        action: crate::app::skilldata::SkillData_Actions,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData,
-            crate::app::skilldata::SkillData_Actions,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_skill_scene::get_offset() as isize),
-        );
-        inner(this, skill, action, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_breaked {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetBreaked",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetBreaked",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_breaked(
-        this: BattleCalculator,
-        target: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_breaked::get_offset() as isize),
-        );
-        inner(this, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_give_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddGiveScene",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddGiveScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_give_scene(
-        this: BattleCalculator,
-        give: crate::app::skilldata::SkillData,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        target: crate::app::battleinfoside::BattleInfoSide,
-        kind: crate::app::battlescene::BattleScene_Kind,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battlescene::BattleScene_Kind,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_give_scene::get_offset() as isize),
-        );
-        inner(this, give, current, target, kind, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_ignore_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "FindIgnoreSkill",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "FindIgnoreSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn find_ignore_skill(
-        target: crate::app::battleinfoside::BattleInfoSide,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_ignore_skill::get_offset() as isize),
-        );
-        inner(target, skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_give_scene_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddGiveScene",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddGiveScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_give_scene_2(
-        this: BattleCalculator,
-        give: crate::app::skilldata::SkillData,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        target: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_give_scene_2::get_offset() as isize),
-        );
-        inner(this, give, current, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_gives_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddGivesScene",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddGivesScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_gives_scene(
-        this: BattleCalculator,
-        skill: crate::app::skilldata::SkillData,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        target: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_gives_scene::get_offset() as isize),
-        );
-        inner(this, skill, current, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_gives_scene_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddGivesScene",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddGivesScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_gives_scene_2(
-        this: BattleCalculator,
-        skill: crate::app::skilldata::SkillData,
-        action: crate::app::skilldata::SkillData_Actions,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData,
-            crate::app::skilldata::SkillData_Actions,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_gives_scene_2::get_offset() as isize),
-        );
-        inner(this, skill, action, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_hit_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcHitSkill",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcHitSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_hit_skill(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        unit_item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_hit_skill::get_offset() as isize),
-        );
-        inner(this, current, unit_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_active_skill_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcActiveSkill",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcActiveSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_active_skill_2(
-        this: BattleCalculator,
-        timing: crate::app::skilldata::SkillData_Timings,
-        action: crate::app::skilldata::SkillData_Actions,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData_Timings,
-            crate::app::skilldata::SkillData_Actions,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_active_skill_2::get_offset() as isize),
-        );
-        inner(this, timing, action, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_oreder_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CanOrederSkill",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CanOrederSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_oreder_skill(
-        this: BattleCalculator,
-        skill: crate::app::skilldata::SkillData,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_oreder_skill::get_offset() as isize),
-        );
-        inner(this, skill, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_active_skill_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcActiveSkill",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcActiveSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_active_skill_3(
-        this: BattleCalculator,
-        skill: crate::app::skilldata::SkillData,
-        action: crate::app::skilldata::SkillData_Actions,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::skilldata::SkillData,
-            crate::app::skilldata::SkillData_Actions,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_active_skill_3::get_offset() as isize),
-        );
-        inner(this, skill, action, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_hit_skill_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcHitSkill",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcHitSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_hit_skill_2(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_hit_skill_2::get_offset() as isize),
-        );
-        inner(this, current, reverse, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_hit_skill_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcHitSkill",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcHitSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_hit_skill_3(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        action: crate::app::skilldata::SkillData_Actions,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::skilldata::SkillData_Actions,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_hit_skill_3::get_offset() as isize),
-        );
-        inner(this, current, action, skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_result_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcResultSkill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcResultSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_result_skill(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_result_skill::get_offset() as isize),
-        );
-        inner(this, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_result_skill_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcResultSkill",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcResultSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_result_skill_2(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_result_skill_2::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_debug_indent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddDebugIndent",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddDebugIndent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_debug_indent(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_debug_indent::get_offset() as isize),
-            );
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dec_debug_indent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "DecDebugIndent",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "DecDebugIndent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dec_debug_indent(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dec_debug_indent::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_chain_attack_sides {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcChainAttackSides",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcChainAttackSides",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_chain_attack_sides(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::battleinfoside::BattleInfoSide,
-    > {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::battleinfoside::BattleInfoSide,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_chain_attack_sides::get_offset() as isize),
-        );
-        inner(this, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_chain_guard_side {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcChainGuardSide",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcChainGuardSide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_chain_guard_side(
-        this: BattleCalculator,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleside::BattleSide_Type {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleside::BattleSide_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_chain_guard_side::get_offset() as isize),
-        );
-        inner(this, reverse, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_chain_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CanChainAttack",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CanChainAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_chain_attack(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_chain_attack::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_chain_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcChainAttack",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcChainAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_chain_attack(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_chain_attack::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_orders {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlecalculator :: BattleCalculator_OrderList as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcOrders",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcOrders",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_orders(
-        this: BattleCalculator,
-        orders: crate::app::battlecalculator::BattleCalculator_OrderList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battlecalculator::BattleCalculator_OrderList,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_orders::get_offset() as isize),
-        );
-        inner(this, orders, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_interrupt_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcInterruptOrder",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcInterruptOrder",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_interrupt_order(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_interrupt_order::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_interrupt {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcInterrupt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcInterrupt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_interrupt(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_interrupt::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_engage_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddEngageCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddEngageCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_engage_count(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_engage_count::get_offset() as isize),
-        );
-        inner(this, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_engage_count_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "AddEngageCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "AddEngageCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_engage_count_2(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_engage_count_2::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_orders_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcOrders",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcOrders",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_orders_2(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_orders_2::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_assist_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcAssistSkill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcAssistSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_assist_skill(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_assist_skill::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcOrder",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcOrder",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_order(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_order::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_action {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcAction",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcAction",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_action(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_action::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_command_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetCommandValue",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetCommandValue",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_command_value(
-        key: ::unity2::Il2CppString,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_command_value::get_offset() as isize),
-        );
-        inner(key, current, reverse, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_chain_guard_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetChainGuardDamage",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetChainGuardDamage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_chain_guard_damage(
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_chain_guard_damage::get_offset() as isize),
-        );
-        inner(current, reverse, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_random_check_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "RandomCheckHit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "RandomCheckHit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn random_check_hit(
-        this: BattleCalculator,
-        ratio: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_random_check_hit::get_offset() as isize),
-            );
-        inner(this, ratio, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcAttack",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_attack(
-        this: BattleCalculator,
-        side_type: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_attack::get_offset() as isize),
-        );
-        inner(this, side_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_enter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CanEnter",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CanEnter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_enter(
-        this: BattleCalculator,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_enter::get_offset() as isize),
-        );
-        inner(this, side, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_blow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CanBlow",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CanBlow",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_blow(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_blow::get_offset() as isize),
-        );
-        inner(this, current, reverse, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_attack_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcAttackHit",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcAttackHit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_attack_hit(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        critical: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_attack_hit::get_offset() as isize),
-        );
-        inner(this, current, reverse, critical, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_add_dead_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "TryAddDeadScene",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "TryAddDeadScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_add_dead_scene(
-        this: BattleCalculator,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        result: crate::app::battlescene::BattleScene_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battlescene::BattleScene_Result,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_add_dead_scene::get_offset() as isize),
-        );
-        inner(this, side, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_attack_post {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcAttackPost",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcAttackPost",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_attack_post(
-        this: BattleCalculator,
-        side_type: crate::app::battleside::BattleSide_Type,
-        damage: i32,
-        result: crate::app::battlescene::BattleScene_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            i32,
-            crate::app::battlescene::BattleScene_Result,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_attack_post::get_offset() as isize),
-        );
-        inner(this, side_type, damage, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_scene_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "get_SceneResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "get_SceneResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_scene_result(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scene_result::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_scene_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "set_SceneResult",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "set_SceneResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_scene_result(
-        this: BattleCalculator,
-        value: crate::app::battlescene::BattleScene_Result,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battlescene::BattleScene_Result,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scene_result::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_rod {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcRod",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcRod",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_rod(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_rod::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_rod_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcRodOrder",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcRodOrder",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_rod_order(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_rod_order::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_rod_action {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcRodAction",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcRodAction",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_rod_action(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_rod_action::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_rod_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcRodAttack",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcRodAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_rod_attack(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_rod_attack::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_dance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcDance",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcDance",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_dance(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_dance::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_dance_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcDanceOrder",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcDanceOrder",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_dance_order(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_dance_order::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_dance_action {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcDanceAction",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcDanceAction",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_dance_action(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_dance_action::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_dance_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcDanceAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcDanceAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_dance_attack(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_dance_attack::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_enchant {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcEnchant",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcEnchant",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_enchant(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_enchant::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_rod_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcRodHit",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcRodHit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_rod_hit(
-        this: BattleCalculator,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        unit_item: crate::app::unititem::UnitItem,
-        item: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::unititem::UnitItem,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_rod_hit::get_offset() as isize),
-        );
-        inner(
-            this,
-            current,
-            reverse,
-            unit_item,
-            item,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_result(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_result::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_battle_record {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CanBattleRecord",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CanBattleRecord",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_battle_record(
-        this: BattleCalculator,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_battle_record::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_record {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcRecord",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcRecord",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_record(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_record::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_side {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetSide",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetSide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_side(
-        this: BattleCalculator,
-        force: crate::app::force::Force_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_side::get_offset() as isize),
-        );
-        inner(this, force, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_achieve {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcAchieve",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcAchieve",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_achieve(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_achieve::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_expend_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcExpendCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcExpendCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_expend_count(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_expend_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_chain_attack_dead {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsChainAttackDead",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsChainAttackDead",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_chain_attack_dead(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_chain_attack_dead::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_exp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlecalculator :: BattleCalculator_FuncExp1 as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcExp",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcExp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_exp(
-        this: BattleCalculator,
-        func: crate::app::battlecalculator::BattleCalculator_FuncExp1,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battlecalculator::BattleCalculator_FuncExp1,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_exp::get_offset() as isize),
-        );
-        inner(this, func, current, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_exp_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battlecalculator :: BattleCalculator_FuncExp2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type () , < crate :: app :: battleinfoside :: BattleInfoSide as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcExp",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcExp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_exp_2(
-        this: BattleCalculator,
-        func: crate::app::battlecalculator::BattleCalculator_FuncExp2,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battlecalculator::BattleCalculator_FuncExp2,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_exp_2::get_offset() as isize),
-        );
-        inner(this, func, current, reverse, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_result_gain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcResultGain",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcResultGain",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_result_gain(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_result_gain::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_exp_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CalcExpCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CalcExpCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_exp_count(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_exp_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_hp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CommitHP",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CommitHP",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn commit_hp(
-        this: BattleCalculator,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        hp: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_commit_hp::get_offset() as isize),
-        );
-        inner(this, side, hp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_engage_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CommitEngageCount",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CommitEngageCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn commit_engage_count(
-        this: BattleCalculator,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_commit_engage_count::get_offset() as isize),
-        );
-        inner(this, side, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "UpdateScene",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "UpdateScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_scene(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_scene::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_scene_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "UpdateScene",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "UpdateScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_scene_2(
-        this: BattleCalculator,
-        index: i32,
-        is_engae_count: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_scene_2::get_offset() as isize),
-            );
-        inner(this, index, is_engae_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_scene_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlescene::BattleScene as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "UpdateScene",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "UpdateScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_scene_3(
-        this: BattleCalculator,
-        scene: crate::app::battlescene::BattleScene,
-        is_engae_count: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battlescene::BattleScene,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_scene_3::get_offset() as isize),
-        );
-        inner(this, scene, is_engae_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CommitUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CommitUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn commit_unit(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_unit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CommitSkill",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CommitSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn commit_skill(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_skill::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CommitDestroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CommitDestroy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn commit_destroy(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_destroy::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CommitBattle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CommitBattle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn commit_battle(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit_battle::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_history_commit_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "MapHistoryCommitSkill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryCommitSkill",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn map_history_commit_skill(
-        this: BattleCalculator,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_commit_skill::get_offset() as isize),
-        );
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_training {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsTraining",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsTraining",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_training(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_training::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_rod {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsRod",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsRod",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_rod(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_rod::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_unit(
-        this: BattleCalculator,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit::get_offset() as isize),
-        );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetUnit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_unit_2(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_2::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_side_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetSide",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetSide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_side_2(
-        this: BattleCalculator,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_side_2::get_offset() as isize),
-        );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_side_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetSide",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetSide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_side_3(
-        this: BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_side_3::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dead_side {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetDeadSide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetDeadSide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_dead_side(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleside::BattleSide_Type {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleside::BattleSide_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dead_side::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dead_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetDeadUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetDeadUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_dead_unit(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dead_unit::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_expend_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetExpendCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetExpendCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_expend_count(
-        this: BattleCalculator,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_expend_count::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_sky_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "CanSkyBattle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "CanSkyBattle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_sky_battle(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_sky_battle::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_multi_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsMultiBattle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsMultiBattle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_multi_battle(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_multi_battle::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_cannon_battle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsCannonBattle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsCannonBattle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_cannon_battle(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_cannon_battle::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_fire_cannon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsFireCannon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsFireCannon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_fire_cannon(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_fire_cannon::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_full_bullet {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsFullBullet",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsFullBullet",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_full_bullet(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_full_bullet::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_last_boss_die {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsLastBossDie",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsLastBossDie",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_last_boss_die(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_last_boss_die::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_battle_grow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsBattleGrow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsBattleGrow",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_battle_grow(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_battle_grow::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_combat_die {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsCombatDie",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsCombatDie",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_combat_die(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_combat_die::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_combat_grow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "IsCombatGrow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "IsCombatGrow",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_combat_grow(
-        this: BattleCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_combat_grow::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_asset_conditions {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                "GetAssetConditions",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetAssetConditions",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_asset_conditions(
-        this: BattleCalculator,
-        side_type: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_asset_conditions::get_offset() as isize),
-        );
-        inner(this, side_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator {
-    #[doc = "`FindIgnoreSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData)` overload"]
-    pub fn find_ignore_skill(
-        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> crate::app::skilldata::SkillData {
-        unsafe {
-            __BattleCalculator_unity2_raw::find_ignore_skill(
-                ::core::convert::Into::into(target),
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddDebugIndent(::unity2::Il2CppString)` overload"]
-    pub fn add_debug_indent(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __BattleCalculator_unity2_raw::add_debug_indent(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DecDebugIndent()` overload"]
-    pub fn dec_debug_indent() -> () {
-        unsafe { __BattleCalculator_unity2_raw::dec_debug_indent(::core::option::Option::None) }
-    }
-    #[doc = "`GetCommandValue(::unity2::Il2CppString, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    pub fn get_command_value(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> i32 {
-        unsafe {
-            __BattleCalculator_unity2_raw::get_command_value(
-                ::core::convert::Into::into(key),
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetChainGuardDamage(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    pub fn get_chain_guard_damage(
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> i32 {
-        unsafe {
-            __BattleCalculator_unity2_raw::get_chain_guard_damage(
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __BattleCalculator_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculatorMethods: IBattleCalculator {
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"]
-    fn ctor(self, info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetMode()` overload"]
-    fn get_mode(self) -> crate::app::battlecalculator::BattleCalculator_Mode {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcBattle()` overload"]
-    fn calc_battle(self) -> crate::app::battlecalculator::BattleCalculator {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_battle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dump()` overload"]
-    fn dump(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::dump(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryAddSkillScene(crate::app::battlescene::BattleScene_Kind, crate::app::battleside::BattleSide_Type, crate::app::skilldata::SkillData)` overload"]
-    fn try_add_skill_scene(
-        self,
-        kind: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::try_add_skill_scene(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcEngageStart(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_engage_start(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_engage_start(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcInvokeSkill(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_invoke_skill(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_invoke_skill(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcEngageEnd(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_engage_end(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_engage_end(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcDetailSkill()` overload"]
-    fn calc_detail_skill(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_detail_skill(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcBranch()` overload"]
-    fn calc_branch(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_branch(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLateOrder()` overload"]
-    fn is_late_order(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_late_order(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SeparatorTotalOrder()` overload"]
-    fn separator_total_order(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::separator_total_order(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcNormalBattle()` overload"]
-    fn calc_normal_battle(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_normal_battle(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcDestroy()` overload"]
-    fn calc_destroy(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddSkillSceneResult(crate::app::battlescene::BattleScene_Result)` overload"]
-    fn add_skill_scene_result(
-        self,
-        result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::add_skill_scene_result(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcDestroyAttack(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_destroy_attack(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_destroy_attack(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcWarmup()` overload"]
-    fn calc_warmup(self) -> crate::app::battlecalculator::BattleCalculator {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_warmup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcSimulation()` overload"]
-    fn calc_simulation(self) -> crate::app::battlecalculator::BattleCalculator {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_simulation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcJobIntro()` overload"]
-    fn calc_job_intro(self) -> crate::app::battlecalculator::BattleCalculator {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_job_intro(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcClassChange()` overload"]
-    fn calc_class_change(self) -> crate::app::battlecalculator::BattleCalculator {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_class_change(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetHp(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_hp(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_hp(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetStatus(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_status(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> crate::app::battleinfoside::BattleInfoSide_BitFieldStatus {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_status(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Info()` overload"]
-    fn get_info(self) -> crate::app::battleinfo::BattleInfo {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_SceneList()` overload"]
-    fn get_scene_list(self) -> crate::app::battlescenelist::BattleSceneList {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_scene_list(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcActiveSkill(crate::app::skilldata::SkillData_Timings, crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_active_skill(
-        self,
-        timing: impl ::core::convert::Into<crate::app::skilldata::SkillData_Timings>,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_active_skill(
-                __receiver,
-                ::core::convert::Into::into(timing),
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanAttack(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn can_attack(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::can_attack(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddSkillScene(crate::app::skilldata::SkillData, crate::app::skilldata::SkillData_Actions, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn add_skill_scene(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::add_skill_scene(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetBreaked(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn get_breaked(
-        self,
-        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_breaked(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddGiveScene(crate::app::skilldata::SkillData, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, crate::app::battlescene::BattleScene_Kind)` overload"]
-    fn add_give_scene(
-        self,
-        give: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        kind: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::add_give_scene(
-                __receiver,
-                ::core::convert::Into::into(give),
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(target),
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddGiveScene(crate::app::skilldata::SkillData, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn add_give_scene_2(
-        self,
-        give: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::add_give_scene_2(
-                __receiver,
-                ::core::convert::Into::into(give),
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddGivesScene(crate::app::skilldata::SkillData, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn add_gives_scene(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::add_gives_scene(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddGivesScene(crate::app::skilldata::SkillData, crate::app::skilldata::SkillData_Actions, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn add_gives_scene_2(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::add_gives_scene_2(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcHitSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::unititem::UnitItem)` overload"]
-    fn calc_hit_skill(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_hit_skill(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(unit_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcActiveSkill(crate::app::skilldata::SkillData_Timings, crate::app::skilldata::SkillData_Actions, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calc_active_skill_2(
-        self,
-        timing: impl ::core::convert::Into<crate::app::skilldata::SkillData_Timings>,
-        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_active_skill_2(
-                __receiver,
-                ::core::convert::Into::into(timing),
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanOrederSkill(crate::app::skilldata::SkillData, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn can_oreder_skill(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::can_oreder_skill(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcActiveSkill(crate::app::skilldata::SkillData, crate::app::skilldata::SkillData_Actions, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calc_active_skill_3(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_active_skill_3(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcHitSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calc_hit_skill_2(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_hit_skill_2(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcHitSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData_Actions, crate::app::skilldata::SkillData)` overload"]
-    fn calc_hit_skill_3(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_hit_skill_3(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcResultSkill(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calc_result_skill(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_result_skill(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcResultSkill()` overload"]
-    fn calc_result_skill_2(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_result_skill_2(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcChainAttackSides(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calc_chain_attack_sides(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::battleinfoside::BattleInfoSide,
-    > {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_chain_attack_sides(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcChainGuardSide(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calc_chain_guard_side(
-        self,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> crate::app::battleside::BattleSide_Type {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_chain_guard_side(
-                __receiver,
-                ::core::convert::Into::into(reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanChainAttack(crate::app::battleside::BattleSide_Type)` overload"]
-    fn can_chain_attack(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::can_chain_attack(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcChainAttack(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_chain_attack(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_chain_attack(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcOrders(crate::app::battlecalculator::BattleCalculator_OrderList)` overload"]
-    fn calc_orders(
-        self,
-        orders: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator_OrderList>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_orders(
-                __receiver,
-                ::core::convert::Into::into(orders),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcInterruptOrder(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_interrupt_order(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_interrupt_order(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcInterrupt(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_interrupt(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_interrupt(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddEngageCount(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn add_engage_count(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::add_engage_count(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddEngageCount(crate::app::battleside::BattleSide_Type)` overload"]
-    fn add_engage_count_2(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::add_engage_count_2(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcOrders(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_orders_2(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_orders_2(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcAssistSkill(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_assist_skill(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_assist_skill(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcOrder(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_order(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_order(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcAction(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_action(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_action(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RandomCheckHit(i32)` overload"]
-    fn random_check_hit(self, ratio: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::random_check_hit(
-                __receiver,
-                ::core::convert::Into::into(ratio),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcAttack(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_attack(
-        self,
-        side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_attack(
-                __receiver,
-                ::core::convert::Into::into(side_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanEnter(crate::app::battleinfoside::BattleInfoSide, i32, i32)` overload"]
-    fn can_enter(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::can_enter(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanBlow(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn can_blow(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::can_blow(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcAttackHit(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, *muti32)` overload"]
-    fn calc_attack_hit(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> (crate::app::battlescene::BattleScene_Result, i32) {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __BattleCalculator_unity2_raw::calc_attack_hit(
-                    __receiver,
-                    ::core::convert::Into::into(current),
-                    ::core::convert::Into::into(reverse),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`TryAddDeadScene(crate::app::battleinfoside::BattleInfoSide, crate::app::battlescene::BattleScene_Result)` overload"]
-    fn try_add_dead_scene(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::try_add_dead_scene(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcAttackPost(crate::app::battleside::BattleSide_Type, i32, crate::app::battlescene::BattleScene_Result)` overload"]
-    fn calc_attack_post(
-        self,
-        side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-        damage: impl ::core::convert::Into<i32>,
-        result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_attack_post(
-                __receiver,
-                ::core::convert::Into::into(side_type),
-                ::core::convert::Into::into(damage),
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_SceneResult()` overload"]
-    fn get_scene_result(self) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_scene_result(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_SceneResult(crate::app::battlescene::BattleScene_Result)` overload"]
-    fn set_scene_result(
-        self,
-        value: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::set_scene_result(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcRod()` overload"]
-    fn calc_rod(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_rod(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcRodOrder(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_rod_order(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_rod_order(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcRodAction(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_rod_action(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_rod_action(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcRodAttack(crate::app::battleside::BattleSide_Type)` overload"]
-    fn calc_rod_attack(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_rod_attack(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcDance()` overload"]
-    fn calc_dance(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_dance(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcDanceOrder()` overload"]
-    fn calc_dance_order(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_dance_order(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcDanceAction()` overload"]
-    fn calc_dance_action(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_dance_action(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcDanceAttack()` overload"]
-    fn calc_dance_attack(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_dance_attack(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcEnchant()` overload"]
-    fn calc_enchant(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_enchant(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcRodHit(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, crate::app::unititem::UnitItem, crate::app::itemdata::ItemData)` overload"]
-    fn calc_rod_hit(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_rod_hit(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::convert::Into::into(unit_item),
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcResult()` overload"]
-    fn calc_result(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CanBattleRecord(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn can_battle_record(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::can_battle_record(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcRecord()` overload"]
-    fn calc_record(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_record(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSide(crate::app::force::Force_Type)` overload"]
-    fn get_side(
-        self,
-        force: impl ::core::convert::Into<crate::app::force::Force_Type>,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_side(
-                __receiver,
-                ::core::convert::Into::into(force),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcAchieve()` overload"]
-    fn calc_achieve(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_achieve(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcExpendCount()` overload"]
-    fn calc_expend_count(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_expend_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsChainAttackDead()` overload"]
-    fn is_chain_attack_dead(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_chain_attack_dead(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcExp(crate::app::battlecalculator::BattleCalculator_FuncExp1, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calc_exp(
-        self,
-        func: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator_FuncExp1>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_exp(
-                __receiver,
-                ::core::convert::Into::into(func),
-                ::core::convert::Into::into(current),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcExp(crate::app::battlecalculator::BattleCalculator_FuncExp2, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calc_exp_2(
-        self,
-        func: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator_FuncExp2>,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_exp_2(
-                __receiver,
-                ::core::convert::Into::into(func),
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcResultGain()` overload"]
-    fn calc_result_gain(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_result_gain(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcExpCount()` overload"]
-    fn calc_exp_count(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::calc_exp_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CommitHP(crate::app::battleinfoside::BattleInfoSide, i32)` overload"]
-    fn commit_hp(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        hp: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::commit_hp(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(hp),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CommitEngageCount(crate::app::battleinfoside::BattleInfoSide, i32)` overload"]
-    fn commit_engage_count(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::commit_engage_count(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateScene()` overload"]
-    fn update_scene(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::update_scene(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateScene(i32, bool)` overload"]
-    fn update_scene_2(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        is_engae_count: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::update_scene_2(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(is_engae_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateScene(crate::app::battlescene::BattleScene, bool)` overload"]
-    fn update_scene_3(
-        self,
-        scene: impl ::core::convert::Into<crate::app::battlescene::BattleScene>,
-        is_engae_count: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::update_scene_3(
-                __receiver,
-                ::core::convert::Into::into(scene),
-                ::core::convert::Into::into(is_engae_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CommitUnit()` overload"]
-    fn commit_unit(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::commit_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CommitSkill()` overload"]
-    fn commit_skill(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::commit_skill(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CommitDestroy()` overload"]
-    fn commit_destroy(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::commit_destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CommitBattle()` overload"]
-    fn commit_battle(self) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::commit_battle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MapHistoryCommitSkill(crate::app::unit::Unit)` overload"]
-    fn map_history_commit_skill(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::map_history_commit_skill(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsTraining()` overload"]
-    fn is_training(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_training(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsRod()` overload"]
-    fn is_rod(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_rod(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnit(i32)` overload"]
-    fn get_unit(self, index: impl ::core::convert::Into<i32>) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_unit(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetUnit(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_unit_2(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_unit_2(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSide(i32)` overload"]
-    fn get_side_2(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_side_2(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_side_3(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_side_3(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetDeadSide()` overload"]
-    fn get_dead_side(self) -> crate::app::battleside::BattleSide_Type {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_dead_side(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDeadUnit()` overload"]
-    fn get_dead_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_dead_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetExpendCount(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn get_expend_count(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_expend_count(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanSkyBattle()` overload"]
-    fn can_sky_battle(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::can_sky_battle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsMultiBattle()` overload"]
-    fn is_multi_battle(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_multi_battle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCannonBattle()` overload"]
-    fn is_cannon_battle(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_cannon_battle(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsFireCannon()` overload"]
-    fn is_fire_cannon(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_fire_cannon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsFullBullet()` overload"]
-    fn is_full_bullet(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_full_bullet(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLastBossDie()` overload"]
-    fn is_last_boss_die(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_last_boss_die(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsBattleGrow()` overload"]
-    fn is_battle_grow(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_battle_grow(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCombatDie()` overload"]
-    fn is_combat_die(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_combat_die(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsCombatGrow()` overload"]
-    fn is_combat_grow(self) -> bool {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::is_combat_grow(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetAssetConditions(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_asset_conditions(
-        self,
-        side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleCalculator_unity2_raw::get_asset_conditions(
-                __receiver,
-                ::core::convert::Into::into(side_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl<__T: IBattleCalculator> IBattleCalculatorMethods for __T {}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator {
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` — overload selector"]
-    pub fn new(info: crate::app::battleinfo::BattleInfo) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculatorMethods>::ctor(this, info);
-        this
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_SeparatorScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlecalculator::BattleCalculator as ::unity2::IlType>::il_type(),
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-                <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
-                <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_SeparatorScope,
-        calc: crate::app::battlecalculator::BattleCalculator,
-        side: crate::app::battleside::BattleSide_Type,
-        push: crate::app::battlescene::BattleScene_Kind,
-        pop: crate::app::battlescene::BattleScene_Kind,
-        is_dump: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator_SeparatorScope,
-            crate::app::battlecalculator::BattleCalculator,
-            crate::app::battleside::BattleSide_Type,
-            crate::app::battlescene::BattleScene_Kind,
-            crate::app::battlescene::BattleScene_Kind,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, calc, side, push, pop, is_dump, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: BattleCalculator_SeparatorScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_SeparatorScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_side {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::class(),
-                "GetSide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::NAME,
-                    "GetSide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_side(
-        this: BattleCalculator_SeparatorScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        let inner: extern "C" fn(
-            BattleCalculator_SeparatorScope,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_side::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_side_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::class(),
-                "GetSide",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::NAME,
-                    "GetSide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_side_2(
-        this: BattleCalculator_SeparatorScope,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        let inner: extern "C" fn(
-            BattleCalculator_SeparatorScope,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_side_2::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_SeparatorScope {
-    #[doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::battleside::BattleSide_Type, crate::app::battlescene::BattleScene_Kind, crate::app::battlescene::BattleScene_Kind, bool)` overload"]
-    pub fn ctor(
-        self,
-        calc: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator>,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-        push: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
-        pop: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
-        is_dump: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __BattleCalculator_SeparatorScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(calc),
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(push),
-                ::core::convert::Into::into(pop),
-                ::core::convert::Into::into(is_dump),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe {
-            __BattleCalculator_SeparatorScope_unity2_raw::dispose(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSide()` overload"]
-    pub fn get_side(self) -> crate::app::battleinfoside::BattleInfoSide {
-        unsafe {
-            __BattleCalculator_SeparatorScope_unity2_raw::get_side(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
-    pub fn get_side_2(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        unsafe {
-            __BattleCalculator_SeparatorScope_unity2_raw::get_side_2(
-                self,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_FuncExp2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_FuncExp2 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_FuncExp2 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_FuncExp2,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator_FuncExp2,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_FuncExp2 as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_FuncExp2 as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: BattleCalculator_FuncExp2,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            BattleCalculator_FuncExp2,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, current, reverse, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_FuncExp2Methods: IBattleCalculator_FuncExp2 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_FuncExp2 as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_FuncExp2_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn invoke(
-        self,
-        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_FuncExp2 as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_FuncExp2_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(current),
-                ::core::convert::Into::into(reverse),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl<__T: IBattleCalculator_FuncExp2> IBattleCalculator_FuncExp2Methods for __T {}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FuncExp2 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_FuncExp2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_FuncExp2Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_FlagField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlecalculator::BattleCalculator_Flags as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_FlagField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_FlagField as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: BattleCalculator_FlagField,
-        value: crate::app::battlecalculator::BattleCalculator_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            BattleCalculator_FlagField,
-            crate::app::battlecalculator::BattleCalculator_Flags,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_FlagField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_FlagField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_FlagField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_FlagFieldMethods: IBattleCalculator_FlagField {
-    #[doc = "`ToInt(crate::app::battlecalculator::BattleCalculator_Flags)` overload"]
-    fn to_int(
-        self,
-        value: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator_Flags>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_FlagField_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_FlagField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl<__T: IBattleCalculator_FlagField> IBattleCalculator_FlagFieldMethods for __T {}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_FlagFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_OrderList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_OrderList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_OrderList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_OrderList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_OrderList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_OrderList as ::unity2::ClassIdentity>::class(),
-                "TryAdd",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_OrderList as ::unity2::ClassIdentity>::NAME,
-                    "TryAdd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_add(
-        this: BattleCalculator_OrderList,
-        info: crate::app::battleinfo::BattleInfo,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator_OrderList,
-            crate::app::battleinfo::BattleInfo,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_add::get_offset() as isize),
-        );
-        inner(this, info, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_swap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_OrderList as ::unity2::ClassIdentity>::class(),
-                "CanSwap",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_OrderList as ::unity2::ClassIdentity>::NAME,
-                    "CanSwap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_swap(
-        this: BattleCalculator_OrderList,
-        side: crate::app::battleside::BattleSide_Type,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleCalculator_OrderList,
-            crate::app::battleside::BattleSide_Type,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_swap::get_offset() as isize),
-        );
-        inner(this, side, index, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-pub trait IBattleCalculator_OrderListMethods: IBattleCalculator_OrderList {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_OrderList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_OrderList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryAdd(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type)` overload"]
-    fn try_add(
-        self,
-        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_OrderList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_OrderList_unity2_raw::try_add(
-                __receiver,
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanSwap(crate::app::battleside::BattleSide_Type, i32)` overload"]
-    fn can_swap(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <BattleCalculator_OrderList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_OrderList_unity2_raw::can_swap(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl<__T: IBattleCalculator_OrderList> IBattleCalculator_OrderListMethods for __T {}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_OrderList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_OrderList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_OrderListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleCalculator_DetailScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_DetailScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_DetailScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleCalculator_DetailScope,
-        info: crate::app::battleinfo::BattleInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleCalculator_DetailScope,
-            crate::app::battleinfo::BattleInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleCalculator_DetailScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_DetailScope as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: BattleCalculator_DetailScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleCalculator_DetailScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_DetailScope {
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"]
-    pub fn ctor(self, info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>) -> () {
-        unsafe {
-            __BattleCalculator_DetailScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe {
-            __BattleCalculator_DetailScope_unity2_raw::dispose(self, ::core::option::Option::None)
-        }
-    }
-}
 
 #[cfg(feature = "app-battlecalculator")]
 #[doc(hidden)]
@@ -9723,9 +374,7 @@ mod __BattleCalculator_HitSkillPool_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleCalculator_HitSkillPool as ::unity2::ClassIdentity>::class(),
@@ -9738,39 +387,27 @@ mod __BattleCalculator_HitSkillPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_HitSkillPool as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_HitSkillPool as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: BattleCalculator_HitSkillPool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: BattleCalculator_HitSkillPool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BattleCalculator_HitSkillPool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type(),
@@ -9787,18 +424,15 @@ mod __BattleCalculator_HitSkillPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleCalculator_HitSkillPool as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_HitSkillPool as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
@@ -9814,11 +448,7 @@ mod __BattleCalculator_HitSkillPool_unity2_raw {
             crate::app::skilldata::SkillData_Timings,
             crate::app::skilldata::SkillData_Actions,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, side, timing, action, __unity2_method_info)
     }
 }
@@ -9829,13 +459,8 @@ pub trait IBattleCalculator_HitSkillPoolMethods: IBattleCalculator_HitSkillPool 
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <BattleCalculator_HitSkillPool as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleCalculator_HitSkillPool_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BattleCalculator_HitSkillPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_HitSkillPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Add(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData_Timings, crate::app::skilldata::SkillData_Actions)` overload"]
@@ -9847,9 +472,7 @@ pub trait IBattleCalculator_HitSkillPoolMethods: IBattleCalculator_HitSkillPool 
     ) -> () {
         unsafe {
             let __receiver =
-                <BattleCalculator_HitSkillPool as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <BattleCalculator_HitSkillPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleCalculator_HitSkillPool_unity2_raw::add(
                 __receiver,
                 ::core::convert::Into::into(side),
@@ -9882,66 +505,7055 @@ impl BattleCalculator_HitSkillPool {
 
 #[cfg(feature = "app-battlecalculator")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_HitSkill_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
+                "OnEnter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
+                        "OnEnter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_enter(this: BattleCalculator_HitSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
+                "OnExit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
+                        "OnExit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_exit(this: BattleCalculator_HitSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_exit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: BattleCalculator_HitSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sort_key {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
+                "get_SortKey",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
+                        "get_SortKey",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sort_key(this: BattleCalculator_HitSkill, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_sort_key::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_HitSkill as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: BattleCalculator_HitSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_HitSkillMethods: IBattleCalculator_HitSkill {
+    #[doc = "`OnEnter()` overload"]
+    fn on_enter(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_HitSkill_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnExit()` overload"]
+    fn on_exit(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_HitSkill_unity2_raw::on_exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_HitSkill_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SortKey()` overload"]
+    fn get_sort_key(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_HitSkill_unity2_raw::get_sort_key(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_HitSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_HitSkill_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl<__T: IBattleCalculator_HitSkill> IBattleCalculator_HitSkillMethods for __T {}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_HitSkill {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_HitSkill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_HitSkillMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_TargetScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_TargetScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_TargetScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleCalculator_TargetScope,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        is_dump: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleCalculator_TargetScope,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, current, reverse, is_dump, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_TargetScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_TargetScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: BattleCalculator_TargetScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_TargetScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_TargetScope {
+    #[doc = "`.ctor(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, bool)` overload"]
+    pub fn ctor(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        is_dump: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __BattleCalculator_TargetScope_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::convert::Into::into(is_dump),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __BattleCalculator_TargetScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_DetailScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_DetailScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_DetailScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleCalculator_DetailScope,
+        info: crate::app::battleinfo::BattleInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator_DetailScope, crate::app::battleinfo::BattleInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_DetailScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_DetailScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: BattleCalculator_DetailScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_DetailScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_DetailScope {
+    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"]
+    pub fn ctor(self, info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>) -> () {
+        unsafe { __BattleCalculator_DetailScope_unity2_raw::ctor(self, ::core::convert::Into::into(info), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __BattleCalculator_DetailScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: BattleCalculator, info: crate::app::battleinfo::BattleInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfo::BattleInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_mode(
+        this: BattleCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlecalculator::BattleCalculator_Mode {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battlecalculator::BattleCalculator_Mode =
+            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_battle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcBattle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcBattle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_battle(
+        this: BattleCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlecalculator::BattleCalculator {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battlecalculator::BattleCalculator =
+            ::core::mem::transmute(__lookup_calc_battle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "Dump",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "Dump",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dump(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dump::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_skill_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
+                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "TryAddSkillScene",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "TryAddSkillScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_add_skill_scene(
+        this: BattleCalculator,
+        kind: crate::app::battlescene::BattleScene_Kind,
+        side: crate::app::battleside::BattleSide_Type,
+        skill: crate::app::skilldata::SkillData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battlescene::BattleScene_Kind,
+            crate::app::battleside::BattleSide_Type,
+            crate::app::skilldata::SkillData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_try_add_skill_scene::get_method_info().method_ptr);
+        inner(this, kind, side, skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_engage_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcEngageStart",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcEngageStart",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_engage_start(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_engage_start::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_invoke_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcInvokeSkill",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcInvokeSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_invoke_skill(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_invoke_skill::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_engage_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcEngageEnd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcEngageEnd",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_engage_end(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_engage_end::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_detail_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcDetailSkill",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcDetailSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_detail_skill(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_detail_skill::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_branch {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcBranch",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcBranch",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_branch(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_branch::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_late_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsLateOrder",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsLateOrder",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_late_order(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_late_order::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_separator_total_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "SeparatorTotalOrder",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "SeparatorTotalOrder",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn separator_total_order(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_separator_total_order::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_normal_battle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcNormalBattle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcNormalBattle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_normal_battle(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_normal_battle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcDestroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcDestroy",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_destroy(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_destroy::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_skill_scene_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddSkillSceneResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddSkillSceneResult",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_skill_scene_result(
+        this: BattleCalculator,
+        result: crate::app::battlescene::BattleScene_Result,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battlescene::BattleScene_Result, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_skill_scene_result::get_method_info().method_ptr);
+        inner(this, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_destroy_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcDestroyAttack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcDestroyAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_destroy_attack(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_destroy_attack::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_warmup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcWarmup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcWarmup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_warmup(
+        this: BattleCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlecalculator::BattleCalculator {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battlecalculator::BattleCalculator =
+            ::core::mem::transmute(__lookup_calc_warmup::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_simulation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcSimulation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcSimulation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_simulation(
+        this: BattleCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlecalculator::BattleCalculator {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battlecalculator::BattleCalculator =
+            ::core::mem::transmute(__lookup_calc_simulation::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_job_intro {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcJobIntro",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcJobIntro",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_job_intro(
+        this: BattleCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlecalculator::BattleCalculator {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battlecalculator::BattleCalculator =
+            ::core::mem::transmute(__lookup_calc_job_intro::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_class_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcClassChange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcClassChange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_class_change(
+        this: BattleCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlecalculator::BattleCalculator {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battlecalculator::BattleCalculator =
+            ::core::mem::transmute(__lookup_calc_class_change::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetHp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetHp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_hp(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_hp::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_status {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetStatus",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetStatus",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_status(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleinfoside::BattleInfoSide_BitFieldStatus {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleside::BattleSide_Type,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battleinfoside::BattleInfoSide_BitFieldStatus = ::core::mem::transmute(__lookup_get_status::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "get_Info",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "get_Info",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_info(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleinfo::BattleInfo {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battleinfo::BattleInfo =
+            ::core::mem::transmute(__lookup_get_info::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scene_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "get_SceneList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "get_SceneList",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_scene_list(
+        this: BattleCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescenelist::BattleSceneList {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battlescenelist::BattleSceneList =
+            ::core::mem::transmute(__lookup_get_scene_list::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_active_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type(),
+                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcActiveSkill",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcActiveSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_active_skill(
+        this: BattleCalculator,
+        timing: crate::app::skilldata::SkillData_Timings,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData_Timings,
+            crate::app::battleside::BattleSide_Type,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_calc_active_skill::get_method_info().method_ptr);
+        inner(this, timing, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CanAttack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CanAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_attack(
+        this: BattleCalculator,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_attack::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_skill_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddSkillScene",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddSkillScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_skill_scene(
+        this: BattleCalculator,
+        skill: crate::app::skilldata::SkillData,
+        action: crate::app::skilldata::SkillData_Actions,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData,
+            crate::app::skilldata::SkillData_Actions,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_skill_scene::get_method_info().method_ptr);
+        inner(this, skill, action, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_breaked {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetBreaked",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetBreaked",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_breaked(
+        this: BattleCalculator,
+        target: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_get_breaked::get_method_info().method_ptr);
+        inner(this, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_give_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddGiveScene",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddGiveScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_give_scene(
+        this: BattleCalculator,
+        give: crate::app::skilldata::SkillData,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        target: crate::app::battleinfoside::BattleInfoSide,
+        kind: crate::app::battlescene::BattleScene_Kind,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battlescene::BattleScene_Kind,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_add_give_scene::get_method_info().method_ptr);
+        inner(this, give, current, target, kind, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_ignore_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "FindIgnoreSkill",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "FindIgnoreSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn find_ignore_skill(
+        target: crate::app::battleinfoside::BattleInfoSide,
+        skill: crate::app::skilldata::SkillData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::skilldata::SkillData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(__lookup_find_ignore_skill::get_method_info().method_ptr);
+        inner(target, skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_give_scene_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddGiveScene",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddGiveScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_give_scene_2(
+        this: BattleCalculator,
+        give: crate::app::skilldata::SkillData,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        target: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_add_give_scene_2::get_method_info().method_ptr);
+        inner(this, give, current, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_gives_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddGivesScene",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddGivesScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_gives_scene(
+        this: BattleCalculator,
+        skill: crate::app::skilldata::SkillData,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        target: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_add_gives_scene::get_method_info().method_ptr);
+        inner(this, skill, current, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_gives_scene_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddGivesScene",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddGivesScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_gives_scene_2(
+        this: BattleCalculator,
+        skill: crate::app::skilldata::SkillData,
+        action: crate::app::skilldata::SkillData_Actions,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData,
+            crate::app::skilldata::SkillData_Actions,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_add_gives_scene_2::get_method_info().method_ptr);
+        inner(this, skill, action, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_hit_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcHitSkill",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcHitSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_hit_skill(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        unit_item: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_calc_hit_skill::get_method_info().method_ptr);
+        inner(this, current, unit_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_active_skill_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcActiveSkill",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcActiveSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_active_skill_2(
+        this: BattleCalculator,
+        timing: crate::app::skilldata::SkillData_Timings,
+        action: crate::app::skilldata::SkillData_Actions,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData_Timings,
+            crate::app::skilldata::SkillData_Actions,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_calc_active_skill_2::get_method_info().method_ptr);
+        inner(this, timing, action, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_oreder_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CanOrederSkill",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CanOrederSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_oreder_skill(
+        this: BattleCalculator,
+        skill: crate::app::skilldata::SkillData,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_can_oreder_skill::get_method_info().method_ptr);
+        inner(this, skill, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_active_skill_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcActiveSkill",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcActiveSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_active_skill_3(
+        this: BattleCalculator,
+        skill: crate::app::skilldata::SkillData,
+        action: crate::app::skilldata::SkillData_Actions,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::skilldata::SkillData,
+            crate::app::skilldata::SkillData_Actions,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_calc_active_skill_3::get_method_info().method_ptr);
+        inner(this, skill, action, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_hit_skill_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcHitSkill",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcHitSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_hit_skill_2(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_calc_hit_skill_2::get_method_info().method_ptr);
+        inner(this, current, reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_hit_skill_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData_Actions as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcHitSkill",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcHitSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_hit_skill_3(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        action: crate::app::skilldata::SkillData_Actions,
+        skill: crate::app::skilldata::SkillData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::skilldata::SkillData_Actions,
+            crate::app::skilldata::SkillData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_calc_hit_skill_3::get_method_info().method_ptr);
+        inner(this, current, action, skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_result_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcResultSkill",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcResultSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_result_skill(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_result_skill::get_method_info().method_ptr);
+        inner(this, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_result_skill_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcResultSkill",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcResultSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_result_skill_2(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_result_skill_2::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_debug_indent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddDebugIndent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddDebugIndent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_debug_indent(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_debug_indent::get_method_info().method_ptr);
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dec_debug_indent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "DecDebugIndent",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "DecDebugIndent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dec_debug_indent(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dec_debug_indent::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_chain_attack_sides {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcChainAttackSides",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcChainAttackSides",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_chain_attack_sides(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide> {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide> =
+            ::core::mem::transmute(__lookup_calc_chain_attack_sides::get_method_info().method_ptr);
+        inner(this, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_chain_guard_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcChainGuardSide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcChainGuardSide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_chain_guard_side(
+        this: BattleCalculator,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleside::BattleSide_Type {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battleside::BattleSide_Type = ::core::mem::transmute(__lookup_calc_chain_guard_side::get_method_info().method_ptr);
+        inner(this, reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_chain_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CanChainAttack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CanChainAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_chain_attack(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_chain_attack::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_chain_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcChainAttack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcChainAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_chain_attack(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_chain_attack::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_orders {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battlecalculator::BattleCalculator_OrderList as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcOrders",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcOrders",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_orders(
+        this: BattleCalculator,
+        orders: crate::app::battlecalculator::BattleCalculator_OrderList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battlecalculator::BattleCalculator_OrderList, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_orders::get_method_info().method_ptr);
+        inner(this, orders, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_interrupt_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcInterruptOrder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcInterruptOrder",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_interrupt_order(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_interrupt_order::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_interrupt {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcInterrupt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcInterrupt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_interrupt(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_interrupt::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_engage_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddEngageCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddEngageCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_engage_count(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_engage_count::get_method_info().method_ptr);
+        inner(this, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_engage_count_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "AddEngageCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "AddEngageCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_engage_count_2(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_engage_count_2::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_orders_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcOrders",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcOrders",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_orders_2(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_orders_2::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_assist_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcAssistSkill",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcAssistSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_assist_skill(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_assist_skill::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcOrder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcOrder",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_order(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_order::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcAction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcAction",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_action(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_action::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_command_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetCommandValue",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetCommandValue",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_command_value(
+        key: ::unity2::Il2CppString,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_get_command_value::get_method_info().method_ptr);
+        inner(key, current, reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chain_guard_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetChainGuardDamage",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetChainGuardDamage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_chain_guard_damage(
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_get_chain_guard_damage::get_method_info().method_ptr);
+        inner(current, reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_random_check_hit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "RandomCheckHit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "RandomCheckHit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn random_check_hit(this: BattleCalculator, ratio: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_random_check_hit::get_method_info().method_ptr);
+        inner(this, ratio, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcAttack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_attack(
+        this: BattleCalculator,
+        side_type: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_calc_attack::get_method_info().method_ptr);
+        inner(this, side_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_enter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CanEnter",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CanEnter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_enter(
+        this: BattleCalculator,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfoside::BattleInfoSide, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_enter::get_method_info().method_ptr);
+        inner(this, side, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_blow {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CanBlow",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CanBlow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_blow(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_can_blow::get_method_info().method_ptr);
+        inner(this, current, reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_attack_hit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcAttackHit",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcAttackHit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_attack_hit(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        critical: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_calc_attack_hit::get_method_info().method_ptr);
+        inner(this, current, reverse, critical, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add_dead_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "TryAddDeadScene",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "TryAddDeadScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_add_dead_scene(
+        this: BattleCalculator,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        result: crate::app::battlescene::BattleScene_Result,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battlescene::BattleScene_Result,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_try_add_dead_scene::get_method_info().method_ptr);
+        inner(this, side, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_attack_post {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcAttackPost",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcAttackPost",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_attack_post(
+        this: BattleCalculator,
+        side_type: crate::app::battleside::BattleSide_Type,
+        damage: i32,
+        result: crate::app::battlescene::BattleScene_Result,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleside::BattleSide_Type,
+            i32,
+            crate::app::battlescene::BattleScene_Result,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_calc_attack_post::get_method_info().method_ptr);
+        inner(this, side_type, damage, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scene_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "get_SceneResult",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "get_SceneResult",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_scene_result(
+        this: BattleCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene_Result =
+            ::core::mem::transmute(__lookup_get_scene_result::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_scene_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "set_SceneResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "set_SceneResult",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_scene_result(
+        this: BattleCalculator,
+        value: crate::app::battlescene::BattleScene_Result,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battlescene::BattleScene_Result, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scene_result::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcRod",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcRod",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_rod(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_rod::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_rod_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcRodOrder",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcRodOrder",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_rod_order(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_rod_order::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_rod_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcRodAction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcRodAction",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_rod_action(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_rod_action::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_rod_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcRodAttack",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcRodAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_rod_attack(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_rod_attack::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_dance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcDance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcDance",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_dance(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_dance::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_dance_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcDanceOrder",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcDanceOrder",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_dance_order(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_dance_order::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_dance_action {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcDanceAction",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcDanceAction",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_dance_action(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_dance_action::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_dance_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcDanceAttack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcDanceAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_dance_attack(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_dance_attack::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_enchant {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcEnchant",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcEnchant",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_enchant(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_enchant::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_rod_hit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcRodHit",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcRodHit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_rod_hit(
+        this: BattleCalculator,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        unit_item: crate::app::unititem::UnitItem,
+        item: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::unititem::UnitItem,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_calc_rod_hit::get_method_info().method_ptr);
+        inner(this, current, reverse, unit_item, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcResult",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcResult",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_result(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_result::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_battle_record {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CanBattleRecord",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CanBattleRecord",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_battle_record(
+        this: BattleCalculator,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_battle_record::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_record {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcRecord",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcRecord",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_record(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_record::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetSide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetSide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_side(
+        this: BattleCalculator,
+        force: crate::app::force::Force_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleinfoside::BattleInfoSide {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::force::Force_Type,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(__lookup_get_side::get_method_info().method_ptr);
+        inner(this, force, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_achieve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcAchieve",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcAchieve",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_achieve(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_achieve::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_expend_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcExpendCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcExpendCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_expend_count(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_expend_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_chain_attack_dead {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsChainAttackDead",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsChainAttackDead",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_chain_attack_dead(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_chain_attack_dead::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_exp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlecalculator::BattleCalculator_FuncExp1 as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcExp",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcExp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_exp(
+        this: BattleCalculator,
+        func: crate::app::battlecalculator::BattleCalculator_FuncExp1,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battlecalculator::BattleCalculator_FuncExp1,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_calc_exp::get_method_info().method_ptr);
+        inner(this, func, current, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_exp_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlecalculator::BattleCalculator_FuncExp2 as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcExp",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcExp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_exp_2(
+        this: BattleCalculator,
+        func: crate::app::battlecalculator::BattleCalculator_FuncExp2,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battlecalculator::BattleCalculator_FuncExp2,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_calc_exp_2::get_method_info().method_ptr);
+        inner(this, func, current, reverse, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_result_gain {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcResultGain",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcResultGain",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_result_gain(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_result_gain::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_exp_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CalcExpCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CalcExpCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_exp_count(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_exp_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_hp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CommitHP",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CommitHP",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit_hp(
+        this: BattleCalculator,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        hp: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfoside::BattleInfoSide, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_hp::get_method_info().method_ptr);
+        inner(this, side, hp, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_engage_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CommitEngageCount",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CommitEngageCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit_engage_count(
+        this: BattleCalculator,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfoside::BattleInfoSide, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_engage_count::get_method_info().method_ptr);
+        inner(this, side, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "UpdateScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "UpdateScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_scene(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_scene::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_scene_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "UpdateScene",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "UpdateScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_scene_2(this: BattleCalculator, index: i32, is_engae_count: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_scene_2::get_method_info().method_ptr);
+        inner(this, index, is_engae_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_scene_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlescene::BattleScene as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "UpdateScene",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "UpdateScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_scene_3(
+        this: BattleCalculator,
+        scene: crate::app::battlescene::BattleScene,
+        is_engae_count: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battlescene::BattleScene, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_scene_3::get_method_info().method_ptr);
+        inner(this, scene, is_engae_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CommitUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CommitUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit_unit(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CommitSkill",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CommitSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit_skill(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_skill::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CommitDestroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CommitDestroy",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit_destroy(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_destroy::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_battle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CommitBattle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CommitBattle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit_battle(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_battle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_map_history_commit_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "MapHistoryCommitSkill",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryCommitSkill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn map_history_commit_skill(
+        this: BattleCalculator,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_commit_skill::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_training {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsTraining",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsTraining",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_training(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_training::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_rod {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsRod",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsRod",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_rod(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_rod::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetUnit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit(this: BattleCalculator, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(BattleCalculator, i32, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetUnit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit_2(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit_2::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_side_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetSide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetSide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_side_2(
+        this: BattleCalculator,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleinfoside::BattleInfoSide {
+        let inner: extern "C" fn(BattleCalculator, i32, ::unity2::OptionalMethod) -> crate::app::battleinfoside::BattleInfoSide =
+            ::core::mem::transmute(__lookup_get_side_2::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_side_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetSide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetSide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_side_3(
+        this: BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleinfoside::BattleInfoSide {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleside::BattleSide_Type,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(__lookup_get_side_3::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dead_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetDeadSide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetDeadSide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_dead_side(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type =
+            ::core::mem::transmute(__lookup_get_dead_side::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dead_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetDeadUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetDeadUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_dead_unit(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_dead_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_expend_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetExpendCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetExpendCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_expend_count(
+        this: BattleCalculator,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BattleCalculator, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_expend_count::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_sky_battle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "CanSkyBattle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "CanSkyBattle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_sky_battle(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_sky_battle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_multi_battle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsMultiBattle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsMultiBattle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_multi_battle(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_multi_battle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_cannon_battle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsCannonBattle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsCannonBattle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_cannon_battle(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_cannon_battle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_fire_cannon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsFireCannon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsFireCannon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_fire_cannon(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_fire_cannon::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_full_bullet {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsFullBullet",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsFullBullet",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_full_bullet(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_full_bullet::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_last_boss_die {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsLastBossDie",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsLastBossDie",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_last_boss_die(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_last_boss_die::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_battle_grow {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsBattleGrow",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsBattleGrow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_battle_grow(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_battle_grow::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_combat_die {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsCombatDie",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsCombatDie",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_combat_die(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_combat_die::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_combat_grow {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "IsCombatGrow",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "IsCombatGrow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_combat_grow(this: BattleCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleCalculator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_combat_grow::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_asset_conditions {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                "GetAssetConditions",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetAssetConditions",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_asset_conditions(
+        this: BattleCalculator,
+        side_type: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            BattleCalculator,
+            crate::app::battleside::BattleSide_Type,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(__lookup_get_asset_conditions::get_method_info().method_ptr);
+        inner(this, side_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator {
+    #[doc = "`FindIgnoreSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData)` overload"]
+    pub fn find_ignore_skill(
+        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+    ) -> crate::app::skilldata::SkillData {
+        unsafe {
+            __BattleCalculator_unity2_raw::find_ignore_skill(
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`AddDebugIndent(::unity2::Il2CppString)` overload"]
+    pub fn add_debug_indent(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __BattleCalculator_unity2_raw::add_debug_indent(::core::convert::Into::into(name), ::core::option::Option::None) }
+    }
+
+    #[doc = "`DecDebugIndent()` overload"]
+    pub fn dec_debug_indent() -> () {
+        unsafe { __BattleCalculator_unity2_raw::dec_debug_indent(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetCommandValue(::unity2::Il2CppString, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    pub fn get_command_value(
+        key: impl ::core::convert::Into<::unity2::Il2CppString>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> i32 {
+        unsafe {
+            __BattleCalculator_unity2_raw::get_command_value(
+                ::core::convert::Into::into(key),
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`GetChainGuardDamage(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    pub fn get_chain_guard_damage(
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> i32 {
+        unsafe {
+            __BattleCalculator_unity2_raw::get_chain_guard_damage(
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __BattleCalculator_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculatorMethods: IBattleCalculator {
+    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"]
+    fn ctor(self, info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::ctor(__receiver, ::core::convert::Into::into(info), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetMode()` overload"]
+    fn get_mode(self) -> crate::app::battlecalculator::BattleCalculator_Mode {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcBattle()` overload"]
+    fn calc_battle(self) -> crate::app::battlecalculator::BattleCalculator {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_battle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dump()` overload"]
+    fn dump(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::dump(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryAddSkillScene(crate::app::battlescene::BattleScene_Kind, crate::app::battleside::BattleSide_Type, crate::app::skilldata::SkillData)` overload"]
+    fn try_add_skill_scene(
+        self,
+        kind: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
+        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::try_add_skill_scene(
+                __receiver,
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcEngageStart(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_engage_start(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_engage_start(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcInvokeSkill(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_invoke_skill(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_invoke_skill(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcEngageEnd(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_engage_end(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_engage_end(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcDetailSkill()` overload"]
+    fn calc_detail_skill(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_detail_skill(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcBranch()` overload"]
+    fn calc_branch(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_branch(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsLateOrder()` overload"]
+    fn is_late_order(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_late_order(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SeparatorTotalOrder()` overload"]
+    fn separator_total_order(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::separator_total_order(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcNormalBattle()` overload"]
+    fn calc_normal_battle(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_normal_battle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcDestroy()` overload"]
+    fn calc_destroy(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddSkillSceneResult(crate::app::battlescene::BattleScene_Result)` overload"]
+    fn add_skill_scene_result(self, result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::add_skill_scene_result(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcDestroyAttack(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_destroy_attack(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_destroy_attack(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcWarmup()` overload"]
+    fn calc_warmup(self) -> crate::app::battlecalculator::BattleCalculator {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_warmup(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcSimulation()` overload"]
+    fn calc_simulation(self) -> crate::app::battlecalculator::BattleCalculator {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_simulation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcJobIntro()` overload"]
+    fn calc_job_intro(self) -> crate::app::battlecalculator::BattleCalculator {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_job_intro(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcClassChange()` overload"]
+    fn calc_class_change(self) -> crate::app::battlecalculator::BattleCalculator {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_class_change(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetHp(crate::app::battleside::BattleSide_Type)` overload"]
+    fn get_hp(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> i32 {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_hp(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetStatus(crate::app::battleside::BattleSide_Type)` overload"]
+    fn get_status(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
+    ) -> crate::app::battleinfoside::BattleInfoSide_BitFieldStatus {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_status(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Info()` overload"]
+    fn get_info(self) -> crate::app::battleinfo::BattleInfo {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_info(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SceneList()` overload"]
+    fn get_scene_list(self) -> crate::app::battlescenelist::BattleSceneList {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_scene_list(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcActiveSkill(crate::app::skilldata::SkillData_Timings, crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_active_skill(
+        self,
+        timing: impl ::core::convert::Into<crate::app::skilldata::SkillData_Timings>,
+        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_active_skill(
+                __receiver,
+                ::core::convert::Into::into(timing),
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanAttack(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn can_attack(self, side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::can_attack(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddSkillScene(crate::app::skilldata::SkillData, crate::app::skilldata::SkillData_Actions, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn add_skill_scene(
+        self,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::add_skill_scene(
+                __receiver,
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(action),
+                ::core::convert::Into::into(current),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetBreaked(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn get_breaked(
+        self,
+        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_breaked(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddGiveScene(crate::app::skilldata::SkillData, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, crate::app::battlescene::BattleScene_Kind)` overload"]
+    fn add_give_scene(
+        self,
+        give: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        kind: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::add_give_scene(
+                __receiver,
+                ::core::convert::Into::into(give),
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(kind),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddGiveScene(crate::app::skilldata::SkillData, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn add_give_scene_2(
+        self,
+        give: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::add_give_scene_2(
+                __receiver,
+                ::core::convert::Into::into(give),
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddGivesScene(crate::app::skilldata::SkillData, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn add_gives_scene(
+        self,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        target: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::add_gives_scene(
+                __receiver,
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddGivesScene(crate::app::skilldata::SkillData, crate::app::skilldata::SkillData_Actions, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn add_gives_scene_2(
+        self,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::add_gives_scene_2(
+                __receiver,
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(action),
+                ::core::convert::Into::into(current),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcHitSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::unititem::UnitItem)` overload"]
+    fn calc_hit_skill(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_hit_skill(
+                __receiver,
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(unit_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcActiveSkill(crate::app::skilldata::SkillData_Timings, crate::app::skilldata::SkillData_Actions, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calc_active_skill_2(
+        self,
+        timing: impl ::core::convert::Into<crate::app::skilldata::SkillData_Timings>,
+        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_active_skill_2(
+                __receiver,
+                ::core::convert::Into::into(timing),
+                ::core::convert::Into::into(action),
+                ::core::convert::Into::into(current),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanOrederSkill(crate::app::skilldata::SkillData, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn can_oreder_skill(
+        self,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::can_oreder_skill(
+                __receiver,
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(current),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcActiveSkill(crate::app::skilldata::SkillData, crate::app::skilldata::SkillData_Actions, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calc_active_skill_3(
+        self,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_active_skill_3(
+                __receiver,
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(action),
+                ::core::convert::Into::into(current),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcHitSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calc_hit_skill_2(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_hit_skill_2(
+                __receiver,
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcHitSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData_Actions, crate::app::skilldata::SkillData)` overload"]
+    fn calc_hit_skill_3(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        action: impl ::core::convert::Into<crate::app::skilldata::SkillData_Actions>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_hit_skill_3(
+                __receiver,
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(action),
+                ::core::convert::Into::into(skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcResultSkill(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calc_result_skill(self, current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_result_skill(__receiver, ::core::convert::Into::into(current), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcResultSkill()` overload"]
+    fn calc_result_skill_2(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_result_skill_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcChainAttackSides(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calc_chain_attack_sides(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide> {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_chain_attack_sides(__receiver, ::core::convert::Into::into(current), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcChainGuardSide(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calc_chain_guard_side(
+        self,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> crate::app::battleside::BattleSide_Type {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_chain_guard_side(__receiver, ::core::convert::Into::into(reverse), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CanChainAttack(crate::app::battleside::BattleSide_Type)` overload"]
+    fn can_chain_attack(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::can_chain_attack(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcChainAttack(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_chain_attack(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_chain_attack(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcOrders(crate::app::battlecalculator::BattleCalculator_OrderList)` overload"]
+    fn calc_orders(self, orders: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator_OrderList>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_orders(__receiver, ::core::convert::Into::into(orders), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcInterruptOrder(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_interrupt_order(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_interrupt_order(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcInterrupt(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_interrupt(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_interrupt(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddEngageCount(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn add_engage_count(self, current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::add_engage_count(__receiver, ::core::convert::Into::into(current), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddEngageCount(crate::app::battleside::BattleSide_Type)` overload"]
+    fn add_engage_count_2(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::add_engage_count_2(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcOrders(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_orders_2(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_orders_2(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcAssistSkill(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_assist_skill(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_assist_skill(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcOrder(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_order(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_order(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcAction(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_action(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_action(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RandomCheckHit(i32)` overload"]
+    fn random_check_hit(self, ratio: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::random_check_hit(__receiver, ::core::convert::Into::into(ratio), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcAttack(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_attack(self, side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_attack(__receiver, ::core::convert::Into::into(side_type), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CanEnter(crate::app::battleinfoside::BattleInfoSide, i32, i32)` overload"]
+    fn can_enter(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::can_enter(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanBlow(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn can_blow(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::can_blow(
+                __receiver,
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcAttackHit(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, *muti32)` overload"]
+    fn calc_attack_hit(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> (crate::app::battlescene::BattleScene_Result, i32) {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __BattleCalculator_unity2_raw::calc_attack_hit(
+                    __receiver,
+                    ::core::convert::Into::into(current),
+                    ::core::convert::Into::into(reverse),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`TryAddDeadScene(crate::app::battleinfoside::BattleInfoSide, crate::app::battlescene::BattleScene_Result)` overload"]
+    fn try_add_dead_scene(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::try_add_dead_scene(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcAttackPost(crate::app::battleside::BattleSide_Type, i32, crate::app::battlescene::BattleScene_Result)` overload"]
+    fn calc_attack_post(
+        self,
+        side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
+        damage: impl ::core::convert::Into<i32>,
+        result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_attack_post(
+                __receiver,
+                ::core::convert::Into::into(side_type),
+                ::core::convert::Into::into(damage),
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SceneResult()` overload"]
+    fn get_scene_result(self) -> crate::app::battlescene::BattleScene_Result {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_scene_result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_SceneResult(crate::app::battlescene::BattleScene_Result)` overload"]
+    fn set_scene_result(self, value: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::set_scene_result(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcRod()` overload"]
+    fn calc_rod(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_rod(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcRodOrder(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_rod_order(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_rod_order(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcRodAction(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_rod_action(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_rod_action(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcRodAttack(crate::app::battleside::BattleSide_Type)` overload"]
+    fn calc_rod_attack(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_rod_attack(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcDance()` overload"]
+    fn calc_dance(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_dance(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcDanceOrder()` overload"]
+    fn calc_dance_order(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_dance_order(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcDanceAction()` overload"]
+    fn calc_dance_action(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_dance_action(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcDanceAttack()` overload"]
+    fn calc_dance_attack(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_dance_attack(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcEnchant()` overload"]
+    fn calc_enchant(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_enchant(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcRodHit(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, crate::app::unititem::UnitItem, crate::app::itemdata::ItemData)` overload"]
+    fn calc_rod_hit(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_rod_hit(
+                __receiver,
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::convert::Into::into(unit_item),
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcResult()` overload"]
+    fn calc_result(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CanBattleRecord(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn can_battle_record(self, side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::can_battle_record(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcRecord()` overload"]
+    fn calc_record(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_record(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSide(crate::app::force::Force_Type)` overload"]
+    fn get_side(self, force: impl ::core::convert::Into<crate::app::force::Force_Type>) -> crate::app::battleinfoside::BattleInfoSide {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_side(__receiver, ::core::convert::Into::into(force), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcAchieve()` overload"]
+    fn calc_achieve(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_achieve(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcExpendCount()` overload"]
+    fn calc_expend_count(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_expend_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsChainAttackDead()` overload"]
+    fn is_chain_attack_dead(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_chain_attack_dead(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcExp(crate::app::battlecalculator::BattleCalculator_FuncExp1, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calc_exp(
+        self,
+        func: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator_FuncExp1>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_exp(
+                __receiver,
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(current),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcExp(crate::app::battlecalculator::BattleCalculator_FuncExp2, crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calc_exp_2(
+        self,
+        func: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator_FuncExp2>,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_exp_2(
+                __receiver,
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcResultGain()` overload"]
+    fn calc_result_gain(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_result_gain(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcExpCount()` overload"]
+    fn calc_exp_count(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::calc_exp_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CommitHP(crate::app::battleinfoside::BattleInfoSide, i32)` overload"]
+    fn commit_hp(self, side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>, hp: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::commit_hp(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(hp),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CommitEngageCount(crate::app::battleinfoside::BattleInfoSide, i32)` overload"]
+    fn commit_engage_count(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::commit_engage_count(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateScene()` overload"]
+    fn update_scene(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::update_scene(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateScene(i32, bool)` overload"]
+    fn update_scene_2(self, index: impl ::core::convert::Into<i32>, is_engae_count: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::update_scene_2(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(is_engae_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateScene(crate::app::battlescene::BattleScene, bool)` overload"]
+    fn update_scene_3(
+        self,
+        scene: impl ::core::convert::Into<crate::app::battlescene::BattleScene>,
+        is_engae_count: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::update_scene_3(
+                __receiver,
+                ::core::convert::Into::into(scene),
+                ::core::convert::Into::into(is_engae_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CommitUnit()` overload"]
+    fn commit_unit(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::commit_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CommitSkill()` overload"]
+    fn commit_skill(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::commit_skill(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CommitDestroy()` overload"]
+    fn commit_destroy(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::commit_destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CommitBattle()` overload"]
+    fn commit_battle(self) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::commit_battle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MapHistoryCommitSkill(crate::app::unit::Unit)` overload"]
+    fn map_history_commit_skill(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::map_history_commit_skill(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsTraining()` overload"]
+    fn is_training(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_training(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsRod()` overload"]
+    fn is_rod(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_rod(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnit(i32)` overload"]
+    fn get_unit(self, index: impl ::core::convert::Into<i32>) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_unit(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnit(crate::app::battleside::BattleSide_Type)` overload"]
+    fn get_unit_2(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_unit_2(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSide(i32)` overload"]
+    fn get_side_2(self, index: impl ::core::convert::Into<i32>) -> crate::app::battleinfoside::BattleInfoSide {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_side_2(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
+    fn get_side_3(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> crate::app::battleinfoside::BattleInfoSide {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_side_3(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDeadSide()` overload"]
+    fn get_dead_side(self) -> crate::app::battleside::BattleSide_Type {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_dead_side(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDeadUnit()` overload"]
+    fn get_dead_unit(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_dead_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetExpendCount(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn get_expend_count(self, side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> i32 {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_expend_count(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CanSkyBattle()` overload"]
+    fn can_sky_battle(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::can_sky_battle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsMultiBattle()` overload"]
+    fn is_multi_battle(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_multi_battle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsCannonBattle()` overload"]
+    fn is_cannon_battle(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_cannon_battle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsFireCannon()` overload"]
+    fn is_fire_cannon(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_fire_cannon(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsFullBullet()` overload"]
+    fn is_full_bullet(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_full_bullet(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsLastBossDie()` overload"]
+    fn is_last_boss_die(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_last_boss_die(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsBattleGrow()` overload"]
+    fn is_battle_grow(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_battle_grow(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsCombatDie()` overload"]
+    fn is_combat_die(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_combat_die(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsCombatGrow()` overload"]
+    fn is_combat_grow(self) -> bool {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::is_combat_grow(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetAssetConditions(crate::app::battleside::BattleSide_Type)` overload"]
+    fn get_asset_conditions(
+        self,
+        side_type: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            let __receiver = <BattleCalculator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_unity2_raw::get_asset_conditions(__receiver, ::core::convert::Into::into(side_type), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl<__T: IBattleCalculator> IBattleCalculatorMethods for __T {}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator {
+    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` — overload selector"]
+    pub fn new(info: crate::app::battleinfo::BattleInfo) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculatorMethods>::ctor(this, info);
+        this
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_OrderList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_OrderList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_OrderList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: BattleCalculator_OrderList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_OrderList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
+                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_OrderList as ::unity2::ClassIdentity>::class(),
+                "TryAdd",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_OrderList as ::unity2::ClassIdentity>::NAME,
+                        "TryAdd",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_add(
+        this: BattleCalculator_OrderList,
+        info: crate::app::battleinfo::BattleInfo,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleCalculator_OrderList,
+            crate::app::battleinfo::BattleInfo,
+            crate::app::battleside::BattleSide_Type,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_try_add::get_method_info().method_ptr);
+        inner(this, info, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_swap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_OrderList as ::unity2::ClassIdentity>::class(),
+                "CanSwap",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_OrderList as ::unity2::ClassIdentity>::NAME,
+                        "CanSwap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_swap(
+        this: BattleCalculator_OrderList,
+        side: crate::app::battleside::BattleSide_Type,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(BattleCalculator_OrderList, crate::app::battleside::BattleSide_Type, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_swap::get_method_info().method_ptr);
+        inner(this, side, index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_OrderListMethods: IBattleCalculator_OrderList {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_OrderList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_OrderList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryAdd(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type)` overload"]
+    fn try_add(
+        self,
+        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
+        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_OrderList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_OrderList_unity2_raw::try_add(
+                __receiver,
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CanSwap(crate::app::battleside::BattleSide_Type, i32)` overload"]
+    fn can_swap(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>, index: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_OrderList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_OrderList_unity2_raw::can_swap(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl<__T: IBattleCalculator_OrderList> IBattleCalculator_OrderListMethods for __T {}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_OrderList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_OrderList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_OrderListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_FlagField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battlecalculator::BattleCalculator_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_FlagField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_FlagField as ::unity2::ClassIdentity>::NAME,
+                        "ToInt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_int(
+        this: BattleCalculator_FlagField,
+        value: crate::app::battlecalculator::BattleCalculator_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BattleCalculator_FlagField, crate::app::battlecalculator::BattleCalculator_Flags, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_FlagField as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: BattleCalculator_FlagField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_FlagField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_FlagFieldMethods: IBattleCalculator_FlagField {
+    #[doc = "`ToInt(crate::app::battlecalculator::BattleCalculator_Flags)` overload"]
+    fn to_int(self, value: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator_Flags>) -> i32 {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_FlagField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl<__T: IBattleCalculator_FlagField> IBattleCalculator_FlagFieldMethods for __T {}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_FuncExp1_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_FuncExp1 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_FuncExp1 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleCalculator_FuncExp1,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator_FuncExp1, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_FuncExp1 as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_FuncExp1 as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: BattleCalculator_FuncExp1,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(BattleCalculator_FuncExp1, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, current, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_FuncExp1Methods: IBattleCalculator_FuncExp1 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_FuncExp1 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_FuncExp1_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn invoke(self, current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> i32 {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_FuncExp1 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_FuncExp1_unity2_raw::invoke(__receiver, ::core::convert::Into::into(current), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl<__T: IBattleCalculator_FuncExp1> IBattleCalculator_FuncExp1Methods for __T {}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FuncExp1 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_FuncExp1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_FuncExp1Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_Order_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_enter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_Order as ::unity2::ClassIdentity>::class(),
+                "OnEnter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_Order as ::unity2::ClassIdentity>::NAME,
+                        "OnEnter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_enter(this: BattleCalculator_Order, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_Order, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_Order as ::unity2::ClassIdentity>::class(),
+                "OnExit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_Order as ::unity2::ClassIdentity>::NAME,
+                        "OnExit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_exit(this: BattleCalculator_Order, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_Order, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_exit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_Order as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_Order as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: BattleCalculator_Order, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_Order, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_OrderMethods: IBattleCalculator_Order {
+    #[doc = "`OnEnter()` overload"]
+    fn on_enter(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_Order as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_Order_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnExit()` overload"]
+    fn on_exit(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_Order as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_Order_unity2_raw::on_exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_Order as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_Order_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl<__T: IBattleCalculator_Order> IBattleCalculator_OrderMethods for __T {}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_Order {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_Order),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_OrderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_FuncExp2_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_FuncExp2 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_FuncExp2 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleCalculator_FuncExp2,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleCalculator_FuncExp2, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_FuncExp2 as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_FuncExp2 as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: BattleCalculator_FuncExp2,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            BattleCalculator_FuncExp2,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, current, reverse, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+pub trait IBattleCalculator_FuncExp2Methods: IBattleCalculator_FuncExp2 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_FuncExp2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_FuncExp2_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn invoke(
+        self,
+        current: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        reverse: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <BattleCalculator_FuncExp2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleCalculator_FuncExp2_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(current),
+                ::core::convert::Into::into(reverse),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl<__T: IBattleCalculator_FuncExp2> IBattleCalculator_FuncExp2Methods for __T {}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FuncExp2 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_FuncExp2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_FuncExp2Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleCalculator_SeparatorScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlecalculator::BattleCalculator as ::unity2::IlType>::il_type(),
+                <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
+                <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
+                <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleCalculator_SeparatorScope,
+        calc: crate::app::battlecalculator::BattleCalculator,
+        side: crate::app::battleside::BattleSide_Type,
+        push: crate::app::battlescene::BattleScene_Kind,
+        pop: crate::app::battlescene::BattleScene_Kind,
+        is_dump: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleCalculator_SeparatorScope,
+            crate::app::battlecalculator::BattleCalculator,
+            crate::app::battleside::BattleSide_Type,
+            crate::app::battlescene::BattleScene_Kind,
+            crate::app::battlescene::BattleScene_Kind,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, calc, side, push, pop, is_dump, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: BattleCalculator_SeparatorScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleCalculator_SeparatorScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::class(),
+                "GetSide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::NAME,
+                        "GetSide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_side(
+        this: BattleCalculator_SeparatorScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleinfoside::BattleInfoSide {
+        let inner: extern "C" fn(BattleCalculator_SeparatorScope, ::unity2::OptionalMethod) -> crate::app::battleinfoside::BattleInfoSide =
+            ::core::mem::transmute(__lookup_get_side::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_side_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::class(),
+                "GetSide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleCalculator_SeparatorScope as ::unity2::ClassIdentity>::NAME,
+                        "GetSide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_side_2(
+        this: BattleCalculator_SeparatorScope,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleinfoside::BattleInfoSide {
+        let inner: extern "C" fn(
+            BattleCalculator_SeparatorScope,
+            crate::app::battleside::BattleSide_Type,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(__lookup_get_side_2::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_SeparatorScope {
+    #[doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::battleside::BattleSide_Type, crate::app::battlescene::BattleScene_Kind, crate::app::battlescene::BattleScene_Kind, bool)` overload"]
+    pub fn ctor(
+        self,
+        calc: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator>,
+        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
+        push: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
+        pop: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
+        is_dump: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __BattleCalculator_SeparatorScope_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(calc),
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(push),
+                ::core::convert::Into::into(pop),
+                ::core::convert::Into::into(is_dump),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __BattleCalculator_SeparatorScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetSide()` overload"]
+    pub fn get_side(self) -> crate::app::battleinfoside::BattleInfoSide {
+        unsafe { __BattleCalculator_SeparatorScope_unity2_raw::get_side(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
+    pub fn get_side_2(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> crate::app::battleinfoside::BattleInfoSide {
+        unsafe { __BattleCalculator_SeparatorScope_unity2_raw::get_side_2(self, ::core::convert::Into::into(side), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleCalculator;
-    pub use super::BattleCalculator_Attributes;
-    pub use super::BattleCalculator_DetailScope;
-    pub use super::BattleCalculator_FlagField;
-    pub use super::BattleCalculator_Flags;
-    pub use super::BattleCalculator_FuncExp1;
-    pub use super::BattleCalculator_FuncExp2;
-    pub use super::BattleCalculator_HitSkill;
-    pub use super::BattleCalculator_HitSkillPool;
-    pub use super::BattleCalculator_Mode;
-    pub use super::BattleCalculator_Order;
-    pub use super::BattleCalculator_OrderList;
-    pub use super::BattleCalculator_SeparatorScope;
-    pub use super::BattleCalculator_TargetScope;
-    pub use super::BattleCalculator_TrainingResult;
-    pub use super::IBattleCalculator;
-    pub use super::IBattleCalculatorMethods;
-    pub use super::IBattleCalculator_FlagField;
-    pub use super::IBattleCalculator_FlagFieldMethods;
-    pub use super::IBattleCalculator_FuncExp1;
-    pub use super::IBattleCalculator_FuncExp1Methods;
-    pub use super::IBattleCalculator_FuncExp2;
-    pub use super::IBattleCalculator_FuncExp2Methods;
-    pub use super::IBattleCalculator_HitSkill;
-    pub use super::IBattleCalculator_HitSkillMethods;
-    pub use super::IBattleCalculator_HitSkillPool;
-    pub use super::IBattleCalculator_HitSkillPoolMethods;
-    pub use super::IBattleCalculator_Order;
-    pub use super::IBattleCalculator_OrderList;
-    pub use super::IBattleCalculator_OrderListMethods;
-    pub use super::IBattleCalculator_OrderMethods;
-    pub use crate::app::bitfield32::IBitField32;
+    pub use super::{
+        BattleCalculator, BattleCalculator_Attributes, BattleCalculator_DetailScope, BattleCalculator_FlagField, BattleCalculator_Flags,
+        BattleCalculator_FuncExp1, BattleCalculator_FuncExp2, BattleCalculator_HitSkill, BattleCalculator_HitSkillPool, BattleCalculator_Mode,
+        BattleCalculator_Order, BattleCalculator_OrderList, BattleCalculator_SeparatorScope, BattleCalculator_TargetScope,
+        BattleCalculator_TrainingResult, IBattleCalculator, IBattleCalculatorMethods, IBattleCalculator_FlagField,
+        IBattleCalculator_FlagFieldMethods, IBattleCalculator_FuncExp1, IBattleCalculator_FuncExp1Methods, IBattleCalculator_FuncExp2,
+        IBattleCalculator_FuncExp2Methods, IBattleCalculator_HitSkill, IBattleCalculator_HitSkillMethods, IBattleCalculator_HitSkillPool,
+        IBattleCalculator_HitSkillPoolMethods, IBattleCalculator_Order, IBattleCalculator_OrderList, IBattleCalculator_OrderListMethods,
+        IBattleCalculator_OrderMethods,
+    };
     #[cfg(feature = "app-bitfield32")]
     pub use crate::app::bitfield32::IBitField32Methods;
-    pub use crate::app::bitfieldcommon::IBitFieldCommon;
     #[cfg(feature = "app-bitfieldcommon")]
     pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
-    pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
     #[cfg(feature = "app-bitfieldtemplate32_1")]
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1Methods;
-    pub use crate::app::pool::IPool_List_1;
     #[cfg(feature = "app-pool")]
     pub use crate::app::pool::IPool_List_1Methods;
-    pub use crate::app::pool::IPool_Node;
     #[cfg(feature = "app-pool")]
     pub use crate::app::pool::IPool_NodeMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{
+            bitfield32::IBitField32,
+            bitfieldcommon::IBitFieldCommon,
+            bitfieldtemplate32_1::IBitFieldTemplate32_1,
+            pool::{IPool_List_1, IPool_Node},
+        },
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

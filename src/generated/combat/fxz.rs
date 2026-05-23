@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-fxz-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxz/FXZ.md"))]
     #[repr(C)]
@@ -17,9 +19,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for FXZ {
-        const NAMESPACE: &'static str = "Combat";
-
         const NAME: &'static str = "FXZ";
+        const NAMESPACE: &'static str = "Combat";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -30,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for FXZ {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -50,337 +48,164 @@ mod __FXZ_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: FXZ,
-        x: f32,
-        z: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FXZ, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: FXZ, x: f32, z: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FXZ, f32, f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: FXZ,
-        rhs: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: FXZ, rhs: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_3(
-        this: FXZ,
-        v: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FXZ,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
+    pub unsafe fn ctor_3(this: FXZ, v: crate::unity_engine::vector2::Vector2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FXZ, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
         inner(this, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_4(
-        this: FXZ,
-        v: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FXZ,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_4::get_offset() as isize),
-        );
+    pub unsafe fn ctor_4(this: FXZ, v: *mut crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FXZ, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_4::get_method_info().method_ptr);
         inner(this, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Equality", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_equality(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality::get_offset() as isize),
-        );
+    pub unsafe fn op_equality(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_inequality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Inequality",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Inequality", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Inequality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Inequality",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_inequality(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_inequality::get_offset() as isize),
-        );
+    pub unsafe fn op_inequality(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition(
@@ -388,99 +213,60 @@ mod __FXZ_unity2_raw {
         b: crate::combat::fxz::FXZ,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_op_addition::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_unary_negation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_UnaryNegation",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_UnaryNegation", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_UnaryNegation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_UnaryNegation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_unary_negation(
-        a: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_unary_negation::get_offset() as isize),
-        );
+    pub unsafe fn op_unary_negation(a: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_op_unary_negation::get_method_info().method_ptr);
         inner(a, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_subtraction {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Subtraction",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Subtraction", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Subtraction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Subtraction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_subtraction(
@@ -488,207 +274,123 @@ mod __FXZ_unity2_raw {
         b: crate::combat::fxz::FXZ,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_subtraction::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_op_subtraction::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_multiply {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Multiply",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Multiply", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Multiply",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Multiply",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_multiply(
-        a: crate::combat::fxz::FXZ,
-        scale: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_multiply::get_offset() as isize),
-        );
+    pub unsafe fn op_multiply(a: crate::combat::fxz::FXZ, scale: f32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, f32, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_op_multiply::get_method_info().method_ptr);
         inner(a, scale, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_multiply_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Multiply",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Multiply", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Multiply",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Multiply",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_multiply_2(
-        scale: f32,
-        a: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            f32,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_multiply_2::get_offset() as isize),
-        );
+    pub unsafe fn op_multiply_2(scale: f32, a: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(f32, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_op_multiply_2::get_method_info().method_ptr);
         inner(scale, a, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_division {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Division",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Division", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Division",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Division",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_division(
-        a: crate::combat::fxz::FXZ,
-        scale: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_division::get_offset() as isize),
-        );
+    pub unsafe fn op_division(a: crate::combat::fxz::FXZ, scale: f32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, f32, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_op_division::get_method_info().method_ptr);
         inner(a, scale, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_2(
@@ -700,47 +402,32 @@ mod __FXZ_unity2_raw {
             *mut crate::unity_engine::vector3::Vector3,
             crate::combat::fxz::FXZ,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_op_addition_2::get_method_info().method_ptr);
         inner(xyz, xz, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_subtraction_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Subtraction",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Subtraction", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Subtraction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Subtraction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_subtraction_2(
@@ -752,467 +439,262 @@ mod __FXZ_unity2_raw {
             *mut crate::unity_engine::vector3::Vector3,
             crate::combat::fxz::FXZ,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_subtraction_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_op_subtraction_2::get_method_info().method_ptr);
         inner(xyz, xz, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_implicit(
-        v: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit::get_offset() as isize),
-        );
+    pub unsafe fn op_implicit(v: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit_2(
         v: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_op_implicit_2::get_method_info().method_ptr);
         inner(v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_implicit_3(
-        v: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit_3::get_offset() as isize),
-        );
+    pub unsafe fn op_implicit_3(v: crate::unity_engine::vector2::Vector2, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_op_implicit_3::get_method_info().method_ptr);
         inner(v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Equals", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: FXZ,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            FXZ,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: FXZ, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(FXZ, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "GetHashCode", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hash_code(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hash_code::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "ToString", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_zero {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "get_isZero",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "get_isZero", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "get_isZero",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "get_isZero",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_is_zero(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_zero::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_zero::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_not_zero {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "get_isNotZero",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "get_isNotZero", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "get_isNotZero",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "get_isNotZero",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_not_zero(
-        this: FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_not_zero::get_offset() as isize),
-        );
+    pub unsafe fn get_is_not_zero(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_not_zero::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_na_n {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "get_isNaN",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "get_isNaN", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "get_isNaN",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "get_isNaN", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_is_na_n(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_na_n::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_na_n::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_magnitude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "get_magnitude",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "get_magnitude", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "get_magnitude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "get_magnitude",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_magnitude(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_magnitude::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get_magnitude::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sqr_magnitude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FXZ as ::unity2::ClassIdentity>::class(),
@@ -1225,169 +707,91 @@ mod __FXZ_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "get_sqrMagnitude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "get_sqrMagnitude",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sqr_magnitude(
-        this: FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sqr_magnitude::get_offset() as isize),
-        );
+    pub unsafe fn get_sqr_magnitude(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_sqr_magnitude::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Distance",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Distance", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Distance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Distance", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn distance(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_distance::get_offset() as isize),
-        );
+    pub unsafe fn distance(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_distance::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sqr_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "SqrDistance",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "SqrDistance", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "SqrDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "SqrDistance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn sqr_distance(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sqr_distance::get_offset() as isize),
-        );
+    pub unsafe fn sqr_distance(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_sqr_distance::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ato_b {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "AtoB",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "AtoB", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "AtoB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "AtoB", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ato_b(
@@ -1395,72 +799,35 @@ mod __FXZ_unity2_raw {
         b: crate::combat::fxz::FXZ,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ato_b::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_ato_b::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_right {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "ToRight",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::fxz::FXZ as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "ToRight", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "ToRight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "ToRight", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_right(
-        a: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_right::get_offset() as isize),
-        );
+    pub unsafe fn to_right(a: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_to_right::get_method_info().method_ptr);
         inner(a, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_inside_unit_circle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FXZ as ::unity2::ClassIdentity>::class(),
@@ -1473,378 +840,184 @@ mod __FXZ_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "get_insideUnitCircle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "get_insideUnitCircle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_inside_unit_circle(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
+    pub unsafe fn get_inside_unit_circle(__unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_inside_unit_circle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_inside_unit_circle::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Dot",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Dot", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Dot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Dot", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dot(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dot::get_offset() as isize),
-        );
+    pub unsafe fn dot(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_dot::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cross {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Cross",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Cross", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Cross",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Cross", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn cross(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cross::get_offset() as isize),
-        );
+    pub unsafe fn cross(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_cross::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rotate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Rotate",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Rotate", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Rotate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Rotate", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rotate(
-        a: crate::combat::fxz::FXZ,
-        rad: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rotate::get_offset() as isize),
-        );
+    pub unsafe fn rotate(a: crate::combat::fxz::FXZ, rad: f32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, f32, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_rotate::get_method_info().method_ptr);
         inner(a, rad, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perpendicular_dot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "PerpendicularDot",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "PerpendicularDot", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "PerpendicularDot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "PerpendicularDot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn perpendicular_dot(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perpendicular_dot::get_offset() as isize),
-        );
+    pub unsafe fn perpendicular_dot(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_perpendicular_dot::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rad_ab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "RadAB",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "RadAB", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "RadAB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "RadAB", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rad_ab(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rad_ab::get_offset() as isize),
-        );
+    pub unsafe fn rad_ab(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_rad_ab::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_angle360 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Angle360",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Angle360", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Angle360",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Angle360", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn angle360(
-        a: crate::combat::fxz::FXZ,
-        b: crate::combat::fxz::FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_angle360::get_offset() as isize),
-        );
+    pub unsafe fn angle360(a: crate::combat::fxz::FXZ, b: crate::combat::fxz::FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_angle360::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_slerp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Slerp",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Slerp", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Slerp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Slerp", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn slerp(
@@ -1853,53 +1026,27 @@ mod __FXZ_unity2_raw {
         t: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_slerp::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_slerp::get_method_info().method_ptr);
         inner(a, b, t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lerp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <crate::combat::fxz::FXZ as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Lerp",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Lerp", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Lerp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Lerp", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lerp(
@@ -1908,143 +1055,73 @@ mod __FXZ_unity2_raw {
         t: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::fxz::FXZ {
-        let inner: extern "C" fn(
-            crate::combat::fxz::FXZ,
-            crate::combat::fxz::FXZ,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::fxz::FXZ = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lerp::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
+            ::core::mem::transmute(__lookup_lerp::get_method_info().method_ptr);
         inner(a, b, t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_normalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "Normalize",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "Normalize", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "Normalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, "Normalize", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn normalize(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_normalize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_normalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_normalized {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                "get_normalized",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), "get_normalized", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    "get_normalized",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FXZ as ::unity2::ClassIdentity>::NAME,
+                        "get_normalized",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_normalized(
-        this: FXZ,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::fxz::FXZ {
+    pub unsafe fn get_normalized(this: FXZ, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ {
         let inner: extern "C" fn(FXZ, ::unity2::OptionalMethod) -> crate::combat::fxz::FXZ =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_normalized::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_normalized::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FXZ as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FXZ as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FXZ as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <FXZ as ::unity2::ClassIdentity>::NAME, ".cctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -2052,10 +1129,7 @@ mod __FXZ_unity2_raw {
 #[cfg(feature = "combat-fxz")]
 impl FXZ {
     #[doc = "`op_Equality(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn op_equality(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> bool {
+    pub fn op_equality(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> bool {
         unsafe {
             __FXZ_unity2_raw::op_equality(
                 ::core::convert::Into::into(a),
@@ -2064,11 +1138,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`op_Inequality(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn op_inequality(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> bool {
+    pub fn op_inequality(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> bool {
         unsafe {
             __FXZ_unity2_raw::op_inequality(
                 ::core::convert::Into::into(a),
@@ -2077,6 +1149,7 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
     pub fn op_addition(
         a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
@@ -2090,17 +1163,12 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`op_UnaryNegation(crate::combat::fxz::FXZ)` overload"]
-    pub fn op_unary_negation(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> crate::combat::fxz::FXZ {
-        unsafe {
-            __FXZ_unity2_raw::op_unary_negation(
-                ::core::convert::Into::into(a),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_unary_negation(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> crate::combat::fxz::FXZ {
+        unsafe { __FXZ_unity2_raw::op_unary_negation(::core::convert::Into::into(a), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Subtraction(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
     pub fn op_subtraction(
         a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
@@ -2114,11 +1182,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`op_Multiply(crate::combat::fxz::FXZ, f32)` overload"]
-    pub fn op_multiply(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        scale: impl ::core::convert::Into<f32>,
-    ) -> crate::combat::fxz::FXZ {
+    pub fn op_multiply(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, scale: impl ::core::convert::Into<f32>) -> crate::combat::fxz::FXZ {
         unsafe {
             __FXZ_unity2_raw::op_multiply(
                 ::core::convert::Into::into(a),
@@ -2127,11 +1193,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`op_Multiply(f32, crate::combat::fxz::FXZ)` overload"]
-    pub fn op_multiply_2(
-        scale: impl ::core::convert::Into<f32>,
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> crate::combat::fxz::FXZ {
+    pub fn op_multiply_2(scale: impl ::core::convert::Into<f32>, a: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> crate::combat::fxz::FXZ {
         unsafe {
             __FXZ_unity2_raw::op_multiply_2(
                 ::core::convert::Into::into(scale),
@@ -2140,11 +1204,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`op_Division(crate::combat::fxz::FXZ, f32)` overload"]
-    pub fn op_division(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        scale: impl ::core::convert::Into<f32>,
-    ) -> crate::combat::fxz::FXZ {
+    pub fn op_division(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, scale: impl ::core::convert::Into<f32>) -> crate::combat::fxz::FXZ {
         unsafe {
             __FXZ_unity2_raw::op_division(
                 ::core::convert::Into::into(a),
@@ -2153,87 +1215,50 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`op_Addition(*mutcrate::unity_engine::vector3::Vector3, crate::combat::fxz::FXZ)` overload"]
     pub fn op_addition_2(
         xz: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> (
-        crate::unity_engine::vector3::Vector3,
-        crate::unity_engine::vector3::Vector3,
-    ) {
+    ) -> (crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = {
-                __FXZ_unity2_raw::op_addition_2(
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(xz),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = { __FXZ_unity2_raw::op_addition_2(__out_0.as_mut_ptr(), ::core::convert::Into::into(xz), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`op_Subtraction(*mutcrate::unity_engine::vector3::Vector3, crate::combat::fxz::FXZ)` overload"]
     pub fn op_subtraction_2(
         xz: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> (
-        crate::unity_engine::vector3::Vector3,
-        crate::unity_engine::vector3::Vector3,
-    ) {
+    ) -> (crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = {
-                __FXZ_unity2_raw::op_subtraction_2(
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(xz),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = { __FXZ_unity2_raw::op_subtraction_2(__out_0.as_mut_ptr(), ::core::convert::Into::into(xz), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`op_Implicit(crate::combat::fxz::FXZ)` overload"]
-    pub fn op_implicit(
-        v: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __FXZ_unity2_raw::op_implicit(
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_implicit(v: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> crate::unity_engine::vector3::Vector3 {
+        unsafe { __FXZ_unity2_raw::op_implicit(::core::convert::Into::into(v), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Implicit(*mutcrate::unity_engine::vector3::Vector3)` overload"]
-    pub fn op_implicit_2() -> (
-        crate::combat::fxz::FXZ,
-        crate::unity_engine::vector3::Vector3,
-    ) {
+    pub fn op_implicit_2() -> (crate::combat::fxz::FXZ, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let __ret = {
-                __FXZ_unity2_raw::op_implicit_2(__out_0.as_mut_ptr(), ::core::option::Option::None)
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __ret = { __FXZ_unity2_raw::op_implicit_2(__out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`op_Implicit(crate::unity_engine::vector2::Vector2)` overload"]
-    pub fn op_implicit_3(
-        v: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> crate::combat::fxz::FXZ {
-        unsafe {
-            __FXZ_unity2_raw::op_implicit_3(
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_implicit_3(v: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> crate::combat::fxz::FXZ {
+        unsafe { __FXZ_unity2_raw::op_implicit_3(::core::convert::Into::into(v), ::core::option::Option::None) }
     }
+
     #[doc = "`Distance(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn distance(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> f32 {
+    pub fn distance(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> f32 {
         unsafe {
             __FXZ_unity2_raw::distance(
                 ::core::convert::Into::into(a),
@@ -2242,11 +1267,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`SqrDistance(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn sqr_distance(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> f32 {
+    pub fn sqr_distance(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> f32 {
         unsafe {
             __FXZ_unity2_raw::sqr_distance(
                 ::core::convert::Into::into(a),
@@ -2255,6 +1278,7 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`AtoB(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
     pub fn ato_b(
         a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
@@ -2268,23 +1292,19 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`ToRight(crate::combat::fxz::FXZ)` overload"]
-    pub fn to_right(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> crate::combat::fxz::FXZ {
-        unsafe {
-            __FXZ_unity2_raw::to_right(::core::convert::Into::into(a), ::core::option::Option::None)
-        }
+    pub fn to_right(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> crate::combat::fxz::FXZ {
+        unsafe { __FXZ_unity2_raw::to_right(::core::convert::Into::into(a), ::core::option::Option::None) }
     }
+
     #[doc = "`get_insideUnitCircle()` overload"]
     pub fn get_inside_unit_circle() -> crate::combat::fxz::FXZ {
         unsafe { __FXZ_unity2_raw::get_inside_unit_circle(::core::option::Option::None) }
     }
+
     #[doc = "`Dot(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn dot(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> f32 {
+    pub fn dot(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> f32 {
         unsafe {
             __FXZ_unity2_raw::dot(
                 ::core::convert::Into::into(a),
@@ -2293,11 +1313,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`Cross(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn cross(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> f32 {
+    pub fn cross(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> f32 {
         unsafe {
             __FXZ_unity2_raw::cross(
                 ::core::convert::Into::into(a),
@@ -2306,11 +1324,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`Rotate(crate::combat::fxz::FXZ, f32)` overload"]
-    pub fn rotate(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        rad: impl ::core::convert::Into<f32>,
-    ) -> crate::combat::fxz::FXZ {
+    pub fn rotate(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, rad: impl ::core::convert::Into<f32>) -> crate::combat::fxz::FXZ {
         unsafe {
             __FXZ_unity2_raw::rotate(
                 ::core::convert::Into::into(a),
@@ -2319,11 +1335,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`PerpendicularDot(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn perpendicular_dot(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> f32 {
+    pub fn perpendicular_dot(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> f32 {
         unsafe {
             __FXZ_unity2_raw::perpendicular_dot(
                 ::core::convert::Into::into(a),
@@ -2332,11 +1346,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`RadAB(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn rad_ab(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> f32 {
+    pub fn rad_ab(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> f32 {
         unsafe {
             __FXZ_unity2_raw::rad_ab(
                 ::core::convert::Into::into(a),
@@ -2345,11 +1357,9 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`Angle360(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]
-    pub fn angle360(
-        a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-        b: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
-    ) -> f32 {
+    pub fn angle360(a: impl ::core::convert::Into<crate::combat::fxz::FXZ>, b: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> f32 {
         unsafe {
             __FXZ_unity2_raw::angle360(
                 ::core::convert::Into::into(a),
@@ -2358,6 +1368,7 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`Slerp(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32)` overload"]
     pub fn slerp(
         a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
@@ -2373,6 +1384,7 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`Lerp(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32)` overload"]
     pub fn lerp(
         a: impl ::core::convert::Into<crate::combat::fxz::FXZ>,
@@ -2388,6 +1400,7 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __FXZ_unity2_raw::cctor(::core::option::Option::None) }
@@ -2397,11 +1410,7 @@ impl FXZ {
 #[cfg(feature = "combat-fxz")]
 impl FXZ {
     #[doc = "`.ctor(f32, f32)` overload"]
-    pub fn ctor(
-        self,
-        x: impl ::core::convert::Into<f32>,
-        z: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn ctor(self, x: impl ::core::convert::Into<f32>, z: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __FXZ_unity2_raw::ctor(
                 self,
@@ -2411,80 +1420,71 @@ impl FXZ {
             )
         }
     }
+
     #[doc = "`.ctor(crate::combat::fxz::FXZ)` overload"]
     pub fn ctor_2(self, rhs: impl ::core::convert::Into<crate::combat::fxz::FXZ>) -> () {
-        unsafe {
-            __FXZ_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __FXZ_unity2_raw::ctor_2(self, ::core::convert::Into::into(rhs), ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(crate::unity_engine::vector2::Vector2)` overload"]
-    pub fn ctor_3(
-        self,
-        v: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            __FXZ_unity2_raw::ctor_3(
-                self,
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn ctor_3(self, v: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe { __FXZ_unity2_raw::ctor_3(self, ::core::convert::Into::into(v), ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     pub fn ctor_4(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             __FXZ_unity2_raw::ctor_4(self, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __FXZ_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __FXZ_unity2_raw::equals(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __FXZ_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
     }
+
     #[doc = "`ToString()` overload"]
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __FXZ_unity2_raw::to_string(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_isZero()` overload"]
     pub fn get_is_zero(self) -> bool {
         unsafe { __FXZ_unity2_raw::get_is_zero(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_isNotZero()` overload"]
     pub fn get_is_not_zero(self) -> bool {
         unsafe { __FXZ_unity2_raw::get_is_not_zero(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_isNaN()` overload"]
     pub fn get_is_na_n(self) -> bool {
         unsafe { __FXZ_unity2_raw::get_is_na_n(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_magnitude()` overload"]
     pub fn get_magnitude(self) -> f32 {
         unsafe { __FXZ_unity2_raw::get_magnitude(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_sqrMagnitude()` overload"]
     pub fn get_sqr_magnitude(self) -> f32 {
         unsafe { __FXZ_unity2_raw::get_sqr_magnitude(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Normalize()` overload"]
     pub fn normalize(self) -> () {
         unsafe { __FXZ_unity2_raw::normalize(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_normalized()` overload"]
     pub fn get_normalized(self) -> crate::combat::fxz::FXZ {
         unsafe { __FXZ_unity2_raw::get_normalized(self, ::core::option::Option::None) }
@@ -2495,10 +1495,9 @@ impl FXZ {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FXZ;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

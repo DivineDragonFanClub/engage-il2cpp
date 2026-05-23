@@ -2,30 +2,25 @@
 
 #[cfg(feature = "app-mapitemhelper-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_BlessFlags.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapItemHelper_BlessFlags {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapItemHelper_BlessFlags {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapItemHelper.BlessFlags";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -36,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for MapItemHelper_BlessFlags {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -71,21 +63,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_Flag.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapItemHelper_Flag {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapItemHelper_Flag {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapItemHelper.Flag";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -96,10 +81,7 @@ mod __types {
 
     impl ::unity2::IlType for MapItemHelper_Flag {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -143,9 +125,7 @@ mod __MapItemHelper_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_can_use {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -156,29 +136,20 @@ mod __MapItemHelper_unity2_raw {
                 <crate::app::mapitemhelper::MapItemHelper_Flag as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapItemHelper as ::unity2::ClassIdentity>::class(),
-                "CanUse",
-                8,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapItemHelper as ::unity2::ClassIdentity>::class(), "CanUse", 8, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "CanUse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "CanUse",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_use(
@@ -202,11 +173,7 @@ mod __MapItemHelper_unity2_raw {
             crate::app::mapitemhelper::MapItemHelper_Flag,
             crate::app::skilldata::SkillData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_use::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_can_use::get_method_info().method_ptr);
         inner(
             unit,
             unit_item_index,
@@ -223,9 +190,7 @@ mod __MapItemHelper_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_use_target_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -243,18 +208,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetUseTargetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetUseTargetUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_use_target_unit(
@@ -270,20 +232,14 @@ mod __MapItemHelper_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_use_target_unit::get_offset() as isize),
-        );
+        ) -> crate::app::unit::Unit = ::core::mem::transmute(__lookup_get_use_target_unit::get_method_info().method_ptr);
         inner(unit, item, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_use_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -294,29 +250,20 @@ mod __MapItemHelper_unity2_raw {
                 <crate::app::mapitemhelper::MapItemHelper_Flag as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapItemHelper as ::unity2::ClassIdentity>::class(),
-                "CanUse",
-                8,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapItemHelper as ::unity2::ClassIdentity>::class(), "CanUse", 8, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "CanUse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "CanUse",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_use_2(
@@ -340,11 +287,7 @@ mod __MapItemHelper_unity2_raw {
             crate::app::mapitemhelper::MapItemHelper_Flag,
             crate::app::skilldata::SkillData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_use_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_can_use_2::get_method_info().method_ptr);
         inner(
             attack_unit,
             unit_item,
@@ -361,11 +304,8 @@ mod __MapItemHelper_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_target_allied {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_UseTypes as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_UseTypes as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapItemHelper as ::unity2::ClassIdentity>::class(),
                 "IsTargetAllied",
@@ -377,43 +317,28 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "IsTargetAllied",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "IsTargetAllied",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_target_allied(
-        r#type: crate::app::itemdata::ItemData_UseTypes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::itemdata::ItemData_UseTypes,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_target_allied::get_offset() as isize),
-        );
+    pub unsafe fn is_target_allied(r#type: crate::app::itemdata::ItemData_UseTypes, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::itemdata::ItemData_UseTypes, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_target_allied::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_direct_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapItemHelper as ::unity2::ClassIdentity>::class(),
                 "CanDirectTarget",
@@ -425,39 +350,27 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "CanDirectTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "CanDirectTarget",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_direct_target(
-        item: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn can_direct_target(item: crate::app::itemdata::ItemData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_direct_target::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_can_direct_target::get_method_info().method_ptr);
         inner(item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bless_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -474,18 +387,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetBlessFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetBlessFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_bless_flags(
@@ -499,20 +409,14 @@ mod __MapItemHelper_unity2_raw {
             crate::app::unit::Unit,
             crate::app::itemdata::ItemData_UseTypes,
             ::unity2::OptionalMethod,
-        ) -> crate::app::mapitemhelper::MapItemHelper_BlessFlags = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bless_flags::get_offset() as isize),
-        );
+        ) -> crate::app::mapitemhelper::MapItemHelper_BlessFlags = ::core::mem::transmute(__lookup_get_bless_flags::get_method_info().method_ptr);
         inner(item, target, use_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bless_flags_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -528,18 +432,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetBlessFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetBlessFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_bless_flags_2(
@@ -551,20 +452,14 @@ mod __MapItemHelper_unity2_raw {
             crate::app::itemdata::ItemData,
             crate::app::unit::Unit,
             ::unity2::OptionalMethod,
-        ) -> crate::app::mapitemhelper::MapItemHelper_BlessFlags = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bless_flags_2::get_offset() as isize),
-        );
+        ) -> crate::app::mapitemhelper::MapItemHelper_BlessFlags = ::core::mem::transmute(__lookup_get_bless_flags_2::get_method_info().method_ptr);
         inner(item, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_use_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -583,18 +478,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "CanUseImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "CanUseImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_use_impl(
@@ -612,27 +504,14 @@ mod __MapItemHelper_unity2_raw {
             crate::app::itemdata::ItemData_UseTypes,
             crate::app::skillarray::SkillArray,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_use_impl::get_offset() as isize),
-        );
-        inner(
-            unit,
-            item,
-            target,
-            use_type,
-            give_skills,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_can_use_impl::get_method_info().method_ptr);
+        inner(unit, item, target, use_type, give_skills, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_use_enchant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -650,18 +529,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "CanUseEnchant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "CanUseEnchant",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_use_enchant(
@@ -677,20 +553,14 @@ mod __MapItemHelper_unity2_raw {
             crate::app::unit::Unit,
             bool,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_use_enchant::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_can_use_enchant::get_method_info().method_ptr);
         inner(unit, item, target, cancelable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_use_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -707,18 +577,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "CanUseTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "CanUseTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_use_target(
@@ -727,25 +594,15 @@ mod __MapItemHelper_unity2_raw {
         target: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::itemdata::ItemData,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_use_target::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::itemdata::ItemData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_use_target::get_method_info().method_ptr);
         inner(unit, item, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -765,18 +622,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetItemIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetItemIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item_index(
@@ -796,29 +650,22 @@ mod __MapItemHelper_unity2_raw {
             i32,
             crate::app::mapitemhelper::MapItemHelper_Flag,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item_index::get_offset() as isize),
-        );
-        inner(
-            unit,
-            target_x,
-            target_z,
-            unit_x,
-            unit_z,
-            flag,
-            __unity2_method_info,
-        )
+        ) -> i32 = ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
+        inner(unit, target_x, target_z, unit_x, unit_z, flag, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_for_each_rod_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::system::action_1::Action_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapItemHelper as ::unity2::ClassIdentity>::class(),
                 "ForEachRodTarget",
@@ -830,18 +677,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "ForEachRodTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "ForEachRodTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn for_each_rod_target(
@@ -861,28 +705,14 @@ mod __MapItemHelper_unity2_raw {
             crate::app::skilldata::SkillData,
             crate::system::action_1::Action_1<crate::app::unit::Unit>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_for_each_rod_target::get_offset() as isize),
-        );
-        inner(
-            unit,
-            item,
-            target_x,
-            target_z,
-            skill,
-            func,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_for_each_rod_target::get_method_info().method_ptr);
+        inner(unit, item, target_x, target_z, skill, func, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_for_each_rod_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -901,18 +731,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "ForEachRodRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "ForEachRodRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn for_each_rod_range(
@@ -930,20 +757,14 @@ mod __MapItemHelper_unity2_raw {
             i32,
             crate::system::action_2::Action_2<i32, i32>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_for_each_rod_range::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_for_each_rod_range::get_method_info().method_ptr);
         inner(unit, item, target_x, target_z, func, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_creation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -962,18 +783,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "TryCreation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "TryCreation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_creation(
@@ -991,20 +809,14 @@ mod __MapItemHelper_unity2_raw {
             i32,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_creation::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_try_creation::get_method_info().method_ptr);
         inner(super_, unit, target_x, target_z, tid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rescue_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1024,18 +836,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetRescuePosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetRescuePosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rescue_position(
@@ -1047,36 +856,15 @@ mod __MapItemHelper_unity2_raw {
         is_here: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            *mut i32,
-            *mut i32,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rescue_position::get_offset() as isize),
-        );
-        inner(
-            dst_x,
-            dst_z,
-            target,
-            src_x,
-            src_z,
-            is_here,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(*mut i32, *mut i32, crate::app::unit::Unit, i32, i32, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_rescue_position::get_method_info().method_ptr);
+        inner(dst_x, dst_z, target, src_x, src_z, is_here, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rescue_position_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1097,18 +885,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetRescuePosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetRescuePosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rescue_position_2(
@@ -1130,29 +915,14 @@ mod __MapItemHelper_unity2_raw {
             i32,
             bool,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rescue_position_2::get_offset() as isize),
-        );
-        inner(
-            rod_unit,
-            dst_x,
-            dst_z,
-            target,
-            src_x,
-            src_z,
-            is_here,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_get_rescue_position_2::get_method_info().method_ptr);
+        inner(rod_unit, dst_x, dst_z, target, src_x, src_z, is_here, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -1169,18 +939,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "CanAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "CanAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_attack(
@@ -1194,49 +961,34 @@ mod __MapItemHelper_unity2_raw {
             crate::app::unit::Unit,
             crate::app::mapitemhelper::MapItemHelper_Flag,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_attack::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_can_attack::get_method_info().method_ptr);
         inner(unit, target, flag, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_rod {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
                 <crate::app::mapitemhelper::MapItemHelper_Flag as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapItemHelper as ::unity2::ClassIdentity>::class(),
-                "CanRod",
-                4,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapItemHelper as ::unity2::ClassIdentity>::class(), "CanRod", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "CanRod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "CanRod",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_rod(
@@ -1252,20 +1004,14 @@ mod __MapItemHelper_unity2_raw {
             crate::app::itemdata::ItemData,
             crate::app::mapitemhelper::MapItemHelper_Flag,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_rod::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_can_rod::get_method_info().method_ptr);
         inner(unit, target, item, flag, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fire_cannon_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapItemHelper as ::unity2::ClassIdentity>::class(),
@@ -1278,38 +1024,27 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetFireCannonItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetFireCannonItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_fire_cannon_item(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
+    pub unsafe fn get_fire_cannon_item(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::itemdata::ItemData =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_fire_cannon_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_fire_cannon_item::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fire_cannon_range_io {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1326,18 +1061,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetFireCannonRangeIO",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetFireCannonRangeIO",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fire_cannon_range_io(
@@ -1346,25 +1078,15 @@ mod __MapItemHelper_unity2_raw {
         range_o: *mut i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            *mut i32,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fire_cannon_range_io::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, *mut i32, *mut i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_fire_cannon_range_io::get_method_info().method_ptr);
         inner(unit, range_i, range_o, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_heal_power {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData_UseTypes as ::unity2::IlType>::il_type(),
@@ -1381,18 +1103,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetHealPower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetHealPower",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_heal_power(
@@ -1401,25 +1120,15 @@ mod __MapItemHelper_unity2_raw {
         power: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::itemdata::ItemData_UseTypes,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_heal_power::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::itemdata::ItemData_UseTypes, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_heal_power::get_method_info().method_ptr);
         inner(unit, use_type, power, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_heal_power_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -1436,18 +1145,15 @@ mod __MapItemHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    "GetHealPower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        "GetHealPower",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_heal_power_2(
@@ -1456,58 +1162,34 @@ mod __MapItemHelper_unity2_raw {
         is_enchant: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::itemdata::ItemData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_heal_power_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::itemdata::ItemData, bool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_heal_power_2::get_method_info().method_ptr);
         inner(unit, item, is_enchant, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapItemHelper as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapItemHelper as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapItemHelper as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapItemHelper as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapItemHelper, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapItemHelper, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapItemHelper, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1539,6 +1221,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`GetUseTargetUnit(crate::app::unit::Unit, crate::app::itemdata::ItemData, i32, i32)` overload"]
     pub fn get_use_target_unit(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1556,6 +1239,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`CanUse(crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32, crate::app::mapitemhelper::MapItemHelper_Flag, crate::app::skilldata::SkillData)` overload"]
     pub fn can_use_2(
         attack_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1581,28 +1265,17 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`IsTargetAllied(crate::app::itemdata::ItemData_UseTypes)` overload"]
-    pub fn is_target_allied(
-        r#type: impl ::core::convert::Into<crate::app::itemdata::ItemData_UseTypes>,
-    ) -> bool {
-        unsafe {
-            __MapItemHelper_unity2_raw::is_target_allied(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_target_allied(r#type: impl ::core::convert::Into<crate::app::itemdata::ItemData_UseTypes>) -> bool {
+        unsafe { __MapItemHelper_unity2_raw::is_target_allied(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`CanDirectTarget(crate::app::itemdata::ItemData)` overload"]
-    pub fn can_direct_target(
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> bool {
-        unsafe {
-            __MapItemHelper_unity2_raw::can_direct_target(
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn can_direct_target(item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
+        unsafe { __MapItemHelper_unity2_raw::can_direct_target(::core::convert::Into::into(item), ::core::option::Option::None) }
     }
+
     #[doc = "`GetBlessFlags(crate::app::itemdata::ItemData, crate::app::unit::Unit, crate::app::itemdata::ItemData_UseTypes)` overload"]
     pub fn get_bless_flags(
         item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
@@ -1618,6 +1291,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`GetBlessFlags(crate::app::itemdata::ItemData, crate::app::unit::Unit)` overload"]
     pub fn get_bless_flags_2(
         item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
@@ -1631,6 +1305,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`CanUseImpl(crate::app::unit::Unit, crate::app::itemdata::ItemData, crate::app::unit::Unit, crate::app::itemdata::ItemData_UseTypes, crate::app::skillarray::SkillArray)` overload"]
     pub fn can_use_impl(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1650,6 +1325,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`CanUseEnchant(crate::app::unit::Unit, crate::app::itemdata::ItemData, crate::app::unit::Unit, bool)` overload"]
     pub fn can_use_enchant(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1667,6 +1343,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`CanUseTarget(crate::app::unit::Unit, crate::app::itemdata::ItemData, crate::app::unit::Unit)` overload"]
     pub fn can_use_target(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1682,6 +1359,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`GetItemIndex(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::mapitemhelper::MapItemHelper_Flag)` overload"]
     pub fn get_item_index(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1703,6 +1381,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`ForEachRodTarget(crate::app::unit::Unit, crate::app::itemdata::ItemData, i32, i32, crate::app::skilldata::SkillData, crate::system::action_1::Action_1<crate::app::unit::Unit>)` overload"]
     pub fn for_each_rod_target(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1724,6 +1403,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`ForEachRodRange(crate::app::unit::Unit, crate::app::itemdata::ItemData, i32, i32, crate::system::action_2::Action_2<i32,i32>)` overload"]
     pub fn for_each_rod_range(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1743,6 +1423,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`TryCreation(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, i32, ::unity2::Il2CppString)` overload"]
     pub fn try_creation(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -1762,6 +1443,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`GetRescuePosition(*muti32, *muti32, crate::app::unit::Unit, i32, i32, bool)` overload"]
     pub fn get_rescue_position(
         target: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1786,6 +1468,7 @@ impl MapItemHelper {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`GetRescuePosition(crate::app::unit::Unit, *muti32, *muti32, crate::app::unit::Unit, i32, i32, bool)` overload"]
     pub fn get_rescue_position_2(
         rod_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1812,6 +1495,7 @@ impl MapItemHelper {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`CanAttack(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::mapitemhelper::MapItemHelper_Flag)` overload"]
     pub fn can_attack(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1827,6 +1511,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`CanRod(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::itemdata::ItemData, crate::app::mapitemhelper::MapItemHelper_Flag)` overload"]
     pub fn can_rod(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1844,14 +1529,14 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`GetFireCannonItem()` overload"]
     pub fn get_fire_cannon_item() -> crate::app::itemdata::ItemData {
         unsafe { __MapItemHelper_unity2_raw::get_fire_cannon_item(::core::option::Option::None) }
     }
+
     #[doc = "`GetFireCannonRangeIO(crate::app::unit::Unit, *muti32, *muti32)` overload"]
-    pub fn get_fire_cannon_range_io(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> (i32, i32) {
+    pub fn get_fire_cannon_range_io(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> (i32, i32) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
@@ -1864,6 +1549,7 @@ impl MapItemHelper {
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`GetHealPower(crate::app::unit::Unit, crate::app::itemdata::ItemData_UseTypes, i32)` overload"]
     pub fn get_heal_power(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1879,6 +1565,7 @@ impl MapItemHelper {
             )
         }
     }
+
     #[doc = "`GetHealPower(crate::app::unit::Unit, crate::app::itemdata::ItemData, bool)` overload"]
     pub fn get_heal_power_2(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1901,9 +1588,7 @@ pub trait IMapItemHelperMethods: IMapItemHelper {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapItemHelper as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapItemHelper as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapItemHelper_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1916,13 +1601,8 @@ impl<__T: IMapItemHelper> IMapItemHelperMethods for __T {}
 impl MapItemHelper {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapItemHelper),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapItemHelper), ::core::stringify!(new),));
         <Self as IMapItemHelperMethods>::ctor(this);
         this
     }
@@ -1931,18 +1611,12 @@ impl MapItemHelper {
 #[cfg(feature = "app-mapitemhelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapItemHelper;
-    pub use super::IMapItemHelperMethods;
-    pub use super::MapItemHelper;
-    pub use super::MapItemHelper_BlessFlags;
-    pub use super::MapItemHelper_Flag;
-    pub use crate::system::object::IObject;
+    pub use super::{IMapItemHelper, IMapItemHelperMethods, MapItemHelper, MapItemHelper_BlessFlags, MapItemHelper_Flag};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

@@ -2,26 +2,21 @@
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundleprovider-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::{
-        IResourceProviderBase, ResourceProviderBase,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::resource_providers::resourceproviderbase::{IResourceProviderBase, ResourceProviderBase},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/assetbundleprovider/AssetBundleProvider.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-        name = "AssetBundleProvider"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "AssetBundleProvider")]
+    #[parent(crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase)]
     pub struct AssetBundleProvider {}
 }
 
-#[cfg(
-    feature = "unity_engine-resource_management-resource_providers-assetbundleprovider-types"
-)]
+#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundleprovider-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundleprovider")]
@@ -33,10 +28,9 @@ mod __AssetBundleProvider_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_provide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetBundleProvider as ::unity2::ClassIdentity>::class(),
                 "Provide",
@@ -48,36 +42,37 @@ mod __AssetBundleProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetBundleProvider as ::unity2::ClassIdentity>::NAME,
-                    "Provide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleProvider as ::unity2::ClassIdentity>::NAME,
+                        "Provide",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn provide(
         this: AssetBundleProvider,
-        provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+        provider_interface: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (AssetBundleProvider , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_provide :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AssetBundleProvider,
+            crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_provide::get_method_info().method_ptr);
         inner(this, provider_interface, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetBundleProvider as ::unity2::ClassIdentity>::class(),
                 "GetDefaultType",
@@ -89,36 +84,38 @@ mod __AssetBundleProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetBundleProvider as ::unity2::ClassIdentity>::NAME,
-                    "GetDefaultType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleProvider as ::unity2::ClassIdentity>::NAME,
+                        "GetDefaultType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_default_type(
         this: AssetBundleProvider,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner : extern "C" fn (AssetBundleProvider , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AssetBundleProvider,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::SystemType = ::core::mem::transmute(__lookup_get_default_type::get_method_info().method_ptr);
         inner(this, location, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetBundleProvider as ::unity2::ClassIdentity>::class(),
                 "Release",
@@ -130,36 +127,36 @@ mod __AssetBundleProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetBundleProvider as ::unity2::ClassIdentity>::NAME,
-                    "Release",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleProvider as ::unity2::ClassIdentity>::NAME,
+                        "Release",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release(
         this: AssetBundleProvider,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
         asset: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (AssetBundleProvider , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_release :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AssetBundleProvider,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_release::get_method_info().method_ptr);
         inner(this, location, asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetBundleProvider as ::unity2::ClassIdentity>::class(),
@@ -172,30 +169,20 @@ mod __AssetBundleProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetBundleProvider as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleProvider as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AssetBundleProvider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AssetBundleProvider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AssetBundleProvider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -205,45 +192,31 @@ pub trait IAssetBundleProviderMethods: IAssetBundleProvider {
     #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
     fn provide(
         self,
-        provider_interface : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >,
+        provider_interface: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>,
     ) -> () {
         unsafe {
-            let __receiver = <AssetBundleProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetBundleProvider_unity2_raw::provide(
-                __receiver,
-                ::core::convert::Into::into(provider_interface),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetBundleProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetBundleProvider_unity2_raw::provide(__receiver, ::core::convert::Into::into(provider_interface), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDefaultType(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
     fn get_default_type(
         self,
-        location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        location: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>,
     ) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <AssetBundleProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetBundleProvider_unity2_raw::get_default_type(
-                __receiver,
-                ::core::convert::Into::into(location),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetBundleProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetBundleProvider_unity2_raw::get_default_type(__receiver, ::core::convert::Into::into(location), ::core::option::Option::None)
         }
     }
     #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
     fn release(
         self,
-        location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        location: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>,
         asset: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <AssetBundleProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetBundleProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetBundleProvider_unity2_raw::release(
                 __receiver,
                 ::core::convert::Into::into(location),
@@ -255,9 +228,7 @@ pub trait IAssetBundleProviderMethods: IAssetBundleProvider {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AssetBundleProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetBundleProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetBundleProvider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -285,15 +256,10 @@ impl AssetBundleProvider {
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundleprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetBundleProvider;
-    pub use super::IAssetBundleProvider;
-    pub use super::IAssetBundleProviderMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AssetBundleProvider, IAssetBundleProvider, IAssetBundleProviderMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
-    #[cfg(
-        feature = "unity_engine-resource_management-resource_providers-resourceproviderbase"
-    )]
+    #[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")]
     pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBaseMethods;
+    pub use crate::{system::object::IObject, unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase};
 }

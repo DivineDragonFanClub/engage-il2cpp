@@ -5,10 +5,7 @@ pub mod colortween;
 #[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
 pub use colortween::IColorTween_ColorTweenCallbackMethods;
 #[cfg(feature = "unity_engine-ui-coroutine_tween-colortween-types")]
-pub use colortween::{
-    ColorTween, ColorTween_ColorTweenCallback, ColorTween_ColorTweenMode,
-    IColorTween_ColorTweenCallback,
-};
+pub use colortween::{ColorTween, ColorTween_ColorTweenCallback, ColorTween_ColorTweenMode, IColorTween_ColorTweenCallback};
 #[cfg(any(feature = "unity_engine-ui-coroutine_tween-floattween-types"))]
 pub mod floattween;
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]

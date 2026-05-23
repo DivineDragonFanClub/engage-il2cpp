@@ -2,16 +2,13 @@
 
 #[cfg(feature = "system-reflection-memberinfoserializationholder-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/memberinfoserializationholder/MemberInfoSerializationHolder.md"))]
-    #[::unity2::class(
-        namespace = "System.Reflection",
-        name = "MemberInfoSerializationHolder"
-    )]
+    #[::unity2::class(namespace = "System.Reflection", name = "MemberInfoSerializationHolder")]
     #[parent(crate::system::object::Object)]
     pub struct MemberInfoSerializationHolder {
         #[rename(name = "m_memberName")]
@@ -33,8 +30,7 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-memberinfoserializationholder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMemberInfoSerializationHolder;
-    pub use super::MemberInfoSerializationHolder;
+    pub use super::{IMemberInfoSerializationHolder, MemberInfoSerializationHolder};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

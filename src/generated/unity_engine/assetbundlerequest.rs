@@ -2,13 +2,17 @@
 
 #[cfg(feature = "unity_engine-assetbundlerequest-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::asyncoperation::{AsyncOperation, IAsyncOperation};
-    use crate::unity_engine::resourcerequest::{IResourceRequest, ResourceRequest};
-    use crate::unity_engine::yieldinstruction::{IYieldInstruction, YieldInstruction};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            asyncoperation::{AsyncOperation, IAsyncOperation},
+            resourcerequest::{IResourceRequest, ResourceRequest},
+            yieldinstruction::{IYieldInstruction, YieldInstruction},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetbundlerequest/AssetBundleRequest.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AssetBundleRequest")]
@@ -28,9 +32,7 @@ mod __AssetBundleRequest_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetBundleRequest as ::unity2::ClassIdentity>::class(),
@@ -43,41 +45,27 @@ mod __AssetBundleRequest_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetBundleRequest as ::unity2::ClassIdentity>::NAME,
-                    "GetResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleRequest as ::unity2::ClassIdentity>::NAME,
+                        "GetResult",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_result(
-        this: AssetBundleRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            AssetBundleRequest,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_result::get_offset() as isize),
-        );
+    pub unsafe fn get_result(this: AssetBundleRequest, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 {
+        let inner: extern "C" fn(AssetBundleRequest, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_get_result::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetBundleRequest as ::unity2::ClassIdentity>::class(),
@@ -90,41 +78,27 @@ mod __AssetBundleRequest_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetBundleRequest as ::unity2::ClassIdentity>::NAME,
-                    "get_asset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleRequest as ::unity2::ClassIdentity>::NAME,
+                        "get_asset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_asset(
-        this: AssetBundleRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            AssetBundleRequest,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_asset::get_offset() as isize),
-        );
+    pub unsafe fn get_asset(this: AssetBundleRequest, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 {
+        let inner: extern "C" fn(AssetBundleRequest, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_get_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_all_assets {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetBundleRequest as ::unity2::ClassIdentity>::class(),
@@ -137,42 +111,30 @@ mod __AssetBundleRequest_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetBundleRequest as ::unity2::ClassIdentity>::NAME,
-                    "get_allAssets",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleRequest as ::unity2::ClassIdentity>::NAME,
+                        "get_allAssets",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_all_assets(
         this: AssetBundleRequest,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> {
-        let inner: extern "C" fn(
-            AssetBundleRequest,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_all_assets::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AssetBundleRequest, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> =
+            ::core::mem::transmute(__lookup_get_all_assets::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetBundleRequest as ::unity2::ClassIdentity>::class(),
@@ -185,30 +147,20 @@ mod __AssetBundleRequest_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetBundleRequest as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleRequest as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AssetBundleRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AssetBundleRequest, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AssetBundleRequest, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -218,39 +170,28 @@ pub trait IAssetBundleRequestMethods: IAssetBundleRequest {
     #[doc = "`GetResult()` overload"]
     fn get_result(self) -> crate::unity_engine::object_2::Object_2 {
         unsafe {
-            let __receiver = <AssetBundleRequest as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetBundleRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetBundleRequest_unity2_raw::get_result(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_asset()` overload"]
     fn get_asset(self) -> crate::unity_engine::object_2::Object_2 {
         unsafe {
-            let __receiver = <AssetBundleRequest as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetBundleRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetBundleRequest_unity2_raw::get_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_allAssets()` overload"]
     fn get_all_assets(self) -> ::unity2::Array<crate::unity_engine::object_2::Object_2> {
         unsafe {
-            let __receiver = <AssetBundleRequest as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetBundleRequest_unity2_raw::get_all_assets(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AssetBundleRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetBundleRequest_unity2_raw::get_all_assets(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AssetBundleRequest as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AssetBundleRequest as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AssetBundleRequest_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -278,19 +219,17 @@ impl AssetBundleRequest {
 #[cfg(feature = "unity_engine-assetbundlerequest")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetBundleRequest;
-    pub use super::IAssetBundleRequest;
-    pub use super::IAssetBundleRequestMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AssetBundleRequest, IAssetBundleRequest, IAssetBundleRequestMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::asyncoperation::IAsyncOperation;
     #[cfg(feature = "unity_engine-asyncoperation")]
     pub use crate::unity_engine::asyncoperation::IAsyncOperationMethods;
-    pub use crate::unity_engine::resourcerequest::IResourceRequest;
     #[cfg(feature = "unity_engine-resourcerequest")]
     pub use crate::unity_engine::resourcerequest::IResourceRequestMethods;
-    pub use crate::unity_engine::yieldinstruction::IYieldInstruction;
     #[cfg(feature = "unity_engine-yieldinstruction")]
     pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{asyncoperation::IAsyncOperation, resourcerequest::IResourceRequest, yieldinstruction::IYieldInstruction},
+    };
 }

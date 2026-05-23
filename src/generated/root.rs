@@ -287,17 +287,13 @@ pub mod akambientlargemodepositioner;
 #[cfg(feature = "root-akambientlargemodepositioner")]
 pub use akambientlargemodepositioner::IAkAmbientLargeModePositionerMethods;
 #[cfg(feature = "root-akambientlargemodepositioner-types")]
-pub use akambientlargemodepositioner::{
-    AkAmbientLargeModePositioner, IAkAmbientLargeModePositioner,
-};
+pub use akambientlargemodepositioner::{AkAmbientLargeModePositioner, IAkAmbientLargeModePositioner};
 #[cfg(any(feature = "root-akambientlargemodepositioner_bridge-types"))]
 pub mod akambientlargemodepositioner_bridge;
 #[cfg(feature = "root-akambientlargemodepositioner_bridge")]
 pub use akambientlargemodepositioner_bridge::IAkAmbientLargeModePositioner_BridgeMethods;
 #[cfg(feature = "root-akambientlargemodepositioner_bridge-types")]
-pub use akambientlargemodepositioner_bridge::{
-    AkAmbientLargeModePositioner_Bridge, IAkAmbientLargeModePositioner_Bridge,
-};
+pub use akambientlargemodepositioner_bridge::{AkAmbientLargeModePositioner_Bridge, IAkAmbientLargeModePositioner_Bridge};
 #[cfg(any(feature = "root-akaudiodevicestate-types"))]
 pub mod akaudiodevicestate;
 #[cfg(feature = "root-akaudiodevicestate-types")]
@@ -312,39 +308,31 @@ pub use akaudioformat::{AkAudioFormat, IAkAudioFormat};
 pub mod akaudioinputmanager;
 #[cfg(feature = "root-akaudioinputmanager-types")]
 pub use akaudioinputmanager::{
-    AkAudioInputManager, AkAudioInputManager_AudioFormatDelegate,
-    AkAudioInputManager_AudioFormatInteropDelegate, AkAudioInputManager_AudioSamplesDelegate,
-    AkAudioInputManager_AudioSamplesInteropDelegate, IAkAudioInputManager,
-    IAkAudioInputManager_AudioFormatDelegate, IAkAudioInputManager_AudioFormatInteropDelegate,
-    IAkAudioInputManager_AudioSamplesDelegate, IAkAudioInputManager_AudioSamplesInteropDelegate,
+    AkAudioInputManager, AkAudioInputManager_AudioFormatDelegate, AkAudioInputManager_AudioFormatInteropDelegate,
+    AkAudioInputManager_AudioSamplesDelegate, AkAudioInputManager_AudioSamplesInteropDelegate, IAkAudioInputManager,
+    IAkAudioInputManager_AudioFormatDelegate, IAkAudioInputManager_AudioFormatInteropDelegate, IAkAudioInputManager_AudioSamplesDelegate,
+    IAkAudioInputManager_AudioSamplesInteropDelegate,
 };
 #[cfg(feature = "root-akaudioinputmanager")]
 pub use akaudioinputmanager::{
-    IAkAudioInputManager_AudioFormatDelegateMethods,
-    IAkAudioInputManager_AudioFormatInteropDelegateMethods,
-    IAkAudioInputManager_AudioSamplesDelegateMethods,
-    IAkAudioInputManager_AudioSamplesInteropDelegateMethods,
+    IAkAudioInputManager_AudioFormatDelegateMethods, IAkAudioInputManager_AudioFormatInteropDelegateMethods,
+    IAkAudioInputManager_AudioSamplesDelegateMethods, IAkAudioInputManager_AudioSamplesInteropDelegateMethods,
 };
 #[cfg(any(feature = "root-akaudiointerruptioncallbackinfo-types"))]
 pub mod akaudiointerruptioncallbackinfo;
 #[cfg(feature = "root-akaudiointerruptioncallbackinfo")]
 pub use akaudiointerruptioncallbackinfo::IAkAudioInterruptionCallbackInfoMethods;
 #[cfg(feature = "root-akaudiointerruptioncallbackinfo-types")]
-pub use akaudiointerruptioncallbackinfo::{
-    AkAudioInterruptionCallbackInfo, IAkAudioInterruptionCallbackInfo,
-};
+pub use akaudiointerruptioncallbackinfo::{AkAudioInterruptionCallbackInfo, IAkAudioInterruptionCallbackInfo};
 #[cfg(any(feature = "root-akaudiolistener-types"))]
 pub mod akaudiolistener;
 #[cfg(feature = "root-akaudiolistener-types")]
 pub use akaudiolistener::{
-    AkAudioListener, AkAudioListener_BaseListenerList, AkAudioListener_DefaultListenerList,
-    IAkAudioListener, IAkAudioListener_BaseListenerList, IAkAudioListener_DefaultListenerList,
+    AkAudioListener, AkAudioListener_BaseListenerList, AkAudioListener_DefaultListenerList, IAkAudioListener, IAkAudioListener_BaseListenerList,
+    IAkAudioListener_DefaultListenerList,
 };
 #[cfg(feature = "root-akaudiolistener")]
-pub use akaudiolistener::{
-    IAkAudioListenerMethods, IAkAudioListener_BaseListenerListMethods,
-    IAkAudioListener_DefaultListenerListMethods,
-};
+pub use akaudiolistener::{IAkAudioListenerMethods, IAkAudioListener_BaseListenerListMethods, IAkAudioListener_DefaultListenerListMethods};
 #[cfg(any(feature = "root-akaudiosettings-types"))]
 pub mod akaudiosettings;
 #[cfg(feature = "root-akaudiosettings")]
@@ -356,9 +344,7 @@ pub mod akaudiosourcechangecallbackinfo;
 #[cfg(feature = "root-akaudiosourcechangecallbackinfo")]
 pub use akaudiosourcechangecallbackinfo::IAkAudioSourceChangeCallbackInfoMethods;
 #[cfg(feature = "root-akaudiosourcechangecallbackinfo-types")]
-pub use akaudiosourcechangecallbackinfo::{
-    AkAudioSourceChangeCallbackInfo, IAkAudioSourceChangeCallbackInfo,
-};
+pub use akaudiosourcechangecallbackinfo::{AkAudioSourceChangeCallbackInfo, IAkAudioSourceChangeCallbackInfo};
 #[cfg(any(feature = "root-akauxsendarray-types"))]
 pub mod akauxsendarray;
 #[cfg(feature = "root-akauxsendarray")]
@@ -397,15 +383,11 @@ pub use akbankcontent::AkBankContent;
 pub mod akbankmanager;
 #[cfg(feature = "root-akbankmanager-types")]
 pub use akbankmanager::{
-    AkBankManager, AkBankManager_AsyncBankHandle, AkBankManager_BankHandle,
-    AkBankManager_DecodableBankHandle, IAkBankManager, IAkBankManager_AsyncBankHandle,
-    IAkBankManager_BankHandle, IAkBankManager_DecodableBankHandle,
+    AkBankManager, AkBankManager_AsyncBankHandle, AkBankManager_BankHandle, AkBankManager_DecodableBankHandle, IAkBankManager,
+    IAkBankManager_AsyncBankHandle, IAkBankManager_BankHandle, IAkBankManager_DecodableBankHandle,
 };
 #[cfg(feature = "root-akbankmanager")]
-pub use akbankmanager::{
-    IAkBankManager_AsyncBankHandleMethods, IAkBankManager_BankHandleMethods,
-    IAkBankManager_DecodableBankHandleMethods,
-};
+pub use akbankmanager::{IAkBankManager_AsyncBankHandleMethods, IAkBankManager_BankHandleMethods, IAkBankManager_DecodableBankHandleMethods};
 #[cfg(any(feature = "root-akbasearray_1-types"))]
 pub mod akbasearray_1;
 #[cfg(feature = "root-akbasearray_1")]
@@ -438,20 +420,16 @@ pub use akcallbackinfo::{AkCallbackInfo, IAkCallbackInfo};
 pub mod akcallbackmanager;
 #[cfg(feature = "root-akcallbackmanager-types")]
 pub use akcallbackmanager::{
-    AkCallbackManager, AkCallbackManager_BGMCallback, AkCallbackManager_BGMCallbackPackage,
-    AkCallbackManager_BankCallback, AkCallbackManager_BankCallbackPackage,
-    AkCallbackManager_EventCallback, AkCallbackManager_EventCallbackPackage,
-    AkCallbackManager_InitializationSettings, AkCallbackManager_MonitoringCallback,
-    IAkCallbackManager, IAkCallbackManager_BGMCallback, IAkCallbackManager_BGMCallbackPackage,
-    IAkCallbackManager_BankCallback, IAkCallbackManager_BankCallbackPackage,
-    IAkCallbackManager_EventCallback, IAkCallbackManager_EventCallbackPackage,
-    IAkCallbackManager_InitializationSettings, IAkCallbackManager_MonitoringCallback,
+    AkCallbackManager, AkCallbackManager_BGMCallback, AkCallbackManager_BGMCallbackPackage, AkCallbackManager_BankCallback,
+    AkCallbackManager_BankCallbackPackage, AkCallbackManager_EventCallback, AkCallbackManager_EventCallbackPackage,
+    AkCallbackManager_InitializationSettings, AkCallbackManager_MonitoringCallback, IAkCallbackManager, IAkCallbackManager_BGMCallback,
+    IAkCallbackManager_BGMCallbackPackage, IAkCallbackManager_BankCallback, IAkCallbackManager_BankCallbackPackage, IAkCallbackManager_EventCallback,
+    IAkCallbackManager_EventCallbackPackage, IAkCallbackManager_InitializationSettings, IAkCallbackManager_MonitoringCallback,
 };
 #[cfg(feature = "root-akcallbackmanager")]
 pub use akcallbackmanager::{
-    IAkCallbackManager_BGMCallbackMethods, IAkCallbackManager_BGMCallbackPackageMethods,
-    IAkCallbackManager_BankCallbackMethods, IAkCallbackManager_BankCallbackPackageMethods,
-    IAkCallbackManager_EventCallbackMethods, IAkCallbackManager_EventCallbackPackageMethods,
+    IAkCallbackManager_BGMCallbackMethods, IAkCallbackManager_BGMCallbackPackageMethods, IAkCallbackManager_BankCallbackMethods,
+    IAkCallbackManager_BankCallbackPackageMethods, IAkCallbackManager_EventCallbackMethods, IAkCallbackManager_EventCallbackPackageMethods,
     IAkCallbackManager_InitializationSettingsMethods, IAkCallbackManager_MonitoringCallbackMethods,
 };
 #[cfg(any(feature = "root-akcallbackserializer-types"))]
@@ -494,13 +472,11 @@ pub use akchannelordering::AkChannelOrdering;
 pub mod akcommonadvancedsettings;
 #[cfg(feature = "root-akcommonadvancedsettings-types")]
 pub use akcommonadvancedsettings::{
-    AkCommonAdvancedSettings, AkCommonAdvancedSettings_SpatialAudioSettings,
-    IAkCommonAdvancedSettings, IAkCommonAdvancedSettings_SpatialAudioSettings,
+    AkCommonAdvancedSettings, AkCommonAdvancedSettings_SpatialAudioSettings, IAkCommonAdvancedSettings,
+    IAkCommonAdvancedSettings_SpatialAudioSettings,
 };
 #[cfg(feature = "root-akcommonadvancedsettings")]
-pub use akcommonadvancedsettings::{
-    IAkCommonAdvancedSettingsMethods, IAkCommonAdvancedSettings_SpatialAudioSettingsMethods,
-};
+pub use akcommonadvancedsettings::{IAkCommonAdvancedSettingsMethods, IAkCommonAdvancedSettings_SpatialAudioSettingsMethods};
 #[cfg(any(feature = "root-akcommoncommsettings-types"))]
 pub mod akcommoncommsettings;
 #[cfg(feature = "root-akcommoncommsettings")]
@@ -511,15 +487,12 @@ pub use akcommoncommsettings::{AkCommonCommSettings, IAkCommonCommSettings};
 pub mod akcommonoutputsettings;
 #[cfg(feature = "root-akcommonoutputsettings-types")]
 pub use akcommonoutputsettings::{
-    AkCommonOutputSettings, AkCommonOutputSettings_ChannelConfiguration,
-    AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType,
-    AkCommonOutputSettings_ChannelConfiguration_ChannelMask, AkCommonOutputSettings_PanningRule,
-    IAkCommonOutputSettings, IAkCommonOutputSettings_ChannelConfiguration,
+    AkCommonOutputSettings, AkCommonOutputSettings_ChannelConfiguration, AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType,
+    AkCommonOutputSettings_ChannelConfiguration_ChannelMask, AkCommonOutputSettings_PanningRule, IAkCommonOutputSettings,
+    IAkCommonOutputSettings_ChannelConfiguration,
 };
 #[cfg(feature = "root-akcommonoutputsettings")]
-pub use akcommonoutputsettings::{
-    IAkCommonOutputSettingsMethods, IAkCommonOutputSettings_ChannelConfigurationMethods,
-};
+pub use akcommonoutputsettings::{IAkCommonOutputSettingsMethods, IAkCommonOutputSettings_ChannelConfigurationMethods};
 #[cfg(any(feature = "root-akcommonplatformsettings-types"))]
 pub mod akcommonplatformsettings;
 #[cfg(feature = "root-akcommonplatformsettings")]
@@ -530,22 +503,17 @@ pub use akcommonplatformsettings::{AkCommonPlatformSettings, IAkCommonPlatformSe
 pub mod akcommonusersettings;
 #[cfg(feature = "root-akcommonusersettings-types")]
 pub use akcommonusersettings::{
-    AkCommonUserSettings, AkCommonUserSettings_SpatialAudioSettings,
-    AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags, IAkCommonUserSettings,
-    IAkCommonUserSettings_SpatialAudioSettings,
+    AkCommonUserSettings, AkCommonUserSettings_SpatialAudioSettings, AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags,
+    IAkCommonUserSettings, IAkCommonUserSettings_SpatialAudioSettings,
 };
 #[cfg(feature = "root-akcommonusersettings")]
-pub use akcommonusersettings::{
-    IAkCommonUserSettingsMethods, IAkCommonUserSettings_SpatialAudioSettingsMethods,
-};
+pub use akcommonusersettings::{IAkCommonUserSettingsMethods, IAkCommonUserSettings_SpatialAudioSettingsMethods};
 #[cfg(any(feature = "root-akcommunicationsettings-types"))]
 pub mod akcommunicationsettings;
 #[cfg(feature = "root-akcommunicationsettings")]
 pub use akcommunicationsettings::IAkCommunicationSettingsMethods;
 #[cfg(feature = "root-akcommunicationsettings-types")]
-pub use akcommunicationsettings::{
-    AkCommunicationSettings, AkCommunicationSettings_AkCommSystem, IAkCommunicationSettings,
-};
+pub use akcommunicationsettings::{AkCommunicationSettings, AkCommunicationSettings_AkCommSystem, IAkCommunicationSettings};
 #[cfg(any(feature = "root-akconnectiontype-types"))]
 pub mod akconnectiontype;
 #[cfg(feature = "root-akconnectiontype-types")]
@@ -605,9 +573,7 @@ pub mod akdynamicsequenceitemcallbackinfo;
 #[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
 pub use akdynamicsequenceitemcallbackinfo::IAkDynamicSequenceItemCallbackInfoMethods;
 #[cfg(feature = "root-akdynamicsequenceitemcallbackinfo-types")]
-pub use akdynamicsequenceitemcallbackinfo::{
-    AkDynamicSequenceItemCallbackInfo, IAkDynamicSequenceItemCallbackInfo,
-};
+pub use akdynamicsequenceitemcallbackinfo::{AkDynamicSequenceItemCallbackInfo, IAkDynamicSequenceItemCallbackInfo};
 #[cfg(any(feature = "root-akdynamicsequencetype-types"))]
 pub mod akdynamicsequencetype;
 #[cfg(feature = "root-akdynamicsequencetype-types")]
@@ -623,9 +589,7 @@ pub mod akemitterobstructionocclusion;
 #[cfg(feature = "root-akemitterobstructionocclusion")]
 pub use akemitterobstructionocclusion::IAkEmitterObstructionOcclusionMethods;
 #[cfg(feature = "root-akemitterobstructionocclusion-types")]
-pub use akemitterobstructionocclusion::{
-    AkEmitterObstructionOcclusion, IAkEmitterObstructionOcclusion,
-};
+pub use akemitterobstructionocclusion::{AkEmitterObstructionOcclusion, IAkEmitterObstructionOcclusion};
 #[cfg(any(feature = "root-akenumflagattribute-types"))]
 pub mod akenumflagattribute;
 #[cfg(feature = "root-akenumflagattribute")]
@@ -636,15 +600,12 @@ pub use akenumflagattribute::{AkEnumFlagAttribute, IAkEnumFlagAttribute};
 pub mod akenvironment;
 #[cfg(feature = "root-akenvironment-types")]
 pub use akenvironment::{
-    AkEnvironment, AkEnvironment_AkEnvironment_CompareByPriority,
-    AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm, IAkEnvironment,
-    IAkEnvironment_AkEnvironment_CompareByPriority,
-    IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
+    AkEnvironment, AkEnvironment_AkEnvironment_CompareByPriority, AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm, IAkEnvironment,
+    IAkEnvironment_AkEnvironment_CompareByPriority, IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
 };
 #[cfg(feature = "root-akenvironment")]
 pub use akenvironment::{
-    IAkEnvironmentMethods, IAkEnvironment_AkEnvironment_CompareByPriorityMethods,
-    IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods,
+    IAkEnvironmentMethods, IAkEnvironment_AkEnvironment_CompareByPriorityMethods, IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods,
 };
 #[cfg(any(feature = "root-akenvironmentportal-types"))]
 pub mod akenvironmentportal;
@@ -693,9 +654,7 @@ pub mod akeventplayablebehavior;
 #[cfg(feature = "root-akeventplayablebehavior")]
 pub use akeventplayablebehavior::IAkEventPlayableBehaviorMethods;
 #[cfg(feature = "root-akeventplayablebehavior-types")]
-pub use akeventplayablebehavior::{
-    AkEventPlayableBehavior, AkEventPlayableBehavior_Actions, IAkEventPlayableBehavior,
-};
+pub use akeventplayablebehavior::{AkEventPlayableBehavior, AkEventPlayableBehavior_Actions, IAkEventPlayableBehavior};
 #[cfg(any(feature = "root-akeventtrack-types"))]
 pub mod akeventtrack;
 #[cfg(feature = "root-akeventtrack")]
@@ -807,9 +766,7 @@ pub use akiterator::{AkIterator, IAkIterator};
 #[cfg(any(feature = "root-aklogger-types"))]
 pub mod aklogger;
 #[cfg(feature = "root-aklogger-types")]
-pub use aklogger::{
-    AkLogger, AkLogger_ErrorLoggerInteropDelegate, IAkLogger, IAkLogger_ErrorLoggerInteropDelegate,
-};
+pub use aklogger::{AkLogger, AkLogger_ErrorLoggerInteropDelegate, IAkLogger, IAkLogger_ErrorLoggerInteropDelegate};
 #[cfg(feature = "root-aklogger")]
 pub use aklogger::{IAkLoggerMethods, IAkLogger_ErrorLoggerInteropDelegateMethods};
 #[cfg(any(feature = "root-akmacsettings-types"))]
@@ -842,17 +799,14 @@ pub use akmidicctypes::AkMIDICcTypes;
 pub mod akmidievent;
 #[cfg(feature = "root-akmidievent-types")]
 pub use akmidievent::{
-    AkMIDIEvent, AkMIDIEvent_tCc, AkMIDIEvent_tChanAftertouch, AkMIDIEvent_tGen,
-    AkMIDIEvent_tNoteAftertouch, AkMIDIEvent_tNoteOnOff, AkMIDIEvent_tPitchBend,
-    AkMIDIEvent_tProgramChange, IAkMIDIEvent, IAkMIDIEvent_tCc, IAkMIDIEvent_tChanAftertouch,
-    IAkMIDIEvent_tGen, IAkMIDIEvent_tNoteAftertouch, IAkMIDIEvent_tNoteOnOff,
-    IAkMIDIEvent_tPitchBend, IAkMIDIEvent_tProgramChange,
+    AkMIDIEvent, AkMIDIEvent_tCc, AkMIDIEvent_tChanAftertouch, AkMIDIEvent_tGen, AkMIDIEvent_tNoteAftertouch, AkMIDIEvent_tNoteOnOff,
+    AkMIDIEvent_tPitchBend, AkMIDIEvent_tProgramChange, IAkMIDIEvent, IAkMIDIEvent_tCc, IAkMIDIEvent_tChanAftertouch, IAkMIDIEvent_tGen,
+    IAkMIDIEvent_tNoteAftertouch, IAkMIDIEvent_tNoteOnOff, IAkMIDIEvent_tPitchBend, IAkMIDIEvent_tProgramChange,
 };
 #[cfg(feature = "root-akmidievent")]
 pub use akmidievent::{
-    IAkMIDIEventMethods, IAkMIDIEvent_tCcMethods, IAkMIDIEvent_tChanAftertouchMethods,
-    IAkMIDIEvent_tGenMethods, IAkMIDIEvent_tNoteAftertouchMethods, IAkMIDIEvent_tNoteOnOffMethods,
-    IAkMIDIEvent_tPitchBendMethods, IAkMIDIEvent_tProgramChangeMethods,
+    IAkMIDIEventMethods, IAkMIDIEvent_tCcMethods, IAkMIDIEvent_tChanAftertouchMethods, IAkMIDIEvent_tGenMethods, IAkMIDIEvent_tNoteAftertouchMethods,
+    IAkMIDIEvent_tNoteOnOffMethods, IAkMIDIEvent_tPitchBendMethods, IAkMIDIEvent_tProgramChangeMethods,
 };
 #[cfg(any(feature = "root-akmidieventcallbackinfo-types"))]
 pub mod akmidieventcallbackinfo;
@@ -934,29 +888,23 @@ pub use akobjectinfoarray::{AkObjectInfoArray, IAkObjectInfoArray};
 pub mod akobstructionocclusion;
 #[cfg(feature = "root-akobstructionocclusion-types")]
 pub use akobstructionocclusion::{
-    AkObstructionOcclusion, AkObstructionOcclusion_ObstructionOcclusionValue,
-    IAkObstructionOcclusion, IAkObstructionOcclusion_ObstructionOcclusionValue,
+    AkObstructionOcclusion, AkObstructionOcclusion_ObstructionOcclusionValue, IAkObstructionOcclusion,
+    IAkObstructionOcclusion_ObstructionOcclusionValue,
 };
 #[cfg(feature = "root-akobstructionocclusion")]
-pub use akobstructionocclusion::{
-    IAkObstructionOcclusionMethods, IAkObstructionOcclusion_ObstructionOcclusionValueMethods,
-};
+pub use akobstructionocclusion::{IAkObstructionOcclusionMethods, IAkObstructionOcclusion_ObstructionOcclusionValueMethods};
 #[cfg(any(feature = "root-akobstructionocclusionvalues-types"))]
 pub mod akobstructionocclusionvalues;
 #[cfg(feature = "root-akobstructionocclusionvalues")]
 pub use akobstructionocclusionvalues::IAkObstructionOcclusionValuesMethods;
 #[cfg(feature = "root-akobstructionocclusionvalues-types")]
-pub use akobstructionocclusionvalues::{
-    AkObstructionOcclusionValues, IAkObstructionOcclusionValues,
-};
+pub use akobstructionocclusionvalues::{AkObstructionOcclusionValues, IAkObstructionOcclusionValues};
 #[cfg(any(feature = "root-akobstructionocclusionvaluesarray-types"))]
 pub mod akobstructionocclusionvaluesarray;
 #[cfg(feature = "root-akobstructionocclusionvaluesarray")]
 pub use akobstructionocclusionvaluesarray::IAkObstructionOcclusionValuesArrayMethods;
 #[cfg(feature = "root-akobstructionocclusionvaluesarray-types")]
-pub use akobstructionocclusionvaluesarray::{
-    AkObstructionOcclusionValuesArray, IAkObstructionOcclusionValuesArray,
-};
+pub use akobstructionocclusionvaluesarray::{AkObstructionOcclusionValuesArray, IAkObstructionOcclusionValuesArray};
 #[cfg(any(feature = "root-akoutputsettings-types"))]
 pub mod akoutputsettings;
 #[cfg(feature = "root-akoutputsettings")]
@@ -1038,9 +986,7 @@ pub mod akresourcemonitordatasummary;
 #[cfg(feature = "root-akresourcemonitordatasummary")]
 pub use akresourcemonitordatasummary::IAkResourceMonitorDataSummaryMethods;
 #[cfg(feature = "root-akresourcemonitordatasummary-types")]
-pub use akresourcemonitordatasummary::{
-    AkResourceMonitorDataSummary, IAkResourceMonitorDataSummary,
-};
+pub use akresourcemonitordatasummary::{AkResourceMonitorDataSummary, IAkResourceMonitorDataSummary};
 #[cfg(any(feature = "root-akresult-types"))]
 pub mod akresult;
 #[cfg(feature = "root-akresult-types")]
@@ -1049,13 +995,10 @@ pub use akresult::AKRESULT;
 pub mod akroom;
 #[cfg(feature = "root-akroom-types")]
 pub use akroom::{
-    AkRoom, AkRoom_PriorityList, AkRoom_PriorityList_CompareByPriority, IAkRoom,
-    IAkRoom_PriorityList, IAkRoom_PriorityList_CompareByPriority,
+    AkRoom, AkRoom_PriorityList, AkRoom_PriorityList_CompareByPriority, IAkRoom, IAkRoom_PriorityList, IAkRoom_PriorityList_CompareByPriority,
 };
 #[cfg(feature = "root-akroom")]
-pub use akroom::{
-    IAkRoomMethods, IAkRoom_PriorityListMethods, IAkRoom_PriorityList_CompareByPriorityMethods,
-};
+pub use akroom::{IAkRoomMethods, IAkRoom_PriorityListMethods, IAkRoom_PriorityList_CompareByPriorityMethods};
 #[cfg(any(feature = "root-akroomawaremanager-types"))]
 pub mod akroomawaremanager;
 #[cfg(feature = "root-akroomawaremanager-types")]
@@ -1130,14 +1073,11 @@ pub use akshowonlyattribute::{AkShowOnlyAttribute, IAkShowOnlyAttribute};
 pub mod aksoundengine;
 #[cfg(feature = "root-aksoundengine-types")]
 pub use aksoundengine::{
-    AkSoundEngine, AkSoundEngine_AutoObject, AkSoundEngine_GameObjectHashFunction, IAkSoundEngine,
-    IAkSoundEngine_AutoObject, IAkSoundEngine_GameObjectHashFunction,
+    AkSoundEngine, AkSoundEngine_AutoObject, AkSoundEngine_GameObjectHashFunction, IAkSoundEngine, IAkSoundEngine_AutoObject,
+    IAkSoundEngine_GameObjectHashFunction,
 };
 #[cfg(feature = "root-aksoundengine")]
-pub use aksoundengine::{
-    IAkSoundEngineMethods, IAkSoundEngine_AutoObjectMethods,
-    IAkSoundEngine_GameObjectHashFunctionMethods,
-};
+pub use aksoundengine::{IAkSoundEngineMethods, IAkSoundEngine_AutoObjectMethods, IAkSoundEngine_GameObjectHashFunctionMethods};
 #[cfg(any(feature = "root-aksoundenginecontroller-types"))]
 pub mod aksoundenginecontroller;
 #[cfg(feature = "root-aksoundenginecontroller")]
@@ -1188,13 +1128,11 @@ pub use akspatialaudioinitsettings::{AkSpatialAudioInitSettings, IAkSpatialAudio
 pub mod akspatialaudiolistener;
 #[cfg(feature = "root-akspatialaudiolistener-types")]
 pub use akspatialaudiolistener::{
-    AkSpatialAudioListener, AkSpatialAudioListener_SpatialAudioListenerList,
-    IAkSpatialAudioListener, IAkSpatialAudioListener_SpatialAudioListenerList,
+    AkSpatialAudioListener, AkSpatialAudioListener_SpatialAudioListenerList, IAkSpatialAudioListener,
+    IAkSpatialAudioListener_SpatialAudioListenerList,
 };
 #[cfg(feature = "root-akspatialaudiolistener")]
-pub use akspatialaudiolistener::{
-    IAkSpatialAudioListenerMethods, IAkSpatialAudioListener_SpatialAudioListenerListMethods,
-};
+pub use akspatialaudiolistener::{IAkSpatialAudioListenerMethods, IAkSpatialAudioListener_SpatialAudioListenerListMethods};
 #[cfg(any(feature = "root-akspeakerpanningtype-types"))]
 pub mod akspeakerpanningtype;
 #[cfg(feature = "root-akspeakerpanningtype-types")]
@@ -1259,8 +1197,7 @@ pub mod aktimelineeventplayablebehavior;
 pub use aktimelineeventplayablebehavior::IAkTimelineEventPlayableBehaviorMethods;
 #[cfg(feature = "root-aktimelineeventplayablebehavior-types")]
 pub use aktimelineeventplayablebehavior::{
-    AkTimelineEventPlayableBehavior, AkTimelineEventPlayableBehavior_Actions,
-    IAkTimelineEventPlayableBehavior,
+    AkTimelineEventPlayableBehavior, AkTimelineEventPlayableBehavior_Actions, IAkTimelineEventPlayableBehavior,
 };
 #[cfg(any(feature = "root-aktimelineeventtrack-types"))]
 pub mod aktimelineeventtrack;
@@ -1279,9 +1216,7 @@ pub mod aktimelinertpcplayablebehaviour;
 #[cfg(feature = "root-aktimelinertpcplayablebehaviour")]
 pub use aktimelinertpcplayablebehaviour::IAkTimelineRtpcPlayableBehaviourMethods;
 #[cfg(feature = "root-aktimelinertpcplayablebehaviour-types")]
-pub use aktimelinertpcplayablebehaviour::{
-    AkTimelineRtpcPlayableBehaviour, IAkTimelineRtpcPlayableBehaviour,
-};
+pub use aktimelinertpcplayablebehaviour::{AkTimelineRtpcPlayableBehaviour, IAkTimelineRtpcPlayableBehaviour};
 #[cfg(any(feature = "root-aktimelinertpctrack-types"))]
 pub mod aktimelinertpctrack;
 #[cfg(feature = "root-aktimelinertpctrack")]
@@ -1309,9 +1244,7 @@ pub use aktrianglearray::{AkTriangleArray, IAkTriangleArray};
 #[cfg(any(feature = "root-aktriggerbase-types"))]
 pub mod aktriggerbase;
 #[cfg(feature = "root-aktriggerbase-types")]
-pub use aktriggerbase::{
-    AkTriggerBase, AkTriggerBase_Trigger, IAkTriggerBase, IAkTriggerBase_Trigger,
-};
+pub use aktriggerbase::{AkTriggerBase, AkTriggerBase_Trigger, IAkTriggerBase, IAkTriggerBase_Trigger};
 #[cfg(feature = "root-aktriggerbase")]
 pub use aktriggerbase::{IAkTriggerBaseMethods, IAkTriggerBase_TriggerMethods};
 #[cfg(any(feature = "root-aktriggercollisionenter-types"))]
@@ -1385,15 +1318,11 @@ pub mod akunityplatformspecificsettings;
 #[cfg(feature = "root-akunityplatformspecificsettings")]
 pub use akunityplatformspecificsettings::IAkUnityPlatformSpecificSettingsMethods;
 #[cfg(feature = "root-akunityplatformspecificsettings-types")]
-pub use akunityplatformspecificsettings::{
-    AkUnityPlatformSpecificSettings, IAkUnityPlatformSpecificSettings,
-};
+pub use akunityplatformspecificsettings::{AkUnityPlatformSpecificSettings, IAkUnityPlatformSpecificSettings};
 #[cfg(any(feature = "root-akutilities-types"))]
 pub mod akutilities;
 #[cfg(feature = "root-akutilities-types")]
-pub use akutilities::{
-    AkUtilities, AkUtilities_ShortIDGenerator, IAkUtilities, IAkUtilities_ShortIDGenerator,
-};
+pub use akutilities::{AkUtilities, AkUtilities_ShortIDGenerator, IAkUtilities, IAkUtilities_ShortIDGenerator};
 #[cfg(feature = "root-akutilities")]
 pub use akutilities::{IAkUtilitiesMethods, IAkUtilities_ShortIDGeneratorMethods};
 #[cfg(any(feature = "root-akvector-types"))]
@@ -1418,27 +1347,21 @@ pub use akvertexarray::{AkVertexArray, IAkVertexArray};
 pub mod akwindowssettings;
 #[cfg(feature = "root-akwindowssettings-types")]
 pub use akwindowssettings::{
-    AkWindowsSettings, AkWindowsSettings_PlatformAdvancedSettings,
-    AkWindowsSettings_PlatformAdvancedSettings_AudioAPI, IAkWindowsSettings,
+    AkWindowsSettings, AkWindowsSettings_PlatformAdvancedSettings, AkWindowsSettings_PlatformAdvancedSettings_AudioAPI, IAkWindowsSettings,
     IAkWindowsSettings_PlatformAdvancedSettings,
 };
 #[cfg(feature = "root-akwindowssettings")]
-pub use akwindowssettings::{
-    IAkWindowsSettingsMethods, IAkWindowsSettings_PlatformAdvancedSettingsMethods,
-};
+pub use akwindowssettings::{IAkWindowsSettingsMethods, IAkWindowsSettings_PlatformAdvancedSettingsMethods};
 #[cfg(any(feature = "root-akwwiseinitializationsettings-types"))]
 pub mod akwwiseinitializationsettings;
 #[cfg(feature = "root-akwwiseinitializationsettings-types")]
 pub use akwwiseinitializationsettings::{
-    AkWwiseInitializationSettings, AkWwiseInitializationSettings_CommonPlatformSettings,
-    AkWwiseInitializationSettings_PlatformSettings, IAkWwiseInitializationSettings,
-    IAkWwiseInitializationSettings_CommonPlatformSettings,
-    IAkWwiseInitializationSettings_PlatformSettings,
+    AkWwiseInitializationSettings, AkWwiseInitializationSettings_CommonPlatformSettings, AkWwiseInitializationSettings_PlatformSettings,
+    IAkWwiseInitializationSettings, IAkWwiseInitializationSettings_CommonPlatformSettings, IAkWwiseInitializationSettings_PlatformSettings,
 };
 #[cfg(feature = "root-akwwiseinitializationsettings")]
 pub use akwwiseinitializationsettings::{
-    IAkWwiseInitializationSettingsMethods,
-    IAkWwiseInitializationSettings_CommonPlatformSettingsMethods,
+    IAkWwiseInitializationSettingsMethods, IAkWwiseInitializationSettings_CommonPlatformSettingsMethods,
     IAkWwiseInitializationSettings_PlatformSettingsMethods,
 };
 #[cfg(any(feature = "root-allinfoswitchtypemenuitem-types"))]
@@ -1494,17 +1417,13 @@ pub mod battlecamerareversehorizontalmenuitem;
 #[cfg(feature = "root-battlecamerareversehorizontalmenuitem")]
 pub use battlecamerareversehorizontalmenuitem::IBattleCameraReverseHorizontalMenuItemMethods;
 #[cfg(feature = "root-battlecamerareversehorizontalmenuitem-types")]
-pub use battlecamerareversehorizontalmenuitem::{
-    BattleCameraReverseHorizontalMenuItem, IBattleCameraReverseHorizontalMenuItem,
-};
+pub use battlecamerareversehorizontalmenuitem::{BattleCameraReverseHorizontalMenuItem, IBattleCameraReverseHorizontalMenuItem};
 #[cfg(any(feature = "root-battlecamerareverseverticalmenuitem-types"))]
 pub mod battlecamerareverseverticalmenuitem;
 #[cfg(feature = "root-battlecamerareverseverticalmenuitem")]
 pub use battlecamerareverseverticalmenuitem::IBattleCameraReverseVerticalMenuItemMethods;
 #[cfg(feature = "root-battlecamerareverseverticalmenuitem-types")]
-pub use battlecamerareverseverticalmenuitem::{
-    BattleCameraReverseVerticalMenuItem, IBattleCameraReverseVerticalMenuItem,
-};
+pub use battlecamerareverseverticalmenuitem::{BattleCameraReverseVerticalMenuItem, IBattleCameraReverseVerticalMenuItem};
 #[cfg(any(feature = "root-battlemenuitem-types"))]
 pub mod battlemenuitem;
 #[cfg(feature = "root-battlemenuitem")]
@@ -1550,14 +1469,9 @@ pub use cinemachinecameraoffset::{CinemachineCameraOffset, ICinemachineCameraOff
 #[cfg(any(feature = "root-cinemachinemixer-types"))]
 pub mod cinemachinemixer;
 #[cfg(feature = "root-cinemachinemixer-types")]
-pub use cinemachinemixer::{
-    CinemachineMixer, CinemachineMixer_MasterDirectorDelegate, ICinemachineMixer,
-    ICinemachineMixer_MasterDirectorDelegate,
-};
+pub use cinemachinemixer::{CinemachineMixer, CinemachineMixer_MasterDirectorDelegate, ICinemachineMixer, ICinemachineMixer_MasterDirectorDelegate};
 #[cfg(feature = "root-cinemachinemixer")]
-pub use cinemachinemixer::{
-    ICinemachineMixerMethods, ICinemachineMixer_MasterDirectorDelegateMethods,
-};
+pub use cinemachinemixer::{ICinemachineMixerMethods, ICinemachineMixer_MasterDirectorDelegateMethods};
 #[cfg(any(feature = "root-cinemachinerecomposer-types"))]
 pub mod cinemachinerecomposer;
 #[cfg(feature = "root-cinemachinerecomposer")]
@@ -1591,22 +1505,15 @@ pub use cinemachinetrack::{CinemachineTrack, ICinemachineTrack};
 #[cfg(any(feature = "root-combatgaugecontroller-types"))]
 pub mod combatgaugecontroller;
 #[cfg(feature = "root-combatgaugecontroller-types")]
-pub use combatgaugecontroller::{
-    CombatGaugeController, CombatGaugeController_Value, ICombatGaugeController,
-    ICombatGaugeController_Value,
-};
+pub use combatgaugecontroller::{CombatGaugeController, CombatGaugeController_Value, ICombatGaugeController, ICombatGaugeController_Value};
 #[cfg(feature = "root-combatgaugecontroller")]
-pub use combatgaugecontroller::{
-    ICombatGaugeControllerMethods, ICombatGaugeController_ValueMethods,
-};
+pub use combatgaugecontroller::{ICombatGaugeControllerMethods, ICombatGaugeController_ValueMethods};
 #[cfg(any(feature = "root-configbasicmenuitem-types"))]
 pub mod configbasicmenuitem;
 #[cfg(feature = "root-configbasicmenuitem")]
 pub use configbasicmenuitem::IConfigBasicMenuItemMethods;
 #[cfg(feature = "root-configbasicmenuitem-types")]
-pub use configbasicmenuitem::{
-    ConfigBasicMenuItem, ConfigBasicMenuItem_ConfigMethodKind, IConfigBasicMenuItem,
-};
+pub use configbasicmenuitem::{ConfigBasicMenuItem, ConfigBasicMenuItem_ConfigMethodKind, IConfigBasicMenuItem};
 #[cfg(any(feature = "root-configmenu-types"))]
 pub mod configmenu;
 #[cfg(feature = "root-configmenu")]
@@ -1640,10 +1547,7 @@ pub use configsequence::{ConfigSequence, ConfigSequence_Label, IConfigSequence};
 #[cfg(any(feature = "root-configyesnodialog-types"))]
 pub mod configyesnodialog;
 #[cfg(feature = "root-configyesnodialog-types")]
-pub use configyesnodialog::{
-    ConfigYesNoDialog, ConfigYesNoDialog_YesEventHandler, IConfigYesNoDialog,
-    IConfigYesNoDialog_YesEventHandler,
-};
+pub use configyesnodialog::{ConfigYesNoDialog, ConfigYesNoDialog_YesEventHandler, IConfigYesNoDialog, IConfigYesNoDialog_YesEventHandler};
 #[cfg(feature = "root-configyesnodialog")]
 pub use configyesnodialog::{IConfigYesNoDialogMethods, IConfigYesNoDialog_YesEventHandlerMethods};
 #[cfg(any(feature = "root-configyesnodialognomenuitem-types"))]
@@ -1657,9 +1561,7 @@ pub mod configyesnodialogyesmenuitem;
 #[cfg(feature = "root-configyesnodialogyesmenuitem")]
 pub use configyesnodialogyesmenuitem::IConfigYesNoDialogYesMenuItemMethods;
 #[cfg(feature = "root-configyesnodialogyesmenuitem-types")]
-pub use configyesnodialogyesmenuitem::{
-    ConfigYesNoDialogYesMenuItem, IConfigYesNoDialogYesMenuItem,
-};
+pub use configyesnodialogyesmenuitem::{ConfigYesNoDialogYesMenuItem, IConfigYesNoDialogYesMenuItem};
 #[cfg(any(feature = "root-customplayableextensions-types"))]
 pub mod customplayableextensions;
 #[cfg(feature = "root-customplayableextensions-types")]
@@ -1681,9 +1583,7 @@ pub mod debugcollisionrenderermanager;
 #[cfg(feature = "root-debugcollisionrenderermanager")]
 pub use debugcollisionrenderermanager::IDebugCollisionRendererManagerMethods;
 #[cfg(feature = "root-debugcollisionrenderermanager-types")]
-pub use debugcollisionrenderermanager::{
-    DebugCollisionRendererManager, IDebugCollisionRendererManager,
-};
+pub use debugcollisionrenderermanager::{DebugCollisionRendererManager, IDebugCollisionRendererManager};
 #[cfg(any(feature = "root-debugconsole-types"))]
 pub mod debugconsole;
 #[cfg(feature = "root-debugconsole")]
@@ -1737,9 +1637,7 @@ pub mod dynamicboneplanecollider_bridge;
 #[cfg(feature = "root-dynamicboneplanecollider_bridge")]
 pub use dynamicboneplanecollider_bridge::IDynamicBonePlaneCollider_BridgeMethods;
 #[cfg(feature = "root-dynamicboneplanecollider_bridge-types")]
-pub use dynamicboneplanecollider_bridge::{
-    DynamicBonePlaneCollider_Bridge, IDynamicBonePlaneCollider_Bridge,
-};
+pub use dynamicboneplanecollider_bridge::{DynamicBonePlaneCollider_Bridge, IDynamicBonePlaneCollider_Bridge};
 #[cfg(any(feature = "root-emittersconstraint_bridge-types"))]
 pub mod emittersconstraint_bridge;
 #[cfg(feature = "root-emittersconstraint_bridge")]
@@ -1823,25 +1721,19 @@ pub mod hubcamerareversehorizontalmenuitem;
 #[cfg(feature = "root-hubcamerareversehorizontalmenuitem")]
 pub use hubcamerareversehorizontalmenuitem::IHubCameraReverseHorizontalMenuItemMethods;
 #[cfg(feature = "root-hubcamerareversehorizontalmenuitem-types")]
-pub use hubcamerareversehorizontalmenuitem::{
-    HubCameraReverseHorizontalMenuItem, IHubCameraReverseHorizontalMenuItem,
-};
+pub use hubcamerareversehorizontalmenuitem::{HubCameraReverseHorizontalMenuItem, IHubCameraReverseHorizontalMenuItem};
 #[cfg(any(feature = "root-hubcamerareverseverticalmenuitem-types"))]
 pub mod hubcamerareverseverticalmenuitem;
 #[cfg(feature = "root-hubcamerareverseverticalmenuitem")]
 pub use hubcamerareverseverticalmenuitem::IHubCameraReverseVerticalMenuItemMethods;
 #[cfg(feature = "root-hubcamerareverseverticalmenuitem-types")]
-pub use hubcamerareverseverticalmenuitem::{
-    HubCameraReverseVerticalMenuItem, IHubCameraReverseVerticalMenuItem,
-};
+pub use hubcamerareverseverticalmenuitem::{HubCameraReverseVerticalMenuItem, IHubCameraReverseVerticalMenuItem};
 #[cfg(any(feature = "root-hubcamerarotatespeedmenuitem-types"))]
 pub mod hubcamerarotatespeedmenuitem;
 #[cfg(feature = "root-hubcamerarotatespeedmenuitem")]
 pub use hubcamerarotatespeedmenuitem::IHubCameraRotateSpeedMenuItemMethods;
 #[cfg(feature = "root-hubcamerarotatespeedmenuitem-types")]
-pub use hubcamerarotatespeedmenuitem::{
-    HubCameraRotateSpeedMenuItem, IHubCameraRotateSpeedMenuItem,
-};
+pub use hubcamerarotatespeedmenuitem::{HubCameraRotateSpeedMenuItem, IHubCameraRotateSpeedMenuItem};
 #[cfg(any(feature = "root-hubmenuitem-types"))]
 pub mod hubmenuitem;
 #[cfg(feature = "root-hubmenuitem")]
@@ -1900,13 +1792,11 @@ pub use kizunagmapmenuitem::{IKizunaGmapMenuItem, KizunaGmapMenuItem};
 pub mod lightprobegenerator;
 #[cfg(feature = "root-lightprobegenerator-types")]
 pub use lightprobegenerator::{
-    ILightProbeGenerator, ILightProbeGenerator_LightProbeArea, LightProbeGenerator,
-    LightProbeGenerator_LightProbeArea, LightProbeGenerator_LightProbePlacementType,
+    ILightProbeGenerator, ILightProbeGenerator_LightProbeArea, LightProbeGenerator, LightProbeGenerator_LightProbeArea,
+    LightProbeGenerator_LightProbePlacementType,
 };
 #[cfg(feature = "root-lightprobegenerator")]
-pub use lightprobegenerator::{
-    ILightProbeGeneratorMethods, ILightProbeGenerator_LightProbeAreaMethods,
-};
+pub use lightprobegenerator::{ILightProbeGeneratorMethods, ILightProbeGenerator_LightProbeAreaMethods};
 #[cfg(any(feature = "root-listwithevents_1-types"))]
 pub mod listwithevents_1;
 #[cfg(feature = "root-listwithevents_1")]
@@ -1952,9 +1842,7 @@ pub mod mapcursorlocatorroot;
 #[cfg(feature = "root-mapcursorlocatorroot")]
 pub use mapcursorlocatorroot::IMapCursorLocatorRootMethods;
 #[cfg(feature = "root-mapcursorlocatorroot-types")]
-pub use mapcursorlocatorroot::{
-    IMapCursorLocatorRoot, MapCursorLocatorRoot, MapCursorLocatorRoot_PartType,
-};
+pub use mapcursorlocatorroot::{IMapCursorLocatorRoot, MapCursorLocatorRoot, MapCursorLocatorRoot_PartType};
 #[cfg(any(feature = "root-mapgridalphamenuitem-types"))]
 pub mod mapgridalphamenuitem;
 #[cfg(feature = "root-mapgridalphamenuitem")]
@@ -1985,8 +1873,7 @@ pub mod mapinfogaugesublocatorroot;
 pub use mapinfogaugesublocatorroot::IMapInfoGaugeSubLocatorRootMethods;
 #[cfg(feature = "root-mapinfogaugesublocatorroot-types")]
 pub use mapinfogaugesublocatorroot::{
-    IMapInfoGaugeSubLocatorRoot, MapInfoGaugeSubLocatorRoot,
-    MapInfoGaugeSubLocatorRoot_BreakEffectKind, MapInfoGaugeSubLocatorRoot_Parts,
+    IMapInfoGaugeSubLocatorRoot, MapInfoGaugeSubLocatorRoot, MapInfoGaugeSubLocatorRoot_BreakEffectKind, MapInfoGaugeSubLocatorRoot_Parts,
 };
 #[cfg(any(feature = "root-mapinfoiconlocatorroot-types"))]
 pub mod mapinfoiconlocatorroot;
@@ -2017,9 +1904,7 @@ pub mod mapnavigationminimapbasicmenuitem;
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
 pub use mapnavigationminimapbasicmenuitem::IMapNavigationMiniMapBasicMenuItemMethods;
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem-types")]
-pub use mapnavigationminimapbasicmenuitem::{
-    IMapNavigationMiniMapBasicMenuItem, MapNavigationMiniMapBasicMenuItem,
-};
+pub use mapnavigationminimapbasicmenuitem::{IMapNavigationMiniMapBasicMenuItem, MapNavigationMiniMapBasicMenuItem};
 #[cfg(any(feature = "root-mapnavigationminimapmenu-types"))]
 pub mod mapnavigationminimapmenu;
 #[cfg(feature = "root-mapnavigationminimapmenu")]
@@ -2031,17 +1916,13 @@ pub mod mapnavigationminimapmenucontent;
 #[cfg(feature = "root-mapnavigationminimapmenucontent")]
 pub use mapnavigationminimapmenucontent::IMapNavigationMiniMapMenuContentMethods;
 #[cfg(feature = "root-mapnavigationminimapmenucontent-types")]
-pub use mapnavigationminimapmenucontent::{
-    IMapNavigationMiniMapMenuContent, MapNavigationMiniMapMenuContent,
-};
+pub use mapnavigationminimapmenucontent::{IMapNavigationMiniMapMenuContent, MapNavigationMiniMapMenuContent};
 #[cfg(any(feature = "root-mapnavigationminimapmenuitemcontent-types"))]
 pub mod mapnavigationminimapmenuitemcontent;
 #[cfg(feature = "root-mapnavigationminimapmenuitemcontent")]
 pub use mapnavigationminimapmenuitemcontent::IMapNavigationMiniMapMenuItemContentMethods;
 #[cfg(feature = "root-mapnavigationminimapmenuitemcontent-types")]
-pub use mapnavigationminimapmenuitemcontent::{
-    IMapNavigationMiniMapMenuItemContent, MapNavigationMiniMapMenuItemContent,
-};
+pub use mapnavigationminimapmenuitemcontent::{IMapNavigationMiniMapMenuItemContent, MapNavigationMiniMapMenuItemContent};
 #[cfg(any(feature = "root-mapnavigationroot-types"))]
 pub mod mapnavigationroot;
 #[cfg(feature = "root-mapnavigationroot")]
@@ -2053,17 +1934,13 @@ pub mod mapnavigationsequence;
 #[cfg(feature = "root-mapnavigationsequence")]
 pub use mapnavigationsequence::IMapNavigationSequenceMethods;
 #[cfg(feature = "root-mapnavigationsequence-types")]
-pub use mapnavigationsequence::{
-    IMapNavigationSequence, MapNavigationSequence, MapNavigationSequence_Label,
-};
+pub use mapnavigationsequence::{IMapNavigationSequence, MapNavigationSequence, MapNavigationSequence_Label};
 #[cfg(any(feature = "root-mapnavigationstatusbasicmenuitem-types"))]
 pub mod mapnavigationstatusbasicmenuitem;
 #[cfg(feature = "root-mapnavigationstatusbasicmenuitem")]
 pub use mapnavigationstatusbasicmenuitem::IMapNavigationStatusBasicMenuItemMethods;
 #[cfg(feature = "root-mapnavigationstatusbasicmenuitem-types")]
-pub use mapnavigationstatusbasicmenuitem::{
-    IMapNavigationStatusBasicMenuItem, MapNavigationStatusBasicMenuItem,
-};
+pub use mapnavigationstatusbasicmenuitem::{IMapNavigationStatusBasicMenuItem, MapNavigationStatusBasicMenuItem};
 #[cfg(any(feature = "root-mapnavigationstatusmenu-types"))]
 pub mod mapnavigationstatusmenu;
 #[cfg(feature = "root-mapnavigationstatusmenu")]
@@ -2075,23 +1952,18 @@ pub mod mapnavigationstatusmenucontent;
 #[cfg(feature = "root-mapnavigationstatusmenucontent")]
 pub use mapnavigationstatusmenucontent::IMapNavigationStatusMenuContentMethods;
 #[cfg(feature = "root-mapnavigationstatusmenucontent-types")]
-pub use mapnavigationstatusmenucontent::{
-    IMapNavigationStatusMenuContent, MapNavigationStatusMenuContent,
-};
+pub use mapnavigationstatusmenucontent::{IMapNavigationStatusMenuContent, MapNavigationStatusMenuContent};
 #[cfg(any(feature = "root-mapnavigationstatusmenuitemcontent-types"))]
 pub mod mapnavigationstatusmenuitemcontent;
 #[cfg(feature = "root-mapnavigationstatusmenuitemcontent")]
 pub use mapnavigationstatusmenuitemcontent::IMapNavigationStatusMenuItemContentMethods;
 #[cfg(feature = "root-mapnavigationstatusmenuitemcontent-types")]
-pub use mapnavigationstatusmenuitemcontent::{
-    IMapNavigationStatusMenuItemContent, MapNavigationStatusMenuItemContent,
-};
+pub use mapnavigationstatusmenuitemcontent::{IMapNavigationStatusMenuItemContent, MapNavigationStatusMenuItemContent};
 #[cfg(any(feature = "root-mappanelbase_1-types"))]
 pub mod mappanelbase_1;
 #[cfg(feature = "root-mappanelbase_1-types")]
 pub use mappanelbase_1::{
-    IMapPanelBase_1, IMapPanelBase_1_ImageGetFunction, MapPanelBase_1,
-    MapPanelBase_1_ImageGetFunction, MapPanelBase_1_PanelType,
+    IMapPanelBase_1, IMapPanelBase_1_ImageGetFunction, MapPanelBase_1, MapPanelBase_1_ImageGetFunction, MapPanelBase_1_PanelType,
 };
 #[cfg(feature = "root-mappanelbase_1")]
 pub use mappanelbase_1::{IMapPanelBase_1Methods, IMapPanelBase_1_ImageGetFunctionMethods};
@@ -2106,10 +1978,7 @@ pub mod mappaneltarget;
 #[cfg(feature = "root-mappaneltarget")]
 pub use mappaneltarget::IMapPanelTargetMethods;
 #[cfg(feature = "root-mappaneltarget-types")]
-pub use mappaneltarget::{
-    IMapPanelTarget, MapPanelTarget, MapPanelTarget_DangerType, MapPanelTarget_DirtyType,
-    MapPanelTarget_MeshIndex,
-};
+pub use mappaneltarget::{IMapPanelTarget, MapPanelTarget, MapPanelTarget_DangerType, MapPanelTarget_DirtyType, MapPanelTarget_MeshIndex};
 #[cfg(any(feature = "root-mappointeranimmanager-types"))]
 pub mod mappointeranimmanager;
 #[cfg(feature = "root-mappointeranimmanager")]
@@ -2179,10 +2048,7 @@ pub use maputility::{IMapUtility, MapUtility};
 #[cfg(any(feature = "root-materialbehaviour-types"))]
 pub mod materialbehaviour;
 #[cfg(feature = "root-materialbehaviour-types")]
-pub use materialbehaviour::{
-    IMaterialBehaviour, IMaterialBehaviour_TextureInfo, MaterialBehaviour,
-    MaterialBehaviour_TextureInfo,
-};
+pub use materialbehaviour::{IMaterialBehaviour, IMaterialBehaviour_TextureInfo, MaterialBehaviour, MaterialBehaviour_TextureInfo};
 #[cfg(feature = "root-materialbehaviour")]
 pub use materialbehaviour::{IMaterialBehaviourMethods, IMaterialBehaviour_TextureInfoMethods};
 #[cfg(any(feature = "root-materialinstance-types"))]
@@ -2254,9 +2120,7 @@ pub mod packedplaymodebuildlogs;
 #[cfg(feature = "root-packedplaymodebuildlogs")]
 pub use packedplaymodebuildlogs::IPackedPlayModeBuildLogsMethods;
 #[cfg(feature = "root-packedplaymodebuildlogs-types")]
-pub use packedplaymodebuildlogs::{
-    IPackedPlayModeBuildLogs, PackedPlayModeBuildLogs, PackedPlayModeBuildLogs_RuntimeBuildLog,
-};
+pub use packedplaymodebuildlogs::{IPackedPlayModeBuildLogs, PackedPlayModeBuildLogs, PackedPlayModeBuildLogs_RuntimeBuildLog};
 #[cfg(any(feature = "root-pickupmenuitem-types"))]
 pub mod pickupmenuitem;
 #[cfg(feature = "root-pickupmenuitem")]
@@ -2280,9 +2144,7 @@ pub mod ppradialblurplayablebehaviour;
 #[cfg(feature = "root-ppradialblurplayablebehaviour")]
 pub use ppradialblurplayablebehaviour::IPPRadialBlurPlayableBehaviourMethods;
 #[cfg(feature = "root-ppradialblurplayablebehaviour-types")]
-pub use ppradialblurplayablebehaviour::{
-    IPPRadialBlurPlayableBehaviour, PPRadialBlurPlayableBehaviour,
-};
+pub use ppradialblurplayablebehaviour::{IPPRadialBlurPlayableBehaviour, PPRadialBlurPlayableBehaviour};
 #[cfg(any(feature = "root-prefetchedcurve_bridge-types"))]
 pub mod prefetchedcurve_bridge;
 #[cfg(feature = "root-prefetchedcurve_bridge")]
@@ -2348,46 +2210,35 @@ pub mod setskinnedmeshasemitter_bridge;
 #[cfg(feature = "root-setskinnedmeshasemitter_bridge")]
 pub use setskinnedmeshasemitter_bridge::ISetSkinnedMeshAsEmitter_BridgeMethods;
 #[cfg(feature = "root-setskinnedmeshasemitter_bridge-types")]
-pub use setskinnedmeshasemitter_bridge::{
-    ISetSkinnedMeshAsEmitter_Bridge, SetSkinnedMeshAsEmitter_Bridge,
-};
+pub use setskinnedmeshasemitter_bridge::{ISetSkinnedMeshAsEmitter_Bridge, SetSkinnedMeshAsEmitter_Bridge};
 #[cfg(any(feature = "root-simpleanimation-types"))]
 pub mod simpleanimation;
 #[cfg(feature = "root-simpleanimation-types")]
 pub use simpleanimation::{
-    ISimpleAnimation, ISimpleAnimation_EditorState, ISimpleAnimation_State,
-    ISimpleAnimation_StateEnumerable, ISimpleAnimation_StateEnumerable_StateEnumerator,
-    ISimpleAnimation_StateImpl, SimpleAnimation, SimpleAnimation_EditorState,
-    SimpleAnimation_State, SimpleAnimation_StateEnumerable,
-    SimpleAnimation_StateEnumerable_StateEnumerator, SimpleAnimation_StateImpl,
+    ISimpleAnimation, ISimpleAnimation_EditorState, ISimpleAnimation_State, ISimpleAnimation_StateEnumerable,
+    ISimpleAnimation_StateEnumerable_StateEnumerator, ISimpleAnimation_StateImpl, SimpleAnimation, SimpleAnimation_EditorState,
+    SimpleAnimation_State, SimpleAnimation_StateEnumerable, SimpleAnimation_StateEnumerable_StateEnumerator, SimpleAnimation_StateImpl,
 };
 #[cfg(feature = "root-simpleanimation")]
 pub use simpleanimation::{
-    ISimpleAnimationMethods, ISimpleAnimation_EditorStateMethods,
-    ISimpleAnimation_StateEnumerableMethods,
-    ISimpleAnimation_StateEnumerable_StateEnumeratorMethods, ISimpleAnimation_StateImplMethods,
-    ISimpleAnimation_StateMethods,
+    ISimpleAnimationMethods, ISimpleAnimation_EditorStateMethods, ISimpleAnimation_StateEnumerableMethods,
+    ISimpleAnimation_StateEnumerable_StateEnumeratorMethods, ISimpleAnimation_StateImplMethods, ISimpleAnimation_StateMethods,
 };
 #[cfg(any(feature = "root-simpleanimationplayable-types"))]
 pub mod simpleanimationplayable;
 #[cfg(feature = "root-simpleanimationplayable-types")]
 pub use simpleanimationplayable::{
-    ISimpleAnimationPlayable, ISimpleAnimationPlayable_IState,
-    ISimpleAnimationPlayable_StateEnumerable,
-    ISimpleAnimationPlayable_StateEnumerable_StateEnumerator, ISimpleAnimationPlayable_StateHandle,
-    ISimpleAnimationPlayable_StateInfo, ISimpleAnimationPlayable_StateManagement,
-    SimpleAnimationPlayable, SimpleAnimationPlayable_IState, SimpleAnimationPlayable_QueuedState,
-    SimpleAnimationPlayable_StateEnumerable,
-    SimpleAnimationPlayable_StateEnumerable_StateEnumerator, SimpleAnimationPlayable_StateHandle,
+    ISimpleAnimationPlayable, ISimpleAnimationPlayable_IState, ISimpleAnimationPlayable_StateEnumerable,
+    ISimpleAnimationPlayable_StateEnumerable_StateEnumerator, ISimpleAnimationPlayable_StateHandle, ISimpleAnimationPlayable_StateInfo,
+    ISimpleAnimationPlayable_StateManagement, SimpleAnimationPlayable, SimpleAnimationPlayable_IState, SimpleAnimationPlayable_QueuedState,
+    SimpleAnimationPlayable_StateEnumerable, SimpleAnimationPlayable_StateEnumerable_StateEnumerator, SimpleAnimationPlayable_StateHandle,
     SimpleAnimationPlayable_StateInfo, SimpleAnimationPlayable_StateManagement,
 };
 #[cfg(feature = "root-simpleanimationplayable")]
 pub use simpleanimationplayable::{
-    ISimpleAnimationPlayableMethods, ISimpleAnimationPlayable_IStateMethods,
-    ISimpleAnimationPlayable_StateEnumerableMethods,
-    ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods,
-    ISimpleAnimationPlayable_StateHandleMethods, ISimpleAnimationPlayable_StateInfoMethods,
-    ISimpleAnimationPlayable_StateManagementMethods,
+    ISimpleAnimationPlayableMethods, ISimpleAnimationPlayable_IStateMethods, ISimpleAnimationPlayable_StateEnumerableMethods,
+    ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods, ISimpleAnimationPlayable_StateHandleMethods,
+    ISimpleAnimationPlayable_StateInfoMethods, ISimpleAnimationPlayable_StateManagementMethods,
 };
 #[cfg(any(feature = "root-skycastle-types"))]
 pub mod skycastle;
@@ -2400,11 +2251,8 @@ pub mod softnormalstovertexcolor;
 #[cfg(feature = "root-softnormalstovertexcolor")]
 pub use softnormalstovertexcolor::ISoftNormalsToVertexColorMethods;
 #[cfg(feature = "root-softnormalstovertexcolor-types")]
-pub use softnormalstovertexcolor::{
-    ISoftNormalsToVertexColor, SoftNormalsToVertexColor, SoftNormalsToVertexColor_Method,
-};
-#[cfg(any(feature = "root-sr-types"))]
-pub mod sr;
+pub use softnormalstovertexcolor::{ISoftNormalsToVertexColor, SoftNormalsToVertexColor, SoftNormalsToVertexColor_Method};
+#[cfg(any(feature = "root-sr-types"))] pub mod sr;
 #[cfg(feature = "root-sr-types")]
 pub use sr::{ISR, SR};
 #[cfg(any(feature = "root-strope-types"))]
@@ -2446,10 +2294,7 @@ pub use testmove::{ITestMove, TestMove};
 #[cfg(any(feature = "root-testsampledata-types"))]
 pub mod testsampledata;
 #[cfg(feature = "root-testsampledata-types")]
-pub use testsampledata::{
-    ITestSampleData, ITestSampleData_Item, TestSampleData, TestSampleData_Flags,
-    TestSampleData_Item,
-};
+pub use testsampledata::{ITestSampleData, ITestSampleData_Item, TestSampleData, TestSampleData_Flags, TestSampleData_Item};
 #[cfg(feature = "root-testsampledata")]
 pub use testsampledata::{ITestSampleDataMethods, ITestSampleData_ItemMethods};
 #[cfg(any(feature = "root-testsampleobject-types"))]
@@ -2499,28 +2344,22 @@ pub mod tutoriallistroot;
 #[cfg(feature = "root-tutoriallistroot")]
 pub use tutoriallistroot::ITutorialListRootMethods;
 #[cfg(feature = "root-tutoriallistroot-types")]
-pub use tutoriallistroot::{
-    ITutorialListRoot, TutorialListRoot, TutorialListRoot_FadeType, TutorialListRoot_SequenceType,
-};
+pub use tutoriallistroot::{ITutorialListRoot, TutorialListRoot, TutorialListRoot_FadeType, TutorialListRoot_SequenceType};
 #[cfg(any(feature = "root-tutoriallistselectmenu-types"))]
 pub mod tutoriallistselectmenu;
 #[cfg(feature = "root-tutoriallistselectmenu-types")]
 pub use tutoriallistselectmenu::{
-    ITutorialListSelectMenu, ITutorialListSelectMenu_DecideEventHandler, TutorialListSelectMenu,
-    TutorialListSelectMenu_DecideEventHandler, TutorialListSelectMenu_Page,
+    ITutorialListSelectMenu, ITutorialListSelectMenu_DecideEventHandler, TutorialListSelectMenu, TutorialListSelectMenu_DecideEventHandler,
+    TutorialListSelectMenu_Page,
 };
 #[cfg(feature = "root-tutoriallistselectmenu")]
-pub use tutoriallistselectmenu::{
-    ITutorialListSelectMenuMethods, ITutorialListSelectMenu_DecideEventHandlerMethods,
-};
+pub use tutoriallistselectmenu::{ITutorialListSelectMenuMethods, ITutorialListSelectMenu_DecideEventHandlerMethods};
 #[cfg(any(feature = "root-tutoriallistselectmenucontent-types"))]
 pub mod tutoriallistselectmenucontent;
 #[cfg(feature = "root-tutoriallistselectmenucontent")]
 pub use tutoriallistselectmenucontent::ITutorialListSelectMenuContentMethods;
 #[cfg(feature = "root-tutoriallistselectmenucontent-types")]
-pub use tutoriallistselectmenucontent::{
-    ITutorialListSelectMenuContent, TutorialListSelectMenuContent,
-};
+pub use tutoriallistselectmenucontent::{ITutorialListSelectMenuContent, TutorialListSelectMenuContent};
 #[cfg(any(feature = "root-tutoriallistselectmenuitem-types"))]
 pub mod tutoriallistselectmenuitem;
 #[cfg(feature = "root-tutoriallistselectmenuitem")]
@@ -2532,36 +2371,28 @@ pub mod tutoriallistselectmenuitemcontent;
 #[cfg(feature = "root-tutoriallistselectmenuitemcontent")]
 pub use tutoriallistselectmenuitemcontent::ITutorialListSelectMenuItemContentMethods;
 #[cfg(feature = "root-tutoriallistselectmenuitemcontent-types")]
-pub use tutoriallistselectmenuitemcontent::{
-    ITutorialListSelectMenuItemContent, TutorialListSelectMenuItemContent,
-};
+pub use tutoriallistselectmenuitemcontent::{ITutorialListSelectMenuItemContent, TutorialListSelectMenuItemContent};
 #[cfg(any(feature = "root-tutoriallistsequence-types"))]
 pub mod tutoriallistsequence;
 #[cfg(feature = "root-tutoriallistsequence")]
 pub use tutoriallistsequence::ITutorialListSequenceMethods;
 #[cfg(feature = "root-tutoriallistsequence-types")]
-pub use tutoriallistsequence::{
-    ITutorialListSequence, TutorialListSequence, TutorialListSequence_Label,
-};
+pub use tutoriallistsequence::{ITutorialListSequence, TutorialListSequence, TutorialListSequence_Label};
 #[cfg(any(feature = "root-tutoriallisttopbasicmenuitem-types"))]
 pub mod tutoriallisttopbasicmenuitem;
 #[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
 pub use tutoriallisttopbasicmenuitem::ITutorialListTopBasicMenuItemMethods;
 #[cfg(feature = "root-tutoriallisttopbasicmenuitem-types")]
-pub use tutoriallisttopbasicmenuitem::{
-    ITutorialListTopBasicMenuItem, TutorialListTopBasicMenuItem,
-};
+pub use tutoriallisttopbasicmenuitem::{ITutorialListTopBasicMenuItem, TutorialListTopBasicMenuItem};
 #[cfg(any(feature = "root-tutoriallisttopmenu-types"))]
 pub mod tutoriallisttopmenu;
 #[cfg(feature = "root-tutoriallisttopmenu-types")]
 pub use tutoriallisttopmenu::{
-    ITutorialListTopMenu, ITutorialListTopMenu_DecideEventHandler, TutorialListTopMenu,
-    TutorialListTopMenu_DecideEventHandler, TutorialListTopMenu_SelectCategoryType,
+    ITutorialListTopMenu, ITutorialListTopMenu_DecideEventHandler, TutorialListTopMenu, TutorialListTopMenu_DecideEventHandler,
+    TutorialListTopMenu_SelectCategoryType,
 };
 #[cfg(feature = "root-tutoriallisttopmenu")]
-pub use tutoriallisttopmenu::{
-    ITutorialListTopMenuMethods, ITutorialListTopMenu_DecideEventHandlerMethods,
-};
+pub use tutoriallisttopmenu::{ITutorialListTopMenuMethods, ITutorialListTopMenu_DecideEventHandlerMethods};
 #[cfg(any(feature = "root-tutoriallisttopmenucontent-types"))]
 pub mod tutoriallisttopmenucontent;
 #[cfg(feature = "root-tutoriallisttopmenucontent")]
@@ -2573,9 +2404,7 @@ pub mod tutoriallisttopmenuitemcontent;
 #[cfg(feature = "root-tutoriallisttopmenuitemcontent")]
 pub use tutoriallisttopmenuitemcontent::ITutorialListTopMenuItemContentMethods;
 #[cfg(feature = "root-tutoriallisttopmenuitemcontent-types")]
-pub use tutoriallisttopmenuitemcontent::{
-    ITutorialListTopMenuItemContent, TutorialListTopMenuItemContent,
-};
+pub use tutoriallisttopmenuitemcontent::{ITutorialListTopMenuItemContent, TutorialListTopMenuItemContent};
 #[cfg(any(feature = "root-tutorialshowmenuitem-types"))]
 pub mod tutorialshowmenuitem;
 #[cfg(feature = "root-tutorialshowmenuitem")]
@@ -2695,9 +2524,7 @@ pub mod wwiseacoustictexturereference;
 #[cfg(feature = "root-wwiseacoustictexturereference")]
 pub use wwiseacoustictexturereference::IWwiseAcousticTextureReferenceMethods;
 #[cfg(feature = "root-wwiseacoustictexturereference-types")]
-pub use wwiseacoustictexturereference::{
-    IWwiseAcousticTextureReference, WwiseAcousticTextureReference,
-};
+pub use wwiseacoustictexturereference::{IWwiseAcousticTextureReference, WwiseAcousticTextureReference};
 #[cfg(any(feature = "root-wwiseauxbusreference-types"))]
 pub mod wwiseauxbusreference;
 #[cfg(feature = "root-wwiseauxbusreference")]
@@ -2721,9 +2548,7 @@ pub mod wwisegroupvalueobjectreference;
 #[cfg(feature = "root-wwisegroupvalueobjectreference")]
 pub use wwisegroupvalueobjectreference::IWwiseGroupValueObjectReferenceMethods;
 #[cfg(feature = "root-wwisegroupvalueobjectreference-types")]
-pub use wwisegroupvalueobjectreference::{
-    IWwiseGroupValueObjectReference, WwiseGroupValueObjectReference,
-};
+pub use wwisegroupvalueobjectreference::{IWwiseGroupValueObjectReference, WwiseGroupValueObjectReference};
 #[cfg(any(feature = "root-wwiseobjectreference-types"))]
 pub mod wwiseobjectreference;
 #[cfg(feature = "root-wwiseobjectreference")]

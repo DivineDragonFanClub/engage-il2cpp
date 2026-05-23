@@ -2,17 +2,16 @@
 
 #[cfg(feature = "unity_engine-shadervariantcollection-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "ShaderVariantCollection")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct ShaderVariantCollection {}
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::object_2::{IObject_2, Object_2},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/shadervariantcollection/ShaderVariantCollection_ShaderVariant.md"))]
     #[repr(C)]
@@ -24,9 +23,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for ShaderVariantCollection_ShaderVariant {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "ShaderVariantCollection.ShaderVariant";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,12 +35,14 @@ mod __types {
 
     impl ::unity2::IlType for ShaderVariantCollection_ShaderVariant {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "ShaderVariantCollection")]
+    #[parent(crate::unity_engine::object_2::Object_2)]
+    pub struct ShaderVariantCollection {}
 }
 
 #[cfg(feature = "unity_engine-shadervariantcollection-types")]
@@ -57,9 +57,7 @@ mod __ShaderVariantCollection_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_shader_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
@@ -72,39 +70,27 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "get_shaderCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "get_shaderCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_shader_count(
-        this: ShaderVariantCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_shader_count(this: ShaderVariantCollection, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ShaderVariantCollection, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_shader_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_shader_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_variant_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
@@ -117,39 +103,27 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "get_variantCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "get_variantCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_variant_count(
-        this: ShaderVariantCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_variant_count(this: ShaderVariantCollection, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ShaderVariantCollection, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_variant_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_variant_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_warmed_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
@@ -162,39 +136,27 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "get_isWarmedUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "get_isWarmedUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_warmed_up(
-        this: ShaderVariantCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_warmed_up(this: ShaderVariantCollection, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ShaderVariantCollection, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_warmed_up::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_warmed_up::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_variant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::rendering::passtype::PassType as ::unity2::IlType>::il_type(),
@@ -211,18 +173,15 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "AddVariant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "AddVariant",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_variant(
@@ -238,20 +197,14 @@ mod __ShaderVariantCollection_unity2_raw {
             crate::unity_engine::rendering::passtype::PassType,
             ::unity2::Array<::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_variant::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add_variant::get_method_info().method_ptr);
         inner(this, shader, pass_type, keywords, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_variant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::rendering::passtype::PassType as ::unity2::IlType>::il_type(),
@@ -268,18 +221,15 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "RemoveVariant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "RemoveVariant",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_variant(
@@ -295,20 +245,14 @@ mod __ShaderVariantCollection_unity2_raw {
             crate::unity_engine::rendering::passtype::PassType,
             ::unity2::Array<::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_variant::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_remove_variant::get_method_info().method_ptr);
         inner(this, shader, pass_type, keywords, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_contains_variant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::rendering::passtype::PassType as ::unity2::IlType>::il_type(),
@@ -325,18 +269,15 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "ContainsVariant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "ContainsVariant",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn contains_variant(
@@ -352,20 +293,14 @@ mod __ShaderVariantCollection_unity2_raw {
             crate::unity_engine::rendering::passtype::PassType,
             ::unity2::Array<::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_contains_variant::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_contains_variant::get_method_info().method_ptr);
         inner(this, shader, pass_type, keywords, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
@@ -378,39 +313,27 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: ShaderVariantCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: ShaderVariantCollection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShaderVariantCollection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_warm_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
@@ -423,40 +346,29 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "WarmUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "WarmUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn warm_up(
-        this: ShaderVariantCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn warm_up(this: ShaderVariantCollection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShaderVariantCollection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_warm_up::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_warm_up::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::shadervariantcollection::ShaderVariantCollection as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
                 "Internal_Create",
@@ -468,41 +380,30 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "Internal_Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "Internal_Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_create(
         svc: crate::unity_engine::shadervariantcollection::ShaderVariantCollection,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::shadervariantcollection::ShaderVariantCollection,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_create::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::shadervariantcollection::ShaderVariantCollection, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_create::get_method_info().method_ptr);
         inner(svc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
@@ -515,40 +416,29 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ShaderVariantCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ShaderVariantCollection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShaderVariantCollection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
                 "Add",
@@ -560,44 +450,36 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
         this: ShaderVariantCollection,
-        variant : crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant,
+        variant: crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
             ShaderVariantCollection,
             crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, variant, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
                 "Remove",
@@ -609,44 +491,36 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove(
         this: ShaderVariantCollection,
-        variant : crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant,
+        variant: crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
             ShaderVariantCollection,
             crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
         inner(this, variant, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_contains {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderVariantCollection as ::unity2::ClassIdentity>::class(),
                 "Contains",
@@ -658,34 +532,27 @@ mod __ShaderVariantCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
-                    "Contains",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderVariantCollection as ::unity2::ClassIdentity>::NAME,
+                        "Contains",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn contains(
         this: ShaderVariantCollection,
-        variant : crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant,
+        variant: crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
             ShaderVariantCollection,
             crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_contains::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_contains::get_method_info().method_ptr);
         inner(this, variant, __unity2_method_info)
     }
 }
@@ -693,17 +560,8 @@ mod __ShaderVariantCollection_unity2_raw {
 #[cfg(feature = "unity_engine-shadervariantcollection")]
 impl ShaderVariantCollection {
     #[doc = "`Internal_Create(crate::unity_engine::shadervariantcollection::ShaderVariantCollection)` overload"]
-    pub fn internal_create(
-        svc: impl ::core::convert::Into<
-            crate::unity_engine::shadervariantcollection::ShaderVariantCollection,
-        >,
-    ) -> () {
-        unsafe {
-            __ShaderVariantCollection_unity2_raw::internal_create(
-                ::core::convert::Into::into(svc),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn internal_create(svc: impl ::core::convert::Into<crate::unity_engine::shadervariantcollection::ShaderVariantCollection>) -> () {
+        unsafe { __ShaderVariantCollection_unity2_raw::internal_create(::core::convert::Into::into(svc), ::core::option::Option::None) }
     }
 }
 
@@ -713,39 +571,24 @@ pub trait IShaderVariantCollectionMethods: IShaderVariantCollection {
     fn get_shader_count(self) -> i32 {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShaderVariantCollection_unity2_raw::get_shader_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderVariantCollection_unity2_raw::get_shader_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_variantCount()` overload"]
     fn get_variant_count(self) -> i32 {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShaderVariantCollection_unity2_raw::get_variant_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderVariantCollection_unity2_raw::get_variant_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_isWarmedUp()` overload"]
     fn get_is_warmed_up(self) -> bool {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShaderVariantCollection_unity2_raw::get_is_warmed_up(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderVariantCollection_unity2_raw::get_is_warmed_up(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddVariant(crate::unity_engine::shader::Shader, crate::unity_engine::rendering::passtype::PassType, ::unity2::Array<::unity2::Il2CppString>)` overload"]
@@ -757,9 +600,7 @@ pub trait IShaderVariantCollectionMethods: IShaderVariantCollection {
     ) -> bool {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShaderVariantCollection_unity2_raw::add_variant(
                 __receiver,
                 ::core::convert::Into::into(shader),
@@ -778,9 +619,7 @@ pub trait IShaderVariantCollectionMethods: IShaderVariantCollection {
     ) -> bool {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShaderVariantCollection_unity2_raw::remove_variant(
                 __receiver,
                 ::core::convert::Into::into(shader),
@@ -799,9 +638,7 @@ pub trait IShaderVariantCollectionMethods: IShaderVariantCollection {
     ) -> bool {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShaderVariantCollection_unity2_raw::contains_variant(
                 __receiver,
                 ::core::convert::Into::into(shader),
@@ -815,9 +652,7 @@ pub trait IShaderVariantCollectionMethods: IShaderVariantCollection {
     fn clear(self) -> () {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShaderVariantCollection_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
@@ -825,9 +660,7 @@ pub trait IShaderVariantCollectionMethods: IShaderVariantCollection {
     fn warm_up(self) -> () {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShaderVariantCollection_unity2_raw::warm_up(__receiver, ::core::option::Option::None)
         }
     }
@@ -835,67 +668,38 @@ pub trait IShaderVariantCollectionMethods: IShaderVariantCollection {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShaderVariantCollection_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Add(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"]
-    fn add(
-        self,
-        variant: impl ::core::convert::Into<
-            crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
-        >,
-    ) -> bool {
+    fn add(self, variant: impl ::core::convert::Into<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant>) -> bool {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShaderVariantCollection_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(variant),
-                ::core::option::Option::None,
-            )
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderVariantCollection_unity2_raw::add(__receiver, ::core::convert::Into::into(variant), ::core::option::Option::None)
         }
     }
     #[doc = "`Remove(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"]
     fn remove(
         self,
-        variant: impl ::core::convert::Into<
-            crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
-        >,
+        variant: impl ::core::convert::Into<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant>,
     ) -> bool {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShaderVariantCollection_unity2_raw::remove(
-                __receiver,
-                ::core::convert::Into::into(variant),
-                ::core::option::Option::None,
-            )
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderVariantCollection_unity2_raw::remove(__receiver, ::core::convert::Into::into(variant), ::core::option::Option::None)
         }
     }
     #[doc = "`Contains(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"]
     fn contains(
         self,
-        variant: impl ::core::convert::Into<
-            crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant,
-        >,
+        variant: impl ::core::convert::Into<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant>,
     ) -> bool {
         unsafe {
             let __receiver =
-                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShaderVariantCollection_unity2_raw::contains(
-                __receiver,
-                ::core::convert::Into::into(variant),
-                ::core::option::Option::None,
-            )
+                <ShaderVariantCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ShaderVariantCollection_unity2_raw::contains(__receiver, ::core::convert::Into::into(variant), ::core::option::Option::None)
         }
     }
 }
@@ -922,17 +726,15 @@ impl ShaderVariantCollection {
 #[cfg(feature = "unity_engine-shadervariantcollection")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShaderVariantCollection;
-    pub use super::IShaderVariantCollectionMethods;
-    pub use super::ShaderVariantCollection;
-    pub use super::ShaderVariantCollection_ShaderVariant;
-    pub use crate::system::object::IObject;
+    pub use super::{IShaderVariantCollection, IShaderVariantCollectionMethods, ShaderVariantCollection, ShaderVariantCollection_ShaderVariant};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, valuetype::IValueType},
+        unity_engine::object_2::IObject_2,
+    };
 }

@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-delegateproxyfactory_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/delegateproxyfactory_2/DelegateProxyFactory_2.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "DelegateProxyFactory`2"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "DelegateProxyFactory`2")]
     #[parent(crate::system::object::Object)]
     pub struct DelegateProxyFactory_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
         #[rename(name = "wrapDelegate")]
@@ -35,10 +32,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DelegateProxyFact
 
     #[doc = "`CreateProxyObject(crate::system::object::Object)` overload"]
     #[method(name = "CreateProxyObject", args = 1)]
-    pub fn create_proxy_object_2(
-        self,
-        o: crate::system::object::Object,
-    ) -> crate::system::object::Object;
+    pub fn create_proxy_object_2(self, o: crate::system::object::Object) -> crate::system::object::Object;
 
     #[doc = "`get_TargetType()` overload"]
     #[method(name = "get_TargetType", args = 0)]
@@ -68,9 +62,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DelegateProxyFact
 #[cfg(feature = "moon_sharp-interpreter-interop-delegateproxyfactory_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DelegateProxyFactory_2;
-    pub use super::IDelegateProxyFactory_2;
-    pub use super::IDelegateProxyFactory_2Methods;
+    pub use super::{DelegateProxyFactory_2, IDelegateProxyFactory_2, IDelegateProxyFactory_2Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

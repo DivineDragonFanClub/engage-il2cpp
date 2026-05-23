@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-hashsetpool_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hashsetpool_1/HashSetPool_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HashSetPool`1")]
@@ -13,9 +13,7 @@ mod __types {
     pub struct HashSetPool_1<T0: ::unity2::ClassIdentity> {
         #[static_field]
         #[rename(name = "s_Pool")]
-        pub s_pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<
-            crate::system::collections::generic::hashset_1::HashSet_1<T0>,
-        >,
+        pub s_pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<crate::system::collections::generic::hashset_1::HashSet_1<T0>>,
     }
 }
 
@@ -33,14 +31,11 @@ impl<T0: ::unity2::ClassIdentity> HashSetPool_1<T0> {
     #[method(name = "Get", args = 1)]
     pub fn get_2(
         value: *mut crate::system::collections::generic::hashset_1::HashSet_1<T0>,
-    ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<
-        crate::system::collections::generic::hashset_1::HashSet_1<T0>,
-    >;
+    ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<crate::system::collections::generic::hashset_1::HashSet_1<T0>>;
 
     #[doc = "`Release(crate::system::collections::generic::hashset_1::HashSet_1<T0>)` overload"]
     #[method(name = "Release", args = 1)]
-    pub fn release(to_release: crate::system::collections::generic::hashset_1::HashSet_1<T0>)
-        -> ();
+    pub fn release(to_release: crate::system::collections::generic::hashset_1::HashSet_1<T0>) -> ();
 
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
@@ -50,8 +45,7 @@ impl<T0: ::unity2::ClassIdentity> HashSetPool_1<T0> {
 #[cfg(feature = "unity_engine-rendering-hashsetpool_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HashSetPool_1;
-    pub use super::IHashSetPool_1;
+    pub use super::{HashSetPool_1, IHashSetPool_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

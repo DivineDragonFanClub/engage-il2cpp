@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-mapimagecore_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::mapimageindex::{IMapImageIndex, MapImageIndex};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::mapimageindex::{IMapImageIndex, MapImageIndex},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecore_1/MapImageCore_1.md"))]
     #[::unity2::class(namespace = "App", name = "MapImageCore`1")]
@@ -91,13 +93,10 @@ impl<T0: ::unity2::ClassIdentity> MapImageCore_1<T0> {
 #[cfg(feature = "app-mapimagecore_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapImageCore_1;
-    pub use super::IMapImageCore_1Methods;
-    pub use super::MapImageCore_1;
-    pub use crate::app::mapimageindex::IMapImageIndex;
+    pub use super::{IMapImageCore_1, IMapImageCore_1Methods, MapImageCore_1};
     #[cfg(feature = "app-mapimageindex")]
     pub use crate::app::mapimageindex::IMapImageIndexMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::mapimageindex::IMapImageIndex, system::object::IObject};
 }

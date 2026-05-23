@@ -2,22 +2,19 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::addressable_assets::assetreference::{
-        AssetReference, IAssetReference,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::addressable_assets::{
+            assetreference::{AssetReference, IAssetReference},
+            assetreferencet_1::{AssetReferenceT_1, IAssetReferenceT_1},
+        },
     };
-    use crate::unity_engine::addressable_assets::assetreferencet_1::{
-        AssetReferenceT_1, IAssetReferenceT_1,
-    };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencesprite/AssetReferenceSprite.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets",
-        name = "AssetReferenceSprite"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "AssetReferenceSprite")]
     # [parent (crate :: unity_engine :: addressable_assets :: assetreferencet_1 :: AssetReferenceT_1 < crate :: unity_engine :: sprite :: Sprite >)]
     pub struct AssetReferenceSprite {}
 }
@@ -34,11 +31,8 @@ mod __AssetReferenceSprite_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReferenceSprite as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -50,45 +44,28 @@ mod __AssetReferenceSprite_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReferenceSprite as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReferenceSprite as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AssetReferenceSprite,
-        guid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetReferenceSprite,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AssetReferenceSprite, guid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetReferenceSprite, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, guid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssetReferenceSprite as ::unity2::ClassIdentity>::class(),
                 "ValidateAsset",
@@ -100,34 +77,20 @@ mod __AssetReferenceSprite_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssetReferenceSprite as ::unity2::ClassIdentity>::NAME,
-                    "ValidateAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetReferenceSprite as ::unity2::ClassIdentity>::NAME,
+                        "ValidateAsset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn validate_asset(
-        this: AssetReferenceSprite,
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AssetReferenceSprite,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_validate_asset::get_offset() as isize),
-        );
+    pub unsafe fn validate_asset(this: AssetReferenceSprite, path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AssetReferenceSprite, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_validate_asset::get_method_info().method_ptr);
         inner(this, path, __unity2_method_info)
     }
 }
@@ -137,27 +100,17 @@ pub trait IAssetReferenceSpriteMethods: IAssetReferenceSprite {
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor(self, guid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <AssetReferenceSprite as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReferenceSprite_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(guid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AssetReferenceSprite as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReferenceSprite_unity2_raw::ctor(__receiver, ::core::convert::Into::into(guid), ::core::option::Option::None)
         }
     }
     #[doc = "`ValidateAsset(::unity2::Il2CppString)` overload"]
     fn validate_asset(self, path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <AssetReferenceSprite as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AssetReferenceSprite_unity2_raw::validate_asset(
-                __receiver,
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AssetReferenceSprite as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetReferenceSprite_unity2_raw::validate_asset(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)
         }
     }
 }
@@ -184,16 +137,15 @@ impl AssetReferenceSprite {
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetReferenceSprite;
-    pub use super::IAssetReferenceSprite;
-    pub use super::IAssetReferenceSpriteMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AssetReferenceSprite, IAssetReferenceSprite, IAssetReferenceSpriteMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::addressable_assets::assetreference::IAssetReference;
     #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
     pub use crate::unity_engine::addressable_assets::assetreference::IAssetReferenceMethods;
-    pub use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1;
     #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1")]
     pub use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::addressable_assets::{assetreference::IAssetReference, assetreferencet_1::IAssetReferenceT_1},
+    };
 }

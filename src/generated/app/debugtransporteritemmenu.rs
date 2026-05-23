@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-debugtransporteritemmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::menuitem::{IMenuItem, MenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::menuitem::{IMenuItem, MenuItem},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_EditMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "DebugTransporterItemMenu.EditMenuItem")]
@@ -44,11 +46,8 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -60,43 +59,27 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DebugTransporterItemMenu_EditMenuItem,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: DebugTransporterItemMenu_EditMenuItem, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -109,41 +92,27 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_count(
-        this: DebugTransporterItemMenu_EditMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_count::get_offset() as isize),
-        );
+    pub unsafe fn get_column_count(this: DebugTransporterItemMenu_EditMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_column_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_width0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -156,41 +125,27 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnWidth0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnWidth0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_width0(
-        this: DebugTransporterItemMenu_EditMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_width0::get_offset() as isize),
-        );
+    pub unsafe fn get_column_width0(this: DebugTransporterItemMenu_EditMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_column_width0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_width1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -203,41 +158,27 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnWidth1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnWidth1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_width1(
-        this: DebugTransporterItemMenu_EditMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_width1::get_offset() as isize),
-        );
+    pub unsafe fn get_column_width1(this: DebugTransporterItemMenu_EditMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_column_width1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_width2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -250,41 +191,27 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnWidth2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnWidth2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_width2(
-        this: DebugTransporterItemMenu_EditMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_width2::get_offset() as isize),
-        );
+    pub unsafe fn get_column_width2(this: DebugTransporterItemMenu_EditMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_column_width2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_name0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -297,41 +224,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnName0",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_name0(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name0::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_column_name0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -344,41 +260,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_unit_item(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(__lookup_get_unit_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_name1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -391,41 +296,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnName1",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_name1(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_column_name1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_name2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -438,41 +332,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnName2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_name2(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_column_name2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_align0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -485,41 +368,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnAlign0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnAlign0",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_align0(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Align {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Align = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_align0::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Align =
+            ::core::mem::transmute(__lookup_get_column_align0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_align1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -532,41 +404,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnAlign1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnAlign1",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_align1(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Align {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Align = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_align1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Align =
+            ::core::mem::transmute(__lookup_get_column_align1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_align2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -579,41 +440,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnAlign2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnAlign2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_align2(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Align {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Align = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_align2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Align =
+            ::core::mem::transmute(__lookup_get_column_align2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -626,41 +476,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_x_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -673,41 +512,30 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "XCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "XCall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn x_call(
         this: DebugTransporterItemMenu_EditMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_x_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_x_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_help {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::class(),
@@ -720,198 +548,165 @@ mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetHelp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_EditMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetHelp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_help(
-        this: DebugTransporterItemMenu_EditMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_EditMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_help::get_offset() as isize),
-        );
+    pub unsafe fn get_help(this: DebugTransporterItemMenu_EditMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_help::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugtransporteritemmenu")]
-pub trait IDebugTransporterItemMenu_EditMenuItemMethods:
-    IDebugTransporterItemMenu_EditMenuItem
-{
+pub trait IDebugTransporterItemMenu_EditMenuItemMethods: IDebugTransporterItemMenu_EditMenuItem {
     #[doc = "`.ctor(i32)` overload"]
     fn ctor(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnCount()` overload"]
     fn get_column_count(self) -> i32 {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnWidth0()` overload"]
     fn get_column_width0(self) -> f32 {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width0(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnWidth1()` overload"]
     fn get_column_width1(self) -> f32 {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnWidth2()` overload"]
     fn get_column_width2(self) -> f32 {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnName0()` overload"]
     fn get_column_name0(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name0(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetUnitItem()` overload"]
     fn get_unit_item(self) -> crate::app::unititem::UnitItem {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_unit_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnName1()` overload"]
     fn get_column_name1(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnName2()` overload"]
     fn get_column_name2(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnAlign0()` overload"]
     fn get_column_align0(self) -> crate::app::menuitem::MenuItem_Align {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align0(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnAlign1()` overload"]
     fn get_column_align1(self) -> crate::app::menuitem::MenuItem_Align {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnAlign2()` overload"]
     fn get_column_align2(self) -> crate::app::menuitem::MenuItem_Align {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`XCall()` overload"]
     fn x_call(self) -> crate::app::menuitem::MenuItem_Result {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::x_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetHelp()` overload"]
     fn get_help(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_EditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_help(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_EditMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_help(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-debugtransporteritemmenu")]
-impl<__T: IDebugTransporterItemMenu_EditMenuItem> IDebugTransporterItemMenu_EditMenuItemMethods
-    for __T
-{
-}
+impl<__T: IDebugTransporterItemMenu_EditMenuItem> IDebugTransporterItemMenu_EditMenuItemMethods for __T {}
 
 #[cfg(feature = "app-debugtransporteritemmenu")]
 impl DebugTransporterItemMenu_EditMenuItem {
@@ -938,13 +733,8 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -956,18 +746,15 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -976,25 +763,15 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
         item_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_SelectMenuItem,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, transporter_index, item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -1007,41 +784,27 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_count(
-        this: DebugTransporterItemMenu_SelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_SelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_count::get_offset() as isize),
-        );
+    pub unsafe fn get_column_count(this: DebugTransporterItemMenu_SelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_column_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_width0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -1054,41 +817,27 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnWidth0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnWidth0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_width0(
-        this: DebugTransporterItemMenu_SelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_SelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_width0::get_offset() as isize),
-        );
+    pub unsafe fn get_column_width0(this: DebugTransporterItemMenu_SelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_column_width0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_width1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -1101,41 +850,27 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnWidth1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnWidth1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_width1(
-        this: DebugTransporterItemMenu_SelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_SelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_width1::get_offset() as isize),
-        );
+    pub unsafe fn get_column_width1(this: DebugTransporterItemMenu_SelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_column_width1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_name0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -1148,41 +883,30 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnName0",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_name0(
         this: DebugTransporterItemMenu_SelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_SelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name0::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_column_name0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_name1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -1195,41 +919,30 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnName1",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_column_name1(
         this: DebugTransporterItemMenu_SelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_SelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_column_name1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -1242,48 +955,35 @@ mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu_SelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: DebugTransporterItemMenu_SelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(
-            DebugTransporterItemMenu_SelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugtransporteritemmenu")]
-pub trait IDebugTransporterItemMenu_SelectMenuItemMethods:
-    IDebugTransporterItemMenu_SelectMenuItem
-{
+pub trait IDebugTransporterItemMenu_SelectMenuItemMethods: IDebugTransporterItemMenu_SelectMenuItem {
     #[doc = "`.ctor(i32, i32)` overload"]
-    fn ctor(
-        self,
-        transporter_index: impl ::core::convert::Into<i32>,
-        item_index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor(self, transporter_index: impl ::core::convert::Into<i32>, item_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_SelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <DebugTransporterItemMenu_SelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(transporter_index),
@@ -1295,70 +995,61 @@ pub trait IDebugTransporterItemMenu_SelectMenuItemMethods:
     #[doc = "`GetColumnCount()` overload"]
     fn get_column_count(self) -> i32 {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_SelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_SelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnWidth0()` overload"]
     fn get_column_width0(self) -> f32 {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_SelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_width0(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_SelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnWidth1()` overload"]
     fn get_column_width1(self) -> f32 {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_SelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_width1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_SelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnName0()` overload"]
     fn get_column_name0(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_SelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_name0(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_SelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnName1()` overload"]
     fn get_column_name1(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_SelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_name1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_SelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
         unsafe {
-            let __receiver = < DebugTransporterItemMenu_SelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugTransporterItemMenu_SelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugTransporterItemMenu_SelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-debugtransporteritemmenu")]
-impl<__T: IDebugTransporterItemMenu_SelectMenuItem> IDebugTransporterItemMenu_SelectMenuItemMethods
-    for __T
-{
-}
+impl<__T: IDebugTransporterItemMenu_SelectMenuItem> IDebugTransporterItemMenu_SelectMenuItemMethods for __T {}
 
 #[cfg(feature = "app-debugtransporteritemmenu")]
 impl DebugTransporterItemMenu_SelectMenuItem {
@@ -1371,11 +1062,7 @@ impl DebugTransporterItemMenu_SelectMenuItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugTransporterItemMenu_SelectMenuItemMethods>::ctor(
-            this,
-            transporter_index,
-            item_index,
-        );
+        <Self as IDebugTransporterItemMenu_SelectMenuItemMethods>::ctor(this, transporter_index, item_index);
         this
     }
 }
@@ -1389,11 +1076,8 @@ mod __DebugTransporterItemMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -1405,39 +1089,27 @@ mod __DebugTransporterItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugTransporterItemMenu as ::unity2::ClassIdentity>::class(),
@@ -1450,30 +1122,20 @@ mod __DebugTransporterItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugTransporterItemMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugTransporterItemMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DebugTransporterItemMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DebugTransporterItemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugTransporterItemMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1482,12 +1144,7 @@ mod __DebugTransporterItemMenu_unity2_raw {
 impl DebugTransporterItemMenu {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __DebugTransporterItemMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DebugTransporterItemMenu_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -1497,9 +1154,7 @@ pub trait IDebugTransporterItemMenuMethods: IDebugTransporterItemMenu {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <DebugTransporterItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DebugTransporterItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugTransporterItemMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1527,19 +1182,14 @@ impl DebugTransporterItemMenu {
 #[cfg(feature = "app-debugtransporteritemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugTransporterItemMenu;
-    pub use super::DebugTransporterItemMenu_EditMenuItem;
-    pub use super::DebugTransporterItemMenu_SelectMenuItem;
-    pub use super::IDebugTransporterItemMenu;
-    pub use super::IDebugTransporterItemMenuMethods;
-    pub use super::IDebugTransporterItemMenu_EditMenuItem;
-    pub use super::IDebugTransporterItemMenu_EditMenuItemMethods;
-    pub use super::IDebugTransporterItemMenu_SelectMenuItem;
-    pub use super::IDebugTransporterItemMenu_SelectMenuItemMethods;
-    pub use crate::app::menuitem::IMenuItem;
+    pub use super::{
+        DebugTransporterItemMenu, DebugTransporterItemMenu_EditMenuItem, DebugTransporterItemMenu_SelectMenuItem, IDebugTransporterItemMenu,
+        IDebugTransporterItemMenuMethods, IDebugTransporterItemMenu_EditMenuItem, IDebugTransporterItemMenu_EditMenuItemMethods,
+        IDebugTransporterItemMenu_SelectMenuItem, IDebugTransporterItemMenu_SelectMenuItemMethods,
+    };
     #[cfg(feature = "app-menuitem")]
     pub use crate::app::menuitem::IMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::menuitem::IMenuItem, system::object::IObject};
 }

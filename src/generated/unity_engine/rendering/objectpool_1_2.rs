@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-objectpool_1_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_2.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ObjectPool`1")]
@@ -30,9 +32,8 @@ mod __types {
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ObjectPool_1_PooledObject<T0> {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
         const NAME: &'static str = "ObjectPool`1.PooledObject";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -47,10 +48,7 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ObjectPool_1_PooledObject<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -92,10 +90,7 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1_2<T0> {
 
     #[doc = "`Get(*mutT0)` overload"]
     #[method(name = "Get", args = 1)]
-    pub fn get_2(
-        self,
-        v: *mut T0,
-    ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<T0>;
+    pub fn get_2(self, v: *mut T0) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<T0>;
 
     #[doc = "`Release(T0)` overload"]
     #[method(name = "Release", args = 1)]
@@ -117,12 +112,7 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1_2<T0> {
                 ::core::stringify!(new),
             )
         });
-        <Self as IObjectPool_1_2Methods<T0>>::ctor(
-            this,
-            action_on_get,
-            action_on_release,
-            collection_check,
-        );
+        <Self as IObjectPool_1_2Methods<T0>>::ctor(this, action_on_get, action_on_release, collection_check);
         this
     }
 }
@@ -132,11 +122,7 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1_2<T0> {
 impl<T0: ::unity2::ClassIdentity> ObjectPool_1_PooledObject<T0> {
     #[doc = "`.ctor(T0, crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        value: T0,
-        pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>,
-    ) -> ();
+    pub fn ctor(self, value: T0, pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>) -> ();
 
     #[doc = "`System.IDisposable.Dispose()` overload"]
     #[method(name = "System.IDisposable.Dispose", args = 0)]
@@ -146,14 +132,10 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1_PooledObject<T0> {
 #[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IObjectPool_1_2;
-    pub use super::IObjectPool_1_2Methods;
-    pub use super::ObjectPool_1_2;
-    pub use super::ObjectPool_1_PooledObject;
-    pub use crate::system::object::IObject;
+    pub use super::{IObjectPool_1_2, IObjectPool_1_2Methods, ObjectPool_1_2, ObjectPool_1_PooledObject};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,40 +2,10 @@
 
 #[cfg(feature = "system-collections-arraylist-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListDebugView.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections",
-        name = "ArrayList.ArrayListDebugView"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ArrayList_ArrayListDebugView {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListEnumeratorSimple.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections",
-        name = "ArrayList.ArrayListEnumeratorSimple"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ArrayList_ArrayListEnumeratorSimple {
-        #[rename(name = "list")]
-        pub list: crate::system::collections::arraylist::ArrayList,
-        #[rename(name = "index")]
-        pub index: i32,
-        #[rename(name = "version")]
-        pub version: i32,
-        #[rename(name = "currentElement")]
-        pub current_element: ::unity2::IlInstance,
-        #[rename(name = "isArrayList")]
-        pub is_array_list: bool,
-        #[static_field]
-        #[rename(name = "dummyObject")]
-        pub dummy_object: ::unity2::IlInstance,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "ArrayList")]
@@ -54,6 +24,30 @@ mod __types {
         pub empty_array: ::unity2::Array<crate::system::object::Object>,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListEnumeratorSimple.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "ArrayList.ArrayListEnumeratorSimple")]
+    #[parent(crate::system::object::Object)]
+    pub struct ArrayList_ArrayListEnumeratorSimple {
+        #[rename(name = "list")]
+        pub list: crate::system::collections::arraylist::ArrayList,
+        #[rename(name = "index")]
+        pub index: i32,
+        #[rename(name = "version")]
+        pub version: i32,
+        #[rename(name = "currentElement")]
+        pub current_element: ::unity2::IlInstance,
+        #[rename(name = "isArrayList")]
+        pub is_array_list: bool,
+        #[static_field]
+        #[rename(name = "dummyObject")]
+        pub dummy_object: ::unity2::IlInstance,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListDebugView.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "ArrayList.ArrayListDebugView")]
+    #[parent(crate::system::object::Object)]
+    pub struct ArrayList_ArrayListDebugView {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ReadOnlyArrayList.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "ArrayList.ReadOnlyArrayList")]
     #[parent(crate::system::collections::arraylist::ArrayList)]
@@ -69,18 +63,1205 @@ pub use __types::*;
 #[cfg(feature = "system-collections-arraylist")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ArrayList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(this: ArrayList, capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, capacity, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: ArrayList,
+        c: crate::system::collections::icollection::ICollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ArrayList, crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
+        inner(this, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList as ::unity2::ClassIdentity>::class(),
+                "set_Capacity",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "set_Capacity",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_capacity(this: ArrayList, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_capacity::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "get_Count", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_count(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_read_only {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList as ::unity2::ClassIdentity>::class(),
+                "get_IsReadOnly",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_IsReadOnly",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_read_only(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_read_only::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_synchronized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList as ::unity2::ClassIdentity>::class(),
+                "get_IsSynchronized",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSynchronized",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_synchronized(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_synchronized::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sync_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList as ::unity2::ClassIdentity>::class(),
+                "get_SyncRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_SyncRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sync_root(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_sync_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "get_Item", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item(this: ArrayList, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "set_Item", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_item(this: ArrayList, index: i32, value: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, i32, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
+        inner(this, index, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "Add", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <ArrayList as ::unity2::ClassIdentity>::NAME, "Add", e),
+            }
+        }
+    }
+    pub unsafe fn add(this: ArrayList, value: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ArrayList, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "AddRange", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "AddRange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_range(
+        this: ArrayList,
+        c: crate::system::collections::icollection::ICollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ArrayList, crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_range::get_method_info().method_ptr);
+        inner(this, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clone {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "Clone", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Clone",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clone(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_contains {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "Contains", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Contains",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn contains(this: ArrayList, item: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ArrayList, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_contains::get_method_info().method_ptr);
+        inner(this, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IlInstance as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "CopyTo", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn copy_to(this: ArrayList, array: ::unity2::IlInstance, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, ::unity2::IlInstance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
+        inner(this, array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_to_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "CopyTo", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn copy_to_2(this: ArrayList, array: ::unity2::IlInstance, array_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to_2::get_method_info().method_ptr);
+        inner(this, array, array_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_to_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "CopyTo", 4, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn copy_to_3(
+        this: ArrayList,
+        index: i32,
+        array: ::unity2::IlInstance,
+        array_index: i32,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ArrayList, i32, ::unity2::IlInstance, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to_3::get_method_info().method_ptr);
+        inner(this, index, array, array_index, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ensure_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList as ::unity2::ClassIdentity>::class(),
+                "EnsureCapacity",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "EnsureCapacity",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ensure_capacity(this: ArrayList, min: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ensure_capacity::get_method_info().method_ptr);
+        inner(this, min, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList as ::unity2::ClassIdentity>::class(),
+                "GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_enumerator(
+        this: ArrayList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_index_of {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "IndexOf", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "IndexOf",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn index_of(this: ArrayList, value: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ArrayList, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_index_of::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insert {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "Insert", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Insert",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn insert(this: ArrayList, index: i32, value: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, i32, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_insert::get_method_info().method_ptr);
+        inner(this, index, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insert_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList as ::unity2::ClassIdentity>::class(),
+                "InsertRange",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "InsertRange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn insert_range(
+        this: ArrayList,
+        index: i32,
+        c: crate::system::collections::icollection::ICollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ArrayList, i32, crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_insert_range::get_method_info().method_ptr);
+        inner(this, index, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_only {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "ReadOnly", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "ReadOnly",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn read_only(
+        list: crate::system::collections::arraylist::ArrayList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::arraylist::ArrayList {
+        let inner: extern "C" fn(
+            crate::system::collections::arraylist::ArrayList,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::arraylist::ArrayList = ::core::mem::transmute(__lookup_read_only::get_method_info().method_ptr);
+        inner(list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "Remove", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove(this: ArrayList, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_at {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "RemoveAt", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "RemoveAt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_at(this: ArrayList, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_at::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList as ::unity2::ClassIdentity>::class(),
+                "RemoveRange",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "RemoveRange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_range(this: ArrayList, index: i32, count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_range::get_method_info().method_ptr);
+        inner(this, index, count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_array {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "ToArray", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "ToArray",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_array(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<crate::system::object::Object> {
+        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> ::unity2::Array<crate::system::object::Object> =
+            ::core::mem::transmute(__lookup_to_array::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_array_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), "ToArray", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        "ToArray",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_array_2(this: ArrayList, r#type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IlInstance {
+        let inner: extern "C" fn(ArrayList, ::unity2::SystemType, ::unity2::OptionalMethod) -> ::unity2::IlInstance =
+            ::core::mem::transmute(__lookup_to_array_2::get_method_info().method_ptr);
+        inner(this, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<ArrayList as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-arraylist")]
+impl ArrayList {
+    #[doc = "`ReadOnly(crate::system::collections::arraylist::ArrayList)` overload"]
+    pub fn read_only(
+        list: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>,
+    ) -> crate::system::collections::arraylist::ArrayList {
+        unsafe { __ArrayList_unity2_raw::read_only(::core::convert::Into::into(list), ::core::option::Option::None) }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ArrayList_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "system-collections-arraylist")]
+pub trait IArrayListMethods: IArrayList {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor_2(self, capacity: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(capacity), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::icollection::ICollection)` overload"]
+    fn ctor_3(self, c: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::ctor_3(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Capacity(i32)` overload"]
+    fn set_capacity(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::set_capacity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsReadOnly()` overload"]
+    fn get_is_read_only(self) -> bool {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsSynchronized()` overload"]
+    fn get_is_synchronized(self) -> bool {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SyncRoot()` overload"]
+    fn get_sync_root(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Item(i32, crate::system::object::Object)` overload"]
+    fn set_item(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::set_item(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add(crate::system::object::Object)` overload"]
+    fn add(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::add(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddRange(crate::system::collections::icollection::ICollection)` overload"]
+    fn add_range(self, c: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::add_range(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clone()` overload"]
+    fn clone(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::clone(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Contains(crate::system::object::Object)` overload"]
+    fn contains(self, item: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::contains(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CopyTo(::unity2::IlInstance)` overload"]
+    fn copy_to(self, array: impl ::core::convert::Into<::unity2::IlInstance>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
+    fn copy_to_2(self, array: impl ::core::convert::Into<::unity2::IlInstance>, array_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::copy_to_2(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(array_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CopyTo(i32, ::unity2::IlInstance, i32, i32)` overload"]
+    fn copy_to_3(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        array: impl ::core::convert::Into<::unity2::IlInstance>,
+        array_index: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::copy_to_3(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(array_index),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EnsureCapacity(i32)` overload"]
+    fn ensure_capacity(self, min: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::ensure_capacity(__receiver, ::core::convert::Into::into(min), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetEnumerator()` overload"]
+    fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IndexOf(crate::system::object::Object)` overload"]
+    fn index_of(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::index_of(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Insert(i32, crate::system::object::Object)` overload"]
+    fn insert(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::insert(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InsertRange(i32, crate::system::collections::icollection::ICollection)` overload"]
+    fn insert_range(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        c: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::insert_range(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(c),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Remove(crate::system::object::Object)` overload"]
+    fn remove(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::remove(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RemoveAt(i32)` overload"]
+    fn remove_at(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RemoveRange(i32, i32)` overload"]
+    fn remove_range(self, index: impl ::core::convert::Into<i32>, count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::remove_range(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToArray()` overload"]
+    fn to_array(self) -> ::unity2::Array<crate::system::object::Object> {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::to_array(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ToArray(::unity2::SystemType)` overload"]
+    fn to_array_2(self, r#type: impl ::core::convert::Into<::unity2::SystemType>) -> ::unity2::IlInstance {
+        unsafe {
+            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_unity2_raw::to_array_2(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-arraylist")]
+impl<__T: IArrayList> IArrayListMethods for __T {}
+
+#[cfg(feature = "system-collections-arraylist")]
+impl ArrayList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ArrayList), ::core::stringify!(new),));
+        <Self as IArrayListMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new_2(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ArrayList), ::core::stringify!(new_2),));
+        <Self as IArrayListMethods>::ctor_2(this, capacity);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::collections::icollection::ICollection)` — overload selector"]
+    pub fn new_3(c: crate::system::collections::icollection::ICollection) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ArrayList), ::core::stringify!(new_3),));
+        <Self as IArrayListMethods>::ctor_3(this, c);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-arraylist")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -92,18 +1273,15 @@ mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -115,20 +1293,14 @@ mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
             ArrayList_ArrayListEnumeratorSimple,
             crate::system::collections::arraylist::ArrayList,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
@@ -141,41 +1313,27 @@ mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                    "Clone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "Clone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clone(
-        this: ArrayList_ArrayListEnumeratorSimple,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ArrayList_ArrayListEnumeratorSimple,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clone::get_offset() as isize),
-        );
+    pub unsafe fn clone(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
@@ -188,41 +1346,27 @@ mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                    "MoveNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_next(
-        this: ArrayList_ArrayListEnumeratorSimple,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ArrayList_ArrayListEnumeratorSimple,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_next::get_offset() as isize),
-        );
+    pub unsafe fn move_next(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
@@ -235,41 +1379,30 @@ mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_current(
         this: ArrayList_ArrayListEnumeratorSimple,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ArrayList_ArrayListEnumeratorSimple,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
@@ -282,41 +1415,27 @@ mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: ArrayList_ArrayListEnumeratorSimple,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ArrayListEnumeratorSimple,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset::get_offset() as isize),
-        );
+    pub unsafe fn reset(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
@@ -329,26 +1448,19 @@ mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -357,92 +1469,61 @@ mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
 impl ArrayList_ArrayListEnumeratorSimple {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
-        unsafe {
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::cctor(::core::option::Option::None)
-        }
+        unsafe { __ArrayList_ArrayListEnumeratorSimple_unity2_raw::cctor(::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "system-collections-arraylist")]
-pub trait IArrayList_ArrayListEnumeratorSimpleMethods:
-    IArrayList_ArrayListEnumeratorSimple
-{
+pub trait IArrayList_ArrayListEnumeratorSimpleMethods: IArrayList_ArrayListEnumeratorSimple {
     #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList)` overload"]
-    fn ctor(
-        self,
-        list: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>,
-    ) -> () {
+    fn ctor(self, list: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>) -> () {
         unsafe {
-            let __receiver =
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(list),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::ctor(__receiver, ::core::convert::Into::into(list), ::core::option::Option::None)
         }
     }
     #[doc = "`Clone()` overload"]
     fn clone(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver =
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::clone(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::clone(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MoveNext()` overload"]
     fn move_next(self) -> bool {
         unsafe {
-            let __receiver =
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::move_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::move_next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Current()` overload"]
     fn get_current(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver =
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::get_current(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::get_current(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver =
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::reset(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "system-collections-arraylist")]
-impl<__T: IArrayList_ArrayListEnumeratorSimple> IArrayList_ArrayListEnumeratorSimpleMethods
-    for __T
-{
-}
+impl<__T: IArrayList_ArrayListEnumeratorSimple> IArrayList_ArrayListEnumeratorSimpleMethods for __T {}
 
 #[cfg(feature = "system-collections-arraylist")]
 impl ArrayList_ArrayListEnumeratorSimple {
@@ -463,1927 +1544,15 @@ impl ArrayList_ArrayListEnumeratorSimple {
 #[cfg(feature = "system-collections-arraylist")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArrayList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: ArrayList,
-        capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
-        inner(this, capacity, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: ArrayList,
-        c: crate::system::collections::icollection::ICollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList,
-            crate::system::collections::icollection::ICollection,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
-        inner(this, c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_capacity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "set_Capacity",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "set_Capacity",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_capacity(
-        this: ArrayList,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_capacity::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_count(
-        this: ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_read_only {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "get_IsReadOnly",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_IsReadOnly",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_read_only(
-        this: ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_read_only::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_synchronized {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "get_IsSynchronized",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_IsSynchronized",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_synchronized(
-        this: ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_synchronized::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sync_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "get_SyncRoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_SyncRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sync_root(
-        this: ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ArrayList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sync_root::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_item(
-        this: ArrayList,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ArrayList,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_item(
-        this: ArrayList,
-        index: i32,
-        value: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList,
-            i32,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item::get_offset() as isize),
-        );
-        inner(this, index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add(
-        this: ArrayList,
-        value: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ArrayList,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "AddRange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "AddRange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_range(
-        this: ArrayList,
-        c: crate::system::collections::icollection::ICollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList,
-            crate::system::collections::icollection::ICollection,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_range::get_offset() as isize),
-        );
-        inner(this, c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(this: ArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ArrayList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clone {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "Clone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Clone",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clone(
-        this: ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ArrayList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clone::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_contains {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "Contains",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Contains",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn contains(
-        this: ArrayList,
-        item: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ArrayList,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_contains::get_offset() as isize),
-        );
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IlInstance as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn copy_to(
-        this: ArrayList,
-        array: ::unity2::IlInstance,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ArrayList, ::unity2::IlInstance, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_copy_to::get_offset() as isize),
-            );
-        inner(this, array, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn copy_to_2(
-        this: ArrayList,
-        array: ::unity2::IlInstance,
-        array_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList,
-            ::unity2::IlInstance,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_2::get_offset() as isize),
-        );
-        inner(this, array, array_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn copy_to_3(
-        this: ArrayList,
-        index: i32,
-        array: ::unity2::IlInstance,
-        array_index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList,
-            i32,
-            ::unity2::IlInstance,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_3::get_offset() as isize),
-        );
-        inner(this, index, array, array_index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ensure_capacity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "EnsureCapacity",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "EnsureCapacity",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ensure_capacity(
-        this: ArrayList,
-        min: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ensure_capacity::get_offset() as isize),
-            );
-        inner(this, min, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            ArrayList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enumerator::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_index_of {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "IndexOf",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "IndexOf",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn index_of(
-        this: ArrayList,
-        value: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ArrayList,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_index_of::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_insert {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "Insert",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Insert",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn insert(
-        this: ArrayList,
-        index: i32,
-        value: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList,
-            i32,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_insert::get_offset() as isize),
-        );
-        inner(this, index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_insert_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "InsertRange",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "InsertRange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn insert_range(
-        this: ArrayList,
-        index: i32,
-        c: crate::system::collections::icollection::ICollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList,
-            i32,
-            crate::system::collections::icollection::ICollection,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_insert_range::get_offset() as isize),
-        );
-        inner(this, index, c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_only {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "ReadOnly",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "ReadOnly",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn read_only(
-        list: crate::system::collections::arraylist::ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::arraylist::ArrayList {
-        let inner: extern "C" fn(
-            crate::system::collections::arraylist::ArrayList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::arraylist::ArrayList = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_read_only::get_offset() as isize),
-        );
-        inner(list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove(
-        this: ArrayList,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_at {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "RemoveAt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "RemoveAt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_at(
-        this: ArrayList,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ArrayList, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_remove_at::get_offset() as isize),
-            );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "RemoveRange",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "RemoveRange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_range(
-        this: ArrayList,
-        index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ArrayList, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_remove_range::get_offset() as isize),
-            );
-        inner(this, index, count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_array {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "ToArray",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "ToArray",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_array(
-        this: ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::system::object::Object> {
-        let inner: extern "C" fn(
-            ArrayList,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_array::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_array_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                "ToArray",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    "ToArray",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_array_2(
-        this: ArrayList,
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IlInstance {
-        let inner: extern "C" fn(
-            ArrayList,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IlInstance = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_array_2::get_offset() as isize),
-        );
-        inner(this, r#type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-collections-arraylist")]
-impl ArrayList {
-    #[doc = "`ReadOnly(crate::system::collections::arraylist::ArrayList)` overload"]
-    pub fn read_only(
-        list: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>,
-    ) -> crate::system::collections::arraylist::ArrayList {
-        unsafe {
-            __ArrayList_unity2_raw::read_only(
-                ::core::convert::Into::into(list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ArrayList_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "system-collections-arraylist")]
-pub trait IArrayListMethods: IArrayList {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor_2(self, capacity: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(capacity),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::icollection::ICollection)` overload"]
-    fn ctor_3(
-        self,
-        c: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Capacity(i32)` overload"]
-    fn set_capacity(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::set_capacity(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::get_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsReadOnly()` overload"]
-    fn get_is_read_only(self) -> bool {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsSynchronized()` overload"]
-    fn get_is_synchronized(self) -> bool {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_SyncRoot()` overload"]
-    fn get_sync_root(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(i32)` overload"]
-    fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Item(i32, crate::system::object::Object)` overload"]
-    fn set_item(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::set_item(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::system::object::Object)` overload"]
-    fn add(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddRange(crate::system::collections::icollection::ICollection)` overload"]
-    fn add_range(
-        self,
-        c: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::add_range(
-                __receiver,
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clone()` overload"]
-    fn clone(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::clone(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Contains(crate::system::object::Object)` overload"]
-    fn contains(self, item: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::contains(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CopyTo(::unity2::IlInstance)` overload"]
-    fn copy_to(self, array: impl ::core::convert::Into<::unity2::IlInstance>) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::copy_to(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
-    fn copy_to_2(
-        self,
-        array: impl ::core::convert::Into<::unity2::IlInstance>,
-        array_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::copy_to_2(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(array_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CopyTo(i32, ::unity2::IlInstance, i32, i32)` overload"]
-    fn copy_to_3(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        array: impl ::core::convert::Into<::unity2::IlInstance>,
-        array_index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::copy_to_3(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(array_index),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnsureCapacity(i32)` overload"]
-    fn ensure_capacity(self, min: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::ensure_capacity(
-                __receiver,
-                ::core::convert::Into::into(min),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetEnumerator()` overload"]
-    fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IndexOf(crate::system::object::Object)` overload"]
-    fn index_of(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::index_of(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Insert(i32, crate::system::object::Object)` overload"]
-    fn insert(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::insert(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InsertRange(i32, crate::system::collections::icollection::ICollection)` overload"]
-    fn insert_range(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        c: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::insert_range(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Remove(crate::system::object::Object)` overload"]
-    fn remove(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::remove(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RemoveAt(i32)` overload"]
-    fn remove_at(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::remove_at(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RemoveRange(i32, i32)` overload"]
-    fn remove_range(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::remove_range(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ToArray()` overload"]
-    fn to_array(self) -> ::unity2::Array<crate::system::object::Object> {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::to_array(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ToArray(::unity2::SystemType)` overload"]
-    fn to_array_2(
-        self,
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> ::unity2::IlInstance {
-        unsafe {
-            let __receiver = <ArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_unity2_raw::to_array_2(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-arraylist")]
-impl<__T: IArrayList> IArrayListMethods for __T {}
-
-#[cfg(feature = "system-collections-arraylist")]
-impl ArrayList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArrayList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArrayListMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new_2(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArrayList),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IArrayListMethods>::ctor_2(this, capacity);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::icollection::ICollection)` — overload selector"]
-    pub fn new_3(c: crate::system::collections::icollection::ICollection) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArrayList),
-                ::core::stringify!(new_3),
-            )
-        });
-        <Self as IArrayListMethods>::ctor_3(this, c);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-arraylist")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __ArrayList_ReadOnlyArrayList_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -2395,18 +1564,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -2414,24 +1580,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         l: crate::system::collections::arraylist::ArrayList,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            crate::system::collections::arraylist::ArrayList,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, crate::system::collections::arraylist::ArrayList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, l, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -2444,39 +1601,27 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_count(
-        this: ArrayList_ReadOnlyArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_count(this: ArrayList_ReadOnlyArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_read_only {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -2489,39 +1634,27 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_IsReadOnly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_IsReadOnly",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_read_only(
-        this: ArrayList_ReadOnlyArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_read_only(this: ArrayList_ReadOnlyArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_read_only::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_read_only::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_synchronized {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -2534,41 +1667,28 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_IsSynchronized",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSynchronized",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_synchronized(
-        this: ArrayList_ReadOnlyArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_synchronized(this: ArrayList_ReadOnlyArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_synchronized::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_synchronized::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "get_Item",
@@ -2580,18 +1700,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item(
@@ -2599,24 +1716,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, i32, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -2632,18 +1740,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_item(
@@ -2652,25 +1757,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         value: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            i32,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, i32, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
         inner(this, index, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sync_root {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -2683,43 +1778,28 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "get_SyncRoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "get_SyncRoot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sync_root(
-        this: ArrayList_ReadOnlyArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sync_root::get_offset() as isize),
-        );
+    pub unsafe fn get_sync_root(this: ArrayList_ReadOnlyArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_sync_root::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "Add",
@@ -2731,47 +1811,29 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add(
-        this: ArrayList_ReadOnlyArrayList,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
+    pub unsafe fn add(this: ArrayList_ReadOnlyArrayList, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "AddRange",
@@ -2783,18 +1845,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "AddRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "AddRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_range(
@@ -2802,26 +1861,16 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         c: crate::system::collections::icollection::ICollection,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            crate::system::collections::icollection::ICollection,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_range::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_range::get_method_info().method_ptr);
         inner(this, c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_capacity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "set_Capacity",
@@ -2833,40 +1882,27 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "set_Capacity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "set_Capacity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_capacity(
-        this: ArrayList_ReadOnlyArrayList,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_capacity(this: ArrayList_ReadOnlyArrayList, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_capacity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_capacity::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -2879,39 +1915,27 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: ArrayList_ReadOnlyArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: ArrayList_ReadOnlyArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -2924,43 +1948,28 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Clone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Clone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clone(
-        this: ArrayList_ReadOnlyArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clone::get_offset() as isize),
-        );
+    pub unsafe fn clone(this: ArrayList_ReadOnlyArrayList, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_contains {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "Contains",
@@ -2972,18 +1981,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Contains",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Contains",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn contains(
@@ -2991,24 +1997,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_contains::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_contains::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IlInstance as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3024,18 +2021,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to(
@@ -3044,25 +2038,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            ::unity2::IlInstance,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
         inner(this, array, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::IlInstance as ::unity2::IlType>::il_type(),
@@ -3080,18 +2064,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to_2(
@@ -3102,27 +2083,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            i32,
-            ::unity2::IlInstance,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, i32, ::unity2::IlInstance, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to_2::get_method_info().method_ptr);
         inner(this, index, array, array_index, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enumerator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -3135,43 +2104,31 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_enumerator(
         this: ArrayList_ReadOnlyArrayList,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enumerator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_index_of {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "IndexOf",
@@ -3183,18 +2140,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "IndexOf",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "IndexOf",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn index_of(
@@ -3202,24 +2156,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         value: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_index_of::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_index_of::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_insert {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -3235,18 +2180,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Insert",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Insert",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn insert(
@@ -3255,29 +2197,18 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            i32,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_insert::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, i32, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_insert::get_method_info().method_ptr);
         inner(this, index, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_insert_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type(
-                ),
+                <crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -3290,18 +2221,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "InsertRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "InsertRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn insert_range(
@@ -3315,22 +2243,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
             i32,
             crate::system::collections::icollection::ICollection,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_insert_range::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_insert_range::get_method_info().method_ptr);
         inner(this, index, c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "Remove",
@@ -3342,18 +2263,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove(
@@ -3361,26 +2279,16 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         value: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_at {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "RemoveAt",
@@ -3392,44 +2300,28 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "RemoveAt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "RemoveAt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_at(
-        this: ArrayList_ReadOnlyArrayList,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn remove_at(this: ArrayList_ReadOnlyArrayList, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_remove_at::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_remove_at::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "RemoveRange",
@@ -3441,45 +2333,27 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "RemoveRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "RemoveRange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_range(
-        this: ArrayList_ReadOnlyArrayList,
-        index: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_range::get_offset() as isize),
-        );
+    pub unsafe fn remove_range(this: ArrayList_ReadOnlyArrayList, index: i32, count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_range::get_method_info().method_ptr);
         inner(this, index, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
@@ -3492,43 +2366,31 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "ToArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "ToArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn to_array(
         this: ArrayList_ReadOnlyArrayList,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::system::object::Object> {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod) -> ::unity2::Array<crate::system::object::Object> =
+            ::core::mem::transmute(__lookup_to_array::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_array_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::class(),
                 "ToArray",
@@ -3540,18 +2402,15 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
-                    "ToArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ReadOnlyArrayList as ::unity2::ClassIdentity>::NAME,
+                        "ToArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn to_array_2(
@@ -3559,15 +2418,8 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
         r#type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IlInstance {
-        let inner: extern "C" fn(
-            ArrayList_ReadOnlyArrayList,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IlInstance = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_array_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::SystemType, ::unity2::OptionalMethod) -> ::unity2::IlInstance =
+            ::core::mem::transmute(__lookup_to_array_2::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
 }
@@ -3575,86 +2427,50 @@ mod __ArrayList_ReadOnlyArrayList_unity2_raw {
 #[cfg(feature = "system-collections-arraylist")]
 pub trait IArrayList_ReadOnlyArrayListMethods: IArrayList_ReadOnlyArrayList {
     #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList)` overload"]
-    fn ctor(
-        self,
-        l: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>,
-    ) -> () {
+    fn ctor(self, l: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(l),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::ctor(__receiver, ::core::convert::Into::into(l), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Count()` overload"]
     fn get_count(self) -> i32 {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::get_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::get_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsReadOnly()` overload"]
     fn get_is_read_only(self) -> bool {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::get_is_read_only(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsSynchronized()` overload"]
     fn get_is_synchronized(self) -> bool {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::get_is_synchronized(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Item(i32)` overload"]
     fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::system::object::Object {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Item(i32, crate::system::object::Object)` overload"]
-    fn set_item(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn set_item(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArrayList_ReadOnlyArrayList_unity2_raw::set_item(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -3667,111 +2483,63 @@ pub trait IArrayList_ReadOnlyArrayListMethods: IArrayList_ReadOnlyArrayList {
     fn get_sync_root(self) -> crate::system::object::Object {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::get_sync_root(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Add(crate::system::object::Object)` overload"]
     fn add(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::add(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`AddRange(crate::system::collections::icollection::ICollection)` overload"]
-    fn add_range(
-        self,
-        c: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>,
-    ) -> () {
+    fn add_range(self, c: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::add_range(
-                __receiver,
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::add_range(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Capacity(i32)` overload"]
     fn set_capacity(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::set_capacity(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::set_capacity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::clear(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clone()` overload"]
     fn clone(self) -> crate::system::object::Object {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::clone(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::clone(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Contains(crate::system::object::Object)` overload"]
     fn contains(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::contains(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::contains(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
-    fn copy_to(
-        self,
-        array: impl ::core::convert::Into<::unity2::IlInstance>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn copy_to(self, array: impl ::core::convert::Into<::unity2::IlInstance>, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArrayList_ReadOnlyArrayList_unity2_raw::copy_to(
                 __receiver,
                 ::core::convert::Into::into(array),
@@ -3790,9 +2558,7 @@ pub trait IArrayList_ReadOnlyArrayListMethods: IArrayList_ReadOnlyArrayList {
     ) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArrayList_ReadOnlyArrayList_unity2_raw::copy_to_2(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -3807,40 +2573,23 @@ pub trait IArrayList_ReadOnlyArrayListMethods: IArrayList_ReadOnlyArrayList {
     fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::get_enumerator(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IndexOf(crate::system::object::Object)` overload"]
     fn index_of(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::index_of(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::index_of(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Insert(i32, crate::system::object::Object)` overload"]
-    fn insert(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn insert(self, index: impl ::core::convert::Into<i32>, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArrayList_ReadOnlyArrayList_unity2_raw::insert(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -3857,9 +2606,7 @@ pub trait IArrayList_ReadOnlyArrayListMethods: IArrayList_ReadOnlyArrayList {
     ) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArrayList_ReadOnlyArrayList_unity2_raw::insert_range(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -3872,41 +2619,23 @@ pub trait IArrayList_ReadOnlyArrayListMethods: IArrayList_ReadOnlyArrayList {
     fn remove(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::remove(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::remove(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveAt(i32)` overload"]
     fn remove_at(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::remove_at(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveRange(i32, i32)` overload"]
-    fn remove_range(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn remove_range(self, index: impl ::core::convert::Into<i32>, count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArrayList_ReadOnlyArrayList_unity2_raw::remove_range(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -3919,30 +2648,16 @@ pub trait IArrayList_ReadOnlyArrayListMethods: IArrayList_ReadOnlyArrayList {
     fn to_array(self) -> ::unity2::Array<crate::system::object::Object> {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::to_array(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::to_array(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToArray(::unity2::SystemType)` overload"]
-    fn to_array_2(
-        self,
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> ::unity2::IlInstance {
+    fn to_array_2(self, r#type: impl ::core::convert::Into<::unity2::SystemType>) -> ::unity2::IlInstance {
         unsafe {
             let __receiver =
-                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArrayList_ReadOnlyArrayList_unity2_raw::to_array_2(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+                <ArrayList_ReadOnlyArrayList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArrayList_ReadOnlyArrayList_unity2_raw::to_array_2(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
 }
@@ -3969,17 +2684,11 @@ impl ArrayList_ReadOnlyArrayList {
 #[cfg(feature = "system-collections-arraylist")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArrayList;
-    pub use super::ArrayList_ArrayListDebugView;
-    pub use super::ArrayList_ArrayListEnumeratorSimple;
-    pub use super::ArrayList_ReadOnlyArrayList;
-    pub use super::IArrayList;
-    pub use super::IArrayListMethods;
-    pub use super::IArrayList_ArrayListDebugView;
-    pub use super::IArrayList_ArrayListEnumeratorSimple;
-    pub use super::IArrayList_ArrayListEnumeratorSimpleMethods;
-    pub use super::IArrayList_ReadOnlyArrayList;
-    pub use super::IArrayList_ReadOnlyArrayListMethods;
+    pub use super::{
+        ArrayList, ArrayList_ArrayListDebugView, ArrayList_ArrayListEnumeratorSimple, ArrayList_ReadOnlyArrayList, IArrayList, IArrayListMethods,
+        IArrayList_ArrayListDebugView, IArrayList_ArrayListEnumeratorSimple, IArrayList_ArrayListEnumeratorSimpleMethods,
+        IArrayList_ReadOnlyArrayList, IArrayList_ReadOnlyArrayListMethods,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

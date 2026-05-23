@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-magicbulletsettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicbulletsettings/MagicBulletSettings.md"))]
     #[::unity2::class(namespace = "Combat", name = "MagicBulletSettings")]
@@ -42,9 +42,7 @@ mod __MagicBulletSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_decay_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicBulletSettings as ::unity2::ClassIdentity>::class(),
@@ -57,39 +55,27 @@ mod __MagicBulletSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicBulletSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_DecayTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicBulletSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_DecayTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_decay_time(
-        this: MagicBulletSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_decay_time(this: MagicBulletSettings, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MagicBulletSettings, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_decay_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_decay_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_flying_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -105,18 +91,15 @@ mod __MagicBulletSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicBulletSettings as ::unity2::ClassIdentity>::NAME,
-                    "CalcFlyingTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicBulletSettings as ::unity2::ClassIdentity>::NAME,
+                        "CalcFlyingTime",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_flying_time(
@@ -130,20 +113,14 @@ mod __MagicBulletSettings_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_flying_time::get_offset() as isize),
-        );
+        ) -> f32 = ::core::mem::transmute(__lookup_calc_flying_time::get_method_info().method_ptr);
         inner(this, start_pos, end_pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicBulletSettings as ::unity2::ClassIdentity>::class(),
@@ -156,30 +133,20 @@ mod __MagicBulletSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicBulletSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicBulletSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MagicBulletSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MagicBulletSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicBulletSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -189,13 +156,8 @@ pub trait IMagicBulletSettingsMethods: IMagicBulletSettings {
     #[doc = "`get_DecayTime()` overload"]
     fn get_decay_time(self) -> f32 {
         unsafe {
-            let __receiver = <MagicBulletSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicBulletSettings_unity2_raw::get_decay_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MagicBulletSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicBulletSettings_unity2_raw::get_decay_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcFlyingTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
@@ -205,9 +167,7 @@ pub trait IMagicBulletSettingsMethods: IMagicBulletSettings {
         end_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> f32 {
         unsafe {
-            let __receiver = <MagicBulletSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MagicBulletSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicBulletSettings_unity2_raw::calc_flying_time(
                 __receiver,
                 ::core::convert::Into::into(start_pos),
@@ -219,9 +179,7 @@ pub trait IMagicBulletSettingsMethods: IMagicBulletSettings {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MagicBulletSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MagicBulletSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicBulletSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -249,9 +207,7 @@ impl MagicBulletSettings {
 #[cfg(feature = "combat-magicbulletsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMagicBulletSettings;
-    pub use super::IMagicBulletSettingsMethods;
-    pub use super::MagicBulletSettings;
+    pub use super::{IMagicBulletSettings, IMagicBulletSettingsMethods, MagicBulletSettings};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

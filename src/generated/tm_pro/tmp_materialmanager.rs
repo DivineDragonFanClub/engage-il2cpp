@@ -2,24 +2,10 @@
 
 #[cfg(feature = "tm_pro-tmp_materialmanager-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager.MaskingMaterial")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_MaterialManager_MaskingMaterial {
-        #[rename(name = "baseMaterial")]
-        pub base_material: crate::unity_engine::material::Material,
-        #[rename(name = "stencilMaterial")]
-        pub stencil_material: crate::unity_engine::material::Material,
-        #[rename(name = "count")]
-        pub count: i32,
-        #[rename(name = "stencilID")]
-        pub stencil_id: i32,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_FallbackMaterial.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager.FallbackMaterial")]
@@ -37,15 +23,28 @@ mod __types {
         pub count: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager.MaskingMaterial")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_MaterialManager_MaskingMaterial {
+        #[rename(name = "baseMaterial")]
+        pub base_material: crate::unity_engine::material::Material,
+        #[rename(name = "stencilMaterial")]
+        pub stencil_material: crate::unity_engine::material::Material,
+        #[rename(name = "count")]
+        pub count: i32,
+        #[rename(name = "stencilID")]
+        pub stencil_id: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager")]
     #[parent(crate::system::object::Object)]
     pub struct TMP_MaterialManager {
         #[static_field]
         #[rename(name = "m_materialList")]
-        pub m_material_list: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_MaskingMaterial,
-        >,
+        pub m_material_list:
+            crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_MaskingMaterial>,
         #[static_field]
         #[rename(name = "m_fallbackMaterials")]
         pub m_fallback_materials: crate::system::collections::generic::dictionary_2::Dictionary_2<
@@ -54,13 +53,11 @@ mod __types {
         >,
         #[static_field]
         #[rename(name = "m_fallbackMaterialLookup")]
-        pub m_fallback_material_lookup:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i64>,
+        pub m_fallback_material_lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i64>,
         #[static_field]
         #[rename(name = "m_fallbackCleanupList")]
-        pub m_fallback_cleanup_list: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial,
-        >,
+        pub m_fallback_cleanup_list:
+            crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial>,
         #[static_field]
         #[rename(name = "isFallbackListDirty")]
         pub is_fallback_list_dirty: bool,
@@ -73,110 +70,13 @@ pub use __types::*;
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_MaterialManager_MaskingMaterial_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_MaterialManager_MaskingMaterial as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager_MaskingMaterial as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TMP_MaterialManager_MaskingMaterial,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_MaterialManager_MaskingMaterial,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-pub trait ITMP_MaterialManager_MaskingMaterialMethods:
-    ITMP_MaterialManager_MaskingMaterial
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_MaterialManager_MaskingMaterial as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_MaterialManager_MaskingMaterial_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl<__T: ITMP_MaterialManager_MaskingMaterial> ITMP_MaterialManager_MaskingMaterialMethods
-    for __T
-{
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_MaskingMaterial {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_MaterialManager_MaskingMaterial),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_MaterialManager_MaskingMaterialMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __TMP_MaterialManager_FallbackMaterial_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager_FallbackMaterial as ::unity2::ClassIdentity>::class(),
@@ -189,57 +89,39 @@ mod __TMP_MaterialManager_FallbackMaterial_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager_FallbackMaterial as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager_FallbackMaterial as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TMP_MaterialManager_FallbackMaterial,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_MaterialManager_FallbackMaterial,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: TMP_MaterialManager_FallbackMaterial, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_MaterialManager_FallbackMaterial, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
-pub trait ITMP_MaterialManager_FallbackMaterialMethods:
-    ITMP_MaterialManager_FallbackMaterial
-{
+pub trait ITMP_MaterialManager_FallbackMaterialMethods: ITMP_MaterialManager_FallbackMaterial {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < TMP_MaterialManager_FallbackMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TMP_MaterialManager_FallbackMaterial_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_MaterialManager_FallbackMaterial as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_MaterialManager_FallbackMaterial_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl<__T: ITMP_MaterialManager_FallbackMaterial> ITMP_MaterialManager_FallbackMaterialMethods
-    for __T
-{
-}
+impl<__T: ITMP_MaterialManager_FallbackMaterial> ITMP_MaterialManager_FallbackMaterialMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 impl TMP_MaterialManager_FallbackMaterial {
@@ -260,15 +142,85 @@ impl TMP_MaterialManager_FallbackMaterial {
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_MaterialManager_MaskingMaterial_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_MaterialManager_MaskingMaterial as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager_MaskingMaterial as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_MaterialManager_MaskingMaterial, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_MaterialManager_MaskingMaterial, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+pub trait ITMP_MaterialManager_MaskingMaterialMethods: ITMP_MaterialManager_MaskingMaterial {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_MaterialManager_MaskingMaterial as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_MaterialManager_MaskingMaterial_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+impl<__T: ITMP_MaterialManager_MaskingMaterial> ITMP_MaterialManager_MaskingMaterialMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+impl TMP_MaterialManager_MaskingMaterial {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_MaterialManager_MaskingMaterial),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_MaterialManager_MaskingMaterialMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __TMP_MaterialManager_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
@@ -281,35 +233,26 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pre_render {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
@@ -322,35 +265,26 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "OnPreRender",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "OnPreRender",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_pre_render(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_pre_render::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_pre_render::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stencil_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -366,18 +300,15 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "GetStencilMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "GetStencilMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_stencil_material(
@@ -385,26 +316,16 @@ mod __TMP_MaterialManager_unity2_raw {
         stencil_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stencil_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, i32, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_get_stencil_material::get_method_info().method_ptr);
         inner(base_material, stencil_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_stencil_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "ReleaseStencilMaterial",
@@ -416,43 +337,31 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseStencilMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseStencilMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release_stencil_material(
         stencil_material: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_stencil_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_stencil_material::get_method_info().method_ptr);
         inner(stencil_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_base_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "GetBaseMaterial",
@@ -464,41 +373,30 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "GetBaseMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "GetBaseMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_base_material(
         stencil_material: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_base_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_get_base_material::get_method_info().method_ptr);
         inner(stencil_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_stencil {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -514,18 +412,15 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "SetStencil",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "SetStencil",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_stencil(
@@ -533,24 +428,15 @@ mod __TMP_MaterialManager_unity2_raw {
         stencil_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_stencil::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, i32, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_set_stencil::get_method_info().method_ptr);
         inner(material, stencil_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_masking_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -567,18 +453,15 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "AddMaskingMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "AddMaskingMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_masking_material(
@@ -592,27 +475,15 @@ mod __TMP_MaterialManager_unity2_raw {
             crate::unity_engine::material::Material,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_masking_material::get_offset() as isize),
-        );
-        inner(
-            base_material,
-            stencil_material,
-            stencil_id,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_add_masking_material::get_method_info().method_ptr);
+        inner(base_material, stencil_material, stencil_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_stencil_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "RemoveStencilMaterial",
@@ -624,43 +495,31 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "RemoveStencilMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "RemoveStencilMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_stencil_material(
         stencil_material: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_stencil_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_stencil_material::get_method_info().method_ptr);
         inner(stencil_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_base_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "ReleaseBaseMaterial",
@@ -672,41 +531,30 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseBaseMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseBaseMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release_base_material(
         base_material: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_base_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_base_material::get_method_info().method_ptr);
         inner(base_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
@@ -719,35 +567,26 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "ClearMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "ClearMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_materials(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_materials::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear_materials::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stencil_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -761,42 +600,31 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "GetStencilID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "GetStencilID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stencil_id(
-        obj: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stencil_id::get_offset() as isize),
-        );
+    pub unsafe fn get_stencil_id(obj: crate::unity_engine::gameobject::GameObject, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_stencil_id::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_material_for_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::maskablegraphic::MaskableGraphic as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "GetMaterialForRendering",
@@ -808,18 +636,15 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "GetMaterialForRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "GetMaterialForRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_material_for_rendering(
@@ -831,22 +656,15 @@ mod __TMP_MaterialManager_unity2_raw {
             crate::unity_engine::ui::maskablegraphic::MaskableGraphic,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_material_for_rendering::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_material_for_rendering::get_method_info().method_ptr);
         inner(graphic, base_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_root_sort_override_canvas {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "FindRootSortOverrideCanvas",
@@ -858,41 +676,30 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "FindRootSortOverrideCanvas",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "FindRootSortOverrideCanvas",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_root_sort_override_canvas(
         start: crate::unity_engine::transform::Transform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_root_sort_override_canvas::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_find_root_sort_override_canvas::get_method_info().method_ptr);
         inner(start, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fallback_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -909,18 +716,15 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "GetFallbackMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "GetFallbackMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fallback_material(
@@ -934,25 +738,14 @@ mod __TMP_MaterialManager_unity2_raw {
             crate::unity_engine::material::Material,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fallback_material::get_offset() as isize),
-        );
-        inner(
-            font_asset,
-            source_material,
-            atlas_index,
-            __unity2_method_info,
-        )
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_fallback_material::get_method_info().method_ptr);
+        inner(font_asset, source_material, atlas_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fallback_material_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -968,18 +761,15 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "GetFallbackMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "GetFallbackMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fallback_material_2(
@@ -991,22 +781,15 @@ mod __TMP_MaterialManager_unity2_raw {
             crate::unity_engine::material::Material,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fallback_material_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_fallback_material_2::get_method_info().method_ptr);
         inner(source_material, target_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_fallback_material_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "AddFallbackMaterialReference",
@@ -1018,43 +801,31 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "AddFallbackMaterialReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "AddFallbackMaterialReference",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_fallback_material_reference(
         target_material: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_fallback_material_reference::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_fallback_material_reference::get_method_info().method_ptr);
         inner(target_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_fallback_material_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "RemoveFallbackMaterialReference",
@@ -1066,41 +837,30 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "RemoveFallbackMaterialReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "RemoveFallbackMaterialReference",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_fallback_material_reference(
         target_material: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_fallback_material_reference::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_fallback_material_reference::get_method_info().method_ptr);
         inner(target_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cleanup_fallback_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
@@ -1113,37 +873,28 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "CleanupFallbackMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "CleanupFallbackMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cleanup_fallback_materials(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cleanup_fallback_materials::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cleanup_fallback_materials::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_fallback_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MaterialManager as ::unity2::ClassIdentity>::class(),
                 "ReleaseFallbackMaterial",
@@ -1155,41 +906,30 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseFallbackMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseFallbackMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release_fallback_material(
         fallback_material: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_fallback_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_fallback_material::get_method_info().method_ptr);
         inner(fallback_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_material_preset_properties {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -1205,18 +945,15 @@ mod __TMP_MaterialManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
-                    "CopyMaterialPresetProperties",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MaterialManager as ::unity2::ClassIdentity>::NAME,
+                        "CopyMaterialPresetProperties",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_material_preset_properties(
@@ -1224,15 +961,8 @@ mod __TMP_MaterialManager_unity2_raw {
         destination: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_material_preset_properties::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::material::Material, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_material_preset_properties::get_method_info().method_ptr);
         inner(source, destination, __unity2_method_info)
     }
 }
@@ -1243,10 +973,12 @@ impl TMP_MaterialManager {
     pub fn cctor() -> () {
         unsafe { __TMP_MaterialManager_unity2_raw::cctor(::core::option::Option::None) }
     }
+
     #[doc = "`OnPreRender()` overload"]
     pub fn on_pre_render() -> () {
         unsafe { __TMP_MaterialManager_unity2_raw::on_pre_render(::core::option::Option::None) }
     }
+
     #[doc = "`GetStencilMaterial(crate::unity_engine::material::Material, i32)` overload"]
     pub fn get_stencil_material(
         base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
@@ -1260,28 +992,21 @@ impl TMP_MaterialManager {
             )
         }
     }
+
     #[doc = "`ReleaseStencilMaterial(crate::unity_engine::material::Material)` overload"]
-    pub fn release_stencil_material(
-        stencil_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    pub fn release_stencil_material(stencil_material: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            __TMP_MaterialManager_unity2_raw::release_stencil_material(
-                ::core::convert::Into::into(stencil_material),
-                ::core::option::Option::None,
-            )
+            __TMP_MaterialManager_unity2_raw::release_stencil_material(::core::convert::Into::into(stencil_material), ::core::option::Option::None)
         }
     }
+
     #[doc = "`GetBaseMaterial(crate::unity_engine::material::Material)` overload"]
     pub fn get_base_material(
         stencil_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> crate::unity_engine::material::Material {
-        unsafe {
-            __TMP_MaterialManager_unity2_raw::get_base_material(
-                ::core::convert::Into::into(stencil_material),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_MaterialManager_unity2_raw::get_base_material(::core::convert::Into::into(stencil_material), ::core::option::Option::None) }
     }
+
     #[doc = "`SetStencil(crate::unity_engine::material::Material, i32)` overload"]
     pub fn set_stencil(
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
@@ -1295,6 +1020,7 @@ impl TMP_MaterialManager {
             )
         }
     }
+
     #[doc = "`AddMaskingMaterial(crate::unity_engine::material::Material, crate::unity_engine::material::Material, i32)` overload"]
     pub fn add_masking_material(
         base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
@@ -1310,43 +1036,29 @@ impl TMP_MaterialManager {
             )
         }
     }
+
     #[doc = "`RemoveStencilMaterial(crate::unity_engine::material::Material)` overload"]
-    pub fn remove_stencil_material(
-        stencil_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    pub fn remove_stencil_material(stencil_material: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            __TMP_MaterialManager_unity2_raw::remove_stencil_material(
-                ::core::convert::Into::into(stencil_material),
-                ::core::option::Option::None,
-            )
+            __TMP_MaterialManager_unity2_raw::remove_stencil_material(::core::convert::Into::into(stencil_material), ::core::option::Option::None)
         }
     }
+
     #[doc = "`ReleaseBaseMaterial(crate::unity_engine::material::Material)` overload"]
-    pub fn release_base_material(
-        base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
-        unsafe {
-            __TMP_MaterialManager_unity2_raw::release_base_material(
-                ::core::convert::Into::into(base_material),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn release_base_material(base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
+        unsafe { __TMP_MaterialManager_unity2_raw::release_base_material(::core::convert::Into::into(base_material), ::core::option::Option::None) }
     }
+
     #[doc = "`ClearMaterials()` overload"]
     pub fn clear_materials() -> () {
         unsafe { __TMP_MaterialManager_unity2_raw::clear_materials(::core::option::Option::None) }
     }
+
     #[doc = "`GetStencilID(crate::unity_engine::gameobject::GameObject)` overload"]
-    pub fn get_stencil_id(
-        obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> i32 {
-        unsafe {
-            __TMP_MaterialManager_unity2_raw::get_stencil_id(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_stencil_id(obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> i32 {
+        unsafe { __TMP_MaterialManager_unity2_raw::get_stencil_id(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMaterialForRendering(crate::unity_engine::ui::maskablegraphic::MaskableGraphic, crate::unity_engine::material::Material)` overload"]
     pub fn get_material_for_rendering(
         graphic: impl ::core::convert::Into<crate::unity_engine::ui::maskablegraphic::MaskableGraphic>,
@@ -1360,17 +1072,14 @@ impl TMP_MaterialManager {
             )
         }
     }
+
     #[doc = "`FindRootSortOverrideCanvas(crate::unity_engine::transform::Transform)` overload"]
     pub fn find_root_sort_override_canvas(
         start: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
     ) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            __TMP_MaterialManager_unity2_raw::find_root_sort_override_canvas(
-                ::core::convert::Into::into(start),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_MaterialManager_unity2_raw::find_root_sort_override_canvas(::core::convert::Into::into(start), ::core::option::Option::None) }
     }
+
     #[doc = "`GetFallbackMaterial(crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::material::Material, i32)` overload"]
     pub fn get_fallback_material(
         font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
@@ -1386,6 +1095,7 @@ impl TMP_MaterialManager {
             )
         }
     }
+
     #[doc = "`GetFallbackMaterial(crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"]
     pub fn get_fallback_material_2(
         source_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
@@ -1399,10 +1109,9 @@ impl TMP_MaterialManager {
             )
         }
     }
+
     #[doc = "`AddFallbackMaterialReference(crate::unity_engine::material::Material)` overload"]
-    pub fn add_fallback_material_reference(
-        target_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    pub fn add_fallback_material_reference(target_material: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
             __TMP_MaterialManager_unity2_raw::add_fallback_material_reference(
                 ::core::convert::Into::into(target_material),
@@ -1410,10 +1119,9 @@ impl TMP_MaterialManager {
             )
         }
     }
+
     #[doc = "`RemoveFallbackMaterialReference(crate::unity_engine::material::Material)` overload"]
-    pub fn remove_fallback_material_reference(
-        target_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    pub fn remove_fallback_material_reference(target_material: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
             __TMP_MaterialManager_unity2_raw::remove_fallback_material_reference(
                 ::core::convert::Into::into(target_material),
@@ -1421,25 +1129,19 @@ impl TMP_MaterialManager {
             )
         }
     }
+
     #[doc = "`CleanupFallbackMaterials()` overload"]
     pub fn cleanup_fallback_materials() -> () {
-        unsafe {
-            __TMP_MaterialManager_unity2_raw::cleanup_fallback_materials(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_MaterialManager_unity2_raw::cleanup_fallback_materials(::core::option::Option::None) }
     }
+
     #[doc = "`ReleaseFallbackMaterial(crate::unity_engine::material::Material)` overload"]
-    pub fn release_fallback_material(
-        fallback_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    pub fn release_fallback_material(fallback_material: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            __TMP_MaterialManager_unity2_raw::release_fallback_material(
-                ::core::convert::Into::into(fallback_material),
-                ::core::option::Option::None,
-            )
+            __TMP_MaterialManager_unity2_raw::release_fallback_material(::core::convert::Into::into(fallback_material), ::core::option::Option::None)
         }
     }
+
     #[doc = "`CopyMaterialPresetProperties(crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"]
     pub fn copy_material_preset_properties(
         source: impl ::core::convert::Into<crate::unity_engine::material::Material>,
@@ -1458,14 +1160,11 @@ impl TMP_MaterialManager {
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_MaterialManager;
-    pub use super::ITMP_MaterialManager_FallbackMaterial;
-    pub use super::ITMP_MaterialManager_FallbackMaterialMethods;
-    pub use super::ITMP_MaterialManager_MaskingMaterial;
-    pub use super::ITMP_MaterialManager_MaskingMaterialMethods;
-    pub use super::TMP_MaterialManager;
-    pub use super::TMP_MaterialManager_FallbackMaterial;
-    pub use super::TMP_MaterialManager_MaskingMaterial;
+    pub use super::{
+        ITMP_MaterialManager, ITMP_MaterialManager_FallbackMaterial, ITMP_MaterialManager_FallbackMaterialMethods,
+        ITMP_MaterialManager_MaskingMaterial, ITMP_MaterialManager_MaskingMaterialMethods, TMP_MaterialManager, TMP_MaterialManager_FallbackMaterial,
+        TMP_MaterialManager_MaskingMaterial,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

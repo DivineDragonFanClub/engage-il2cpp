@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-faststack_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/faststack_1/FastStack_1.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.DataStructs", name = "FastStack`1")]
@@ -82,22 +82,15 @@ impl<T0: ::unity2::ClassIdentity> FastStack_1<T0> {
 
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
     #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 }
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-faststack_1")]
 impl<T0: ::unity2::ClassIdentity> FastStack_1<T0> {
     #[doc = "`.ctor(i32)` — overload selector"]
     pub fn new(max_capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FastStack_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FastStack_1), ::core::stringify!(new),));
         <Self as IFastStack_1Methods<T0>>::ctor(this, max_capacity);
         this
     }
@@ -106,9 +99,7 @@ impl<T0: ::unity2::ClassIdentity> FastStack_1<T0> {
 #[cfg(feature = "moon_sharp-interpreter-data_structs-faststack_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FastStack_1;
-    pub use super::IFastStack_1;
-    pub use super::IFastStack_1Methods;
+    pub use super::{FastStack_1, IFastStack_1, IFastStack_1Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

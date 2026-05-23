@@ -2,15 +2,12 @@
 
 #[cfg(feature = "unity_engine-timeline-supportschildtracksattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/supportschildtracksattribute/SupportsChildTracksAttribute.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Timeline",
-        name = "SupportsChildTracksAttribute"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SupportsChildTracksAttribute")]
     pub struct SupportsChildTracksAttribute {
         #[rename(name = "childType")]
         pub child_type: ::unity2::SystemType,
@@ -31,9 +28,7 @@ mod __SupportsChildTracksAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -49,18 +44,15 @@ mod __SupportsChildTracksAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SupportsChildTracksAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SupportsChildTracksAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -69,16 +61,8 @@ mod __SupportsChildTracksAttribute_unity2_raw {
         levels: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SupportsChildTracksAttribute,
-            ::unity2::SystemType,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SupportsChildTracksAttribute, ::unity2::SystemType, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, child_type, levels, __unity2_method_info)
     }
 }
@@ -86,16 +70,10 @@ mod __SupportsChildTracksAttribute_unity2_raw {
 #[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]
 pub trait ISupportsChildTracksAttributeMethods: ISupportsChildTracksAttribute {
     #[doc = "`.ctor(::unity2::SystemType, i32)` overload"]
-    fn ctor(
-        self,
-        child_type: impl ::core::convert::Into<::unity2::SystemType>,
-        levels: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor(self, child_type: impl ::core::convert::Into<::unity2::SystemType>, levels: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <SupportsChildTracksAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SupportsChildTracksAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SupportsChildTracksAttribute_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(child_type),
@@ -128,7 +106,5 @@ impl SupportsChildTracksAttribute {
 #[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISupportsChildTracksAttribute;
-    pub use super::ISupportsChildTracksAttributeMethods;
-    pub use super::SupportsChildTracksAttribute;
+    pub use super::{ISupportsChildTracksAttribute, ISupportsChildTracksAttributeMethods, SupportsChildTracksAttribute};
 }

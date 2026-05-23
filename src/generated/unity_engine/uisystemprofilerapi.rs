@@ -2,12 +2,14 @@
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
@@ -16,21 +18,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct UISystemProfilerApi_SampleType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for UISystemProfilerApi_SampleType {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "UISystemProfilerApi.SampleType";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,10 +36,7 @@ mod __types {
 
     impl ::unity2::IlType for UISystemProfilerApi_SampleType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -71,10 +63,9 @@ mod __UISystemProfilerApi_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_begin_sample {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UISystemProfilerApi as ::unity2::ClassIdentity>::class(),
                 "BeginSample",
@@ -86,42 +77,32 @@ mod __UISystemProfilerApi_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
-                    "BeginSample",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
+                        "BeginSample",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn begin_sample(
         r#type: crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_sample::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_begin_sample::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_sample {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: uisystemprofilerapi :: UISystemProfilerApi_SampleType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UISystemProfilerApi as ::unity2::ClassIdentity>::class(),
                 "EndSample",
@@ -133,41 +114,30 @@ mod __UISystemProfilerApi_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
-                    "EndSample",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
+                        "EndSample",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn end_sample(
         r#type: crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_sample::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end_sample::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_marker {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -183,18 +153,15 @@ mod __UISystemProfilerApi_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
-                    "AddMarker",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UISystemProfilerApi as ::unity2::ClassIdentity>::NAME,
+                        "AddMarker",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_marker(
@@ -202,15 +169,8 @@ mod __UISystemProfilerApi_unity2_raw {
         obj: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_marker::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_marker::get_method_info().method_ptr);
         inner(name, obj, __unity2_method_info)
     }
 }
@@ -218,31 +178,15 @@ mod __UISystemProfilerApi_unity2_raw {
 #[cfg(feature = "unity_engine-uisystemprofilerapi")]
 impl UISystemProfilerApi {
     #[doc = "`BeginSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
-    pub fn begin_sample(
-        r#type: impl ::core::convert::Into<
-            crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
-        >,
-    ) -> () {
-        unsafe {
-            __UISystemProfilerApi_unity2_raw::begin_sample(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn begin_sample(r#type: impl ::core::convert::Into<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType>) -> () {
+        unsafe { __UISystemProfilerApi_unity2_raw::begin_sample(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`EndSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
-    pub fn end_sample(
-        r#type: impl ::core::convert::Into<
-            crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
-        >,
-    ) -> () {
-        unsafe {
-            __UISystemProfilerApi_unity2_raw::end_sample(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn end_sample(r#type: impl ::core::convert::Into<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType>) -> () {
+        unsafe { __UISystemProfilerApi_unity2_raw::end_sample(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`AddMarker(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]
     pub fn add_marker(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -261,16 +205,12 @@ impl UISystemProfilerApi {
 #[cfg(feature = "unity_engine-uisystemprofilerapi")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUISystemProfilerApi;
-    pub use super::UISystemProfilerApi;
-    pub use super::UISystemProfilerApi_SampleType;
-    pub use crate::system::object::IObject;
+    pub use super::{IUISystemProfilerApi, UISystemProfilerApi, UISystemProfilerApi_SampleType};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

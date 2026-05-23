@@ -2,13 +2,17 @@
 
 #[cfg(feature = "unity_engine-animations-scaleconstraint-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animations/scaleconstraint/ScaleConstraint.md"))]
     #[::unity2::class(namespace = "UnityEngine.Animations", name = "ScaleConstraint")]
@@ -28,9 +32,7 @@ mod __ScaleConstraint_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -43,40 +45,29 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ScaleConstraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ScaleConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: scaleconstraint :: ScaleConstraint as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animations::scaleconstraint::ScaleConstraint as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "Internal_Create",
@@ -88,41 +79,30 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "Internal_Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "Internal_Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_create(
         self_: crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_create::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animations::scaleconstraint::ScaleConstraint, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_create::get_method_info().method_ptr);
         inner(self_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -135,41 +115,28 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_weight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_weight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weight(
-        this: ScaleConstraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_weight(this: ScaleConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_weight::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_weight::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "set_weight",
@@ -181,40 +148,27 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "set_weight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "set_weight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_weight(
-        this: ScaleConstraint,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_weight(this: ScaleConstraint, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScaleConstraint, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_weight::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_weight::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scale_at_rest {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -227,43 +181,28 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_scaleAtRest",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_scaleAtRest",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_scale_at_rest(
-        this: ScaleConstraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scale_at_rest::get_offset() as isize),
-        );
+    pub unsafe fn get_scale_at_rest(this: ScaleConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_scale_at_rest::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scale_at_rest {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "set_scaleAtRest",
@@ -275,18 +214,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "set_scaleAtRest",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "set_scaleAtRest",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_scale_at_rest(
@@ -294,24 +230,15 @@ mod __ScaleConstraint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scale_at_rest::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScaleConstraint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scale_at_rest::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scale_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -324,43 +251,28 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_scaleOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_scaleOffset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_scale_offset(
-        this: ScaleConstraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scale_offset::get_offset() as isize),
-        );
+    pub unsafe fn get_scale_offset(this: ScaleConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_scale_offset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scale_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "set_scaleOffset",
@@ -372,18 +284,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "set_scaleOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "set_scaleOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_scale_offset(
@@ -391,24 +300,15 @@ mod __ScaleConstraint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scale_offset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScaleConstraint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scale_offset::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scaling_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -421,41 +321,30 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_scalingAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_scalingAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_scaling_axis(
         this: ScaleConstraint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animations::axis::Axis {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animations::axis::Axis = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scaling_axis::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod) -> crate::unity_engine::animations::axis::Axis =
+            ::core::mem::transmute(__lookup_get_scaling_axis::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scaling_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::animations::axis::Axis as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -469,18 +358,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "set_scalingAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "set_scalingAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_scaling_axis(
@@ -488,24 +374,15 @@ mod __ScaleConstraint_unity2_raw {
         value: crate::unity_engine::animations::axis::Axis,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            crate::unity_engine::animations::axis::Axis,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scaling_axis::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScaleConstraint, crate::unity_engine::animations::axis::Axis, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scaling_axis::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_constraint_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -518,41 +395,28 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_constraintActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_constraintActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_constraint_active(
-        this: ScaleConstraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_constraint_active(this: ScaleConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_constraint_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_constraint_active::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_constraint_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "set_constraintActive",
@@ -564,40 +428,27 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "set_constraintActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "set_constraintActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_constraint_active(
-        this: ScaleConstraint,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_constraint_active(this: ScaleConstraint, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScaleConstraint, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_constraint_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_constraint_active::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_locked {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -610,41 +461,28 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_locked",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_locked",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_locked(
-        this: ScaleConstraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_locked(this: ScaleConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_locked::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_locked::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_locked {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "set_locked",
@@ -656,40 +494,27 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "set_locked",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "set_locked",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_locked(
-        this: ScaleConstraint,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_locked(this: ScaleConstraint, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScaleConstraint, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_locked::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_locked::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_source_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -702,40 +527,29 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_sourceCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_sourceCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_source_count(
-        this: ScaleConstraint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_source_count(this: ScaleConstraint, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_source_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_source_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_source_count_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: scaleconstraint :: ScaleConstraint as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animations::scaleconstraint::ScaleConstraint as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "GetSourceCountInternal",
@@ -747,45 +561,33 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "GetSourceCountInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "GetSourceCountInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source_count_internal(
         self_: crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_source_count_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animations::scaleconstraint::ScaleConstraint, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_source_count_internal::get_method_info().method_ptr);
         inner(self_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::animations::constraintsource::ConstraintSource,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::animations::constraintsource::ConstraintSource,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "GetSources",
@@ -797,51 +599,37 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "GetSources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "GetSources",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sources(
         this: ScaleConstraint,
-        sources: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::animations::constraintsource::ConstraintSource,
-        >,
+        sources: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ScaleConstraint,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sources::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_sources::get_method_info().method_ptr);
         inner(this, sources, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::animations::constraintsource::ConstraintSource,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::animations::constraintsource::ConstraintSource,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "SetSources",
@@ -853,47 +641,34 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "SetSources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "SetSources",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_sources(
         this: ScaleConstraint,
-        sources: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::animations::constraintsource::ConstraintSource,
-        >,
+        sources: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ScaleConstraint,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sources::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_sources::get_method_info().method_ptr);
         inner(this, sources, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sources_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: scaleconstraint :: ScaleConstraint as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: animations :: constraintsource :: ConstraintSource > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
@@ -906,48 +681,36 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "SetSourcesInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "SetSourcesInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_sources_internal(
         self_: crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
-        sources: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::animations::constraintsource::ConstraintSource,
-        >,
+        sources: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sources_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_sources_internal::get_method_info().method_ptr);
         inner(self_, sources, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_source {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: constraintsource :: ConstraintSource as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animations::constraintsource::ConstraintSource as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "AddSource",
@@ -959,18 +722,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "AddSource",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "AddSource",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_source(
@@ -982,22 +742,15 @@ mod __ScaleConstraint_unity2_raw {
             ScaleConstraint,
             crate::unity_engine::animations::constraintsource::ConstraintSource,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_source::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_add_source::get_method_info().method_ptr);
         inner(this, source, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_source {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "RemoveSource",
@@ -1009,42 +762,28 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "RemoveSource",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "RemoveSource",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_source(
-        this: ScaleConstraint,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn remove_source(this: ScaleConstraint, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScaleConstraint, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_remove_source::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_remove_source::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_source_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "RemoveSourceInternal",
@@ -1056,42 +795,28 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "RemoveSourceInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "RemoveSourceInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_source_internal(
-        this: ScaleConstraint,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn remove_source_internal(this: ScaleConstraint, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScaleConstraint, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_remove_source_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_remove_source_internal::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_source {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "GetSource",
@@ -1103,18 +828,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "GetSource",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "GetSource",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source(
@@ -1122,18 +844,20 @@ mod __ScaleConstraint_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animations::constraintsource::ConstraintSource {
-        let inner : extern "C" fn (ScaleConstraint , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: constraintsource :: ConstraintSource = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_source :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScaleConstraint,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animations::constraintsource::ConstraintSource =
+            ::core::mem::transmute(__lookup_get_source::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_source_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "GetSourceInternal",
@@ -1145,18 +869,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "GetSourceInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "GetSourceInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source_internal(
@@ -1164,17 +885,23 @@ mod __ScaleConstraint_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animations::constraintsource::ConstraintSource {
-        let inner : extern "C" fn (ScaleConstraint , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: constraintsource :: ConstraintSource = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_source_internal :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScaleConstraint,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animations::constraintsource::ConstraintSource =
+            ::core::mem::transmute(__lookup_get_source_internal::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_source {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: constraintsource :: ConstraintSource as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animations::constraintsource::ConstraintSource as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "SetSource",
@@ -1186,18 +913,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "SetSource",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "SetSource",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_source(
@@ -1211,21 +935,18 @@ mod __ScaleConstraint_unity2_raw {
             i32,
             crate::unity_engine::animations::constraintsource::ConstraintSource,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_source::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_source::get_method_info().method_ptr);
         inner(this, index, source, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_source_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: constraintsource :: ConstraintSource as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animations::constraintsource::ConstraintSource as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "SetSourceInternal",
@@ -1237,18 +958,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "SetSourceInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "SetSourceInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_source_internal(
@@ -1262,22 +980,15 @@ mod __ScaleConstraint_unity2_raw {
             i32,
             crate::unity_engine::animations::constraintsource::ConstraintSource,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_source_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_source_internal::get_method_info().method_ptr);
         inner(this, index, source, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate_source_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "ValidateSourceIndex",
@@ -1289,42 +1000,28 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "ValidateSourceIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "ValidateSourceIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn validate_source_index(
-        this: ScaleConstraint,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn validate_source_index(this: ScaleConstraint, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScaleConstraint, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_validate_source_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_validate_source_index::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scale_at_rest_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "get_scaleAtRest_Injected",
@@ -1336,18 +1033,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_scaleAtRest_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_scaleAtRest_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_scale_at_rest_injected(
@@ -1355,26 +1049,16 @@ mod __ScaleConstraint_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scale_at_rest_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScaleConstraint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_scale_at_rest_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scale_at_rest_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "set_scaleAtRest_Injected",
@@ -1386,18 +1070,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "set_scaleAtRest_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "set_scaleAtRest_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_scale_at_rest_injected(
@@ -1405,26 +1086,16 @@ mod __ScaleConstraint_unity2_raw {
         value: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scale_at_rest_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScaleConstraint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scale_at_rest_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scale_offset_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "get_scaleOffset_Injected",
@@ -1436,18 +1107,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "get_scaleOffset_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "get_scaleOffset_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_scale_offset_injected(
@@ -1455,26 +1123,16 @@ mod __ScaleConstraint_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scale_offset_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScaleConstraint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_scale_offset_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scale_offset_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "set_scaleOffset_Injected",
@@ -1486,18 +1144,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "set_scaleOffset_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "set_scaleOffset_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_scale_offset_injected(
@@ -1505,25 +1160,17 @@ mod __ScaleConstraint_unity2_raw {
         value: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScaleConstraint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scale_offset_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScaleConstraint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scale_offset_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_source_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: constraintsource :: ConstraintSource as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animations::constraintsource::ConstraintSource as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "AddSource_Injected",
@@ -1535,18 +1182,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "AddSource_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "AddSource_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_source_injected(
@@ -1558,21 +1202,18 @@ mod __ScaleConstraint_unity2_raw {
             ScaleConstraint,
             *mut crate::unity_engine::animations::constraintsource::ConstraintSource,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_source_injected::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_add_source_injected::get_method_info().method_ptr);
         inner(this, source, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_source_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: constraintsource :: ConstraintSource as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animations::constraintsource::ConstraintSource as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "GetSourceInternal_Injected",
@@ -1584,18 +1225,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "GetSourceInternal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "GetSourceInternal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source_internal_injected(
@@ -1609,21 +1247,18 @@ mod __ScaleConstraint_unity2_raw {
             i32,
             *mut crate::unity_engine::animations::constraintsource::ConstraintSource,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_source_internal_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_source_internal_injected::get_method_info().method_ptr);
         inner(this, index, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_source_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: constraintsource :: ConstraintSource as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animations::constraintsource::ConstraintSource as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScaleConstraint as ::unity2::ClassIdentity>::class(),
                 "SetSourceInternal_Injected",
@@ -1635,18 +1270,15 @@ mod __ScaleConstraint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
-                    "SetSourceInternal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScaleConstraint as ::unity2::ClassIdentity>::NAME,
+                        "SetSourceInternal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_source_internal_injected(
@@ -1660,11 +1292,7 @@ mod __ScaleConstraint_unity2_raw {
             i32,
             *mut crate::unity_engine::animations::constraintsource::ConstraintSource,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_source_internal_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_source_internal_injected::get_method_info().method_ptr);
         inner(this, index, source, __unity2_method_info)
     }
 }
@@ -1672,40 +1300,20 @@ mod __ScaleConstraint_unity2_raw {
 #[cfg(feature = "unity_engine-animations-scaleconstraint")]
 impl ScaleConstraint {
     #[doc = "`Internal_Create(crate::unity_engine::animations::scaleconstraint::ScaleConstraint)` overload"]
-    pub fn internal_create(
-        self_: impl ::core::convert::Into<
-            crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
-        >,
-    ) -> () {
-        unsafe {
-            __ScaleConstraint_unity2_raw::internal_create(
-                ::core::convert::Into::into(self_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn internal_create(self_: impl ::core::convert::Into<crate::unity_engine::animations::scaleconstraint::ScaleConstraint>) -> () {
+        unsafe { __ScaleConstraint_unity2_raw::internal_create(::core::convert::Into::into(self_), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSourceCountInternal(crate::unity_engine::animations::scaleconstraint::ScaleConstraint)` overload"]
-    pub fn get_source_count_internal(
-        self_: impl ::core::convert::Into<
-            crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
-        >,
-    ) -> i32 {
-        unsafe {
-            __ScaleConstraint_unity2_raw::get_source_count_internal(
-                ::core::convert::Into::into(self_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_source_count_internal(self_: impl ::core::convert::Into<crate::unity_engine::animations::scaleconstraint::ScaleConstraint>) -> i32 {
+        unsafe { __ScaleConstraint_unity2_raw::get_source_count_internal(::core::convert::Into::into(self_), ::core::option::Option::None) }
     }
+
     #[doc = "`SetSourcesInternal(crate::unity_engine::animations::scaleconstraint::ScaleConstraint, crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>)` overload"]
     pub fn set_sources_internal(
-        self_: impl ::core::convert::Into<
-            crate::unity_engine::animations::scaleconstraint::ScaleConstraint,
-        >,
+        self_: impl ::core::convert::Into<crate::unity_engine::animations::scaleconstraint::ScaleConstraint>,
         sources: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
         >,
     ) -> () {
         unsafe {
@@ -1723,165 +1331,98 @@ pub trait IScaleConstraintMethods: IScaleConstraint {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScaleConstraint_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_weight()` overload"]
     fn get_weight(self) -> f32 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScaleConstraint_unity2_raw::get_weight(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_weight(f32)` overload"]
     fn set_weight(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::set_weight(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::set_weight(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_scaleAtRest()` overload"]
     fn get_scale_at_rest(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::get_scale_at_rest(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::get_scale_at_rest(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_scaleAtRest(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_scale_at_rest(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_scale_at_rest(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::set_scale_at_rest(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::set_scale_at_rest(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_scaleOffset()` overload"]
     fn get_scale_offset(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScaleConstraint_unity2_raw::get_scale_offset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_scaleOffset(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_scale_offset(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_scale_offset(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::set_scale_offset(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::set_scale_offset(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_scalingAxis()` overload"]
     fn get_scaling_axis(self) -> crate::unity_engine::animations::axis::Axis {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScaleConstraint_unity2_raw::get_scaling_axis(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_scalingAxis(crate::unity_engine::animations::axis::Axis)` overload"]
-    fn set_scaling_axis(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::animations::axis::Axis>,
-    ) -> () {
+    fn set_scaling_axis(self, value: impl ::core::convert::Into<crate::unity_engine::animations::axis::Axis>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::set_scaling_axis(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::set_scaling_axis(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_constraintActive()` overload"]
     fn get_constraint_active(self) -> bool {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::get_constraint_active(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::get_constraint_active(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_constraintActive(bool)` overload"]
     fn set_constraint_active(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::set_constraint_active(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::set_constraint_active(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_locked()` overload"]
     fn get_locked(self) -> bool {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScaleConstraint_unity2_raw::get_locked(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_locked(bool)` overload"]
     fn set_locked(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::set_locked(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::set_locked(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_sourceCount()` overload"]
     fn get_source_count(self) -> i32 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScaleConstraint_unity2_raw::get_source_count(__receiver, ::core::option::Option::None)
         }
     }
@@ -1889,130 +1430,69 @@ pub trait IScaleConstraintMethods: IScaleConstraint {
     fn get_sources(
         self,
         sources: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::get_sources(
-                __receiver,
-                ::core::convert::Into::into(sources),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::get_sources(__receiver, ::core::convert::Into::into(sources), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSources(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>)` overload"]
     fn set_sources(
         self,
         sources: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::set_sources(
-                __receiver,
-                ::core::convert::Into::into(sources),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::set_sources(__receiver, ::core::convert::Into::into(sources), ::core::option::Option::None)
         }
     }
     #[doc = "`AddSource(crate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]
-    fn add_source(
-        self,
-        source: impl ::core::convert::Into<
-            crate::unity_engine::animations::constraintsource::ConstraintSource,
-        >,
-    ) -> i32 {
+    fn add_source(self, source: impl ::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>) -> i32 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::add_source(
-                __receiver,
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::add_source(__receiver, ::core::convert::Into::into(source), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveSource(i32)` overload"]
     fn remove_source(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::remove_source(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::remove_source(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveSourceInternal(i32)` overload"]
     fn remove_source_internal(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::remove_source_internal(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::remove_source_internal(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSource(i32)` overload"]
-    fn get_source(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::animations::constraintsource::ConstraintSource {
+    fn get_source(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::animations::constraintsource::ConstraintSource {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::get_source(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::get_source(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSourceInternal(i32)` overload"]
-    fn get_source_internal(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::animations::constraintsource::ConstraintSource {
+    fn get_source_internal(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::animations::constraintsource::ConstraintSource {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::get_source_internal(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::get_source_internal(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSource(i32, crate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]
     fn set_source(
         self,
         index: impl ::core::convert::Into<i32>,
-        source: impl ::core::convert::Into<
-            crate::unity_engine::animations::constraintsource::ConstraintSource,
-        >,
+        source: impl ::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>,
     ) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScaleConstraint_unity2_raw::set_source(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -2025,14 +1505,10 @@ pub trait IScaleConstraintMethods: IScaleConstraint {
     fn set_source_internal(
         self,
         index: impl ::core::convert::Into<i32>,
-        source: impl ::core::convert::Into<
-            crate::unity_engine::animations::constraintsource::ConstraintSource,
-        >,
+        source: impl ::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>,
     ) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScaleConstraint_unity2_raw::set_source_internal(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -2044,101 +1520,52 @@ pub trait IScaleConstraintMethods: IScaleConstraint {
     #[doc = "`ValidateSourceIndex(i32)` overload"]
     fn validate_source_index(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScaleConstraint_unity2_raw::validate_source_index(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScaleConstraint_unity2_raw::validate_source_index(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`get_scaleAtRest_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn get_scale_at_rest_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ScaleConstraint_unity2_raw::get_scale_at_rest_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ScaleConstraint_unity2_raw::get_scale_at_rest_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_scaleAtRest_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn set_scale_at_rest_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ScaleConstraint_unity2_raw::set_scale_at_rest_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ScaleConstraint_unity2_raw::set_scale_at_rest_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_scaleOffset_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn get_scale_offset_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ScaleConstraint_unity2_raw::get_scale_offset_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ScaleConstraint_unity2_raw::get_scale_offset_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_scaleOffset_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn set_scale_offset_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ScaleConstraint_unity2_raw::set_scale_offset_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ScaleConstraint_unity2_raw::set_scale_offset_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`AddSource_Injected(*mutcrate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]
-    fn add_source_injected(
-        self,
-    ) -> (
-        i32,
-        crate::unity_engine::animations::constraintsource::ConstraintSource,
-    ) {
+    fn add_source_injected(self) -> (i32, crate::unity_engine::animations::constraintsource::ConstraintSource) {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >::uninit();
-            let __ret = {
-                __ScaleConstraint_unity2_raw::add_source_injected(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::animations::constraintsource::ConstraintSource>::uninit();
+            let __ret = { __ScaleConstraint_unity2_raw::add_source_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
@@ -2148,12 +1575,8 @@ pub trait IScaleConstraintMethods: IScaleConstraint {
         index: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::animations::constraintsource::ConstraintSource {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >::uninit();
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::animations::constraintsource::ConstraintSource>::uninit();
             __ScaleConstraint_unity2_raw::get_source_internal_injected(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -2169,12 +1592,8 @@ pub trait IScaleConstraintMethods: IScaleConstraint {
         index: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::animations::constraintsource::ConstraintSource {
         unsafe {
-            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animations::constraintsource::ConstraintSource,
-            >::uninit();
+            let __receiver = <ScaleConstraint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::animations::constraintsource::ConstraintSource>::uninit();
             __ScaleConstraint_unity2_raw::set_source_internal_injected(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -2208,19 +1627,17 @@ impl ScaleConstraint {
 #[cfg(feature = "unity_engine-animations-scaleconstraint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScaleConstraint;
-    pub use super::IScaleConstraintMethods;
-    pub use super::ScaleConstraint;
-    pub use crate::system::object::IObject;
+    pub use super::{IScaleConstraint, IScaleConstraintMethods, ScaleConstraint};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, object_2::IObject_2},
+    };
 }

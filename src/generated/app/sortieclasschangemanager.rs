@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-sortieclasschangemanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieclasschangemanager/SortieClassChangeManager.md"))]
     #[::unity2::class(namespace = "App", name = "SortieClassChangeManager")]
@@ -29,9 +31,7 @@ mod __SortieClassChangeManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieClassChangeManager as ::unity2::ClassIdentity>::class(),
@@ -44,39 +44,27 @@ mod __SortieClassChangeManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieClassChangeManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieClassChangeManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SortieClassChangeManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SortieClassChangeManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieClassChangeManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_job_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieClassChangeManager as ::unity2::ClassIdentity>::class(),
@@ -89,44 +77,32 @@ mod __SortieClassChangeManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieClassChangeManager as ::unity2::ClassIdentity>::NAME,
-                    "get_JobData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieClassChangeManager as ::unity2::ClassIdentity>::NAME,
+                        "get_JobData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_job_data(
         this: SortieClassChangeManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::classchange::ClassChange_ChangeJobData {
-        let inner: extern "C" fn(
-            SortieClassChangeManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::classchange::ClassChange_ChangeJobData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SortieClassChangeManager, ::unity2::OptionalMethod) -> crate::app::classchange::ClassChange_ChangeJobData =
+            ::core::mem::transmute(__lookup_get_job_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_job_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::classchange::ClassChange_ChangeJobData as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::classchange::ClassChange_ChangeJobData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieClassChangeManager as ::unity2::ClassIdentity>::class(),
                 "set_JobData",
@@ -138,18 +114,15 @@ mod __SortieClassChangeManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieClassChangeManager as ::unity2::ClassIdentity>::NAME,
-                    "set_JobData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieClassChangeManager as ::unity2::ClassIdentity>::NAME,
+                        "set_JobData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_job_data(
@@ -157,15 +130,8 @@ mod __SortieClassChangeManager_unity2_raw {
         value: crate::app::classchange::ClassChange_ChangeJobData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SortieClassChangeManager,
-            crate::app::classchange::ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_job_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SortieClassChangeManager, crate::app::classchange::ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_job_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -176,9 +142,7 @@ pub trait ISortieClassChangeManagerMethods: ISortieClassChangeManager {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SortieClassChangeManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieClassChangeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieClassChangeManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -186,30 +150,16 @@ pub trait ISortieClassChangeManagerMethods: ISortieClassChangeManager {
     fn get_job_data(self) -> crate::app::classchange::ClassChange_ChangeJobData {
         unsafe {
             let __receiver =
-                <SortieClassChangeManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieClassChangeManager_unity2_raw::get_job_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieClassChangeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieClassChangeManager_unity2_raw::get_job_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_JobData(crate::app::classchange::ClassChange_ChangeJobData)` overload"]
-    fn set_job_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>,
-    ) -> () {
+    fn set_job_data(self, value: impl ::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>) -> () {
         unsafe {
             let __receiver =
-                <SortieClassChangeManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieClassChangeManager_unity2_raw::set_job_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <SortieClassChangeManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieClassChangeManager_unity2_raw::set_job_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -236,13 +186,10 @@ impl SortieClassChangeManager {
 #[cfg(feature = "app-sortieclasschangemanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISortieClassChangeManager;
-    pub use super::ISortieClassChangeManagerMethods;
-    pub use super::SortieClassChangeManager;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use super::{ISortieClassChangeManager, ISortieClassChangeManagerMethods, SortieClassChangeManager};
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::singletonclass_1::ISingletonClass_1, system::object::IObject};
 }

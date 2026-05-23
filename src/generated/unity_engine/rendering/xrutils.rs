@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-xrutils-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrutils/XRUtils.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "XRUtils")]
@@ -25,10 +25,12 @@ mod __XRUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_draw_occlusion_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRUtils as ::unity2::ClassIdentity>::class(),
                 "DrawOcclusionMesh",
@@ -40,18 +42,15 @@ mod __XRUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRUtils as ::unity2::ClassIdentity>::NAME,
-                    "DrawOcclusionMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRUtils as ::unity2::ClassIdentity>::NAME,
+                        "DrawOcclusionMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_occlusion_mesh(
@@ -65,11 +64,7 @@ mod __XRUtils_unity2_raw {
             crate::unity_engine::camera::Camera,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_occlusion_mesh::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_draw_occlusion_mesh::get_method_info().method_ptr);
         inner(cmd, camera, stereo_enabled, __unity2_method_info)
     }
 }
@@ -96,8 +91,7 @@ impl XRUtils {
 #[cfg(feature = "unity_engine-rendering-xrutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IXRUtils;
-    pub use super::XRUtils;
+    pub use super::{IXRUtils, XRUtils};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

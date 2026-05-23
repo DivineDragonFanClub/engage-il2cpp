@@ -2,35 +2,48 @@
 
 #[cfg(feature = "unity_engine-recttransform-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::transform::{ITransform, Transform};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+            transform::{ITransform, Transform},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "RectTransform")]
+    #[parent(crate::unity_engine::transform::Transform)]
+    pub struct RectTransform {
+        #[static_field]
+        #[rename(name = "reapplyDrivenProperties")]
+        pub reapply_driven_properties: crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "RectTransform.ReapplyDrivenProperties")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RectTransform_ReapplyDrivenProperties {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Axis.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct RectTransform_Axis {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for RectTransform_Axis {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "RectTransform.Axis";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,10 +54,7 @@ mod __types {
 
     impl ::unity2::IlType for RectTransform_Axis {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -58,31 +68,16 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine",
-        name = "RectTransform.ReapplyDrivenProperties"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RectTransform_ReapplyDrivenProperties {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Edge.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct RectTransform_Edge {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for RectTransform_Edge {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "RectTransform.Edge";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -93,10 +88,7 @@ mod __types {
 
     impl ::unity2::IlType for RectTransform_Edge {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -117,20 +109,1933 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "RectTransform")]
-    #[parent(crate::unity_engine::transform::Transform)]
-    pub struct RectTransform {
-        #[static_field]
-        #[rename(name = "reapplyDrivenProperties")]
-        pub reapply_driven_properties:
-            crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
-    }
 }
 
 #[cfg(feature = "unity_engine-recttransform-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-recttransform")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RectTransform_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_reapply_driven_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "add_reapplyDrivenProperties",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "add_reapplyDrivenProperties",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_reapply_driven_properties(
+        value: crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_reapply_driven_properties::get_method_info().method_ptr);
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_reapply_driven_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "remove_reapplyDrivenProperties",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "remove_reapplyDrivenProperties",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_reapply_driven_properties(
+        value: crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_reapply_driven_properties::get_method_info().method_ptr);
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rect {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_rect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_rect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rect(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect =
+            ::core::mem::transmute(__lookup_get_rect::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anchor_min {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_anchorMin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_anchorMin",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_anchor_min(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_anchor_min::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anchor_min {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_anchorMin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_anchorMin",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_anchor_min(
+        this: RectTransform,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_anchor_min::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anchor_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_anchorMax",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_anchorMax",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_anchor_max(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_anchor_max::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anchor_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_anchorMax",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_anchorMax",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_anchor_max(
+        this: RectTransform,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_anchor_max::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anchored_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_anchoredPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_anchoredPosition",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_anchored_position(
+        this: RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_anchored_position::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anchored_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_anchoredPosition",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_anchoredPosition",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_anchored_position(
+        this: RectTransform,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_anchored_position::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_size_delta {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_sizeDelta",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_sizeDelta",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_size_delta(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_size_delta::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_size_delta {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_sizeDelta",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_sizeDelta",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_size_delta(
+        this: RectTransform,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_size_delta::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pivot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_pivot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_pivot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pivot(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_pivot::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pivot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_pivot",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_pivot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_pivot(this: RectTransform, value: crate::unity_engine::vector2::Vector2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pivot::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anchored_position3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_anchoredPosition3D",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_anchoredPosition3D",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_anchored_position3_d(
+        this: RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_anchored_position3_d::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anchored_position3_d {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_anchoredPosition3D",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_anchoredPosition3D",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_anchored_position3_d(
+        this: RectTransform,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_anchored_position3_d::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_offset_min {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_offsetMin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_offsetMin",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_offset_min(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_offset_min::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_offset_min {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_offsetMin",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_offsetMin",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_offset_min(
+        this: RectTransform,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_offset_min::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_offset_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_offsetMax",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_offsetMax",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_offset_max(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_offset_max::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_offset_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_offsetMax",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_offsetMax",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_offset_max(
+        this: RectTransform,
+        value: crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_offset_max::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_driven_by_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_drivenByObject",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_drivenByObject",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_driven_by_object(
+        this: RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::object_2::Object_2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_get_driven_by_object::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_driven_by_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_drivenByObject",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_drivenByObject",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_driven_by_object(
+        this: RectTransform,
+        value: crate::unity_engine::object_2::Object_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_driven_by_object::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_driven_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_drivenProperties",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_drivenProperties",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_driven_properties(
+        this: RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::driventransformproperties::DrivenTransformProperties {
+        let inner: extern "C" fn(
+            RectTransform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::driventransformproperties::DrivenTransformProperties =
+            ::core::mem::transmute(__lookup_get_driven_properties::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_driven_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::driventransformproperties::DrivenTransformProperties as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_drivenProperties",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_drivenProperties",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_driven_properties(
+        this: RectTransform,
+        value: crate::unity_engine::driventransformproperties::DrivenTransformProperties,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RectTransform,
+            crate::unity_engine::driventransformproperties::DrivenTransformProperties,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_driven_properties::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_force_update_rect_transforms {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "ForceUpdateRectTransforms",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "ForceUpdateRectTransforms",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn force_update_rect_transforms(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_force_update_rect_transforms::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_local_corners {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::vector3::Vector3> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "GetLocalCorners",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "GetLocalCorners",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_local_corners(
+        this: RectTransform,
+        four_corners_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_local_corners::get_method_info().method_ptr);
+        inner(this, four_corners_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_world_corners {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::vector3::Vector3> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "GetWorldCorners",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "GetWorldCorners",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_world_corners(
+        this: RectTransform,
+        four_corners_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_world_corners::get_method_info().method_ptr);
+        inner(this, four_corners_array, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_inset_and_size_from_parent_edge {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform_Edge as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "SetInsetAndSizeFromParentEdge",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "SetInsetAndSizeFromParentEdge",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_inset_and_size_from_parent_edge(
+        this: RectTransform,
+        edge: crate::unity_engine::recttransform::RectTransform_Edge,
+        inset: f32,
+        size: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::recttransform::RectTransform_Edge, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_inset_and_size_from_parent_edge::get_method_info().method_ptr);
+        inner(this, edge, inset, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_size_with_current_anchors {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform_Axis as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "SetSizeWithCurrentAnchors",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "SetSizeWithCurrentAnchors",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_size_with_current_anchors(
+        this: RectTransform,
+        axis: crate::unity_engine::recttransform::RectTransform_Axis,
+        size: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, crate::unity_engine::recttransform::RectTransform_Axis, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_size_with_current_anchors::get_method_info().method_ptr);
+        inner(this, axis, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_reapply_driven_properties {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "SendReapplyDrivenProperties",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "SendReapplyDrivenProperties",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn send_reapply_driven_properties(
+        driven: crate::unity_engine::recttransform::RectTransform,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::recttransform::RectTransform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_send_reapply_driven_properties::get_method_info().method_ptr);
+        inner(driven, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rect_in_parent_space {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "GetRectInParentSpace",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "GetRectInParentSpace",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rect_in_parent_space(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect =
+            ::core::mem::transmute(__lookup_get_rect_in_parent_space::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_parent_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "GetParentSize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "GetParentSize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_parent_size(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_parent_size::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<RectTransform as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rect_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_rect_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_rect_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rect_injected(
+        this: RectTransform,
+        ret: *mut crate::unity_engine::rect::Rect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_rect_injected::get_method_info().method_ptr);
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anchor_min_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_anchorMin_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_anchorMin_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_anchor_min_injected(
+        this: RectTransform,
+        ret: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_anchor_min_injected::get_method_info().method_ptr);
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anchor_min_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_anchorMin_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_anchorMin_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_anchor_min_injected(
+        this: RectTransform,
+        value: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_anchor_min_injected::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anchor_max_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_anchorMax_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_anchorMax_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_anchor_max_injected(
+        this: RectTransform,
+        ret: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_anchor_max_injected::get_method_info().method_ptr);
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anchor_max_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_anchorMax_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_anchorMax_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_anchor_max_injected(
+        this: RectTransform,
+        value: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_anchor_max_injected::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_anchored_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_anchoredPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_anchoredPosition_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_anchored_position_injected(
+        this: RectTransform,
+        ret: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_anchored_position_injected::get_method_info().method_ptr);
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_anchored_position_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_anchoredPosition_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_anchoredPosition_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_anchored_position_injected(
+        this: RectTransform,
+        value: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_anchored_position_injected::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_size_delta_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_sizeDelta_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_sizeDelta_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_size_delta_injected(
+        this: RectTransform,
+        ret: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_size_delta_injected::get_method_info().method_ptr);
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_size_delta_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_sizeDelta_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_sizeDelta_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_size_delta_injected(
+        this: RectTransform,
+        value: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_size_delta_injected::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pivot_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "get_pivot_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "get_pivot_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pivot_injected(
+        this: RectTransform,
+        ret: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_pivot_injected::get_method_info().method_ptr);
+        inner(this, ret, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_pivot_injected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RectTransform as ::unity2::ClassIdentity>::class(),
+                "set_pivot_Injected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform as ::unity2::ClassIdentity>::NAME,
+                        "set_pivot_Injected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_pivot_injected(
+        this: RectTransform,
+        value: *mut crate::unity_engine::vector2::Vector2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RectTransform, *mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pivot_injected::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+impl RectTransform {
+    #[doc = "`add_reapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties)` overload"]
+    pub fn add_reapply_driven_properties(
+        value: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties>,
+    ) -> () {
+        unsafe { __RectTransform_unity2_raw::add_reapply_driven_properties(::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`remove_reapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties)` overload"]
+    pub fn remove_reapply_driven_properties(
+        value: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties>,
+    ) -> () {
+        unsafe { __RectTransform_unity2_raw::remove_reapply_driven_properties(::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`SendReapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform)` overload"]
+    pub fn send_reapply_driven_properties(driven: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>) -> () {
+        unsafe { __RectTransform_unity2_raw::send_reapply_driven_properties(::core::convert::Into::into(driven), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+pub trait IRectTransformMethods: IRectTransform {
+    #[doc = "`get_rect()` overload"]
+    fn get_rect(self) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_rect(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_anchorMin()` overload"]
+    fn get_anchor_min(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_anchor_min(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_anchorMin(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_anchor_min(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_anchor_min(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_anchorMax()` overload"]
+    fn get_anchor_max(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_anchor_max(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_anchorMax(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_anchor_max(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_anchor_max(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_anchoredPosition()` overload"]
+    fn get_anchored_position(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_anchored_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_anchoredPosition(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_anchored_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_anchored_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_sizeDelta()` overload"]
+    fn get_size_delta(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_size_delta(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_sizeDelta(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_size_delta(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_size_delta(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_pivot()` overload"]
+    fn get_pivot(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_pivot(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_pivot(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_pivot(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_pivot(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_anchoredPosition3D()` overload"]
+    fn get_anchored_position3_d(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_anchored_position3_d(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_anchoredPosition3D(crate::unity_engine::vector3::Vector3)` overload"]
+    fn set_anchored_position3_d(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_anchored_position3_d(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_offsetMin()` overload"]
+    fn get_offset_min(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_offset_min(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_offsetMin(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_offset_min(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_offset_min(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_offsetMax()` overload"]
+    fn get_offset_max(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_offset_max(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_offsetMax(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_offset_max(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_offset_max(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_drivenByObject()` overload"]
+    fn get_driven_by_object(self) -> crate::unity_engine::object_2::Object_2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_driven_by_object(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_drivenByObject(crate::unity_engine::object_2::Object_2)` overload"]
+    fn set_driven_by_object(self, value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_driven_by_object(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_drivenProperties()` overload"]
+    fn get_driven_properties(self) -> crate::unity_engine::driventransformproperties::DrivenTransformProperties {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_driven_properties(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_drivenProperties(crate::unity_engine::driventransformproperties::DrivenTransformProperties)` overload"]
+    fn set_driven_properties(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::driventransformproperties::DrivenTransformProperties>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_driven_properties(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ForceUpdateRectTransforms()` overload"]
+    fn force_update_rect_transforms(self) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::force_update_rect_transforms(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetLocalCorners(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn get_local_corners(self, four_corners_array: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_local_corners(__receiver, ::core::convert::Into::into(four_corners_array), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetWorldCorners(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
+    fn get_world_corners(self, four_corners_array: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector3::Vector3>>) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_world_corners(__receiver, ::core::convert::Into::into(four_corners_array), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetInsetAndSizeFromParentEdge(crate::unity_engine::recttransform::RectTransform_Edge, f32, f32)` overload"]
+    fn set_inset_and_size_from_parent_edge(
+        self,
+        edge: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform_Edge>,
+        inset: impl ::core::convert::Into<f32>,
+        size: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_inset_and_size_from_parent_edge(
+                __receiver,
+                ::core::convert::Into::into(edge),
+                ::core::convert::Into::into(inset),
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetSizeWithCurrentAnchors(crate::unity_engine::recttransform::RectTransform_Axis, f32)` overload"]
+    fn set_size_with_current_anchors(
+        self,
+        axis: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform_Axis>,
+        size: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::set_size_with_current_anchors(
+                __receiver,
+                ::core::convert::Into::into(axis),
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRectInParentSpace()` overload"]
+    fn get_rect_in_parent_space(self) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_rect_in_parent_space(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetParentSize()` overload"]
+    fn get_parent_size(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::get_parent_size(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RectTransform_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_rect_Injected(*mutcrate::unity_engine::rect::Rect)` overload"]
+    fn get_rect_injected(self) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
+            __RectTransform_unity2_raw::get_rect_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_anchorMin_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn get_anchor_min_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::get_anchor_min_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_anchorMin_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn set_anchor_min_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::set_anchor_min_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_anchorMax_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn get_anchor_max_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::get_anchor_max_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_anchorMax_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn set_anchor_max_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::set_anchor_max_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_anchoredPosition_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn get_anchored_position_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::get_anchored_position_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_anchoredPosition_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn set_anchored_position_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::set_anchored_position_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_sizeDelta_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn get_size_delta_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::get_size_delta_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_sizeDelta_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn set_size_delta_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::set_size_delta_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`get_pivot_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn get_pivot_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::get_pivot_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`set_pivot_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
+    fn set_pivot_injected(self) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __RectTransform_unity2_raw::set_pivot_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+impl<__T: IRectTransform> IRectTransformMethods for __T {}
+
+#[cfg(feature = "unity_engine-recttransform")]
+impl RectTransform {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RectTransform), ::core::stringify!(new),));
+        <Self as IRectTransformMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-recttransform")]
 #[doc(hidden)]
@@ -141,9 +2046,7 @@ mod __RectTransform_ReapplyDrivenProperties_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -159,18 +2062,15 @@ mod __RectTransform_ReapplyDrivenProperties_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -184,23 +2084,16 @@ mod __RectTransform_ReapplyDrivenProperties_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -212,18 +2105,15 @@ mod __RectTransform_ReapplyDrivenProperties_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RectTransform_ReapplyDrivenProperties as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -235,27 +2125,19 @@ mod __RectTransform_ReapplyDrivenProperties_unity2_raw {
             RectTransform_ReapplyDrivenProperties,
             crate::unity_engine::recttransform::RectTransform,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, driven, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-recttransform")]
-pub trait IRectTransform_ReapplyDrivenPropertiesMethods:
-    IRectTransform_ReapplyDrivenProperties
-{
+pub trait IRectTransform_ReapplyDrivenPropertiesMethods: IRectTransform_ReapplyDrivenProperties {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < RectTransform_ReapplyDrivenProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RectTransform_ReapplyDrivenProperties as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RectTransform_ReapplyDrivenProperties_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -265,26 +2147,18 @@ pub trait IRectTransform_ReapplyDrivenPropertiesMethods:
         }
     }
     #[doc = "`Invoke(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn invoke(
-        self,
-        driven: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
-    ) -> () {
+    fn invoke(self, driven: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>) -> () {
         unsafe {
-            let __receiver = < RectTransform_ReapplyDrivenProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RectTransform_ReapplyDrivenProperties_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(driven),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RectTransform_ReapplyDrivenProperties as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RectTransform_ReapplyDrivenProperties_unity2_raw::invoke(__receiver, ::core::convert::Into::into(driven), ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-recttransform")]
-impl<__T: IRectTransform_ReapplyDrivenProperties> IRectTransform_ReapplyDrivenPropertiesMethods
-    for __T
-{
-}
+impl<__T: IRectTransform_ReapplyDrivenProperties> IRectTransform_ReapplyDrivenPropertiesMethods for __T {}
 
 #[cfg(feature = "unity_engine-recttransform")]
 impl RectTransform_ReapplyDrivenProperties {
@@ -304,2765 +2178,29 @@ impl RectTransform_ReapplyDrivenProperties {
 
 #[cfg(feature = "unity_engine-recttransform")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RectTransform_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_reapply_driven_properties {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform_ReapplyDrivenProperties as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "add_reapplyDrivenProperties",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "add_reapplyDrivenProperties",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_reapply_driven_properties(
-        value: crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_reapply_driven_properties::get_offset() as isize),
-        );
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_reapply_driven_properties {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform_ReapplyDrivenProperties as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "remove_reapplyDrivenProperties",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "remove_reapplyDrivenProperties",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_reapply_driven_properties(
-        value: crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_reapply_driven_properties::get_offset() as isize),
-        );
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_rect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_rect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_rect(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchor_min {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_anchorMin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_anchorMin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_anchor_min(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_anchor_min::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_anchor_min {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_anchorMin",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_anchorMin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_anchor_min(
-        this: RectTransform,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_anchor_min::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchor_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_anchorMax",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_anchorMax",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_anchor_max(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_anchor_max::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_anchor_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_anchorMax",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_anchorMax",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_anchor_max(
-        this: RectTransform,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_anchor_max::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchored_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_anchoredPosition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_anchoredPosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_anchored_position(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_anchored_position::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_anchored_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_anchoredPosition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_anchoredPosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_anchored_position(
-        this: RectTransform,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_anchored_position::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size_delta {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_sizeDelta",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_sizeDelta",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_size_delta(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_size_delta::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_size_delta {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_sizeDelta",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_sizeDelta",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_size_delta(
-        this: RectTransform,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_size_delta::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pivot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_pivot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_pivot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pivot(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pivot::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_pivot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_pivot",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_pivot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_pivot(
-        this: RectTransform,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pivot::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchored_position3_d {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_anchoredPosition3D",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_anchoredPosition3D",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_anchored_position3_d(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_anchored_position3_d::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_anchored_position3_d {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_anchoredPosition3D",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_anchoredPosition3D",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_anchored_position3_d(
-        this: RectTransform,
-        value: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_anchored_position3_d::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_offset_min {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_offsetMin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_offsetMin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_offset_min(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_offset_min::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_offset_min {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_offsetMin",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_offsetMin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_offset_min(
-        this: RectTransform,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_offset_min::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_offset_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_offsetMax",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_offsetMax",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_offset_max(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_offset_max::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_offset_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_offsetMax",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_offsetMax",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_offset_max(
-        this: RectTransform,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_offset_max::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_driven_by_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_drivenByObject",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_drivenByObject",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_driven_by_object(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_driven_by_object::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_driven_by_object {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_drivenByObject",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_drivenByObject",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_driven_by_object(
-        this: RectTransform,
-        value: crate::unity_engine::object_2::Object_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_driven_by_object::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_driven_properties {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_drivenProperties",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_drivenProperties",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_driven_properties(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::driventransformproperties::DrivenTransformProperties {
-        let inner : extern "C" fn (RectTransform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: driventransformproperties :: DrivenTransformProperties = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_driven_properties :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_driven_properties {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: driventransformproperties :: DrivenTransformProperties as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_drivenProperties",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_drivenProperties",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_driven_properties(
-        this: RectTransform,
-        value: crate::unity_engine::driventransformproperties::DrivenTransformProperties,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::driventransformproperties::DrivenTransformProperties,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_driven_properties::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_force_update_rect_transforms {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "ForceUpdateRectTransforms",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "ForceUpdateRectTransforms",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn force_update_rect_transforms(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_force_update_rect_transforms::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_local_corners {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::vector3::Vector3,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "GetLocalCorners",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "GetLocalCorners",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_local_corners(
-        this: RectTransform,
-        four_corners_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_corners::get_offset() as isize),
-        );
-        inner(this, four_corners_array, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_world_corners {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::vector3::Vector3,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "GetWorldCorners",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "GetWorldCorners",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_world_corners(
-        this: RectTransform,
-        four_corners_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_world_corners::get_offset() as isize),
-        );
-        inner(this, four_corners_array, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_inset_and_size_from_parent_edge {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform_Edge as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "SetInsetAndSizeFromParentEdge",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "SetInsetAndSizeFromParentEdge",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_inset_and_size_from_parent_edge(
-        this: RectTransform,
-        edge: crate::unity_engine::recttransform::RectTransform_Edge,
-        inset: f32,
-        size: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::recttransform::RectTransform_Edge,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_inset_and_size_from_parent_edge::get_offset() as isize),
-        );
-        inner(this, edge, inset, size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_size_with_current_anchors {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform_Axis as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "SetSizeWithCurrentAnchors",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "SetSizeWithCurrentAnchors",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_size_with_current_anchors(
-        this: RectTransform,
-        axis: crate::unity_engine::recttransform::RectTransform_Axis,
-        size: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            crate::unity_engine::recttransform::RectTransform_Axis,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_size_with_current_anchors::get_offset() as isize),
-        );
-        inner(this, axis, size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_send_reapply_driven_properties {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "SendReapplyDrivenProperties",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "SendReapplyDrivenProperties",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn send_reapply_driven_properties(
-        driven: crate::unity_engine::recttransform::RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::recttransform::RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_send_reapply_driven_properties::get_offset() as isize),
-        );
-        inner(driven, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rect_in_parent_space {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "GetRectInParentSpace",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "GetRectInParentSpace",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_rect_in_parent_space(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_in_parent_space::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_parent_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "GetParentSize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "GetParentSize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_parent_size(
-        this: RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_parent_size::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: RectTransform, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RectTransform, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rect_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_rect_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_rect_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_rect_injected(
-        this: RectTransform,
-        ret: *mut crate::unity_engine::rect::Rect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_injected::get_offset() as isize),
-        );
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchor_min_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_anchorMin_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_anchorMin_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_anchor_min_injected(
-        this: RectTransform,
-        ret: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_anchor_min_injected::get_offset() as isize),
-        );
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_anchor_min_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_anchorMin_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_anchorMin_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_anchor_min_injected(
-        this: RectTransform,
-        value: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_anchor_min_injected::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchor_max_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_anchorMax_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_anchorMax_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_anchor_max_injected(
-        this: RectTransform,
-        ret: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_anchor_max_injected::get_offset() as isize),
-        );
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_anchor_max_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_anchorMax_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_anchorMax_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_anchor_max_injected(
-        this: RectTransform,
-        value: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_anchor_max_injected::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_anchored_position_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_anchoredPosition_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_anchoredPosition_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_anchored_position_injected(
-        this: RectTransform,
-        ret: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_anchored_position_injected::get_offset() as isize),
-        );
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_anchored_position_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_anchoredPosition_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_anchoredPosition_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_anchored_position_injected(
-        this: RectTransform,
-        value: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_anchored_position_injected::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_size_delta_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_sizeDelta_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_sizeDelta_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_size_delta_injected(
-        this: RectTransform,
-        ret: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_size_delta_injected::get_offset() as isize),
-        );
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_size_delta_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_sizeDelta_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_sizeDelta_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_size_delta_injected(
-        this: RectTransform,
-        value: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_size_delta_injected::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pivot_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "get_pivot_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "get_pivot_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pivot_injected(
-        this: RectTransform,
-        ret: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pivot_injected::get_offset() as isize),
-        );
-        inner(this, ret, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_pivot_injected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RectTransform as ::unity2::ClassIdentity>::class(),
-                "set_pivot_Injected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RectTransform as ::unity2::ClassIdentity>::NAME,
-                    "set_pivot_Injected",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_pivot_injected(
-        this: RectTransform,
-        value: *mut crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RectTransform,
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pivot_injected::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-impl RectTransform {
-    #[doc = "`add_reapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties)` overload"]
-    pub fn add_reapply_driven_properties(
-        value: impl ::core::convert::Into<
-            crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
-        >,
-    ) -> () {
-        unsafe {
-            __RectTransform_unity2_raw::add_reapply_driven_properties(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_reapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties)` overload"]
-    pub fn remove_reapply_driven_properties(
-        value: impl ::core::convert::Into<
-            crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
-        >,
-    ) -> () {
-        unsafe {
-            __RectTransform_unity2_raw::remove_reapply_driven_properties(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SendReapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform)` overload"]
-    pub fn send_reapply_driven_properties(
-        driven: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
-    ) -> () {
-        unsafe {
-            __RectTransform_unity2_raw::send_reapply_driven_properties(
-                ::core::convert::Into::into(driven),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-pub trait IRectTransformMethods: IRectTransform {
-    #[doc = "`get_rect()` overload"]
-    fn get_rect(self) -> crate::unity_engine::rect::Rect {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_rect(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_anchorMin()` overload"]
-    fn get_anchor_min(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_anchor_min(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_anchorMin(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_anchor_min(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_anchor_min(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_anchorMax()` overload"]
-    fn get_anchor_max(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_anchor_max(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_anchorMax(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_anchor_max(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_anchor_max(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_anchoredPosition()` overload"]
-    fn get_anchored_position(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_anchored_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_anchoredPosition(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_anchored_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_anchored_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_sizeDelta()` overload"]
-    fn get_size_delta(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_size_delta(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_sizeDelta(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_size_delta(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_size_delta(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_pivot()` overload"]
-    fn get_pivot(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_pivot(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_pivot(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_pivot(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_pivot(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_anchoredPosition3D()` overload"]
-    fn get_anchored_position3_d(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_anchored_position3_d(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_anchoredPosition3D(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_anchored_position3_d(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_anchored_position3_d(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_offsetMin()` overload"]
-    fn get_offset_min(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_offset_min(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_offsetMin(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_offset_min(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_offset_min(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_offsetMax()` overload"]
-    fn get_offset_max(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_offset_max(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_offsetMax(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_offset_max(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_offset_max(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_drivenByObject()` overload"]
-    fn get_driven_by_object(self) -> crate::unity_engine::object_2::Object_2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_driven_by_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_drivenByObject(crate::unity_engine::object_2::Object_2)` overload"]
-    fn set_driven_by_object(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_driven_by_object(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_drivenProperties()` overload"]
-    fn get_driven_properties(
-        self,
-    ) -> crate::unity_engine::driventransformproperties::DrivenTransformProperties {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_driven_properties(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_drivenProperties(crate::unity_engine::driventransformproperties::DrivenTransformProperties)` overload"]
-    fn set_driven_properties(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::driventransformproperties::DrivenTransformProperties,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_driven_properties(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ForceUpdateRectTransforms()` overload"]
-    fn force_update_rect_transforms(self) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::force_update_rect_transforms(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetLocalCorners(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    fn get_local_corners(
-        self,
-        four_corners_array: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_local_corners(
-                __receiver,
-                ::core::convert::Into::into(four_corners_array),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetWorldCorners(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]
-    fn get_world_corners(
-        self,
-        four_corners_array: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_world_corners(
-                __receiver,
-                ::core::convert::Into::into(four_corners_array),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetInsetAndSizeFromParentEdge(crate::unity_engine::recttransform::RectTransform_Edge, f32, f32)` overload"]
-    fn set_inset_and_size_from_parent_edge(
-        self,
-        edge: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform_Edge>,
-        inset: impl ::core::convert::Into<f32>,
-        size: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_inset_and_size_from_parent_edge(
-                __receiver,
-                ::core::convert::Into::into(edge),
-                ::core::convert::Into::into(inset),
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetSizeWithCurrentAnchors(crate::unity_engine::recttransform::RectTransform_Axis, f32)` overload"]
-    fn set_size_with_current_anchors(
-        self,
-        axis: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform_Axis>,
-        size: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::set_size_with_current_anchors(
-                __receiver,
-                ::core::convert::Into::into(axis),
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetRectInParentSpace()` overload"]
-    fn get_rect_in_parent_space(self) -> crate::unity_engine::rect::Rect {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_rect_in_parent_space(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetParentSize()` overload"]
-    fn get_parent_size(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::get_parent_size(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RectTransform_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_rect_Injected(*mutcrate::unity_engine::rect::Rect)` overload"]
-    fn get_rect_injected(self) -> crate::unity_engine::rect::Rect {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
-            __RectTransform_unity2_raw::get_rect_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`get_anchorMin_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn get_anchor_min_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::get_anchor_min_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`set_anchorMin_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn set_anchor_min_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::set_anchor_min_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`get_anchorMax_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn get_anchor_max_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::get_anchor_max_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`set_anchorMax_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn set_anchor_max_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::set_anchor_max_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`get_anchoredPosition_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn get_anchored_position_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::get_anchored_position_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`set_anchoredPosition_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn set_anchored_position_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::set_anchored_position_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`get_sizeDelta_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn get_size_delta_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::get_size_delta_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`set_sizeDelta_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn set_size_delta_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::set_size_delta_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`get_pivot_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn get_pivot_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::get_pivot_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`set_pivot_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
-    fn set_pivot_injected(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver = <RectTransform as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __RectTransform_unity2_raw::set_pivot_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-impl<__T: IRectTransform> IRectTransformMethods for __T {}
-
-#[cfg(feature = "unity_engine-recttransform")]
-impl RectTransform {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RectTransform),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRectTransformMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-recttransform")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IRectTransform;
-    pub use super::IRectTransformMethods;
-    pub use super::IRectTransform_ReapplyDrivenProperties;
-    pub use super::IRectTransform_ReapplyDrivenPropertiesMethods;
-    pub use super::RectTransform;
-    pub use super::RectTransform_Axis;
-    pub use super::RectTransform_Edge;
-    pub use super::RectTransform_ReapplyDrivenProperties;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        IRectTransform, IRectTransformMethods, IRectTransform_ReapplyDrivenProperties, IRectTransform_ReapplyDrivenPropertiesMethods, RectTransform,
+        RectTransform_Axis, RectTransform_Edge, RectTransform_ReapplyDrivenProperties,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::transform::ITransform;
     #[cfg(feature = "unity_engine-transform")]
     pub use crate::unity_engine::transform::ITransformMethods;
+    pub use crate::{
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{component::IComponent, object_2::IObject_2, transform::ITransform},
+    };
 }

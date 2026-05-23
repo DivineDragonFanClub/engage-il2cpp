@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-procdescwaittime-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procdesc::{IProcDesc, ProcDesc};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procdesc::{IProcDesc, ProcDesc},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescwaittime/ProcDescWaitTime.md"))]
     #[::unity2::class(namespace = "App", name = "ProcDescWaitTime")]
@@ -29,11 +31,8 @@ mod __ProcDescWaitTime_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProcDescWaitTime as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -45,42 +44,28 @@ mod __ProcDescWaitTime_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProcDescWaitTime as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProcDescWaitTime as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ProcDescWaitTime,
-        second: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ProcDescWaitTime, second: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProcDescWaitTime, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, second, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProcDescWaitTime as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -92,18 +77,15 @@ mod __ProcDescWaitTime_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProcDescWaitTime as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProcDescWaitTime as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
@@ -115,11 +97,7 @@ mod __ProcDescWaitTime_unity2_raw {
             ProcDescWaitTime,
             crate::app::procinst::ProcInst,
             ::unity2::OptionalMethod,
-        ) -> crate::app::procdesc::ProcDesc_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> crate::app::procdesc::ProcDesc_Result = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, inst, __unity2_method_info)
     }
 }
@@ -129,30 +107,15 @@ pub trait IProcDescWaitTimeMethods: IProcDescWaitTime {
     #[doc = "`.ctor(f32)` overload"]
     fn ctor(self, second: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <ProcDescWaitTime as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProcDescWaitTime_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(second),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProcDescWaitTime as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProcDescWaitTime_unity2_raw::ctor(__receiver, ::core::convert::Into::into(second), ::core::option::Option::None)
         }
     }
     #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
-    fn execute(
-        self,
-        inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> crate::app::procdesc::ProcDesc_Result {
+    fn execute(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procdesc::ProcDesc_Result {
         unsafe {
-            let __receiver = <ProcDescWaitTime as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProcDescWaitTime_unity2_raw::execute(
-                __receiver,
-                ::core::convert::Into::into(inst),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProcDescWaitTime as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProcDescWaitTime_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
         }
     }
 }
@@ -179,13 +142,10 @@ impl ProcDescWaitTime {
 #[cfg(feature = "app-procdescwaittime")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProcDescWaitTime;
-    pub use super::IProcDescWaitTimeMethods;
-    pub use super::ProcDescWaitTime;
-    pub use crate::app::procdesc::IProcDesc;
+    pub use super::{IProcDescWaitTime, IProcDescWaitTimeMethods, ProcDescWaitTime};
     #[cfg(feature = "app-procdesc")]
     pub use crate::app::procdesc::IProcDescMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::procdesc::IProcDesc, system::object::IObject};
 }

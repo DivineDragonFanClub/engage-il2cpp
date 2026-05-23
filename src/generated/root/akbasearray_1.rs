@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-akbasearray_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbasearray_1/AkBaseArray_1.md"))]
     #[::unity2::class(namespace = "", name = "AkBaseArray`1")]
@@ -56,10 +56,7 @@ impl<T0: ::unity2::ClassIdentity> AkBaseArray_1<T0> {
 
     #[doc = "`ReleaseAllocatedMemoryFromReferenceAtIntPtr(::unity2::IntPtr)` overload"]
     #[method(name = "ReleaseAllocatedMemoryFromReferenceAtIntPtr", args = 1)]
-    pub fn release_allocated_memory_from_reference_at_int_ptr(
-        self,
-        address: ::unity2::IntPtr,
-    ) -> ();
+    pub fn release_allocated_memory_from_reference_at_int_ptr(self, address: ::unity2::IntPtr) -> ();
 
     #[doc = "`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]
     #[method(name = "CreateNewReferenceFromIntPtr", args = 1)]
@@ -90,13 +87,8 @@ impl<T0: ::unity2::ClassIdentity> AkBaseArray_1<T0> {
 impl<T0: ::unity2::ClassIdentity> AkBaseArray_1<T0> {
     #[doc = "`.ctor(i32)` — overload selector"]
     pub fn new(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkBaseArray_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkBaseArray_1), ::core::stringify!(new),));
         <Self as IAkBaseArray_1Methods<T0>>::ctor(this, capacity);
         this
     }
@@ -105,9 +97,7 @@ impl<T0: ::unity2::ClassIdentity> AkBaseArray_1<T0> {
 #[cfg(feature = "root-akbasearray_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkBaseArray_1;
-    pub use super::IAkBaseArray_1;
-    pub use super::IAkBaseArray_1Methods;
+    pub use super::{AkBaseArray_1, IAkBaseArray_1, IAkBaseArray_1Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

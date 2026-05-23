@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-wwwform-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/wwwform/WWWForm.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "WWWForm")]
@@ -14,8 +14,7 @@ mod __types {
         #[rename(name = "formData")]
         pub form_data: crate::system::collections::generic::list_1::List_1<::unity2::Array<u8>>,
         #[rename(name = "fieldNames")]
-        pub field_names:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub field_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "fileNames")]
         pub file_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "types")]
@@ -39,88 +38,61 @@ mod __WWWForm_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_headers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WWWForm as ::unity2::ClassIdentity>::class(),
-                "get_headers",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<WWWForm as ::unity2::ClassIdentity>::class(), "get_headers", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WWWForm as ::unity2::ClassIdentity>::NAME,
-                    "get_headers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WWWForm as ::unity2::ClassIdentity>::NAME,
+                        "get_headers",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_headers(
         this: WWWForm,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        ::unity2::Il2CppString,
-    > {
-        let inner : extern "C" fn (WWWForm , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_headers :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            WWWForm,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_headers::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WWWForm as ::unity2::ClassIdentity>::class(),
-                "get_data",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<WWWForm as ::unity2::ClassIdentity>::class(), "get_data", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WWWForm as ::unity2::ClassIdentity>::NAME,
-                    "get_data",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WWWForm as ::unity2::ClassIdentity>::NAME,
+                        "get_data",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_data(
-        this: WWWForm,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
+    pub unsafe fn get_data(this: WWWForm, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
         let inner: extern "C" fn(WWWForm, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -128,25 +100,16 @@ mod __WWWForm_unity2_raw {
 #[cfg(feature = "unity_engine-wwwform")]
 pub trait IWWWFormMethods: IWWWForm {
     #[doc = "`get_headers()` overload"]
-    fn get_headers(
-        self,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        ::unity2::Il2CppString,
-    > {
+    fn get_headers(self) -> crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <WWWForm as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WWWForm as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WWWForm_unity2_raw::get_headers(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_data()` overload"]
     fn get_data(self) -> ::unity2::Array<u8> {
         unsafe {
-            let __receiver = <WWWForm as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WWWForm as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WWWForm_unity2_raw::get_data(__receiver, ::core::option::Option::None)
         }
     }
@@ -158,9 +121,7 @@ impl<__T: IWWWForm> IWWWFormMethods for __T {}
 #[cfg(feature = "unity_engine-wwwform")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IWWWForm;
-    pub use super::IWWWFormMethods;
-    pub use super::WWWForm;
+    pub use super::{IWWWForm, IWWWFormMethods, WWWForm};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

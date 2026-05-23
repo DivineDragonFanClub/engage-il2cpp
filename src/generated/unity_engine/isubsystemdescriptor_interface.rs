@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-isubsystemdescriptor_interface-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/isubsystemdescriptor_interface/ISubsystemDescriptor_Interface.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ISubsystemDescriptor")]
@@ -23,9 +23,7 @@ mod __ISubsystemDescriptor_Interface_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ISubsystemDescriptor_Interface as ::unity2::ClassIdentity>::class(),
@@ -38,32 +36,20 @@ mod __ISubsystemDescriptor_Interface_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ISubsystemDescriptor_Interface as ::unity2::ClassIdentity>::NAME,
-                    "get_id",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ISubsystemDescriptor_Interface as ::unity2::ClassIdentity>::NAME,
+                        "get_id",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_id(
-        this: ISubsystemDescriptor_Interface,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ISubsystemDescriptor_Interface,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_id::get_offset() as isize),
-        );
+    pub unsafe fn get_id(this: ISubsystemDescriptor_Interface, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ISubsystemDescriptor_Interface, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -74,13 +60,8 @@ pub trait IISubsystemDescriptor_InterfaceMethods: IISubsystemDescriptor_Interfac
     fn get_id(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ISubsystemDescriptor_Interface as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ISubsystemDescriptor_Interface_unity2_raw::get_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ISubsystemDescriptor_Interface as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ISubsystemDescriptor_Interface_unity2_raw::get_id(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -91,7 +72,5 @@ impl<__T: IISubsystemDescriptor_Interface> IISubsystemDescriptor_InterfaceMethod
 #[cfg(feature = "unity_engine-isubsystemdescriptor_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IISubsystemDescriptor_Interface;
-    pub use super::IISubsystemDescriptor_InterfaceMethods;
-    pub use super::ISubsystemDescriptor_Interface;
+    pub use super::{IISubsystemDescriptor_Interface, IISubsystemDescriptor_InterfaceMethods, ISubsystemDescriptor_Interface};
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-contactfilter2d-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/contactfilter2d/ContactFilter2D.md"))]
     #[repr(C)]
@@ -26,9 +28,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for ContactFilter2D {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "ContactFilter2D";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,10 +40,7 @@ mod __types {
 
     impl ::unity2::IlType for ContactFilter2D {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -59,9 +57,7 @@ mod __ContactFilter2D_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_check_consistency {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContactFilter2D as ::unity2::ClassIdentity>::class(),
@@ -74,41 +70,28 @@ mod __ContactFilter2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
-                    "CheckConsistency",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
+                        "CheckConsistency",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_consistency(
-        this: ContactFilter2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn check_consistency(this: ContactFilter2D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContactFilter2D, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_consistency::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_consistency::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layer_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContactFilter2D as ::unity2::ClassIdentity>::class(),
                 "SetLayerMask",
@@ -120,18 +103,15 @@ mod __ContactFilter2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
-                    "SetLayerMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
+                        "SetLayerMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_layer_mask(
@@ -139,28 +119,16 @@ mod __ContactFilter2D_unity2_raw {
         layer_mask: crate::unity_engine::layermask::LayerMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ContactFilter2D,
-            crate::unity_engine::layermask::LayerMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_layer_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ContactFilter2D, crate::unity_engine::layermask::LayerMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_layer_mask::get_method_info().method_ptr);
         inner(this, layer_mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_depth {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContactFilter2D as ::unity2::ClassIdentity>::class(),
                 "SetDepth",
@@ -172,41 +140,27 @@ mod __ContactFilter2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
-                    "SetDepth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
+                        "SetDepth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_depth(
-        this: ContactFilter2D,
-        min_depth: f32,
-        max_depth: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_depth(this: ContactFilter2D, min_depth: f32, max_depth: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContactFilter2D, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_depth::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_depth::get_method_info().method_ptr);
         inner(this, min_depth, max_depth, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_legacy_filter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -223,18 +177,15 @@ mod __ContactFilter2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
-                    "CreateLegacyFilter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
+                        "CreateLegacyFilter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_legacy_filter(
@@ -243,26 +194,17 @@ mod __ContactFilter2D_unity2_raw {
         max_depth: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::contactfilter2d::ContactFilter2D {
-        let inner: extern "C" fn(
-            i32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::contactfilter2d::ContactFilter2D = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_legacy_filter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, f32, f32, ::unity2::OptionalMethod) -> crate::unity_engine::contactfilter2d::ContactFilter2D =
+            ::core::mem::transmute(__lookup_create_legacy_filter::get_method_info().method_ptr);
         inner(layer_mask, min_depth, max_depth, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_consistency_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: contactfilter2d :: ContactFilter2D as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::contactfilter2d::ContactFilter2D as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContactFilter2D as ::unity2::ClassIdentity>::class(),
                 "CheckConsistency_Injected",
@@ -274,32 +216,23 @@ mod __ContactFilter2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
-                    "CheckConsistency_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContactFilter2D as ::unity2::ClassIdentity>::NAME,
+                        "CheckConsistency_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_consistency_injected(
         unity_self: *mut crate::unity_engine::contactfilter2d::ContactFilter2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::contactfilter2d::ContactFilter2D,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_consistency_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::contactfilter2d::ContactFilter2D, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_check_consistency_injected::get_method_info().method_ptr);
         inner(unity_self, __unity2_method_info)
     }
 }
@@ -321,16 +254,12 @@ impl ContactFilter2D {
             )
         }
     }
+
     #[doc = "`CheckConsistency_Injected(*mutcrate::unity_engine::contactfilter2d::ContactFilter2D)` overload"]
     pub fn check_consistency_injected() -> crate::unity_engine::contactfilter2d::ContactFilter2D {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::contactfilter2d::ContactFilter2D,
-            >::uninit();
-            __ContactFilter2D_unity2_raw::check_consistency_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::contactfilter2d::ContactFilter2D>::uninit();
+            __ContactFilter2D_unity2_raw::check_consistency_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -340,29 +269,16 @@ impl ContactFilter2D {
 impl ContactFilter2D {
     #[doc = "`CheckConsistency()` overload"]
     pub fn check_consistency(self) -> () {
-        unsafe {
-            __ContactFilter2D_unity2_raw::check_consistency(self, ::core::option::Option::None)
-        }
+        unsafe { __ContactFilter2D_unity2_raw::check_consistency(self, ::core::option::Option::None) }
     }
+
     #[doc = "`SetLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    pub fn set_layer_mask(
-        self,
-        layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
-    ) -> () {
-        unsafe {
-            __ContactFilter2D_unity2_raw::set_layer_mask(
-                self,
-                ::core::convert::Into::into(layer_mask),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_layer_mask(self, layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>) -> () {
+        unsafe { __ContactFilter2D_unity2_raw::set_layer_mask(self, ::core::convert::Into::into(layer_mask), ::core::option::Option::None) }
     }
+
     #[doc = "`SetDepth(f32, f32)` overload"]
-    pub fn set_depth(
-        self,
-        min_depth: impl ::core::convert::Into<f32>,
-        max_depth: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn set_depth(self, min_depth: impl ::core::convert::Into<f32>, max_depth: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __ContactFilter2D_unity2_raw::set_depth(
                 self,
@@ -378,10 +294,9 @@ impl ContactFilter2D {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ContactFilter2D;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

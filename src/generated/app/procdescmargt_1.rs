@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-procdescmargt_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procdesc::{IProcDesc, ProcDesc};
-    use crate::app::procdesccallbase::{IProcDescCallBase, ProcDescCallBase};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procdesc::{IProcDesc, ProcDesc},
+            procdesccallbase::{IProcDescCallBase, ProcDescCallBase},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmargt_1/ProcDescMArgT_1.md"))]
     #[::unity2::class(namespace = "App", name = "ProcDescMArgT`1")]
@@ -56,16 +60,15 @@ impl<T0: ::unity2::ClassIdentity> ProcDescMArgT_1<T0> {
 #[cfg(feature = "app-procdescmargt_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProcDescMArgT_1;
-    pub use super::IProcDescMArgT_1Methods;
-    pub use super::ProcDescMArgT_1;
-    pub use crate::app::procdesc::IProcDesc;
+    pub use super::{IProcDescMArgT_1, IProcDescMArgT_1Methods, ProcDescMArgT_1};
     #[cfg(feature = "app-procdesc")]
     pub use crate::app::procdesc::IProcDescMethods;
-    pub use crate::app::procdesccallbase::IProcDescCallBase;
     #[cfg(feature = "app-procdesccallbase")]
     pub use crate::app::procdesccallbase::IProcDescCallBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{procdesc::IProcDesc, procdesccallbase::IProcDescCallBase},
+        system::object::IObject,
+    };
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-collections-generic-linkedlistnode_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/linkedlistnode_1/LinkedListNode_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "LinkedListNode`1")]
@@ -34,11 +34,7 @@ impl<T0: ::unity2::ClassIdentity> LinkedListNode_1<T0> {
 
     #[doc = "`.ctor(crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>, T0)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
-        list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>,
-        value: T0,
-    ) -> ();
+    pub fn ctor_2(self, list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>, value: T0) -> ();
 
     #[doc = "`get_List()` overload"]
     #[method(name = "get_List", args = 0)]
@@ -46,15 +42,11 @@ impl<T0: ::unity2::ClassIdentity> LinkedListNode_1<T0> {
 
     #[doc = "`get_Next()` overload"]
     #[method(name = "get_Next", args = 0)]
-    pub fn get_next(
-        self,
-    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
+    pub fn get_next(self) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
 
     #[doc = "`get_Previous()` overload"]
     #[method(name = "get_Previous", args = 0)]
-    pub fn get_previous(
-        self,
-    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
+    pub fn get_previous(self) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
 
     #[doc = "`get_Value()` overload"]
     #[method(name = "get_Value", args = 0)]
@@ -85,10 +77,7 @@ impl<T0: ::unity2::ClassIdentity> LinkedListNode_1<T0> {
     }
 
     #[doc = "`.ctor(crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>, T0)` — overload selector"]
-    pub fn new_2(
-        list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>,
-        value: T0,
-    ) -> Self {
+    pub fn new_2(list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>, value: T0) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -104,9 +93,7 @@ impl<T0: ::unity2::ClassIdentity> LinkedListNode_1<T0> {
 #[cfg(feature = "system-collections-generic-linkedlistnode_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILinkedListNode_1;
-    pub use super::ILinkedListNode_1Methods;
-    pub use super::LinkedListNode_1;
+    pub use super::{ILinkedListNode_1, ILinkedListNode_1Methods, LinkedListNode_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

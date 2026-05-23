@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-capabilitybase_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::capabilitydefinition::{CapabilityDefinition, ICapabilityDefinition};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::capabilitydefinition::{CapabilityDefinition, ICapabilityDefinition},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilitybase_1/CapabilityBase_1.md"))]
     #[::unity2::class(namespace = "App", name = "CapabilityBase`1")]
@@ -57,8 +59,7 @@ impl<T0: ::unity2::ClassIdentity> CapabilityBase_1<T0> {
 
     #[doc = "`Set(crate::app::capabilitydefinition::CapabilityDefinition_Type, T0)` overload"]
     #[method(name = "Set", args = 2)]
-    pub fn set_2(self, t: crate::app::capabilitydefinition::CapabilityDefinition_Type, v: T0)
-        -> ();
+    pub fn set_2(self, t: crate::app::capabilitydefinition::CapabilityDefinition_Type, v: T0) -> ();
 
     #[doc = "`Get(crate::app::capabilitydefinition::CapabilityDefinition_Type)` overload"]
     #[method(name = "Get", args = 1)]
@@ -66,8 +67,7 @@ impl<T0: ::unity2::ClassIdentity> CapabilityBase_1<T0> {
 
     #[doc = "`Add(crate::app::capabilitydefinition::CapabilityDefinition_Type, T0)` overload"]
     #[method(name = "Add", args = 2)]
-    pub fn add_2(self, t: crate::app::capabilitydefinition::CapabilityDefinition_Type, v: T0)
-        -> ();
+    pub fn add_2(self, t: crate::app::capabilitydefinition::CapabilityDefinition_Type, v: T0) -> ();
 
     #[doc = "`AddHp(T0)` overload"]
     #[method(name = "AddHp", args = 1)]
@@ -261,13 +261,10 @@ impl<T0: ::unity2::ClassIdentity> CapabilityBase_1<T0> {
 #[cfg(feature = "app-capabilitybase_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CapabilityBase_1;
-    pub use super::ICapabilityBase_1;
-    pub use super::ICapabilityBase_1Methods;
-    pub use crate::app::capabilitydefinition::ICapabilityDefinition;
+    pub use super::{CapabilityBase_1, ICapabilityBase_1, ICapabilityBase_1Methods};
     #[cfg(feature = "app-capabilitydefinition")]
     pub use crate::app::capabilitydefinition::ICapabilityDefinitionMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::capabilitydefinition::ICapabilityDefinition, system::object::IObject};
 }

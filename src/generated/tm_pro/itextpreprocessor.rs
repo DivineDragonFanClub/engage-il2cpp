@@ -2,9 +2,9 @@
 
 #[cfg(feature = "tm_pro-itextpreprocessor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itextpreprocessor/ITextPreprocessor.md"))]
     #[::unity2::class(namespace = "TMPro", name = "ITextPreprocessor")]
@@ -23,11 +23,8 @@ mod __ITextPreprocessor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_preprocess_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ITextPreprocessor as ::unity2::ClassIdentity>::class(),
                 "PreprocessText",
@@ -39,18 +36,15 @@ mod __ITextPreprocessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ITextPreprocessor as ::unity2::ClassIdentity>::NAME,
-                    "PreprocessText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ITextPreprocessor as ::unity2::ClassIdentity>::NAME,
+                        "PreprocessText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn preprocess_text(
@@ -58,15 +52,8 @@ mod __ITextPreprocessor_unity2_raw {
         text: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ITextPreprocessor,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_preprocess_text::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ITextPreprocessor, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_preprocess_text::get_method_info().method_ptr);
         inner(this, text, __unity2_method_info)
     }
 }
@@ -74,19 +61,10 @@ mod __ITextPreprocessor_unity2_raw {
 #[cfg(feature = "tm_pro-itextpreprocessor")]
 pub trait IITextPreprocessorMethods: IITextPreprocessor {
     #[doc = "`PreprocessText(::unity2::Il2CppString)` overload"]
-    fn preprocess_text(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
+    fn preprocess_text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ITextPreprocessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ITextPreprocessor_unity2_raw::preprocess_text(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ITextPreprocessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ITextPreprocessor_unity2_raw::preprocess_text(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
         }
     }
 }
@@ -97,7 +75,5 @@ impl<__T: IITextPreprocessor> IITextPreprocessorMethods for __T {}
 #[cfg(feature = "tm_pro-itextpreprocessor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IITextPreprocessor;
-    pub use super::IITextPreprocessorMethods;
-    pub use super::ITextPreprocessor;
+    pub use super::{IITextPreprocessor, IITextPreprocessorMethods, ITextPreprocessor};
 }

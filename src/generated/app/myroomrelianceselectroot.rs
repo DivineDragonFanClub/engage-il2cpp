@@ -2,14 +2,18 @@
 
 #[cfg(feature = "app-myroomrelianceselectroot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomrelianceselectroot/MyRoomRelianceSelectRoot.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomRelianceSelectRoot")]
@@ -75,9 +79,7 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_cursor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -90,35 +92,35 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "get_Cursor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "get_Cursor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cursor(
         this: MyRoomRelianceSelectRoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop {
-        let inner : extern "C" fn (MyRoomRelianceSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: myroomrelianceselectroot :: MyRoomRelianceSelectRoot_CursorTop = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_cursor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            MyRoomRelianceSelectRoot,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop =
+            ::core::mem::transmute(__lookup_get_cursor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cursor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: myroomrelianceselectroot :: MyRoomRelianceSelectRoot_CursorTop as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
                 "set_Cursor",
@@ -130,18 +132,15 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "set_Cursor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "set_Cursor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_cursor(
@@ -153,20 +152,14 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
             MyRoomRelianceSelectRoot,
             crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cursor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_cursor::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_prefab_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -179,35 +172,26 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "LoadPrefabAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "LoadPrefabAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_prefab_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -220,35 +204,26 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -261,35 +236,26 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "UnloadPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "UnloadPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -302,39 +268,27 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -347,35 +301,26 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_list_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -388,34 +333,33 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitListContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitListContent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_unit_list_content(
         this: MyRoomRelianceSelectRoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent {
-        let inner : extern "C" fn (MyRoomRelianceSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: myroomrelianceselectcontent :: MyRoomRelianceSelectContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_unit_list_content :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            MyRoomRelianceSelectRoot,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent =
+            ::core::mem::transmute(__lookup_get_unit_list_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reliance_select_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -428,34 +372,33 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetRelianceSelectContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetRelianceSelectContent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_reliance_select_content(
         this: MyRoomRelianceSelectRoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent {
-        let inner : extern "C" fn (MyRoomRelianceSelectRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: myroomreliancesubselectcontent :: MyRoomRelianceSubSelectContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_reliance_select_content :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            MyRoomRelianceSelectRoot,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent =
+            ::core::mem::transmute(__lookup_get_reliance_select_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open_reliance_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -468,39 +411,27 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "OpenRelianceSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "OpenRelianceSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open_reliance_select(
-        this: MyRoomRelianceSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn open_reliance_select(this: MyRoomRelianceSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_reliance_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_open_reliance_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close_reliance_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -513,41 +444,28 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "CloseRelianceSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "CloseRelianceSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close_reliance_select(
-        this: MyRoomRelianceSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close_reliance_select(this: MyRoomRelianceSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_reliance_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close_reliance_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open_reliance_rank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
                 "OpenRelianceRank",
@@ -559,40 +477,27 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "OpenRelianceRank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "OpenRelianceRank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open_reliance_rank(
-        this: MyRoomRelianceSelectRoot,
-        open_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn open_reliance_rank(this: MyRoomRelianceSelectRoot, open_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_reliance_rank::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_open_reliance_rank::get_method_info().method_ptr);
         inner(this, open_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close_reliance_rank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -605,39 +510,27 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "CloseRelianceRank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "CloseRelianceRank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close_reliance_rank(
-        this: MyRoomRelianceSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close_reliance_rank(this: MyRoomRelianceSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_reliance_rank::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close_reliance_rank::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_category_cursor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -650,39 +543,27 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "ShowCategoryCursor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "ShowCategoryCursor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show_category_cursor(
-        this: MyRoomRelianceSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show_category_cursor(this: MyRoomRelianceSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_category_cursor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show_category_cursor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_category_cursor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -695,39 +576,27 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "HideCategoryCursor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "HideCategoryCursor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_category_cursor(
-        this: MyRoomRelianceSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_category_cursor(this: MyRoomRelianceSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_category_cursor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_category_cursor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -740,39 +609,27 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: MyRoomRelianceSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: MyRoomRelianceSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -785,39 +642,27 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: MyRoomRelianceSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: MyRoomRelianceSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -830,30 +675,20 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MyRoomRelianceSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MyRoomRelianceSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomRelianceSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -862,26 +697,24 @@ mod __MyRoomRelianceSelectRoot_unity2_raw {
 impl MyRoomRelianceSelectRoot {
     #[doc = "`LoadPrefabAsync()` overload"]
     pub fn load_prefab_async() -> () {
-        unsafe {
-            __MyRoomRelianceSelectRoot_unity2_raw::load_prefab_async(::core::option::Option::None)
-        }
+        unsafe { __MyRoomRelianceSelectRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
     }
+
     #[doc = "`IsLoadingPrefab()` overload"]
     pub fn is_loading_prefab() -> bool {
-        unsafe {
-            __MyRoomRelianceSelectRoot_unity2_raw::is_loading_prefab(::core::option::Option::None)
-        }
+        unsafe { __MyRoomRelianceSelectRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`UnloadPrefab()` overload"]
     pub fn unload_prefab() -> () {
-        unsafe {
-            __MyRoomRelianceSelectRoot_unity2_raw::unload_prefab(::core::option::Option::None)
-        }
+        unsafe { __MyRoomRelianceSelectRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`Create()` overload"]
     pub fn create() -> crate::unity_engine::gameobject::GameObject {
         unsafe { __MyRoomRelianceSelectRoot_unity2_raw::create(::core::option::Option::None) }
     }
+
     #[doc = "`Destroy()` overload"]
     pub fn destroy() -> () {
         unsafe { __MyRoomRelianceSelectRoot_unity2_raw::destroy(::core::option::Option::None) }
@@ -891,102 +724,58 @@ impl MyRoomRelianceSelectRoot {
 #[cfg(feature = "app-myroomrelianceselectroot")]
 pub trait IMyRoomRelianceSelectRootMethods: IMyRoomRelianceSelectRoot {
     #[doc = "`get_Cursor()` overload"]
-    fn get_cursor(
-        self,
-    ) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop {
+    fn get_cursor(self) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::get_cursor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::get_cursor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Cursor(crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop)` overload"]
-    fn set_cursor(
-        self,
-        value: impl ::core::convert::Into<
-            crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop,
-        >,
-    ) -> () {
+    fn set_cursor(self, value: impl ::core::convert::Into<crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop>) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::set_cursor(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::set_cursor(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetUnitListContent()` overload"]
-    fn get_unit_list_content(
-        self,
-    ) -> crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent {
+    fn get_unit_list_content(self) -> crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::get_unit_list_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::get_unit_list_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetRelianceSelectContent()` overload"]
-    fn get_reliance_select_content(
-        self,
-    ) -> crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent {
+    fn get_reliance_select_content(self) -> crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::get_reliance_select_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::get_reliance_select_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OpenRelianceSelect()` overload"]
     fn open_reliance_select(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::open_reliance_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::open_reliance_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CloseRelianceSelect()` overload"]
     fn close_reliance_select(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::close_reliance_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::close_reliance_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OpenRelianceRank(i32)` overload"]
     fn open_reliance_rank(self, open_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomRelianceSelectRoot_unity2_raw::open_reliance_rank(
                 __receiver,
                 ::core::convert::Into::into(open_count),
@@ -998,48 +787,31 @@ pub trait IMyRoomRelianceSelectRootMethods: IMyRoomRelianceSelectRoot {
     fn close_reliance_rank(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::close_reliance_rank(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::close_reliance_rank(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShowCategoryCursor()` overload"]
     fn show_category_cursor(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::show_category_cursor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::show_category_cursor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HideCategoryCursor()` overload"]
     fn hide_category_cursor(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_unity2_raw::hide_category_cursor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSelectRoot_unity2_raw::hide_category_cursor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomRelianceSelectRoot_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
@@ -1047,9 +819,7 @@ pub trait IMyRoomRelianceSelectRootMethods: IMyRoomRelianceSelectRoot {
     fn update(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomRelianceSelectRoot_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
@@ -1057,9 +827,7 @@ pub trait IMyRoomRelianceSelectRootMethods: IMyRoomRelianceSelectRoot {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MyRoomRelianceSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomRelianceSelectRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1093,9 +861,7 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_open_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
@@ -1108,43 +874,28 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "get_OpenCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "get_OpenCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_open_count(
-        this: MyRoomRelianceSelectRoot_CursorTop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_open_count::get_offset() as isize),
-        );
+    pub unsafe fn get_open_count(this: MyRoomRelianceSelectRoot_CursorTop, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_open_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_open_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
                 "set_OpenCount",
@@ -1156,46 +907,29 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "set_OpenCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "set_OpenCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_open_count(
-        this: MyRoomRelianceSelectRoot_CursorTop,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_open_count::get_offset() as isize),
-        );
+    pub unsafe fn set_open_count(this: MyRoomRelianceSelectRoot_CursorTop, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_open_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -1207,18 +941,15 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1230,23 +961,16 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
             MyRoomRelianceSelectRoot_CursorTop,
             crate::unity_engine::recttransform::RectTransform,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, transform, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
                 "Reset",
@@ -1258,18 +982,15 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reset(
@@ -1281,22 +1002,15 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
             MyRoomRelianceSelectRoot_CursorTop,
             crate::unity_engine::recttransform::RectTransform,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, transform, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_select_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
                 "SetSelectIndex",
@@ -1308,18 +1022,15 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "SetSelectIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "SetSelectIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_select_index(
@@ -1327,24 +1038,15 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         select_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_select_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_select_index::get_method_info().method_ptr);
         inner(this, select_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_select_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
@@ -1357,43 +1059,28 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_select_index(
-        this: MyRoomRelianceSelectRoot_CursorTop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_select_index::get_offset() as isize),
-        );
+    pub unsafe fn get_select_index(this: MyRoomRelianceSelectRoot_CursorTop, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_select_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_left {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
                 "KeyLeft",
@@ -1405,45 +1092,28 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "KeyLeft",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "KeyLeft",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_left(
-        this: MyRoomRelianceSelectRoot_CursorTop,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_key_left::get_offset() as isize),
-        );
+    pub unsafe fn key_left(this: MyRoomRelianceSelectRoot_CursorTop, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_key_left::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_right {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
                 "KeyRight",
@@ -1455,43 +1125,27 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "KeyRight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "KeyRight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_right(
-        this: MyRoomRelianceSelectRoot_CursorTop,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_key_right::get_offset() as isize),
-        );
+    pub unsafe fn key_right(this: MyRoomRelianceSelectRoot_CursorTop, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_key_right::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
@@ -1504,41 +1158,27 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: MyRoomRelianceSelectRoot_CursorTop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
+    pub unsafe fn update(this: MyRoomRelianceSelectRoot_CursorTop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_corrected_y_coord {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
@@ -1551,43 +1191,28 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "GetCorrectedYCoord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "GetCorrectedYCoord",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_corrected_y_coord(
-        this: MyRoomRelianceSelectRoot_CursorTop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_corrected_y_coord::get_offset() as isize),
-        );
+    pub unsafe fn get_corrected_y_coord(this: MyRoomRelianceSelectRoot_CursorTop, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_corrected_y_coord::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::class(),
                 "GetPositionX",
@@ -1599,34 +1224,20 @@ mod __MyRoomRelianceSelectRoot_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "GetPositionX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSelectRoot_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "GetPositionX",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_x(
-        this: MyRoomRelianceSelectRoot_CursorTop,
-        select_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            MyRoomRelianceSelectRoot_CursorTop,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_position_x::get_offset() as isize),
-        );
+    pub unsafe fn get_position_x(this: MyRoomRelianceSelectRoot_CursorTop, select_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MyRoomRelianceSelectRoot_CursorTop, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_position_x::get_method_info().method_ptr);
         inner(this, select_index, __unity2_method_info)
     }
 }
@@ -1636,23 +1247,18 @@ pub trait IMyRoomRelianceSelectRoot_CursorTopMethods: IMyRoomRelianceSelectRoot_
     #[doc = "`get_OpenCount()` overload"]
     fn get_open_count(self) -> i32 {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::get_open_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::get_open_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_OpenCount(i32)` overload"]
     fn set_open_count(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::set_open_count(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1661,46 +1267,29 @@ pub trait IMyRoomRelianceSelectRoot_CursorTopMethods: IMyRoomRelianceSelectRoot_
         }
     }
     #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn ctor(
-        self,
-        transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
-    ) -> () {
+    fn ctor(self, transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(transform),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::ctor(__receiver, ::core::convert::Into::into(transform), ::core::option::Option::None)
         }
     }
     #[doc = "`Reset(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn reset(
-        self,
-        transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
-    ) -> () {
+    fn reset(self, transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::reset(
-                __receiver,
-                ::core::convert::Into::into(transform),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::reset(__receiver, ::core::convert::Into::into(transform), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSelectIndex(i32)` overload"]
     fn set_select_index(self, select_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::set_select_index(
                 __receiver,
                 ::core::convert::Into::into(select_index),
@@ -1711,23 +1300,18 @@ pub trait IMyRoomRelianceSelectRoot_CursorTopMethods: IMyRoomRelianceSelectRoot_
     #[doc = "`GetSelectIndex()` overload"]
     fn get_select_index(self) -> i32 {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::get_select_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::get_select_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`KeyLeft(bool)` overload"]
     fn key_left(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::key_left(
                 __receiver,
                 ::core::convert::Into::into(is_trigger),
@@ -1738,10 +1322,9 @@ pub trait IMyRoomRelianceSelectRoot_CursorTopMethods: IMyRoomRelianceSelectRoot_
     #[doc = "`KeyRight(bool)` overload"]
     fn key_right(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::key_right(
                 __receiver,
                 ::core::convert::Into::into(is_trigger),
@@ -1752,36 +1335,27 @@ pub trait IMyRoomRelianceSelectRoot_CursorTopMethods: IMyRoomRelianceSelectRoot_
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCorrectedYCoord()` overload"]
     fn get_corrected_y_coord(self) -> f32 {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::get_corrected_y_coord(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::get_corrected_y_coord(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetPositionX(i32)` overload"]
     fn get_position_x(self, select_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver =
-                <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MyRoomRelianceSelectRoot_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MyRoomRelianceSelectRoot_CursorTop_unity2_raw::get_position_x(
                 __receiver,
                 ::core::convert::Into::into(select_index),
@@ -1813,25 +1387,22 @@ impl MyRoomRelianceSelectRoot_CursorTop {
 #[cfg(feature = "app-myroomrelianceselectroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMyRoomRelianceSelectRoot;
-    pub use super::IMyRoomRelianceSelectRootMethods;
-    pub use super::IMyRoomRelianceSelectRoot_CursorTop;
-    pub use super::IMyRoomRelianceSelectRoot_CursorTopMethods;
-    pub use super::MyRoomRelianceSelectRoot;
-    pub use super::MyRoomRelianceSelectRoot_CursorTop;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IMyRoomRelianceSelectRoot, IMyRoomRelianceSelectRootMethods, IMyRoomRelianceSelectRoot_CursorTop, IMyRoomRelianceSelectRoot_CursorTopMethods,
+        MyRoomRelianceSelectRoot, MyRoomRelianceSelectRoot_CursorTop,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

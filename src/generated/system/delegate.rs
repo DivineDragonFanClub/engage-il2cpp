@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-delegate-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/delegate/Delegate.md"))]
     #[::unity2::class(namespace = "System", name = "Delegate")]
@@ -46,56 +46,34 @@ mod __Delegate_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_method {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "get_Method",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "get_Method", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "get_Method",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "get_Method",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_method(
-        this: Delegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::methodinfo::MethodInfo {
-        let inner: extern "C" fn(
-            Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method::get_offset() as isize),
-        );
+    pub unsafe fn get_method(this: Delegate, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::reflection::methodinfo::MethodInfo {
+        let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> crate::system::reflection::methodinfo::MethodInfo =
+            ::core::mem::transmute(__lookup_get_method::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_virtual_method_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Delegate as ::unity2::ClassIdentity>::class(),
@@ -108,88 +86,57 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "GetVirtualMethod_internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "GetVirtualMethod_internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_virtual_method_internal(
         this: Delegate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::methodinfo::MethodInfo {
-        let inner: extern "C" fn(
-            Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_virtual_method_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> crate::system::reflection::methodinfo::MethodInfo =
+            ::core::mem::transmute(__lookup_get_virtual_method_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "get_Target",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "get_Target", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "get_Target",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "get_Target",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_target(
-        this: Delegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target::get_offset() as isize),
-        );
+    pub unsafe fn get_target(this: Delegate, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_target::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -207,18 +154,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate_internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate_internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_internal(
@@ -234,26 +178,14 @@ mod __Delegate_unity2_raw {
             crate::system::reflection::methodinfo::MethodInfo,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_internal::get_offset() as isize),
-        );
-        inner(
-            r#type,
-            target,
-            info,
-            throw_on_bind_failure,
-            __unity2_method_info,
-        )
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_internal::get_method_info().method_ptr);
+        inner(r#type, target, info, throw_on_bind_failure, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_arg_type_match {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -269,18 +201,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "arg_type_match",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "arg_type_match",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn arg_type_match(
@@ -288,24 +217,15 @@ mod __Delegate_unity2_raw {
         arg_type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_arg_type_match::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_arg_type_match::get_method_info().method_ptr);
         inner(del_arg_type, arg_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_arg_type_match_this {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -322,18 +242,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "arg_type_match_this",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "arg_type_match_this",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn arg_type_match_this(
@@ -342,25 +259,15 @@ mod __Delegate_unity2_raw {
         boxed_this: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::SystemType,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_arg_type_match_this::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::SystemType, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_arg_type_match_this::get_method_info().method_ptr);
         inner(del_arg_type, arg_type, boxed_this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_return_type_match {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -376,18 +283,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "return_type_match",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "return_type_match",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn return_type_match(
@@ -395,24 +299,15 @@ mod __Delegate_unity2_raw {
         return_type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_return_type_match::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_return_type_match::get_method_info().method_ptr);
         inner(del_return_type, return_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -430,18 +325,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate(
@@ -457,26 +349,14 @@ mod __Delegate_unity2_raw {
             crate::system::reflection::methodinfo::MethodInfo,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate::get_offset() as isize),
-        );
-        inner(
-            r#type,
-            first_argument,
-            method,
-            throw_on_bind_failure,
-            __unity2_method_info,
-        )
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate::get_method_info().method_ptr);
+        inner(r#type, first_argument, method, throw_on_bind_failure, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -495,18 +375,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_2(
@@ -524,27 +401,14 @@ mod __Delegate_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_2::get_offset() as isize),
-        );
-        inner(
-            r#type,
-            first_argument,
-            method,
-            throw_on_bind_failure,
-            allow_closed,
-            __unity2_method_info,
-        )
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_2::get_method_info().method_ptr);
+        inner(r#type, first_argument, method, throw_on_bind_failure, allow_closed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -561,18 +425,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_3(
@@ -586,20 +447,14 @@ mod __Delegate_unity2_raw {
             crate::system::object::Object,
             crate::system::reflection::methodinfo::MethodInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_3::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_3::get_method_info().method_ptr);
         inner(r#type, first_argument, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::reflection::methodinfo::MethodInfo as ::unity2::IlType>::il_type(),
@@ -616,18 +471,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_4(
@@ -641,20 +493,14 @@ mod __Delegate_unity2_raw {
             crate::system::reflection::methodinfo::MethodInfo,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_4::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_4::get_method_info().method_ptr);
         inner(r#type, method, throw_on_bind_failure, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::reflection::methodinfo::MethodInfo as ::unity2::IlType>::il_type(),
@@ -670,18 +516,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_5(
@@ -693,20 +536,14 @@ mod __Delegate_unity2_raw {
             ::unity2::SystemType,
             crate::system::reflection::methodinfo::MethodInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_5::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_5::get_method_info().method_ptr);
         inner(r#type, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -723,18 +560,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_6(
@@ -748,21 +582,22 @@ mod __Delegate_unity2_raw {
             crate::system::object::Object,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_6::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_6::get_method_info().method_ptr);
         inner(r#type, target, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_candidate_method {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Delegate as ::unity2::ClassIdentity>::class(),
                 "GetCandidateMethod",
@@ -774,18 +609,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "GetCandidateMethod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "GetCandidateMethod",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_candidate_method(
@@ -805,28 +637,14 @@ mod __Delegate_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_candidate_method::get_offset() as isize),
-        );
-        inner(
-            r#type,
-            target,
-            method,
-            bflags,
-            ignore_case,
-            throw_on_bind_failure,
-            __unity2_method_info,
-        )
+        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(__lookup_get_candidate_method::get_method_info().method_ptr);
+        inner(r#type, target, method, bflags, ignore_case, throw_on_bind_failure, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -845,18 +663,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_7(
@@ -874,27 +689,14 @@ mod __Delegate_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_7::get_offset() as isize),
-        );
-        inner(
-            r#type,
-            target,
-            method,
-            ignore_case,
-            throw_on_bind_failure,
-            __unity2_method_info,
-        )
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_7::get_method_info().method_ptr);
+        inner(r#type, target, method, ignore_case, throw_on_bind_failure, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -911,18 +713,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_8(
@@ -936,20 +735,14 @@ mod __Delegate_unity2_raw {
             ::unity2::SystemType,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_8::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_8::get_method_info().method_ptr);
         inner(r#type, target, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -968,18 +761,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_9(
@@ -997,27 +787,14 @@ mod __Delegate_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_9::get_offset() as isize),
-        );
-        inner(
-            r#type,
-            target,
-            method,
-            ignore_case,
-            throw_on_bind_failure,
-            __unity2_method_info,
-        )
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_9::get_method_info().method_ptr);
+        inner(r#type, target, method, ignore_case, throw_on_bind_failure, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_10 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1035,18 +812,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_10(
@@ -1062,20 +836,14 @@ mod __Delegate_unity2_raw {
             ::unity2::Il2CppString,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_10::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_10::get_method_info().method_ptr);
         inner(r#type, target, method, ignore_case, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dynamic_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1089,18 +857,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "DynamicInvoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "DynamicInvoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dynamic_invoke(
@@ -1112,20 +877,14 @@ mod __Delegate_unity2_raw {
             Delegate,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dynamic_invoke::get_offset() as isize),
-        );
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_dynamic_invoke::get_method_info().method_ptr);
         inner(this, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize_delegate_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Delegate as ::unity2::ClassIdentity>::class(),
@@ -1138,38 +897,27 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "InitializeDelegateData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "InitializeDelegateData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn initialize_delegate_data(
-        this: Delegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize_delegate_data::get_offset() as isize),
-        );
+    pub unsafe fn initialize_delegate_data(this: Delegate, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_initialize_delegate_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dynamic_invoke_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1183,18 +931,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "DynamicInvokeImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "DynamicInvokeImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dynamic_invoke_impl(
@@ -1206,117 +951,68 @@ mod __Delegate_unity2_raw {
             Delegate,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dynamic_invoke_impl::get_offset() as isize),
-        );
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_dynamic_invoke_impl::get_method_info().method_ptr);
         inner(this, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "Clone",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "Clone", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "Clone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "Clone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clone(
-        this: Delegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clone::get_offset() as isize),
-        );
+    pub unsafe fn clone(this: Delegate, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: Delegate,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            Delegate,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: Delegate, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Delegate, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Delegate as ::unity2::ClassIdentity>::class(),
@@ -1329,39 +1025,27 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: Delegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: Delegate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Delegate as ::unity2::ClassIdentity>::class(),
@@ -1374,41 +1058,30 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "GetMethodImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "GetMethodImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_method_impl(
         this: Delegate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::methodinfo::MethodInfo {
-        let inner: extern "C" fn(
-            Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> crate::system::reflection::methodinfo::MethodInfo =
+            ::core::mem::transmute(__lookup_get_method_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_invocation_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Delegate as ::unity2::ClassIdentity>::class(),
@@ -1421,68 +1094,48 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "GetInvocationList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "GetInvocationList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_invocation_list(
         this: Delegate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::system::delegate::Delegate> {
-        let inner: extern "C" fn(
-            Delegate,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::system::delegate::Delegate> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_invocation_list::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Delegate, ::unity2::OptionalMethod) -> ::unity2::Array<crate::system::delegate::Delegate> =
+            ::core::mem::transmute(__lookup_get_invocation_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_combine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
                 <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "Combine",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "Combine", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "Combine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "Combine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn combine(
@@ -1494,72 +1147,46 @@ mod __Delegate_unity2_raw {
             crate::system::delegate::Delegate,
             crate::system::delegate::Delegate,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_combine::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_combine::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_combine_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::system::delegate::Delegate,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "Combine",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::system::delegate::Delegate> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "Combine", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "Combine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "Combine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn combine_2(
         delegates: ::unity2::Array<crate::system::delegate::Delegate>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::delegate::Delegate {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::system::delegate::Delegate>,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_combine_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::system::delegate::Delegate>, ::unity2::OptionalMethod) -> crate::system::delegate::Delegate =
+            ::core::mem::transmute(__lookup_combine_2::get_method_info().method_ptr);
         inner(delegates, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_combine_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Delegate as ::unity2::ClassIdentity>::class(),
                 "CombineImpl",
@@ -1571,18 +1198,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CombineImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CombineImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn combine_impl(
@@ -1590,51 +1214,33 @@ mod __Delegate_unity2_raw {
         d: crate::system::delegate::Delegate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::delegate::Delegate {
-        let inner: extern "C" fn(
-            Delegate,
-            crate::system::delegate::Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_combine_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Delegate, crate::system::delegate::Delegate, ::unity2::OptionalMethod) -> crate::system::delegate::Delegate =
+            ::core::mem::transmute(__lookup_combine_impl::get_method_info().method_ptr);
         inner(this, d, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
                 <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "Remove", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove(
@@ -1646,45 +1252,29 @@ mod __Delegate_unity2_raw {
             crate::system::delegate::Delegate,
             crate::system::delegate::Delegate,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
         inner(source, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "RemoveImpl",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "RemoveImpl", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "RemoveImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "RemoveImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_impl(
@@ -1692,51 +1282,33 @@ mod __Delegate_unity2_raw {
         d: crate::system::delegate::Delegate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::delegate::Delegate {
-        let inner: extern "C" fn(
-            Delegate,
-            crate::system::delegate::Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Delegate, crate::system::delegate::Delegate, ::unity2::OptionalMethod) -> crate::system::delegate::Delegate =
+            ::core::mem::transmute(__lookup_remove_impl::get_method_info().method_ptr);
         inner(this, d, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
                 <crate::system::delegate::Delegate as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Delegate as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Delegate as ::unity2::ClassIdentity>::class(), "op_Equality", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_equality(
@@ -1744,24 +1316,15 @@ mod __Delegate_unity2_raw {
         d2: crate::system::delegate::Delegate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::delegate::Delegate,
-            crate::system::delegate::Delegate,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::delegate::Delegate, crate::system::delegate::Delegate, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
         inner(d1, d2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delegate_no_security_check {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::runtimetype::RuntimeType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1778,18 +1341,15 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "CreateDelegateNoSecurityCheck",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "CreateDelegateNoSecurityCheck",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_delegate_no_security_check(
@@ -1803,22 +1363,15 @@ mod __Delegate_unity2_raw {
             crate::system::object::Object,
             crate::system::reflection::methodinfo::MethodInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_delegate_no_security_check::get_offset() as isize),
-        );
+        ) -> crate::system::delegate::Delegate = ::core::mem::transmute(__lookup_create_delegate_no_security_check::get_method_info().method_ptr);
         inner(r#type, first_argument, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_alloc_delegate_like_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::delegate::Delegate as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Delegate as ::unity2::ClassIdentity>::class(),
                 "AllocDelegateLike_internal",
@@ -1830,32 +1383,23 @@ mod __Delegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Delegate as ::unity2::ClassIdentity>::NAME,
-                    "AllocDelegateLike_internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Delegate as ::unity2::ClassIdentity>::NAME,
+                        "AllocDelegateLike_internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn alloc_delegate_like_internal(
         d: crate::system::delegate::Delegate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::multicastdelegate::MulticastDelegate {
-        let inner: extern "C" fn(
-            crate::system::delegate::Delegate,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::multicastdelegate::MulticastDelegate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_alloc_delegate_like_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::delegate::Delegate, ::unity2::OptionalMethod) -> crate::system::multicastdelegate::MulticastDelegate =
+            ::core::mem::transmute(__lookup_alloc_delegate_like_internal::get_method_info().method_ptr);
         inner(d, __unity2_method_info)
     }
 }
@@ -1879,6 +1423,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`arg_type_match(::unity2::SystemType, ::unity2::SystemType)` overload"]
     pub fn arg_type_match(
         del_arg_type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -1892,6 +1437,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`arg_type_match_this(::unity2::SystemType, ::unity2::SystemType, bool)` overload"]
     pub fn arg_type_match_this(
         del_arg_type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -1907,6 +1453,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`return_type_match(::unity2::SystemType, ::unity2::SystemType)` overload"]
     pub fn return_type_match(
         del_return_type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -1920,6 +1467,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo, bool)` overload"]
     pub fn create_delegate(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -1937,6 +1485,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo, bool, bool)` overload"]
     pub fn create_delegate_2(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -1956,6 +1505,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]
     pub fn create_delegate_3(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -1971,6 +1521,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, crate::system::reflection::methodinfo::MethodInfo, bool)` overload"]
     pub fn create_delegate_4(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -1986,6 +1537,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, crate::system::reflection::methodinfo::MethodInfo)` overload"]
     pub fn create_delegate_5(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -1999,6 +1551,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, crate::system::object::Object, ::unity2::Il2CppString)` overload"]
     pub fn create_delegate_6(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -2014,6 +1567,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`GetCandidateMethod(::unity2::SystemType, ::unity2::SystemType, ::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags, bool, bool)` overload"]
     pub fn get_candidate_method(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -2035,6 +1589,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, ::unity2::SystemType, ::unity2::Il2CppString, bool, bool)` overload"]
     pub fn create_delegate_7(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -2054,6 +1609,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, ::unity2::SystemType, ::unity2::Il2CppString)` overload"]
     pub fn create_delegate_8(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -2069,6 +1625,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, crate::system::object::Object, ::unity2::Il2CppString, bool, bool)` overload"]
     pub fn create_delegate_9(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -2088,6 +1645,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegate(::unity2::SystemType, crate::system::object::Object, ::unity2::Il2CppString, bool)` overload"]
     pub fn create_delegate_10(
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -2105,6 +1663,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`Combine(crate::system::delegate::Delegate, crate::system::delegate::Delegate)` overload"]
     pub fn combine(
         a: impl ::core::convert::Into<crate::system::delegate::Delegate>,
@@ -2118,17 +1677,12 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`Combine(::unity2::Array<crate::system::delegate::Delegate>)` overload"]
-    pub fn combine_2(
-        delegates: impl ::core::convert::Into<::unity2::Array<crate::system::delegate::Delegate>>,
-    ) -> crate::system::delegate::Delegate {
-        unsafe {
-            __Delegate_unity2_raw::combine_2(
-                ::core::convert::Into::into(delegates),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn combine_2(delegates: impl ::core::convert::Into<::unity2::Array<crate::system::delegate::Delegate>>) -> crate::system::delegate::Delegate {
+        unsafe { __Delegate_unity2_raw::combine_2(::core::convert::Into::into(delegates), ::core::option::Option::None) }
     }
+
     #[doc = "`Remove(crate::system::delegate::Delegate, crate::system::delegate::Delegate)` overload"]
     pub fn remove(
         source: impl ::core::convert::Into<crate::system::delegate::Delegate>,
@@ -2142,6 +1696,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`op_Equality(crate::system::delegate::Delegate, crate::system::delegate::Delegate)` overload"]
     pub fn op_equality(
         d1: impl ::core::convert::Into<crate::system::delegate::Delegate>,
@@ -2155,6 +1710,7 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`CreateDelegateNoSecurityCheck(crate::system::runtimetype::RuntimeType, crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]
     pub fn create_delegate_no_security_check(
         r#type: impl ::core::convert::Into<crate::system::runtimetype::RuntimeType>,
@@ -2170,16 +1726,12 @@ impl Delegate {
             )
         }
     }
+
     #[doc = "`AllocDelegateLike_internal(crate::system::delegate::Delegate)` overload"]
     pub fn alloc_delegate_like_internal(
         d: impl ::core::convert::Into<crate::system::delegate::Delegate>,
     ) -> crate::system::multicastdelegate::MulticastDelegate {
-        unsafe {
-            __Delegate_unity2_raw::alloc_delegate_like_internal(
-                ::core::convert::Into::into(d),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Delegate_unity2_raw::alloc_delegate_like_internal(::core::convert::Into::into(d), ::core::option::Option::None) }
     }
 }
 
@@ -2188,156 +1740,92 @@ pub trait IDelegateMethods: IDelegate {
     #[doc = "`get_Method()` overload"]
     fn get_method(self) -> crate::system::reflection::methodinfo::MethodInfo {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Delegate_unity2_raw::get_method(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetVirtualMethod_internal()` overload"]
     fn get_virtual_method_internal(self) -> crate::system::reflection::methodinfo::MethodInfo {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Delegate_unity2_raw::get_virtual_method_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Delegate_unity2_raw::get_virtual_method_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Target()` overload"]
     fn get_target(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Delegate_unity2_raw::get_target(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DynamicInvoke(::unity2::Array<crate::system::object::Object>)` overload"]
-    fn dynamic_invoke(
-        self,
-        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> crate::system::object::Object {
+    fn dynamic_invoke(self, args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Delegate_unity2_raw::dynamic_invoke(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Delegate_unity2_raw::dynamic_invoke(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
     #[doc = "`InitializeDelegateData()` overload"]
     fn initialize_delegate_data(self) -> () {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Delegate_unity2_raw::initialize_delegate_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Delegate_unity2_raw::initialize_delegate_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DynamicInvokeImpl(::unity2::Array<crate::system::object::Object>)` overload"]
-    fn dynamic_invoke_impl(
-        self,
-        args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
-    ) -> crate::system::object::Object {
+    fn dynamic_invoke_impl(self, args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Delegate_unity2_raw::dynamic_invoke_impl(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Delegate_unity2_raw::dynamic_invoke_impl(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
     #[doc = "`Clone()` overload"]
     fn clone(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Delegate_unity2_raw::clone(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Delegate_unity2_raw::equals(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Delegate_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`GetHashCode()` overload"]
     fn get_hash_code(self) -> i32 {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Delegate_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMethodImpl()` overload"]
     fn get_method_impl(self) -> crate::system::reflection::methodinfo::MethodInfo {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Delegate_unity2_raw::get_method_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetInvocationList()` overload"]
     fn get_invocation_list(self) -> ::unity2::Array<crate::system::delegate::Delegate> {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Delegate_unity2_raw::get_invocation_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CombineImpl(crate::system::delegate::Delegate)` overload"]
-    fn combine_impl(
-        self,
-        d: impl ::core::convert::Into<crate::system::delegate::Delegate>,
-    ) -> crate::system::delegate::Delegate {
+    fn combine_impl(self, d: impl ::core::convert::Into<crate::system::delegate::Delegate>) -> crate::system::delegate::Delegate {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Delegate_unity2_raw::combine_impl(
-                __receiver,
-                ::core::convert::Into::into(d),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Delegate_unity2_raw::combine_impl(__receiver, ::core::convert::Into::into(d), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveImpl(crate::system::delegate::Delegate)` overload"]
-    fn remove_impl(
-        self,
-        d: impl ::core::convert::Into<crate::system::delegate::Delegate>,
-    ) -> crate::system::delegate::Delegate {
+    fn remove_impl(self, d: impl ::core::convert::Into<crate::system::delegate::Delegate>) -> crate::system::delegate::Delegate {
         unsafe {
-            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Delegate_unity2_raw::remove_impl(
-                __receiver,
-                ::core::convert::Into::into(d),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Delegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Delegate_unity2_raw::remove_impl(__receiver, ::core::convert::Into::into(d), ::core::option::Option::None)
         }
     }
 }
@@ -2348,9 +1836,7 @@ impl<__T: IDelegate> IDelegateMethods for __T {}
 #[cfg(feature = "system-delegate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Delegate;
-    pub use super::IDelegate;
-    pub use super::IDelegateMethods;
+    pub use super::{Delegate, IDelegate, IDelegateMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

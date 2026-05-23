@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-procscenesequence_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenesequence_1/ProcSceneSequence_1.md"))]
     #[::unity2::class(namespace = "App", name = "ProcSceneSequence`1")]
@@ -33,16 +37,11 @@ impl<T0: ::unity2::ClassIdentity> ProcSceneSequence_1<T0> {
 
     #[doc = "`get_SceneMode()` overload"]
     #[method(name = "get_SceneMode", args = 0)]
-    pub fn get_scene_mode(
-        self,
-    ) -> crate::unity_engine::scene_management::loadscenemode::LoadSceneMode;
+    pub fn get_scene_mode(self) -> crate::unity_engine::scene_management::loadscenemode::LoadSceneMode;
 
     #[doc = "`set_SceneMode(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
     #[method(name = "set_SceneMode", args = 1)]
-    pub fn set_scene_mode(
-        self,
-        value: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-    ) -> ();
+    pub fn set_scene_mode(self, value: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode) -> ();
 
     #[doc = "`LoadScene()` overload"]
     #[method(name = "LoadScene", args = 0)]
@@ -50,11 +49,7 @@ impl<T0: ::unity2::ClassIdentity> ProcSceneSequence_1<T0> {
 
     #[doc = "`LoadScene(::unity2::Il2CppString, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)` overload"]
     #[method(name = "LoadScene", args = 2)]
-    pub fn load_scene_2(
-        self,
-        name: ::unity2::Il2CppString,
-        mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-    ) -> ();
+    pub fn load_scene_2(self, name: ::unity2::Il2CppString, mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode) -> ();
 
     #[doc = "`UnloadScene()` overload"]
     #[method(name = "UnloadScene", args = 0)]
@@ -100,16 +95,15 @@ impl<T0: ::unity2::ClassIdentity> ProcSceneSequence_1<T0> {
 #[cfg(feature = "app-procscenesequence_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProcSceneSequence_1;
-    pub use super::IProcSceneSequence_1Methods;
-    pub use super::ProcSceneSequence_1;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{IProcSceneSequence_1, IProcSceneSequence_1Methods, ProcSceneSequence_1};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::object::IObject,
+    };
 }

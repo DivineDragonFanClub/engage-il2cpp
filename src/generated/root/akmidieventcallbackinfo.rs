@@ -2,12 +2,16 @@
 
 #[cfg(feature = "root-akmidieventcallbackinfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::root::akcallbackinfo::{AkCallbackInfo, IAkCallbackInfo};
-    use crate::root::akeventcallbackinfo::{AkEventCallbackInfo, IAkEventCallbackInfo};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        root::{
+            akcallbackinfo::{AkCallbackInfo, IAkCallbackInfo},
+            akeventcallbackinfo::{AkEventCallbackInfo, IAkEventCallbackInfo},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidieventcallbackinfo/AkMIDIEventCallbackInfo.md"))]
     #[::unity2::class(namespace = "", name = "AkMIDIEventCallbackInfo")]
@@ -30,13 +34,9 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -48,18 +48,15 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -68,26 +65,17 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         c_memory_own: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkMIDIEventCallbackInfo,
-            ::unity2::IntPtr,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, c_ptr, c_memory_own, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akmidieventcallbackinfo :: AkMIDIEventCallbackInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
                 "getCPtr",
@@ -99,43 +87,31 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "getCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "getCPtr",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_ptr(
         obj: crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_ptr::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_get_c_ptr::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
                 "setCPtr",
@@ -147,43 +123,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "setCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "setCPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_c_ptr(
-        this: AkMIDIEventCallbackInfo,
-        c_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkMIDIEventCallbackInfo,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_c_ptr::get_offset() as isize),
-        );
+    pub unsafe fn set_c_ptr(this: AkMIDIEventCallbackInfo, c_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_c_ptr::get_method_info().method_ptr);
         inner(this, c_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -196,39 +156,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -241,39 +189,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_chan {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -286,39 +222,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byChan",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byChan",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_chan(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_chan(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_chan::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_chan::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_param1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -331,39 +255,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byParam1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byParam1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_param1(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_param1(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_param1::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_param1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_param2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -376,39 +288,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byParam2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byParam2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_param2(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_param2(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_param2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_param2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -421,41 +321,30 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_by_type(
         this: AkMIDIEventCallbackInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akmidieventtypes::AkMIDIEventTypes {
-        let inner: extern "C" fn(
-            AkMIDIEventCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::akmidieventtypes::AkMIDIEventTypes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_by_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> crate::root::akmidieventtypes::AkMIDIEventTypes =
+            ::core::mem::transmute(__lookup_get_by_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_on_off_note {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -468,39 +357,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byOnOffNote",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byOnOffNote",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_on_off_note(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_on_off_note(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_on_off_note::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_on_off_note::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_velocity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -513,39 +390,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byVelocity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byVelocity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_velocity(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_velocity(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_velocity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_velocity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_cc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -558,41 +423,30 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byCc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byCc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_by_cc(
         this: AkMIDIEventCallbackInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akmidicctypes::AkMIDICcTypes {
-        let inner: extern "C" fn(
-            AkMIDIEventCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::akmidicctypes::AkMIDICcTypes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_by_cc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> crate::root::akmidicctypes::AkMIDICcTypes =
+            ::core::mem::transmute(__lookup_get_by_cc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_cc_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -605,39 +459,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byCcValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byCcValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_cc_value(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_cc_value(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_cc_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_cc_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_value_lsb {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -650,39 +492,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byValueLsb",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byValueLsb",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_value_lsb(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_value_lsb(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_value_lsb::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_value_lsb::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_value_msb {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -695,39 +525,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byValueMsb",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byValueMsb",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_value_msb(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_value_msb(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_value_msb::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_value_msb::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_aftertouch_note {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -740,39 +558,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byAftertouchNote",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byAftertouchNote",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_aftertouch_note(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_aftertouch_note(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_aftertouch_note::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_aftertouch_note::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_note_aftertouch_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -785,39 +591,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byNoteAftertouchValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byNoteAftertouchValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_note_aftertouch_value(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_note_aftertouch_value(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_note_aftertouch_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_note_aftertouch_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_chan_aftertouch_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -830,39 +624,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byChanAftertouchValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byChanAftertouchValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_chan_aftertouch_value(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_chan_aftertouch_value(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_chan_aftertouch_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_chan_aftertouch_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_by_program_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -875,39 +657,27 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_byProgramNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_byProgramNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_by_program_num(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_by_program_num(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_by_program_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_by_program_num::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::class(),
@@ -920,30 +690,20 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIEventCallbackInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: AkMIDIEventCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: AkMIDIEventCallbackInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMIDIEventCallbackInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -951,31 +711,18 @@ mod __AkMIDIEventCallbackInfo_unity2_raw {
 #[cfg(feature = "root-akmidieventcallbackinfo")]
 impl AkMIDIEventCallbackInfo {
     #[doc = "`getCPtr(crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo)` overload"]
-    pub fn get_c_ptr(
-        obj: impl ::core::convert::Into<crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __AkMIDIEventCallbackInfo_unity2_raw::get_c_ptr(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_c_ptr(obj: impl ::core::convert::Into<crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo>) -> ::unity2::IntPtr {
+        unsafe { __AkMIDIEventCallbackInfo_unity2_raw::get_c_ptr(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "root-akmidieventcallbackinfo")]
 pub trait IAkMIDIEventCallbackInfoMethods: IAkMIDIEventCallbackInfo {
     #[doc = "`.ctor(::unity2::IntPtr, bool)` overload"]
-    fn ctor(
-        self,
-        c_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        c_memory_own: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>, c_memory_own: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIEventCallbackInfo_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(c_ptr),
@@ -988,23 +735,15 @@ pub trait IAkMIDIEventCallbackInfoMethods: IAkMIDIEventCallbackInfo {
     fn set_c_ptr(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::set_c_ptr(
-                __receiver,
-                ::core::convert::Into::into(c_ptr),
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIEventCallbackInfo_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
@@ -1012,9 +751,7 @@ pub trait IAkMIDIEventCallbackInfoMethods: IAkMIDIEventCallbackInfo {
     fn dispose(self) -> () {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIEventCallbackInfo_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
@@ -1022,191 +759,119 @@ pub trait IAkMIDIEventCallbackInfoMethods: IAkMIDIEventCallbackInfo {
     fn get_by_chan(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_chan(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_chan(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byParam1()` overload"]
     fn get_by_param1(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_param1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_param1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byParam2()` overload"]
     fn get_by_param2(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_param2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_param2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byType()` overload"]
     fn get_by_type(self) -> crate::root::akmidieventtypes::AkMIDIEventTypes {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byOnOffNote()` overload"]
     fn get_by_on_off_note(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_on_off_note(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_on_off_note(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byVelocity()` overload"]
     fn get_by_velocity(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_velocity(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_velocity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byCc()` overload"]
     fn get_by_cc(self) -> crate::root::akmidicctypes::AkMIDICcTypes {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_cc(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_cc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byCcValue()` overload"]
     fn get_by_cc_value(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_cc_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_cc_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byValueLsb()` overload"]
     fn get_by_value_lsb(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_value_lsb(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_value_lsb(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byValueMsb()` overload"]
     fn get_by_value_msb(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_value_msb(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_value_msb(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byAftertouchNote()` overload"]
     fn get_by_aftertouch_note(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_aftertouch_note(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_aftertouch_note(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byNoteAftertouchValue()` overload"]
     fn get_by_note_aftertouch_value(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_note_aftertouch_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_note_aftertouch_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byChanAftertouchValue()` overload"]
     fn get_by_chan_aftertouch_value(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_chan_aftertouch_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_chan_aftertouch_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_byProgramNum()` overload"]
     fn get_by_program_num(self) -> u8 {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkMIDIEventCallbackInfo_unity2_raw::get_by_program_num(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIEventCallbackInfo_unity2_raw::get_by_program_num(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor_2(self) -> () {
         unsafe {
             let __receiver =
-                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkMIDIEventCallbackInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIEventCallbackInfo_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
         }
     }
@@ -1247,16 +912,15 @@ impl AkMIDIEventCallbackInfo {
 #[cfg(feature = "root-akmidieventcallbackinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkMIDIEventCallbackInfo;
-    pub use super::IAkMIDIEventCallbackInfo;
-    pub use super::IAkMIDIEventCallbackInfoMethods;
-    pub use crate::root::akcallbackinfo::IAkCallbackInfo;
+    pub use super::{AkMIDIEventCallbackInfo, IAkMIDIEventCallbackInfo, IAkMIDIEventCallbackInfoMethods};
     #[cfg(feature = "root-akcallbackinfo")]
     pub use crate::root::akcallbackinfo::IAkCallbackInfoMethods;
-    pub use crate::root::akeventcallbackinfo::IAkEventCallbackInfo;
     #[cfg(feature = "root-akeventcallbackinfo")]
     pub use crate::root::akeventcallbackinfo::IAkEventCallbackInfoMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        root::{akcallbackinfo::IAkCallbackInfo, akeventcallbackinfo::IAkEventCallbackInfo},
+        system::object::IObject,
+    };
 }

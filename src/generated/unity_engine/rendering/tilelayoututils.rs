@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-tilelayoututils-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/tilelayoututils/TileLayoutUtils.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "TileLayoutUtils")]
@@ -25,9 +25,7 @@ mod __TileLayoutUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_try_layout_by_tiles {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -47,18 +45,15 @@ mod __TileLayoutUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
-                    "TryLayoutByTiles",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
+                        "TryLayoutByTiles",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_layout_by_tiles(
@@ -78,28 +73,14 @@ mod __TileLayoutUtils_unity2_raw {
             *mut crate::unity_engine::rectint::RectInt,
             *mut crate::unity_engine::rectint::RectInt,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_layout_by_tiles::get_offset() as isize),
-        );
-        inner(
-            src,
-            tile_size,
-            main,
-            top_row,
-            right_col,
-            top_right,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_try_layout_by_tiles::get_method_info().method_ptr);
+        inner(src, tile_size, main, top_row, right_col, top_right, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_layout_by_row {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -117,18 +98,15 @@ mod __TileLayoutUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
-                    "TryLayoutByRow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
+                        "TryLayoutByRow",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_layout_by_row(
@@ -144,20 +122,14 @@ mod __TileLayoutUtils_unity2_raw {
             *mut crate::unity_engine::rectint::RectInt,
             *mut crate::unity_engine::rectint::RectInt,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_layout_by_row::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_try_layout_by_row::get_method_info().method_ptr);
         inner(src, tile_size, main, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_layout_by_col {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -175,18 +147,15 @@ mod __TileLayoutUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
-                    "TryLayoutByCol",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TileLayoutUtils as ::unity2::ClassIdentity>::NAME,
+                        "TryLayoutByCol",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_layout_by_col(
@@ -202,11 +171,7 @@ mod __TileLayoutUtils_unity2_raw {
             *mut crate::unity_engine::rectint::RectInt,
             *mut crate::unity_engine::rectint::RectInt,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_layout_by_col::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_try_layout_by_col::get_method_info().method_ptr);
         inner(src, tile_size, main, other, __unity2_method_info)
     }
 }
@@ -225,14 +190,10 @@ impl TileLayoutUtils {
         crate::unity_engine::rectint::RectInt,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
             let __ret = {
                 __TileLayoutUtils_unity2_raw::try_layout_by_tiles(
                     ::core::convert::Into::into(src),
@@ -253,20 +214,15 @@ impl TileLayoutUtils {
             )
         }
     }
+
     #[doc = "`TryLayoutByRow(crate::unity_engine::rectint::RectInt, u32, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt)` overload"]
     pub fn try_layout_by_row(
         src: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
         tile_size: impl ::core::convert::Into<u32>,
-    ) -> (
-        bool,
-        crate::unity_engine::rectint::RectInt,
-        crate::unity_engine::rectint::RectInt,
-    ) {
+    ) -> (bool, crate::unity_engine::rectint::RectInt, crate::unity_engine::rectint::RectInt) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
             let __ret = {
                 __TileLayoutUtils_unity2_raw::try_layout_by_row(
                     ::core::convert::Into::into(src),
@@ -279,20 +235,15 @@ impl TileLayoutUtils {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`TryLayoutByCol(crate::unity_engine::rectint::RectInt, u32, *mutcrate::unity_engine::rectint::RectInt, *mutcrate::unity_engine::rectint::RectInt)` overload"]
     pub fn try_layout_by_col(
         src: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
         tile_size: impl ::core::convert::Into<u32>,
-    ) -> (
-        bool,
-        crate::unity_engine::rectint::RectInt,
-        crate::unity_engine::rectint::RectInt,
-    ) {
+    ) -> (bool, crate::unity_engine::rectint::RectInt, crate::unity_engine::rectint::RectInt) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
             let __ret = {
                 __TileLayoutUtils_unity2_raw::try_layout_by_col(
                     ::core::convert::Into::into(src),
@@ -310,8 +261,7 @@ impl TileLayoutUtils {
 #[cfg(feature = "unity_engine-rendering-tilelayoututils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITileLayoutUtils;
-    pub use super::TileLayoutUtils;
+    pub use super::{ITileLayoutUtils, TileLayoutUtils};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

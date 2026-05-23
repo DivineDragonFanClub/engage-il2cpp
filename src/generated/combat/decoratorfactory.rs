@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-decoratorfactory-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/decoratorfactory/DecoratorFactory.md"))]
     #[::unity2::class(namespace = "Combat", name = "DecoratorFactory")]
@@ -25,9 +25,7 @@ mod __DecoratorFactory_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_decorators {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::combat::decoratorargs::DecoratorArgs as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -41,32 +39,23 @@ mod __DecoratorFactory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DecoratorFactory as ::unity2::ClassIdentity>::NAME,
-                    "CreateDecorators",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DecoratorFactory as ::unity2::ClassIdentity>::NAME,
+                        "CreateDecorators",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_decorators(
         arg: crate::combat::decoratorargs::DecoratorArgs,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::decorators::Decorators {
-        let inner: extern "C" fn(
-            crate::combat::decoratorargs::DecoratorArgs,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::decorators::Decorators = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_decorators::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::decoratorargs::DecoratorArgs, ::unity2::OptionalMethod) -> crate::combat::decorators::Decorators =
+            ::core::mem::transmute(__lookup_create_decorators::get_method_info().method_ptr);
         inner(arg, __unity2_method_info)
     }
 }
@@ -74,23 +63,15 @@ mod __DecoratorFactory_unity2_raw {
 #[cfg(feature = "combat-decoratorfactory")]
 impl DecoratorFactory {
     #[doc = "`CreateDecorators(crate::combat::decoratorargs::DecoratorArgs)` overload"]
-    pub fn create_decorators(
-        arg: impl ::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>,
-    ) -> crate::combat::decorators::Decorators {
-        unsafe {
-            __DecoratorFactory_unity2_raw::create_decorators(
-                ::core::convert::Into::into(arg),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_decorators(arg: impl ::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>) -> crate::combat::decorators::Decorators {
+        unsafe { __DecoratorFactory_unity2_raw::create_decorators(::core::convert::Into::into(arg), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "combat-decoratorfactory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DecoratorFactory;
-    pub use super::IDecoratorFactory;
+    pub use super::{DecoratorFactory, IDecoratorFactory};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

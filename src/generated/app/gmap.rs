@@ -4,21 +4,16 @@
 pub mod enterchapteryesnodialog;
 #[cfg(feature = "app-gmap-enterchapteryesnodialog-types")]
 pub use enterchapteryesnodialog::{
-    EnterChapterYesNoDialog, EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes,
-    EnterChapterYesNoDialog_EnterChapterDialogMainItemNo,
-    EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
-    EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes, EnterChapterYesNoDialog_Type,
-    IEnterChapterYesNoDialog, IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYes,
-    IEnterChapterYesNoDialog_EnterChapterDialogMainItemNo,
-    IEnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
+    EnterChapterYesNoDialog, EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes, EnterChapterYesNoDialog_EnterChapterDialogMainItemNo,
+    EnterChapterYesNoDialog_EnterChapterDialogMainItemYes, EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes,
+    EnterChapterYesNoDialog_Type, IEnterChapterYesNoDialog, IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYes,
+    IEnterChapterYesNoDialog_EnterChapterDialogMainItemNo, IEnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
     IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes,
 };
 #[cfg(feature = "app-gmap-enterchapteryesnodialog")]
 pub use enterchapteryesnodialog::{
-    IEnterChapterYesNoDialogMethods,
-    IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods,
-    IEnterChapterYesNoDialog_EnterChapterDialogMainItemNoMethods,
-    IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods,
+    IEnterChapterYesNoDialogMethods, IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods,
+    IEnterChapterYesNoDialog_EnterChapterDialogMainItemNoMethods, IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods,
     IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods,
 };
 #[cfg(any(feature = "app-gmap-gmappathcollection-types"))]
@@ -31,27 +26,22 @@ pub use gmappathcollection::{GmapPathCollection, IGmapPathCollection};
 pub mod gotosolanelconfirmdialog;
 #[cfg(feature = "app-gmap-gotosolanelconfirmdialog-types")]
 pub use gotosolanelconfirmdialog::{
-    GoToSolanelConfirmDialog, GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
-    GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes, IGoToSolanelConfirmDialog,
-    IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo,
-    IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes,
+    GoToSolanelConfirmDialog, GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo, GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes,
+    IGoToSolanelConfirmDialog, IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo, IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes,
 };
 #[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
 pub use gotosolanelconfirmdialog::{
-    IGoToSolanelConfirmDialogMethods,
-    IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods,
+    IGoToSolanelConfirmDialogMethods, IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods,
     IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYesMethods,
 };
 #[cfg(any(feature = "app-gmap-gotosolanelordlcgmapdialog-types"))]
 pub mod gotosolanelordlcgmapdialog;
 #[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog-types")]
 pub use gotosolanelordlcgmapdialog::{
-    GoToSolanelOrDlcGmapDialog, GoToSolanelOrDlcGmapDialog_DialogGmapItem,
-    GoToSolanelOrDlcGmapDialog_DialogItem, IGoToSolanelOrDlcGmapDialog,
+    GoToSolanelOrDlcGmapDialog, GoToSolanelOrDlcGmapDialog_DialogGmapItem, GoToSolanelOrDlcGmapDialog_DialogItem, IGoToSolanelOrDlcGmapDialog,
     IGoToSolanelOrDlcGmapDialog_DialogGmapItem, IGoToSolanelOrDlcGmapDialog_DialogItem,
 };
 #[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
 pub use gotosolanelordlcgmapdialog::{
-    IGoToSolanelOrDlcGmapDialogMethods, IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods,
-    IGoToSolanelOrDlcGmapDialog_DialogItemMethods,
+    IGoToSolanelOrDlcGmapDialogMethods, IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods, IGoToSolanelOrDlcGmapDialog_DialogItemMethods,
 };

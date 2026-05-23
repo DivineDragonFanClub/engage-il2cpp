@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-integratedsubsystem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/integratedsubsystem/IntegratedSubsystem.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "IntegratedSubsystem")]
@@ -14,8 +14,7 @@ mod __types {
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
         #[rename(name = "m_SubsystemDescriptor")]
-        pub m_subsystem_descriptor:
-            crate::unity_engine::isubsystemdescriptor_interface::ISubsystemDescriptor_Interface,
+        pub m_subsystem_descriptor: crate::unity_engine::isubsystemdescriptor_interface::ISubsystemDescriptor_Interface,
     }
 }
 
@@ -31,10 +30,9 @@ mod __IntegratedSubsystem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: integratedsubsystem :: IntegratedSubsystem as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::integratedsubsystem::IntegratedSubsystem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IntegratedSubsystem as ::unity2::ClassIdentity>::class(),
                 "SetHandle",
@@ -46,18 +44,15 @@ mod __IntegratedSubsystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
-                    "SetHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
+                        "SetHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_handle(
@@ -65,24 +60,15 @@ mod __IntegratedSubsystem_unity2_raw {
         subsystem: crate::unity_engine::integratedsubsystem::IntegratedSubsystem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            IntegratedSubsystem,
-            crate::unity_engine::integratedsubsystem::IntegratedSubsystem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_handle::get_offset() as isize),
-        );
+        let inner: extern "C" fn(IntegratedSubsystem, crate::unity_engine::integratedsubsystem::IntegratedSubsystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_handle::get_method_info().method_ptr);
         inner(this, subsystem, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_running {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IntegratedSubsystem as ::unity2::ClassIdentity>::class(),
@@ -95,39 +81,27 @@ mod __IntegratedSubsystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
-                    "get_running",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
+                        "get_running",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_running(
-        this: IntegratedSubsystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_running(this: IntegratedSubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(IntegratedSubsystem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_running::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_running::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IntegratedSubsystem as ::unity2::ClassIdentity>::class(),
@@ -140,39 +114,27 @@ mod __IntegratedSubsystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
-                    "get_valid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
+                        "get_valid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_valid(
-        this: IntegratedSubsystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_valid(this: IntegratedSubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(IntegratedSubsystem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_running {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IntegratedSubsystem as ::unity2::ClassIdentity>::class(),
@@ -185,39 +147,27 @@ mod __IntegratedSubsystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
-                    "IsRunning",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
+                        "IsRunning",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_running(
-        this: IntegratedSubsystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_running(this: IntegratedSubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(IntegratedSubsystem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_running::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_running::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IntegratedSubsystem as ::unity2::ClassIdentity>::class(),
@@ -230,30 +180,20 @@ mod __IntegratedSubsystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IntegratedSubsystem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: IntegratedSubsystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: IntegratedSubsystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(IntegratedSubsystem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -261,56 +201,37 @@ mod __IntegratedSubsystem_unity2_raw {
 #[cfg(feature = "unity_engine-integratedsubsystem")]
 pub trait IIntegratedSubsystemMethods: IIntegratedSubsystem {
     #[doc = "`SetHandle(crate::unity_engine::integratedsubsystem::IntegratedSubsystem)` overload"]
-    fn set_handle(
-        self,
-        subsystem: impl ::core::convert::Into<
-            crate::unity_engine::integratedsubsystem::IntegratedSubsystem,
-        >,
-    ) -> () {
+    fn set_handle(self, subsystem: impl ::core::convert::Into<crate::unity_engine::integratedsubsystem::IntegratedSubsystem>) -> () {
         unsafe {
-            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IntegratedSubsystem_unity2_raw::set_handle(
-                __receiver,
-                ::core::convert::Into::into(subsystem),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IntegratedSubsystem_unity2_raw::set_handle(__receiver, ::core::convert::Into::into(subsystem), ::core::option::Option::None)
         }
     }
     #[doc = "`get_running()` overload"]
     fn get_running(self) -> bool {
         unsafe {
-            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IntegratedSubsystem_unity2_raw::get_running(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_valid()` overload"]
     fn get_valid(self) -> bool {
         unsafe {
-            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IntegratedSubsystem_unity2_raw::get_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsRunning()` overload"]
     fn is_running(self) -> bool {
         unsafe {
-            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IntegratedSubsystem_unity2_raw::is_running(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IntegratedSubsystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IntegratedSubsystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -338,9 +259,7 @@ impl IntegratedSubsystem {
 #[cfg(feature = "unity_engine-integratedsubsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIntegratedSubsystem;
-    pub use super::IIntegratedSubsystemMethods;
-    pub use super::IntegratedSubsystem;
+    pub use super::{IIntegratedSubsystem, IIntegratedSubsystemMethods, IntegratedSubsystem};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

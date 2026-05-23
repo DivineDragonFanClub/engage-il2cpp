@@ -2,14 +2,18 @@
 
 #[cfg(feature = "app-hubcullingplayercollider-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubcullingplayercollider/HubCullingPlayerCollider.md"))]
     #[::unity2::class(namespace = "App", name = "HubCullingPlayerCollider")]
@@ -19,13 +23,9 @@ mod __types {
         #[rename(name = "kHubCullingTag")]
         pub k_hub_culling_tag: ::unity2::Il2CppString,
         #[rename(name = "m_EnterColliders")]
-        pub m_enter_colliders: crate::system::collections::generic::queue_1::Queue_1<
-            crate::unity_engine::collider::Collider,
-        >,
+        pub m_enter_colliders: crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::collider::Collider>,
         #[rename(name = "m_ExitColliders")]
-        pub m_exit_colliders: crate::system::collections::generic::queue_1::Queue_1<
-            crate::unity_engine::collider::Collider,
-        >,
+        pub m_exit_colliders: crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::collider::Collider>,
     }
 }
 
@@ -41,9 +41,7 @@ mod __HubCullingPlayerCollider_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_manual_culling_manager {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -56,44 +54,32 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "get_ManualCullingManager",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "get_ManualCullingManager",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_manual_culling_manager(
         this: HubCullingPlayerCollider,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::hubmanualcullingmanager::HubManualCullingManager {
-        let inner: extern "C" fn(
-            HubCullingPlayerCollider,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::hubmanualcullingmanager::HubManualCullingManager =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_manual_culling_manager::get_offset() as isize),
-            );
+        let inner: extern "C" fn(HubCullingPlayerCollider, ::unity2::OptionalMethod) -> crate::app::hubmanualcullingmanager::HubManualCullingManager =
+            ::core::mem::transmute(__lookup_get_manual_culling_manager::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_manual_culling_manager {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubmanualcullingmanager :: HubManualCullingManager as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubmanualcullingmanager::HubManualCullingManager as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
                 "set_ManualCullingManager",
@@ -105,18 +91,15 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "set_ManualCullingManager",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "set_ManualCullingManager",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_manual_culling_manager(
@@ -128,20 +111,14 @@ mod __HubCullingPlayerCollider_unity2_raw {
             HubCullingPlayerCollider,
             crate::app::hubmanualcullingmanager::HubManualCullingManager,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_manual_culling_manager::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_manual_culling_manager::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -154,41 +131,28 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: HubCullingPlayerCollider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: HubCullingPlayerCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubCullingPlayerCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_trigger_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
                 "OnTriggerEnter",
@@ -200,18 +164,15 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "OnTriggerEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "OnTriggerEnter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_trigger_enter(
@@ -219,26 +180,16 @@ mod __HubCullingPlayerCollider_unity2_raw {
         other: crate::unity_engine::collider::Collider,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubCullingPlayerCollider,
-            crate::unity_engine::collider::Collider,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_trigger_enter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubCullingPlayerCollider, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_trigger_enter::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_call_trigger_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
                 "CallTriggerEnter",
@@ -250,18 +201,15 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "CallTriggerEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "CallTriggerEnter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn call_trigger_enter(
@@ -269,26 +217,16 @@ mod __HubCullingPlayerCollider_unity2_raw {
         other: crate::unity_engine::collider::Collider,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubCullingPlayerCollider,
-            crate::unity_engine::collider::Collider,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_call_trigger_enter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubCullingPlayerCollider, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_call_trigger_enter::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_trigger_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
                 "OnTriggerExit",
@@ -300,18 +238,15 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "OnTriggerExit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "OnTriggerExit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_trigger_exit(
@@ -319,26 +254,16 @@ mod __HubCullingPlayerCollider_unity2_raw {
         other: crate::unity_engine::collider::Collider,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubCullingPlayerCollider,
-            crate::unity_engine::collider::Collider,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_trigger_exit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubCullingPlayerCollider, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_trigger_exit::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_call_trigger_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
                 "CallTriggerExit",
@@ -350,18 +275,15 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "CallTriggerExit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "CallTriggerExit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn call_trigger_exit(
@@ -369,24 +291,15 @@ mod __HubCullingPlayerCollider_unity2_raw {
         other: crate::unity_engine::collider::Collider,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubCullingPlayerCollider,
-            crate::unity_engine::collider::Collider,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_call_trigger_exit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubCullingPlayerCollider, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_call_trigger_exit::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -399,39 +312,27 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: HubCullingPlayerCollider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: HubCullingPlayerCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubCullingPlayerCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_polling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -444,39 +345,27 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "Polling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "Polling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn polling(
-        this: HubCullingPlayerCollider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn polling(this: HubCullingPlayerCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubCullingPlayerCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_polling::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_polling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -489,39 +378,27 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "DisableCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "DisableCulling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_culling(
-        this: HubCullingPlayerCollider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_culling(this: HubCullingPlayerCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubCullingPlayerCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_culling::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_culling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -534,39 +411,27 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "EnableCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "EnableCulling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_culling(
-        this: HubCullingPlayerCollider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enable_culling(this: HubCullingPlayerCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubCullingPlayerCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_culling::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enable_culling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -579,39 +444,27 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    "ClearCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        "ClearCulling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_culling(
-        this: HubCullingPlayerCollider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_culling(this: HubCullingPlayerCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubCullingPlayerCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_culling::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_culling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -624,39 +477,27 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubCullingPlayerCollider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: HubCullingPlayerCollider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubCullingPlayerCollider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubCullingPlayerCollider as ::unity2::ClassIdentity>::class(),
@@ -669,26 +510,19 @@ mod __HubCullingPlayerCollider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubCullingPlayerCollider as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -704,30 +538,18 @@ impl HubCullingPlayerCollider {
 #[cfg(feature = "app-hubcullingplayercollider")]
 pub trait IHubCullingPlayerColliderMethods: IHubCullingPlayerCollider {
     #[doc = "`get_ManualCullingManager()` overload"]
-    fn get_manual_culling_manager(
-        self,
-    ) -> crate::app::hubmanualcullingmanager::HubManualCullingManager {
+    fn get_manual_culling_manager(self) -> crate::app::hubmanualcullingmanager::HubManualCullingManager {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubCullingPlayerCollider_unity2_raw::get_manual_culling_manager(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubCullingPlayerCollider_unity2_raw::get_manual_culling_manager(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ManualCullingManager(crate::app::hubmanualcullingmanager::HubManualCullingManager)` overload"]
-    fn set_manual_culling_manager(
-        self,
-        value: impl ::core::convert::Into<crate::app::hubmanualcullingmanager::HubManualCullingManager>,
-    ) -> () {
+    fn set_manual_culling_manager(self, value: impl ::core::convert::Into<crate::app::hubmanualcullingmanager::HubManualCullingManager>) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubCullingPlayerCollider_unity2_raw::set_manual_culling_manager(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -739,87 +561,47 @@ pub trait IHubCullingPlayerColliderMethods: IHubCullingPlayerCollider {
     fn start(self) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubCullingPlayerCollider_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]
-    fn on_trigger_enter(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>,
-    ) -> () {
+    fn on_trigger_enter(self, other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubCullingPlayerCollider_unity2_raw::on_trigger_enter(
-                __receiver,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubCullingPlayerCollider_unity2_raw::on_trigger_enter(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
         }
     }
     #[doc = "`CallTriggerEnter(crate::unity_engine::collider::Collider)` overload"]
-    fn call_trigger_enter(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>,
-    ) -> () {
+    fn call_trigger_enter(self, other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubCullingPlayerCollider_unity2_raw::call_trigger_enter(
-                __receiver,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubCullingPlayerCollider_unity2_raw::call_trigger_enter(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
         }
     }
     #[doc = "`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"]
-    fn on_trigger_exit(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>,
-    ) -> () {
+    fn on_trigger_exit(self, other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubCullingPlayerCollider_unity2_raw::on_trigger_exit(
-                __receiver,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubCullingPlayerCollider_unity2_raw::on_trigger_exit(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
         }
     }
     #[doc = "`CallTriggerExit(crate::unity_engine::collider::Collider)` overload"]
-    fn call_trigger_exit(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>,
-    ) -> () {
+    fn call_trigger_exit(self, other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubCullingPlayerCollider_unity2_raw::call_trigger_exit(
-                __receiver,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubCullingPlayerCollider_unity2_raw::call_trigger_exit(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubCullingPlayerCollider_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
@@ -827,9 +609,7 @@ pub trait IHubCullingPlayerColliderMethods: IHubCullingPlayerCollider {
     fn polling(self) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubCullingPlayerCollider_unity2_raw::polling(__receiver, ::core::option::Option::None)
         }
     }
@@ -837,48 +617,31 @@ pub trait IHubCullingPlayerColliderMethods: IHubCullingPlayerCollider {
     fn disable_culling(self) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubCullingPlayerCollider_unity2_raw::disable_culling(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubCullingPlayerCollider_unity2_raw::disable_culling(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EnableCulling()` overload"]
     fn enable_culling(self) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubCullingPlayerCollider_unity2_raw::enable_culling(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubCullingPlayerCollider_unity2_raw::enable_culling(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClearCulling()` overload"]
     fn clear_culling(self) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubCullingPlayerCollider_unity2_raw::clear_culling(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubCullingPlayerCollider_unity2_raw::clear_culling(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubCullingPlayerCollider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubCullingPlayerCollider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -906,22 +669,19 @@ impl HubCullingPlayerCollider {
 #[cfg(feature = "app-hubcullingplayercollider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubCullingPlayerCollider;
-    pub use super::IHubCullingPlayerCollider;
-    pub use super::IHubCullingPlayerColliderMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{HubCullingPlayerCollider, IHubCullingPlayerCollider, IHubCullingPlayerColliderMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

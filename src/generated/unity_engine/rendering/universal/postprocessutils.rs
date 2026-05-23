@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessutils-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils_ShaderConstants.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "PostProcessUtils.ShaderConstants"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "PostProcessUtils.ShaderConstants")]
     #[parent(crate::system::object::Object)]
     pub struct PostProcessUtils_ShaderConstants {
         #[static_field]
@@ -35,10 +32,7 @@ mod __types {
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "PostProcessUtils"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "PostProcessUtils")]
     #[parent(crate::system::object::Object)]
     pub struct PostProcessUtils {}
 }
@@ -55,9 +49,7 @@ mod __PostProcessUtils_ShaderConstants_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessUtils_ShaderConstants as ::unity2::ClassIdentity>::class(),
@@ -70,26 +62,19 @@ mod __PostProcessUtils_ShaderConstants_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PostProcessUtils_ShaderConstants as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PostProcessUtils_ShaderConstants as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -98,9 +83,7 @@ mod __PostProcessUtils_ShaderConstants_unity2_raw {
 impl PostProcessUtils_ShaderConstants {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
-        unsafe {
-            __PostProcessUtils_ShaderConstants_unity2_raw::cctor(::core::option::Option::None)
-        }
+        unsafe { __PostProcessUtils_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
     }
 }
 
@@ -113,10 +96,13 @@ mod __PostProcessUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_configure_dithering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::postprocessdata::PostProcessData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessUtils as ::unity2::ClassIdentity>::class(),
                 "ConfigureDithering",
@@ -128,18 +114,15 @@ mod __PostProcessUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
-                    "ConfigureDithering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
+                        "ConfigureDithering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure_dithering(
@@ -155,21 +138,21 @@ mod __PostProcessUtils_unity2_raw {
             crate::unity_engine::camera::Camera,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure_dithering::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_configure_dithering::get_method_info().method_ptr);
         inner(data, index, camera, material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_configure_dithering_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::postprocessdata::PostProcessData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessUtils as ::unity2::ClassIdentity>::class(),
                 "ConfigureDithering",
@@ -181,18 +164,15 @@ mod __PostProcessUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
-                    "ConfigureDithering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
+                        "ConfigureDithering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure_dithering_2(
@@ -210,28 +190,20 @@ mod __PostProcessUtils_unity2_raw {
             i32,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure_dithering_2::get_offset() as isize),
-        );
-        inner(
-            data,
-            index,
-            camera_pixel_width,
-            camera_pixel_height,
-            material,
-            __unity2_method_info,
-        )
+        ) -> i32 = ::core::mem::transmute(__lookup_configure_dithering_2::get_method_info().method_ptr);
+        inner(data, index, camera_pixel_width, camera_pixel_height, material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_configure_film_grain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: filmgrain :: FilmGrain as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::postprocessdata::PostProcessData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::filmgrain::FilmGrain as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessUtils as ::unity2::ClassIdentity>::class(),
                 "ConfigureFilmGrain",
@@ -243,18 +215,15 @@ mod __PostProcessUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
-                    "ConfigureFilmGrain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
+                        "ConfigureFilmGrain",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure_film_grain(
@@ -270,21 +239,21 @@ mod __PostProcessUtils_unity2_raw {
             crate::unity_engine::camera::Camera,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure_film_grain::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_configure_film_grain::get_method_info().method_ptr);
         inner(data, settings, camera, material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_configure_film_grain_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: filmgrain :: FilmGrain as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::postprocessdata::PostProcessData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::filmgrain::FilmGrain as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessUtils as ::unity2::ClassIdentity>::class(),
                 "ConfigureFilmGrain",
@@ -296,18 +265,15 @@ mod __PostProcessUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
-                    "ConfigureFilmGrain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
+                        "ConfigureFilmGrain",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure_film_grain_2(
@@ -325,28 +291,18 @@ mod __PostProcessUtils_unity2_raw {
             i32,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure_film_grain_2::get_offset() as isize),
-        );
-        inner(
-            data,
-            settings,
-            camera_pixel_width,
-            camera_pixel_height,
-            material,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_configure_film_grain_2::get_method_info().method_ptr);
+        inner(data, settings, camera_pixel_width, camera_pixel_height, material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_source_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessUtils as ::unity2::ClassIdentity>::class(),
                 "SetSourceSize",
@@ -358,18 +314,15 @@ mod __PostProcessUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
-                    "SetSourceSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PostProcessUtils as ::unity2::ClassIdentity>::NAME,
+                        "SetSourceSize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_source_size(
@@ -381,11 +334,7 @@ mod __PostProcessUtils_unity2_raw {
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_source_size::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_source_size::get_method_info().method_ptr);
         inner(cmd, desc, __unity2_method_info)
     }
 }
@@ -394,9 +343,7 @@ mod __PostProcessUtils_unity2_raw {
 impl PostProcessUtils {
     #[doc = "`ConfigureDithering(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, i32, crate::unity_engine::camera::Camera, crate::unity_engine::material::Material)` overload"]
     pub fn configure_dithering(
-        data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-        >,
+        data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::postprocessdata::PostProcessData>,
         index: impl ::core::convert::Into<i32>,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
@@ -411,11 +358,10 @@ impl PostProcessUtils {
             )
         }
     }
+
     #[doc = "`ConfigureDithering(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, i32, i32, i32, crate::unity_engine::material::Material)` overload"]
     pub fn configure_dithering_2(
-        data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-        >,
+        data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::postprocessdata::PostProcessData>,
         index: impl ::core::convert::Into<i32>,
         camera_pixel_width: impl ::core::convert::Into<i32>,
         camera_pixel_height: impl ::core::convert::Into<i32>,
@@ -432,14 +378,11 @@ impl PostProcessUtils {
             )
         }
     }
+
     #[doc = "`ConfigureFilmGrain(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, crate::unity_engine::rendering::universal::filmgrain::FilmGrain, crate::unity_engine::camera::Camera, crate::unity_engine::material::Material)` overload"]
     pub fn configure_film_grain(
-        data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-        >,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::filmgrain::FilmGrain,
-        >,
+        data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::postprocessdata::PostProcessData>,
+        settings: impl ::core::convert::Into<crate::unity_engine::rendering::universal::filmgrain::FilmGrain>,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> () {
@@ -453,14 +396,11 @@ impl PostProcessUtils {
             )
         }
     }
+
     #[doc = "`ConfigureFilmGrain(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, crate::unity_engine::rendering::universal::filmgrain::FilmGrain, i32, i32, crate::unity_engine::material::Material)` overload"]
     pub fn configure_film_grain_2(
-        data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-        >,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::filmgrain::FilmGrain,
-        >,
+        data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::postprocessdata::PostProcessData>,
+        settings: impl ::core::convert::Into<crate::unity_engine::rendering::universal::filmgrain::FilmGrain>,
         camera_pixel_width: impl ::core::convert::Into<i32>,
         camera_pixel_height: impl ::core::convert::Into<i32>,
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
@@ -476,12 +416,11 @@ impl PostProcessUtils {
             )
         }
     }
+
     #[doc = "`SetSourceSize(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]
     pub fn set_source_size(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        desc: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        >,
+        desc: impl ::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>,
     ) -> () {
         unsafe {
             __PostProcessUtils_unity2_raw::set_source_size(
@@ -496,10 +435,7 @@ impl PostProcessUtils {
 #[cfg(feature = "unity_engine-rendering-universal-postprocessutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPostProcessUtils;
-    pub use super::IPostProcessUtils_ShaderConstants;
-    pub use super::PostProcessUtils;
-    pub use super::PostProcessUtils_ShaderConstants;
+    pub use super::{IPostProcessUtils, IPostProcessUtils_ShaderConstants, PostProcessUtils, PostProcessUtils_ShaderConstants};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

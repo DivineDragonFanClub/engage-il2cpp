@@ -2,15 +2,17 @@
 
 #[cfg(feature = "app-godcolorrefineemblem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonscriptableobject_1::{
-        ISingletonScriptableObject_1, SingletonScriptableObject_1,
+    use super::*;
+    use crate::{
+        app::singletonscriptableobject_1::{ISingletonScriptableObject_1, SingletonScriptableObject_1},
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
     };
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godcolorrefineemblem/GodColorRefineEmblem.md"))]
     #[::unity2::class(namespace = "App", name = "GodColorRefineEmblem")]
@@ -73,11 +75,8 @@ mod __GodColorRefineEmblem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodColorRefineEmblem as ::unity2::ClassIdentity>::class(),
                 "GetColor",
@@ -89,18 +88,15 @@ mod __GodColorRefineEmblem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodColorRefineEmblem as ::unity2::ClassIdentity>::NAME,
-                    "GetColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodColorRefineEmblem as ::unity2::ClassIdentity>::NAME,
+                        "GetColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_color(
@@ -108,24 +104,15 @@ mod __GodColorRefineEmblem_unity2_raw {
         god: crate::app::goddata::GodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            GodColorRefineEmblem,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GodColorRefineEmblem, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_color::get_method_info().method_ptr);
         inner(this, god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodColorRefineEmblem as ::unity2::ClassIdentity>::class(),
@@ -138,30 +125,20 @@ mod __GodColorRefineEmblem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodColorRefineEmblem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodColorRefineEmblem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GodColorRefineEmblem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GodColorRefineEmblem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GodColorRefineEmblem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -169,27 +146,18 @@ mod __GodColorRefineEmblem_unity2_raw {
 #[cfg(feature = "app-godcolorrefineemblem")]
 pub trait IGodColorRefineEmblemMethods: IGodColorRefineEmblem {
     #[doc = "`GetColor(crate::app::goddata::GodData)` overload"]
-    fn get_color(
-        self,
-        god: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> crate::unity_engine::color::Color {
+    fn get_color(self, god: impl ::core::convert::Into<crate::app::goddata::GodData>) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = <GodColorRefineEmblem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodColorRefineEmblem_unity2_raw::get_color(
-                __receiver,
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <GodColorRefineEmblem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodColorRefineEmblem_unity2_raw::get_color(__receiver, ::core::convert::Into::into(god), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GodColorRefineEmblem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <GodColorRefineEmblem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GodColorRefineEmblem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -217,19 +185,18 @@ impl GodColorRefineEmblem {
 #[cfg(feature = "app-godcolorrefineemblem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodColorRefineEmblem;
-    pub use super::IGodColorRefineEmblem;
-    pub use super::IGodColorRefineEmblemMethods;
-    pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+    pub use super::{GodColorRefineEmblem, IGodColorRefineEmblem, IGodColorRefineEmblemMethods};
     #[cfg(feature = "app-singletonscriptableobject_1")]
     pub use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        app::singletonscriptableobject_1::ISingletonScriptableObject_1,
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

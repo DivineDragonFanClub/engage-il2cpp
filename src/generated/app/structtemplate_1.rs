@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-structtemplate_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::structbase::{IStructBase, StructBase},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structtemplate_1/StructTemplate_1.md"))]
     #[::unity2::class(namespace = "App", name = "StructTemplate`1")]
@@ -72,13 +74,10 @@ impl<T0: ::unity2::ClassIdentity> StructTemplate_1<T0> {
 #[cfg(feature = "app-structtemplate_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStructTemplate_1;
-    pub use super::IStructTemplate_1Methods;
-    pub use super::StructTemplate_1;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{IStructTemplate_1, IStructTemplate_1Methods, StructTemplate_1};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::structbase::IStructBase, system::object::IObject};
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-interpolator_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::interpolatortime::{IInterpolatorTime, InterpolatorTime};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::interpolatortime::{IInterpolatorTime, InterpolatorTime},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolator_1/Interpolator_1.md"))]
     #[::unity2::class(namespace = "App", name = "Interpolator`1")]
@@ -86,14 +88,13 @@ impl<T0: ::unity2::ClassIdentity> Interpolator_1<T0> {
 #[cfg(feature = "app-interpolator_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInterpolator_1;
-    pub use super::IInterpolator_1Methods;
-    pub use super::Interpolator_1;
-    pub use crate::app::interpolatortime::IInterpolatorTime;
+    pub use super::{IInterpolator_1, IInterpolator_1Methods, Interpolator_1};
     #[cfg(feature = "app-interpolatortime")]
     pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
-    pub use crate::app::interpolatortime::InterpolatorTime;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::interpolatortime::{IInterpolatorTime, InterpolatorTime},
+        system::object::IObject,
+    };
 }

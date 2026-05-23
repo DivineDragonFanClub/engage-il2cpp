@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-events-unityevent_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/unityevent_1/UnityEvent_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.Events", name = "UnityEvent`1")]
@@ -30,17 +32,11 @@ impl<T0: ::unity2::ClassIdentity> UnityEvent_1<T0> {
 
     #[doc = "`AddListener(crate::unity_engine::events::unityaction_1::UnityAction_1<T0>)` overload"]
     #[method(name = "AddListener", args = 1)]
-    pub fn add_listener(
-        self,
-        call: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
-    ) -> ();
+    pub fn add_listener(self, call: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>) -> ();
 
     #[doc = "`RemoveListener(crate::unity_engine::events::unityaction_1::UnityAction_1<T0>)` overload"]
     #[method(name = "RemoveListener", args = 1)]
-    pub fn remove_listener(
-        self,
-        call: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
-    ) -> ();
+    pub fn remove_listener(self, call: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>) -> ();
 
     #[doc = "`FindMethod_Impl(::unity2::Il2CppString, ::unity2::SystemType)` overload"]
     #[method(name = "FindMethod_Impl", args = 2)]
@@ -73,13 +69,8 @@ impl<T0: ::unity2::ClassIdentity> UnityEvent_1<T0> {
 impl<T0: ::unity2::ClassIdentity> UnityEvent_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnityEvent_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(UnityEvent_1), ::core::stringify!(new),));
         <Self as IUnityEvent_1Methods<T0>>::ctor(this);
         this
     }
@@ -88,13 +79,10 @@ impl<T0: ::unity2::ClassIdentity> UnityEvent_1<T0> {
 #[cfg(feature = "unity_engine-events-unityevent_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnityEvent_1;
-    pub use super::IUnityEvent_1Methods;
-    pub use super::UnityEvent_1;
-    pub use crate::system::object::IObject;
+    pub use super::{IUnityEvent_1, IUnityEvent_1Methods, UnityEvent_1};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
     #[cfg(feature = "unity_engine-events-unityeventbase")]
     pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
+    pub use crate::{system::object::IObject, unity_engine::events::unityeventbase::IUnityEventBase};
 }

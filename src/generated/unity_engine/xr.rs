@@ -70,18 +70,15 @@ pub mod xrdisplaysubsystem;
 pub use xrdisplaysubsystem::IXRDisplaySubsystemMethods;
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem-types")]
 pub use xrdisplaysubsystem::{
-    IXRDisplaySubsystem, XRDisplaySubsystem, XRDisplaySubsystem_TextureLayout,
-    XRDisplaySubsystem_XRBlitParams, XRDisplaySubsystem_XRMirrorViewBlitDesc,
-    XRDisplaySubsystem_XRRenderParameter, XRDisplaySubsystem_XRRenderPass,
+    IXRDisplaySubsystem, XRDisplaySubsystem, XRDisplaySubsystem_TextureLayout, XRDisplaySubsystem_XRBlitParams,
+    XRDisplaySubsystem_XRMirrorViewBlitDesc, XRDisplaySubsystem_XRRenderParameter, XRDisplaySubsystem_XRRenderPass,
 };
 #[cfg(any(feature = "unity_engine-xr-xrdisplaysubsystemdescriptor-types"))]
 pub mod xrdisplaysubsystemdescriptor;
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystemdescriptor")]
 pub use xrdisplaysubsystemdescriptor::IXRDisplaySubsystemDescriptorMethods;
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystemdescriptor-types")]
-pub use xrdisplaysubsystemdescriptor::{
-    IXRDisplaySubsystemDescriptor, XRDisplaySubsystemDescriptor,
-};
+pub use xrdisplaysubsystemdescriptor::{IXRDisplaySubsystemDescriptor, XRDisplaySubsystemDescriptor};
 #[cfg(any(feature = "unity_engine-xr-xrinputsubsystem-types"))]
 pub mod xrinputsubsystem;
 #[cfg(feature = "unity_engine-xr-xrinputsubsystem")]

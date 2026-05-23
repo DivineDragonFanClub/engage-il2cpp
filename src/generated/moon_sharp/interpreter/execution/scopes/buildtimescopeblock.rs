@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/scopes/buildtimescopeblock/BuildTimeScopeBlock.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Execution.Scopes",
-        name = "BuildTimeScopeBlock"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.Scopes", name = "BuildTimeScopeBlock")]
     #[parent(crate::system::object::Object)]
     pub struct BuildTimeScopeBlock {
         #[rename(name = "m_DefinedNames")]
@@ -20,9 +17,8 @@ mod __types {
             crate::moon_sharp::interpreter::symbolref::SymbolRef,
         >,
         #[rename(name = "m_PendingGotos")]
-        pub m_pending_gotos: crate::system::collections::generic::list_1::List_1<
-            crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement,
-        >,
+        pub m_pending_gotos:
+            crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement>,
         #[rename(name = "m_LocalLabels")]
         pub m_local_labels: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
@@ -45,9 +41,7 @@ mod __BuildTimeScopeBlock_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_parent {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
@@ -60,36 +54,35 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "get_Parent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "get_Parent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_parent(
         this: BuildTimeScopeBlock,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock
-    {
-        let inner : extern "C" fn (BuildTimeScopeBlock , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_parent :: get_offset () as isize) ,) ;
+    ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock {
+        let inner: extern "C" fn(
+            BuildTimeScopeBlock,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock =
+            ::core::mem::transmute(__lookup_get_parent::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_parent {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "set_Parent",
@@ -101,35 +94,34 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "set_Parent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "set_Parent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_parent(
         this: BuildTimeScopeBlock,
-        value : crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock,
+        value: crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (BuildTimeScopeBlock , crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_parent :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            BuildTimeScopeBlock,
+            crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_parent::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_child_nodes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
@@ -142,18 +134,15 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "get_ChildNodes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "get_ChildNodes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_child_nodes(
@@ -162,17 +151,22 @@ mod __BuildTimeScopeBlock_unity2_raw {
     ) -> crate::system::collections::generic::list_1::List_1<
         crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
     > {
-        let inner : extern "C" fn (BuildTimeScopeBlock , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_child_nodes :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            BuildTimeScopeBlock,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+        > = ::core::mem::transmute(__lookup_get_child_nodes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_child_nodes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "set_ChildNodes",
@@ -184,35 +178,38 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "set_ChildNodes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "set_ChildNodes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_child_nodes(
         this: BuildTimeScopeBlock,
-        value : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock >,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (BuildTimeScopeBlock , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_child_nodes :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            BuildTimeScopeBlock,
+            crate::system::collections::generic::list_1::List_1<
+                crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_child_nodes::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scope_block {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
@@ -225,35 +222,35 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "get_ScopeBlock",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "get_ScopeBlock",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_scope_block(
         this: BuildTimeScopeBlock,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock {
-        let inner : extern "C" fn (BuildTimeScopeBlock , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_scope_block :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            BuildTimeScopeBlock,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock =
+            ::core::mem::transmute(__lookup_get_scope_block::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scope_block {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "set_ScopeBlock",
@@ -265,18 +262,15 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "set_ScopeBlock",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "set_ScopeBlock",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_scope_block(
@@ -288,22 +282,15 @@ mod __BuildTimeScopeBlock_unity2_raw {
             BuildTimeScopeBlock,
             crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scope_block::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_scope_block::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rename {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "Rename",
@@ -315,44 +302,29 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "Rename",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "Rename",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rename(
-        this: BuildTimeScopeBlock,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BuildTimeScopeBlock,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rename::get_offset() as isize),
-        );
+    pub unsafe fn rename(this: BuildTimeScopeBlock, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BuildTimeScopeBlock, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_rename::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -364,35 +336,34 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: BuildTimeScopeBlock,
-        parent : crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock,
+        parent: crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (BuildTimeScopeBlock , crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            BuildTimeScopeBlock,
+            crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_child {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
@@ -405,37 +376,34 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "AddChild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "AddChild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_child(
         this: BuildTimeScopeBlock,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock
-    {
-        let inner : extern "C" fn (BuildTimeScopeBlock , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_add_child :: get_offset () as isize) ,) ;
+    ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock {
+        let inner: extern "C" fn(
+            BuildTimeScopeBlock,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock =
+            ::core::mem::transmute(__lookup_add_child::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "Find",
@@ -447,18 +415,15 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "Find",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find(
@@ -470,22 +435,15 @@ mod __BuildTimeScopeBlock_unity2_raw {
             BuildTimeScopeBlock,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(__lookup_find::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_define {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "Define",
@@ -497,18 +455,15 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "Define",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "Define",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn define(
@@ -520,21 +475,16 @@ mod __BuildTimeScopeBlock_unity2_raw {
             BuildTimeScopeBlock,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_define::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(__lookup_define::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resolve_l_refs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeframe :: BuildTimeScopeFrame as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scopes::buildtimescopeframe::BuildTimeScopeFrame as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "ResolveLRefs",
@@ -546,36 +496,36 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "ResolveLRefs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "ResolveLRefs",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resolve_l_refs(
         this: BuildTimeScopeBlock,
-        build_time_scope_frame : crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeframe :: BuildTimeScopeFrame,
+        build_time_scope_frame: crate::moon_sharp::interpreter::execution::scopes::buildtimescopeframe::BuildTimeScopeFrame,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner : extern "C" fn (BuildTimeScopeBlock , crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeframe :: BuildTimeScopeFrame , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_resolve_l_refs :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            BuildTimeScopeBlock,
+            crate::moon_sharp::interpreter::execution::scopes::buildtimescopeframe::BuildTimeScopeFrame,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_resolve_l_refs::get_method_info().method_ptr);
         inner(this, build_time_scope_frame, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_define_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: statements :: labelstatement :: LabelStatement as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "DefineLabel",
@@ -587,18 +537,15 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "DefineLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "DefineLabel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn define_label(
@@ -610,21 +557,16 @@ mod __BuildTimeScopeBlock_unity2_raw {
             BuildTimeScopeBlock,
             crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_define_label::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_define_label::get_method_info().method_ptr);
         inner(this, label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_goto {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: statements :: gotostatement :: GotoStatement as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
                 "RegisterGoto",
@@ -636,18 +578,15 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "RegisterGoto",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "RegisterGoto",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_goto(
@@ -659,20 +598,14 @@ mod __BuildTimeScopeBlock_unity2_raw {
             BuildTimeScopeBlock,
             crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_goto::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_register_goto::get_method_info().method_ptr);
         inner(this, gotostat, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resolve_gotos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuildTimeScopeBlock as ::unity2::ClassIdentity>::class(),
@@ -685,30 +618,20 @@ mod __BuildTimeScopeBlock_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
-                    "ResolveGotos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuildTimeScopeBlock as ::unity2::ClassIdentity>::NAME,
+                        "ResolveGotos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn resolve_gotos(
-        this: BuildTimeScopeBlock,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn resolve_gotos(this: BuildTimeScopeBlock, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BuildTimeScopeBlock, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resolve_gotos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_resolve_gotos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -716,31 +639,20 @@ mod __BuildTimeScopeBlock_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock")]
 pub trait IBuildTimeScopeBlockMethods: IBuildTimeScopeBlock {
     #[doc = "`get_Parent()` overload"]
-    fn get_parent(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock
-    {
+    fn get_parent(self) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BuildTimeScopeBlock_unity2_raw::get_parent(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Parent(crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock)` overload"]
     fn set_parent(
         self,
-        value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock >,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock>,
     ) -> () {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::set_parent(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::set_parent(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ChildNodes()` overload"]
@@ -750,145 +662,86 @@ pub trait IBuildTimeScopeBlockMethods: IBuildTimeScopeBlock {
         crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
     > {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::get_child_nodes(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::get_child_nodes(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ChildNodes(crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock>)` overload"]
     fn set_child_nodes(
         self,
-        value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock > >,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+            >,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::set_child_nodes(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::set_child_nodes(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ScopeBlock()` overload"]
-    fn get_scope_block(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock {
+    fn get_scope_block(self) -> crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::get_scope_block(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::get_scope_block(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ScopeBlock(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]
     fn set_scope_block(
         self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
-        >,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock>,
     ) -> () {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::set_scope_block(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::set_scope_block(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Rename(::unity2::Il2CppString)` overload"]
     fn rename(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::rename(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::rename(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock)` overload"]
     fn ctor(
         self,
-        parent : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock >,
+        parent: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock>,
     ) -> () {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(parent),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::ctor(__receiver, ::core::convert::Into::into(parent), ::core::option::Option::None)
         }
     }
     #[doc = "`AddChild()` overload"]
-    fn add_child(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock
-    {
+    fn add_child(self) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BuildTimeScopeBlock_unity2_raw::add_child(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Find(::unity2::Il2CppString)` overload"]
-    fn find(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
+    fn find(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::find(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::find(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`Define(::unity2::Il2CppString)` overload"]
-    fn define(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
+    fn define(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::define(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::define(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`ResolveLRefs(crate::moon_sharp::interpreter::execution::scopes::buildtimescopeframe::BuildTimeScopeFrame)` overload"]
     fn resolve_l_refs(
         self,
-        build_time_scope_frame : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeframe :: BuildTimeScopeFrame >,
+        build_time_scope_frame: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scopes::buildtimescopeframe::BuildTimeScopeFrame>,
     ) -> i32 {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BuildTimeScopeBlock_unity2_raw::resolve_l_refs(
                 __receiver,
                 ::core::convert::Into::into(build_time_scope_frame),
@@ -897,51 +750,27 @@ pub trait IBuildTimeScopeBlockMethods: IBuildTimeScopeBlock {
         }
     }
     #[doc = "`DefineLabel(crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement)` overload"]
-    fn define_label(
-        self,
-        label: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement,
-        >,
-    ) -> () {
+    fn define_label(self, label: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement>) -> () {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::define_label(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::define_label(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)
         }
     }
     #[doc = "`RegisterGoto(crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement)` overload"]
     fn register_goto(
         self,
-        gotostat: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement,
-        >,
+        gotostat: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement>,
     ) -> () {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::register_goto(
-                __receiver,
-                ::core::convert::Into::into(gotostat),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::register_goto(__receiver, ::core::convert::Into::into(gotostat), ::core::option::Option::None)
         }
     }
     #[doc = "`ResolveGotos()` overload"]
     fn resolve_gotos(self) -> () {
         unsafe {
-            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BuildTimeScopeBlock_unity2_raw::resolve_gotos(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BuildTimeScopeBlock as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuildTimeScopeBlock_unity2_raw::resolve_gotos(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -952,9 +781,7 @@ impl<__T: IBuildTimeScopeBlock> IBuildTimeScopeBlockMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock")]
 impl BuildTimeScopeBlock {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock)` — overload selector"]
-    pub fn new(
-        parent : crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock,
-    ) -> Self {
+    pub fn new(parent: crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -970,9 +797,7 @@ impl BuildTimeScopeBlock {
 #[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BuildTimeScopeBlock;
-    pub use super::IBuildTimeScopeBlock;
-    pub use super::IBuildTimeScopeBlockMethods;
+    pub use super::{BuildTimeScopeBlock, IBuildTimeScopeBlock, IBuildTimeScopeBlockMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

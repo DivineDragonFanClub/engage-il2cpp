@@ -2,11 +2,13 @@
 
 #[cfg(feature = "tm_pro-glyphpairkey-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/glyphpairkey/GlyphPairKey.md"))]
     #[repr(C)]
@@ -18,9 +20,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for GlyphPairKey {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "GlyphPairKey";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -31,10 +32,7 @@ mod __types {
 
     impl ::unity2::IlType for GlyphPairKey {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -51,88 +49,50 @@ mod __GlyphPairKey_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GlyphPairKey as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GlyphPairKey as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GlyphPairKey as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GlyphPairKey as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GlyphPairKey,
-        first_glyph_index: u32,
-        second_glyph_index: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GlyphPairKey, first_glyph_index: u32, second_glyph_index: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GlyphPairKey, u32, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(
-            this,
-            first_glyph_index,
-            second_glyph_index,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, first_glyph_index, second_glyph_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GlyphPairKey as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GlyphPairKey as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GlyphPairKey as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GlyphPairKey as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -144,11 +104,7 @@ mod __GlyphPairKey_unity2_raw {
             GlyphPairKey,
             crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, record, __unity2_method_info)
     }
 }
@@ -156,11 +112,7 @@ mod __GlyphPairKey_unity2_raw {
 #[cfg(feature = "tm_pro-glyphpairkey")]
 impl GlyphPairKey {
     #[doc = "`.ctor(u32, u32)` overload"]
-    pub fn ctor(
-        self,
-        first_glyph_index: impl ::core::convert::Into<u32>,
-        second_glyph_index: impl ::core::convert::Into<u32>,
-    ) -> () {
+    pub fn ctor(self, first_glyph_index: impl ::core::convert::Into<u32>, second_glyph_index: impl ::core::convert::Into<u32>) -> () {
         unsafe {
             __GlyphPairKey_unity2_raw::ctor(
                 self,
@@ -170,20 +122,10 @@ impl GlyphPairKey {
             )
         }
     }
+
     #[doc = "`.ctor(crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord)` overload"]
-    pub fn ctor_2(
-        self,
-        record: impl ::core::convert::Into<
-            crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
-        >,
-    ) -> () {
-        unsafe {
-            __GlyphPairKey_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(record),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn ctor_2(self, record: impl ::core::convert::Into<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>) -> () {
+        unsafe { __GlyphPairKey_unity2_raw::ctor_2(self, ::core::convert::Into::into(record), ::core::option::Option::None) }
     }
 }
 
@@ -191,10 +133,9 @@ impl GlyphPairKey {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphPairKey;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

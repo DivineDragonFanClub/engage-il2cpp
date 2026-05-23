@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-refreshcommon-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshcommon/RefreshCommon.md"))]
     #[::unity2::class(namespace = "App", name = "RefreshCommon")]
@@ -35,11 +35,8 @@ mod __RefreshCommon_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_facility_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshCommon as ::unity2::ClassIdentity>::class(),
                 "GetFacilityIndex",
@@ -51,41 +48,28 @@ mod __RefreshCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshCommon as ::unity2::ClassIdentity>::NAME,
-                    "GetFacilityIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshCommon as ::unity2::ClassIdentity>::NAME,
+                        "GetFacilityIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_facility_index(
-        facility_aid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_facility_index(facility_aid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_facility_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_facility_index::get_method_info().method_ptr);
         inner(facility_aid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_random {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshCommon as ::unity2::ClassIdentity>::class(),
                 "GetUnitRandom",
@@ -97,43 +81,28 @@ mod __RefreshCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshCommon as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitRandom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshCommon as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitRandom",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit_random(
-        excepted_unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_random::get_offset() as isize),
-        );
+    pub unsafe fn get_unit_random(excepted_unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit_random::get_method_info().method_ptr);
         inner(excepted_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_entrusted {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshCommon as ::unity2::ClassIdentity>::class(),
                 "GetUnitEntrusted",
@@ -145,43 +114,28 @@ mod __RefreshCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshCommon as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitEntrusted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshCommon as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitEntrusted",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit_entrusted(
-        another_unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_entrusted::get_offset() as isize),
-        );
+    pub unsafe fn get_unit_entrusted(another_unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit_entrusted::get_method_info().method_ptr);
         inner(another_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_entrusted_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<crate::app::unit::Unit> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<crate::app::unit::Unit> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshCommon as ::unity2::ClassIdentity>::class(),
                 "GetUnitEntrusted",
@@ -193,43 +147,28 @@ mod __RefreshCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshCommon as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitEntrusted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshCommon as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitEntrusted",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit_entrusted_2(
-        unit_array: ::unity2::Array<crate::app::unit::Unit>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::app::unit::Unit>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_entrusted_2::get_offset() as isize),
-        );
+    pub unsafe fn get_unit_entrusted_2(unit_array: ::unity2::Array<crate::app::unit::Unit>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Array<crate::app::unit::Unit>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_unit_entrusted_2::get_method_info().method_ptr);
         inner(unit_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_unit_entrusted {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshCommon as ::unity2::ClassIdentity>::class(),
                 "CalcUnitEntrusted",
@@ -241,115 +180,75 @@ mod __RefreshCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshCommon as ::unity2::ClassIdentity>::NAME,
-                    "CalcUnitEntrusted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshCommon as ::unity2::ClassIdentity>::NAME,
+                        "CalcUnitEntrusted",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_unit_entrusted(
         another_unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_unit_entrusted::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_calc_unit_entrusted::get_method_info().method_ptr);
         inner(another_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshCommon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RefreshCommon as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshCommon as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshCommon as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: RefreshCommon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshCommon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(RefreshCommon, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshCommon as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RefreshCommon as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshCommon as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshCommon as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -357,60 +256,30 @@ mod __RefreshCommon_unity2_raw {
 #[cfg(feature = "app-refreshcommon")]
 impl RefreshCommon {
     #[doc = "`GetFacilityIndex(::unity2::Il2CppString)` overload"]
-    pub fn get_facility_index(
-        facility_aid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> i32 {
-        unsafe {
-            __RefreshCommon_unity2_raw::get_facility_index(
-                ::core::convert::Into::into(facility_aid),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_facility_index(facility_aid: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
+        unsafe { __RefreshCommon_unity2_raw::get_facility_index(::core::convert::Into::into(facility_aid), ::core::option::Option::None) }
     }
+
     #[doc = "`GetUnitRandom(crate::app::unit::Unit)` overload"]
-    pub fn get_unit_random(
-        excepted_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::app::unit::Unit {
-        unsafe {
-            __RefreshCommon_unity2_raw::get_unit_random(
-                ::core::convert::Into::into(excepted_unit),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_unit_random(excepted_unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::unit::Unit {
+        unsafe { __RefreshCommon_unity2_raw::get_unit_random(::core::convert::Into::into(excepted_unit), ::core::option::Option::None) }
     }
+
     #[doc = "`GetUnitEntrusted(crate::app::unit::Unit)` overload"]
-    pub fn get_unit_entrusted(
-        another_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::app::unit::Unit {
-        unsafe {
-            __RefreshCommon_unity2_raw::get_unit_entrusted(
-                ::core::convert::Into::into(another_unit),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_unit_entrusted(another_unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::unit::Unit {
+        unsafe { __RefreshCommon_unity2_raw::get_unit_entrusted(::core::convert::Into::into(another_unit), ::core::option::Option::None) }
     }
+
     #[doc = "`GetUnitEntrusted(::unity2::Array<crate::app::unit::Unit>)` overload"]
-    pub fn get_unit_entrusted_2(
-        unit_array: impl ::core::convert::Into<::unity2::Array<crate::app::unit::Unit>>,
-    ) -> () {
-        unsafe {
-            __RefreshCommon_unity2_raw::get_unit_entrusted_2(
-                ::core::convert::Into::into(unit_array),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_unit_entrusted_2(unit_array: impl ::core::convert::Into<::unity2::Array<crate::app::unit::Unit>>) -> () {
+        unsafe { __RefreshCommon_unity2_raw::get_unit_entrusted_2(::core::convert::Into::into(unit_array), ::core::option::Option::None) }
     }
+
     #[doc = "`CalcUnitEntrusted(crate::app::unit::Unit)` overload"]
-    pub fn calc_unit_entrusted(
-        another_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::app::unit::Unit {
-        unsafe {
-            __RefreshCommon_unity2_raw::calc_unit_entrusted(
-                ::core::convert::Into::into(another_unit),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn calc_unit_entrusted(another_unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::unit::Unit {
+        unsafe { __RefreshCommon_unity2_raw::calc_unit_entrusted(::core::convert::Into::into(another_unit), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __RefreshCommon_unity2_raw::cctor(::core::option::Option::None) }
@@ -422,9 +291,7 @@ pub trait IRefreshCommonMethods: IRefreshCommon {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RefreshCommon as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RefreshCommon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefreshCommon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -437,13 +304,8 @@ impl<__T: IRefreshCommon> IRefreshCommonMethods for __T {}
 impl RefreshCommon {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshCommon),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RefreshCommon), ::core::stringify!(new),));
         <Self as IRefreshCommonMethods>::ctor(this);
         this
     }
@@ -452,9 +314,7 @@ impl RefreshCommon {
 #[cfg(feature = "app-refreshcommon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefreshCommon;
-    pub use super::IRefreshCommonMethods;
-    pub use super::RefreshCommon;
+    pub use super::{IRefreshCommon, IRefreshCommonMethods, RefreshCommon};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

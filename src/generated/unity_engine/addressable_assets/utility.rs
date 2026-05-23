@@ -15,6 +15,4 @@ pub use resourcemanagerdiagnostics::{IResourceManagerDiagnostics, ResourceManage
 #[cfg(any(feature = "unity_engine-addressable_assets-utility-serializationutilities-types"))]
 pub mod serializationutilities;
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities-types")]
-pub use serializationutilities::{
-    ISerializationUtilities, SerializationUtilities, SerializationUtilities_ObjectType,
-};
+pub use serializationutilities::{ISerializationUtilities, SerializationUtilities, SerializationUtilities_ObjectType};

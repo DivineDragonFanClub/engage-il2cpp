@@ -2,48 +2,49 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturedesc-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/texturedesc/TextureDesc.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
     pub struct TextureDesc {
-    pub size_mode: crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturesizemode :: TextureSizeMode,
-    pub width: i32,
-    pub height: i32,
-    pub slices: i32,
-    pub scale: crate :: unity_engine :: vector2 :: Vector2,
-    pub func: crate :: unity_engine :: rendering :: scalefunc :: ScaleFunc,
-    pub depth_buffer_bits: crate :: unity_engine :: rendering :: depthbits :: DepthBits,
-    pub color_format: crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat,
-    pub filter_mode: crate :: unity_engine :: filtermode :: FilterMode,
-    pub wrap_mode: crate :: unity_engine :: texturewrapmode :: TextureWrapMode,
-    pub dimension: crate :: unity_engine :: rendering :: texturedimension :: TextureDimension,
-    pub enable_random_write: bool,
-    pub use_mip_map: bool,
-    pub auto_generate_mips: bool,
-    pub is_shadow_map: bool,
-    pub aniso_level: i32,
-    pub mip_map_bias: f32,
-    pub enable_msaa: bool,
-    pub msaa_samples: crate :: unity_engine :: rendering :: msaasamples :: MSAASamples,
-    pub bind_texture_ms: bool,
-    pub use_dynamic_scale: bool,
-    pub memoryless: crate :: unity_engine :: rendertexturememoryless :: RenderTextureMemoryless,
-    pub name: :: unity2 :: Il2CppString,
-    pub fast_memory_desc: crate :: unity_engine :: experimental :: rendering :: render_graph_module :: fastmemorydesc :: FastMemoryDesc,
-    pub clear_buffer: bool,
-    pub clear_color: crate :: unity_engine :: color :: Color,
-}
+        pub size_mode: crate::unity_engine::experimental::rendering::render_graph_module::texturesizemode::TextureSizeMode,
+        pub width: i32,
+        pub height: i32,
+        pub slices: i32,
+        pub scale: crate::unity_engine::vector2::Vector2,
+        pub func: crate::unity_engine::rendering::scalefunc::ScaleFunc,
+        pub depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
+        pub color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        pub filter_mode: crate::unity_engine::filtermode::FilterMode,
+        pub wrap_mode: crate::unity_engine::texturewrapmode::TextureWrapMode,
+        pub dimension: crate::unity_engine::rendering::texturedimension::TextureDimension,
+        pub enable_random_write: bool,
+        pub use_mip_map: bool,
+        pub auto_generate_mips: bool,
+        pub is_shadow_map: bool,
+        pub aniso_level: i32,
+        pub mip_map_bias: f32,
+        pub enable_msaa: bool,
+        pub msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+        pub bind_texture_ms: bool,
+        pub use_dynamic_scale: bool,
+        pub memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        pub name: ::unity2::Il2CppString,
+        pub fast_memory_desc: crate::unity_engine::experimental::rendering::render_graph_module::fastmemorydesc::FastMemoryDesc,
+        pub clear_buffer: bool,
+        pub clear_color: crate::unity_engine::color::Color,
+    }
 
     impl ::unity2::ClassIdentity for TextureDesc {
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
         const NAME: &'static str = "TextureDesc";
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -54,10 +55,7 @@ mod __types {
 
     impl ::unity2::IlType for TextureDesc {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -74,13 +72,9 @@ mod __TextureDesc_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_init_default_values {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextureDesc as ::unity2::ClassIdentity>::class(),
                 "InitDefaultValues",
@@ -92,18 +86,15 @@ mod __TextureDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextureDesc as ::unity2::ClassIdentity>::NAME,
-                    "InitDefaultValues",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextureDesc as ::unity2::ClassIdentity>::NAME,
+                        "InitDefaultValues",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init_default_values(
@@ -113,49 +104,34 @@ mod __TextureDesc_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(TextureDesc, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_default_values::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_default_values::get_method_info().method_ptr);
         inner(this, dynamic_resolution, xr_ready, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextureDesc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextureDesc as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextureDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextureDesc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -166,62 +142,34 @@ mod __TextureDesc_unity2_raw {
         xr_ready: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextureDesc,
-            i32,
-            i32,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            width,
-            height,
-            dynamic_resolution,
-            xr_ready,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(TextureDesc, i32, i32, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, width, height, dynamic_resolution, xr_ready, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextureDesc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextureDesc as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextureDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextureDesc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -231,61 +179,34 @@ mod __TextureDesc_unity2_raw {
         xr_ready: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextureDesc,
-            crate::unity_engine::vector2::Vector2,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            scale,
-            dynamic_resolution,
-            xr_ready,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(TextureDesc, crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, scale, dynamic_resolution, xr_ready, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::scalefunc::ScaleFunc as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::rendering::scalefunc::ScaleFunc as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextureDesc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextureDesc as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextureDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextureDesc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -295,73 +216,50 @@ mod __TextureDesc_unity2_raw {
         xr_ready: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextureDesc,
-            crate::unity_engine::rendering::scalefunc::ScaleFunc,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
-        inner(
-            this,
-            func,
-            dynamic_resolution,
-            xr_ready,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(TextureDesc, crate::unity_engine::rendering::scalefunc::ScaleFunc, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
+        inner(this, func, dynamic_resolution, xr_ready, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextureDesc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TextureDesc as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextureDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextureDesc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_4(
         this: TextureDesc,
-        input : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc,
+        input: crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (TextureDesc , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor_4 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TextureDesc,
+            crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor_4::get_method_info().method_ptr);
         inner(this, input, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextureDesc as ::unity2::ClassIdentity>::class(),
@@ -374,30 +272,20 @@ mod __TextureDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextureDesc as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextureDesc as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: TextureDesc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: TextureDesc, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TextureDesc, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -405,11 +293,7 @@ mod __TextureDesc_unity2_raw {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturedesc")]
 impl TextureDesc {
     #[doc = "`InitDefaultValues(bool, bool)` overload"]
-    pub fn init_default_values(
-        self,
-        dynamic_resolution: impl ::core::convert::Into<bool>,
-        xr_ready: impl ::core::convert::Into<bool>,
-    ) -> () {
+    pub fn init_default_values(self, dynamic_resolution: impl ::core::convert::Into<bool>, xr_ready: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             __TextureDesc_unity2_raw::init_default_values(
                 self,
@@ -419,6 +303,7 @@ impl TextureDesc {
             )
         }
     }
+
     #[doc = "`.ctor(i32, i32, bool, bool)` overload"]
     pub fn ctor(
         self,
@@ -438,6 +323,7 @@ impl TextureDesc {
             )
         }
     }
+
     #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool)` overload"]
     pub fn ctor_2(
         self,
@@ -455,6 +341,7 @@ impl TextureDesc {
             )
         }
     }
+
     #[doc = "`.ctor(crate::unity_engine::rendering::scalefunc::ScaleFunc, bool, bool)` overload"]
     pub fn ctor_3(
         self,
@@ -472,19 +359,15 @@ impl TextureDesc {
             )
         }
     }
+
     #[doc = "`.ctor(crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc)` overload"]
     pub fn ctor_4(
         self,
-        input : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: texturedesc :: TextureDesc >,
+        input: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::texturedesc::TextureDesc>,
     ) -> () {
-        unsafe {
-            __TextureDesc_unity2_raw::ctor_4(
-                self,
-                ::core::convert::Into::into(input),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TextureDesc_unity2_raw::ctor_4(self, ::core::convert::Into::into(input), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __TextureDesc_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
@@ -495,10 +378,9 @@ impl TextureDesc {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TextureDesc;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

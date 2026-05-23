@@ -2,13 +2,13 @@
 
 #[cfg(feature = "app-myroomvoicebehaviour-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::playables::playablebehaviour::{
-        IPlayableBehaviour, PlayableBehaviour,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomvoicebehaviour/MyRoomVoiceBehaviour.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomVoiceBehaviour")]
@@ -28,9 +28,7 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_voice_situation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -43,42 +41,32 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_VoiceSituation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_VoiceSituation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_voice_situation(
         this: MyRoomVoiceBehaviour,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::gamesound::GameSound_WakeupVoiceSituation {
-        let inner: extern "C" fn(
-            MyRoomVoiceBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gamesound::GameSound_WakeupVoiceSituation = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_voice_situation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomVoiceBehaviour, ::unity2::OptionalMethod) -> crate::app::gamesound::GameSound_WakeupVoiceSituation =
+            ::core::mem::transmute(__lookup_get_voice_situation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_voice_situation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesound :: GameSound_WakeupVoiceSituation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gamesound::GameSound_WakeupVoiceSituation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
                 "set_VoiceSituation",
@@ -90,18 +78,15 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_VoiceSituation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_VoiceSituation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_voice_situation(
@@ -109,24 +94,15 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         value: crate::app::gamesound::GameSound_WakeupVoiceSituation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MyRoomVoiceBehaviour,
-            crate::app::gamesound::GameSound_WakeupVoiceSituation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_voice_situation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomVoiceBehaviour, crate::app::gamesound::GameSound_WakeupVoiceSituation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_voice_situation::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -139,41 +115,30 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_Level",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_Level",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_level(
         this: MyRoomVoiceBehaviour,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::reliancedata::RelianceData_Level {
-        let inner: extern "C" fn(
-            MyRoomVoiceBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::reliancedata::RelianceData_Level = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_level::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomVoiceBehaviour, ::unity2::OptionalMethod) -> crate::app::reliancedata::RelianceData_Level =
+            ::core::mem::transmute(__lookup_get_level::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pattern {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -186,41 +151,30 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_Pattern",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_Pattern",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pattern(
         this: MyRoomVoiceBehaviour,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::gamesound::GameSound_WakeupVoicePattern {
-        let inner: extern "C" fn(
-            MyRoomVoiceBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gamesound::GameSound_WakeupVoicePattern = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pattern::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomVoiceBehaviour, ::unity2::OptionalMethod) -> crate::app::gamesound::GameSound_WakeupVoicePattern =
+            ::core::mem::transmute(__lookup_get_pattern::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -233,41 +187,27 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_Character",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_Character",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_character(
-        this: MyRoomVoiceBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::character::Character {
-        let inner: extern "C" fn(
-            MyRoomVoiceBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_character::get_offset() as isize),
-        );
+    pub unsafe fn get_character(this: MyRoomVoiceBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
+        let inner: extern "C" fn(MyRoomVoiceBehaviour, ::unity2::OptionalMethod) -> crate::combat::character::Character =
+            ::core::mem::transmute(__lookup_get_character::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_voice_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -280,41 +220,27 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_VoiceID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_VoiceID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_voice_id(
-        this: MyRoomVoiceBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MyRoomVoiceBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_voice_id::get_offset() as isize),
-        );
+    pub unsafe fn get_voice_id(this: MyRoomVoiceBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MyRoomVoiceBehaviour, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_voice_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -327,43 +253,28 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_EventName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_EventName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_event_name(
-        this: MyRoomVoiceBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MyRoomVoiceBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event_name::get_offset() as isize),
-        );
+    pub unsafe fn get_event_name(this: MyRoomVoiceBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MyRoomVoiceBehaviour, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_event_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_event_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
                 "set_EventName",
@@ -375,47 +286,30 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "set_EventName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "set_EventName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_event_name(
-        this: MyRoomVoiceBehaviour,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomVoiceBehaviour,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_event_name::get_offset() as isize),
-        );
+    pub unsafe fn set_event_name(this: MyRoomVoiceBehaviour, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomVoiceBehaviour, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_event_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_behaviour_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -428,18 +322,15 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "OnBehaviourPlay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "OnBehaviourPlay",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_behaviour_play(
@@ -453,24 +344,17 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
             crate::unity_engine::playables::playable::Playable,
             crate::unity_engine::playables::framedata::FrameData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_behaviour_play::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_behaviour_play::get_method_info().method_ptr);
         inner(this, playable, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_behaviour_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -483,18 +367,15 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "OnBehaviourPause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "OnBehaviourPause",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_behaviour_pause(
@@ -508,20 +389,14 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
             crate::unity_engine::playables::playable::Playable,
             crate::unity_engine::playables::framedata::FrameData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_behaviour_pause::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_behaviour_pause::get_method_info().method_ptr);
         inner(this, playable, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::class(),
@@ -534,30 +409,20 @@ mod __MyRoomVoiceBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomVoiceBehaviour as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MyRoomVoiceBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MyRoomVoiceBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomVoiceBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -567,96 +432,65 @@ pub trait IMyRoomVoiceBehaviourMethods: IMyRoomVoiceBehaviour {
     #[doc = "`get_VoiceSituation()` overload"]
     fn get_voice_situation(self) -> crate::app::gamesound::GameSound_WakeupVoiceSituation {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomVoiceBehaviour_unity2_raw::get_voice_situation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomVoiceBehaviour_unity2_raw::get_voice_situation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_VoiceSituation(crate::app::gamesound::GameSound_WakeupVoiceSituation)` overload"]
-    fn set_voice_situation(
-        self,
-        value: impl ::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoiceSituation>,
-    ) -> () {
+    fn set_voice_situation(self, value: impl ::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoiceSituation>) -> () {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomVoiceBehaviour_unity2_raw::set_voice_situation(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomVoiceBehaviour_unity2_raw::set_voice_situation(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Level()` overload"]
     fn get_level(self) -> crate::app::reliancedata::RelianceData_Level {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomVoiceBehaviour_unity2_raw::get_level(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Pattern()` overload"]
     fn get_pattern(self) -> crate::app::gamesound::GameSound_WakeupVoicePattern {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomVoiceBehaviour_unity2_raw::get_pattern(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Character()` overload"]
     fn get_character(self) -> crate::combat::character::Character {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomVoiceBehaviour_unity2_raw::get_character(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomVoiceBehaviour_unity2_raw::get_character(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_VoiceID()` overload"]
     fn get_voice_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomVoiceBehaviour_unity2_raw::get_voice_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomVoiceBehaviour_unity2_raw::get_voice_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_EventName()` overload"]
     fn get_event_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomVoiceBehaviour_unity2_raw::get_event_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomVoiceBehaviour_unity2_raw::get_event_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EventName(::unity2::Il2CppString)` overload"]
     fn set_event_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomVoiceBehaviour_unity2_raw::set_event_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomVoiceBehaviour_unity2_raw::set_event_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
@@ -666,9 +500,8 @@ pub trait IMyRoomVoiceBehaviourMethods: IMyRoomVoiceBehaviour {
         info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
     ) -> () {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomVoiceBehaviour_unity2_raw::on_behaviour_play(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -684,9 +517,8 @@ pub trait IMyRoomVoiceBehaviourMethods: IMyRoomVoiceBehaviour {
         info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
     ) -> () {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomVoiceBehaviour_unity2_raw::on_behaviour_pause(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -698,9 +530,8 @@ pub trait IMyRoomVoiceBehaviourMethods: IMyRoomVoiceBehaviour {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomVoiceBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomVoiceBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -728,13 +559,10 @@ impl MyRoomVoiceBehaviour {
 #[cfg(feature = "app-myroomvoicebehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMyRoomVoiceBehaviour;
-    pub use super::IMyRoomVoiceBehaviourMethods;
-    pub use super::MyRoomVoiceBehaviour;
-    pub use crate::system::object::IObject;
+    pub use super::{IMyRoomVoiceBehaviour, IMyRoomVoiceBehaviourMethods, MyRoomVoiceBehaviour};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
     #[cfg(feature = "unity_engine-playables-playablebehaviour")]
     pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
 }

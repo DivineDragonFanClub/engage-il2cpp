@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-linkedlistindex_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/linkedlistindex_2/LinkedListIndex_2.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.DataStructs",
-        name = "LinkedListIndex`2"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.DataStructs", name = "LinkedListIndex`2")]
     #[parent(crate::system::object::Object)]
     pub struct LinkedListIndex_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
         #[rename(name = "m_LinkedList")]
@@ -32,17 +29,11 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> LinkedListIndex_2<T0, T1> {
     #[doc = "`.ctor(crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        linked_list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>,
-    ) -> ();
+    pub fn ctor(self, linked_list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>) -> ();
 
     #[doc = "`Find(T0)` overload"]
     #[method(name = "Find", args = 1)]
-    pub fn find(
-        self,
-        key: T0,
-    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T1>;
+    pub fn find(self, key: T0) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T1>;
 
     #[doc = "`Set(T0, T1)` overload"]
     #[method(name = "Set", args = 2)]
@@ -68,9 +59,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> LinkedListIndex_2
 #[cfg(feature = "moon_sharp-interpreter-data_structs-linkedlistindex_2")]
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> LinkedListIndex_2<T0, T1> {
     #[doc = "`.ctor(crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>)` — overload selector"]
-    pub fn new(
-        linked_list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>,
-    ) -> Self {
+    pub fn new(linked_list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -86,9 +75,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> LinkedListIndex_2
 #[cfg(feature = "moon_sharp-interpreter-data_structs-linkedlistindex_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILinkedListIndex_2;
-    pub use super::ILinkedListIndex_2Methods;
-    pub use super::LinkedListIndex_2;
+    pub use super::{ILinkedListIndex_2, ILinkedListIndex_2Methods, LinkedListIndex_2};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

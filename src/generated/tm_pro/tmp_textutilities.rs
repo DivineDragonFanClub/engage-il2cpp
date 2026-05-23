@@ -2,11 +2,13 @@
 
 #[cfg(feature = "tm_pro-tmp_textutilities-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_textutilities/TMP_TextUtilities.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_TextUtilities")]
@@ -32,9 +34,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for TMP_TextUtilities_LineSegment {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "TMP_TextUtilities.LineSegment";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -45,10 +46,7 @@ mod __types {
 
     impl ::unity2::IlType for TMP_TextUtilities_LineSegment {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -65,9 +63,7 @@ mod __TMP_TextUtilities_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_cursor_index_from_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -84,18 +80,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetCursorIndexFromPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetCursorIndexFromPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cursor_index_from_position(
@@ -109,20 +102,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cursor_index_from_position::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_cursor_index_from_position::get_method_info().method_ptr);
         inner(text_component, position, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cursor_index_from_position_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -140,18 +127,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetCursorIndexFromPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetCursorIndexFromPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cursor_index_from_position_2(
@@ -167,26 +151,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::camera::Camera,
             *mut crate::tm_pro::caretposition::CaretPosition,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cursor_index_from_position_2::get_offset() as isize),
-        );
-        inner(
-            text_component,
-            position,
-            camera,
-            cursor,
-            __unity2_method_info,
-        )
+        ) -> i32 = ::core::mem::transmute(__lookup_get_cursor_index_from_position_2::get_method_info().method_ptr);
+        inner(text_component, position, camera, cursor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_nearest_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -203,18 +175,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindNearestLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindNearestLine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_nearest_line(
@@ -228,20 +197,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_nearest_line::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_find_nearest_line::get_method_info().method_ptr);
         inner(text, position, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_nearest_character_on_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -260,18 +223,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindNearestCharacterOnLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindNearestCharacterOnLine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_nearest_character_on_line(
@@ -289,27 +249,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::camera::Camera,
             bool,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_nearest_character_on_line::get_offset() as isize),
-        );
-        inner(
-            text,
-            position,
-            line,
-            camera,
-            visible_only,
-            __unity2_method_info,
-        )
+        ) -> i32 = ::core::mem::transmute(__lookup_find_nearest_character_on_line::get_method_info().method_ptr);
+        inner(text, position, line, camera, visible_only, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_intersecting_rect_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -326,18 +273,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "IsIntersectingRectTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "IsIntersectingRectTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_intersecting_rect_transform(
@@ -351,20 +295,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_intersecting_rect_transform::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_intersecting_rect_transform::get_method_info().method_ptr);
         inner(rect_transform, position, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_intersecting_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -382,18 +320,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindIntersectingCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindIntersectingCharacter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_intersecting_character(
@@ -409,20 +344,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::camera::Camera,
             bool,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_intersecting_character::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_find_intersecting_character::get_method_info().method_ptr);
         inner(text, position, camera, visible_only, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_nearest_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -440,18 +369,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindNearestCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindNearestCharacter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_nearest_character(
@@ -467,20 +393,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::camera::Camera,
             bool,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_nearest_character::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_find_nearest_character::get_method_info().method_ptr);
         inner(text, position, camera, visible_only, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_intersecting_word {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -497,18 +417,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindIntersectingWord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindIntersectingWord",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_intersecting_word(
@@ -522,20 +439,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_intersecting_word::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_find_intersecting_word::get_method_info().method_ptr);
         inner(text, position, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_nearest_word {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -552,18 +463,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindNearestWord",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindNearestWord",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_nearest_word(
@@ -577,20 +485,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_nearest_word::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_find_nearest_word::get_method_info().method_ptr);
         inner(text, position, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_intersecting_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -607,18 +509,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindIntersectingLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindIntersectingLine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_intersecting_line(
@@ -632,20 +531,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_intersecting_line::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_find_intersecting_line::get_method_info().method_ptr);
         inner(text, position, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_intersecting_link {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -662,18 +555,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindIntersectingLink",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindIntersectingLink",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_intersecting_link(
@@ -687,20 +577,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_intersecting_link::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_find_intersecting_link::get_method_info().method_ptr);
         inner(text, position, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_nearest_link {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -717,18 +601,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindNearestLink",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindNearestLink",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_nearest_link(
@@ -742,20 +623,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_nearest_link::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_find_nearest_link::get_method_info().method_ptr);
         inner(text, position, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_point_intersect_rectangle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -774,18 +649,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "PointIntersectRectangle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "PointIntersectRectangle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn point_intersect_rectangle(
@@ -803,20 +675,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_point_intersect_rectangle::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_point_intersect_rectangle::get_method_info().method_ptr);
         inner(m, a, b, c, d, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_screen_point_to_world_point_in_rectangle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
@@ -834,18 +700,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "ScreenPointToWorldPointInRectangle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "ScreenPointToWorldPointInRectangle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn screen_point_to_world_point_in_rectangle(
@@ -861,27 +724,20 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::camera::Camera,
             *mut crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_screen_point_to_world_point_in_rectangle::get_offset() as isize),
-        );
-        inner(
-            transform,
-            screen_point,
-            cam,
-            world_point,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_screen_point_to_world_point_in_rectangle::get_method_info().method_ptr);
+        inner(transform, screen_point, cam, world_point, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_intersect_line_plane {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_textutilities :: TMP_TextUtilities_LineSegment as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_textutilities::TMP_TextUtilities_LineSegment as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "IntersectLinePlane",
@@ -893,18 +749,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "IntersectLinePlane",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "IntersectLinePlane",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn intersect_line_plane(
@@ -920,26 +773,14 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             *mut crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_intersect_line_plane::get_offset() as isize),
-        );
-        inner(
-            line,
-            point,
-            normal,
-            intersecting_point,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_intersect_line_plane::get_method_info().method_ptr);
+        inner(line, point, normal, intersecting_point, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_distance_to_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -956,18 +797,15 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "DistanceToLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "DistanceToLine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn distance_to_line(
@@ -981,22 +819,15 @@ mod __TMP_TextUtilities_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_distance_to_line::get_offset() as isize),
-        );
+        ) -> f32 = ::core::mem::transmute(__lookup_distance_to_line::get_method_info().method_ptr);
         inner(a, b, point, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_lower_fast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "ToLowerFast",
@@ -1008,37 +839,27 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "ToLowerFast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "ToLowerFast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn to_lower_fast(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_lower_fast::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(__lookup_to_lower_fast::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_upper_fast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "ToUpperFast",
@@ -1050,37 +871,27 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "ToUpperFast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "ToUpperFast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn to_upper_fast(c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_upper_fast::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(__lookup_to_upper_fast::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_upper_ascii_fast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "ToUpperASCIIFast",
@@ -1092,40 +903,28 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "ToUpperASCIIFast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "ToUpperASCIIFast",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_upper_ascii_fast(
-        c: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(u32, ::unity2::OptionalMethod) -> u32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_upper_ascii_fast::get_offset() as isize),
-        );
+    pub unsafe fn to_upper_ascii_fast(c: u32, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(u32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_to_upper_ascii_fast::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "GetHashCode",
@@ -1137,41 +936,28 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_simple_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "GetSimpleHashCode",
@@ -1183,41 +969,28 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetSimpleHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetSimpleHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_simple_hash_code(
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_simple_hash_code(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_simple_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_simple_hash_code::get_method_info().method_ptr);
         inner(s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_simple_hash_code_lowercase {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "GetSimpleHashCodeLowercase",
@@ -1229,41 +1002,28 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetSimpleHashCodeLowercase",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetSimpleHashCodeLowercase",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_simple_hash_code_lowercase(
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
+    pub unsafe fn get_simple_hash_code_lowercase(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_simple_hash_code_lowercase::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_simple_hash_code_lowercase::get_method_info().method_ptr);
         inner(s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hex_to_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "HexToInt",
@@ -1275,37 +1035,27 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "HexToInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "HexToInt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hex_to_int(hex: u16, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hex_to_int::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_hex_to_int::get_method_info().method_ptr);
         inner(hex, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_string_hex_to_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
                 "StringHexToInt",
@@ -1317,39 +1067,27 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    "StringHexToInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        "StringHexToInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn string_hex_to_int(
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn string_hex_to_int(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_string_hex_to_int::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_string_hex_to_int::get_method_info().method_ptr);
         inner(s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_TextUtilities as ::unity2::ClassIdentity>::class(),
@@ -1362,26 +1100,19 @@ mod __TMP_TextUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1403,6 +1134,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`GetCursorIndexFromPosition(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera, *mutcrate::tm_pro::caretposition::CaretPosition)` overload"]
     pub fn get_cursor_index_from_position_2(
         text_component: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1410,8 +1142,7 @@ impl TMP_TextUtilities {
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> (i32, crate::tm_pro::caretposition::CaretPosition) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::tm_pro::caretposition::CaretPosition>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::tm_pro::caretposition::CaretPosition>::uninit();
             let __ret = {
                 __TMP_TextUtilities_unity2_raw::get_cursor_index_from_position_2(
                     ::core::convert::Into::into(text_component),
@@ -1424,6 +1155,7 @@ impl TMP_TextUtilities {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`FindNearestLine(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera)` overload"]
     pub fn find_nearest_line(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1439,6 +1171,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`FindNearestCharacterOnLine(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::camera::Camera, bool)` overload"]
     pub fn find_nearest_character_on_line(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1458,6 +1191,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`IsIntersectingRectTransform(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera)` overload"]
     pub fn is_intersecting_rect_transform(
         rect_transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
@@ -1473,6 +1207,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`FindIntersectingCharacter(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera, bool)` overload"]
     pub fn find_intersecting_character(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1490,6 +1225,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`FindNearestCharacter(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera, bool)` overload"]
     pub fn find_nearest_character(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1507,6 +1243,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`FindIntersectingWord(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera)` overload"]
     pub fn find_intersecting_word(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1522,6 +1259,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`FindNearestWord(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera)` overload"]
     pub fn find_nearest_word(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1537,6 +1275,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`FindIntersectingLine(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera)` overload"]
     pub fn find_intersecting_line(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1552,6 +1291,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`FindIntersectingLink(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera)` overload"]
     pub fn find_intersecting_link(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1567,6 +1307,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`FindNearestLink(crate::tm_pro::tmp_text::TMP_Text, crate::unity_engine::vector3::Vector3, crate::unity_engine::camera::Camera)` overload"]
     pub fn find_nearest_link(
         text: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
@@ -1582,6 +1323,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`PointIntersectRectangle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
     pub fn point_intersect_rectangle(
         m: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
@@ -1601,6 +1343,7 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`ScreenPointToWorldPointInRectangle(crate::unity_engine::transform::Transform, crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera, *mutcrate::unity_engine::vector3::Vector3)` overload"]
     pub fn screen_point_to_world_point_in_rectangle(
         transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
@@ -1608,8 +1351,7 @@ impl TMP_TextUtilities {
         cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> (bool, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             let __ret = {
                 __TMP_TextUtilities_unity2_raw::screen_point_to_world_point_in_rectangle(
                     ::core::convert::Into::into(transform),
@@ -1622,17 +1364,15 @@ impl TMP_TextUtilities {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`IntersectLinePlane(crate::tm_pro::tmp_textutilities::TMP_TextUtilities_LineSegment, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]
     pub fn intersect_line_plane(
-        line: impl ::core::convert::Into<
-            crate::tm_pro::tmp_textutilities::TMP_TextUtilities_LineSegment,
-        >,
+        line: impl ::core::convert::Into<crate::tm_pro::tmp_textutilities::TMP_TextUtilities_LineSegment>,
         point: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         normal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> (bool, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             let __ret = {
                 __TMP_TextUtilities_unity2_raw::intersect_line_plane(
                     ::core::convert::Into::into(line),
@@ -1645,6 +1385,7 @@ impl TMP_TextUtilities {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`DistanceToLine(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
     pub fn distance_to_line(
         a: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
@@ -1660,80 +1401,47 @@ impl TMP_TextUtilities {
             )
         }
     }
+
     #[doc = "`ToLowerFast(u16)` overload"]
     pub fn to_lower_fast(c: impl ::core::convert::Into<u16>) -> u16 {
-        unsafe {
-            __TMP_TextUtilities_unity2_raw::to_lower_fast(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_TextUtilities_unity2_raw::to_lower_fast(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`ToUpperFast(u16)` overload"]
     pub fn to_upper_fast(c: impl ::core::convert::Into<u16>) -> u16 {
-        unsafe {
-            __TMP_TextUtilities_unity2_raw::to_upper_fast(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_TextUtilities_unity2_raw::to_upper_fast(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`ToUpperASCIIFast(u32)` overload"]
     pub fn to_upper_ascii_fast(c: impl ::core::convert::Into<u32>) -> u32 {
-        unsafe {
-            __TMP_TextUtilities_unity2_raw::to_upper_ascii_fast(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_TextUtilities_unity2_raw::to_upper_ascii_fast(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHashCode(::unity2::Il2CppString)` overload"]
     pub fn get_hash_code(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __TMP_TextUtilities_unity2_raw::get_hash_code(
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_TextUtilities_unity2_raw::get_hash_code(::core::convert::Into::into(s), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSimpleHashCode(::unity2::Il2CppString)` overload"]
     pub fn get_simple_hash_code(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __TMP_TextUtilities_unity2_raw::get_simple_hash_code(
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_TextUtilities_unity2_raw::get_simple_hash_code(::core::convert::Into::into(s), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSimpleHashCodeLowercase(::unity2::Il2CppString)` overload"]
-    pub fn get_simple_hash_code_lowercase(
-        s: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> u32 {
-        unsafe {
-            __TMP_TextUtilities_unity2_raw::get_simple_hash_code_lowercase(
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_simple_hash_code_lowercase(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> u32 {
+        unsafe { __TMP_TextUtilities_unity2_raw::get_simple_hash_code_lowercase(::core::convert::Into::into(s), ::core::option::Option::None) }
     }
+
     #[doc = "`HexToInt(u16)` overload"]
     pub fn hex_to_int(hex: impl ::core::convert::Into<u16>) -> i32 {
-        unsafe {
-            __TMP_TextUtilities_unity2_raw::hex_to_int(
-                ::core::convert::Into::into(hex),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_TextUtilities_unity2_raw::hex_to_int(::core::convert::Into::into(hex), ::core::option::Option::None) }
     }
+
     #[doc = "`StringHexToInt(::unity2::Il2CppString)` overload"]
     pub fn string_hex_to_int(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __TMP_TextUtilities_unity2_raw::string_hex_to_int(
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_TextUtilities_unity2_raw::string_hex_to_int(::core::convert::Into::into(s), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TMP_TextUtilities_unity2_raw::cctor(::core::option::Option::None) }
@@ -1749,9 +1457,7 @@ mod __TMP_TextUtilities_LineSegment_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1767,18 +1473,15 @@ mod __TMP_TextUtilities_LineSegment_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities_LineSegment as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_TextUtilities_LineSegment as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1792,11 +1495,7 @@ mod __TMP_TextUtilities_LineSegment_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, p1, p2, __unity2_method_info)
     }
 }
@@ -1823,13 +1522,10 @@ impl TMP_TextUtilities_LineSegment {
 #[cfg(feature = "tm_pro-tmp_textutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_TextUtilities;
-    pub use super::TMP_TextUtilities;
-    pub use super::TMP_TextUtilities_LineSegment;
-    pub use crate::system::object::IObject;
+    pub use super::{ITMP_TextUtilities, TMP_TextUtilities, TMP_TextUtilities_LineSegment};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -23,9 +23,7 @@ pub mod delayedactionmanager;
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
 pub use delayedactionmanager::IDelayedActionManagerMethods;
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager-types")]
-pub use delayedactionmanager::{
-    DelayedActionManager, DelayedActionManager_DelegateInfo, IDelayedActionManager,
-};
+pub use delayedactionmanager::{DelayedActionManager, DelayedActionManager_DelegateInfo, IDelayedActionManager};
 #[cfg(any(feature = "unity_engine-resource_management-util-dependenciescachekey-types"))]
 pub mod dependenciescachekey;
 #[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
@@ -48,18 +46,12 @@ pub mod iinitializableobject;
 pub use iinitializableobject::IIInitializableObjectMethods;
 #[cfg(feature = "unity_engine-resource_management-util-iinitializableobject-types")]
 pub use iinitializableobject::{IIInitializableObject, IInitializableObject};
-#[cfg(any(
-    feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types"
-))]
+#[cfg(any(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types"))]
 pub mod iobjectinitializationdataprovider;
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
 pub use iobjectinitializationdataprovider::IIObjectInitializationDataProviderMethods;
-#[cfg(
-    feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types"
-)]
-pub use iobjectinitializationdataprovider::{
-    IIObjectInitializationDataProvider, IObjectInitializationDataProvider,
-};
+#[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types")]
+pub use iobjectinitializationdataprovider::{IIObjectInitializationDataProvider, IObjectInitializationDataProvider};
 #[cfg(any(feature = "unity_engine-resource_management-util-ioperationcachekey-types"))]
 pub mod ioperationcachekey;
 #[cfg(feature = "unity_engine-resource_management-util-ioperationcachekey-types")]
@@ -98,18 +90,12 @@ pub use resourcemanagerconfig::{IResourceManagerConfig, ResourceManagerConfig};
 pub mod serializedtype;
 #[cfg(feature = "unity_engine-resource_management-util-serializedtype-types")]
 pub use serializedtype::SerializedType;
-#[cfg(any(
-    feature = "unity_engine-resource_management-util-serializedtyperestrictionattribute-types"
-))]
+#[cfg(any(feature = "unity_engine-resource_management-util-serializedtyperestrictionattribute-types"))]
 pub mod serializedtyperestrictionattribute;
 #[cfg(feature = "unity_engine-resource_management-util-serializedtyperestrictionattribute")]
 pub use serializedtyperestrictionattribute::ISerializedTypeRestrictionAttributeMethods;
-#[cfg(
-    feature = "unity_engine-resource_management-util-serializedtyperestrictionattribute-types"
-)]
-pub use serializedtyperestrictionattribute::{
-    ISerializedTypeRestrictionAttribute, SerializedTypeRestrictionAttribute,
-};
+#[cfg(feature = "unity_engine-resource_management-util-serializedtyperestrictionattribute-types")]
+pub use serializedtyperestrictionattribute::{ISerializedTypeRestrictionAttribute, SerializedTypeRestrictionAttribute};
 #[cfg(any(feature = "unity_engine-resource_management-util-unitywebrequestresult-types"))]
 pub mod unitywebrequestresult;
 #[cfg(feature = "unity_engine-resource_management-util-unitywebrequestresult")]

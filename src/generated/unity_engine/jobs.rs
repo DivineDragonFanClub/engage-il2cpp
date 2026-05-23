@@ -12,10 +12,8 @@ pub mod ijobparallelfortransformextensions;
 pub use ijobparallelfortransformextensions::IIJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunctionMethods;
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions-types")]
 pub use ijobparallelfortransformextensions::{
-    IIJobParallelForTransformExtensions,
-    IIJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction,
-    IJobParallelForTransformExtensions,
-    IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1,
+    IIJobParallelForTransformExtensions, IIJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction,
+    IJobParallelForTransformExtensions, IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1,
     IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction,
     IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData,
 };

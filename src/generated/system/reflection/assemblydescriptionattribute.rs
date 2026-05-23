@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-reflection-assemblydescriptionattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblydescriptionattribute/AssemblyDescriptionAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyDescriptionAttribute")]
@@ -26,11 +26,8 @@ mod __AssemblyDescriptionAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssemblyDescriptionAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -42,18 +39,15 @@ mod __AssemblyDescriptionAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssemblyDescriptionAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssemblyDescriptionAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -61,15 +55,8 @@ mod __AssemblyDescriptionAttribute_unity2_raw {
         description: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AssemblyDescriptionAttribute,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AssemblyDescriptionAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, description, __unity2_method_info)
     }
 }
@@ -80,14 +67,8 @@ pub trait IAssemblyDescriptionAttributeMethods: IAssemblyDescriptionAttribute {
     fn ctor(self, description: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <AssemblyDescriptionAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AssemblyDescriptionAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(description),
-                ::core::option::Option::None,
-            )
+                <AssemblyDescriptionAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssemblyDescriptionAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(description), ::core::option::Option::None)
         }
     }
 }
@@ -114,7 +95,5 @@ impl AssemblyDescriptionAttribute {
 #[cfg(feature = "system-reflection-assemblydescriptionattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssemblyDescriptionAttribute;
-    pub use super::IAssemblyDescriptionAttribute;
-    pub use super::IAssemblyDescriptionAttributeMethods;
+    pub use super::{AssemblyDescriptionAttribute, IAssemblyDescriptionAttribute, IAssemblyDescriptionAttributeMethods};
 }

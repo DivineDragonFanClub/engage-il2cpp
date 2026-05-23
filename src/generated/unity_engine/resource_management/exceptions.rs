@@ -24,17 +24,9 @@ pub mod resourcemanagerexception;
 pub use resourcemanagerexception::IResourceManagerExceptionMethods;
 #[cfg(feature = "unity_engine-resource_management-exceptions-resourcemanagerexception-types")]
 pub use resourcemanagerexception::{IResourceManagerException, ResourceManagerException};
-#[cfg(any(
-    feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception-types"
-))]
+#[cfg(any(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception-types"))]
 pub mod unknownresourceproviderexception;
-#[cfg(
-    feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception"
-)]
+#[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception")]
 pub use unknownresourceproviderexception::IUnknownResourceProviderExceptionMethods;
-#[cfg(
-    feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception-types"
-)]
-pub use unknownresourceproviderexception::{
-    IUnknownResourceProviderException, UnknownResourceProviderException,
-};
+#[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception-types")]
+pub use unknownresourceproviderexception::{IUnknownResourceProviderException, UnknownResourceProviderException};

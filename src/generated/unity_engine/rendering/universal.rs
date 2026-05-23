@@ -132,9 +132,7 @@ pub mod deferredshaderdata;
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
 pub use deferredshaderdata::IDeferredShaderDataMethods;
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata-types")]
-pub use deferredshaderdata::{
-    DeferredShaderData, DeferredShaderData_ComputeBufferInfo, IDeferredShaderData,
-};
+pub use deferredshaderdata::{DeferredShaderData, DeferredShaderData_ComputeBufferInfo, IDeferredShaderData};
 #[cfg(any(feature = "unity_engine-rendering-universal-depthoffield-types"))]
 pub mod depthoffield;
 #[cfg(feature = "unity_engine-rendering-universal-depthoffield")]
@@ -156,9 +154,7 @@ pub mod disallowmultiplerendererfeature;
 #[cfg(feature = "unity_engine-rendering-universal-disallowmultiplerendererfeature")]
 pub use disallowmultiplerendererfeature::IDisallowMultipleRendererFeatureMethods;
 #[cfg(feature = "unity_engine-rendering-universal-disallowmultiplerendererfeature-types")]
-pub use disallowmultiplerendererfeature::{
-    DisallowMultipleRendererFeature, IDisallowMultipleRendererFeature,
-};
+pub use disallowmultiplerendererfeature::{DisallowMultipleRendererFeature, IDisallowMultipleRendererFeature};
 #[cfg(any(feature = "unity_engine-rendering-universal-downsampling-types"))]
 pub mod downsampling;
 #[cfg(feature = "unity_engine-rendering-universal-downsampling-types")]
@@ -191,21 +187,17 @@ pub mod forwardrenderer;
 pub use forwardrenderer::IForwardRendererMethods;
 #[cfg(feature = "unity_engine-rendering-universal-forwardrenderer-types")]
 pub use forwardrenderer::{
-    ForwardRenderer, ForwardRenderer_Profiling, ForwardRenderer_RenderPassInputSummary,
-    IForwardRenderer, IForwardRenderer_Profiling,
+    ForwardRenderer, ForwardRenderer_Profiling, ForwardRenderer_RenderPassInputSummary, IForwardRenderer, IForwardRenderer_Profiling,
 };
 #[cfg(any(feature = "unity_engine-rendering-universal-forwardrendererdata-types"))]
 pub mod forwardrendererdata;
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata-types")]
 pub use forwardrendererdata::{
-    ForwardRendererData, ForwardRendererData_MixedResolutionFlag,
-    ForwardRendererData_ShaderResources, IForwardRendererData,
+    ForwardRendererData, ForwardRendererData_MixedResolutionFlag, ForwardRendererData_ShaderResources, IForwardRendererData,
     IForwardRendererData_ShaderResources,
 };
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-pub use forwardrendererdata::{
-    IForwardRendererDataMethods, IForwardRendererData_ShaderResourcesMethods,
-};
+pub use forwardrendererdata::{IForwardRendererDataMethods, IForwardRendererData_ShaderResourcesMethods};
 #[cfg(any(
     feature = "unity_engine-rendering-universal-internal-additionallightsshadowcasterpass-types",
     feature = "unity_engine-rendering-universal-internal-bitarray_2-types",
@@ -236,9 +228,7 @@ pub mod invokeonrenderobjectcallbackpass;
 #[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]
 pub use invokeonrenderobjectcallbackpass::IInvokeOnRenderObjectCallbackPassMethods;
 #[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass-types")]
-pub use invokeonrenderobjectcallbackpass::{
-    IInvokeOnRenderObjectCallbackPass, InvokeOnRenderObjectCallbackPass,
-};
+pub use invokeonrenderobjectcallbackpass::{IInvokeOnRenderObjectCallbackPass, InvokeOnRenderObjectCallbackPass};
 #[cfg(any(feature = "unity_engine-rendering-universal-ipostprocesscomponent-types"))]
 pub mod ipostprocesscomponent;
 #[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
@@ -313,14 +303,11 @@ pub use pipelinedebuglevel::PipelineDebugLevel;
 pub mod postprocessdata;
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata-types")]
 pub use postprocessdata::{
-    IPostProcessData, IPostProcessData_ShaderResources, IPostProcessData_TextureResources,
-    PostProcessData, PostProcessData_ShaderResources, PostProcessData_TextureResources,
+    IPostProcessData, IPostProcessData_ShaderResources, IPostProcessData_TextureResources, PostProcessData, PostProcessData_ShaderResources,
+    PostProcessData_TextureResources,
 };
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-pub use postprocessdata::{
-    IPostProcessDataMethods, IPostProcessData_ShaderResourcesMethods,
-    IPostProcessData_TextureResourcesMethods,
-};
+pub use postprocessdata::{IPostProcessDataMethods, IPostProcessData_ShaderResourcesMethods, IPostProcessData_TextureResourcesMethods};
 #[cfg(any(feature = "unity_engine-rendering-universal-postprocessingdata-types"))]
 pub mod postprocessingdata;
 #[cfg(feature = "unity_engine-rendering-universal-postprocessingdata-types")]
@@ -328,10 +315,7 @@ pub use postprocessingdata::PostProcessingData;
 #[cfg(any(feature = "unity_engine-rendering-universal-postprocessutils-types"))]
 pub mod postprocessutils;
 #[cfg(feature = "unity_engine-rendering-universal-postprocessutils-types")]
-pub use postprocessutils::{
-    IPostProcessUtils, IPostProcessUtils_ShaderConstants, PostProcessUtils,
-    PostProcessUtils_ShaderConstants,
-};
+pub use postprocessutils::{IPostProcessUtils, IPostProcessUtils_ShaderConstants, PostProcessUtils, PostProcessUtils_ShaderConstants};
 #[cfg(any(feature = "unity_engine-rendering-universal-pretile-types"))]
 pub mod pretile;
 #[cfg(feature = "unity_engine-rendering-universal-pretile-types")]
@@ -361,10 +345,7 @@ pub mod renderingutils;
 #[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
 pub use renderingutils::IRenderingUtils_StereoConstantsMethods;
 #[cfg(feature = "unity_engine-rendering-universal-renderingutils-types")]
-pub use renderingutils::{
-    IRenderingUtils, IRenderingUtils_StereoConstants, RenderingUtils,
-    RenderingUtils_StereoConstants,
-};
+pub use renderingutils::{IRenderingUtils, IRenderingUtils_StereoConstants, RenderingUtils, RenderingUtils_StereoConstants};
 #[cfg(any(feature = "unity_engine-rendering-universal-renderpassevent-types"))]
 pub mod renderpassevent;
 #[cfg(feature = "unity_engine-rendering-universal-renderpassevent-types")]
@@ -387,40 +368,31 @@ pub use sceneviewdepthcopypass::{ISceneViewDepthCopyPass, SceneViewDepthCopyPass
 pub mod screenspaceambientocclusion;
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion-types")]
 pub use screenspaceambientocclusion::{
-    IScreenSpaceAmbientOcclusion, IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-    ScreenSpaceAmbientOcclusion, ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass,
-    ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses,
+    IScreenSpaceAmbientOcclusion, IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass, ScreenSpaceAmbientOcclusion,
+    ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass, ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses,
 };
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
-pub use screenspaceambientocclusion::{
-    IScreenSpaceAmbientOcclusionMethods,
-    IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods,
-};
+pub use screenspaceambientocclusion::{IScreenSpaceAmbientOcclusionMethods, IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods};
 #[cfg(any(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings-types"))]
 pub mod screenspaceambientocclusionsettings;
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
 pub use screenspaceambientocclusionsettings::IScreenSpaceAmbientOcclusionSettingsMethods;
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings-types")]
 pub use screenspaceambientocclusionsettings::{
-    IScreenSpaceAmbientOcclusionSettings, ScreenSpaceAmbientOcclusionSettings,
-    ScreenSpaceAmbientOcclusionSettings_DepthSource,
+    IScreenSpaceAmbientOcclusionSettings, ScreenSpaceAmbientOcclusionSettings, ScreenSpaceAmbientOcclusionSettings_DepthSource,
     ScreenSpaceAmbientOcclusionSettings_NormalQuality,
 };
 #[cfg(any(feature = "unity_engine-rendering-universal-scriptablerenderer-types"))]
 pub mod scriptablerenderer;
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer-types")]
 pub use scriptablerenderer::{
-    IScriptableRenderer, IScriptableRenderer_Profiling, IScriptableRenderer_Profiling_RenderBlock,
-    IScriptableRenderer_Profiling_RenderPass, IScriptableRenderer_RenderPassBlock,
-    IScriptableRenderer_RenderingFeatures, ScriptableRenderer, ScriptableRenderer_Profiling,
-    ScriptableRenderer_Profiling_RenderBlock, ScriptableRenderer_Profiling_RenderPass,
-    ScriptableRenderer_RenderBlocks, ScriptableRenderer_RenderBlocks_BlockRange,
-    ScriptableRenderer_RenderPassBlock, ScriptableRenderer_RenderingFeatures,
+    IScriptableRenderer, IScriptableRenderer_Profiling, IScriptableRenderer_Profiling_RenderBlock, IScriptableRenderer_Profiling_RenderPass,
+    IScriptableRenderer_RenderPassBlock, IScriptableRenderer_RenderingFeatures, ScriptableRenderer, ScriptableRenderer_Profiling,
+    ScriptableRenderer_Profiling_RenderBlock, ScriptableRenderer_Profiling_RenderPass, ScriptableRenderer_RenderBlocks,
+    ScriptableRenderer_RenderBlocks_BlockRange, ScriptableRenderer_RenderPassBlock, ScriptableRenderer_RenderingFeatures,
 };
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-pub use scriptablerenderer::{
-    IScriptableRendererMethods, IScriptableRenderer_RenderingFeaturesMethods,
-};
+pub use scriptablerenderer::{IScriptableRendererMethods, IScriptableRenderer_RenderingFeaturesMethods};
 #[cfg(any(feature = "unity_engine-rendering-universal-scriptablerendererdata-types"))]
 pub mod scriptablerendererdata;
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
@@ -546,60 +518,42 @@ pub mod universaladditionalcameradata;
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionalcameradata")]
 pub use universaladditionalcameradata::IUniversalAdditionalCameraDataMethods;
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionalcameradata-types")]
-pub use universaladditionalcameradata::{
-    IUniversalAdditionalCameraData, UniversalAdditionalCameraData,
-};
+pub use universaladditionalcameradata::{IUniversalAdditionalCameraData, UniversalAdditionalCameraData};
 #[cfg(any(feature = "unity_engine-rendering-universal-universaladditionallightdata-types"))]
 pub mod universaladditionallightdata;
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
 pub use universaladditionallightdata::IUniversalAdditionalLightDataMethods;
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata-types")]
-pub use universaladditionallightdata::{
-    IUniversalAdditionalLightData, UniversalAdditionalLightData,
-};
+pub use universaladditionallightdata::{IUniversalAdditionalLightData, UniversalAdditionalLightData};
 #[cfg(any(feature = "unity_engine-rendering-universal-universalrenderpipeline-types"))]
 pub mod universalrenderpipeline;
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 pub use universalrenderpipeline::IUniversalRenderPipelineMethods;
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline-types")]
 pub use universalrenderpipeline::{
-    IUniversalRenderPipeline, IUniversalRenderPipeline_CustomRPTime,
-    IUniversalRenderPipeline_Profiling, IUniversalRenderPipeline_Profiling_Pipeline,
-    IUniversalRenderPipeline_Profiling_Pipeline_Context,
-    IUniversalRenderPipeline_Profiling_Pipeline_Renderer,
-    IUniversalRenderPipeline_Profiling_Pipeline_XR, UniversalRenderPipeline,
-    UniversalRenderPipeline_CustomRPTime, UniversalRenderPipeline_Profiling,
+    IUniversalRenderPipeline, IUniversalRenderPipeline_CustomRPTime, IUniversalRenderPipeline_Profiling, IUniversalRenderPipeline_Profiling_Pipeline,
+    IUniversalRenderPipeline_Profiling_Pipeline_Context, IUniversalRenderPipeline_Profiling_Pipeline_Renderer,
+    IUniversalRenderPipeline_Profiling_Pipeline_XR, UniversalRenderPipeline, UniversalRenderPipeline_CustomRPTime, UniversalRenderPipeline_Profiling,
     UniversalRenderPipeline_Profiling_Pipeline, UniversalRenderPipeline_Profiling_Pipeline_Context,
-    UniversalRenderPipeline_Profiling_Pipeline_Renderer,
-    UniversalRenderPipeline_Profiling_Pipeline_XR,
+    UniversalRenderPipeline_Profiling_Pipeline_Renderer, UniversalRenderPipeline_Profiling_Pipeline_XR,
 };
 #[cfg(any(feature = "unity_engine-rendering-universal-universalrenderpipelineasset-types"))]
 pub mod universalrenderpipelineasset;
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineasset")]
 pub use universalrenderpipelineasset::IUniversalRenderPipelineAssetMethods;
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineasset-types")]
-pub use universalrenderpipelineasset::{
-    IUniversalRenderPipelineAsset, UniversalRenderPipelineAsset,
-};
-#[cfg(any(
-    feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources-types"
-))]
+pub use universalrenderpipelineasset::{IUniversalRenderPipelineAsset, UniversalRenderPipelineAsset};
+#[cfg(any(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources-types"))]
 pub mod universalrenderpipelineeditorresources;
-#[cfg(
-    feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources-types"
-)]
+#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources-types")]
 pub use universalrenderpipelineeditorresources::{
-    IUniversalRenderPipelineEditorResources,
-    IUniversalRenderPipelineEditorResources_MaterialResources,
-    IUniversalRenderPipelineEditorResources_ShaderResources,
-    UniversalRenderPipelineEditorResources,
-    UniversalRenderPipelineEditorResources_MaterialResources,
-    UniversalRenderPipelineEditorResources_ShaderResources,
+    IUniversalRenderPipelineEditorResources, IUniversalRenderPipelineEditorResources_MaterialResources,
+    IUniversalRenderPipelineEditorResources_ShaderResources, UniversalRenderPipelineEditorResources,
+    UniversalRenderPipelineEditorResources_MaterialResources, UniversalRenderPipelineEditorResources_ShaderResources,
 };
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
 pub use universalrenderpipelineeditorresources::{
-    IUniversalRenderPipelineEditorResourcesMethods,
-    IUniversalRenderPipelineEditorResources_MaterialResourcesMethods,
+    IUniversalRenderPipelineEditorResourcesMethods, IUniversalRenderPipelineEditorResources_MaterialResourcesMethods,
     IUniversalRenderPipelineEditorResources_ShaderResourcesMethods,
 };
 #[cfg(any(feature = "unity_engine-rendering-universal-urpprofileid-types"))]
@@ -647,9 +601,7 @@ pub use xrsystem::{IXRSystem, IXRSystem_XRShaderIDs, XRSystem, XRSystem_XRShader
 #[cfg(any(feature = "unity_engine-rendering-universal-xrsystemdata-types"))]
 pub mod xrsystemdata;
 #[cfg(feature = "unity_engine-rendering-universal-xrsystemdata-types")]
-pub use xrsystemdata::{
-    IXRSystemData, IXRSystemData_ShaderResources, XRSystemData, XRSystemData_ShaderResources,
-};
+pub use xrsystemdata::{IXRSystemData, IXRSystemData_ShaderResources, XRSystemData, XRSystemData_ShaderResources};
 #[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
 pub use xrsystemdata::{IXRSystemDataMethods, IXRSystemData_ShaderResourcesMethods};
 #[cfg(any(feature = "unity_engine-rendering-universal-xrview-types"))]

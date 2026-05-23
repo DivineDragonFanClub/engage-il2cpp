@@ -23,10 +23,7 @@ pub mod batchrenderergroup;
 #[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
 pub use batchrenderergroup::IBatchRendererGroup_OnPerformCullingMethods;
 #[cfg(feature = "unity_engine-rendering-batchrenderergroup-types")]
-pub use batchrenderergroup::{
-    BatchRendererGroup, BatchRendererGroup_OnPerformCulling, IBatchRendererGroup,
-    IBatchRendererGroup_OnPerformCulling,
-};
+pub use batchrenderergroup::{BatchRendererGroup, BatchRendererGroup_OnPerformCulling, IBatchRendererGroup, IBatchRendererGroup_OnPerformCulling};
 #[cfg(any(feature = "unity_engine-rendering-batchvisibility-types"))]
 pub mod batchvisibility;
 #[cfg(feature = "unity_engine-rendering-batchvisibility-types")]
@@ -177,14 +174,11 @@ pub use computequeuetype::ComputeQueueType;
 pub mod constantbuffer;
 #[cfg(feature = "unity_engine-rendering-constantbuffer-types")]
 pub use constantbuffer::{
-    ConstantBuffer, ConstantBuffer_ConstantBufferBase, ConstantBuffer_TypedConstantBuffer_1,
-    IConstantBuffer, IConstantBuffer_ConstantBufferBase, IConstantBuffer_TypedConstantBuffer_1,
+    ConstantBuffer, ConstantBuffer_ConstantBufferBase, ConstantBuffer_TypedConstantBuffer_1, IConstantBuffer, IConstantBuffer_ConstantBufferBase,
+    IConstantBuffer_TypedConstantBuffer_1,
 };
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
-pub use constantbuffer::{
-    IConstantBufferMethods, IConstantBuffer_ConstantBufferBaseMethods,
-    IConstantBuffer_TypedConstantBuffer_1Methods,
-};
+pub use constantbuffer::{IConstantBufferMethods, IConstantBuffer_ConstantBufferBaseMethods, IConstantBuffer_TypedConstantBuffer_1Methods};
 #[cfg(any(feature = "unity_engine-rendering-copytexturesupport-types"))]
 pub mod copytexturesupport;
 #[cfg(feature = "unity_engine-rendering-copytexturesupport-types")]
@@ -203,9 +197,8 @@ pub mod coreunsafeutils;
 pub use coreunsafeutils::ICoreUnsafeUtils_IKeyGetter_2Methods;
 #[cfg(feature = "unity_engine-rendering-coreunsafeutils-types")]
 pub use coreunsafeutils::{
-    CoreUnsafeUtils, CoreUnsafeUtils_DefaultKeyGetter_1, CoreUnsafeUtils_FixedBufferStringQueue,
-    CoreUnsafeUtils_IKeyGetter_2, CoreUnsafeUtils_UintKeyGetter, ICoreUnsafeUtils,
-    ICoreUnsafeUtils_IKeyGetter_2,
+    CoreUnsafeUtils, CoreUnsafeUtils_DefaultKeyGetter_1, CoreUnsafeUtils_FixedBufferStringQueue, CoreUnsafeUtils_IKeyGetter_2,
+    CoreUnsafeUtils_UintKeyGetter, ICoreUnsafeUtils, ICoreUnsafeUtils_IKeyGetter_2,
 };
 #[cfg(any(feature = "unity_engine-rendering-coreutils-types"))]
 pub mod coreutils;
@@ -252,9 +245,7 @@ pub mod debugactionstate;
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
 pub use debugactionstate::IDebugActionStateMethods;
 #[cfg(feature = "unity_engine-rendering-debugactionstate-types")]
-pub use debugactionstate::{
-    DebugActionState, DebugActionState_DebugActionKeyType, IDebugActionState,
-};
+pub use debugactionstate::{DebugActionState, DebugActionState_DebugActionKeyType, IDebugActionState};
 #[cfg(any(feature = "unity_engine-rendering-debugmanager-types"))]
 pub mod debugmanager;
 #[cfg(feature = "unity_engine-rendering-debugmanager")]
@@ -271,30 +262,23 @@ pub use debugshapes::{DebugShapes, IDebugShapes};
 pub mod debugui;
 #[cfg(feature = "unity_engine-rendering-debugui-types")]
 pub use debugui::{
-    DebugUI, DebugUI_BitField, DebugUI_BoolField, DebugUI_Button, DebugUI_ColorField,
-    DebugUI_Container, DebugUI_EnumField, DebugUI_Field_1, DebugUI_Flags, DebugUI_FloatField,
-    DebugUI_Foldout, DebugUI_HBox, DebugUI_HistoryBoolField, DebugUI_HistoryEnumField,
-    DebugUI_IContainer, DebugUI_IValueField, DebugUI_IntField, DebugUI_Panel, DebugUI_Table,
-    DebugUI_Table_Row, DebugUI_UIntField, DebugUI_VBox, DebugUI_Value, DebugUI_Vector2Field,
-    DebugUI_Vector3Field, DebugUI_Vector4Field, DebugUI_Widget, IDebugUI, IDebugUI_BitField,
-    IDebugUI_BoolField, IDebugUI_Button, IDebugUI_ColorField, IDebugUI_Container,
-    IDebugUI_EnumField, IDebugUI_Field_1, IDebugUI_FloatField, IDebugUI_Foldout, IDebugUI_HBox,
-    IDebugUI_HistoryBoolField, IDebugUI_HistoryEnumField, IDebugUI_IContainer,
-    IDebugUI_IValueField, IDebugUI_IntField, IDebugUI_Panel, IDebugUI_Table, IDebugUI_Table_Row,
-    IDebugUI_UIntField, IDebugUI_VBox, IDebugUI_Value, IDebugUI_Vector2Field,
+    DebugUI, DebugUI_BitField, DebugUI_BoolField, DebugUI_Button, DebugUI_ColorField, DebugUI_Container, DebugUI_EnumField, DebugUI_Field_1,
+    DebugUI_Flags, DebugUI_FloatField, DebugUI_Foldout, DebugUI_HBox, DebugUI_HistoryBoolField, DebugUI_HistoryEnumField, DebugUI_IContainer,
+    DebugUI_IValueField, DebugUI_IntField, DebugUI_Panel, DebugUI_Table, DebugUI_Table_Row, DebugUI_UIntField, DebugUI_VBox, DebugUI_Value,
+    DebugUI_Vector2Field, DebugUI_Vector3Field, DebugUI_Vector4Field, DebugUI_Widget, IDebugUI, IDebugUI_BitField, IDebugUI_BoolField,
+    IDebugUI_Button, IDebugUI_ColorField, IDebugUI_Container, IDebugUI_EnumField, IDebugUI_Field_1, IDebugUI_FloatField, IDebugUI_Foldout,
+    IDebugUI_HBox, IDebugUI_HistoryBoolField, IDebugUI_HistoryEnumField, IDebugUI_IContainer, IDebugUI_IValueField, IDebugUI_IntField,
+    IDebugUI_Panel, IDebugUI_Table, IDebugUI_Table_Row, IDebugUI_UIntField, IDebugUI_VBox, IDebugUI_Value, IDebugUI_Vector2Field,
     IDebugUI_Vector3Field, IDebugUI_Vector4Field, IDebugUI_Widget,
 };
 #[cfg(feature = "unity_engine-rendering-debugui")]
 pub use debugui::{
-    IDebugUIMethods, IDebugUI_BitFieldMethods, IDebugUI_BoolFieldMethods, IDebugUI_ButtonMethods,
-    IDebugUI_ColorFieldMethods, IDebugUI_ContainerMethods, IDebugUI_EnumFieldMethods,
-    IDebugUI_Field_1Methods, IDebugUI_FloatFieldMethods, IDebugUI_FoldoutMethods,
-    IDebugUI_HBoxMethods, IDebugUI_HistoryBoolFieldMethods, IDebugUI_HistoryEnumFieldMethods,
-    IDebugUI_IContainerMethods, IDebugUI_IValueFieldMethods, IDebugUI_IntFieldMethods,
-    IDebugUI_PanelMethods, IDebugUI_TableMethods, IDebugUI_Table_RowMethods,
-    IDebugUI_UIntFieldMethods, IDebugUI_VBoxMethods, IDebugUI_ValueMethods,
-    IDebugUI_Vector2FieldMethods, IDebugUI_Vector3FieldMethods, IDebugUI_Vector4FieldMethods,
-    IDebugUI_WidgetMethods,
+    IDebugUIMethods, IDebugUI_BitFieldMethods, IDebugUI_BoolFieldMethods, IDebugUI_ButtonMethods, IDebugUI_ColorFieldMethods,
+    IDebugUI_ContainerMethods, IDebugUI_EnumFieldMethods, IDebugUI_Field_1Methods, IDebugUI_FloatFieldMethods, IDebugUI_FoldoutMethods,
+    IDebugUI_HBoxMethods, IDebugUI_HistoryBoolFieldMethods, IDebugUI_HistoryEnumFieldMethods, IDebugUI_IContainerMethods,
+    IDebugUI_IValueFieldMethods, IDebugUI_IntFieldMethods, IDebugUI_PanelMethods, IDebugUI_TableMethods, IDebugUI_Table_RowMethods,
+    IDebugUI_UIntFieldMethods, IDebugUI_VBoxMethods, IDebugUI_ValueMethods, IDebugUI_Vector2FieldMethods, IDebugUI_Vector3FieldMethods,
+    IDebugUI_Vector4FieldMethods, IDebugUI_WidgetMethods,
 };
 #[cfg(any(feature = "unity_engine-rendering-debugupdater-types"))]
 pub mod debugupdater;
@@ -452,8 +436,7 @@ pub use graphicstier::GraphicsTier;
 pub mod hablecurve;
 #[cfg(feature = "unity_engine-rendering-hablecurve-types")]
 pub use hablecurve::{
-    HableCurve, HableCurve_DirectParams, HableCurve_Segment, HableCurve_Uniforms, IHableCurve,
-    IHableCurve_Segment, IHableCurve_Uniforms,
+    HableCurve, HableCurve_DirectParams, HableCurve_Segment, HableCurve_Uniforms, IHableCurve, IHableCurve_Segment, IHableCurve_Uniforms,
 };
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
 pub use hablecurve::{IHableCurveMethods, IHableCurve_SegmentMethods, IHableCurve_UniformsMethods};
@@ -498,9 +481,7 @@ pub mod ivirtualtexturingenabledrenderpipeline;
 #[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]
 pub use ivirtualtexturingenabledrenderpipeline::IIVirtualTexturingEnabledRenderPipelineMethods;
 #[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline-types")]
-pub use ivirtualtexturingenabledrenderpipeline::{
-    IIVirtualTexturingEnabledRenderPipeline, IVirtualTexturingEnabledRenderPipeline,
-};
+pub use ivirtualtexturingenabledrenderpipeline::{IIVirtualTexturingEnabledRenderPipeline, IVirtualTexturingEnabledRenderPipeline};
 #[cfg(any(feature = "unity_engine-rendering-layermaskparameter-types"))]
 pub mod layermaskparameter;
 #[cfg(feature = "unity_engine-rendering-layermaskparameter")]
@@ -608,9 +589,7 @@ pub mod nointerpclampedfloatparameter;
 #[cfg(feature = "unity_engine-rendering-nointerpclampedfloatparameter")]
 pub use nointerpclampedfloatparameter::INoInterpClampedFloatParameterMethods;
 #[cfg(feature = "unity_engine-rendering-nointerpclampedfloatparameter-types")]
-pub use nointerpclampedfloatparameter::{
-    INoInterpClampedFloatParameter, NoInterpClampedFloatParameter,
-};
+pub use nointerpclampedfloatparameter::{INoInterpClampedFloatParameter, NoInterpClampedFloatParameter};
 #[cfg(any(feature = "unity_engine-rendering-nointerpclampedintparameter-types"))]
 pub mod nointerpclampedintparameter;
 #[cfg(feature = "unity_engine-rendering-nointerpclampedintparameter")]
@@ -676,9 +655,7 @@ pub mod nointerprendertextureparameter;
 #[cfg(feature = "unity_engine-rendering-nointerprendertextureparameter")]
 pub use nointerprendertextureparameter::INoInterpRenderTextureParameterMethods;
 #[cfg(feature = "unity_engine-rendering-nointerprendertextureparameter-types")]
-pub use nointerprendertextureparameter::{
-    INoInterpRenderTextureParameter, NoInterpRenderTextureParameter,
-};
+pub use nointerprendertextureparameter::{INoInterpRenderTextureParameter, NoInterpRenderTextureParameter};
 #[cfg(any(feature = "unity_engine-rendering-nointerptextureparameter-types"))]
 pub mod nointerptextureparameter;
 #[cfg(feature = "unity_engine-rendering-nointerptextureparameter")]
@@ -991,8 +968,7 @@ pub mod supportedrenderingfeatures;
 pub use supportedrenderingfeatures::ISupportedRenderingFeaturesMethods;
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures-types")]
 pub use supportedrenderingfeatures::{
-    ISupportedRenderingFeatures, SupportedRenderingFeatures,
-    SupportedRenderingFeatures_LightmapMixedBakeModes,
+    ISupportedRenderingFeatures, SupportedRenderingFeatures, SupportedRenderingFeatures_LightmapMixedBakeModes,
     SupportedRenderingFeatures_ReflectionProbeModes,
 };
 #[cfg(any(feature = "unity_engine-rendering-surfacedataattributes-types"))]

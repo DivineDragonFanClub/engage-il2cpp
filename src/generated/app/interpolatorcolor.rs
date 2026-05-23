@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-interpolatorcolor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::interpolator_1::{IInterpolator_1, Interpolator_1};
-    use crate::app::interpolatortime::{IInterpolatorTime, InterpolatorTime};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            interpolator_1::{IInterpolator_1, Interpolator_1},
+            interpolatortime::{IInterpolatorTime, InterpolatorTime},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorcolor/InterpolatorColor.md"))]
     #[::unity2::class(namespace = "App", name = "InterpolatorColor")]
@@ -27,9 +31,7 @@ mod __InterpolatorColor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::curve::Curve_Type as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -45,18 +47,15 @@ mod __InterpolatorColor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorColor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorColor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -65,25 +64,15 @@ mod __InterpolatorColor_unity2_raw {
         num: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            InterpolatorColor,
-            crate::app::curve::Curve_Type,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(InterpolatorColor, crate::app::curve::Curve_Type, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, r#type, num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorColor as ::unity2::ClassIdentity>::class(),
@@ -96,41 +85,27 @@ mod __InterpolatorColor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorColor as ::unity2::ClassIdentity>::NAME,
-                    "get_Value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorColor as ::unity2::ClassIdentity>::NAME,
+                        "get_Value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value(
-        this: InterpolatorColor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            InterpolatorColor,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value::get_offset() as isize),
-        );
+    pub unsafe fn get_value(this: InterpolatorColor, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(InterpolatorColor, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_equal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -146,18 +121,15 @@ mod __InterpolatorColor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorColor as ::unity2::ClassIdentity>::NAME,
-                    "IsEqual",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorColor as ::unity2::ClassIdentity>::NAME,
+                        "IsEqual",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_equal(
@@ -171,11 +143,7 @@ mod __InterpolatorColor_unity2_raw {
             crate::unity_engine::color::Color,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_equal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_equal::get_method_info().method_ptr);
         inner(this, a, b, __unity2_method_info)
     }
 }
@@ -183,15 +151,9 @@ mod __InterpolatorColor_unity2_raw {
 #[cfg(feature = "app-interpolatorcolor")]
 pub trait IInterpolatorColorMethods: IInterpolatorColor {
     #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"]
-    fn ctor(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::curve::Curve_Type>,
-        num: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor(self, r#type: impl ::core::convert::Into<crate::app::curve::Curve_Type>, num: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <InterpolatorColor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <InterpolatorColor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpolatorColor_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -203,9 +165,7 @@ pub trait IInterpolatorColorMethods: IInterpolatorColor {
     #[doc = "`get_Value()` overload"]
     fn get_value(self) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = <InterpolatorColor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <InterpolatorColor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpolatorColor_unity2_raw::get_value(__receiver, ::core::option::Option::None)
         }
     }
@@ -216,9 +176,7 @@ pub trait IInterpolatorColorMethods: IInterpolatorColor {
         b: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> bool {
         unsafe {
-            let __receiver = <InterpolatorColor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <InterpolatorColor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpolatorColor_unity2_raw::is_equal(
                 __receiver,
                 ::core::convert::Into::into(a),
@@ -251,18 +209,18 @@ impl InterpolatorColor {
 #[cfg(feature = "app-interpolatorcolor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInterpolatorColor;
-    pub use super::IInterpolatorColorMethods;
-    pub use super::InterpolatorColor;
-    pub use crate::app::interpolator_1::IInterpolator_1;
+    pub use super::{IInterpolatorColor, IInterpolatorColorMethods, InterpolatorColor};
     #[cfg(feature = "app-interpolator_1")]
     pub use crate::app::interpolator_1::IInterpolator_1Methods;
-    pub use crate::app::interpolator_1::Interpolator_1;
-    pub use crate::app::interpolatortime::IInterpolatorTime;
     #[cfg(feature = "app-interpolatortime")]
     pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
-    pub use crate::app::interpolatortime::InterpolatorTime;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            interpolator_1::{IInterpolator_1, Interpolator_1},
+            interpolatortime::{IInterpolatorTime, InterpolatorTime},
+        },
+        system::object::IObject,
+    };
 }

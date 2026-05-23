@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-playables-playablegraph-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/playablegraph/PlayableGraph.md"))]
     #[repr(C)]
@@ -17,9 +19,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for PlayableGraph {
-        const NAMESPACE: &'static str = "UnityEngine.Playables";
-
         const NAME: &'static str = "PlayableGraph";
+        const NAMESPACE: &'static str = "UnityEngine.Playables";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -30,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for PlayableGraph {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -50,9 +48,7 @@ mod __PlayableGraph_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
@@ -65,136 +61,84 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Evaluate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Evaluate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn evaluate(
-        this: PlayableGraph,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn evaluate(this: PlayableGraph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_evaluate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_evaluate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayableGraph as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayableGraph as ::unity2::ClassIdentity>::class(), "Create", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablegraph::PlayableGraph =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create::get_offset() as isize),
-            );
+    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::playables::playablegraph::PlayableGraph =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayableGraph as ::unity2::ClassIdentity>::class(),
-                "Create",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayableGraph as ::unity2::ClassIdentity>::class(), "Create", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_2(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablegraph::PlayableGraph =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_2::get_offset() as isize),
-            );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playablegraph::PlayableGraph =
+            ::core::mem::transmute(__lookup_create_2::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
@@ -207,39 +151,27 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy(
-        this: PlayableGraph,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy(this: PlayableGraph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
@@ -252,125 +184,80 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_valid(
-        this: PlayableGraph,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_valid(this: PlayableGraph, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayableGraph as ::unity2::ClassIdentity>::class(),
-                "Play",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayableGraph as ::unity2::ClassIdentity>::class(), "Play", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play(this: PlayableGraph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play::get_offset() as isize),
-            );
+        let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayableGraph as ::unity2::ClassIdentity>::class(),
-                "Stop",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayableGraph as ::unity2::ClassIdentity>::class(), "Stop", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Stop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Stop",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop(this: PlayableGraph, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop::get_offset() as isize),
-            );
+        let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "Evaluate",
@@ -382,41 +269,29 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Evaluate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Evaluate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn evaluate_2(
-        this: PlayableGraph,
-        delta_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn evaluate_2(this: PlayableGraph, delta_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableGraph, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_evaluate_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_evaluate_2::get_method_info().method_ptr);
         inner(this, delta_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_time_update_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: directorupdatemode :: DirectorUpdateMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "SetTimeUpdateMode",
@@ -428,18 +303,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "SetTimeUpdateMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "SetTimeUpdateMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_time_update_mode(
@@ -451,20 +323,14 @@ mod __PlayableGraph_unity2_raw {
             PlayableGraph,
             crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_time_update_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_time_update_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_resolver {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
@@ -477,34 +343,30 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "GetResolver",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "GetResolver",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_resolver(
         this: PlayableGraph,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::iexposedpropertytable::IExposedPropertyTable {
-        let inner : extern "C" fn (PlayableGraph , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: iexposedpropertytable :: IExposedPropertyTable = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_resolver :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> crate::unity_engine::iexposedpropertytable::IExposedPropertyTable =
+            ::core::mem::transmute(__lookup_get_resolver::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_playable_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
@@ -517,39 +379,27 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "GetPlayableCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayableCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_playable_count(
-        this: PlayableGraph,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_playable_count(this: PlayableGraph, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_playable_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_playable_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_playable_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
@@ -562,44 +412,34 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "CreatePlayableHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "CreatePlayableHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_playable_handle(
         this: PlayableGraph,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
-        let inner: extern "C" fn(
-            PlayableGraph,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_playable_handle::get_offset() as isize),
-            );
+        let inner: extern "C" fn(PlayableGraph, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(__lookup_create_playable_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_script_output_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "CreateScriptOutputInternal",
@@ -611,18 +451,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "CreateScriptOutputInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "CreateScriptOutputInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_script_output_internal(
@@ -636,21 +473,20 @@ mod __PlayableGraph_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_script_output_internal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_create_script_output_internal::get_method_info().method_ptr);
         inner(this, name, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_connect_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "ConnectInternal",
@@ -662,18 +498,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "ConnectInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "ConnectInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn connect_internal(
@@ -691,11 +524,7 @@ mod __PlayableGraph_unity2_raw {
             crate::unity_engine::playables::playablehandle::PlayableHandle,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_connect_internal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_connect_internal::get_method_info().method_ptr);
         inner(
             this,
             source,
@@ -709,10 +538,11 @@ mod __PlayableGraph_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_disconnect_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "DisconnectInternal",
@@ -724,18 +554,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "DisconnectInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "DisconnectInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn disconnect_internal(
@@ -744,26 +571,17 @@ mod __PlayableGraph_unity2_raw {
         input_port: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableGraph,
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_disconnect_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableGraph, crate::unity_engine::playables::playablehandle::PlayableHandle, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disconnect_internal::get_method_info().method_ptr);
         inner(this, playable, input_port, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_playable_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "DestroyPlayableInternal",
@@ -775,18 +593,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "DestroyPlayableInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "DestroyPlayableInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy_playable_internal(
@@ -794,25 +609,17 @@ mod __PlayableGraph_unity2_raw {
         playable: crate::unity_engine::playables::playablehandle::PlayableHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableGraph,
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_playable_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableGraph, crate::unity_engine::playables::playablehandle::PlayableHandle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy_playable_internal::get_method_info().method_ptr);
         inner(this, playable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_subgraph_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "DestroySubgraphInternal",
@@ -824,18 +631,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "DestroySubgraphInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "DestroySubgraphInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy_subgraph_internal(
@@ -843,25 +647,19 @@ mod __PlayableGraph_unity2_raw {
         playable: crate::unity_engine::playables::playablehandle::PlayableHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableGraph,
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_subgraph_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableGraph, crate::unity_engine::playables::playablehandle::PlayableHandle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy_subgraph_internal::get_method_info().method_ptr);
         inner(this, playable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "Create_Injected",
@@ -873,18 +671,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Create_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Create_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_injected(
@@ -896,21 +691,16 @@ mod __PlayableGraph_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_injected::get_method_info().method_ptr);
         inner(name, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "Destroy_Injected",
@@ -922,42 +712,32 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Destroy_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Destroy_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy_injected(
         unity_self: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy_injected::get_method_info().method_ptr);
         inner(unity_self, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "IsValid_Injected",
@@ -969,42 +749,32 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "IsValid_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "IsValid_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_valid_injected(
         unity_self: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_valid_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_valid_injected::get_method_info().method_ptr);
         inner(unity_self, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "Play_Injected",
@@ -1016,42 +786,32 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Play_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Play_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_injected(
         unity_self: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_injected::get_method_info().method_ptr);
         inner(unity_self, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "Stop_Injected",
@@ -1063,42 +823,34 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Stop_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Stop_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop_injected(
         unity_self: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_injected::get_method_info().method_ptr);
         inner(unity_self, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "Evaluate_Injected",
@@ -1110,18 +862,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "Evaluate_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "Evaluate_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn evaluate_injected(
@@ -1129,25 +878,19 @@ mod __PlayableGraph_unity2_raw {
         delta_time: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_evaluate_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::playables::playablegraph::PlayableGraph, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_evaluate_injected::get_method_info().method_ptr);
         inner(unity_self, delta_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_time_update_mode_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: directorupdatemode :: DirectorUpdateMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "SetTimeUpdateMode_Injected",
@@ -1159,18 +902,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "SetTimeUpdateMode_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "SetTimeUpdateMode_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_time_update_mode_injected(
@@ -1182,21 +922,16 @@ mod __PlayableGraph_unity2_raw {
             *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_time_update_mode_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_time_update_mode_injected::get_method_info().method_ptr);
         inner(unity_self, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_resolver_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "GetResolver_Injected",
@@ -1208,35 +943,35 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "GetResolver_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "GetResolver_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_resolver_injected(
         unity_self: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::iexposedpropertytable::IExposedPropertyTable {
-        let inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: iexposedpropertytable :: IExposedPropertyTable = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_resolver_injected :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::iexposedpropertytable::IExposedPropertyTable =
+            ::core::mem::transmute(__lookup_get_resolver_injected::get_method_info().method_ptr);
         inner(unity_self, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_playable_count_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "GetPlayableCount_Injected",
@@ -1248,42 +983,34 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "GetPlayableCount_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayableCount_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_playable_count_injected(
         unity_self: *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_playable_count_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_playable_count_injected::get_method_info().method_ptr);
         inner(unity_self, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_playable_handle_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "CreatePlayableHandle_Injected",
@@ -1295,18 +1022,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "CreatePlayableHandle_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "CreatePlayableHandle_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_playable_handle_injected(
@@ -1318,21 +1042,19 @@ mod __PlayableGraph_unity2_raw {
             *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
             *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_playable_handle_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_playable_handle_injected::get_method_info().method_ptr);
         inner(unity_self, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_script_output_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "CreateScriptOutputInternal_Injected",
@@ -1344,18 +1066,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "CreateScriptOutputInternal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "CreateScriptOutputInternal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_script_output_internal_injected(
@@ -1369,21 +1088,21 @@ mod __PlayableGraph_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_script_output_internal_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_create_script_output_internal_injected::get_method_info().method_ptr);
         inner(unity_self, name, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_connect_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "ConnectInternal_Injected",
@@ -1395,18 +1114,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "ConnectInternal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "ConnectInternal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn connect_internal_injected(
@@ -1424,11 +1140,7 @@ mod __PlayableGraph_unity2_raw {
             *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_connect_internal_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_connect_internal_injected::get_method_info().method_ptr);
         inner(
             unity_self,
             source,
@@ -1442,10 +1154,12 @@ mod __PlayableGraph_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_disconnect_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "DisconnectInternal_Injected",
@@ -1457,18 +1171,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "DisconnectInternal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "DisconnectInternal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn disconnect_internal_injected(
@@ -1482,21 +1193,18 @@ mod __PlayableGraph_unity2_raw {
             *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_disconnect_internal_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_disconnect_internal_injected::get_method_info().method_ptr);
         inner(unity_self, playable, input_port, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_playable_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "DestroyPlayableInternal_Injected",
@@ -1508,18 +1216,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "DestroyPlayableInternal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "DestroyPlayableInternal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy_playable_internal_injected(
@@ -1531,21 +1236,18 @@ mod __PlayableGraph_unity2_raw {
             *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
             *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_playable_internal_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_destroy_playable_internal_injected::get_method_info().method_ptr);
         inner(unity_self, playable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_subgraph_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableGraph as ::unity2::ClassIdentity>::class(),
                 "DestroySubgraphInternal_Injected",
@@ -1557,18 +1259,15 @@ mod __PlayableGraph_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                    "DestroySubgraphInternal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                        "DestroySubgraphInternal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy_subgraph_internal_injected(
@@ -1580,11 +1279,7 @@ mod __PlayableGraph_unity2_raw {
             *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
             *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_subgraph_internal_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_destroy_subgraph_internal_injected::get_method_info().method_ptr);
         inner(unity_self, playable, __unity2_method_info)
     }
 }
@@ -1595,98 +1290,61 @@ impl PlayableGraph {
     pub fn create() -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe { __PlayableGraph_unity2_raw::create(::core::option::Option::None) }
     }
+
     #[doc = "`Create(::unity2::Il2CppString)` overload"]
-    pub fn create_2(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
-        unsafe {
-            __PlayableGraph_unity2_raw::create_2(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_2(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
+        unsafe { __PlayableGraph_unity2_raw::create_2(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`Create_Injected(::unity2::Il2CppString, *mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
-    pub fn create_injected(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
+    pub fn create_injected(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            __PlayableGraph_unity2_raw::create_injected(
-                ::core::convert::Into::into(name),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            __PlayableGraph_unity2_raw::create_injected(::core::convert::Into::into(name), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Destroy_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
     pub fn destroy_injected() -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            __PlayableGraph_unity2_raw::destroy_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            __PlayableGraph_unity2_raw::destroy_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`IsValid_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
-    pub fn is_valid_injected() -> (
-        bool,
-        crate::unity_engine::playables::playablegraph::PlayableGraph,
-    ) {
+    pub fn is_valid_injected() -> (bool, crate::unity_engine::playables::playablegraph::PlayableGraph) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let __ret = {
-                __PlayableGraph_unity2_raw::is_valid_injected(
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let __ret = { __PlayableGraph_unity2_raw::is_valid_injected(__out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Play_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
     pub fn play_injected() -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            __PlayableGraph_unity2_raw::play_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            __PlayableGraph_unity2_raw::play_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Stop_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
     pub fn stop_injected() -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            __PlayableGraph_unity2_raw::stop_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            __PlayableGraph_unity2_raw::stop_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Evaluate_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, f32)` overload"]
-    pub fn evaluate_injected(
-        delta_time: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
+    pub fn evaluate_injected(delta_time: impl ::core::convert::Into<f32>) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
             __PlayableGraph_unity2_raw::evaluate_injected(
                 __out_0.as_mut_ptr(),
                 ::core::convert::Into::into(delta_time),
@@ -1695,16 +1353,13 @@ impl PlayableGraph {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`SetTimeUpdateMode_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode)` overload"]
     pub fn set_time_update_mode_injected(
-        value: impl ::core::convert::Into<
-            crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode>,
     ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
             __PlayableGraph_unity2_raw::set_time_update_mode_injected(
                 __out_0.as_mut_ptr(),
                 ::core::convert::Into::into(value),
@@ -1713,62 +1368,41 @@ impl PlayableGraph {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetResolver_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
     pub fn get_resolver_injected() -> (
         crate::unity_engine::iexposedpropertytable::IExposedPropertyTable,
         crate::unity_engine::playables::playablegraph::PlayableGraph,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let __ret = {
-                __PlayableGraph_unity2_raw::get_resolver_injected(
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let __ret = { __PlayableGraph_unity2_raw::get_resolver_injected(__out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`GetPlayableCount_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
-    pub fn get_playable_count_injected() -> (
-        i32,
-        crate::unity_engine::playables::playablegraph::PlayableGraph,
-    ) {
+    pub fn get_playable_count_injected() -> (i32, crate::unity_engine::playables::playablegraph::PlayableGraph) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let __ret = {
-                __PlayableGraph_unity2_raw::get_playable_count_injected(
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let __ret = { __PlayableGraph_unity2_raw::get_playable_count_injected(__out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`CreatePlayableHandle_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
     pub fn create_playable_handle_injected() -> (
         crate::unity_engine::playables::playablegraph::PlayableGraph,
         crate::unity_engine::playables::playablehandle::PlayableHandle,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
-            __PlayableGraph_unity2_raw::create_playable_handle_injected(
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
+            __PlayableGraph_unity2_raw::create_playable_handle_injected(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`CreateScriptOutputInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString, *mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]
     pub fn create_script_output_internal_injected(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1778,12 +1412,8 @@ impl PlayableGraph {
         crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>::uninit();
             let __ret = {
                 __PlayableGraph_unity2_raw::create_script_output_internal_injected(
                     __out_0.as_mut_ptr(),
@@ -1795,6 +1425,7 @@ impl PlayableGraph {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`ConnectInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle, i32, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle, i32)` overload"]
     pub fn connect_internal_injected(
         source_output_port: impl ::core::convert::Into<i32>,
@@ -1806,15 +1437,9 @@ impl PlayableGraph {
         crate::unity_engine::playables::playablehandle::PlayableHandle,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
             let __ret = {
                 __PlayableGraph_unity2_raw::connect_internal_injected(
                     __out_0.as_mut_ptr(),
@@ -1825,14 +1450,10 @@ impl PlayableGraph {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`DisconnectInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle, i32)` overload"]
     pub fn disconnect_internal_injected(
         input_port: impl ::core::convert::Into<i32>,
@@ -1841,12 +1462,8 @@ impl PlayableGraph {
         crate::unity_engine::playables::playablehandle::PlayableHandle,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
             __PlayableGraph_unity2_raw::disconnect_internal_injected(
                 __out_0.as_mut_ptr(),
                 __out_1.as_mut_ptr(),
@@ -1856,43 +1473,29 @@ impl PlayableGraph {
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`DestroyPlayableInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
     pub fn destroy_playable_internal_injected() -> (
         crate::unity_engine::playables::playablegraph::PlayableGraph,
         crate::unity_engine::playables::playablehandle::PlayableHandle,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
-            __PlayableGraph_unity2_raw::destroy_playable_internal_injected(
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
+            __PlayableGraph_unity2_raw::destroy_playable_internal_injected(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`DestroySubgraphInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
     pub fn destroy_subgraph_internal_injected() -> (
         crate::unity_engine::playables::playablegraph::PlayableGraph,
         crate::unity_engine::playables::playablehandle::PlayableHandle,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
-            __PlayableGraph_unity2_raw::destroy_subgraph_internal_injected(
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
+            __PlayableGraph_unity2_raw::destroy_subgraph_internal_injected(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
@@ -1910,56 +1513,36 @@ impl PlayableGraph {
         destination: impl ::core::convert::Into<M1>,
         destination_input_port: impl ::core::convert::Into<i32>,
     ) -> bool {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PlayableGraph as ::unity2::ClassIdentity>::class(),
-                "Connect",
-                4,
-            )
-        });
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
+            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<PlayableGraph as ::unity2::ClassIdentity>::class(), "Connect", 4));
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                "Connect",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                    "Connect",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize)
-            ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize) ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
             *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[
-                        <M0 as ::unity2::IlType>::il_type(),
-                        <M1 as ::unity2::IlType>::il_type(),
-                    ],
-                )
+                ::unity2::il2cpp::generic::create_generic_method_info(__open, &[
+                    <M0 as ::unity2::IlType>::il_type(),
+                    <M1 as ::unity2::IlType>::il_type(),
+                ])
             })
         };
         unsafe {
-            let __f: extern "C" fn(
-                PlayableGraph,
-                M0,
-                i32,
-                M1,
-                i32,
-                ::unity2::OptionalMethod,
-            ) -> bool = ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(PlayableGraph, M0, i32, M1, i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 self,
@@ -1971,51 +1554,40 @@ impl PlayableGraph {
             )
         }
     }
+
     pub fn disconnect<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         input: impl ::core::convert::Into<M0>,
         input_port: impl ::core::convert::Into<i32>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PlayableGraph as ::unity2::ClassIdentity>::class(),
-                "Disconnect",
-                2,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PlayableGraph as ::unity2::ClassIdentity>::class(), "Disconnect", 2)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                "Disconnect",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                    "Disconnect",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(PlayableGraph, M0, i32, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(PlayableGraph, M0, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 self,
@@ -2025,189 +1597,141 @@ impl PlayableGraph {
             )
         }
     }
-    pub fn destroy_playable<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+
+    pub fn destroy_playable<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         playable: impl ::core::convert::Into<M0>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PlayableGraph as ::unity2::ClassIdentity>::class(),
-                "DestroyPlayable",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PlayableGraph as ::unity2::ClassIdentity>::class(), "DestroyPlayable", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                "DestroyPlayable",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                    "DestroyPlayable",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(PlayableGraph, M0, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(PlayableGraph, M0, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                self,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(self, ::core::convert::Into::into(playable), ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn destroy_subgraph<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+
+    pub fn destroy_subgraph<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         self,
         playable: impl ::core::convert::Into<M0>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PlayableGraph as ::unity2::ClassIdentity>::class(),
-                "DestroySubgraph",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PlayableGraph as ::unity2::ClassIdentity>::class(), "DestroySubgraph", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PlayableGraph as ::unity2::ClassIdentity>::NAME,
-                "DestroySubgraph",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayableGraph as ::unity2::ClassIdentity>::NAME,
+                    "DestroySubgraph",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(PlayableGraph, M0, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(PlayableGraph, M0, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                self,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(self, ::core::convert::Into::into(playable), ::core::option::Option::Some(__mi_opaque))
         }
     }
+
     #[doc = "`Evaluate()` overload"]
     pub fn evaluate(self) -> () {
         unsafe { __PlayableGraph_unity2_raw::evaluate(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Destroy()` overload"]
     pub fn destroy(self) -> () {
         unsafe { __PlayableGraph_unity2_raw::destroy(self, ::core::option::Option::None) }
     }
+
     #[doc = "`IsValid()` overload"]
     pub fn is_valid(self) -> bool {
         unsafe { __PlayableGraph_unity2_raw::is_valid(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Play()` overload"]
     pub fn play(self) -> () {
         unsafe { __PlayableGraph_unity2_raw::play(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Stop()` overload"]
     pub fn stop(self) -> () {
         unsafe { __PlayableGraph_unity2_raw::stop(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Evaluate(f32)` overload"]
     pub fn evaluate_2(self, delta_time: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __PlayableGraph_unity2_raw::evaluate_2(
-                self,
-                ::core::convert::Into::into(delta_time),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayableGraph_unity2_raw::evaluate_2(self, ::core::convert::Into::into(delta_time), ::core::option::Option::None) }
     }
+
     #[doc = "`SetTimeUpdateMode(crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode)` overload"]
     pub fn set_time_update_mode(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode>,
     ) -> () {
-        unsafe {
-            __PlayableGraph_unity2_raw::set_time_update_mode(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayableGraph_unity2_raw::set_time_update_mode(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`GetResolver()` overload"]
     pub fn get_resolver(self) -> crate::unity_engine::iexposedpropertytable::IExposedPropertyTable {
         unsafe { __PlayableGraph_unity2_raw::get_resolver(self, ::core::option::Option::None) }
     }
+
     #[doc = "`GetPlayableCount()` overload"]
     pub fn get_playable_count(self) -> i32 {
-        unsafe {
-            __PlayableGraph_unity2_raw::get_playable_count(self, ::core::option::Option::None)
-        }
+        unsafe { __PlayableGraph_unity2_raw::get_playable_count(self, ::core::option::Option::None) }
     }
+
     #[doc = "`CreatePlayableHandle()` overload"]
-    pub fn create_playable_handle(
-        self,
-    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
-        unsafe {
-            __PlayableGraph_unity2_raw::create_playable_handle(self, ::core::option::Option::None)
-        }
+    pub fn create_playable_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
+        unsafe { __PlayableGraph_unity2_raw::create_playable_handle(self, ::core::option::Option::None) }
     }
+
     #[doc = "`CreateScriptOutputInternal(::unity2::Il2CppString, *mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]
     pub fn create_script_output_internal(
         self,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (
-        bool,
-        crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-    ) {
+    ) -> (bool, crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>::uninit();
             let __ret = {
                 __PlayableGraph_unity2_raw::create_script_output_internal(
                     self,
@@ -2219,16 +1743,13 @@ impl PlayableGraph {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`ConnectInternal(crate::unity_engine::playables::playablehandle::PlayableHandle, i32, crate::unity_engine::playables::playablehandle::PlayableHandle, i32)` overload"]
     pub fn connect_internal(
         self,
-        source: impl ::core::convert::Into<
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-        >,
+        source: impl ::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>,
         source_output_port: impl ::core::convert::Into<i32>,
-        destination: impl ::core::convert::Into<
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-        >,
+        destination: impl ::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>,
         destination_input_port: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
@@ -2242,12 +1763,11 @@ impl PlayableGraph {
             )
         }
     }
+
     #[doc = "`DisconnectInternal(crate::unity_engine::playables::playablehandle::PlayableHandle, i32)` overload"]
     pub fn disconnect_internal(
         self,
-        playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-        >,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>,
         input_port: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
@@ -2259,35 +1779,21 @@ impl PlayableGraph {
             )
         }
     }
+
     #[doc = "`DestroyPlayableInternal(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
     pub fn destroy_playable_internal(
         self,
-        playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-        >,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>,
     ) -> () {
-        unsafe {
-            __PlayableGraph_unity2_raw::destroy_playable_internal(
-                self,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayableGraph_unity2_raw::destroy_playable_internal(self, ::core::convert::Into::into(playable), ::core::option::Option::None) }
     }
+
     #[doc = "`DestroySubgraphInternal(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
     pub fn destroy_subgraph_internal(
         self,
-        playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-        >,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>,
     ) -> () {
-        unsafe {
-            __PlayableGraph_unity2_raw::destroy_subgraph_internal(
-                self,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayableGraph_unity2_raw::destroy_subgraph_internal(self, ::core::convert::Into::into(playable), ::core::option::Option::None) }
     }
 }
 
@@ -2295,10 +1801,9 @@ impl PlayableGraph {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::PlayableGraph;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

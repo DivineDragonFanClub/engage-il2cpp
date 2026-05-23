@@ -2,21 +2,17 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-dynamicresourcelocator-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/dynamicresourcelocator/DynamicResourceLocator.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets",
-        name = "DynamicResourceLocator"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "DynamicResourceLocator")]
     #[parent(crate::system::object::Object)]
     pub struct DynamicResourceLocator {
         #[rename(name = "m_Addressables")]
-        pub m_addressables:
-            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        pub m_addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
         #[rename(name = "m_AtlasSpriteProviderId")]
         pub m_atlas_sprite_provider_id: ::unity2::Il2CppString,
     }
@@ -34,9 +30,7 @@ mod __DynamicResourceLocator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_locator_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DynamicResourceLocator as ::unity2::ClassIdentity>::class(),
@@ -49,41 +43,27 @@ mod __DynamicResourceLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
-                    "get_LocatorId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
+                        "get_LocatorId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_locator_id(
-        this: DynamicResourceLocator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DynamicResourceLocator,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_locator_id::get_offset() as isize),
-        );
+    pub unsafe fn get_locator_id(this: DynamicResourceLocator, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DynamicResourceLocator, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_locator_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_keys {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DynamicResourceLocator as ::unity2::ClassIdentity>::class(),
@@ -96,36 +76,33 @@ mod __DynamicResourceLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
-                    "get_Keys",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
+                        "get_Keys",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_keys(
         this: DynamicResourceLocator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::system::object::Object,
-    > {
-        let inner : extern "C" fn (DynamicResourceLocator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: object :: Object > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_keys :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> {
+        let inner: extern "C" fn(
+            DynamicResourceLocator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> =
+            ::core::mem::transmute(__lookup_get_keys::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_atlas_sprite_provider_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DynamicResourceLocator as ::unity2::ClassIdentity>::class(),
@@ -138,42 +115,32 @@ mod __DynamicResourceLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
-                    "get_AtlasSpriteProviderId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
+                        "get_AtlasSpriteProviderId",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_atlas_sprite_provider_id(
         this: DynamicResourceLocator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DynamicResourceLocator,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_atlas_sprite_provider_id::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DynamicResourceLocator, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_atlas_sprite_provider_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DynamicResourceLocator as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -185,18 +152,15 @@ mod __DynamicResourceLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -208,21 +172,21 @@ mod __DynamicResourceLocator_unity2_raw {
             DynamicResourceLocator,
             crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, addr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_locate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DynamicResourceLocator as ::unity2::ClassIdentity>::class(),
                 "Locate",
@@ -234,38 +198,51 @@ mod __DynamicResourceLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
-                    "Locate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
+                        "Locate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn locate(
         this: DynamicResourceLocator,
         key: crate::system::object::Object,
         r#type: ::unity2::SystemType,
-        locations : * mut crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        locations: *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (DynamicResourceLocator , crate :: system :: object :: Object , :: unity2 :: SystemType , * mut crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_locate :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            DynamicResourceLocator,
+            crate::system::object::Object,
+            ::unity2::SystemType,
+            *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_locate::get_method_info().method_ptr);
         inner(this, key, r#type, locations, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_dynamic_locations {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+                > as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DynamicResourceLocator as ::unity2::ClassIdentity>::class(),
                 "CreateDynamicLocations",
@@ -277,39 +254,40 @@ mod __DynamicResourceLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
-                    "CreateDynamicLocations",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DynamicResourceLocator as ::unity2::ClassIdentity>::NAME,
+                        "CreateDynamicLocations",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_dynamic_locations(
         this: DynamicResourceLocator,
         r#type: ::unity2::SystemType,
-        locations : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        locations: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
         loc_name: ::unity2::Il2CppString,
         sub_key: ::unity2::Il2CppString,
-        main_loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        main_loc: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (DynamicResourceLocator , :: unity2 :: SystemType , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_dynamic_locations :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            r#type,
-            locations,
-            loc_name,
-            sub_key,
-            main_loc,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            DynamicResourceLocator,
+            ::unity2::SystemType,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            >,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_dynamic_locations::get_method_info().method_ptr);
+        inner(this, r#type, locations, loc_name, sub_key, main_loc, __unity2_method_info)
     }
 }
 
@@ -318,64 +296,54 @@ pub trait IDynamicResourceLocatorMethods: IDynamicResourceLocator {
     #[doc = "`get_LocatorId()` overload"]
     fn get_locator_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DynamicResourceLocator_unity2_raw::get_locator_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DynamicResourceLocator_unity2_raw::get_locator_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Keys()` overload"]
-    fn get_keys(
-        self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::system::object::Object,
-    > {
+    fn get_keys(self) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> {
         unsafe {
-            let __receiver = <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DynamicResourceLocator_unity2_raw::get_keys(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_AtlasSpriteProviderId()` overload"]
     fn get_atlas_sprite_provider_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DynamicResourceLocator_unity2_raw::get_atlas_sprite_provider_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DynamicResourceLocator_unity2_raw::get_atlas_sprite_provider_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"]
-    fn ctor(
-        self,
-        addr: impl ::core::convert::Into<
-            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-        >,
-    ) -> () {
+    fn ctor(self, addr: impl ::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>) -> () {
         unsafe {
-            let __receiver = <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DynamicResourceLocator_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(addr),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DynamicResourceLocator_unity2_raw::ctor(__receiver, ::core::convert::Into::into(addr), ::core::option::Option::None)
         }
     }
-    #[doc = "`Locate(crate::system::object::Object, ::unity2::SystemType, *mutcrate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]    fn locate (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> (bool , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >){
+    #[doc = "`Locate(crate::system::object::Object, ::unity2::SystemType, *mutcrate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]
+    fn locate(
+        self,
+        key: impl ::core::convert::Into<crate::system::object::Object>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> (
+        bool,
+        crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
+    ) {
         unsafe {
-            let __receiver = <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > :: uninit () ;
+            let __receiver =
+                <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+                >,
+            >::uninit();
             let __ret = {
                 __DynamicResourceLocator_unity2_raw::locate(
                     __receiver,
@@ -392,15 +360,18 @@ pub trait IDynamicResourceLocatorMethods: IDynamicResourceLocator {
     fn create_dynamic_locations(
         self,
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
-        locations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > >,
+        locations: impl ::core::convert::Into<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            >,
+        >,
         loc_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         sub_key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        main_loc : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        main_loc: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>,
     ) -> () {
         unsafe {
-            let __receiver = <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DynamicResourceLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DynamicResourceLocator_unity2_raw::create_dynamic_locations(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -420,9 +391,7 @@ impl<__T: IDynamicResourceLocator> IDynamicResourceLocatorMethods for __T {}
 #[cfg(feature = "unity_engine-addressable_assets-dynamicresourcelocator")]
 impl DynamicResourceLocator {
     #[doc = "`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` — overload selector"]
-    pub fn new(
-        addr: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-    ) -> Self {
+    pub fn new(addr: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -438,9 +407,7 @@ impl DynamicResourceLocator {
 #[cfg(feature = "unity_engine-addressable_assets-dynamicresourcelocator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DynamicResourceLocator;
-    pub use super::IDynamicResourceLocator;
-    pub use super::IDynamicResourceLocatorMethods;
+    pub use super::{DynamicResourceLocator, IDynamicResourceLocator, IDynamicResourceLocatorMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

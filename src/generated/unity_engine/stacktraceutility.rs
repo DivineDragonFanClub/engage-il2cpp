@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-stacktraceutility-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/stacktraceutility/StackTraceUtility.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "StackTraceUtility")]
@@ -29,11 +29,8 @@ mod __StackTraceUtility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_project_folder {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StackTraceUtility as ::unity2::ClassIdentity>::class(),
                 "SetProjectFolder",
@@ -45,39 +42,27 @@ mod __StackTraceUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StackTraceUtility as ::unity2::ClassIdentity>::NAME,
-                    "SetProjectFolder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StackTraceUtility as ::unity2::ClassIdentity>::NAME,
+                        "SetProjectFolder",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_project_folder(
-        folder: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_project_folder(folder: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_project_folder::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_project_folder::get_method_info().method_ptr);
         inner(folder, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_stack_trace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StackTraceUtility as ::unity2::ClassIdentity>::class(),
@@ -90,38 +75,27 @@ mod __StackTraceUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StackTraceUtility as ::unity2::ClassIdentity>::NAME,
-                    "ExtractStackTrace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StackTraceUtility as ::unity2::ClassIdentity>::NAME,
+                        "ExtractStackTrace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn extract_stack_trace(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn extract_stack_trace(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_extract_stack_trace::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_extract_stack_trace::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_string_from_exception_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -138,18 +112,15 @@ mod __StackTraceUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StackTraceUtility as ::unity2::ClassIdentity>::NAME,
-                    "ExtractStringFromExceptionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StackTraceUtility as ::unity2::ClassIdentity>::NAME,
+                        "ExtractStringFromExceptionInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_string_from_exception_internal(
@@ -163,20 +134,14 @@ mod __StackTraceUtility_unity2_raw {
             *mut ::unity2::Il2CppString,
             *mut ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_string_from_exception_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_extract_string_from_exception_internal::get_method_info().method_ptr);
         inner(exceptiono, message, stack_trace, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StackTraceUtility as ::unity2::ClassIdentity>::class(),
@@ -189,26 +154,19 @@ mod __StackTraceUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StackTraceUtility as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StackTraceUtility as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -217,17 +175,14 @@ mod __StackTraceUtility_unity2_raw {
 impl StackTraceUtility {
     #[doc = "`SetProjectFolder(::unity2::Il2CppString)` overload"]
     pub fn set_project_folder(folder: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __StackTraceUtility_unity2_raw::set_project_folder(
-                ::core::convert::Into::into(folder),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __StackTraceUtility_unity2_raw::set_project_folder(::core::convert::Into::into(folder), ::core::option::Option::None) }
     }
+
     #[doc = "`ExtractStackTrace()` overload"]
     pub fn extract_stack_trace() -> ::unity2::Il2CppString {
         unsafe { __StackTraceUtility_unity2_raw::extract_stack_trace(::core::option::Option::None) }
     }
+
     #[doc = "`ExtractStringFromExceptionInternal(crate::system::object::Object, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
     pub fn extract_string_from_exception_internal(
         exceptiono: impl ::core::convert::Into<crate::system::object::Object>,
@@ -244,6 +199,7 @@ impl StackTraceUtility {
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __StackTraceUtility_unity2_raw::cctor(::core::option::Option::None) }
@@ -253,8 +209,7 @@ impl StackTraceUtility {
 #[cfg(feature = "unity_engine-stacktraceutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStackTraceUtility;
-    pub use super::StackTraceUtility;
+    pub use super::{IStackTraceUtility, StackTraceUtility};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

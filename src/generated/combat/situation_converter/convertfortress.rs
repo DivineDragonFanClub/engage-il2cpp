@@ -2,12 +2,16 @@
 
 #[cfg(feature = "combat-situation_converter-convertfortress-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::situation_converter::baseconverter::{BaseConverter, IBaseConverter};
-    use crate::combat::situation_converter::converterwithut::{ConverterWithUt, IConverterWithUt};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::situation_converter::{
+            baseconverter::{BaseConverter, IBaseConverter},
+            converterwithut::{ConverterWithUt, IConverterWithUt},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertfortress/ConvertFortress.md"))]
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertFortress")]
@@ -30,10 +34,9 @@ mod __ConvertFortress_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::situation_converter::cameradataset::CameraDataSet as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConvertFortress as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -45,18 +48,15 @@ mod __ConvertFortress_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertFortress as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertFortress as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -64,24 +64,15 @@ mod __ConvertFortress_unity2_raw {
         data: crate::combat::situation_converter::cameradataset::CameraDataSet,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConvertFortress,
-            crate::combat::situation_converter::cameradataset::CameraDataSet,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertFortress, crate::combat::situation_converter::cameradataset::CameraDataSet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConvertFortress as ::unity2::ClassIdentity>::class(),
@@ -94,41 +85,27 @@ mod __ConvertFortress_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertFortress as ::unity2::ClassIdentity>::NAME,
-                    "OnBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertFortress as ::unity2::ClassIdentity>::NAME,
+                        "OnBegin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_begin(
-        this: ConvertFortress,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(
-            ConvertFortress,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_begin::get_offset() as isize),
-        );
+    pub unsafe fn on_begin(this: ConvertFortress, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition {
+        let inner: extern "C" fn(ConvertFortress, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__lookup_on_begin::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_approach {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConvertFortress as ::unity2::ClassIdentity>::class(),
@@ -141,41 +118,30 @@ mod __ConvertFortress_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertFortress as ::unity2::ClassIdentity>::NAME,
-                    "OnApproach",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertFortress as ::unity2::ClassIdentity>::NAME,
+                        "OnApproach",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_approach(
         this: ConvertFortress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(
-            ConvertFortress,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_approach::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertFortress, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__lookup_on_approach::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_unusable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConvertFortress as ::unity2::ClassIdentity>::class(),
@@ -188,32 +154,23 @@ mod __ConvertFortress_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertFortress as ::unity2::ClassIdentity>::NAME,
-                    "OnUnusable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertFortress as ::unity2::ClassIdentity>::NAME,
+                        "OnUnusable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_unusable(
         this: ConvertFortress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(
-            ConvertFortress,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_unusable::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertFortress, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__lookup_on_unusable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -221,47 +178,30 @@ mod __ConvertFortress_unity2_raw {
 #[cfg(feature = "combat-situation_converter-convertfortress")]
 pub trait IConvertFortressMethods: IConvertFortress {
     #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    fn ctor(
-        self,
-        data: impl ::core::convert::Into<
-            crate::combat::situation_converter::cameradataset::CameraDataSet,
-        >,
-    ) -> () {
+    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
         unsafe {
-            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConvertFortress_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConvertFortress_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnBegin()` overload"]
     fn on_begin(self) -> crate::combat::cameraposition::CameraPosition {
         unsafe {
-            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConvertFortress_unity2_raw::on_begin(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnApproach()` overload"]
     fn on_approach(self) -> crate::combat::cameraposition::CameraPosition {
         unsafe {
-            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConvertFortress_unity2_raw::on_approach(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnUnusable()` overload"]
     fn on_unusable(self) -> crate::combat::cameraposition::CameraPosition {
         unsafe {
-            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConvertFortress as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConvertFortress_unity2_raw::on_unusable(__receiver, ::core::option::Option::None)
         }
     }
@@ -289,16 +229,15 @@ impl ConvertFortress {
 #[cfg(feature = "combat-situation_converter-convertfortress")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertFortress;
-    pub use super::IConvertFortress;
-    pub use super::IConvertFortressMethods;
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    pub use super::{ConvertFortress, IConvertFortress, IConvertFortressMethods};
     #[cfg(feature = "combat-situation_converter-baseconverter")]
     pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    pub use crate::combat::situation_converter::converterwithut::IConverterWithUt;
     #[cfg(feature = "combat-situation_converter-converterwithut")]
     pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::situation_converter::{baseconverter::IBaseConverter, converterwithut::IConverterWithUt},
+        system::object::IObject,
+    };
 }

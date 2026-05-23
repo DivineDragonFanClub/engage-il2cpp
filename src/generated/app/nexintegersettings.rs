@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-nexintegersettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexintegersettings/NexIntegerSettings.md"))]
     #[::unity2::class(namespace = "App", name = "NexIntegerSettings")]
@@ -26,8 +26,7 @@ pub use __types::*;
 #[cfg(feature = "app-nexintegersettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INexIntegerSettings;
-    pub use super::NexIntegerSettings;
+    pub use super::{INexIntegerSettings, NexIntegerSettings};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

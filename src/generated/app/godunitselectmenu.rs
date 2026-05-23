@@ -2,14 +2,25 @@
 
 #[cfg(feature = "app-godunitselectmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct GodUnitSelectMenu {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.DecideEventHandler")]
@@ -20,15 +31,192 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.SelectEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct GodUnitSelectMenu_SelectEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct GodUnitSelectMenu {}
 }
 
 #[cfg(feature = "app-godunitselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-godunitselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GodUnitSelectMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::godunitselectmenucontent::GodUnitSelectMenuContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodUnitSelectMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodUnitSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GodUnitSelectMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
+        menu_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodUnitSelectMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, menu_content, menu_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodUnitSelectMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodUnitSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        list_root_object: crate::unity_engine::gameobject::GameObject,
+        select_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
+        decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+        selected_god: crate::app::godunit::GodUnit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
+            crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+            crate::app::godunit::GodUnit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(
+            super_,
+            list_root_object,
+            select_event_handler,
+            decide_event_handler,
+            selected_god,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "app-godunitselectmenu")]
+impl GodUnitSelectMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        list_root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        select_event_handler: impl ::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler>,
+        selected_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+    ) -> bool {
+        unsafe {
+            __GodUnitSelectMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(list_root_object),
+                ::core::convert::Into::into(select_event_handler),
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::convert::Into::into(selected_god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-godunitselectmenu")]
+pub trait IGodUnitSelectMenuMethods: IGodUnitSelectMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::godunitselectmenucontent::GodUnitSelectMenuContent>,
+        menu_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GodUnitSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodUnitSelectMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(menu_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-godunitselectmenu")]
+impl<__T: IGodUnitSelectMenu> IGodUnitSelectMenuMethods for __T {}
+
+#[cfg(feature = "app-godunitselectmenu")]
+impl GodUnitSelectMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
+        menu_object: crate::unity_engine::gameobject::GameObject,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodUnitSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodUnitSelectMenuMethods>::ctor(this, menu_item_list, menu_content, menu_object);
+        this
+    }
+}
 
 #[cfg(feature = "app-godunitselectmenu")]
 #[doc(hidden)]
@@ -39,9 +227,7 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -57,18 +243,15 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -82,21 +265,19 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenu :: BasicMenu_Result as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::basicmenu::BasicMenu_Result as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::ringcleaningsequence::RingCleaningSequence_GodType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -108,18 +289,15 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -135,27 +313,19 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
             crate::app::godunit::GodUnit,
             crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, result, god, r#type, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-pub trait IGodUnitSelectMenu_DecideEventHandlerMethods:
-    IGodUnitSelectMenu_DecideEventHandler
-{
+pub trait IGodUnitSelectMenu_DecideEventHandlerMethods: IGodUnitSelectMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < GodUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <GodUnitSelectMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __GodUnitSelectMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -169,12 +339,12 @@ pub trait IGodUnitSelectMenu_DecideEventHandlerMethods:
         self,
         result: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu_Result>,
         god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        r#type: impl ::core::convert::Into<
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        >,
+        r#type: impl ::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>,
     ) -> () {
         unsafe {
-            let __receiver = < GodUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <GodUnitSelectMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __GodUnitSelectMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(result),
@@ -187,10 +357,7 @@ pub trait IGodUnitSelectMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-impl<__T: IGodUnitSelectMenu_DecideEventHandler> IGodUnitSelectMenu_DecideEventHandlerMethods
-    for __T
-{
-}
+impl<__T: IGodUnitSelectMenu_DecideEventHandler> IGodUnitSelectMenu_DecideEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-godunitselectmenu")]
 impl GodUnitSelectMenu_DecideEventHandler {
@@ -217,9 +384,7 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -235,18 +400,15 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -260,21 +422,18 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::ringcleaningsequence::RingCleaningSequence_GodType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -286,18 +445,15 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -311,27 +467,19 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
             crate::app::godunit::GodUnit,
             crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, god, optional_type, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:
-    IGodUnitSelectMenu_SelectEventHandler
-{
+pub trait IGodUnitSelectMenu_SelectEventHandlerMethods: IGodUnitSelectMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < GodUnitSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <GodUnitSelectMenu_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __GodUnitSelectMenu_SelectEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -344,12 +492,12 @@ pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:
     fn invoke(
         self,
         god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        optional_type: impl ::core::convert::Into<
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        >,
+        optional_type: impl ::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>,
     ) -> () {
         unsafe {
-            let __receiver = < GodUnitSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <GodUnitSelectMenu_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __GodUnitSelectMenu_SelectEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(god),
@@ -361,10 +509,7 @@ pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-impl<__T: IGodUnitSelectMenu_SelectEventHandler> IGodUnitSelectMenu_SelectEventHandlerMethods
-    for __T
-{
-}
+impl<__T: IGodUnitSelectMenu_SelectEventHandler> IGodUnitSelectMenu_SelectEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-godunitselectmenu")]
 impl GodUnitSelectMenu_SelectEventHandler {
@@ -384,243 +529,24 @@ impl GodUnitSelectMenu_SelectEventHandler {
 
 #[cfg(feature = "app-godunitselectmenu")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodUnitSelectMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunitselectmenucontent :: GodUnitSelectMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodUnitSelectMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GodUnitSelectMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
-        menu_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GodUnitSelectMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            menu_object,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunitselectmenu :: GodUnitSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodUnitSelectMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        list_root_object: crate::unity_engine::gameobject::GameObject,
-        select_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
-        decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
-        selected_god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
-            crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            list_root_object,
-            select_event_handler,
-            decide_event_handler,
-            selected_god,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "app-godunitselectmenu")]
-impl GodUnitSelectMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        list_root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
-        >,
-        selected_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> bool {
-        unsafe {
-            __GodUnitSelectMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(list_root_object),
-                ::core::convert::Into::into(select_event_handler),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::convert::Into::into(selected_god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-godunitselectmenu")]
-pub trait IGodUnitSelectMenuMethods: IGodUnitSelectMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<
-            crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
-        >,
-        menu_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = <GodUnitSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GodUnitSelectMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(menu_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-godunitselectmenu")]
-impl<__T: IGodUnitSelectMenu> IGodUnitSelectMenuMethods for __T {}
-
-#[cfg(feature = "app-godunitselectmenu")]
-impl GodUnitSelectMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
-        menu_object: crate::unity_engine::gameobject::GameObject,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodUnitSelectMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodUnitSelectMenuMethods>::ctor(this, menu_item_list, menu_content, menu_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-godunitselectmenu")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::GodUnitSelectMenu;
-    pub use super::GodUnitSelectMenu_DecideEventHandler;
-    pub use super::GodUnitSelectMenu_SelectEventHandler;
-    pub use super::IGodUnitSelectMenu;
-    pub use super::IGodUnitSelectMenuMethods;
-    pub use super::IGodUnitSelectMenu_DecideEventHandler;
-    pub use super::IGodUnitSelectMenu_DecideEventHandlerMethods;
-    pub use super::IGodUnitSelectMenu_SelectEventHandler;
-    pub use super::IGodUnitSelectMenu_SelectEventHandlerMethods;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        GodUnitSelectMenu, GodUnitSelectMenu_DecideEventHandler, GodUnitSelectMenu_SelectEventHandler, IGodUnitSelectMenu, IGodUnitSelectMenuMethods,
+        IGodUnitSelectMenu_DecideEventHandler, IGodUnitSelectMenu_DecideEventHandlerMethods, IGodUnitSelectMenu_SelectEventHandler,
+        IGodUnitSelectMenu_SelectEventHandlerMethods,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, procinst::IProcInst},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+    };
 }

@@ -2,43 +2,197 @@
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks_HeightmapChangedCallback.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.TerrainAPI", name = "TerrainCallbacks.HeightmapChangedCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TerrainCallbacks_HeightmapChangedCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks_TextureChangedCallback.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.TerrainAPI",
-        name = "TerrainCallbacks.TextureChangedCallback"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.TerrainAPI", name = "TerrainCallbacks.TextureChangedCallback")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct TerrainCallbacks_TextureChangedCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.TerrainAPI",
-        name = "TerrainCallbacks"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.TerrainAPI", name = "TerrainCallbacks")]
     #[parent(crate::system::object::Object)]
     pub struct TerrainCallbacks {
-# [static_field] # [rename (name = "heightmapChanged")] pub heightmap_changed : crate :: unity_engine :: experimental :: terrain_api :: terraincallbacks :: TerrainCallbacks_HeightmapChangedCallback ,
-# [static_field] # [rename (name = "textureChanged")] pub texture_changed : crate :: unity_engine :: experimental :: terrain_api :: terraincallbacks :: TerrainCallbacks_TextureChangedCallback ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks_HeightmapChangedCallback.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.TerrainAPI",
-        name = "TerrainCallbacks.HeightmapChangedCallback"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TerrainCallbacks_HeightmapChangedCallback {}
+        #[static_field]
+        #[rename(name = "heightmapChanged")]
+        pub heightmap_changed: crate::unity_engine::experimental::terrain_api::terraincallbacks::TerrainCallbacks_HeightmapChangedCallback,
+        #[static_field]
+        #[rename(name = "textureChanged")]
+        pub texture_changed: crate::unity_engine::experimental::terrain_api::terraincallbacks::TerrainCallbacks_TextureChangedCallback,
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TerrainCallbacks_HeightmapChangedCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TerrainCallbacks_HeightmapChangedCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainCallbacks_HeightmapChangedCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TerrainCallbacks_HeightmapChangedCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TerrainCallbacks_HeightmapChangedCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TerrainCallbacks_HeightmapChangedCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainCallbacks_HeightmapChangedCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: TerrainCallbacks_HeightmapChangedCallback,
+        terrain: crate::unity_engine::terrain::Terrain,
+        height_region: crate::unity_engine::rectint::RectInt,
+        synched: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TerrainCallbacks_HeightmapChangedCallback,
+            crate::unity_engine::terrain::Terrain,
+            crate::unity_engine::rectint::RectInt,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, terrain, height_region, synched, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+pub trait ITerrainCallbacks_HeightmapChangedCallbackMethods: ITerrainCallbacks_HeightmapChangedCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <TerrainCallbacks_HeightmapChangedCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TerrainCallbacks_HeightmapChangedCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::terrain::Terrain, crate::unity_engine::rectint::RectInt, bool)` overload"]
+    fn invoke(
+        self,
+        terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>,
+        height_region: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
+        synched: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TerrainCallbacks_HeightmapChangedCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TerrainCallbacks_HeightmapChangedCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(terrain),
+                ::core::convert::Into::into(height_region),
+                ::core::convert::Into::into(synched),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+impl<__T: ITerrainCallbacks_HeightmapChangedCallback> ITerrainCallbacks_HeightmapChangedCallbackMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+impl TerrainCallbacks_HeightmapChangedCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TerrainCallbacks_HeightmapChangedCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITerrainCallbacks_HeightmapChangedCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
 #[doc(hidden)]
@@ -49,9 +203,7 @@ mod __TerrainCallbacks_TextureChangedCallback_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -67,18 +219,15 @@ mod __TerrainCallbacks_TextureChangedCallback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -92,20 +241,14 @@ mod __TerrainCallbacks_TextureChangedCallback_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -123,18 +266,15 @@ mod __TerrainCallbacks_TextureChangedCallback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -152,34 +292,19 @@ mod __TerrainCallbacks_TextureChangedCallback_unity2_raw {
             crate::unity_engine::rectint::RectInt,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(
-            this,
-            terrain,
-            texture_name,
-            texel_region,
-            synched,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, terrain, texture_name, texel_region, synched, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-pub trait ITerrainCallbacks_TextureChangedCallbackMethods:
-    ITerrainCallbacks_TextureChangedCallback
-{
+pub trait ITerrainCallbacks_TextureChangedCallbackMethods: ITerrainCallbacks_TextureChangedCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < TerrainCallbacks_TextureChangedCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <TerrainCallbacks_TextureChangedCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __TerrainCallbacks_TextureChangedCallback_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -197,7 +322,9 @@ pub trait ITerrainCallbacks_TextureChangedCallbackMethods:
         synched: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = < TerrainCallbacks_TextureChangedCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <TerrainCallbacks_TextureChangedCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __TerrainCallbacks_TextureChangedCallback_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(terrain),
@@ -211,10 +338,7 @@ pub trait ITerrainCallbacks_TextureChangedCallbackMethods:
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-impl<__T: ITerrainCallbacks_TextureChangedCallback> ITerrainCallbacks_TextureChangedCallbackMethods
-    for __T
-{
-}
+impl<__T: ITerrainCallbacks_TextureChangedCallback> ITerrainCallbacks_TextureChangedCallbackMethods for __T {}
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
 impl TerrainCallbacks_TextureChangedCallback {
@@ -241,9 +365,7 @@ mod __TerrainCallbacks_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_heightmap_changed_callback {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::terraindata::TerrainData as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
@@ -260,18 +382,15 @@ mod __TerrainCallbacks_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainCallbacks as ::unity2::ClassIdentity>::NAME,
-                    "InvokeHeightmapChangedCallback",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainCallbacks as ::unity2::ClassIdentity>::NAME,
+                        "InvokeHeightmapChangedCallback",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke_heightmap_changed_callback(
@@ -285,20 +404,14 @@ mod __TerrainCallbacks_unity2_raw {
             crate::unity_engine::rectint::RectInt,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_heightmap_changed_callback::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke_heightmap_changed_callback::get_method_info().method_ptr);
         inner(terrain_data, height_region, synched, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_texture_changed_callback {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::terraindata::TerrainData as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -316,18 +429,15 @@ mod __TerrainCallbacks_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainCallbacks as ::unity2::ClassIdentity>::NAME,
-                    "InvokeTextureChangedCallback",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainCallbacks as ::unity2::ClassIdentity>::NAME,
+                        "InvokeTextureChangedCallback",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke_texture_changed_callback(
@@ -343,18 +453,8 @@ mod __TerrainCallbacks_unity2_raw {
             crate::unity_engine::rectint::RectInt,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_texture_changed_callback::get_offset() as isize),
-        );
-        inner(
-            terrain_data,
-            texture_name,
-            texel_region,
-            synched,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_invoke_texture_changed_callback::get_method_info().method_ptr);
+        inner(terrain_data, texture_name, texel_region, synched, __unity2_method_info)
     }
 }
 
@@ -375,6 +475,7 @@ impl TerrainCallbacks {
             )
         }
     }
+
     #[doc = "`InvokeTextureChangedCallback(crate::unity_engine::terraindata::TerrainData, ::unity2::Il2CppString, crate::unity_engine::rectint::RectInt, bool)` overload"]
     pub fn invoke_texture_changed_callback(
         terrain_data: impl ::core::convert::Into<crate::unity_engine::terraindata::TerrainData>,
@@ -396,202 +497,17 @@ impl TerrainCallbacks {
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainCallbacks_HeightmapChangedCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainCallbacks_HeightmapChangedCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainCallbacks_HeightmapChangedCallback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TerrainCallbacks_HeightmapChangedCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TerrainCallbacks_HeightmapChangedCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainCallbacks_HeightmapChangedCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainCallbacks_HeightmapChangedCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: TerrainCallbacks_HeightmapChangedCallback,
-        terrain: crate::unity_engine::terrain::Terrain,
-        height_region: crate::unity_engine::rectint::RectInt,
-        synched: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TerrainCallbacks_HeightmapChangedCallback,
-            crate::unity_engine::terrain::Terrain,
-            crate::unity_engine::rectint::RectInt,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, terrain, height_region, synched, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-pub trait ITerrainCallbacks_HeightmapChangedCallbackMethods:
-    ITerrainCallbacks_HeightmapChangedCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < TerrainCallbacks_HeightmapChangedCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TerrainCallbacks_HeightmapChangedCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::terrain::Terrain, crate::unity_engine::rectint::RectInt, bool)` overload"]
-    fn invoke(
-        self,
-        terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>,
-        height_region: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
-        synched: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = < TerrainCallbacks_HeightmapChangedCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TerrainCallbacks_HeightmapChangedCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(terrain),
-                ::core::convert::Into::into(height_region),
-                ::core::convert::Into::into(synched),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-impl<__T: ITerrainCallbacks_HeightmapChangedCallback>
-    ITerrainCallbacks_HeightmapChangedCallbackMethods for __T
-{
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-impl TerrainCallbacks_HeightmapChangedCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainCallbacks_HeightmapChangedCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainCallbacks_HeightmapChangedCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::ITerrainCallbacks;
-    pub use super::ITerrainCallbacks_HeightmapChangedCallback;
-    pub use super::ITerrainCallbacks_HeightmapChangedCallbackMethods;
-    pub use super::ITerrainCallbacks_TextureChangedCallback;
-    pub use super::ITerrainCallbacks_TextureChangedCallbackMethods;
-    pub use super::TerrainCallbacks;
-    pub use super::TerrainCallbacks_HeightmapChangedCallback;
-    pub use super::TerrainCallbacks_TextureChangedCallback;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        ITerrainCallbacks, ITerrainCallbacks_HeightmapChangedCallback, ITerrainCallbacks_HeightmapChangedCallbackMethods,
+        ITerrainCallbacks_TextureChangedCallback, ITerrainCallbacks_TextureChangedCallbackMethods, TerrainCallbacks,
+        TerrainCallbacks_HeightmapChangedCallback, TerrainCallbacks_TextureChangedCallback,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

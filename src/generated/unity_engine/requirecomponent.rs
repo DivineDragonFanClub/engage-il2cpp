@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-requirecomponent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/requirecomponent/RequireComponent.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "RequireComponent")]
@@ -30,11 +30,8 @@ mod __RequireComponent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RequireComponent as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -46,43 +43,27 @@ mod __RequireComponent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RequireComponent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RequireComponent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RequireComponent,
-        required_component: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RequireComponent,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: RequireComponent, required_component: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RequireComponent, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, required_component, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -98,18 +79,15 @@ mod __RequireComponent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RequireComponent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RequireComponent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -118,22 +96,9 @@ mod __RequireComponent_unity2_raw {
         required_component2: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RequireComponent,
-            ::unity2::SystemType,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            required_component,
-            required_component2,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(RequireComponent, ::unity2::SystemType, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, required_component, required_component2, __unity2_method_info)
     }
 }
 
@@ -142,14 +107,8 @@ pub trait IRequireComponentMethods: IRequireComponent {
     #[doc = "`.ctor(::unity2::SystemType)` overload"]
     fn ctor(self, required_component: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
-            let __receiver = <RequireComponent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RequireComponent_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(required_component),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RequireComponent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RequireComponent_unity2_raw::ctor(__receiver, ::core::convert::Into::into(required_component), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::SystemType, ::unity2::SystemType)` overload"]
@@ -159,9 +118,7 @@ pub trait IRequireComponentMethods: IRequireComponent {
         required_component2: impl ::core::convert::Into<::unity2::SystemType>,
     ) -> () {
         unsafe {
-            let __receiver = <RequireComponent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RequireComponent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RequireComponent_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(required_component),
@@ -191,10 +148,7 @@ impl RequireComponent {
     }
 
     #[doc = "`.ctor(::unity2::SystemType, ::unity2::SystemType)` — overload selector"]
-    pub fn new_2(
-        required_component: ::unity2::SystemType,
-        required_component2: ::unity2::SystemType,
-    ) -> Self {
+    pub fn new_2(required_component: ::unity2::SystemType, required_component2: ::unity2::SystemType) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -210,7 +164,5 @@ impl RequireComponent {
 #[cfg(feature = "unity_engine-requirecomponent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRequireComponent;
-    pub use super::IRequireComponentMethods;
-    pub use super::RequireComponent;
+    pub use super::{IRequireComponent, IRequireComponentMethods, RequireComponent};
 }

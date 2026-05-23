@@ -2,12 +2,14 @@
 
 #[cfg(feature = "system-func_15-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/func_15/Func_15.md"))]
     #[::unity2::class(namespace = "System", name = "Func`15")]
@@ -102,30 +104,9 @@ impl<
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Func_15),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFunc_15Methods<
-            T0,
-            T1,
-            T2,
-            T3,
-            T4,
-            T5,
-            T6,
-            T7,
-            T8,
-            T9,
-            T10,
-            T11,
-            T12,
-            T13,
-            T14,
-        >>::ctor(this, object, method);
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Func_15), ::core::stringify!(new),));
+        <Self as IFunc_15Methods<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>>::ctor(this, object, method);
         this
     }
 }
@@ -133,16 +114,12 @@ impl<
 #[cfg(feature = "system-func_15")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Func_15;
-    pub use super::IFunc_15;
-    pub use super::IFunc_15Methods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{Func_15, IFunc_15, IFunc_15Methods};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

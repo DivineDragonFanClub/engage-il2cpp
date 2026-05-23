@@ -2,14 +2,18 @@
 
 #[cfg(feature = "app-myroomeventtrack-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::playables::playableasset::{IPlayableAsset, PlayableAsset};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use crate::unity_engine::timeline::trackasset::{ITrackAsset, TrackAsset};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            playables::playableasset::{IPlayableAsset, PlayableAsset},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+            timeline::trackasset::{ITrackAsset, TrackAsset},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventtrack/MyRoomEventTrack.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomEventTrack")]
@@ -29,10 +33,12 @@ mod __MyRoomEventTrack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_track_mixer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomEventTrack as ::unity2::ClassIdentity>::class(),
                 "CreateTrackMixer",
@@ -44,18 +50,15 @@ mod __MyRoomEventTrack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomEventTrack as ::unity2::ClassIdentity>::NAME,
-                    "CreateTrackMixer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomEventTrack as ::unity2::ClassIdentity>::NAME,
+                        "CreateTrackMixer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_track_mixer(
@@ -71,20 +74,14 @@ mod __MyRoomEventTrack_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_track_mixer::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_track_mixer::get_method_info().method_ptr);
         inner(this, graph, go, input_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomEventTrack as ::unity2::ClassIdentity>::class(),
@@ -97,30 +94,20 @@ mod __MyRoomEventTrack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomEventTrack as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomEventTrack as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MyRoomEventTrack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MyRoomEventTrack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomEventTrack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -135,9 +122,7 @@ pub trait IMyRoomEventTrackMethods: IMyRoomEventTrack {
         input_count: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <MyRoomEventTrack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MyRoomEventTrack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomEventTrack_unity2_raw::create_track_mixer(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -150,9 +135,7 @@ pub trait IMyRoomEventTrackMethods: IMyRoomEventTrack {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MyRoomEventTrack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MyRoomEventTrack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomEventTrack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -180,22 +163,21 @@ impl MyRoomEventTrack {
 #[cfg(feature = "app-myroomeventtrack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMyRoomEventTrack;
-    pub use super::IMyRoomEventTrackMethods;
-    pub use super::MyRoomEventTrack;
-    pub use crate::system::object::IObject;
+    pub use super::{IMyRoomEventTrack, IMyRoomEventTrackMethods, MyRoomEventTrack};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
     #[cfg(feature = "unity_engine-playables-playableasset")]
     pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::unity_engine::timeline::trackasset::ITrackAsset;
     #[cfg(feature = "unity_engine-timeline-trackasset")]
     pub use crate::unity_engine::timeline::trackasset::ITrackAssetMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            object_2::IObject_2, playables::playableasset::IPlayableAsset, scriptableobject::IScriptableObject, timeline::trackasset::ITrackAsset,
+        },
+    };
 }

@@ -4,10 +4,7 @@
 pub mod audiosampleprovider;
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider-types")]
 pub use audiosampleprovider::{
-    AudioSampleProvider, AudioSampleProvider_SampleFramesHandler, IAudioSampleProvider,
-    IAudioSampleProvider_SampleFramesHandler,
+    AudioSampleProvider, AudioSampleProvider_SampleFramesHandler, IAudioSampleProvider, IAudioSampleProvider_SampleFramesHandler,
 };
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
-pub use audiosampleprovider::{
-    IAudioSampleProviderMethods, IAudioSampleProvider_SampleFramesHandlerMethods,
-};
+pub use audiosampleprovider::{IAudioSampleProviderMethods, IAudioSampleProvider_SampleFramesHandlerMethods};

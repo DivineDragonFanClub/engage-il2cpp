@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlistdesc-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/rendererlistdesc/RendererListDesc.md"))]
     #[repr(C)]
@@ -14,9 +16,8 @@ mod __types {
     pub struct RendererListDesc {}
 
     impl ::unity2::ClassIdentity for RendererListDesc {
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering";
-
         const NAME: &'static str = "RendererListDesc";
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -27,10 +28,7 @@ mod __types {
 
     impl ::unity2::IlType for RendererListDesc {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -47,9 +45,7 @@ mod __RendererListDesc_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_culling_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
@@ -62,44 +58,32 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "get_cullingResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "get_cullingResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_culling_result(
         this: RendererListDesc,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::cullingresults::CullingResults {
-        let inner: extern "C" fn(
-            RendererListDesc,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::cullingresults::CullingResults =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_culling_result::get_offset() as isize),
-            );
+        let inner: extern "C" fn(RendererListDesc, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::cullingresults::CullingResults =
+            ::core::mem::transmute(__lookup_get_culling_result::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_culling_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
                 "set_cullingResult",
@@ -111,18 +95,15 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "set_cullingResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "set_cullingResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_culling_result(
@@ -130,24 +111,15 @@ mod __RendererListDesc_unity2_raw {
         value: crate::unity_engine::rendering::cullingresults::CullingResults,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RendererListDesc,
-            crate::unity_engine::rendering::cullingresults::CullingResults,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_culling_result::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RendererListDesc, crate::unity_engine::rendering::cullingresults::CullingResults, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_culling_result::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
@@ -160,43 +132,28 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "get_camera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "get_camera",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_camera(
-        this: RendererListDesc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::camera::Camera {
-        let inner: extern "C" fn(
-            RendererListDesc,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera::get_offset() as isize),
-        );
+    pub unsafe fn get_camera(this: RendererListDesc, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(RendererListDesc, ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera =
+            ::core::mem::transmute(__lookup_get_camera::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
                 "set_camera",
@@ -208,18 +165,15 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "set_camera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "set_camera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_camera(
@@ -227,24 +181,15 @@ mod __RendererListDesc_unity2_raw {
         value: crate::unity_engine::camera::Camera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RendererListDesc,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_camera::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RendererListDesc, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_camera::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pass_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
@@ -257,43 +202,32 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "get_passName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "get_passName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pass_name(
         this: RendererListDesc,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::shadertagid::ShaderTagId {
-        let inner: extern "C" fn(
-            RendererListDesc,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::shadertagid::ShaderTagId = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pass_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RendererListDesc, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::shadertagid::ShaderTagId =
+            ::core::mem::transmute(__lookup_get_pass_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pass_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::shadertagid::ShaderTagId as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
                 "set_passName",
@@ -305,18 +239,15 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "set_passName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "set_passName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pass_name(
@@ -324,24 +255,15 @@ mod __RendererListDesc_unity2_raw {
         value: crate::unity_engine::rendering::shadertagid::ShaderTagId,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RendererListDesc,
-            crate::unity_engine::rendering::shadertagid::ShaderTagId,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pass_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RendererListDesc, crate::unity_engine::rendering::shadertagid::ShaderTagId, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pass_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pass_names {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
@@ -354,18 +276,15 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "get_passNames",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "get_passNames",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pass_names(
@@ -375,26 +294,17 @@ mod __RendererListDesc_unity2_raw {
         let inner: extern "C" fn(
             RendererListDesc,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pass_names::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId> =
+            ::core::mem::transmute(__lookup_get_pass_names::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pass_names {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::rendering::shadertagid::ShaderTagId,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
                 "set_passNames",
@@ -406,18 +316,15 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "set_passNames",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "set_passNames",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pass_names(
@@ -429,21 +336,19 @@ mod __RendererListDesc_unity2_raw {
             RendererListDesc,
             ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pass_names::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_pass_names::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::shadertagid::ShaderTagId as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -455,18 +360,15 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -482,27 +384,19 @@ mod __RendererListDesc_unity2_raw {
             crate::unity_engine::rendering::cullingresults::CullingResults,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            pass_name,
-            culling_result,
-            camera,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, pass_name, culling_result, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -514,18 +408,15 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -541,26 +432,14 @@ mod __RendererListDesc_unity2_raw {
             crate::unity_engine::rendering::cullingresults::CullingResults,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            pass_names,
-            culling_result,
-            camera,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, pass_names, culling_result, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererListDesc as ::unity2::ClassIdentity>::class(),
@@ -573,30 +452,20 @@ mod __RendererListDesc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererListDesc as ::unity2::ClassIdentity>::NAME,
-                    "IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererListDesc as ::unity2::ClassIdentity>::NAME,
+                        "IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_valid(
-        this: RendererListDesc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_valid(this: RendererListDesc, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(RendererListDesc, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -604,90 +473,50 @@ mod __RendererListDesc_unity2_raw {
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlistdesc")]
 impl RendererListDesc {
     #[doc = "`get_cullingResult()` overload"]
-    pub fn get_culling_result(
-        self,
-    ) -> crate::unity_engine::rendering::cullingresults::CullingResults {
-        unsafe {
-            __RendererListDesc_unity2_raw::get_culling_result(self, ::core::option::Option::None)
-        }
+    pub fn get_culling_result(self) -> crate::unity_engine::rendering::cullingresults::CullingResults {
+        unsafe { __RendererListDesc_unity2_raw::get_culling_result(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_cullingResult(crate::unity_engine::rendering::cullingresults::CullingResults)` overload"]
-    pub fn set_culling_result(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::cullingresults::CullingResults,
-        >,
-    ) -> () {
-        unsafe {
-            __RendererListDesc_unity2_raw::set_culling_result(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_culling_result(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::cullingresults::CullingResults>) -> () {
+        unsafe { __RendererListDesc_unity2_raw::set_culling_result(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_camera()` overload"]
     pub fn get_camera(self) -> crate::unity_engine::camera::Camera {
         unsafe { __RendererListDesc_unity2_raw::get_camera(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_camera(crate::unity_engine::camera::Camera)` overload"]
-    pub fn set_camera(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> () {
-        unsafe {
-            __RendererListDesc_unity2_raw::set_camera(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_camera(self, value: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> () {
+        unsafe { __RendererListDesc_unity2_raw::set_camera(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_passName()` overload"]
     pub fn get_pass_name(self) -> crate::unity_engine::rendering::shadertagid::ShaderTagId {
         unsafe { __RendererListDesc_unity2_raw::get_pass_name(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_passName(crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"]
-    pub fn set_pass_name(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
-    ) -> () {
-        unsafe {
-            __RendererListDesc_unity2_raw::set_pass_name(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_pass_name(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>) -> () {
+        unsafe { __RendererListDesc_unity2_raw::set_pass_name(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_passNames()` overload"]
-    pub fn get_pass_names(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId> {
+    pub fn get_pass_names(self) -> ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId> {
         unsafe { __RendererListDesc_unity2_raw::get_pass_names(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_passNames(::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>)` overload"]
-    pub fn set_pass_names(
-        self,
-        value: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
-        >,
-    ) -> () {
-        unsafe {
-            __RendererListDesc_unity2_raw::set_pass_names(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_pass_names(self, value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>>) -> () {
+        unsafe { __RendererListDesc_unity2_raw::set_pass_names(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(crate::unity_engine::rendering::shadertagid::ShaderTagId, crate::unity_engine::rendering::cullingresults::CullingResults, crate::unity_engine::camera::Camera)` overload"]
     pub fn ctor(
         self,
         pass_name: impl ::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
-        culling_result: impl ::core::convert::Into<
-            crate::unity_engine::rendering::cullingresults::CullingResults,
-        >,
+        culling_result: impl ::core::convert::Into<crate::unity_engine::rendering::cullingresults::CullingResults>,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> () {
         unsafe {
@@ -700,15 +529,12 @@ impl RendererListDesc {
             )
         }
     }
+
     #[doc = "`.ctor(::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>, crate::unity_engine::rendering::cullingresults::CullingResults, crate::unity_engine::camera::Camera)` overload"]
     pub fn ctor_2(
         self,
-        pass_names: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
-        >,
-        culling_result: impl ::core::convert::Into<
-            crate::unity_engine::rendering::cullingresults::CullingResults,
-        >,
+        pass_names: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>>,
+        culling_result: impl ::core::convert::Into<crate::unity_engine::rendering::cullingresults::CullingResults>,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> () {
         unsafe {
@@ -721,6 +547,7 @@ impl RendererListDesc {
             )
         }
     }
+
     #[doc = "`IsValid()` overload"]
     pub fn is_valid(self) -> bool {
         unsafe { __RendererListDesc_unity2_raw::is_valid(self, ::core::option::Option::None) }
@@ -731,10 +558,9 @@ impl RendererListDesc {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RendererListDesc;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

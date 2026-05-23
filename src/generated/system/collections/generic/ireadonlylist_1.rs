@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-generic-ireadonlylist_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ireadonlylist_1/IReadOnlyList_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "IReadOnlyList`1")]
@@ -25,7 +25,5 @@ impl<T0: ::unity2::ClassIdentity> IReadOnlyList_1<T0> {
 #[cfg(feature = "system-collections-generic-ireadonlylist_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIReadOnlyList_1;
-    pub use super::IIReadOnlyList_1Methods;
-    pub use super::IReadOnlyList_1;
+    pub use super::{IIReadOnlyList_1, IIReadOnlyList_1Methods, IReadOnlyList_1};
 }

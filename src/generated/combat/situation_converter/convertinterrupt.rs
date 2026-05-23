@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-situation_converter-convertinterrupt-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::situation_converter::baseconverter::{BaseConverter, IBaseConverter};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::situation_converter::baseconverter::{BaseConverter, IBaseConverter},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertinterrupt/ConvertInterrupt.md"))]
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertInterrupt")]
@@ -26,10 +28,9 @@ mod __ConvertInterrupt_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: situation_converter :: cameradataset :: CameraDataSet as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::situation_converter::cameradataset::CameraDataSet as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConvertInterrupt as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -41,18 +42,15 @@ mod __ConvertInterrupt_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -60,24 +58,15 @@ mod __ConvertInterrupt_unity2_raw {
         data: crate::combat::situation_converter::cameradataset::CameraDataSet,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConvertInterrupt,
-            crate::combat::situation_converter::cameradataset::CameraDataSet,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertInterrupt, crate::combat::situation_converter::cameradataset::CameraDataSet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_main_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConvertInterrupt as ::unity2::ClassIdentity>::class(),
@@ -90,41 +79,30 @@ mod __ConvertInterrupt_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
-                    "get_MainCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
+                        "get_MainCamera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_main_camera(
         this: ConvertInterrupt,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(
-            ConvertInterrupt,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_main_camera::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertInterrupt, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__lookup_get_main_camera::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_main_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::combat::cameraposition::CameraPosition as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -138,18 +116,15 @@ mod __ConvertInterrupt_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
-                    "set_MainCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
+                        "set_MainCamera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_main_camera(
@@ -157,24 +132,15 @@ mod __ConvertInterrupt_unity2_raw {
         value: crate::combat::cameraposition::CameraPosition,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConvertInterrupt,
-            crate::combat::cameraposition::CameraPosition,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_main_camera::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertInterrupt, crate::combat::cameraposition::CameraPosition, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_main_camera::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_interrupt_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConvertInterrupt as ::unity2::ClassIdentity>::class(),
@@ -187,41 +153,30 @@ mod __ConvertInterrupt_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
-                    "get_InterruptCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
+                        "get_InterruptCamera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_interrupt_camera(
         this: ConvertInterrupt,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::cameraposition::CameraPosition {
-        let inner: extern "C" fn(
-            ConvertInterrupt,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_interrupt_camera::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertInterrupt, ::unity2::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__lookup_get_interrupt_camera::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_interrupt_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::combat::cameraposition::CameraPosition as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -235,18 +190,15 @@ mod __ConvertInterrupt_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
-                    "set_InterruptCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
+                        "set_InterruptCamera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_interrupt_camera(
@@ -254,24 +206,15 @@ mod __ConvertInterrupt_unity2_raw {
         value: crate::combat::cameraposition::CameraPosition,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConvertInterrupt,
-            crate::combat::cameraposition::CameraPosition,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_interrupt_camera::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConvertInterrupt, crate::combat::cameraposition::CameraPosition, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_interrupt_camera::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::camerasituation::CameraSituation as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -287,18 +230,15 @@ mod __ConvertInterrupt_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
-                    "Convert",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConvertInterrupt as ::unity2::ClassIdentity>::NAME,
+                        "Convert",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert(
@@ -312,11 +252,7 @@ mod __ConvertInterrupt_unity2_raw {
             crate::combat::camerasituation::CameraSituation,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert::get_offset() as isize),
-        );
+        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(__lookup_convert::get_method_info().method_ptr);
         inner(this, situation, arg, __unity2_method_info)
     }
 }
@@ -324,74 +260,38 @@ mod __ConvertInterrupt_unity2_raw {
 #[cfg(feature = "combat-situation_converter-convertinterrupt")]
 pub trait IConvertInterruptMethods: IConvertInterrupt {
     #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
-    fn ctor(
-        self,
-        data: impl ::core::convert::Into<
-            crate::combat::situation_converter::cameradataset::CameraDataSet,
-        >,
-    ) -> () {
+    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
         unsafe {
-            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConvertInterrupt_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConvertInterrupt_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`get_MainCamera()` overload"]
     fn get_main_camera(self) -> crate::combat::cameraposition::CameraPosition {
         unsafe {
-            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConvertInterrupt_unity2_raw::get_main_camera(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MainCamera(crate::combat::cameraposition::CameraPosition)` overload"]
-    fn set_main_camera(
-        self,
-        value: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>,
-    ) -> () {
+    fn set_main_camera(self, value: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>) -> () {
         unsafe {
-            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConvertInterrupt_unity2_raw::set_main_camera(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConvertInterrupt_unity2_raw::set_main_camera(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_InterruptCamera()` overload"]
     fn get_interrupt_camera(self) -> crate::combat::cameraposition::CameraPosition {
         unsafe {
-            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConvertInterrupt_unity2_raw::get_interrupt_camera(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConvertInterrupt_unity2_raw::get_interrupt_camera(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_InterruptCamera(crate::combat::cameraposition::CameraPosition)` overload"]
-    fn set_interrupt_camera(
-        self,
-        value: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>,
-    ) -> () {
+    fn set_interrupt_camera(self, value: impl ::core::convert::Into<crate::combat::cameraposition::CameraPosition>) -> () {
         unsafe {
-            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConvertInterrupt_unity2_raw::set_interrupt_camera(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConvertInterrupt_unity2_raw::set_interrupt_camera(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]
@@ -401,9 +301,7 @@ pub trait IConvertInterruptMethods: IConvertInterrupt {
         arg: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::combat::cameraposition::CameraPosition {
         unsafe {
-            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConvertInterrupt as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConvertInterrupt_unity2_raw::convert(
                 __receiver,
                 ::core::convert::Into::into(situation),
@@ -436,13 +334,10 @@ impl ConvertInterrupt {
 #[cfg(feature = "combat-situation_converter-convertinterrupt")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertInterrupt;
-    pub use super::IConvertInterrupt;
-    pub use super::IConvertInterruptMethods;
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
+    pub use super::{ConvertInterrupt, IConvertInterrupt, IConvertInterruptMethods};
     #[cfg(feature = "combat-situation_converter-baseconverter")]
     pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::situation_converter::baseconverter::IBaseConverter, system::object::IObject};
 }

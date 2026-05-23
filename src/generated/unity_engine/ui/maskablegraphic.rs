@@ -2,24 +2,27 @@
 
 #[cfg(feature = "unity_engine-ui-maskablegraphic-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::events::unityevent_1::{IUnityEvent_1, UnityEvent_1};
-    use crate::unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::graphic::{Graphic, IGraphic};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            events::{
+                unityevent_1::{IUnityEvent_1, UnityEvent_1},
+                unityeventbase::{IUnityEventBase, UnityEventBase},
+            },
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::graphic::{Graphic, IGraphic},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/maskablegraphic/MaskableGraphic_CullStateChangedEvent.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.UI",
-        name = "MaskableGraphic.CullStateChangedEvent"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "MaskableGraphic.CullStateChangedEvent")]
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)]
     pub struct MaskableGraphic_CullStateChangedEvent {}
 
@@ -40,8 +43,7 @@ mod __types {
         #[rename(name = "m_IncludeForMasking")]
         pub m_include_for_masking: bool,
         #[rename(name = "m_OnCullStateChanged")]
-        pub m_on_cull_state_changed:
-            crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent,
+        pub m_on_cull_state_changed: crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent,
         #[rename(name = "m_ShouldRecalculate")]
         pub m_should_recalculate: bool,
         #[rename(name = "m_StencilValue")]
@@ -63,9 +65,7 @@ mod __MaskableGraphic_CullStateChangedEvent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic_CullStateChangedEvent as ::unity2::ClassIdentity>::class(),
@@ -78,57 +78,39 @@ mod __MaskableGraphic_CullStateChangedEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic_CullStateChangedEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic_CullStateChangedEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MaskableGraphic_CullStateChangedEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MaskableGraphic_CullStateChangedEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: MaskableGraphic_CullStateChangedEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MaskableGraphic_CullStateChangedEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-ui-maskablegraphic")]
-pub trait IMaskableGraphic_CullStateChangedEventMethods:
-    IMaskableGraphic_CullStateChangedEvent
-{
+pub trait IMaskableGraphic_CullStateChangedEventMethods: IMaskableGraphic_CullStateChangedEvent {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < MaskableGraphic_CullStateChangedEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MaskableGraphic_CullStateChangedEvent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic_CullStateChangedEvent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MaskableGraphic_CullStateChangedEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-ui-maskablegraphic")]
-impl<__T: IMaskableGraphic_CullStateChangedEvent> IMaskableGraphic_CullStateChangedEventMethods
-    for __T
-{
-}
+impl<__T: IMaskableGraphic_CullStateChangedEvent> IMaskableGraphic_CullStateChangedEventMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-maskablegraphic")]
 impl MaskableGraphic_CullStateChangedEvent {
@@ -155,9 +137,7 @@ mod __MaskableGraphic_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_cull_state_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -170,35 +150,35 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "get_onCullStateChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "get_onCullStateChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_cull_state_changed(
         this: MaskableGraphic,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent {
-        let inner : extern "C" fn (MaskableGraphic , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic_CullStateChangedEvent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_on_cull_state_changed :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            MaskableGraphic,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent =
+            ::core::mem::transmute(__lookup_get_on_cull_state_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_cull_state_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic_CullStateChangedEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
                 "set_onCullStateChanged",
@@ -210,18 +190,15 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "set_onCullStateChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "set_onCullStateChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_cull_state_changed(
@@ -233,20 +210,14 @@ mod __MaskableGraphic_unity2_raw {
             MaskableGraphic,
             crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_cull_state_changed::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_on_cull_state_changed::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_maskable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -259,41 +230,28 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "get_maskable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "get_maskable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_maskable(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_maskable(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_maskable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_maskable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_maskable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
                 "set_maskable",
@@ -305,40 +263,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "set_maskable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "set_maskable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_maskable(
-        this: MaskableGraphic,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_maskable(this: MaskableGraphic, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_maskable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_maskable::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_masking_graphic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -351,41 +296,28 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "get_isMaskingGraphic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "get_isMaskingGraphic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_masking_graphic(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_masking_graphic(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_masking_graphic::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_masking_graphic::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_masking_graphic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
                 "set_isMaskingGraphic",
@@ -397,42 +329,28 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "set_isMaskingGraphic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "set_isMaskingGraphic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_masking_graphic(
-        this: MaskableGraphic,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_masking_graphic(this: MaskableGraphic, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_masking_graphic::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_masking_graphic::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_modified_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
                 "GetModifiedMaterial",
@@ -444,18 +362,15 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "GetModifiedMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "GetModifiedMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_modified_material(
@@ -467,20 +382,14 @@ mod __MaskableGraphic_unity2_raw {
             MaskableGraphic,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_modified_material::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_modified_material::get_method_info().method_ptr);
         inner(this, base_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cull {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -496,18 +405,15 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "Cull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "Cull",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cull(
@@ -516,27 +422,16 @@ mod __MaskableGraphic_unity2_raw {
         valid_rect: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaskableGraphic,
-            crate::unity_engine::rect::Rect,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cull::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaskableGraphic, crate::unity_engine::rect::Rect, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cull::get_method_info().method_ptr);
         inner(this, clip_rect, valid_rect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_cull {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
                 "UpdateCull",
@@ -548,40 +443,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_cull(
-        this: MaskableGraphic,
-        cull: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_cull(this: MaskableGraphic, cull: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_cull::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_cull::get_method_info().method_ptr);
         inner(this, cull, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_clip_rect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -597,18 +479,15 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "SetClipRect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "SetClipRect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_clip_rect(
@@ -617,27 +496,16 @@ mod __MaskableGraphic_unity2_raw {
         valid_rect: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaskableGraphic,
-            crate::unity_engine::rect::Rect,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_clip_rect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaskableGraphic, crate::unity_engine::rect::Rect, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_clip_rect::get_method_info().method_ptr);
         inner(this, clip_rect, valid_rect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_clip_softness {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
                 "SetClipSoftness",
@@ -649,18 +517,15 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "SetClipSoftness",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "SetClipSoftness",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_clip_softness(
@@ -668,24 +533,15 @@ mod __MaskableGraphic_unity2_raw {
         clip_softness: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaskableGraphic,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_clip_softness::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaskableGraphic, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_clip_softness::get_method_info().method_ptr);
         inner(this, clip_softness, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -698,39 +554,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -743,39 +587,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_transform_parent_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -788,39 +620,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "OnTransformParentChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "OnTransformParentChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_transform_parent_changed(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_transform_parent_changed(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_transform_parent_changed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_transform_parent_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_parent_mask_state_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -833,39 +653,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "ParentMaskStateChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "ParentMaskStateChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn parent_mask_state_changed(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn parent_mask_state_changed(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_parent_mask_state_changed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_parent_mask_state_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_canvas_hierarchy_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -878,39 +686,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "OnCanvasHierarchyChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "OnCanvasHierarchyChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_canvas_hierarchy_changed(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_canvas_hierarchy_changed(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_canvas_hierarchy_changed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_canvas_hierarchy_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_root_canvas_rect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -923,41 +719,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "get_rootCanvasRect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "get_rootCanvasRect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_root_canvas_rect(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
-        let inner: extern "C" fn(
-            MaskableGraphic,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_root_canvas_rect::get_offset() as isize),
-        );
+    pub unsafe fn get_root_canvas_rect(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect =
+            ::core::mem::transmute(__lookup_get_root_canvas_rect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_clip_parent {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -970,39 +752,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "UpdateClipParent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "UpdateClipParent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_clip_parent(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_clip_parent(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_clip_parent::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_clip_parent::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_recalculate_clipping {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -1015,39 +785,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "RecalculateClipping",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "RecalculateClipping",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn recalculate_clipping(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn recalculate_clipping(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_recalculate_clipping::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_recalculate_clipping::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_recalculate_masking {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -1060,39 +818,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "RecalculateMasking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "RecalculateMasking",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn recalculate_masking(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn recalculate_masking(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_recalculate_masking::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_recalculate_masking::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -1105,39 +851,27 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MaskableGraphic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MaskableGraphic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_ui_i_clippable_get_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskableGraphic as ::unity2::ClassIdentity>::class(),
@@ -1150,34 +884,23 @@ mod __MaskableGraphic_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.UI.IClippable.get_gameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskableGraphic as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.UI.IClippable.get_gameObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_ui_i_clippable_get_game_object(
         this: MaskableGraphic,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MaskableGraphic,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_unity_engine_ui_i_clippable_get_game_object::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_unity_engine_ui_i_clippable_get_game_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1185,82 +908,48 @@ mod __MaskableGraphic_unity2_raw {
 #[cfg(feature = "unity_engine-ui-maskablegraphic")]
 pub trait IMaskableGraphicMethods: IMaskableGraphic {
     #[doc = "`get_onCullStateChanged()` overload"]
-    fn get_on_cull_state_changed(
-        self,
-    ) -> crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent {
+    fn get_on_cull_state_changed(self) -> crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::get_on_cull_state_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::get_on_cull_state_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onCullStateChanged(crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent)` overload"]
     fn set_on_cull_state_changed(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent>,
     ) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::set_on_cull_state_changed(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::set_on_cull_state_changed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_maskable()` overload"]
     fn get_maskable(self) -> bool {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaskableGraphic_unity2_raw::get_maskable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_maskable(bool)` overload"]
     fn set_maskable(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::set_maskable(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::set_maskable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_isMaskingGraphic()` overload"]
     fn get_is_masking_graphic(self) -> bool {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::get_is_masking_graphic(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::get_is_masking_graphic(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_isMaskingGraphic(bool)` overload"]
     fn set_is_masking_graphic(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::set_is_masking_graphic(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::set_is_masking_graphic(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]
@@ -1269,26 +958,14 @@ pub trait IMaskableGraphicMethods: IMaskableGraphic {
         base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::get_modified_material(
-                __receiver,
-                ::core::convert::Into::into(base_material),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::get_modified_material(__receiver, ::core::convert::Into::into(base_material), ::core::option::Option::None)
         }
     }
     #[doc = "`Cull(crate::unity_engine::rect::Rect, bool)` overload"]
-    fn cull(
-        self,
-        clip_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        valid_rect: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn cull(self, clip_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>, valid_rect: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaskableGraphic_unity2_raw::cull(
                 __receiver,
                 ::core::convert::Into::into(clip_rect),
@@ -1300,14 +977,8 @@ pub trait IMaskableGraphicMethods: IMaskableGraphic {
     #[doc = "`UpdateCull(bool)` overload"]
     fn update_cull(self, cull: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::update_cull(
-                __receiver,
-                ::core::convert::Into::into(cull),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::update_cull(__receiver, ::core::convert::Into::into(cull), ::core::option::Option::None)
         }
     }
     #[doc = "`SetClipRect(crate::unity_engine::rect::Rect, bool)` overload"]
@@ -1317,9 +988,7 @@ pub trait IMaskableGraphicMethods: IMaskableGraphic {
         valid_rect: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaskableGraphic_unity2_raw::set_clip_rect(
                 __receiver,
                 ::core::convert::Into::into(clip_rect),
@@ -1329,144 +998,87 @@ pub trait IMaskableGraphicMethods: IMaskableGraphic {
         }
     }
     #[doc = "`SetClipSoftness(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_clip_softness(
-        self,
-        clip_softness: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
+    fn set_clip_softness(self, clip_softness: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::set_clip_softness(
-                __receiver,
-                ::core::convert::Into::into(clip_softness),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::set_clip_softness(__receiver, ::core::convert::Into::into(clip_softness), ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaskableGraphic_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaskableGraphic_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnTransformParentChanged()` overload"]
     fn on_transform_parent_changed(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::on_transform_parent_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ParentMaskStateChanged()` overload"]
     fn parent_mask_state_changed(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::parent_mask_state_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::parent_mask_state_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnCanvasHierarchyChanged()` overload"]
     fn on_canvas_hierarchy_changed(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::on_canvas_hierarchy_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_rootCanvasRect()` overload"]
     fn get_root_canvas_rect(self) -> crate::unity_engine::rect::Rect {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::get_root_canvas_rect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::get_root_canvas_rect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateClipParent()` overload"]
     fn update_clip_parent(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::update_clip_parent(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::update_clip_parent(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RecalculateClipping()` overload"]
     fn recalculate_clipping(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::recalculate_clipping(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::recalculate_clipping(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RecalculateMasking()` overload"]
     fn recalculate_masking(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::recalculate_masking(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::recalculate_masking(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaskableGraphic_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.UI.IClippable.get_gameObject()` overload"]
-    fn unity_engine_ui_i_clippable_get_game_object(
-        self,
-    ) -> crate::unity_engine::gameobject::GameObject {
+    fn unity_engine_ui_i_clippable_get_game_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaskableGraphic_unity2_raw::unity_engine_ui_i_clippable_get_game_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaskableGraphic as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaskableGraphic_unity2_raw::unity_engine_ui_i_clippable_get_game_object(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1493,37 +1105,38 @@ impl MaskableGraphic {
 #[cfg(feature = "unity_engine-ui-maskablegraphic")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMaskableGraphic;
-    pub use super::IMaskableGraphicMethods;
-    pub use super::IMaskableGraphic_CullStateChangedEvent;
-    pub use super::IMaskableGraphic_CullStateChangedEventMethods;
-    pub use super::MaskableGraphic;
-    pub use super::MaskableGraphic_CullStateChangedEvent;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IMaskableGraphic, IMaskableGraphicMethods, IMaskableGraphic_CullStateChangedEvent, IMaskableGraphic_CullStateChangedEventMethods,
+        MaskableGraphic, MaskableGraphic_CullStateChangedEvent,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
     #[cfg(feature = "unity_engine-events-unityevent_1")]
     pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
-    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
     #[cfg(feature = "unity_engine-events-unityeventbase")]
     pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::graphic::IGraphic;
     #[cfg(feature = "unity_engine-ui-graphic")]
     pub use crate::unity_engine::ui::graphic::IGraphicMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::uibehaviour::IUIBehaviour,
+            events::{unityevent_1::IUnityEvent_1, unityeventbase::IUnityEventBase},
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+            ui::graphic::IGraphic,
+        },
+    };
 }

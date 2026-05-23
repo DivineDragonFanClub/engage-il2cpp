@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-commandbuffer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/commandbuffer/CommandBuffer.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "CommandBuffer")]
@@ -28,10 +28,9 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_single_pass_stereo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: singlepassstereomode :: SinglePassStereoMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Internal_SetSinglePassStereo",
@@ -43,18 +42,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_SetSinglePassStereo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_SetSinglePassStereo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_single_pass_stereo(
@@ -66,20 +62,14 @@ mod __CommandBuffer_unity2_raw {
             CommandBuffer,
             crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_set_single_pass_stereo::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_set_single_pass_stereo::get_method_info().method_ptr);
         inner(this, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
@@ -92,37 +82,31 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "InitBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "InitBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init_buffer(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_buffer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_buffer::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_gpu_fence_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: graphicsfencetype :: GraphicsFenceType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: synchronisationstageflags :: SynchronisationStageFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "CreateGPUFence_Internal",
@@ -134,18 +118,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "CreateGPUFence_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "CreateGPUFence_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_gpu_fence_internal(
@@ -159,21 +140,18 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType,
             crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_gpu_fence_internal::get_offset() as isize),
-        );
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_create_gpu_fence_internal::get_method_info().method_ptr);
         inner(this, fence_type, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_on_gpu_fence_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: synchronisationstageflags :: SynchronisationStageFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "WaitOnGPUFence_Internal",
@@ -185,18 +163,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "WaitOnGPUFence_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "WaitOnGPUFence_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn wait_on_gpu_fence_internal(
@@ -210,20 +185,14 @@ mod __CommandBuffer_unity2_raw {
             ::unity2::IntPtr,
             crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_wait_on_gpu_fence_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_wait_on_gpu_fence_internal::get_method_info().method_ptr);
         inner(this, fence_ptr, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
@@ -236,40 +205,35 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseBuffer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_buffer(
-        this: CommandBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn release_buffer(this: CommandBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release_buffer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_release_buffer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_compute_texture_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: computeshader :: ComputeShader as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertexturesubelement :: RenderTextureSubElement as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::computeshader::ComputeShader as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Internal_SetComputeTextureParam",
@@ -281,18 +245,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_SetComputeTextureParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_SetComputeTextureParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_compute_texture_param(
@@ -314,29 +275,14 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_set_compute_texture_param::get_offset() as isize),
-        );
-        inner(
-            this,
-            compute_shader,
-            kernel_index,
-            name_id,
-            rt,
-            mip_level,
-            element,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_internal_set_compute_texture_param::get_method_info().method_ptr);
+        inner(this, compute_shader, kernel_index, name_id, rt, mip_level, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_compute_constant_compute_buffer_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::computeshader::ComputeShader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -355,18 +301,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_SetComputeConstantComputeBufferParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_SetComputeConstantComputeBufferParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_compute_constant_compute_buffer_param(
@@ -386,31 +329,14 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_internal_set_compute_constant_compute_buffer_param::get_offset()
-                        as isize,
-                ),
-        );
-        inner(
-            this,
-            compute_shader,
-            name_id,
-            buffer,
-            offset,
-            size,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_internal_set_compute_constant_compute_buffer_param::get_method_info().method_ptr);
+        inner(this, compute_shader, name_id, buffer, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_dispatch_compute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::computeshader::ComputeShader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -429,18 +355,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_DispatchCompute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_DispatchCompute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_dispatch_compute(
@@ -460,11 +383,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_dispatch_compute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_dispatch_compute::get_method_info().method_ptr);
         inner(
             this,
             compute_shader,
@@ -479,11 +398,8 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "set_name",
@@ -495,86 +411,62 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "set_name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "set_name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_name(
-        this: CommandBuffer,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name::get_offset() as isize),
-        );
+    pub unsafe fn set_name(this: CommandBuffer, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CommandBuffer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommandBuffer as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CommandBuffer as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: CommandBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_draw_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::materialpropertyblock::MaterialPropertyBlock as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Internal_DrawMesh",
@@ -586,18 +478,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_DrawMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_DrawMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_draw_mesh(
@@ -619,29 +508,14 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_draw_mesh::get_offset() as isize),
-        );
-        inner(
-            this,
-            mesh,
-            matrix,
-            material,
-            submesh_index,
-            shader_pass,
-            properties,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_internal_draw_mesh::get_method_info().method_ptr);
+        inner(this, mesh, matrix, material, submesh_index, shader_pass, properties, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_draw_renderer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -659,18 +533,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_DrawRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_DrawRenderer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_draw_renderer(
@@ -688,28 +559,23 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_draw_renderer::get_offset() as isize),
-        );
-        inner(
-            this,
-            renderer,
-            material,
-            submesh_index,
-            shader_pass,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_internal_draw_renderer::get_method_info().method_ptr);
+        inner(this, renderer, material, submesh_index, shader_pass, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_draw_procedural {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::materialpropertyblock::MaterialPropertyBlock as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Internal_DrawProcedural",
@@ -721,18 +587,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_DrawProcedural",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_DrawProcedural",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_draw_procedural(
@@ -756,11 +619,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_draw_procedural::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_draw_procedural::get_method_info().method_ptr);
         inner(
             this,
             matrix,
@@ -777,11 +636,8 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_draw_occlusion_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Internal_DrawOcclusionMesh",
@@ -793,18 +649,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_DrawOcclusionMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_DrawOcclusionMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_draw_occlusion_mesh(
@@ -812,26 +665,16 @@ mod __CommandBuffer_unity2_raw {
         normalized_cam_viewport: crate::unity_engine::rectint::RectInt,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::rectint::RectInt,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_draw_occlusion_mesh::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::rectint::RectInt, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_draw_occlusion_mesh::get_method_info().method_ptr);
         inner(this, normalized_cam_viewport, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_viewport {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetViewport",
@@ -843,18 +686,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetViewport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetViewport",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_viewport(
@@ -862,26 +702,16 @@ mod __CommandBuffer_unity2_raw {
         pixel_rect: crate::unity_engine::rect::Rect,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_viewport::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_viewport::get_method_info().method_ptr);
         inner(this, pixel_rect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_scissor_rect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "EnableScissorRect",
@@ -893,18 +723,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "EnableScissorRect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "EnableScissorRect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enable_scissor_rect(
@@ -912,24 +739,15 @@ mod __CommandBuffer_unity2_raw {
         scissor: crate::unity_engine::rect::Rect,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enable_scissor_rect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_scissor_rect::get_method_info().method_ptr);
         inner(this, scissor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_scissor_rect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
@@ -942,40 +760,37 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DisableScissorRect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DisableScissorRect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_scissor_rect(
-        this: CommandBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_scissor_rect(this: CommandBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_scissor_rect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_scissor_rect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_blit_identifier {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Blit_Identifier",
@@ -987,18 +802,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Blit_Identifier",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Blit_Identifier",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn blit_identifier(
@@ -1024,11 +836,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_blit_identifier::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_blit_identifier::get_method_info().method_ptr);
         inner(
             this,
             source,
@@ -1046,10 +854,19 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturememoryless :: RenderTextureMemoryless as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRT",
@@ -1061,18 +878,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt(
@@ -1102,11 +916,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt::get_method_info().method_ptr);
         inner(
             this,
             name_id,
@@ -1126,10 +936,20 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturereadwrite :: RenderTextureReadWrite as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturememoryless :: RenderTextureMemoryless as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertextureformat::RenderTextureFormat as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRT",
@@ -1141,18 +961,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_2(
@@ -1184,11 +1001,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_2::get_method_info().method_ptr);
         inner(
             this,
             name_id,
@@ -1209,10 +1022,19 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturereadwrite :: RenderTextureReadWrite as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturememoryless :: RenderTextureMemoryless as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertextureformat::RenderTextureFormat as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRT",
@@ -1224,18 +1046,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_3(
@@ -1265,11 +1084,7 @@ mod __CommandBuffer_unity2_raw {
             bool,
             crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_3::get_method_info().method_ptr);
         inner(
             this,
             name_id,
@@ -1289,10 +1104,18 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturereadwrite :: RenderTextureReadWrite as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertextureformat::RenderTextureFormat as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRT",
@@ -1304,18 +1127,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_4(
@@ -1343,11 +1163,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_4::get_method_info().method_ptr);
         inner(
             this,
             name_id,
@@ -1366,10 +1182,17 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturereadwrite :: RenderTextureReadWrite as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertextureformat::RenderTextureFormat as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRT",
@@ -1381,18 +1204,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_5(
@@ -1418,11 +1238,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_5::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_5::get_method_info().method_ptr);
         inner(
             this,
             name_id,
@@ -1440,10 +1256,16 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertextureformat :: RenderTextureFormat as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturereadwrite :: RenderTextureReadWrite as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertextureformat::RenderTextureFormat as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRT",
@@ -1455,18 +1277,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_6(
@@ -1490,11 +1309,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendertextureformat::RenderTextureFormat,
             crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_6::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_6::get_method_info().method_ptr);
         inner(
             this,
             name_id,
@@ -1511,10 +1326,12 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_with_descriptor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRTWithDescriptor",
@@ -1526,18 +1343,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRTWithDescriptor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRTWithDescriptor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_with_descriptor(
@@ -1553,21 +1367,19 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
             crate::unity_engine::filtermode::FilterMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_with_descriptor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_with_descriptor::get_method_info().method_ptr);
         inner(this, name_id, desc, filter, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRT",
@@ -1579,18 +1391,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_7(
@@ -1606,21 +1415,18 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
             crate::unity_engine::filtermode::FilterMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_7::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_7::get_method_info().method_ptr);
         inner(this, name_id, desc, filter, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRT",
@@ -1632,18 +1438,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_8(
@@ -1657,22 +1460,15 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_8::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_8::get_method_info().method_ptr);
         inner(this, name_id, desc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_temporary_rt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "ReleaseTemporaryRT",
@@ -1684,40 +1480,27 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseTemporaryRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseTemporaryRT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_temporary_rt(
-        this: CommandBuffer,
-        name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn release_temporary_rt(this: CommandBuffer, name_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release_temporary_rt::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_release_temporary_rt::get_method_info().method_ptr);
         inner(this, name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_render_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1735,18 +1518,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "ClearRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "ClearRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_render_target(
@@ -1757,34 +1537,15 @@ mod __CommandBuffer_unity2_raw {
         depth: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            bool,
-            bool,
-            crate::unity_engine::color::Color,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_render_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            clear_depth,
-            clear_color,
-            background_color,
-            depth,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(CommandBuffer, bool, bool, crate::unity_engine::color::Color, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_render_target::get_method_info().method_ptr);
+        inner(this, clear_depth, clear_color, background_color, depth, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_render_target_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1801,18 +1562,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "ClearRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "ClearRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_render_target_2(
@@ -1822,36 +1580,16 @@ mod __CommandBuffer_unity2_raw {
         background_color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            bool,
-            bool,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_render_target_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            clear_depth,
-            clear_color,
-            background_color,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(CommandBuffer, bool, bool, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_render_target_2::get_method_info().method_ptr);
+        inner(this, clear_depth, clear_color, background_color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalFloat",
@@ -1863,45 +1601,28 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_float(
-        this: CommandBuffer,
-        name_id: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_global_float(this: CommandBuffer, name_id: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_float::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_float::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalInt",
@@ -1913,41 +1634,27 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_int(
-        this: CommandBuffer,
-        name_id: i32,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_global_int(this: CommandBuffer, name_id: i32, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_int::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_int::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -1963,18 +1670,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVector",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector(
@@ -1983,25 +1687,15 @@ mod __CommandBuffer_unity2_raw {
         value: crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -2017,18 +1711,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_color(
@@ -2037,25 +1728,15 @@ mod __CommandBuffer_unity2_raw {
         value: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_color::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -2071,18 +1752,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix(
@@ -2091,27 +1769,16 @@ mod __CommandBuffer_unity2_raw {
         value: crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_shader_keyword {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "EnableShaderKeyword",
@@ -2123,45 +1790,28 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "EnableShaderKeyword",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "EnableShaderKeyword",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_shader_keyword(
-        this: CommandBuffer,
-        keyword: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enable_shader_keyword::get_offset() as isize),
-        );
+    pub unsafe fn enable_shader_keyword(this: CommandBuffer, keyword: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CommandBuffer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_shader_keyword::get_method_info().method_ptr);
         inner(this, keyword, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_shader_keyword {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "DisableShaderKeyword",
@@ -2173,43 +1823,27 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DisableShaderKeyword",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DisableShaderKeyword",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_shader_keyword(
-        this: CommandBuffer,
-        keyword: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_disable_shader_keyword::get_offset() as isize),
-        );
+    pub unsafe fn disable_shader_keyword(this: CommandBuffer, keyword: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CommandBuffer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable_shader_keyword::get_method_info().method_ptr);
         inner(this, keyword, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_view_projection_matrices {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -2225,18 +1859,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetViewProjectionMatrices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetViewProjectionMatrices",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_view_projection_matrices(
@@ -2250,21 +1881,16 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_view_projection_matrices::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_view_projection_matrices::get_method_info().method_ptr);
         inner(this, view, proj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_execution_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetExecutionFlags",
@@ -2276,44 +1902,38 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetExecutionFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetExecutionFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_execution_flags(
         this: CommandBuffer,
-        flags : crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags,
+        flags: crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             CommandBuffer,
             crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_execution_flags::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_execution_flags::get_method_info().method_ptr);
         inner(this, flags, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate_against_execution_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "ValidateAgainstExecutionFlags",
@@ -2325,24 +1945,21 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "ValidateAgainstExecutionFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "ValidateAgainstExecutionFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn validate_against_execution_flags(
         this: CommandBuffer,
-        required_flags : crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags,
-        invalid_flags : crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags,
+        required_flags: crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags,
+        invalid_flags: crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -2350,21 +1967,18 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags,
             crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_validate_against_execution_flags::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_validate_against_execution_flags::get_method_info().method_ptr);
         inner(this, required_flags, invalid_flags, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalVectorArray",
@@ -2376,18 +1990,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_array(
@@ -2396,26 +2007,19 @@ mod __CommandBuffer_unity2_raw {
         values: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_array::get_method_info().method_ptr);
         inner(this, name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalMatrixArray",
@@ -2427,18 +2031,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_array(
@@ -2447,26 +2048,20 @@ mod __CommandBuffer_unity2_raw {
         values: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_array::get_method_info().method_ptr);
         inner(this, name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertexturesubelement :: RenderTextureSubElement as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalTexture_Impl",
@@ -2478,18 +2073,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTexture_Impl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTexture_Impl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture_impl(
@@ -2505,20 +2097,14 @@ mod __CommandBuffer_unity2_raw {
             *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture_impl::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_texture_impl::get_method_info().method_ptr);
         inner(this, name_id, rt, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_buffer_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -2534,18 +2120,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalBufferInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalBufferInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_buffer_internal(
@@ -2554,27 +2137,16 @@ mod __CommandBuffer_unity2_raw {
         value: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_buffer_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_buffer_internal::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_begin_sample {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "BeginSample",
@@ -2586,45 +2158,28 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "BeginSample",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "BeginSample",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn begin_sample(
-        this: CommandBuffer,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_sample::get_offset() as isize),
-        );
+    pub unsafe fn begin_sample(this: CommandBuffer, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CommandBuffer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_begin_sample::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_sample {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "EndSample",
@@ -2636,44 +2191,29 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "EndSample",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "EndSample",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn end_sample(
-        this: CommandBuffer,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_sample::get_offset() as isize),
-        );
+    pub unsafe fn end_sample(this: CommandBuffer, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CommandBuffer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end_sample::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_begin_sample_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: profiling :: customsampler :: CustomSampler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::profiling::customsampler::CustomSampler as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "BeginSample",
@@ -2685,18 +2225,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "BeginSample",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "BeginSample",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn begin_sample_2(
@@ -2704,25 +2241,17 @@ mod __CommandBuffer_unity2_raw {
         sampler: crate::unity_engine::profiling::customsampler::CustomSampler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::profiling::customsampler::CustomSampler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_sample_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::profiling::customsampler::CustomSampler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_begin_sample_2::get_method_info().method_ptr);
         inner(this, sampler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_sample_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: profiling :: customsampler :: CustomSampler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::profiling::customsampler::CustomSampler as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "EndSample",
@@ -2734,18 +2263,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "EndSample",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "EndSample",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn end_sample_2(
@@ -2753,25 +2279,17 @@ mod __CommandBuffer_unity2_raw {
         sampler: crate::unity_engine::profiling::customsampler::CustomSampler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::profiling::customsampler::CustomSampler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_sample_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::profiling::customsampler::CustomSampler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end_sample_2::get_method_info().method_ptr);
         inner(this, sampler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_begin_sample_custom_sampler {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: profiling :: customsampler :: CustomSampler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::profiling::customsampler::CustomSampler as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "BeginSample_CustomSampler",
@@ -2783,18 +2301,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "BeginSample_CustomSampler",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "BeginSample_CustomSampler",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn begin_sample_custom_sampler(
@@ -2802,25 +2317,17 @@ mod __CommandBuffer_unity2_raw {
         sampler: crate::unity_engine::profiling::customsampler::CustomSampler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::profiling::customsampler::CustomSampler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_sample_custom_sampler::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::profiling::customsampler::CustomSampler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_begin_sample_custom_sampler::get_method_info().method_ptr);
         inner(this, sampler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_sample_custom_sampler {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: profiling :: customsampler :: CustomSampler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::profiling::customsampler::CustomSampler as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "EndSample_CustomSampler",
@@ -2832,18 +2339,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "EndSample_CustomSampler",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "EndSample_CustomSampler",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn end_sample_custom_sampler(
@@ -2851,24 +2355,15 @@ mod __CommandBuffer_unity2_raw {
         sampler: crate::unity_engine::profiling::customsampler::CustomSampler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::profiling::customsampler::CustomSampler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_sample_custom_sampler::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::profiling::customsampler::CustomSampler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end_sample_custom_sampler::get_method_info().method_ptr);
         inner(this, sampler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_constant_buffer_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -2886,18 +2381,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalConstantBufferInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalConstantBufferInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_constant_buffer_internal(
@@ -2908,29 +2400,16 @@ mod __CommandBuffer_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_constant_buffer_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::computebuffer::ComputeBuffer, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_constant_buffer_internal::get_method_info().method_ptr);
         inner(this, buffer, name_id, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_instance_multiplier {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetInstanceMultiplier",
@@ -2942,41 +2421,29 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetInstanceMultiplier",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetInstanceMultiplier",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_instance_multiplier(
-        this: CommandBuffer,
-        multiplier: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_instance_multiplier(this: CommandBuffer, multiplier: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_instance_multiplier::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_instance_multiplier::get_method_info().method_ptr);
         inner(this, multiplier, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -2988,18 +2455,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target(
@@ -3011,21 +2475,19 @@ mod __CommandBuffer_unity2_raw {
             CommandBuffer,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target::get_method_info().method_ptr);
         inner(this, rt, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3037,25 +2499,22 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_2(
         this: CommandBuffer,
         rt: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -3064,21 +2523,21 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_2::get_method_info().method_ptr);
         inner(this, rt, load_action, store_action, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3090,27 +2549,24 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_3(
         this: CommandBuffer,
         rt: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        color_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -3121,11 +2577,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_3::get_method_info().method_ptr);
         inner(
             this,
             rt,
@@ -3140,10 +2592,13 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: cubemapface :: CubemapFace as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::cubemapface::CubemapFace as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3155,18 +2610,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_4(
@@ -3184,28 +2636,18 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::cubemapface::CubemapFace,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_4::get_offset() as isize),
-        );
-        inner(
-            this,
-            rt,
-            mip_level,
-            cubemap_face,
-            depth_slice,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_4::get_method_info().method_ptr);
+        inner(this, rt, mip_level, cubemap_face, depth_slice, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3217,18 +2659,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_5(
@@ -3242,21 +2681,21 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_5::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_5::get_method_info().method_ptr);
         inner(this, color, depth, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: cubemapface :: CubemapFace as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::cubemapface::CubemapFace as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3268,18 +2707,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_6(
@@ -3299,29 +2735,22 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::cubemapface::CubemapFace,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_6::get_offset() as isize),
-        );
-        inner(
-            this,
-            color,
-            depth,
-            mip_level,
-            cubemap_face,
-            depth_slice,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_6::get_method_info().method_ptr);
+        inner(this, color, depth, mip_level, cubemap_face, depth_slice, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3333,28 +2762,25 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_7(
         this: CommandBuffer,
         color: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        color_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         depth: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -3366,11 +2792,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_7::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_7::get_method_info().method_ptr);
         inner(
             this,
             color,
@@ -3386,10 +2808,14 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: cubemapface :: CubemapFace as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::cubemapface::CubemapFace as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3401,25 +2827,20 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_8(
         this: CommandBuffer,
-        colors: ::unity2::Array<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        colors: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         depth: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         mip_level: i32,
         cubemap_face: crate::unity_engine::cubemapface::CubemapFace,
@@ -3428,37 +2849,27 @@ mod __CommandBuffer_unity2_raw {
     ) -> () {
         let inner: extern "C" fn(
             CommandBuffer,
-            ::unity2::Array<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >,
+            ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             i32,
             crate::unity_engine::cubemapface::CubemapFace,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_8::get_offset() as isize),
-        );
-        inner(
-            this,
-            colors,
-            depth,
-            mip_level,
-            cubemap_face,
-            depth_slice,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_8::get_method_info().method_ptr);
+        inner(this, colors, depth, mip_level, cubemap_face, depth_slice, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_single_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTargetSingle_Internal",
@@ -3470,27 +2881,24 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTargetSingle_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTargetSingle_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_single_internal(
         this: CommandBuffer,
         rt: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        color_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -3501,11 +2909,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_single_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_single_internal::get_method_info().method_ptr);
         inner(
             this,
             rt,
@@ -3520,10 +2924,16 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_color_depth_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetflags :: RenderTargetFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTargetColorDepth_Internal",
@@ -3535,28 +2945,25 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTargetColorDepth_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTargetColorDepth_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_color_depth_internal(
         this: CommandBuffer,
         color: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         depth: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        color_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         flags: crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -3570,11 +2977,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_color_depth_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_color_depth_internal::get_method_info().method_ptr);
         inner(
             this,
             color,
@@ -3591,10 +2994,18 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_multi_subtarget {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: cubemapface :: CubemapFace as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::cubemapface::CubemapFace as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTargetMultiSubtarget",
@@ -3606,34 +3017,25 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTargetMultiSubtarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTargetMultiSubtarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_multi_subtarget(
         this: CommandBuffer,
-        colors: ::unity2::Array<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        colors: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         depth: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        color_load_actions: ::unity2::Array<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_actions: ::unity2::Array<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_load_actions: ::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_actions: ::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         mip_level: i32,
         cubemap_face: crate::unity_engine::cubemapface::CubemapFace,
         depth_slice: i32,
@@ -3641,27 +3043,17 @@ mod __CommandBuffer_unity2_raw {
     ) -> () {
         let inner: extern "C" fn(
             CommandBuffer,
-            ::unity2::Array<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >,
+            ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            ::unity2::Array<
-                crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-            >,
-            ::unity2::Array<
-                crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-            >,
+            ::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+            ::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
             crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             i32,
             crate::unity_engine::cubemapface::CubemapFace,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_multi_subtarget::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_multi_subtarget::get_method_info().method_ptr);
         inner(
             this,
             colors,
@@ -3680,9 +3072,7 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_compute_buffer_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
                 <::unity2::IlInstance as ::unity2::IlType>::il_type(),
@@ -3698,18 +3088,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetComputeBufferData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetComputeBufferData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_compute_buffer_data(
@@ -3723,20 +3110,14 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::computebuffer::ComputeBuffer,
             ::unity2::IlInstance,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_compute_buffer_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_compute_buffer_data::get_method_info().method_ptr);
         inner(this, buffer, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_compute_buffer_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
                 <::unity2::IlInstance as ::unity2::IlType>::il_type(),
@@ -3756,18 +3137,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "InternalSetComputeBufferData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "InternalSetComputeBufferData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_compute_buffer_data(
@@ -3789,11 +3167,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_set_compute_buffer_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_set_compute_buffer_data::get_method_info().method_ptr);
         inner(
             this,
             buffer,
@@ -3809,9 +3183,7 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
@@ -3824,39 +3196,27 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: CommandBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: CommandBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
@@ -3869,41 +3229,28 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: CommandBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: CommandBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Dispose",
@@ -3915,82 +3262,53 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose_2(
-        this: CommandBuffer,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose_2(this: CommandBuffer, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommandBuffer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose_2::get_method_info().method_ptr);
         inner(this, disposing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommandBuffer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CommandBuffer as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: CommandBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CommandBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(CommandBuffer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_async_graphics_fence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
@@ -4003,44 +3321,34 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "CreateAsyncGraphicsFence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "CreateAsyncGraphicsFence",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_async_graphics_fence(
         this: CommandBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::graphicsfence::GraphicsFence {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::graphicsfence::GraphicsFence =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_async_graphics_fence::get_offset() as isize),
-            );
+        let inner: extern "C" fn(CommandBuffer, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::graphicsfence::GraphicsFence =
+            ::core::mem::transmute(__lookup_create_async_graphics_fence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_graphics_fence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: graphicsfencetype :: GraphicsFenceType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: synchronisationstageflags :: SynchronisationStageFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "CreateGraphicsFence",
@@ -4052,18 +3360,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "CreateGraphicsFence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "CreateGraphicsFence",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_graphics_fence(
@@ -4077,23 +3382,17 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType,
             crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::graphicsfence::GraphicsFence =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_graphics_fence::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::rendering::graphicsfence::GraphicsFence =
+            ::core::mem::transmute(__lookup_create_graphics_fence::get_method_info().method_ptr);
         inner(this, fence_type, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_on_async_graphics_fence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: graphicsfence :: GraphicsFence as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::graphicsfence::GraphicsFence as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "WaitOnAsyncGraphicsFence",
@@ -4105,18 +3404,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "WaitOnAsyncGraphicsFence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "WaitOnAsyncGraphicsFence",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn wait_on_async_graphics_fence(
@@ -4124,25 +3420,19 @@ mod __CommandBuffer_unity2_raw {
         fence: crate::unity_engine::rendering::graphicsfence::GraphicsFence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::rendering::graphicsfence::GraphicsFence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_wait_on_async_graphics_fence::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::rendering::graphicsfence::GraphicsFence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_wait_on_async_graphics_fence::get_method_info().method_ptr);
         inner(this, fence, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_on_async_graphics_fence_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: graphicsfence :: GraphicsFence as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: synchronisationstage :: SynchronisationStage as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::graphicsfence::GraphicsFence as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::synchronisationstage::SynchronisationStage as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "WaitOnAsyncGraphicsFence",
@@ -4154,18 +3444,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "WaitOnAsyncGraphicsFence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "WaitOnAsyncGraphicsFence",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn wait_on_async_graphics_fence_2(
@@ -4179,21 +3466,18 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::graphicsfence::GraphicsFence,
             crate::unity_engine::rendering::synchronisationstage::SynchronisationStage,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_wait_on_async_graphics_fence_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_wait_on_async_graphics_fence_2::get_method_info().method_ptr);
         inner(this, fence, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_on_async_graphics_fence_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: graphicsfence :: GraphicsFence as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: synchronisationstageflags :: SynchronisationStageFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::graphicsfence::GraphicsFence as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "WaitOnAsyncGraphicsFence",
@@ -4205,18 +3489,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "WaitOnAsyncGraphicsFence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "WaitOnAsyncGraphicsFence",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn wait_on_async_graphics_fence_3(
@@ -4230,21 +3511,20 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::graphicsfence::GraphicsFence,
             crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_wait_on_async_graphics_fence_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_wait_on_async_graphics_fence_3::get_method_info().method_ptr);
         inner(this, fence, stage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_compute_texture_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: computeshader :: ComputeShader as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::computeshader::ComputeShader as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetComputeTextureParam",
@@ -4256,18 +3536,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetComputeTextureParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetComputeTextureParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_compute_texture_param(
@@ -4285,27 +3562,14 @@ mod __CommandBuffer_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_compute_texture_param::get_offset() as isize),
-        );
-        inner(
-            this,
-            compute_shader,
-            kernel_index,
-            name,
-            rt,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_compute_texture_param::get_method_info().method_ptr);
+        inner(this, compute_shader, kernel_index, name, rt, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_compute_constant_buffer_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::computeshader::ComputeShader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4324,18 +3588,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetComputeConstantBufferParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetComputeConstantBufferParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_compute_constant_buffer_param(
@@ -4355,28 +3616,14 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_compute_constant_buffer_param::get_offset() as isize),
-        );
-        inner(
-            this,
-            compute_shader,
-            name_id,
-            buffer,
-            offset,
-            size,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_compute_constant_buffer_param::get_method_info().method_ptr);
+        inner(this, compute_shader, name_id, buffer, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispatch_compute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::computeshader::ComputeShader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -4395,18 +3642,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DispatchCompute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DispatchCompute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispatch_compute(
@@ -4426,11 +3670,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispatch_compute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_dispatch_compute::get_method_info().method_ptr);
         inner(
             this,
             compute_shader,
@@ -4445,10 +3685,15 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_draw_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::materialpropertyblock::MaterialPropertyBlock as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "DrawMesh",
@@ -4460,18 +3705,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_mesh(
@@ -4493,29 +3735,14 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_mesh::get_offset() as isize),
-        );
-        inner(
-            this,
-            mesh,
-            matrix,
-            material,
-            submesh_index,
-            shader_pass,
-            properties,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_draw_mesh::get_method_info().method_ptr);
+        inner(this, mesh, matrix, material, submesh_index, shader_pass, properties, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_mesh_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -4534,18 +3761,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_mesh_2(
@@ -4565,28 +3789,14 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_mesh_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            mesh,
-            matrix,
-            material,
-            submesh_index,
-            shader_pass,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_draw_mesh_2::get_method_info().method_ptr);
+        inner(this, mesh, matrix, material, submesh_index, shader_pass, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_mesh_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -4604,18 +3814,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_mesh_3(
@@ -4633,27 +3840,14 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::material::Material,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_mesh_3::get_offset() as isize),
-        );
-        inner(
-            this,
-            mesh,
-            matrix,
-            material,
-            submesh_index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_draw_mesh_3::get_method_info().method_ptr);
+        inner(this, mesh, matrix, material, submesh_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_mesh_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -4670,18 +3864,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_mesh_4(
@@ -4697,20 +3888,14 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_mesh_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_draw_mesh_4::get_method_info().method_ptr);
         inner(this, mesh, matrix, material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_renderer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -4728,18 +3913,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawRenderer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_renderer(
@@ -4757,27 +3939,14 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_renderer::get_offset() as isize),
-        );
-        inner(
-            this,
-            renderer,
-            material,
-            submesh_index,
-            shader_pass,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_draw_renderer::get_method_info().method_ptr);
+        inner(this, renderer, material, submesh_index, shader_pass, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_renderer_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -4794,18 +3963,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawRenderer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_renderer_2(
@@ -4821,26 +3987,14 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::material::Material,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_renderer_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            renderer,
-            material,
-            submesh_index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_draw_renderer_2::get_method_info().method_ptr);
+        inner(this, renderer, material, submesh_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_renderer_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -4856,18 +4010,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawRenderer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_renderer_3(
@@ -4881,21 +4032,23 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::renderer::Renderer,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_renderer_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_draw_renderer_3::get_method_info().method_ptr);
         inner(this, renderer, material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_procedural {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::materialpropertyblock::MaterialPropertyBlock as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "DrawProcedural",
@@ -4907,18 +4060,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawProcedural",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawProcedural",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_procedural(
@@ -4942,11 +4092,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_procedural::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_draw_procedural::get_method_info().method_ptr);
         inner(
             this,
             matrix,
@@ -4963,9 +4109,7 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_draw_procedural_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -4985,18 +4129,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawProcedural",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawProcedural",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_procedural_2(
@@ -5018,11 +4159,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_procedural_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_draw_procedural_2::get_method_info().method_ptr);
         inner(
             this,
             matrix,
@@ -5038,9 +4175,7 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_draw_procedural_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -5059,18 +4194,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawProcedural",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawProcedural",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_procedural_3(
@@ -5090,30 +4222,15 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::meshtopology::MeshTopology,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_procedural_3::get_offset() as isize),
-        );
-        inner(
-            this,
-            matrix,
-            material,
-            shader_pass,
-            topology,
-            vertex_count,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_draw_procedural_3::get_method_info().method_ptr);
+        inner(this, matrix, material, shader_pass, topology, vertex_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_occlusion_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "DrawOcclusionMesh",
@@ -5125,18 +4242,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DrawOcclusionMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DrawOcclusionMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_occlusion_mesh(
@@ -5144,48 +4258,33 @@ mod __CommandBuffer_unity2_raw {
         normalized_cam_viewport: crate::unity_engine::rectint::RectInt,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::rectint::RectInt,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_occlusion_mesh::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::rectint::RectInt, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_draw_occlusion_mesh::get_method_info().method_ptr);
         inner(this, normalized_cam_viewport, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_blit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommandBuffer as ::unity2::ClassIdentity>::class(),
-                "Blit",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CommandBuffer as ::unity2::ClassIdentity>::class(), "Blit", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Blit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Blit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn blit(
@@ -5199,44 +4298,34 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_blit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_blit::get_method_info().method_ptr);
         inner(this, source, dest, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_blit_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommandBuffer as ::unity2::ClassIdentity>::class(),
-                "Blit",
-                4,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CommandBuffer as ::unity2::ClassIdentity>::class(), "Blit", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Blit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Blit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn blit_2(
@@ -5254,20 +4343,14 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::material::Material,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_blit_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_blit_2::get_method_info().method_ptr);
         inner(this, source, dest, mat, pass, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -5283,18 +4366,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVector",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_2(
@@ -5303,26 +4383,19 @@ mod __CommandBuffer_unity2_raw {
         value: crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, ::unity2::Il2CppString, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_2::get_method_info().method_ptr);
         inner(this, name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_array_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalVectorArray",
@@ -5334,18 +4407,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_array_2(
@@ -5359,21 +4429,18 @@ mod __CommandBuffer_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Array<crate::unity_engine::vector4::Vector4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_array_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_vector_array_2::get_method_info().method_ptr);
         inner(this, property_name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalTexture",
@@ -5385,18 +4452,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture(
@@ -5410,21 +4474,18 @@ mod __CommandBuffer_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_texture::get_method_info().method_ptr);
         inner(this, name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalTexture",
@@ -5436,18 +4497,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture_2(
@@ -5461,21 +4519,19 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_texture_2::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertexturesubelement :: RenderTextureSubElement as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetGlobalTexture",
@@ -5487,18 +4543,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture_3(
@@ -5514,20 +4567,14 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_texture_3::get_method_info().method_ptr);
         inner(this, name_id, value, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -5543,18 +4590,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_buffer(
@@ -5563,25 +4607,15 @@ mod __CommandBuffer_unity2_raw {
         value: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_buffer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_buffer::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_constant_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -5599,18 +4633,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalConstantBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalConstantBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_constant_buffer(
@@ -5621,28 +4652,17 @@ mod __CommandBuffer_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_constant_buffer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, crate::unity_engine::computebuffer::ComputeBuffer, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_constant_buffer::get_method_info().method_ptr);
         inner(this, buffer, name_id, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_single_pass_stereo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: singlepassstereomode :: SinglePassStereoMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetSinglePassStereo",
@@ -5654,18 +4674,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetSinglePassStereo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetSinglePassStereo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_single_pass_stereo(
@@ -5677,21 +4694,22 @@ mod __CommandBuffer_unity2_raw {
             CommandBuffer,
             crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_single_pass_stereo::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_single_pass_stereo::get_method_info().method_ptr);
         inner(this, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_draw_mesh_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::materialpropertyblock::MaterialPropertyBlock as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Internal_DrawMesh_Injected",
@@ -5703,18 +4721,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_DrawMesh_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_DrawMesh_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_draw_mesh_injected(
@@ -5736,30 +4751,23 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_draw_mesh_injected::get_offset() as isize),
-        );
-        inner(
-            this,
-            mesh,
-            matrix,
-            material,
-            submesh_index,
-            shader_pass,
-            properties,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_internal_draw_mesh_injected::get_method_info().method_ptr);
+        inner(this, mesh, matrix, material, submesh_index, shader_pass, properties, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_draw_procedural_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: meshtopology :: MeshTopology as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::meshtopology::MeshTopology as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::materialpropertyblock::MaterialPropertyBlock as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Internal_DrawProcedural_Injected",
@@ -5771,18 +4779,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_DrawProcedural_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_DrawProcedural_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_draw_procedural_injected(
@@ -5806,11 +4811,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_draw_procedural_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_draw_procedural_injected::get_method_info().method_ptr);
         inner(
             this,
             matrix,
@@ -5827,11 +4828,8 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_draw_occlusion_mesh_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Internal_DrawOcclusionMesh_Injected",
@@ -5843,18 +4841,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Internal_DrawOcclusionMesh_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Internal_DrawOcclusionMesh_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_draw_occlusion_mesh_injected(
@@ -5862,26 +4857,16 @@ mod __CommandBuffer_unity2_raw {
         normalized_cam_viewport: *mut crate::unity_engine::rectint::RectInt,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            *mut crate::unity_engine::rectint::RectInt,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_draw_occlusion_mesh_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, *mut crate::unity_engine::rectint::RectInt, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_draw_occlusion_mesh_injected::get_method_info().method_ptr);
         inner(this, normalized_cam_viewport, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_viewport_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetViewport_Injected",
@@ -5893,18 +4878,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetViewport_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetViewport_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_viewport_injected(
@@ -5912,26 +4894,16 @@ mod __CommandBuffer_unity2_raw {
         pixel_rect: *mut crate::unity_engine::rect::Rect,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            *mut crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_viewport_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, *mut crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_viewport_injected::get_method_info().method_ptr);
         inner(this, pixel_rect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_scissor_rect_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "EnableScissorRect_Injected",
@@ -5943,18 +4915,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "EnableScissorRect_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "EnableScissorRect_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enable_scissor_rect_injected(
@@ -5962,25 +4931,25 @@ mod __CommandBuffer_unity2_raw {
         scissor: *mut crate::unity_engine::rect::Rect,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            *mut crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enable_scissor_rect_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, *mut crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_scissor_rect_injected::get_method_info().method_ptr);
         inner(this, scissor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_blit_identifier_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "Blit_Identifier_Injected",
@@ -5992,18 +4961,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Blit_Identifier_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Blit_Identifier_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn blit_identifier_injected(
@@ -6029,11 +4995,7 @@ mod __CommandBuffer_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_blit_identifier_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_blit_identifier_injected::get_method_info().method_ptr);
         inner(
             this,
             source,
@@ -6051,10 +5013,12 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_rt_with_descriptor_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: filtermode :: FilterMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::filtermode::FilterMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "GetTemporaryRTWithDescriptor_Injected",
@@ -6066,18 +5030,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryRTWithDescriptor_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryRTWithDescriptor_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_rt_with_descriptor_injected(
@@ -6093,20 +5054,14 @@ mod __CommandBuffer_unity2_raw {
             *mut crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
             crate::unity_engine::filtermode::FilterMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_rt_with_descriptor_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_temporary_rt_with_descriptor_injected::get_method_info().method_ptr);
         inner(this, name_id, desc, filter, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_render_target_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -6124,18 +5079,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "ClearRenderTarget_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "ClearRenderTarget_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_render_target_injected(
@@ -6146,34 +5098,15 @@ mod __CommandBuffer_unity2_raw {
         depth: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            bool,
-            bool,
-            *mut crate::unity_engine::color::Color,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_render_target_injected::get_offset() as isize),
-        );
-        inner(
-            this,
-            clear_depth,
-            clear_color,
-            background_color,
-            depth,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(CommandBuffer, bool, bool, *mut crate::unity_engine::color::Color, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_render_target_injected::get_method_info().method_ptr);
+        inner(this, clear_depth, clear_color, background_color, depth, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -6189,18 +5122,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVector_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVector_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_injected(
@@ -6209,25 +5139,15 @@ mod __CommandBuffer_unity2_raw {
         value: *mut crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            *mut crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, *mut crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_injected::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_color_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -6243,18 +5163,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalColor_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalColor_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_color_injected(
@@ -6263,25 +5180,15 @@ mod __CommandBuffer_unity2_raw {
         value: *mut crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            *mut crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_color_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, *mut crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_color_injected::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -6297,18 +5204,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrix_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrix_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_injected(
@@ -6317,25 +5221,15 @@ mod __CommandBuffer_unity2_raw {
         value: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CommandBuffer,
-            i32,
-            *mut crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommandBuffer, i32, *mut crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_injected::get_method_info().method_ptr);
         inner(this, name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_view_projection_matrices_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -6351,18 +5245,15 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetViewProjectionMatrices_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetViewProjectionMatrices_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_view_projection_matrices_injected(
@@ -6376,21 +5267,21 @@ mod __CommandBuffer_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_view_projection_matrices_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_view_projection_matrices_injected::get_method_info().method_ptr);
         inner(this, view, proj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_single_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTargetSingle_Internal_Injected",
@@ -6402,27 +5293,24 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTargetSingle_Internal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTargetSingle_Internal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_single_internal_injected(
         this: CommandBuffer,
         rt: *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        color_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -6433,11 +5321,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_single_internal_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_single_internal_injected::get_method_info().method_ptr);
         inner(
             this,
             rt,
@@ -6452,10 +5336,16 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_color_depth_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetflags :: RenderTargetFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTargetColorDepth_Internal_Injected",
@@ -6467,28 +5357,25 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTargetColorDepth_Internal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTargetColorDepth_Internal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_color_depth_internal_injected(
         this: CommandBuffer,
         color: *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         depth: *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        color_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         flags: crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -6502,13 +5389,7 @@ mod __CommandBuffer_unity2_raw {
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_set_render_target_color_depth_internal_injected::get_offset() as isize,
-                ),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_color_depth_internal_injected::get_method_info().method_ptr);
         inner(
             this,
             color,
@@ -6525,10 +5406,18 @@ mod __CommandBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_multi_subtarget_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: cubemapface :: CubemapFace as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::cubemapface::CubemapFace as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommandBuffer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTargetMultiSubtarget_Injected",
@@ -6540,34 +5429,25 @@ mod __CommandBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommandBuffer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTargetMultiSubtarget_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommandBuffer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTargetMultiSubtarget_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_multi_subtarget_injected(
         this: CommandBuffer,
-        colors: ::unity2::Array<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        colors: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         depth: *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        color_load_actions: ::unity2::Array<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_actions: ::unity2::Array<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_load_actions: ::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_actions: ::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         mip_level: i32,
         cubemap_face: crate::unity_engine::cubemapface::CubemapFace,
         depth_slice: i32,
@@ -6575,27 +5455,17 @@ mod __CommandBuffer_unity2_raw {
     ) -> () {
         let inner: extern "C" fn(
             CommandBuffer,
-            ::unity2::Array<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >,
+            ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
             *mut crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            ::unity2::Array<
-                crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-            >,
-            ::unity2::Array<
-                crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-            >,
+            ::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+            ::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
             crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
             crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
             i32,
             crate::unity_engine::cubemapface::CubemapFace,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_multi_subtarget_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_multi_subtarget_injected::get_method_info().method_ptr);
         inner(
             this,
             colors,
@@ -6625,35 +5495,21 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`Internal_SetSinglePassStereo(crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode)` overload"]
     fn internal_set_single_pass_stereo(
         self,
-        mode: impl ::core::convert::Into<
-            crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode,
-        >,
+        mode: impl ::core::convert::Into<crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::internal_set_single_pass_stereo(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::internal_set_single_pass_stereo(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateGPUFence_Internal(crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType, crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags)` overload"]
     fn create_gpu_fence_internal(
         self,
-        fence_type: impl ::core::convert::Into<
-            crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType,
-        >,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags,
-        >,
+        fence_type: impl ::core::convert::Into<crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType>,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags>,
     ) -> ::unity2::IntPtr {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::create_gpu_fence_internal(
                 __receiver,
                 ::core::convert::Into::into(fence_type),
@@ -6666,14 +5522,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn wait_on_gpu_fence_internal(
         self,
         fence_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags,
-        >,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::wait_on_gpu_fence_internal(
                 __receiver,
                 ::core::convert::Into::into(fence_ptr),
@@ -6685,9 +5537,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`ReleaseBuffer()` overload"]
     fn release_buffer(self) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::release_buffer(__receiver, ::core::option::Option::None)
         }
     }
@@ -6698,17 +5548,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         kernel_index: impl ::core::convert::Into<i32>,
         name_id: impl ::core::convert::Into<i32>,
         mip_level: impl ::core::convert::Into<i32>,
-        element: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
-        >,
+        element: impl ::core::convert::Into<crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement>,
     ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
             __CommandBuffer_unity2_raw::internal_set_compute_texture_param(
                 __receiver,
                 ::core::convert::Into::into(compute_shader),
@@ -6732,9 +5576,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         size: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::internal_set_compute_constant_compute_buffer_param(
                 __receiver,
                 ::core::convert::Into::into(compute_shader),
@@ -6756,9 +5598,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         thread_groups_z: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::internal_dispatch_compute(
                 __receiver,
                 ::core::convert::Into::into(compute_shader),
@@ -6773,22 +5613,14 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`set_name(::unity2::Il2CppString)` overload"]
     fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::set_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
@@ -6800,14 +5632,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
         submesh_index: impl ::core::convert::Into<i32>,
         shader_pass: impl ::core::convert::Into<i32>,
-        properties: impl ::core::convert::Into<
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        >,
+        properties: impl ::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::internal_draw_mesh(
                 __receiver,
                 ::core::convert::Into::into(mesh),
@@ -6829,9 +5657,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         shader_pass: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::internal_draw_renderer(
                 __receiver,
                 ::core::convert::Into::into(renderer),
@@ -6851,14 +5677,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
         vertex_count: impl ::core::convert::Into<i32>,
         instance_count: impl ::core::convert::Into<i32>,
-        properties: impl ::core::convert::Into<
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        >,
+        properties: impl ::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::internal_draw_procedural(
                 __receiver,
                 ::core::convert::Into::into(matrix),
@@ -6873,14 +5695,9 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`Internal_DrawOcclusionMesh(crate::unity_engine::rectint::RectInt)` overload"]
-    fn internal_draw_occlusion_mesh(
-        self,
-        normalized_cam_viewport: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
-    ) -> () {
+    fn internal_draw_occlusion_mesh(self, normalized_cam_viewport: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::internal_draw_occlusion_mesh(
                 __receiver,
                 ::core::convert::Into::into(normalized_cam_viewport),
@@ -6889,47 +5706,24 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`SetViewport(crate::unity_engine::rect::Rect)` overload"]
-    fn set_viewport(
-        self,
-        pixel_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-    ) -> () {
+    fn set_viewport(self, pixel_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::set_viewport(
-                __receiver,
-                ::core::convert::Into::into(pixel_rect),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::set_viewport(__receiver, ::core::convert::Into::into(pixel_rect), ::core::option::Option::None)
         }
     }
     #[doc = "`EnableScissorRect(crate::unity_engine::rect::Rect)` overload"]
-    fn enable_scissor_rect(
-        self,
-        scissor: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-    ) -> () {
+    fn enable_scissor_rect(self, scissor: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::enable_scissor_rect(
-                __receiver,
-                ::core::convert::Into::into(scissor),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::enable_scissor_rect(__receiver, ::core::convert::Into::into(scissor), ::core::option::Option::None)
         }
     }
     #[doc = "`DisableScissorRect()` overload"]
     fn disable_scissor_rect(self) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::disable_scissor_rect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::disable_scissor_rect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Blit_Identifier(*mutcrate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, *mutcrate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::material::Material, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, i32, i32)` overload"]
@@ -6946,15 +5740,9 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
     ) {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
             __CommandBuffer_unity2_raw::blit_identifier(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -6978,20 +5766,14 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         height: impl ::core::convert::Into<i32>,
         depth_buffer: impl ::core::convert::Into<i32>,
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
-        format: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        >,
+        format: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat>,
         anti_aliasing: impl ::core::convert::Into<i32>,
         enable_random_write: impl ::core::convert::Into<bool>,
-        memoryless_mode: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
-        >,
+        memoryless_mode: impl ::core::convert::Into<crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless>,
         use_dynamic_scale: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7016,23 +5798,15 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         height: impl ::core::convert::Into<i32>,
         depth_buffer: impl ::core::convert::Into<i32>,
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
-        format: impl ::core::convert::Into<
-            crate::unity_engine::rendertextureformat::RenderTextureFormat,
-        >,
-        read_write: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
-        >,
+        format: impl ::core::convert::Into<crate::unity_engine::rendertextureformat::RenderTextureFormat>,
+        read_write: impl ::core::convert::Into<crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite>,
         anti_aliasing: impl ::core::convert::Into<i32>,
         enable_random_write: impl ::core::convert::Into<bool>,
-        memoryless_mode: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
-        >,
+        memoryless_mode: impl ::core::convert::Into<crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless>,
         use_dynamic_scale: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt_2(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7058,22 +5832,14 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         height: impl ::core::convert::Into<i32>,
         depth_buffer: impl ::core::convert::Into<i32>,
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
-        format: impl ::core::convert::Into<
-            crate::unity_engine::rendertextureformat::RenderTextureFormat,
-        >,
-        read_write: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
-        >,
+        format: impl ::core::convert::Into<crate::unity_engine::rendertextureformat::RenderTextureFormat>,
+        read_write: impl ::core::convert::Into<crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite>,
         anti_aliasing: impl ::core::convert::Into<i32>,
         enable_random_write: impl ::core::convert::Into<bool>,
-        memoryless_mode: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
-        >,
+        memoryless_mode: impl ::core::convert::Into<crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt_3(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7098,19 +5864,13 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         height: impl ::core::convert::Into<i32>,
         depth_buffer: impl ::core::convert::Into<i32>,
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
-        format: impl ::core::convert::Into<
-            crate::unity_engine::rendertextureformat::RenderTextureFormat,
-        >,
-        read_write: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
-        >,
+        format: impl ::core::convert::Into<crate::unity_engine::rendertextureformat::RenderTextureFormat>,
+        read_write: impl ::core::convert::Into<crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite>,
         anti_aliasing: impl ::core::convert::Into<i32>,
         enable_random_write: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt_4(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7134,18 +5894,12 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         height: impl ::core::convert::Into<i32>,
         depth_buffer: impl ::core::convert::Into<i32>,
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
-        format: impl ::core::convert::Into<
-            crate::unity_engine::rendertextureformat::RenderTextureFormat,
-        >,
-        read_write: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
-        >,
+        format: impl ::core::convert::Into<crate::unity_engine::rendertextureformat::RenderTextureFormat>,
+        read_write: impl ::core::convert::Into<crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite>,
         anti_aliasing: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt_5(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7168,17 +5922,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         height: impl ::core::convert::Into<i32>,
         depth_buffer: impl ::core::convert::Into<i32>,
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
-        format: impl ::core::convert::Into<
-            crate::unity_engine::rendertextureformat::RenderTextureFormat,
-        >,
-        read_write: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite,
-        >,
+        format: impl ::core::convert::Into<crate::unity_engine::rendertextureformat::RenderTextureFormat>,
+        read_write: impl ::core::convert::Into<crate::unity_engine::rendertexturereadwrite::RenderTextureReadWrite>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt_6(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7196,15 +5944,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn get_temporary_rt_with_descriptor(
         self,
         name_id: impl ::core::convert::Into<i32>,
-        desc: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        >,
+        desc: impl ::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>,
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt_with_descriptor(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7218,15 +5962,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn get_temporary_rt_7(
         self,
         name_id: impl ::core::convert::Into<i32>,
-        desc: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        >,
+        desc: impl ::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>,
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt_7(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7240,14 +5980,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn get_temporary_rt_8(
         self,
         name_id: impl ::core::convert::Into<i32>,
-        desc: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        >,
+        desc: impl ::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::get_temporary_rt_8(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7259,14 +5995,8 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`ReleaseTemporaryRT(i32)` overload"]
     fn release_temporary_rt(self, name_id: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::release_temporary_rt(
-                __receiver,
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::release_temporary_rt(__receiver, ::core::convert::Into::into(name_id), ::core::option::Option::None)
         }
     }
     #[doc = "`ClearRenderTarget(bool, bool, crate::unity_engine::color::Color, f32)` overload"]
@@ -7278,9 +6008,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         depth: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::clear_render_target(
                 __receiver,
                 ::core::convert::Into::into(clear_depth),
@@ -7299,9 +6027,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         background_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::clear_render_target_2(
                 __receiver,
                 ::core::convert::Into::into(clear_depth),
@@ -7312,15 +6038,9 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`SetGlobalFloat(i32, f32)` overload"]
-    fn set_global_float(
-        self,
-        name_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_global_float(self, name_id: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_float(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7330,15 +6050,9 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`SetGlobalInt(i32, i32)` overload"]
-    fn set_global_int(
-        self,
-        name_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn set_global_int(self, name_id: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_int(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7354,9 +6068,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         value: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_vector(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7366,15 +6078,9 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`SetGlobalColor(i32, crate::unity_engine::color::Color)` overload"]
-    fn set_global_color(
-        self,
-        name_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
+    fn set_global_color(self, name_id: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_color(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7390,9 +6096,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         value: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_matrix(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7402,35 +6106,17 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`EnableShaderKeyword(::unity2::Il2CppString)` overload"]
-    fn enable_shader_keyword(
-        self,
-        keyword: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn enable_shader_keyword(self, keyword: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::enable_shader_keyword(
-                __receiver,
-                ::core::convert::Into::into(keyword),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::enable_shader_keyword(__receiver, ::core::convert::Into::into(keyword), ::core::option::Option::None)
         }
     }
     #[doc = "`DisableShaderKeyword(::unity2::Il2CppString)` overload"]
-    fn disable_shader_keyword(
-        self,
-        keyword: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn disable_shader_keyword(self, keyword: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::disable_shader_keyword(
-                __receiver,
-                ::core::convert::Into::into(keyword),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::disable_shader_keyword(__receiver, ::core::convert::Into::into(keyword), ::core::option::Option::None)
         }
     }
     #[doc = "`SetViewProjectionMatrices(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
@@ -7440,9 +6126,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         proj: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_view_projection_matrices(
                 __receiver,
                 ::core::convert::Into::into(view),
@@ -7454,29 +6138,21 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetExecutionFlags(crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags)` overload"]
     fn set_execution_flags(
         self,
-        flags : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags >,
+        flags: impl ::core::convert::Into<crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::set_execution_flags(
-                __receiver,
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::set_execution_flags(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
         }
     }
     #[doc = "`ValidateAgainstExecutionFlags(crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags, crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags)` overload"]
     fn validate_against_execution_flags(
         self,
-        required_flags : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags >,
-        invalid_flags : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbufferexecutionflags :: CommandBufferExecutionFlags >,
+        required_flags: impl ::core::convert::Into<crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags>,
+        invalid_flags: impl ::core::convert::Into<crate::unity_engine::rendering::commandbufferexecutionflags::CommandBufferExecutionFlags>,
     ) -> bool {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::validate_against_execution_flags(
                 __receiver,
                 ::core::convert::Into::into(required_flags),
@@ -7492,9 +6168,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         values: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_vector_array(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7510,9 +6184,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         values: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_matrix_array(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7525,17 +6197,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn set_global_texture_impl(
         self,
         name_id: impl ::core::convert::Into<i32>,
-        element: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
-        >,
+        element: impl ::core::convert::Into<crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement>,
     ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
             __CommandBuffer_unity2_raw::set_global_texture_impl(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7553,9 +6219,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         value: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_buffer_internal(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -7567,99 +6231,43 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`BeginSample(::unity2::Il2CppString)` overload"]
     fn begin_sample(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::begin_sample(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::begin_sample(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`EndSample(::unity2::Il2CppString)` overload"]
     fn end_sample(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::end_sample(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::end_sample(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`BeginSample(crate::unity_engine::profiling::customsampler::CustomSampler)` overload"]
-    fn begin_sample_2(
-        self,
-        sampler: impl ::core::convert::Into<
-            crate::unity_engine::profiling::customsampler::CustomSampler,
-        >,
-    ) -> () {
+    fn begin_sample_2(self, sampler: impl ::core::convert::Into<crate::unity_engine::profiling::customsampler::CustomSampler>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::begin_sample_2(
-                __receiver,
-                ::core::convert::Into::into(sampler),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::begin_sample_2(__receiver, ::core::convert::Into::into(sampler), ::core::option::Option::None)
         }
     }
     #[doc = "`EndSample(crate::unity_engine::profiling::customsampler::CustomSampler)` overload"]
-    fn end_sample_2(
-        self,
-        sampler: impl ::core::convert::Into<
-            crate::unity_engine::profiling::customsampler::CustomSampler,
-        >,
-    ) -> () {
+    fn end_sample_2(self, sampler: impl ::core::convert::Into<crate::unity_engine::profiling::customsampler::CustomSampler>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::end_sample_2(
-                __receiver,
-                ::core::convert::Into::into(sampler),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::end_sample_2(__receiver, ::core::convert::Into::into(sampler), ::core::option::Option::None)
         }
     }
     #[doc = "`BeginSample_CustomSampler(crate::unity_engine::profiling::customsampler::CustomSampler)` overload"]
-    fn begin_sample_custom_sampler(
-        self,
-        sampler: impl ::core::convert::Into<
-            crate::unity_engine::profiling::customsampler::CustomSampler,
-        >,
-    ) -> () {
+    fn begin_sample_custom_sampler(self, sampler: impl ::core::convert::Into<crate::unity_engine::profiling::customsampler::CustomSampler>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::begin_sample_custom_sampler(
-                __receiver,
-                ::core::convert::Into::into(sampler),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::begin_sample_custom_sampler(__receiver, ::core::convert::Into::into(sampler), ::core::option::Option::None)
         }
     }
     #[doc = "`EndSample_CustomSampler(crate::unity_engine::profiling::customsampler::CustomSampler)` overload"]
-    fn end_sample_custom_sampler(
-        self,
-        sampler: impl ::core::convert::Into<
-            crate::unity_engine::profiling::customsampler::CustomSampler,
-        >,
-    ) -> () {
+    fn end_sample_custom_sampler(self, sampler: impl ::core::convert::Into<crate::unity_engine::profiling::customsampler::CustomSampler>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::end_sample_custom_sampler(
-                __receiver,
-                ::core::convert::Into::into(sampler),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::end_sample_custom_sampler(__receiver, ::core::convert::Into::into(sampler), ::core::option::Option::None)
         }
     }
     #[doc = "`SetGlobalConstantBufferInternal(crate::unity_engine::computebuffer::ComputeBuffer, i32, i32, i32)` overload"]
@@ -7671,9 +6279,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         size: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_constant_buffer_internal(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -7687,51 +6293,26 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetInstanceMultiplier(u32)` overload"]
     fn set_instance_multiplier(self, multiplier: impl ::core::convert::Into<u32>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::set_instance_multiplier(
-                __receiver,
-                ::core::convert::Into::into(multiplier),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::set_instance_multiplier(__receiver, ::core::convert::Into::into(multiplier), ::core::option::Option::None)
         }
     }
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
-    fn set_render_target(
-        self,
-        rt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-    ) -> () {
+    fn set_render_target(self, rt: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::set_render_target(
-                __receiver,
-                ::core::convert::Into::into(rt),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::set_render_target(__receiver, ::core::convert::Into::into(rt), ::core::option::Option::None)
         }
     }
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction)` overload"]
     fn set_render_target_2(
         self,
-        rt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        rt: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_2(
                 __receiver,
                 ::core::convert::Into::into(rt),
@@ -7744,26 +6325,14 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction)` overload"]
     fn set_render_target_3(
         self,
-        rt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        color_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        rt: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        color_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_3(
                 __receiver,
                 ::core::convert::Into::into(rt),
@@ -7778,17 +6347,13 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]
     fn set_render_target_4(
         self,
-        rt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        rt: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         mip_level: impl ::core::convert::Into<i32>,
         cubemap_face: impl ::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace>,
         depth_slice: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_4(
                 __receiver,
                 ::core::convert::Into::into(rt),
@@ -7802,17 +6367,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
     fn set_render_target_5(
         self,
-        color: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        color: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_5(
                 __receiver,
                 ::core::convert::Into::into(color),
@@ -7824,20 +6383,14 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]
     fn set_render_target_6(
         self,
-        color: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        color: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         mip_level: impl ::core::convert::Into<i32>,
         cubemap_face: impl ::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace>,
         depth_slice: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_6(
                 __receiver,
                 ::core::convert::Into::into(color),
@@ -7852,29 +6405,15 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction)` overload"]
     fn set_render_target_7(
         self,
-        color: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        color_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        color: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        color_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_7(
                 __receiver,
                 ::core::convert::Into::into(color),
@@ -7890,22 +6429,14 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTarget(::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]
     fn set_render_target_8(
         self,
-        colors: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >,
-        >,
-        depth: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>>,
+        depth: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         mip_level: impl ::core::convert::Into<i32>,
         cubemap_face: impl ::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace>,
         depth_slice: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_8(
                 __receiver,
                 ::core::convert::Into::into(colors),
@@ -7920,26 +6451,14 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTargetSingle_Internal(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction)` overload"]
     fn set_render_target_single_internal(
         self,
-        rt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        color_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        rt: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        color_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_single_internal(
                 __receiver,
                 ::core::convert::Into::into(rt),
@@ -7954,32 +6473,16 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTargetColorDepth_Internal(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags)` overload"]
     fn set_render_target_color_depth_internal(
         self,
-        color: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        color_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        flags: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags,
-        >,
+        color: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        color_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        flags: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_color_depth_internal(
                 __receiver,
                 ::core::convert::Into::into(color),
@@ -7996,38 +6499,18 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTargetMultiSubtarget(::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, ::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>, ::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]
     fn set_render_target_multi_subtarget(
         self,
-        colors: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >,
-        >,
-        depth: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        color_load_actions: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-            >,
-        >,
-        color_store_actions: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-            >,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>>,
+        depth: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        color_load_actions: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>>,
+        color_store_actions: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
         mip_level: impl ::core::convert::Into<i32>,
         cubemap_face: impl ::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace>,
         depth_slice: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_render_target_multi_subtarget(
                 __receiver,
                 ::core::convert::Into::into(colors),
@@ -8050,9 +6533,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         data: impl ::core::convert::Into<::unity2::IlInstance>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_compute_buffer_data(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -8072,9 +6553,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         elem_size: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::internal_set_compute_buffer_data(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -8090,71 +6569,46 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose(bool)` overload"]
     fn dispose_2(self, disposing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::dispose_2(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateAsyncGraphicsFence()` overload"]
-    fn create_async_graphics_fence(
-        self,
-    ) -> crate::unity_engine::rendering::graphicsfence::GraphicsFence {
+    fn create_async_graphics_fence(self) -> crate::unity_engine::rendering::graphicsfence::GraphicsFence {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::create_async_graphics_fence(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::create_async_graphics_fence(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateGraphicsFence(crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType, crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags)` overload"]
     fn create_graphics_fence(
         self,
-        fence_type: impl ::core::convert::Into<
-            crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType,
-        >,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags,
-        >,
+        fence_type: impl ::core::convert::Into<crate::unity_engine::rendering::graphicsfencetype::GraphicsFenceType>,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags>,
     ) -> crate::unity_engine::rendering::graphicsfence::GraphicsFence {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::create_graphics_fence(
                 __receiver,
                 ::core::convert::Into::into(fence_type),
@@ -8164,33 +6618,20 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`WaitOnAsyncGraphicsFence(crate::unity_engine::rendering::graphicsfence::GraphicsFence)` overload"]
-    fn wait_on_async_graphics_fence(
-        self,
-        fence: impl ::core::convert::Into<crate::unity_engine::rendering::graphicsfence::GraphicsFence>,
-    ) -> () {
+    fn wait_on_async_graphics_fence(self, fence: impl ::core::convert::Into<crate::unity_engine::rendering::graphicsfence::GraphicsFence>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::wait_on_async_graphics_fence(
-                __receiver,
-                ::core::convert::Into::into(fence),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::wait_on_async_graphics_fence(__receiver, ::core::convert::Into::into(fence), ::core::option::Option::None)
         }
     }
     #[doc = "`WaitOnAsyncGraphicsFence(crate::unity_engine::rendering::graphicsfence::GraphicsFence, crate::unity_engine::rendering::synchronisationstage::SynchronisationStage)` overload"]
     fn wait_on_async_graphics_fence_2(
         self,
         fence: impl ::core::convert::Into<crate::unity_engine::rendering::graphicsfence::GraphicsFence>,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::synchronisationstage::SynchronisationStage,
-        >,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::synchronisationstage::SynchronisationStage>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::wait_on_async_graphics_fence_2(
                 __receiver,
                 ::core::convert::Into::into(fence),
@@ -8203,14 +6644,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn wait_on_async_graphics_fence_3(
         self,
         fence: impl ::core::convert::Into<crate::unity_engine::rendering::graphicsfence::GraphicsFence>,
-        stage: impl ::core::convert::Into<
-            crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags,
-        >,
+        stage: impl ::core::convert::Into<crate::unity_engine::rendering::synchronisationstageflags::SynchronisationStageFlags>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::wait_on_async_graphics_fence_3(
                 __receiver,
                 ::core::convert::Into::into(fence),
@@ -8225,14 +6662,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         compute_shader: impl ::core::convert::Into<crate::unity_engine::computeshader::ComputeShader>,
         kernel_index: impl ::core::convert::Into<i32>,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        rt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        rt: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_compute_texture_param(
                 __receiver,
                 ::core::convert::Into::into(compute_shader),
@@ -8253,9 +6686,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         size: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_compute_constant_buffer_param(
                 __receiver,
                 ::core::convert::Into::into(compute_shader),
@@ -8277,9 +6708,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         thread_groups_z: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::dispatch_compute(
                 __receiver,
                 ::core::convert::Into::into(compute_shader),
@@ -8299,14 +6728,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
         submesh_index: impl ::core::convert::Into<i32>,
         shader_pass: impl ::core::convert::Into<i32>,
-        properties: impl ::core::convert::Into<
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        >,
+        properties: impl ::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_mesh(
                 __receiver,
                 ::core::convert::Into::into(mesh),
@@ -8329,9 +6754,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         shader_pass: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_mesh_2(
                 __receiver,
                 ::core::convert::Into::into(mesh),
@@ -8352,9 +6775,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         submesh_index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_mesh_3(
                 __receiver,
                 ::core::convert::Into::into(mesh),
@@ -8373,9 +6794,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_mesh_4(
                 __receiver,
                 ::core::convert::Into::into(mesh),
@@ -8394,9 +6813,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         shader_pass: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_renderer(
                 __receiver,
                 ::core::convert::Into::into(renderer),
@@ -8415,9 +6832,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         submesh_index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_renderer_2(
                 __receiver,
                 ::core::convert::Into::into(renderer),
@@ -8434,9 +6849,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_renderer_3(
                 __receiver,
                 ::core::convert::Into::into(renderer),
@@ -8454,14 +6867,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
         vertex_count: impl ::core::convert::Into<i32>,
         instance_count: impl ::core::convert::Into<i32>,
-        properties: impl ::core::convert::Into<
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        >,
+        properties: impl ::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_procedural(
                 __receiver,
                 ::core::convert::Into::into(matrix),
@@ -8486,9 +6895,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         instance_count: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_procedural_2(
                 __receiver,
                 ::core::convert::Into::into(matrix),
@@ -8511,9 +6918,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         vertex_count: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_procedural_3(
                 __receiver,
                 ::core::convert::Into::into(matrix),
@@ -8526,14 +6931,9 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`DrawOcclusionMesh(crate::unity_engine::rectint::RectInt)` overload"]
-    fn draw_occlusion_mesh(
-        self,
-        normalized_cam_viewport: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
-    ) -> () {
+    fn draw_occlusion_mesh(self, normalized_cam_viewport: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::draw_occlusion_mesh(
                 __receiver,
                 ::core::convert::Into::into(normalized_cam_viewport),
@@ -8544,17 +6944,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`Blit(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
     fn blit(
         self,
-        source: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        dest: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        source: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        dest: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::blit(
                 __receiver,
                 ::core::convert::Into::into(source),
@@ -8566,19 +6960,13 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`Blit(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::material::Material, i32)` overload"]
     fn blit_2(
         self,
-        source: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        dest: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        source: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        dest: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
         pass: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::blit_2(
                 __receiver,
                 ::core::convert::Into::into(source),
@@ -8596,9 +6984,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         value: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_vector_2(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -8614,9 +7000,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         values: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_vector_array_2(
                 __receiver,
                 ::core::convert::Into::into(property_name),
@@ -8629,14 +7013,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn set_global_texture(
         self,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_texture(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -8649,14 +7029,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn set_global_texture_2(
         self,
         name_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_texture_2(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -8669,17 +7045,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     fn set_global_texture_3(
         self,
         name_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        element: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        element: impl ::core::convert::Into<crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_texture_3(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -8696,9 +7066,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         value: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_buffer(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -8716,9 +7084,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         size: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommandBuffer_unity2_raw::set_global_constant_buffer(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -8732,19 +7098,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetSinglePassStereo(crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode)` overload"]
     fn set_single_pass_stereo(
         self,
-        mode: impl ::core::convert::Into<
-            crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode,
-        >,
+        mode: impl ::core::convert::Into<crate::unity_engine::rendering::singlepassstereomode::SinglePassStereoMode>,
     ) -> () {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommandBuffer_unity2_raw::set_single_pass_stereo(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommandBuffer_unity2_raw::set_single_pass_stereo(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
         }
     }
     #[doc = "`Internal_DrawMesh_Injected(crate::unity_engine::mesh::Mesh, *mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::material::Material, i32, i32, crate::unity_engine::materialpropertyblock::MaterialPropertyBlock)` overload"]
@@ -8754,16 +7112,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
         submesh_index: impl ::core::convert::Into<i32>,
         shader_pass: impl ::core::convert::Into<i32>,
-        properties: impl ::core::convert::Into<
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        >,
+        properties: impl ::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __CommandBuffer_unity2_raw::internal_draw_mesh_injected(
                 __receiver,
                 ::core::convert::Into::into(mesh),
@@ -8785,16 +7138,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         topology: impl ::core::convert::Into<crate::unity_engine::meshtopology::MeshTopology>,
         vertex_count: impl ::core::convert::Into<i32>,
         instance_count: impl ::core::convert::Into<i32>,
-        properties: impl ::core::convert::Into<
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        >,
+        properties: impl ::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __CommandBuffer_unity2_raw::internal_draw_procedural_injected(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -8812,46 +7160,27 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`Internal_DrawOcclusionMesh_Injected(*mutcrate::unity_engine::rectint::RectInt)` overload"]
     fn internal_draw_occlusion_mesh_injected(self) -> crate::unity_engine::rectint::RectInt {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
-            __CommandBuffer_unity2_raw::internal_draw_occlusion_mesh_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rectint::RectInt>::uninit();
+            __CommandBuffer_unity2_raw::internal_draw_occlusion_mesh_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`SetViewport_Injected(*mutcrate::unity_engine::rect::Rect)` overload"]
     fn set_viewport_injected(self) -> crate::unity_engine::rect::Rect {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
-            __CommandBuffer_unity2_raw::set_viewport_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            __CommandBuffer_unity2_raw::set_viewport_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`EnableScissorRect_Injected(*mutcrate::unity_engine::rect::Rect)` overload"]
     fn enable_scissor_rect_injected(self) -> crate::unity_engine::rect::Rect {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
-            __CommandBuffer_unity2_raw::enable_scissor_rect_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            __CommandBuffer_unity2_raw::enable_scissor_rect_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -8869,19 +7198,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         crate::unity_engine::vector2::Vector2,
     ) {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
             __CommandBuffer_unity2_raw::blit_identifier_injected(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -8894,12 +7215,7 @@ pub trait ICommandBufferMethods: ICommandBuffer {
                 ::core::convert::Into::into(dest_depth_slice),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init(), __out_3.assume_init())
         }
     }
     #[doc = "`GetTemporaryRTWithDescriptor_Injected(i32, *mutcrate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, crate::unity_engine::filtermode::FilterMode)` overload"]
@@ -8909,12 +7225,8 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         filter: impl ::core::convert::Into<crate::unity_engine::filtermode::FilterMode>,
     ) -> crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-            >::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>::uninit();
             __CommandBuffer_unity2_raw::get_temporary_rt_with_descriptor_injected(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -8933,11 +7245,8 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         depth: impl ::core::convert::Into<f32>,
     ) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
             __CommandBuffer_unity2_raw::clear_render_target_injected(
                 __receiver,
                 ::core::convert::Into::into(clear_depth),
@@ -8950,16 +7259,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`SetGlobalVector_Injected(i32, *mutcrate::unity_engine::vector4::Vector4)` overload"]
-    fn set_global_vector_injected(
-        self,
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
+    fn set_global_vector_injected(self, name_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector4::Vector4 {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
             __CommandBuffer_unity2_raw::set_global_vector_injected(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -8970,16 +7273,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`SetGlobalColor_Injected(i32, *mutcrate::unity_engine::color::Color)` overload"]
-    fn set_global_color_injected(
-        self,
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::color::Color {
+    fn set_global_color_injected(self, name_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
             __CommandBuffer_unity2_raw::set_global_color_injected(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -8990,16 +7287,10 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`SetGlobalMatrix_Injected(i32, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    fn set_global_matrix_injected(
-        self,
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+    fn set_global_matrix_injected(self, name_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __CommandBuffer_unity2_raw::set_global_matrix_injected(
                 __receiver,
                 ::core::convert::Into::into(name_id),
@@ -9010,20 +7301,11 @@ pub trait ICommandBufferMethods: ICommandBuffer {
         }
     }
     #[doc = "`SetViewProjectionMatrices_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    fn set_view_projection_matrices_injected(
-        self,
-    ) -> (
-        crate::unity_engine::matrix4x4::Matrix4x4,
-        crate::unity_engine::matrix4x4::Matrix4x4,
-    ) {
+    fn set_view_projection_matrices_injected(self) -> (crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4) {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __CommandBuffer_unity2_raw::set_view_projection_matrices_injected(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -9036,26 +7318,14 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTargetSingle_Internal_Injected(*mutcrate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction)` overload"]
     fn set_render_target_single_internal_injected(
         self,
-        color_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        color_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
     ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
             __CommandBuffer_unity2_raw::set_render_target_single_internal_injected(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -9071,35 +7341,19 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTargetColorDepth_Internal_Injected(*mutcrate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, *mutcrate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags)` overload"]
     fn set_render_target_color_depth_internal_injected(
         self,
-        color_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        flags: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags,
-        >,
+        color_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        flags: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetflags::RenderTargetFlags>,
     ) -> (
         crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
     ) {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
             __CommandBuffer_unity2_raw::set_render_target_color_depth_internal_injected(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -9117,38 +7371,18 @@ pub trait ICommandBufferMethods: ICommandBuffer {
     #[doc = "`SetRenderTargetMultiSubtarget_Injected(::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>, *mutcrate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, ::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>, ::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]
     fn set_render_target_multi_subtarget_injected(
         self,
-        colors: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >,
-        >,
-        color_load_actions: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-            >,
-        >,
-        color_store_actions: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-            >,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>>,
+        color_load_actions: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>>,
+        color_store_actions: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
         mip_level: impl ::core::convert::Into<i32>,
         cubemap_face: impl ::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace>,
         depth_slice: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
         unsafe {
-            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >::uninit();
+            let __receiver = <CommandBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>::uninit();
             __CommandBuffer_unity2_raw::set_render_target_multi_subtarget_injected(
                 __receiver,
                 ::core::convert::Into::into(colors),
@@ -9174,13 +7408,8 @@ impl<__T: ICommandBuffer> ICommandBufferMethods for __T {}
 impl CommandBuffer {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CommandBuffer),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CommandBuffer), ::core::stringify!(new),));
         <Self as ICommandBufferMethods>::ctor(this);
         this
     }
@@ -9189,9 +7418,7 @@ impl CommandBuffer {
 #[cfg(feature = "unity_engine-rendering-commandbuffer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CommandBuffer;
-    pub use super::ICommandBuffer;
-    pub use super::ICommandBufferMethods;
+    pub use super::{CommandBuffer, ICommandBuffer, ICommandBufferMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

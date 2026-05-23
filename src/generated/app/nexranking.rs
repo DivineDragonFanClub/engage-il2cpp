@@ -2,14 +2,20 @@
 
 #[cfg(feature = "app-nexranking-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_Data.md"))]
     #[repr(C)]
@@ -20,9 +26,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for NexRanking_Data {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "NexRanking.Data";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,152 +38,7 @@ mod __types {
 
     impl ::unity2::IlType for NexRanking_Data {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRanking")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexranking :: NexRanking >)]
-    pub struct NexRanking {
-        #[static_field]
-        #[rename(name = "MaxRatingSlot")]
-        pub max_rating_slot: u32,
-        #[static_field]
-        #[rename(name = "MaxPerson")]
-        pub max_person: i32,
-        #[static_field]
-        #[rename(name = "MaxGod")]
-        pub max_god: i32,
-        #[static_field]
-        #[rename(name = "InvalidIndex")]
-        pub invalid_index: i32,
-        #[rename(name = "m_IsSucceeded")]
-        pub m_is_succeeded: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_UploadSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRanking.UploadSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexRanking_UploadSequence {
-        #[static_field]
-        #[rename(name = "MaxBatch")]
-        pub max_batch: u32,
-        #[static_field]
-        #[rename(name = "MaxRatingSlot")]
-        pub max_rating_slot: u32,
-        #[rename(name = "m_Pairs")]
-        pub m_pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-        #[rename(name = "m_DataIndex")]
-        pub m_data_index: i32,
-        #[rename(name = "m_ChapterIndex")]
-        pub m_chapter_index: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_DownloadSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexRanking_DownloadSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexRanking_DownloadSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexRanking.DownloadSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexRanking_DownloadSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexRanking_DownloadSequence_Label {
-        pub fn get() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn succeeded() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn error() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_UploadSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexRanking_UploadSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexRanking_UploadSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexRanking.UploadSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexRanking_UploadSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexRanking_UploadSequence_Label {
-        pub fn upload() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn succeeded() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn error() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 3 }
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -208,6 +68,128 @@ mod __types {
         #[rename(name = "m_DataIds")]
         pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_UploadSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRanking.UploadSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexRanking_UploadSequence {
+        #[static_field]
+        #[rename(name = "MaxBatch")]
+        pub max_batch: u32,
+        #[static_field]
+        #[rename(name = "MaxRatingSlot")]
+        pub max_rating_slot: u32,
+        #[rename(name = "m_Pairs")]
+        pub m_pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+        #[rename(name = "m_DataIndex")]
+        pub m_data_index: i32,
+        #[rename(name = "m_ChapterIndex")]
+        pub m_chapter_index: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRanking")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexranking :: NexRanking >)]
+    pub struct NexRanking {
+        #[static_field]
+        #[rename(name = "MaxRatingSlot")]
+        pub max_rating_slot: u32,
+        #[static_field]
+        #[rename(name = "MaxPerson")]
+        pub max_person: i32,
+        #[static_field]
+        #[rename(name = "MaxGod")]
+        pub max_god: i32,
+        #[static_field]
+        #[rename(name = "InvalidIndex")]
+        pub invalid_index: i32,
+        #[rename(name = "m_IsSucceeded")]
+        pub m_is_succeeded: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_UploadSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct NexRanking_UploadSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexRanking_UploadSequence_Label {
+        const NAME: &'static str = "NexRanking.UploadSequence.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexRanking_UploadSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl NexRanking_UploadSequence_Label {
+        pub fn upload() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn succeeded() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn error() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_DownloadSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct NexRanking_DownloadSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexRanking_DownloadSequence_Label {
+        const NAME: &'static str = "NexRanking.DownloadSequence.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexRanking_DownloadSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl NexRanking_DownloadSequence_Label {
+        pub fn get() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn succeeded() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn error() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 3 }
+        }
+    }
 }
 
 #[cfg(feature = "app-nexranking-types")]
@@ -222,9 +204,7 @@ mod __NexRanking_Data_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexRanking_Data as ::unity2::ClassIdentity>::class(),
@@ -237,30 +217,20 @@ mod __NexRanking_Data_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_Data as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_Data as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: NexRanking_Data,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: NexRanking_Data, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(NexRanking_Data, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -276,1130 +246,17 @@ impl NexRanking_Data {
 #[cfg(feature = "app-nexranking")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRanking_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_create(
-        this: NexRanking,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRanking, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_download {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                "Download",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    "Download",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn download(
-        this: NexRanking,
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
-        ranking: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            NexRanking,
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_download::get_offset() as isize),
-        );
-        inner(this, super_, cid, ranking, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                "Upload",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    "Upload",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload(
-        this: NexRanking,
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
-        pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            NexRanking,
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_upload::get_offset() as isize),
-        );
-        inner(this, super_, cid, pairs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_succeeded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                "ClearSucceeded",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    "ClearSucceeded",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear_succeeded(
-        this: NexRanking,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRanking, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_succeeded::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_succeeded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                "get_IsSucceeded",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    "get_IsSucceeded",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_succeeded(
-        this: NexRanking,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(NexRanking, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_succeeded::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_id_and_slot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::nexranking::NexRanking_Data as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                "GetIdAndSlot",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    "GetIdAndSlot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_id_and_slot(
-        chapter_index: i32,
-        data: *mut crate::app::nexranking::NexRanking_Data,
-        data_id: *mut u64,
-        slot: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            i32,
-            *mut crate::app::nexranking::NexRanking_Data,
-            *mut u64,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_id_and_slot::get_offset() as isize),
-        );
-        inner(chapter_index, data, data_id, slot, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_id_and_slot_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                "GetIdAndSlot",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    "GetIdAndSlot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_id_and_slot_2(
-        chapter_index: i32,
-        person_index: i32,
-        god_index: i32,
-        data_id: *mut u64,
-        slot: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            i32,
-            i32,
-            i32,
-            *mut u64,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_id_and_slot_2::get_offset() as isize),
-        );
-        inner(
-            chapter_index,
-            person_index,
-            god_index,
-            data_id,
-            slot,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_person_and_god_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u64 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                "GetPersonAndGodIndex",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    "GetPersonAndGodIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_person_and_god_index(
-        data_id: u64,
-        slot: i32,
-        chapter_index: i32,
-        person_index: *mut i32,
-        god_index: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            u64,
-            i32,
-            i32,
-            *mut i32,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_person_and_god_index::get_offset() as isize),
-        );
-        inner(
-            data_id,
-            slot,
-            chapter_index,
-            person_index,
-            god_index,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: NexRanking, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NexRanking, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-impl NexRanking {
-    #[doc = "`GetIdAndSlot(i32, *mutcrate::app::nexranking::NexRanking_Data, *mutu64, *muti32)` overload"]
-    pub fn get_id_and_slot(
-        chapter_index: impl ::core::convert::Into<i32>,
-    ) -> (bool, crate::app::nexranking::NexRanking_Data, u64, i32) {
-        unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::app::nexranking::NexRanking_Data>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<u64>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __NexRanking_unity2_raw::get_id_and_slot(
-                    ::core::convert::Into::into(chapter_index),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    __out_2.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
-        }
-    }
-    #[doc = "`GetIdAndSlot(i32, i32, i32, *mutu64, *muti32)` overload"]
-    pub fn get_id_and_slot_2(
-        chapter_index: impl ::core::convert::Into<i32>,
-        person_index: impl ::core::convert::Into<i32>,
-        god_index: impl ::core::convert::Into<i32>,
-    ) -> (bool, u64, i32) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __NexRanking_unity2_raw::get_id_and_slot_2(
-                    ::core::convert::Into::into(chapter_index),
-                    ::core::convert::Into::into(person_index),
-                    ::core::convert::Into::into(god_index),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`GetPersonAndGodIndex(u64, i32, i32, *muti32, *muti32)` overload"]
-    pub fn get_person_and_god_index(
-        data_id: impl ::core::convert::Into<u64>,
-        slot: impl ::core::convert::Into<i32>,
-        chapter_index: impl ::core::convert::Into<i32>,
-    ) -> (bool, i32, i32) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __NexRanking_unity2_raw::get_person_and_god_index(
-                    ::core::convert::Into::into(data_id),
-                    ::core::convert::Into::into(slot),
-                    ::core::convert::Into::into(chapter_index),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-pub trait INexRankingMethods: INexRanking {
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRanking_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
-    fn download(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        ranking: impl ::core::convert::Into<::unity2::Array<crate::app::nexranking::NexRanking_Data>>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRanking_unity2_raw::download(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(cid),
-                ::core::convert::Into::into(ranking),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
-    fn upload(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        pairs: impl ::core::convert::Into<::unity2::Array<crate::app::nexranking::NexRanking_Data>>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRanking_unity2_raw::upload(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(cid),
-                ::core::convert::Into::into(pairs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ClearSucceeded()` overload"]
-    fn clear_succeeded(self) -> () {
-        unsafe {
-            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRanking_unity2_raw::clear_succeeded(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsSucceeded()` overload"]
-    fn get_is_succeeded(self) -> bool {
-        unsafe {
-            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRanking_unity2_raw::get_is_succeeded(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRanking_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-impl<__T: INexRanking> INexRankingMethods for __T {}
-
-#[cfg(feature = "app-nexranking")]
-impl NexRanking {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRanking),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRankingMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRanking_UploadSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_login {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "Login",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Login",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn login(
-        this: NexRanking_UploadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_login::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexRanking_UploadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexRanking_UploadSequence,
-        cid: ::unity2::Il2CppString,
-        pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRanking_UploadSequence,
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, cid, pairs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_rating {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "UploadRating",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "UploadRating",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload_rating(
-        this: NexRanking_UploadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_upload_rating::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_succeeded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "Succeeded",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Succeeded",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn succeeded(
-        this: NexRanking_UploadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_succeeded::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "Error",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Error",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn error(
-        this: NexRanking_UploadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_error::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
-        pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, cid, pairs, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-impl NexRanking_UploadSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        pairs: impl ::core::convert::Into<::unity2::Array<crate::app::nexranking::NexRanking_Data>>,
-    ) -> () {
-        unsafe {
-            __NexRanking_UploadSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(cid),
-                ::core::convert::Into::into(pairs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-pub trait INexRanking_UploadSequenceMethods: INexRanking_UploadSequence {
-    #[doc = "`Login()` overload"]
-    fn login(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_UploadSequence_unity2_raw::login(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_UploadSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
-    fn ctor(
-        self,
-        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        pairs: impl ::core::convert::Into<::unity2::Array<crate::app::nexranking::NexRanking_Data>>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_UploadSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(cid),
-                ::core::convert::Into::into(pairs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UploadRating()` overload"]
-    fn upload_rating(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_UploadSequence_unity2_raw::upload_rating(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Succeeded()` overload"]
-    fn succeeded(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_UploadSequence_unity2_raw::succeeded(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Error()` overload"]
-    fn error(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_UploadSequence_unity2_raw::error(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-impl<__T: INexRanking_UploadSequence> INexRanking_UploadSequenceMethods for __T {}
-
-#[cfg(feature = "app-nexranking")]
-impl NexRanking_UploadSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` — overload selector"]
-    pub fn new(
-        cid: ::unity2::Il2CppString,
-        pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRanking_UploadSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRanking_UploadSequenceMethods>::ctor(this, cid, pairs);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __NexRanking_DownloadSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::nexranking::NexRanking_Data> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -1411,18 +268,15 @@ mod __NexRanking_DownloadSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1436,20 +290,14 @@ mod __NexRanking_DownloadSequence_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, cid, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_login {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::class(),
@@ -1462,39 +310,27 @@ mod __NexRanking_DownloadSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Login",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                        "Login",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn login(
-        this: NexRanking_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn login(this: NexRanking_DownloadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(NexRanking_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_login::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_login::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_postlogin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::class(),
@@ -1507,39 +343,27 @@ mod __NexRanking_DownloadSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                        "Postlogin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn postlogin(
-        this: NexRanking_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn postlogin(this: NexRanking_DownloadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(NexRanking_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_postlogin::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rating {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::class(),
@@ -1552,39 +376,27 @@ mod __NexRanking_DownloadSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetRating",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetRating",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rating(
-        this: NexRanking_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn get_rating(this: NexRanking_DownloadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(NexRanking_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_rating::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_rating::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_succeeded {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::class(),
@@ -1597,39 +409,27 @@ mod __NexRanking_DownloadSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Succeeded",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                        "Succeeded",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn succeeded(
-        this: NexRanking_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn succeeded(this: NexRanking_DownloadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(NexRanking_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_succeeded::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_succeeded::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_error {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::class(),
@@ -1642,40 +442,32 @@ mod __NexRanking_DownloadSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Error",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                        "Error",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn error(
-        this: NexRanking_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn error(this: NexRanking_DownloadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(NexRanking_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_error::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_error::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::nexranking::NexRanking_Data> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -1687,18 +479,15 @@ mod __NexRanking_DownloadSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -1712,11 +501,7 @@ mod __NexRanking_DownloadSequence_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, cid, data, __unity2_method_info)
     }
 }
@@ -1750,9 +535,7 @@ pub trait INexRanking_DownloadSequenceMethods: INexRanking_DownloadSequence {
     ) -> () {
         unsafe {
             let __receiver =
-                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NexRanking_DownloadSequence_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(cid),
@@ -1765,65 +548,40 @@ pub trait INexRanking_DownloadSequenceMethods: INexRanking_DownloadSequence {
     fn login(self) -> () {
         unsafe {
             let __receiver =
-                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_DownloadSequence_unity2_raw::login(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_DownloadSequence_unity2_raw::login(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Postlogin()` overload"]
     fn postlogin(self) -> () {
         unsafe {
             let __receiver =
-                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_DownloadSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_DownloadSequence_unity2_raw::postlogin(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetRating()` overload"]
     fn get_rating(self) -> () {
         unsafe {
             let __receiver =
-                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_DownloadSequence_unity2_raw::get_rating(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_DownloadSequence_unity2_raw::get_rating(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Succeeded()` overload"]
     fn succeeded(self) -> () {
         unsafe {
             let __receiver =
-                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_DownloadSequence_unity2_raw::succeeded(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_DownloadSequence_unity2_raw::succeeded(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Error()` overload"]
     fn error(self) -> () {
         unsafe {
             let __receiver =
-                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRanking_DownloadSequence_unity2_raw::error(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <NexRanking_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_DownloadSequence_unity2_raw::error(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1834,10 +592,7 @@ impl<__T: INexRanking_DownloadSequence> INexRanking_DownloadSequenceMethods for 
 #[cfg(feature = "app-nexranking")]
 impl NexRanking_DownloadSequence {
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` — overload selector"]
-    pub fn new(
-        cid: ::unity2::Il2CppString,
-        data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-    ) -> Self {
+    pub fn new(cid: ::unity2::Il2CppString, data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -1852,32 +607,882 @@ impl NexRanking_DownloadSequence {
 
 #[cfg(feature = "app-nexranking")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexRanking_UploadSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_login {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
+                "Login",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                        "Login",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn login(this: NexRanking_UploadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_login::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                        "Postlogin",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn postlogin(this: NexRanking_UploadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_postlogin::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::nexranking::NexRanking_Data> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexRanking_UploadSequence,
+        cid: ::unity2::Il2CppString,
+        pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRanking_UploadSequence,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, cid, pairs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_rating {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
+                "UploadRating",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                        "UploadRating",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn upload_rating(this: NexRanking_UploadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_upload_rating::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_succeeded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
+                "Succeeded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                        "Succeeded",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn succeeded(this: NexRanking_UploadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_succeeded::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
+                "Error",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                        "Error",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn error(this: NexRanking_UploadSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking_UploadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_error::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::nexranking::NexRanking_Data> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking_UploadSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, cid, pairs, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+impl NexRanking_UploadSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        pairs: impl ::core::convert::Into<::unity2::Array<crate::app::nexranking::NexRanking_Data>>,
+    ) -> () {
+        unsafe {
+            __NexRanking_UploadSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(pairs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+pub trait INexRanking_UploadSequenceMethods: INexRanking_UploadSequence {
+    #[doc = "`Login()` overload"]
+    fn login(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_UploadSequence_unity2_raw::login(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_UploadSequence_unity2_raw::postlogin(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
+    fn ctor(
+        self,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        pairs: impl ::core::convert::Into<::unity2::Array<crate::app::nexranking::NexRanking_Data>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_UploadSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(pairs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UploadRating()` overload"]
+    fn upload_rating(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_UploadSequence_unity2_raw::upload_rating(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Succeeded()` overload"]
+    fn succeeded(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_UploadSequence_unity2_raw::succeeded(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Error()` overload"]
+    fn error(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRanking_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_UploadSequence_unity2_raw::error(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+impl<__T: INexRanking_UploadSequence> INexRanking_UploadSequenceMethods for __T {}
+
+#[cfg(feature = "app-nexranking")]
+impl NexRanking_UploadSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` — overload selector"]
+    pub fn new(cid: ::unity2::Il2CppString, pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRanking_UploadSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRanking_UploadSequenceMethods>::ctor(this, cid, pairs);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexRanking_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<NexRanking as ::unity2::ClassIdentity>::class(), "OnCreate", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_create(this: NexRanking, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::nexranking::NexRanking_Data> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<NexRanking as ::unity2::ClassIdentity>::class(), "Download", 3, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        "Download",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn download(
+        this: NexRanking,
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        ranking: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NexRanking,
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_download::get_method_info().method_ptr);
+        inner(this, super_, cid, ranking, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::nexranking::NexRanking_Data> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<NexRanking as ::unity2::ClassIdentity>::class(), "Upload", 3, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        "Upload",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn upload(
+        this: NexRanking,
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NexRanking,
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_upload::get_method_info().method_ptr);
+        inner(this, super_, cid, pairs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_succeeded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking as ::unity2::ClassIdentity>::class(),
+                "ClearSucceeded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        "ClearSucceeded",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear_succeeded(this: NexRanking, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_succeeded::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_succeeded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking as ::unity2::ClassIdentity>::class(),
+                "get_IsSucceeded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSucceeded",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_succeeded(this: NexRanking, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(NexRanking, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_succeeded::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_id_and_slot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::nexranking::NexRanking_Data as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking as ::unity2::ClassIdentity>::class(),
+                "GetIdAndSlot",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        "GetIdAndSlot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_id_and_slot(
+        chapter_index: i32,
+        data: *mut crate::app::nexranking::NexRanking_Data,
+        data_id: *mut u64,
+        slot: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(i32, *mut crate::app::nexranking::NexRanking_Data, *mut u64, *mut i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_id_and_slot::get_method_info().method_ptr);
+        inner(chapter_index, data, data_id, slot, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_id_and_slot_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking as ::unity2::ClassIdentity>::class(),
+                "GetIdAndSlot",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        "GetIdAndSlot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_id_and_slot_2(
+        chapter_index: i32,
+        person_index: i32,
+        god_index: i32,
+        data_id: *mut u64,
+        slot: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(i32, i32, i32, *mut u64, *mut i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_id_and_slot_2::get_method_info().method_ptr);
+        inner(chapter_index, person_index, god_index, data_id, slot, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_person_and_god_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u64 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking as ::unity2::ClassIdentity>::class(),
+                "GetPersonAndGodIndex",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        "GetPersonAndGodIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_person_and_god_index(
+        data_id: u64,
+        slot: i32,
+        chapter_index: i32,
+        person_index: *mut i32,
+        god_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(u64, i32, i32, *mut i32, *mut i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_person_and_god_index::get_method_info().method_ptr);
+        inner(data_id, slot, chapter_index, person_index, god_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<NexRanking as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: NexRanking, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+impl NexRanking {
+    #[doc = "`GetIdAndSlot(i32, *mutcrate::app::nexranking::NexRanking_Data, *mutu64, *muti32)` overload"]
+    pub fn get_id_and_slot(chapter_index: impl ::core::convert::Into<i32>) -> (bool, crate::app::nexranking::NexRanking_Data, u64, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::nexranking::NexRanking_Data>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __NexRanking_unity2_raw::get_id_and_slot(
+                    ::core::convert::Into::into(chapter_index),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
+        }
+    }
+
+    #[doc = "`GetIdAndSlot(i32, i32, i32, *mutu64, *muti32)` overload"]
+    pub fn get_id_and_slot_2(
+        chapter_index: impl ::core::convert::Into<i32>,
+        person_index: impl ::core::convert::Into<i32>,
+        god_index: impl ::core::convert::Into<i32>,
+    ) -> (bool, u64, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __NexRanking_unity2_raw::get_id_and_slot_2(
+                    ::core::convert::Into::into(chapter_index),
+                    ::core::convert::Into::into(person_index),
+                    ::core::convert::Into::into(god_index),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+
+    #[doc = "`GetPersonAndGodIndex(u64, i32, i32, *muti32, *muti32)` overload"]
+    pub fn get_person_and_god_index(
+        data_id: impl ::core::convert::Into<u64>,
+        slot: impl ::core::convert::Into<i32>,
+        chapter_index: impl ::core::convert::Into<i32>,
+    ) -> (bool, i32, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __NexRanking_unity2_raw::get_person_and_god_index(
+                    ::core::convert::Into::into(data_id),
+                    ::core::convert::Into::into(slot),
+                    ::core::convert::Into::into(chapter_index),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+pub trait INexRankingMethods: INexRanking {
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
+    fn download(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        ranking: impl ::core::convert::Into<::unity2::Array<crate::app::nexranking::NexRanking_Data>>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_unity2_raw::download(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(ranking),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
+    fn upload(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        cid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        pairs: impl ::core::convert::Into<::unity2::Array<crate::app::nexranking::NexRanking_Data>>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_unity2_raw::upload(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(cid),
+                ::core::convert::Into::into(pairs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ClearSucceeded()` overload"]
+    fn clear_succeeded(self) -> () {
+        unsafe {
+            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_unity2_raw::clear_succeeded(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsSucceeded()` overload"]
+    fn get_is_succeeded(self) -> bool {
+        unsafe {
+            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_unity2_raw::get_is_succeeded(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <NexRanking as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NexRanking_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+impl<__T: INexRanking> INexRankingMethods for __T {}
+
+#[cfg(feature = "app-nexranking")]
+impl NexRanking {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(NexRanking), ::core::stringify!(new),));
+        <Self as INexRankingMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::INexRanking;
-    pub use super::INexRankingMethods;
-    pub use super::INexRanking_DownloadSequence;
-    pub use super::INexRanking_DownloadSequenceMethods;
-    pub use super::INexRanking_UploadSequence;
-    pub use super::INexRanking_UploadSequenceMethods;
-    pub use super::NexRanking;
-    pub use super::NexRanking_Data;
-    pub use super::NexRanking_DownloadSequence;
-    pub use super::NexRanking_DownloadSequence_Label;
-    pub use super::NexRanking_UploadSequence;
-    pub use super::NexRanking_UploadSequence_Label;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        INexRanking, INexRankingMethods, INexRanking_DownloadSequence, INexRanking_DownloadSequenceMethods, INexRanking_UploadSequence,
+        INexRanking_UploadSequenceMethods, NexRanking, NexRanking_Data, NexRanking_DownloadSequence, NexRanking_DownloadSequence_Label,
+        NexRanking_UploadSequence, NexRanking_UploadSequence_Label,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonclass_1::ISingletonClass_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

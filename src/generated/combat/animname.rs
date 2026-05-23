@@ -2,30 +2,30 @@
 
 #[cfg(feature = "combat-animname-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animname/AnimName.md"))]
+    #[::unity2::class(namespace = "Combat", name = "AnimName")]
+    #[parent(crate::system::object::Object)]
+    pub struct AnimName {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/animname/AnimName_Race.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct AnimName_Race {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for AnimName_Race {
-        const NAMESPACE: &'static str = "Combat";
-
         const NAME: &'static str = "AnimName.Race";
+        const NAMESPACE: &'static str = "Combat";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -36,10 +36,7 @@ mod __types {
 
     impl ::unity2::IlType for AnimName_Race {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -76,11 +73,6 @@ mod __types {
             Self { value: 7 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animname/AnimName.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AnimName")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimName {}
 }
 
 #[cfg(feature = "combat-animname-types")]
@@ -95,81 +87,53 @@ mod __AnimName_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_race {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "GetRace",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "GetRace", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "GetRace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "GetRace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_race(
         c: crate::combat::character::Character,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::animname::AnimName_Race {
-        let inner: extern "C" fn(
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::animname::AnimName_Race = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_race::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::character::Character, ::unity2::OptionalMethod) -> crate::combat::animname::AnimName_Race =
+            ::core::mem::transmute(__lookup_get_race::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_race_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: charactergamestatus :: CharacterGameStatus as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "GetRace",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::charactergamestatus::CharacterGameStatus as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "GetRace", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "GetRace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "GetRace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_race_2(
@@ -179,116 +143,69 @@ mod __AnimName_unity2_raw {
         let inner: extern "C" fn(
             crate::combat::charactergamestatus::CharacterGameStatus,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::animname::AnimName_Race = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_race_2::get_offset() as isize),
-        );
+        ) -> crate::combat::animname::AnimName_Race = ::core::mem::transmute(__lookup_get_race_2::get_method_info().method_ptr);
         inner(gs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_race_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "GetRace",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "GetRace", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "GetRace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "GetRace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_race_3(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::animname::AnimName_Race {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::animname::AnimName_Race = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_race_3::get_offset() as isize),
-        );
+    pub unsafe fn get_race_3(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::animname::AnimName_Race {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::combat::animname::AnimName_Race =
+            ::core::mem::transmute(__lookup_get_race_3::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_heavy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsHeavy",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsHeavy", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsHeavy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsHeavy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_heavy(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_heavy(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_heavy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_heavy::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_riding_human {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimName as ::unity2::ClassIdentity>::class(),
                 "IsRidingHuman",
@@ -300,594 +217,344 @@ mod __AnimName_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsRidingHuman",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsRidingHuman",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_riding_human(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_riding_human(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_riding_human::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_riding_human::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_vehicle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsVehicle",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsVehicle", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsVehicle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsVehicle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_vehicle(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_vehicle(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_vehicle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_vehicle::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_ride_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "ToRideName",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "ToRideName", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "ToRideName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "ToRideName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_ride_name(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_ride_name::get_offset() as isize),
-        );
+    pub unsafe fn to_ride_name(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_ride_name::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_unknown {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsUnknown",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsUnknown", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsUnknown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsUnknown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_unknown(
-        race: crate::combat::animname::AnimName_Race,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::animname::AnimName_Race,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_unknown::get_offset() as isize),
-        );
+    pub unsafe fn is_unknown(race: crate::combat::animname::AnimName_Race, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::animname::AnimName_Race, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_unknown::get_method_info().method_ptr);
         inner(race, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_unknown_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsUnknown",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsUnknown", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsUnknown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsUnknown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_unknown_2(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_unknown_2(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_unknown_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_unknown_2::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_human {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsHuman",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsHuman", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsHuman",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsHuman",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_human(
-        race: crate::combat::animname::AnimName_Race,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::animname::AnimName_Race,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_human::get_offset() as isize),
-        );
+    pub unsafe fn is_human(race: crate::combat::animname::AnimName_Race, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::animname::AnimName_Race, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_human::get_method_info().method_ptr);
         inner(race, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_human_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsHuman",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsHuman", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsHuman",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsHuman",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_human_2(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_human_2(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_human_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_human_2::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_ride {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsRide",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsRide", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsRide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsRide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_ride(
-        race: crate::combat::animname::AnimName_Race,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::animname::AnimName_Race,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_ride::get_offset() as isize),
-        );
+    pub unsafe fn is_ride(race: crate::combat::animname::AnimName_Race, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::animname::AnimName_Race, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_ride::get_method_info().method_ptr);
         inner(race, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_ride_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsRide",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsRide", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsRide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsRide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_ride_2(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_ride_2(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_ride_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_ride_2::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is4_legged {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "Is4Legged",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "Is4Legged", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "Is4Legged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "Is4Legged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is4_legged(
-        race: crate::combat::animname::AnimName_Race,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::animname::AnimName_Race,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is4_legged::get_offset() as isize),
-        );
+    pub unsafe fn is4_legged(race: crate::combat::animname::AnimName_Race, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::animname::AnimName_Race, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is4_legged::get_method_info().method_ptr);
         inner(race, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is4_legged_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "Is4Legged",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "Is4Legged", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "Is4Legged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "Is4Legged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is4_legged_2(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is4_legged_2(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is4_legged_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is4_legged_2::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_flying {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsFlying",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::animname::AnimName_Race as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsFlying", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsFlying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsFlying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_flying(
-        race: crate::combat::animname::AnimName_Race,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::animname::AnimName_Race,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_flying::get_offset() as isize),
-        );
+    pub unsafe fn is_flying(race: crate::combat::animname::AnimName_Race, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::animname::AnimName_Race, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_flying::get_method_info().method_ptr);
         inner(race, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_flying_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimName as ::unity2::ClassIdentity>::class(),
-                "IsFlying",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimName as ::unity2::ClassIdentity>::class(), "IsFlying", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimName as ::unity2::ClassIdentity>::NAME,
-                    "IsFlying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimName as ::unity2::ClassIdentity>::NAME,
+                        "IsFlying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_flying_2(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_flying_2(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_flying_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_flying_2::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
 }
@@ -895,191 +562,102 @@ mod __AnimName_unity2_raw {
 #[cfg(feature = "combat-animname")]
 impl AnimName {
     #[doc = "`GetRace(crate::combat::character::Character)` overload"]
-    pub fn get_race(
-        c: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> crate::combat::animname::AnimName_Race {
-        unsafe {
-            __AnimName_unity2_raw::get_race(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_race(c: impl ::core::convert::Into<crate::combat::character::Character>) -> crate::combat::animname::AnimName_Race {
+        unsafe { __AnimName_unity2_raw::get_race(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`GetRace(crate::combat::charactergamestatus::CharacterGameStatus)` overload"]
     pub fn get_race_2(
         gs: impl ::core::convert::Into<crate::combat::charactergamestatus::CharacterGameStatus>,
     ) -> crate::combat::animname::AnimName_Race {
-        unsafe {
-            __AnimName_unity2_raw::get_race_2(
-                ::core::convert::Into::into(gs),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::get_race_2(::core::convert::Into::into(gs), ::core::option::Option::None) }
     }
+
     #[doc = "`GetRace(::unity2::Il2CppString)` overload"]
-    pub fn get_race_3(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::combat::animname::AnimName_Race {
-        unsafe {
-            __AnimName_unity2_raw::get_race_3(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_race_3(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::combat::animname::AnimName_Race {
+        unsafe { __AnimName_unity2_raw::get_race_3(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsHeavy(::unity2::Il2CppString)` overload"]
     pub fn is_heavy(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_heavy(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::is_heavy(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsRidingHuman(::unity2::Il2CppString)` overload"]
     pub fn is_riding_human(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_riding_human(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::is_riding_human(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsVehicle(::unity2::Il2CppString)` overload"]
     pub fn is_vehicle(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_vehicle(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::is_vehicle(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`ToRideName(::unity2::Il2CppString)` overload"]
-    pub fn to_ride_name(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __AnimName_unity2_raw::to_ride_name(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn to_ride_name(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __AnimName_unity2_raw::to_ride_name(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsUnknown(crate::combat::animname::AnimName_Race)` overload"]
-    pub fn is_unknown(
-        race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>,
-    ) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_unknown(
-                ::core::convert::Into::into(race),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_unknown(race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>) -> bool {
+        unsafe { __AnimName_unity2_raw::is_unknown(::core::convert::Into::into(race), ::core::option::Option::None) }
     }
+
     #[doc = "`IsUnknown(::unity2::Il2CppString)` overload"]
     pub fn is_unknown_2(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_unknown_2(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::is_unknown_2(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsHuman(crate::combat::animname::AnimName_Race)` overload"]
-    pub fn is_human(
-        race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>,
-    ) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_human(
-                ::core::convert::Into::into(race),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_human(race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>) -> bool {
+        unsafe { __AnimName_unity2_raw::is_human(::core::convert::Into::into(race), ::core::option::Option::None) }
     }
+
     #[doc = "`IsHuman(::unity2::Il2CppString)` overload"]
     pub fn is_human_2(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_human_2(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::is_human_2(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsRide(crate::combat::animname::AnimName_Race)` overload"]
-    pub fn is_ride(
-        race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>,
-    ) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_ride(
-                ::core::convert::Into::into(race),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_ride(race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>) -> bool {
+        unsafe { __AnimName_unity2_raw::is_ride(::core::convert::Into::into(race), ::core::option::Option::None) }
     }
+
     #[doc = "`IsRide(::unity2::Il2CppString)` overload"]
     pub fn is_ride_2(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_ride_2(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::is_ride_2(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`Is4Legged(crate::combat::animname::AnimName_Race)` overload"]
-    pub fn is4_legged(
-        race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>,
-    ) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is4_legged(
-                ::core::convert::Into::into(race),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is4_legged(race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>) -> bool {
+        unsafe { __AnimName_unity2_raw::is4_legged(::core::convert::Into::into(race), ::core::option::Option::None) }
     }
+
     #[doc = "`Is4Legged(::unity2::Il2CppString)` overload"]
     pub fn is4_legged_2(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is4_legged_2(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::is4_legged_2(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`IsFlying(crate::combat::animname::AnimName_Race)` overload"]
-    pub fn is_flying(
-        race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>,
-    ) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_flying(
-                ::core::convert::Into::into(race),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_flying(race: impl ::core::convert::Into<crate::combat::animname::AnimName_Race>) -> bool {
+        unsafe { __AnimName_unity2_raw::is_flying(::core::convert::Into::into(race), ::core::option::Option::None) }
     }
+
     #[doc = "`IsFlying(::unity2::Il2CppString)` overload"]
     pub fn is_flying_2(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __AnimName_unity2_raw::is_flying_2(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimName_unity2_raw::is_flying_2(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "combat-animname")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimName;
-    pub use super::AnimName_Race;
-    pub use super::IAnimName;
-    pub use crate::system::object::IObject;
+    pub use super::{AnimName, AnimName_Race, IAnimName};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

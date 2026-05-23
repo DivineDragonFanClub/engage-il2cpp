@@ -2,63 +2,13 @@
 
 #[cfg(feature = "unity_engine-particle_system_jobs-nativeparticledata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array3.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct NativeParticleData_Array3 {}
-
-    impl ::unity2::ClassIdentity for NativeParticleData_Array3 {
-        const NAMESPACE: &'static str = "UnityEngine.ParticleSystemJobs";
-
-        const NAME: &'static str = "NativeParticleData.Array3";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NativeParticleData_Array3 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct NativeParticleData {}
-
-    impl ::unity2::ClassIdentity for NativeParticleData {
-        const NAMESPACE: &'static str = "UnityEngine.ParticleSystemJobs";
-
-        const NAME: &'static str = "NativeParticleData";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NativeParticleData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array4.md"))]
     #[repr(C)]
@@ -66,9 +16,8 @@ mod __types {
     pub struct NativeParticleData_Array4 {}
 
     impl ::unity2::ClassIdentity for NativeParticleData_Array4 {
-        const NAMESPACE: &'static str = "UnityEngine.ParticleSystemJobs";
-
         const NAME: &'static str = "NativeParticleData.Array4";
+        const NAMESPACE: &'static str = "UnityEngine.ParticleSystemJobs";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -79,10 +28,51 @@ mod __types {
 
     impl ::unity2::IlType for NativeParticleData_Array4 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct NativeParticleData {}
+
+    impl ::unity2::ClassIdentity for NativeParticleData {
+        const NAME: &'static str = "NativeParticleData";
+        const NAMESPACE: &'static str = "UnityEngine.ParticleSystemJobs";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NativeParticleData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array3.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct NativeParticleData_Array3 {}
+
+    impl ::unity2::ClassIdentity for NativeParticleData_Array3 {
+        const NAME: &'static str = "NativeParticleData.Array3";
+        const NAMESPACE: &'static str = "UnityEngine.ParticleSystemJobs";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NativeParticleData_Array3 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -93,13 +83,10 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-particle_system_jobs-nativeparticledata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NativeParticleData;
-    pub use super::NativeParticleData_Array3;
-    pub use super::NativeParticleData_Array4;
-    pub use crate::system::object::IObject;
+    pub use super::{NativeParticleData, NativeParticleData_Array3, NativeParticleData_Array4};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

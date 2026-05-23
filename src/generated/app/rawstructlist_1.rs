@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-rawstructlist_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rawstructlist_1/RawStructList_1.md"))]
     #[::unity2::class(namespace = "App", name = "RawStructList`1")]
@@ -88,9 +88,7 @@ impl<T0: ::unity2::ClassIdentity> RawStructList_1<T0> {
 #[cfg(feature = "app-rawstructlist_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRawStructList_1;
-    pub use super::IRawStructList_1Methods;
-    pub use super::RawStructList_1;
+    pub use super::{IRawStructList_1, IRawStructList_1Methods, RawStructList_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

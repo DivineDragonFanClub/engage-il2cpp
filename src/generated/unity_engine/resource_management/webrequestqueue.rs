@@ -2,19 +2,29 @@
 
 #[cfg(feature = "unity_engine-resource_management-webrequestqueue-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/webrequestqueue/WebRequestQueue.md"))]
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "WebRequestQueue")]
     #[parent(crate::system::object::Object)]
     pub struct WebRequestQueue {
-# [static_field] # [rename (name = "s_MaxRequest")] pub s_max_request : i32 ,
-# [static_field] # [rename (name = "s_QueuedOperations")] pub s_queued_operations : crate :: system :: collections :: generic :: queue_1 :: Queue_1 < crate :: unity_engine :: resource_management :: webrequestqueueoperation :: WebRequestQueueOperation > ,
-# [static_field] # [rename (name = "s_ActiveRequests")] pub s_active_requests : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: networking :: unitywebrequestasyncoperation :: UnityWebRequestAsyncOperation > ,
-}
+        #[static_field]
+        #[rename(name = "s_MaxRequest")]
+        pub s_max_request: i32,
+        #[static_field]
+        #[rename(name = "s_QueuedOperations")]
+        pub s_queued_operations: crate::system::collections::generic::queue_1::Queue_1<
+            crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation,
+        >,
+        #[static_field]
+        #[rename(name = "s_ActiveRequests")]
+        pub s_active_requests: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation,
+        >,
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-webrequestqueue-types")]
@@ -29,11 +39,8 @@ mod __WebRequestQueue_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_max_concurrent_requests {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WebRequestQueue as ::unity2::ClassIdentity>::class(),
                 "SetMaxConcurrentRequests",
@@ -45,39 +52,29 @@ mod __WebRequestQueue_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WebRequestQueue as ::unity2::ClassIdentity>::NAME,
-                    "SetMaxConcurrentRequests",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WebRequestQueue as ::unity2::ClassIdentity>::NAME,
+                        "SetMaxConcurrentRequests",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_max_concurrent_requests(
-        max_requests: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_max_concurrent_requests::get_offset() as isize),
-        );
+    pub unsafe fn set_max_concurrent_requests(max_requests: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_max_concurrent_requests::get_method_info().method_ptr);
         inner(max_requests, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_queue_request {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::networking::unitywebrequest::UnityWebRequest as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WebRequestQueue as ::unity2::ClassIdentity>::class(),
                 "QueueRequest",
@@ -89,39 +86,35 @@ mod __WebRequestQueue_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WebRequestQueue as ::unity2::ClassIdentity>::NAME,
-                    "QueueRequest",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WebRequestQueue as ::unity2::ClassIdentity>::NAME,
+                        "QueueRequest",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn queue_request(
         request: crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation
-    {
-        let inner : extern "C" fn (crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: webrequestqueueoperation :: WebRequestQueueOperation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_queue_request :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation {
+        let inner: extern "C" fn(
+            crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation =
+            ::core::mem::transmute(__lookup_queue_request::get_method_info().method_ptr);
         inner(request, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_web_async_op_complete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WebRequestQueue as ::unity2::ClassIdentity>::class(),
                 "OnWebAsyncOpComplete",
@@ -133,41 +126,30 @@ mod __WebRequestQueue_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WebRequestQueue as ::unity2::ClassIdentity>::NAME,
-                    "OnWebAsyncOpComplete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WebRequestQueue as ::unity2::ClassIdentity>::NAME,
+                        "OnWebAsyncOpComplete",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_web_async_op_complete(
         operation: crate::unity_engine::asyncoperation::AsyncOperation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::asyncoperation::AsyncOperation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_web_async_op_complete::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::asyncoperation::AsyncOperation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_web_async_op_complete::get_method_info().method_ptr);
         inner(operation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WebRequestQueue as ::unity2::ClassIdentity>::class(),
@@ -180,26 +162,19 @@ mod __WebRequestQueue_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WebRequestQueue as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WebRequestQueue as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -208,38 +183,21 @@ mod __WebRequestQueue_unity2_raw {
 impl WebRequestQueue {
     #[doc = "`SetMaxConcurrentRequests(i32)` overload"]
     pub fn set_max_concurrent_requests(max_requests: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __WebRequestQueue_unity2_raw::set_max_concurrent_requests(
-                ::core::convert::Into::into(max_requests),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __WebRequestQueue_unity2_raw::set_max_concurrent_requests(::core::convert::Into::into(max_requests), ::core::option::Option::None) }
     }
+
     #[doc = "`QueueRequest(crate::unity_engine::networking::unitywebrequest::UnityWebRequest)` overload"]
     pub fn queue_request(
-        request: impl ::core::convert::Into<
-            crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
-        >,
-    ) -> crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation
-    {
-        unsafe {
-            __WebRequestQueue_unity2_raw::queue_request(
-                ::core::convert::Into::into(request),
-                ::core::option::Option::None,
-            )
-        }
+        request: impl ::core::convert::Into<crate::unity_engine::networking::unitywebrequest::UnityWebRequest>,
+    ) -> crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation {
+        unsafe { __WebRequestQueue_unity2_raw::queue_request(::core::convert::Into::into(request), ::core::option::Option::None) }
     }
+
     #[doc = "`OnWebAsyncOpComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    pub fn on_web_async_op_complete(
-        operation: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>,
-    ) -> () {
-        unsafe {
-            __WebRequestQueue_unity2_raw::on_web_async_op_complete(
-                ::core::convert::Into::into(operation),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn on_web_async_op_complete(operation: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>) -> () {
+        unsafe { __WebRequestQueue_unity2_raw::on_web_async_op_complete(::core::convert::Into::into(operation), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __WebRequestQueue_unity2_raw::cctor(::core::option::Option::None) }
@@ -249,8 +207,7 @@ impl WebRequestQueue {
 #[cfg(feature = "unity_engine-resource_management-webrequestqueue")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IWebRequestQueue;
-    pub use super::WebRequestQueue;
+    pub use super::{IWebRequestQueue, WebRequestQueue};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

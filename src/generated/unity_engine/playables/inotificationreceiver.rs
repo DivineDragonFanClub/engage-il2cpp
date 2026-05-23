@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/inotificationreceiver/INotificationReceiver.md"))]
     #[::unity2::class(namespace = "UnityEngine.Playables", name = "INotificationReceiver")]
@@ -23,10 +23,12 @@ mod __INotificationReceiver_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_notify {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: inotification :: INotification as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::inotification::INotification as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <INotificationReceiver as ::unity2::ClassIdentity>::class(),
                 "OnNotify",
@@ -38,18 +40,15 @@ mod __INotificationReceiver_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <INotificationReceiver as ::unity2::ClassIdentity>::NAME,
-                    "OnNotify",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <INotificationReceiver as ::unity2::ClassIdentity>::NAME,
+                        "OnNotify",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_notify(
@@ -65,11 +64,7 @@ mod __INotificationReceiver_unity2_raw {
             crate::unity_engine::playables::inotification::INotification,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_notify::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_notify::get_method_info().method_ptr);
         inner(this, origin, notification, context, __unity2_method_info)
     }
 }
@@ -80,15 +75,12 @@ pub trait IINotificationReceiverMethods: IINotificationReceiver {
     fn on_notify(
         self,
         origin: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-        notification: impl ::core::convert::Into<
-            crate::unity_engine::playables::inotification::INotification,
-        >,
+        notification: impl ::core::convert::Into<crate::unity_engine::playables::inotification::INotification>,
         context: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <INotificationReceiver as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <INotificationReceiver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __INotificationReceiver_unity2_raw::on_notify(
                 __receiver,
                 ::core::convert::Into::into(origin),
@@ -106,7 +98,5 @@ impl<__T: IINotificationReceiver> IINotificationReceiverMethods for __T {}
 #[cfg(feature = "unity_engine-playables-inotificationreceiver")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IINotificationReceiver;
-    pub use super::IINotificationReceiverMethods;
-    pub use super::INotificationReceiver;
+    pub use super::{IINotificationReceiver, IINotificationReceiverMethods, INotificationReceiver};
 }

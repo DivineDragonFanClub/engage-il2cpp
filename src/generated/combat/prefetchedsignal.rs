@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-prefetchedsignal-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/prefetchedsignal/PrefetchedSignal.md"))]
     #[::unity2::class(namespace = "Combat", name = "PrefetchedSignal")]
@@ -23,9 +23,7 @@ mod __types {
         #[rename(name = "HitTimesNT")]
         pub hit_times_nt: crate::system::collections::generic::list_1::List_1<f32>,
         #[rename(name = "HitSignals")]
-        pub hit_signals: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::animationevent::AnimationEvent,
-        >,
+        pub hit_signals: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationevent::AnimationEvent>,
         #[rename(name = "localDieFallPos")]
         pub local_die_fall_pos: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
         #[rename(name = "score")]
@@ -45,12 +43,9 @@ mod __PrefetchedSignal_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::prefetchedsignal::PrefetchedSignal as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::prefetchedsignal::PrefetchedSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "op_Implicit",
@@ -62,41 +57,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_implicit(
-        a: crate::combat::prefetchedsignal::PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::prefetchedsignal::PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit::get_offset() as isize),
-        );
+    pub unsafe fn op_implicit(a: crate::combat::prefetchedsignal::PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::prefetchedsignal::PrefetchedSignal, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(a, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -109,39 +90,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_Null",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_Null",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_null(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::prefetchedsignal::PrefetchedSignal {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::prefetchedsignal::PrefetchedSignal = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_null::get_offset() as isize),
-        );
+    pub unsafe fn get_null(__unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::prefetchedsignal::PrefetchedSignal {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::combat::prefetchedsignal::PrefetchedSignal =
+            ::core::mem::transmute(__lookup_get_null::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -154,39 +123,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "CreateNull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "CreateNull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_null(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::prefetchedsignal::PrefetchedSignal {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::prefetchedsignal::PrefetchedSignal = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_null::get_offset() as isize),
-        );
+    pub unsafe fn create_null(__unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::prefetchedsignal::PrefetchedSignal {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::combat::prefetchedsignal::PrefetchedSignal =
+            ::core::mem::transmute(__lookup_create_null::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_state_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -199,43 +156,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_StateName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_StateName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_state_name(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_state_name::get_offset() as isize),
-        );
+    pub unsafe fn get_state_name(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_state_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_state_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_StateName",
@@ -247,43 +189,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_StateName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_StateName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_state_name(
-        this: PrefetchedSignal,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_state_name::get_offset() as isize),
-        );
+    pub unsafe fn set_state_name(this: PrefetchedSignal, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_state_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_state_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -296,41 +222,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_StateHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_StateHash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_state_hash(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_state_hash(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_state_hash::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_state_hash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_state_hash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_StateHash",
@@ -342,40 +255,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_StateHash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_StateHash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_state_hash(
-        this: PrefetchedSignal,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_state_hash(this: PrefetchedSignal, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_state_hash::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_state_hash::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_internal_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -388,41 +288,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_isInternalNull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_isInternalNull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_internal_null(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_internal_null(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_internal_null::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_internal_null::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_internal_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_isInternalNull",
@@ -434,40 +321,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_isInternalNull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_isInternalNull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_internal_null(
-        this: PrefetchedSignal,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_internal_null(this: PrefetchedSignal, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_internal_null::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_internal_null::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -480,44 +354,32 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_Clip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_Clip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clip(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationclip::AnimationClip {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::animationclip::AnimationClip =
+            ::core::mem::transmute(__lookup_get_clip::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_Clip",
@@ -529,18 +391,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_Clip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_Clip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_clip(
@@ -548,24 +407,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::animationclip::AnimationClip,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::animationclip::AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_clip::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -578,44 +428,32 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_Curves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_Curves",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_curves(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::prefetchedcurve::PrefetchedCurve {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::prefetchedcurve::PrefetchedCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_curves::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::combat::prefetchedcurve::PrefetchedCurve =
+            ::core::mem::transmute(__lookup_get_curves::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_curves {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::prefetchedcurve::PrefetchedCurve as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::prefetchedcurve::PrefetchedCurve as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_Curves",
@@ -627,18 +465,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_Curves",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_Curves",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_curves(
@@ -646,24 +481,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::combat::prefetchedcurve::PrefetchedCurve,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::combat::prefetchedcurve::PrefetchedCurve,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_curves::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::combat::prefetchedcurve::PrefetchedCurve, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_curves::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clip_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -676,41 +502,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_ClipLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_ClipLength",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_clip_length(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_clip_length(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_clip_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_clip_length::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_clip_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_ClipLength",
@@ -722,40 +535,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_ClipLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_ClipLength",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_clip_length(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_clip_length(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_clip_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_clip_length::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ft2nt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -768,41 +568,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_FT2NT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_FT2NT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ft2nt(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_ft2nt(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ft2nt::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_ft2nt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ft2nt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_FT2NT",
@@ -814,40 +601,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_FT2NT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_FT2NT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_ft2nt(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_ft2nt(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_ft2nt::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_ft2nt::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attack_far_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -860,41 +634,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_AttackFarRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackFarRange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_attack_far_range(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_attack_far_range(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_attack_far_range::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_attack_far_range::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_attack_far_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_AttackFarRange",
@@ -906,40 +667,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_AttackFarRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackFarRange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_attack_far_range(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_attack_far_range(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_attack_far_range::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_attack_far_range::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attack_near_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -952,41 +700,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_AttackNearRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackNearRange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_attack_near_range(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_attack_near_range(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_attack_near_range::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_attack_near_range::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_attack_near_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_AttackNearRange",
@@ -998,40 +733,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_AttackNearRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackNearRange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_attack_near_range(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_attack_near_range(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_attack_near_range::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_attack_near_range::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_forward_cancel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1044,41 +766,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_ForwardCancel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_ForwardCancel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_forward_cancel(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_forward_cancel(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_forward_cancel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_forward_cancel::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_forward_cancel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_ForwardCancel",
@@ -1090,40 +799,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_ForwardCancel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_ForwardCancel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_forward_cancel(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_forward_cancel(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_forward_cancel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_forward_cancel::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rush_forward_cancel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1136,41 +832,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_RushForwardCancel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_RushForwardCancel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rush_forward_cancel(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_rush_forward_cancel(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_rush_forward_cancel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_rush_forward_cancel::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rush_forward_cancel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_RushForwardCancel",
@@ -1182,42 +865,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_RushForwardCancel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_RushForwardCancel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_rush_forward_cancel(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_rush_forward_cancel(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_rush_forward_cancel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_rush_forward_cancel::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_backward_cancel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "BackwardCancel",
@@ -1229,40 +898,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "BackwardCancel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "BackwardCancel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn backward_cancel(
-        this: PrefetchedSignal,
-        ratio: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn backward_cancel(this: PrefetchedSignal, ratio: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_backward_cancel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_backward_cancel::get_method_info().method_ptr);
         inner(this, ratio, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_transition_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1275,41 +931,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_TransitionDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_TransitionDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_transition_duration(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_transition_duration(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_transition_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_transition_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_transition_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_TransitionDuration",
@@ -1321,40 +964,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_TransitionDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_TransitionDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_transition_duration(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_transition_duration(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_transition_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_transition_duration::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_root_moved {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1367,43 +997,31 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_LocalRootMoved",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_LocalRootMoved",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_local_root_moved(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_root_moved::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_local_root_moved::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_root_moved {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_LocalRootMoved",
@@ -1415,18 +1033,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_LocalRootMoved",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_LocalRootMoved",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_root_moved(
@@ -1434,24 +1049,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_root_moved::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_root_moved::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weapon_style {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1464,43 +1070,31 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_WeaponStyle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_WeaponStyle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_weapon_style(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::weaponstyle::WeaponStyle {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::weaponstyle::WeaponStyle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_weapon_style::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::combat::weaponstyle::WeaponStyle =
+            ::core::mem::transmute(__lookup_get_weapon_style::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weapon_style {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::weaponstyle::WeaponStyle as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::weaponstyle::WeaponStyle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_WeaponStyle",
@@ -1512,18 +1106,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_WeaponStyle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_WeaponStyle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_weapon_style(
@@ -1531,24 +1122,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::combat::weaponstyle::WeaponStyle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::combat::weaponstyle::WeaponStyle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_weapon_style::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::combat::weaponstyle::WeaponStyle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_weapon_style::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit_signal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1561,45 +1143,32 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_HitSignal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_HitSignal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hit_signal(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationevent::AnimationEvent {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationevent::AnimationEvent = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hit_signal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::animationevent::AnimationEvent =
+            ::core::mem::transmute(__lookup_get_hit_signal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hit_signal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_HitSignal",
@@ -1611,18 +1180,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_HitSignal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_HitSignal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_hit_signal(
@@ -1630,24 +1196,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::animationevent::AnimationEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hit_signal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hit_signal::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1660,41 +1217,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_HitCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_HitCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hit_count(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hit_count(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hit_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hit_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hit_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_HitCount",
@@ -1706,40 +1250,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_HitCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_HitCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hit_count(
-        this: PrefetchedSignal,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_hit_count(this: PrefetchedSignal, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_hit_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_hit_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1752,41 +1283,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_HitTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_HitTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hit_time(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_hit_time(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hit_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hit_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hit_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_HitTime",
@@ -1798,40 +1316,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_HitTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_HitTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hit_time(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_hit_time(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_hit_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_hit_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_hit_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1844,43 +1349,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_LocalHitPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_LocalHitPos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_local_hit_pos(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_hit_pos::get_offset() as isize),
-        );
+    pub unsafe fn get_local_hit_pos(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_local_hit_pos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_hit_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_LocalHitPos",
@@ -1892,18 +1382,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_LocalHitPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_LocalHitPos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_hit_pos(
@@ -1911,24 +1398,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_hit_pos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_hit_pos::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_hit_dir {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -1941,43 +1419,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_LocalHitDir",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_LocalHitDir",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_local_hit_dir(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_hit_dir::get_offset() as isize),
-        );
+    pub unsafe fn get_local_hit_dir(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_local_hit_dir::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_hit_dir {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_LocalHitDir",
@@ -1989,18 +1452,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_LocalHitDir",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_LocalHitDir",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_hit_dir(
@@ -2008,24 +1468,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_hit_dir::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_hit_dir::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_knockable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2038,39 +1489,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_IsKnockable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_IsKnockable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_knockable(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_knockable(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_knockable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_knockable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shoot_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2083,41 +1522,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_ShootTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_ShootTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_shoot_time(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_shoot_time(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_shoot_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_shoot_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shoot_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_ShootTime",
@@ -2129,40 +1555,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_ShootTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_ShootTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_shoot_time(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_shoot_time(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_shoot_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_shoot_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_shoot_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2175,43 +1588,31 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_LocalShootPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_LocalShootPos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_local_shoot_pos(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_shoot_pos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_local_shoot_pos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_shoot_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_LocalShootPos",
@@ -2223,18 +1624,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_LocalShootPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_LocalShootPos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_shoot_pos(
@@ -2242,24 +1640,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_shoot_pos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_shoot_pos::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_shoot_dir {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2272,43 +1661,31 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_LocalShootDir",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_LocalShootDir",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_local_shoot_dir(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_shoot_dir::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_local_shoot_dir::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_shoot_dir {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_LocalShootDir",
@@ -2320,18 +1697,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_LocalShootDir",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_LocalShootDir",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_shoot_dir(
@@ -2339,24 +1713,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_shoot_dir::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_shoot_dir::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit_or_shoot_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2369,39 +1734,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_HitOrShootTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_HitOrShootTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hit_or_shoot_time(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_hit_or_shoot_time(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hit_or_shoot_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hit_or_shoot_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_human_die_fall_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2414,41 +1767,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_HumanDieFallTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_HumanDieFallTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_human_die_fall_time(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_human_die_fall_time(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_human_die_fall_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_human_die_fall_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_human_die_fall_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_HumanDieFallTime",
@@ -2460,40 +1800,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_HumanDieFallTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_HumanDieFallTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_human_die_fall_time(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_human_die_fall_time(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_human_die_fall_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_human_die_fall_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_motion_matching_velocity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2506,43 +1833,31 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_MotionMatchingVelocity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_MotionMatchingVelocity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_motion_matching_velocity(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_motion_matching_velocity::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_motion_matching_velocity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_motion_matching_velocity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_MotionMatchingVelocity",
@@ -2554,18 +1869,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_MotionMatchingVelocity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_MotionMatchingVelocity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_motion_matching_velocity(
@@ -2573,24 +1885,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_motion_matching_velocity::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_motion_matching_velocity::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_motion_matching_torque {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2603,41 +1906,30 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_MotionMatchingTorque",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_MotionMatchingTorque",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_motion_matching_torque(
         this: PrefetchedSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_motion_matching_torque::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_get_motion_matching_torque::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_motion_matching_torque {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2651,18 +1943,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_MotionMatchingTorque",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_MotionMatchingTorque",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_motion_matching_torque(
@@ -2670,24 +1959,15 @@ mod __PrefetchedSignal_unity2_raw {
         value: crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_motion_matching_torque::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_motion_matching_torque::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_score {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2700,41 +1980,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_Score",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_score(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_score(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_score::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_score {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "set_Score",
@@ -2746,40 +2013,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "set_Score",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "set_Score",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_score(
-        this: PrefetchedSignal,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_score(this: PrefetchedSignal, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_score::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_attack_range_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2792,39 +2046,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_IsAttackRangeValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAttackRangeValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_attack_range_valid(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_attack_range_valid(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_attack_range_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_attack_range_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_forward_cancel_nt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2837,39 +2079,27 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_ForwardCancelNT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_ForwardCancelNT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_forward_cancel_nt(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_forward_cancel_nt(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_forward_cancel_nt::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_forward_cancel_nt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rush_forward_cancel_nt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
@@ -2882,41 +2112,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "get_RushForwardCancelNT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "get_RushForwardCancelNT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rush_forward_cancel_nt(
-        this: PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_rush_forward_cancel_nt(this: PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_rush_forward_cancel_nt::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_rush_forward_cancel_nt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_backward_cancel_nt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "BackwardCancelNT",
@@ -2928,44 +2145,28 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "BackwardCancelNT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "BackwardCancelNT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn backward_cancel_nt(
-        this: PrefetchedSignal,
-        ratio: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn backward_cancel_nt(this: PrefetchedSignal, ratio: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(PrefetchedSignal, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_backward_cancel_nt::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_backward_cancel_nt::get_method_info().method_ptr);
         inner(this, ratio, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_backward_cancel_abnt_for_debug {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "GetBackwardCancelABNTForDebug",
@@ -2977,18 +2178,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "GetBackwardCancelABNTForDebug",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "GetBackwardCancelABNTForDebug",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_backward_cancel_abnt_for_debug(
@@ -2997,27 +2195,16 @@ mod __PrefetchedSignal_unity2_raw {
         b: *mut f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            *mut f32,
-            *mut f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_backward_cancel_abnt_for_debug::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, *mut f32, *mut f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_backward_cancel_abnt_for_debug::get_method_info().method_ptr);
         inner(this, a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_world_root_moved {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "WorldRootMoved",
@@ -3029,18 +2216,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "WorldRootMoved",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "WorldRootMoved",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn world_root_moved(
@@ -3052,20 +2236,14 @@ mod __PrefetchedSignal_unity2_raw {
             PrefetchedSignal,
             crate::unity_engine::transform::Transform,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_world_root_moved::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_world_root_moved::get_method_info().method_ptr);
         inner(this, t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_world_die_fall_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3081,18 +2259,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "WorldDieFallPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "WorldDieFallPos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn world_die_fall_pos(
@@ -3106,22 +2281,15 @@ mod __PrefetchedSignal_unity2_raw {
             crate::unity_engine::transform::Transform,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_world_die_fall_pos::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_world_die_fall_pos::get_method_info().method_ptr);
         inner(this, t, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_will_collide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "WillCollide",
@@ -3133,18 +2301,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "WillCollide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "WillCollide",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn will_collide(
@@ -3152,26 +2317,16 @@ mod __PrefetchedSignal_unity2_raw {
         cp: crate::combat::character::Character,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_will_collide::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::combat::character::Character, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_will_collide::get_method_info().method_ptr);
         inner(this, cp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_distance_to_collider_at_root_moved {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "CalcDistanceToColliderAtRootMoved",
@@ -3183,18 +2338,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "CalcDistanceToColliderAtRootMoved",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "CalcDistanceToColliderAtRootMoved",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_distance_to_collider_at_root_moved(
@@ -3202,26 +2354,16 @@ mod __PrefetchedSignal_unity2_raw {
         cp: crate::combat::character::Character,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_distance_to_collider_at_root_moved::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::combat::character::Character, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_distance_to_collider_at_root_moved::get_method_info().method_ptr);
         inner(this, cp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_obstracted_between_root_moved_and_enemy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "IsObstractedBetweenRootMovedAndEnemy",
@@ -3233,18 +2375,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "IsObstractedBetweenRootMovedAndEnemy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "IsObstractedBetweenRootMovedAndEnemy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_obstracted_between_root_moved_and_enemy(
@@ -3252,24 +2391,15 @@ mod __PrefetchedSignal_unity2_raw {
         cp: crate::combat::character::Character,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            PrefetchedSignal,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_obstracted_between_root_moved_and_enemy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PrefetchedSignal, crate::combat::character::Character, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_obstracted_between_root_moved_and_enemy::get_method_info().method_ptr);
         inner(this, cp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3289,18 +2419,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -3322,32 +2449,16 @@ mod __PrefetchedSignal_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::animationclip::AnimationClip,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            state_name,
-            state_hash,
-            body_go,
-            body_anim,
-            ride_go,
-            ride_anim,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, state_name, state_hash, body_go, body_anim, ride_go, ride_anim, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_prefetched_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "GetPrefetchedCurve",
@@ -3359,18 +2470,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "GetPrefetchedCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "GetPrefetchedCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_prefetched_curve(
@@ -3382,24 +2490,16 @@ mod __PrefetchedSignal_unity2_raw {
             PrefetchedSignal,
             crate::unity_engine::animationclip::AnimationClip,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::prefetchedcurve::PrefetchedCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_prefetched_curve::get_offset() as isize),
-        );
+        ) -> crate::combat::prefetchedcurve::PrefetchedCurve = ::core::mem::transmute(__lookup_get_prefetched_curve::get_method_info().method_ptr);
         inner(this, clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_import_from_signals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::animationevent::AnimationEvent,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::animationevent::AnimationEvent> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignal as ::unity2::ClassIdentity>::class(),
                 "ImportFromSignals",
@@ -3411,18 +2511,15 @@ mod __PrefetchedSignal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
-                    "ImportFromSignals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignal as ::unity2::ClassIdentity>::NAME,
+                        "ImportFromSignals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn import_from_signals(
@@ -3434,11 +2531,7 @@ mod __PrefetchedSignal_unity2_raw {
             PrefetchedSignal,
             ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_import_from_signals::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_import_from_signals::get_method_info().method_ptr);
         inner(this, events, __unity2_method_info)
     }
 }
@@ -3446,20 +2539,15 @@ mod __PrefetchedSignal_unity2_raw {
 #[cfg(feature = "combat-prefetchedsignal")]
 impl PrefetchedSignal {
     #[doc = "`op_Implicit(crate::combat::prefetchedsignal::PrefetchedSignal)` overload"]
-    pub fn op_implicit(
-        a: impl ::core::convert::Into<crate::combat::prefetchedsignal::PrefetchedSignal>,
-    ) -> bool {
-        unsafe {
-            __PrefetchedSignal_unity2_raw::op_implicit(
-                ::core::convert::Into::into(a),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_implicit(a: impl ::core::convert::Into<crate::combat::prefetchedsignal::PrefetchedSignal>) -> bool {
+        unsafe { __PrefetchedSignal_unity2_raw::op_implicit(::core::convert::Into::into(a), ::core::option::Option::None) }
     }
+
     #[doc = "`get_Null()` overload"]
     pub fn get_null() -> crate::combat::prefetchedsignal::PrefetchedSignal {
         unsafe { __PrefetchedSignal_unity2_raw::get_null(::core::option::Option::None) }
     }
+
     #[doc = "`CreateNull()` overload"]
     pub fn create_null() -> crate::combat::prefetchedsignal::PrefetchedSignal {
         unsafe { __PrefetchedSignal_unity2_raw::create_null(::core::option::Option::None) }
@@ -3471,745 +2559,420 @@ pub trait IPrefetchedSignalMethods: IPrefetchedSignal {
     #[doc = "`get_StateName()` overload"]
     fn get_state_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_state_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_StateName(::unity2::Il2CppString)` overload"]
     fn set_state_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_state_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_state_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_StateHash()` overload"]
     fn get_state_hash(self) -> i32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_state_hash(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_StateHash(i32)` overload"]
     fn set_state_hash(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_state_hash(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_state_hash(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_isInternalNull()` overload"]
     fn get_is_internal_null(self) -> bool {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_is_internal_null(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_is_internal_null(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_isInternalNull(bool)` overload"]
     fn set_is_internal_null(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_is_internal_null(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_is_internal_null(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Clip()` overload"]
     fn get_clip(self) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_clip(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Clip(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    fn set_clip(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
-    ) -> () {
+    fn set_clip(self, value: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_clip(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_clip(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Curves()` overload"]
     fn get_curves(self) -> crate::combat::prefetchedcurve::PrefetchedCurve {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_curves(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Curves(crate::combat::prefetchedcurve::PrefetchedCurve)` overload"]
-    fn set_curves(
-        self,
-        value: impl ::core::convert::Into<crate::combat::prefetchedcurve::PrefetchedCurve>,
-    ) -> () {
+    fn set_curves(self, value: impl ::core::convert::Into<crate::combat::prefetchedcurve::PrefetchedCurve>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_curves(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_curves(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ClipLength()` overload"]
     fn get_clip_length(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_clip_length(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ClipLength(f32)` overload"]
     fn set_clip_length(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_clip_length(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_clip_length(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_FT2NT()` overload"]
     fn get_ft2nt(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_ft2nt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_FT2NT(f32)` overload"]
     fn set_ft2nt(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_ft2nt(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_ft2nt(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AttackFarRange()` overload"]
     fn get_attack_far_range(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_attack_far_range(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_attack_far_range(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AttackFarRange(f32)` overload"]
     fn set_attack_far_range(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_attack_far_range(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_attack_far_range(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AttackNearRange()` overload"]
     fn get_attack_near_range(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_attack_near_range(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_attack_near_range(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AttackNearRange(f32)` overload"]
     fn set_attack_near_range(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_attack_near_range(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_attack_near_range(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ForwardCancel()` overload"]
     fn get_forward_cancel(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_forward_cancel(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_forward_cancel(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ForwardCancel(f32)` overload"]
     fn set_forward_cancel(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_forward_cancel(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_forward_cancel(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_RushForwardCancel()` overload"]
     fn get_rush_forward_cancel(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_rush_forward_cancel(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_rush_forward_cancel(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_RushForwardCancel(f32)` overload"]
     fn set_rush_forward_cancel(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_rush_forward_cancel(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_rush_forward_cancel(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`BackwardCancel(f32)` overload"]
     fn backward_cancel(self, ratio: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::backward_cancel(
-                __receiver,
-                ::core::convert::Into::into(ratio),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::backward_cancel(__receiver, ::core::convert::Into::into(ratio), ::core::option::Option::None)
         }
     }
     #[doc = "`get_TransitionDuration()` overload"]
     fn get_transition_duration(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_transition_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_transition_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_TransitionDuration(f32)` overload"]
     fn set_transition_duration(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_transition_duration(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_transition_duration(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LocalRootMoved()` overload"]
     fn get_local_root_moved(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_local_root_moved(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_local_root_moved(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LocalRootMoved(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_local_root_moved(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_local_root_moved(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_local_root_moved(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_local_root_moved(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_WeaponStyle()` overload"]
     fn get_weapon_style(self) -> crate::combat::weaponstyle::WeaponStyle {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_weapon_style(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_weapon_style(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_WeaponStyle(crate::combat::weaponstyle::WeaponStyle)` overload"]
-    fn set_weapon_style(
-        self,
-        value: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>,
-    ) -> () {
+    fn set_weapon_style(self, value: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_weapon_style(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_weapon_style(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_HitSignal()` overload"]
     fn get_hit_signal(self) -> crate::unity_engine::animationevent::AnimationEvent {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_hit_signal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_HitSignal(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    fn set_hit_signal(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> () {
+    fn set_hit_signal(self, value: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_hit_signal(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_hit_signal(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_HitCount()` overload"]
     fn get_hit_count(self) -> i32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_hit_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_HitCount(i32)` overload"]
     fn set_hit_count(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_hit_count(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_hit_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_HitTime()` overload"]
     fn get_hit_time(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_hit_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_HitTime(f32)` overload"]
     fn set_hit_time(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_hit_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_hit_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LocalHitPos()` overload"]
     fn get_local_hit_pos(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_local_hit_pos(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_local_hit_pos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LocalHitPos(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_local_hit_pos(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_local_hit_pos(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_local_hit_pos(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_local_hit_pos(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LocalHitDir()` overload"]
     fn get_local_hit_dir(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_local_hit_dir(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_local_hit_dir(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LocalHitDir(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_local_hit_dir(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_local_hit_dir(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_local_hit_dir(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_local_hit_dir(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsKnockable()` overload"]
     fn get_is_knockable(self) -> bool {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_is_knockable(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_is_knockable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ShootTime()` overload"]
     fn get_shoot_time(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_shoot_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ShootTime(f32)` overload"]
     fn set_shoot_time(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_shoot_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_shoot_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LocalShootPos()` overload"]
     fn get_local_shoot_pos(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_local_shoot_pos(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_local_shoot_pos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LocalShootPos(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_local_shoot_pos(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_local_shoot_pos(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_local_shoot_pos(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_local_shoot_pos(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LocalShootDir()` overload"]
     fn get_local_shoot_dir(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_local_shoot_dir(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_local_shoot_dir(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LocalShootDir(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_local_shoot_dir(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_local_shoot_dir(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_local_shoot_dir(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_local_shoot_dir(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_HitOrShootTime()` overload"]
     fn get_hit_or_shoot_time(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_hit_or_shoot_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_hit_or_shoot_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_HumanDieFallTime()` overload"]
     fn get_human_die_fall_time(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_human_die_fall_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_human_die_fall_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_HumanDieFallTime(f32)` overload"]
     fn set_human_die_fall_time(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_human_die_fall_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_human_die_fall_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_MotionMatchingVelocity()` overload"]
     fn get_motion_matching_velocity(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_motion_matching_velocity(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_motion_matching_velocity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MotionMatchingVelocity(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_motion_matching_velocity(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_motion_matching_velocity(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_motion_matching_velocity(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_motion_matching_velocity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_MotionMatchingTorque()` overload"]
     fn get_motion_matching_torque(self) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_motion_matching_torque(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_motion_matching_torque(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MotionMatchingTorque(crate::unity_engine::quaternion::Quaternion)` overload"]
-    fn set_motion_matching_torque(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> () {
+    fn set_motion_matching_torque(self, value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_motion_matching_torque(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_motion_matching_torque(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Score()` overload"]
     fn get_score(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::get_score(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Score(f32)` overload"]
     fn set_score(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::set_score(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::set_score(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsAttackRangeValid()` overload"]
     fn get_is_attack_range_valid(self) -> bool {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_is_attack_range_valid(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_is_attack_range_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ForwardCancelNT()` overload"]
     fn get_forward_cancel_nt(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_forward_cancel_nt(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_forward_cancel_nt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_RushForwardCancelNT()` overload"]
     fn get_rush_forward_cancel_nt(self) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_rush_forward_cancel_nt(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_rush_forward_cancel_nt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BackwardCancelNT(f32)` overload"]
     fn backward_cancel_nt(self, ratio: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::backward_cancel_nt(
-                __receiver,
-                ::core::convert::Into::into(ratio),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::backward_cancel_nt(__receiver, ::core::convert::Into::into(ratio), ::core::option::Option::None)
         }
     }
     #[doc = "`GetBackwardCancelABNTForDebug(*mutf32, *mutf32)` overload"]
     fn get_backward_cancel_abnt_for_debug(self) -> (f32, f32) {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<f32>::uninit();
             __PrefetchedSignal_unity2_raw::get_backward_cancel_abnt_for_debug(
@@ -4222,19 +2985,10 @@ pub trait IPrefetchedSignalMethods: IPrefetchedSignal {
         }
     }
     #[doc = "`WorldRootMoved(crate::unity_engine::transform::Transform)` overload"]
-    fn world_root_moved(
-        self,
-        t: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> crate::unity_engine::vector3::Vector3 {
+    fn world_root_moved(self, t: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::world_root_moved(
-                __receiver,
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::world_root_moved(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)
         }
     }
     #[doc = "`WorldDieFallPos(crate::unity_engine::transform::Transform, i32)` overload"]
@@ -4244,9 +2998,7 @@ pub trait IPrefetchedSignalMethods: IPrefetchedSignal {
         index: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::world_die_fall_pos(
                 __receiver,
                 ::core::convert::Into::into(t),
@@ -4256,30 +3008,16 @@ pub trait IPrefetchedSignalMethods: IPrefetchedSignal {
         }
     }
     #[doc = "`WillCollide(crate::combat::character::Character)` overload"]
-    fn will_collide(
-        self,
-        cp: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> bool {
+    fn will_collide(self, cp: impl ::core::convert::Into<crate::combat::character::Character>) -> bool {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::will_collide(
-                __receiver,
-                ::core::convert::Into::into(cp),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::will_collide(__receiver, ::core::convert::Into::into(cp), ::core::option::Option::None)
         }
     }
     #[doc = "`CalcDistanceToColliderAtRootMoved(crate::combat::character::Character)` overload"]
-    fn calc_distance_to_collider_at_root_moved(
-        self,
-        cp: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> f32 {
+    fn calc_distance_to_collider_at_root_moved(self, cp: impl ::core::convert::Into<crate::combat::character::Character>) -> f32 {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::calc_distance_to_collider_at_root_moved(
                 __receiver,
                 ::core::convert::Into::into(cp),
@@ -4288,14 +3026,9 @@ pub trait IPrefetchedSignalMethods: IPrefetchedSignal {
         }
     }
     #[doc = "`IsObstractedBetweenRootMovedAndEnemy(crate::combat::character::Character)` overload"]
-    fn is_obstracted_between_root_moved_and_enemy(
-        self,
-        cp: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> bool {
+    fn is_obstracted_between_root_moved_and_enemy(self, cp: impl ::core::convert::Into<crate::combat::character::Character>) -> bool {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::is_obstracted_between_root_moved_and_enemy(
                 __receiver,
                 ::core::convert::Into::into(cp),
@@ -4314,9 +3047,7 @@ pub trait IPrefetchedSignalMethods: IPrefetchedSignal {
         ride_anim: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
     ) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PrefetchedSignal_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(state_name),
@@ -4335,32 +3066,15 @@ pub trait IPrefetchedSignalMethods: IPrefetchedSignal {
         clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
     ) -> crate::combat::prefetchedcurve::PrefetchedCurve {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::get_prefetched_curve(
-                __receiver,
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::get_prefetched_curve(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)
         }
     }
     #[doc = "`ImportFromSignals(::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>)` overload"]
-    fn import_from_signals(
-        self,
-        events: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
-        >,
-    ) -> () {
+    fn import_from_signals(self, events: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>>) -> () {
         unsafe {
-            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PrefetchedSignal_unity2_raw::import_from_signals(
-                __receiver,
-                ::core::convert::Into::into(events),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PrefetchedSignal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PrefetchedSignal_unity2_raw::import_from_signals(__receiver, ::core::convert::Into::into(events), ::core::option::Option::None)
         }
     }
 }
@@ -4386,9 +3100,7 @@ impl PrefetchedSignal {
                 ::core::stringify!(new),
             )
         });
-        <Self as IPrefetchedSignalMethods>::ctor(
-            this, state_name, state_hash, body_go, body_anim, ride_go, ride_anim,
-        );
+        <Self as IPrefetchedSignalMethods>::ctor(this, state_name, state_hash, body_go, body_anim, ride_go, ride_anim);
         this
     }
 }
@@ -4396,9 +3108,7 @@ impl PrefetchedSignal {
 #[cfg(feature = "combat-prefetchedsignal")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPrefetchedSignal;
-    pub use super::IPrefetchedSignalMethods;
-    pub use super::PrefetchedSignal;
+    pub use super::{IPrefetchedSignal, IPrefetchedSignalMethods, PrefetchedSignal};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

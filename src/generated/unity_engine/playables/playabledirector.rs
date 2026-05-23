@@ -2,30 +2,28 @@
 
 #[cfg(feature = "unity_engine-playables-playabledirector-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/playabledirector/PlayableDirector.md"))]
     #[::unity2::class(namespace = "UnityEngine.Playables", name = "PlayableDirector")]
     #[parent(crate::unity_engine::behaviour::Behaviour)]
     pub struct PlayableDirector {
         #[rename(name = "played")]
-        pub played: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        pub played: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
         #[rename(name = "paused")]
-        pub paused: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        pub paused: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
         #[rename(name = "stopped")]
-        pub stopped: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        pub stopped: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
     }
 }
 
@@ -41,9 +39,7 @@ mod __PlayableDirector_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -56,42 +52,32 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_state",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_state",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_state(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playstate::PlayState {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playstate::PlayState = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_state::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playstate::PlayState =
+            ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_extrapolation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: directorwrapmode :: DirectorWrapMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::directorwrapmode::DirectorWrapMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "set_extrapolationMode",
@@ -103,18 +89,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "set_extrapolationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "set_extrapolationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_extrapolation_mode(
@@ -126,20 +109,14 @@ mod __PlayableDirector_unity2_raw {
             PlayableDirector,
             crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_extrapolation_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_extrapolation_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_extrapolation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -152,34 +129,30 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_extrapolationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_extrapolationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_extrapolation_mode(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::directorwrapmode::DirectorWrapMode {
-        let inner : extern "C" fn (PlayableDirector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: directorwrapmode :: DirectorWrapMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_extrapolation_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> crate::unity_engine::playables::directorwrapmode::DirectorWrapMode =
+            ::core::mem::transmute(__lookup_get_extrapolation_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_playable_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -192,44 +165,32 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_playableAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_playableAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_playable_asset(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playableasset::PlayableAsset {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playableasset::PlayableAsset =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_playable_asset::get_offset() as isize),
-            );
+        let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playableasset::PlayableAsset =
+            ::core::mem::transmute(__lookup_get_playable_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_playable_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableasset :: PlayableAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playableasset::PlayableAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "set_playableAsset",
@@ -241,18 +202,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "set_playableAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "set_playableAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_playable_asset(
@@ -260,24 +218,15 @@ mod __PlayableDirector_unity2_raw {
         value: crate::unity_engine::playables::playableasset::PlayableAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            crate::unity_engine::playables::playableasset::PlayableAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_playable_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, crate::unity_engine::playables::playableasset::PlayableAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_playable_asset::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_playable_graph {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -290,43 +239,30 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_playableGraph",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_playableGraph",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_playable_graph(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablegraph::PlayableGraph =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_playable_graph::get_offset() as isize),
-            );
+        let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playablegraph::PlayableGraph =
+            ::core::mem::transmute(__lookup_get_playable_graph::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_play_on_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -339,41 +275,28 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_playOnAwake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_playOnAwake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_play_on_awake(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_play_on_awake(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_play_on_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_play_on_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_play_on_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "set_playOnAwake",
@@ -385,40 +308,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "set_playOnAwake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "set_playOnAwake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_play_on_awake(
-        this: PlayableDirector,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_play_on_awake(this: PlayableDirector, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_play_on_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_play_on_awake::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deferred_evaluate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -431,40 +341,29 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "DeferredEvaluate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "DeferredEvaluate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deferred_evaluate(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn deferred_evaluate(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_deferred_evaluate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_deferred_evaluate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableasset :: PlayableAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playableasset::PlayableAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "Play",
@@ -476,18 +375,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play(
@@ -495,25 +391,19 @@ mod __PlayableDirector_unity2_raw {
         asset: crate::unity_engine::playables::playableasset::PlayableAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            crate::unity_engine::playables::playableasset::PlayableAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, crate::unity_engine::playables::playableasset::PlayableAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
         inner(this, asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableasset :: PlayableAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: directorwrapmode :: DirectorWrapMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playableasset::PlayableAsset as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::directorwrapmode::DirectorWrapMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "Play",
@@ -525,18 +415,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_2(
@@ -550,20 +437,14 @@ mod __PlayableDirector_unity2_raw {
             crate::unity_engine::playables::playableasset::PlayableAsset,
             crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_play_2::get_method_info().method_ptr);
         inner(this, asset, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_generic_binding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -579,18 +460,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "SetGenericBinding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "SetGenericBinding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_generic_binding(
@@ -604,21 +482,16 @@ mod __PlayableDirector_unity2_raw {
             crate::unity_engine::object_2::Object_2,
             crate::unity_engine::object_2::Object_2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_generic_binding::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_generic_binding::get_method_info().method_ptr);
         inner(this, key, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_time_update_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: directorupdatemode :: DirectorUpdateMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "set_timeUpdateMode",
@@ -630,18 +503,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "set_timeUpdateMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "set_timeUpdateMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_time_update_mode(
@@ -653,20 +523,14 @@ mod __PlayableDirector_unity2_raw {
             PlayableDirector,
             crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_time_update_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_time_update_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_time_update_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -679,36 +543,34 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_timeUpdateMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_timeUpdateMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_time_update_mode(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode {
-        let inner : extern "C" fn (PlayableDirector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: directorupdatemode :: DirectorUpdateMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_time_update_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            PlayableDirector,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode =
+            ::core::mem::transmute(__lookup_get_time_update_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "set_time",
@@ -720,40 +582,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "set_time",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "set_time",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_time(
-        this: PlayableDirector,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_time(this: PlayableDirector, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -766,41 +615,28 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_time",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_time",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_time(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_time(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_initial_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "set_initialTime",
@@ -812,40 +648,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "set_initialTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "set_initialTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_initial_time(
-        this: PlayableDirector,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_initial_time(this: PlayableDirector, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_initial_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_initial_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_initial_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -858,39 +681,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_initialTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_initialTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_initial_time(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_initial_time(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_initial_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_initial_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -903,39 +714,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "get_duration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "get_duration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_duration(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_duration(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -948,39 +747,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Evaluate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Evaluate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn evaluate(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn evaluate(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_evaluate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_evaluate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -993,39 +780,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_3(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_3(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_3::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1038,39 +813,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Stop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Stop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1083,39 +846,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Pause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Pause",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn pause(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn pause(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_pause::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_pause::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1128,39 +879,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Resume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Resume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn resume(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn resume(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_resume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rebuild_graph {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1173,42 +912,29 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "RebuildGraph",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "RebuildGraph",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rebuild_graph(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn rebuild_graph(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_rebuild_graph::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_rebuild_graph::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_reference_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "ClearReferenceValue",
@@ -1220,18 +946,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "ClearReferenceValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "ClearReferenceValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_reference_value(
@@ -1239,24 +962,15 @@ mod __PlayableDirector_unity2_raw {
         id: crate::unity_engine::propertyname::PropertyName,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            crate::unity_engine::propertyname::PropertyName,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_reference_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_reference_value::get_method_info().method_ptr);
         inner(this, id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_reference_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -1272,18 +986,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "SetReferenceValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "SetReferenceValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_reference_value(
@@ -1297,20 +1008,14 @@ mod __PlayableDirector_unity2_raw {
             crate::unity_engine::propertyname::PropertyName,
             crate::unity_engine::object_2::Object_2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_reference_value::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_reference_value::get_method_info().method_ptr);
         inner(this, id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reference_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1326,18 +1031,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "GetReferenceValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "GetReferenceValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_reference_value(
@@ -1351,22 +1053,15 @@ mod __PlayableDirector_unity2_raw {
             crate::unity_engine::propertyname::PropertyName,
             *mut bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reference_value::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(__lookup_get_reference_value::get_method_info().method_ptr);
         inner(this, id, id_valid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_generic_binding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "GetGenericBinding",
@@ -1378,18 +1073,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "GetGenericBinding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "GetGenericBinding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_generic_binding(
@@ -1401,22 +1093,15 @@ mod __PlayableDirector_unity2_raw {
             PlayableDirector,
             crate::unity_engine::object_2::Object_2,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_generic_binding::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(__lookup_get_generic_binding::get_method_info().method_ptr);
         inner(this, key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_generic_binding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "ClearGenericBinding",
@@ -1428,18 +1113,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "ClearGenericBinding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "ClearGenericBinding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_generic_binding(
@@ -1447,24 +1129,15 @@ mod __PlayableDirector_unity2_raw {
         key: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_generic_binding::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_generic_binding::get_method_info().method_ptr);
         inner(this, key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rebind_playable_graph_outputs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1477,39 +1150,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "RebindPlayableGraphOutputs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "RebindPlayableGraphOutputs",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rebind_playable_graph_outputs(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn rebind_playable_graph_outputs(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_rebind_playable_graph_outputs::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_rebind_playable_graph_outputs::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_pending_graph_changes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1522,41 +1183,28 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "ProcessPendingGraphChanges",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "ProcessPendingGraphChanges",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process_pending_graph_changes(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn process_pending_graph_changes(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_process_pending_graph_changes::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_process_pending_graph_changes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_has_generic_binding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "HasGenericBinding",
@@ -1568,18 +1216,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "HasGenericBinding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "HasGenericBinding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn has_generic_binding(
@@ -1587,24 +1232,15 @@ mod __PlayableDirector_unity2_raw {
         key: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_has_generic_binding::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_has_generic_binding::get_method_info().method_ptr);
         inner(this, key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_play_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1617,42 +1253,32 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "GetPlayState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_play_state(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playstate::PlayState {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playstate::PlayState = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_play_state::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playstate::PlayState =
+            ::core::mem::transmute(__lookup_get_play_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_wrap_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: directorwrapmode :: DirectorWrapMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::directorwrapmode::DirectorWrapMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "SetWrapMode",
@@ -1664,18 +1290,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "SetWrapMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "SetWrapMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_wrap_mode(
@@ -1687,20 +1310,14 @@ mod __PlayableDirector_unity2_raw {
             PlayableDirector,
             crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_wrap_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_wrap_mode::get_method_info().method_ptr);
         inner(this, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_wrap_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1713,34 +1330,30 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "GetWrapMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "GetWrapMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_wrap_mode(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::directorwrapmode::DirectorWrapMode {
-        let inner : extern "C" fn (PlayableDirector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: directorwrapmode :: DirectorWrapMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_wrap_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> crate::unity_engine::playables::directorwrapmode::DirectorWrapMode =
+            ::core::mem::transmute(__lookup_get_wrap_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate_next_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1753,39 +1366,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "EvaluateNextFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "EvaluateNextFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn evaluate_next_frame(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn evaluate_next_frame(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_evaluate_next_frame::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_evaluate_next_frame::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_graph_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1798,43 +1399,30 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "GetGraphHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "GetGraphHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_graph_handle(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablegraph::PlayableGraph =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_graph_handle::get_offset() as isize),
-            );
+        let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> crate::unity_engine::playables::playablegraph::PlayableGraph =
+            ::core::mem::transmute(__lookup_get_graph_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_generic_binding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -1850,18 +1438,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Internal_SetGenericBinding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Internal_SetGenericBinding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_generic_binding(
@@ -1875,21 +1460,16 @@ mod __PlayableDirector_unity2_raw {
             crate::unity_engine::object_2::Object_2,
             crate::unity_engine::object_2::Object_2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_set_generic_binding::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_set_generic_binding::get_method_info().method_ptr);
         inner(this, key, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_playable_asset_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scriptableobject :: ScriptableObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::scriptableobject::ScriptableObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "SetPlayableAsset",
@@ -1901,18 +1481,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "SetPlayableAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "SetPlayableAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_playable_asset_2(
@@ -1920,24 +1497,15 @@ mod __PlayableDirector_unity2_raw {
         asset: crate::unity_engine::scriptableobject::ScriptableObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            crate::unity_engine::scriptableobject::ScriptableObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_playable_asset_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, crate::unity_engine::scriptableobject::ScriptableObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_playable_asset_2::get_method_info().method_ptr);
         inner(this, asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_playable_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -1950,46 +1518,33 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetPlayableAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetPlayableAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_playable_asset(
         this: PlayableDirector,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::scriptableobject::ScriptableObject {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::scriptableobject::ScriptableObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_playable_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> crate::unity_engine::scriptableobject::ScriptableObject =
+            ::core::mem::transmute(__lookup_internal_get_playable_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_played {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::unity_engine::playables::playabledirector::PlayableDirector,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_1::Action_1<
+                crate::unity_engine::playables::playabledirector::PlayableDirector,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "add_played",
@@ -2001,51 +1556,37 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "add_played",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "add_played",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_played(
         this: PlayableDirector,
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        value: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PlayableDirector,
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
+            crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_played::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_played::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_played {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::unity_engine::playables::playabledirector::PlayableDirector,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_1::Action_1<
+                crate::unity_engine::playables::playabledirector::PlayableDirector,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "remove_played",
@@ -2057,51 +1598,37 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "remove_played",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "remove_played",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_played(
         this: PlayableDirector,
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        value: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PlayableDirector,
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
+            crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_played::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_remove_played::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_paused {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::unity_engine::playables::playabledirector::PlayableDirector,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_1::Action_1<
+                crate::unity_engine::playables::playabledirector::PlayableDirector,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "add_paused",
@@ -2113,51 +1640,37 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "add_paused",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "add_paused",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_paused(
         this: PlayableDirector,
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        value: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PlayableDirector,
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
+            crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_paused::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_paused::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_paused {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::unity_engine::playables::playabledirector::PlayableDirector,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_1::Action_1<
+                crate::unity_engine::playables::playabledirector::PlayableDirector,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "remove_paused",
@@ -2169,51 +1682,37 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "remove_paused",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "remove_paused",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_paused(
         this: PlayableDirector,
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        value: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PlayableDirector,
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
+            crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_paused::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_remove_paused::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_stopped {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::unity_engine::playables::playabledirector::PlayableDirector,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_1::Action_1<
+                crate::unity_engine::playables::playabledirector::PlayableDirector,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "add_stopped",
@@ -2225,51 +1724,37 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "add_stopped",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "add_stopped",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_stopped(
         this: PlayableDirector,
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        value: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PlayableDirector,
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
+            crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_stopped::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_stopped::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_stopped {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::unity_engine::playables::playabledirector::PlayableDirector,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_1::Action_1<
+                crate::unity_engine::playables::playabledirector::PlayableDirector,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "remove_stopped",
@@ -2281,47 +1766,34 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "remove_stopped",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "remove_stopped",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_stopped(
         this: PlayableDirector,
-        value: crate::system::action_1::Action_1<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
+        value: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             PlayableDirector,
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
+            crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_stopped::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_remove_stopped::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_frame_timing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -2334,35 +1806,26 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "ResetFrameTiming",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "ResetFrameTiming",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reset_frame_timing(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset_frame_timing::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_reset_frame_timing::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_playable_director_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -2375,39 +1838,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "SendOnPlayableDirectorPlay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "SendOnPlayableDirectorPlay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_playable_director_play(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_playable_director_play(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_playable_director_play::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_playable_director_play::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_playable_director_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -2420,39 +1871,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "SendOnPlayableDirectorPause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "SendOnPlayableDirectorPause",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_playable_director_pause(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_playable_director_pause(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_playable_director_pause::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_playable_director_pause::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_playable_director_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -2465,39 +1904,27 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "SendOnPlayableDirectorStop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "SendOnPlayableDirectorStop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_playable_director_stop(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_playable_director_stop(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_playable_director_stop::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_playable_director_stop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
@@ -2510,42 +1937,29 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PlayableDirector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PlayableDirector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayableDirector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_reference_value_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "ClearReferenceValue_Injected",
@@ -2557,18 +1971,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "ClearReferenceValue_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "ClearReferenceValue_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_reference_value_injected(
@@ -2576,24 +1987,15 @@ mod __PlayableDirector_unity2_raw {
         id: *mut crate::unity_engine::propertyname::PropertyName,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayableDirector,
-            *mut crate::unity_engine::propertyname::PropertyName,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_reference_value_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableDirector, *mut crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_reference_value_injected::get_method_info().method_ptr);
         inner(this, id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_reference_value_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -2609,18 +2011,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "SetReferenceValue_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "SetReferenceValue_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_reference_value_injected(
@@ -2634,20 +2033,14 @@ mod __PlayableDirector_unity2_raw {
             *mut crate::unity_engine::propertyname::PropertyName,
             crate::unity_engine::object_2::Object_2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_reference_value_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_reference_value_injected::get_method_info().method_ptr);
         inner(this, id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reference_value_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -2663,18 +2056,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "GetReferenceValue_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "GetReferenceValue_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_reference_value_injected(
@@ -2688,21 +2078,16 @@ mod __PlayableDirector_unity2_raw {
             *mut crate::unity_engine::propertyname::PropertyName,
             *mut bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reference_value_injected::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(__lookup_get_reference_value_injected::get_method_info().method_ptr);
         inner(this, id, id_valid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_graph_handle_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableDirector as ::unity2::ClassIdentity>::class(),
                 "GetGraphHandle_Injected",
@@ -2714,18 +2099,15 @@ mod __PlayableDirector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableDirector as ::unity2::ClassIdentity>::NAME,
-                    "GetGraphHandle_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableDirector as ::unity2::ClassIdentity>::NAME,
+                        "GetGraphHandle_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_graph_handle_injected(
@@ -2737,11 +2119,7 @@ mod __PlayableDirector_unity2_raw {
             PlayableDirector,
             *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_graph_handle_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_graph_handle_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
 }
@@ -2759,149 +2137,81 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
     #[doc = "`get_state()` overload"]
     fn get_state(self) -> crate::unity_engine::playables::playstate::PlayState {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::get_state(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_extrapolationMode(crate::unity_engine::playables::directorwrapmode::DirectorWrapMode)` overload"]
-    fn set_extrapolation_mode(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,
-        >,
-    ) -> () {
+    fn set_extrapolation_mode(self, value: impl ::core::convert::Into<crate::unity_engine::playables::directorwrapmode::DirectorWrapMode>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::set_extrapolation_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::set_extrapolation_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_extrapolationMode()` overload"]
-    fn get_extrapolation_mode(
-        self,
-    ) -> crate::unity_engine::playables::directorwrapmode::DirectorWrapMode {
+    fn get_extrapolation_mode(self) -> crate::unity_engine::playables::directorwrapmode::DirectorWrapMode {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::get_extrapolation_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::get_extrapolation_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_playableAsset()` overload"]
     fn get_playable_asset(self) -> crate::unity_engine::playables::playableasset::PlayableAsset {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::get_playable_asset(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::get_playable_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_playableAsset(crate::unity_engine::playables::playableasset::PlayableAsset)` overload"]
-    fn set_playable_asset(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset>,
-    ) -> () {
+    fn set_playable_asset(self, value: impl ::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::set_playable_asset(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::set_playable_asset(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_playableGraph()` overload"]
     fn get_playable_graph(self) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::get_playable_graph(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::get_playable_graph(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_playOnAwake()` overload"]
     fn get_play_on_awake(self) -> bool {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::get_play_on_awake(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::get_play_on_awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_playOnAwake(bool)` overload"]
     fn set_play_on_awake(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::set_play_on_awake(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::set_play_on_awake(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`DeferredEvaluate()` overload"]
     fn deferred_evaluate(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::deferred_evaluate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::deferred_evaluate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Play(crate::unity_engine::playables::playableasset::PlayableAsset)` overload"]
-    fn play(
-        self,
-        asset: impl ::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset>,
-    ) -> () {
+    fn play(self, asset: impl ::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::play(
-                __receiver,
-                ::core::convert::Into::into(asset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::play(__receiver, ::core::convert::Into::into(asset), ::core::option::Option::None)
         }
     }
     #[doc = "`Play(crate::unity_engine::playables::playableasset::PlayableAsset, crate::unity_engine::playables::directorwrapmode::DirectorWrapMode)` overload"]
     fn play_2(
         self,
         asset: impl ::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset>,
-        mode: impl ::core::convert::Into<
-            crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,
-        >,
+        mode: impl ::core::convert::Into<crate::unity_engine::playables::directorwrapmode::DirectorWrapMode>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::play_2(
                 __receiver,
                 ::core::convert::Into::into(asset),
@@ -2917,9 +2227,7 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::set_generic_binding(
                 __receiver,
                 ::core::convert::Into::into(key),
@@ -2929,161 +2237,101 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         }
     }
     #[doc = "`set_timeUpdateMode(crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode)` overload"]
-    fn set_time_update_mode(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode,
-        >,
-    ) -> () {
+    fn set_time_update_mode(self, value: impl ::core::convert::Into<crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::set_time_update_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::set_time_update_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_timeUpdateMode()` overload"]
-    fn get_time_update_mode(
-        self,
-    ) -> crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode {
+    fn get_time_update_mode(self) -> crate::unity_engine::playables::directorupdatemode::DirectorUpdateMode {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::get_time_update_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::get_time_update_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_time(f64)` overload"]
     fn set_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::set_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_time()` overload"]
     fn get_time(self) -> f64 {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::get_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_initialTime(f64)` overload"]
     fn set_initial_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::set_initial_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::set_initial_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_initialTime()` overload"]
     fn get_initial_time(self) -> f64 {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::get_initial_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::get_initial_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_duration()` overload"]
     fn get_duration(self) -> f64 {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::get_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Evaluate()` overload"]
     fn evaluate(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::evaluate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Play()` overload"]
     fn play_3(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::play_3(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Stop()` overload"]
     fn stop(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::stop(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Pause()` overload"]
     fn pause(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::pause(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Resume()` overload"]
     fn resume(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::resume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RebuildGraph()` overload"]
     fn rebuild_graph(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::rebuild_graph(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClearReferenceValue(crate::unity_engine::propertyname::PropertyName)` overload"]
-    fn clear_reference_value(
-        self,
-        id: impl ::core::convert::Into<crate::unity_engine::propertyname::PropertyName>,
-    ) -> () {
+    fn clear_reference_value(self, id: impl ::core::convert::Into<crate::unity_engine::propertyname::PropertyName>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::clear_reference_value(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::clear_reference_value(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
         }
     }
     #[doc = "`SetReferenceValue(crate::unity_engine::propertyname::PropertyName, crate::unity_engine::object_2::Object_2)` overload"]
@@ -3093,9 +2341,7 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::set_reference_value(
                 __receiver,
                 ::core::convert::Into::into(id),
@@ -3110,9 +2356,7 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         id: impl ::core::convert::Into<crate::unity_engine::propertyname::PropertyName>,
     ) -> (crate::unity_engine::object_2::Object_2, bool) {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
             let __ret = {
                 __PlayableDirector_unity2_raw::get_reference_value(
@@ -3131,130 +2375,71 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         key: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> crate::unity_engine::object_2::Object_2 {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::get_generic_binding(
-                __receiver,
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::get_generic_binding(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
         }
     }
     #[doc = "`ClearGenericBinding(crate::unity_engine::object_2::Object_2)` overload"]
-    fn clear_generic_binding(
-        self,
-        key: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
+    fn clear_generic_binding(self, key: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::clear_generic_binding(
-                __receiver,
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::clear_generic_binding(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
         }
     }
     #[doc = "`RebindPlayableGraphOutputs()` overload"]
     fn rebind_playable_graph_outputs(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::rebind_playable_graph_outputs(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::rebind_playable_graph_outputs(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessPendingGraphChanges()` overload"]
     fn process_pending_graph_changes(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::process_pending_graph_changes(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::process_pending_graph_changes(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HasGenericBinding(crate::unity_engine::object_2::Object_2)` overload"]
-    fn has_generic_binding(
-        self,
-        key: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> bool {
+    fn has_generic_binding(self, key: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> bool {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::has_generic_binding(
-                __receiver,
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::has_generic_binding(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPlayState()` overload"]
     fn get_play_state(self) -> crate::unity_engine::playables::playstate::PlayState {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::get_play_state(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetWrapMode(crate::unity_engine::playables::directorwrapmode::DirectorWrapMode)` overload"]
-    fn set_wrap_mode(
-        self,
-        mode: impl ::core::convert::Into<
-            crate::unity_engine::playables::directorwrapmode::DirectorWrapMode,
-        >,
-    ) -> () {
+    fn set_wrap_mode(self, mode: impl ::core::convert::Into<crate::unity_engine::playables::directorwrapmode::DirectorWrapMode>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::set_wrap_mode(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::set_wrap_mode(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
         }
     }
     #[doc = "`GetWrapMode()` overload"]
     fn get_wrap_mode(self) -> crate::unity_engine::playables::directorwrapmode::DirectorWrapMode {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::get_wrap_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EvaluateNextFrame()` overload"]
     fn evaluate_next_frame(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::evaluate_next_frame(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::evaluate_next_frame(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetGraphHandle()` overload"]
     fn get_graph_handle(self) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::get_graph_handle(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::get_graph_handle(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Internal_SetGenericBinding(crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"]
@@ -3264,9 +2449,7 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::internal_set_generic_binding(
                 __receiver,
                 ::core::convert::Into::into(key),
@@ -3276,214 +2459,113 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         }
     }
     #[doc = "`SetPlayableAsset(crate::unity_engine::scriptableobject::ScriptableObject)` overload"]
-    fn set_playable_asset_2(
-        self,
-        asset: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>,
-    ) -> () {
+    fn set_playable_asset_2(self, asset: impl ::core::convert::Into<crate::unity_engine::scriptableobject::ScriptableObject>) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::set_playable_asset_2(
-                __receiver,
-                ::core::convert::Into::into(asset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::set_playable_asset_2(__receiver, ::core::convert::Into::into(asset), ::core::option::Option::None)
         }
     }
     #[doc = "`Internal_GetPlayableAsset()` overload"]
-    fn internal_get_playable_asset(
-        self,
-    ) -> crate::unity_engine::scriptableobject::ScriptableObject {
+    fn internal_get_playable_asset(self) -> crate::unity_engine::scriptableobject::ScriptableObject {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::internal_get_playable_asset(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::internal_get_playable_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`add_played(crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>)` overload"]
     fn add_played(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::add_played(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::add_played(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`remove_played(crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>)` overload"]
     fn remove_played(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::remove_played(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::remove_played(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`add_paused(crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>)` overload"]
     fn add_paused(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::add_paused(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::add_paused(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`remove_paused(crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>)` overload"]
     fn remove_paused(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::remove_paused(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::remove_paused(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`add_stopped(crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>)` overload"]
     fn add_stopped(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::add_stopped(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::add_stopped(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`remove_stopped(crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>)` overload"]
     fn remove_stopped(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<
-                crate::unity_engine::playables::playabledirector::PlayableDirector,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>>,
     ) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::remove_stopped(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::remove_stopped(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnPlayableDirectorPlay()` overload"]
     fn send_on_playable_director_play(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::send_on_playable_director_play(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::send_on_playable_director_play(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnPlayableDirectorPause()` overload"]
     fn send_on_playable_director_pause(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::send_on_playable_director_pause(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::send_on_playable_director_pause(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnPlayableDirectorStop()` overload"]
     fn send_on_playable_director_stop(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayableDirector_unity2_raw::send_on_playable_director_stop(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayableDirector_unity2_raw::send_on_playable_director_stop(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayableDirector_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClearReferenceValue_Injected(*mutcrate::unity_engine::propertyname::PropertyName)` overload"]
     fn clear_reference_value_injected(self) -> crate::unity_engine::propertyname::PropertyName {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::propertyname::PropertyName,
-            >::uninit();
-            __PlayableDirector_unity2_raw::clear_reference_value_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::propertyname::PropertyName>::uninit();
+            __PlayableDirector_unity2_raw::clear_reference_value_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -3493,12 +2575,8 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         value: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> crate::unity_engine::propertyname::PropertyName {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::propertyname::PropertyName,
-            >::uninit();
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::propertyname::PropertyName>::uninit();
             __PlayableDirector_unity2_raw::set_reference_value_injected(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -3517,12 +2595,8 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         bool,
     ) {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::propertyname::PropertyName,
-            >::uninit();
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::propertyname::PropertyName>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<bool>::uninit();
             let __ret = {
                 __PlayableDirector_unity2_raw::get_reference_value_injected(
@@ -3536,21 +2610,11 @@ pub trait IPlayableDirectorMethods: IPlayableDirector {
         }
     }
     #[doc = "`GetGraphHandle_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
-    fn get_graph_handle_injected(
-        self,
-    ) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
+    fn get_graph_handle_injected(self) -> crate::unity_engine::playables::playablegraph::PlayableGraph {
         unsafe {
-            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            __PlayableDirector_unity2_raw::get_graph_handle_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <PlayableDirector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            __PlayableDirector_unity2_raw::get_graph_handle_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -3578,19 +2642,17 @@ impl PlayableDirector {
 #[cfg(feature = "unity_engine-playables-playabledirector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPlayableDirector;
-    pub use super::IPlayableDirectorMethods;
-    pub use super::PlayableDirector;
-    pub use crate::system::object::IObject;
+    pub use super::{IPlayableDirector, IPlayableDirectorMethods, PlayableDirector};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, object_2::IObject_2},
+    };
 }

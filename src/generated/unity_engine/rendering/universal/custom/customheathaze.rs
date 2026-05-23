@@ -2,19 +2,20 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customheathaze-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::rendering::volumecomponent::{IVolumeComponent, VolumeComponent};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            rendering::volumecomponent::{IVolumeComponent, VolumeComponent},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customheathaze/CustomHeatHaze.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom",
-        name = "CustomHeatHaze"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomHeatHaze")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct CustomHeatHaze {
         #[rename(name = "intensity")]
@@ -44,9 +45,7 @@ mod __CustomHeatHaze_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomHeatHaze as ::unity2::ClassIdentity>::class(),
@@ -59,39 +58,27 @@ mod __CustomHeatHaze_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomHeatHaze as ::unity2::ClassIdentity>::NAME,
-                    "IsActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomHeatHaze as ::unity2::ClassIdentity>::NAME,
+                        "IsActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_active(
-        this: CustomHeatHaze,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_active(this: CustomHeatHaze, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CustomHeatHaze, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_active::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_tile_compatible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomHeatHaze as ::unity2::ClassIdentity>::class(),
@@ -104,39 +91,27 @@ mod __CustomHeatHaze_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomHeatHaze as ::unity2::ClassIdentity>::NAME,
-                    "IsTileCompatible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomHeatHaze as ::unity2::ClassIdentity>::NAME,
+                        "IsTileCompatible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_tile_compatible(
-        this: CustomHeatHaze,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_tile_compatible(this: CustomHeatHaze, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CustomHeatHaze, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_tile_compatible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_tile_compatible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomHeatHaze as ::unity2::ClassIdentity>::class(),
@@ -149,27 +124,20 @@ mod __CustomHeatHaze_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomHeatHaze as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomHeatHaze as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: CustomHeatHaze, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomHeatHaze, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -179,30 +147,21 @@ pub trait ICustomHeatHazeMethods: ICustomHeatHaze {
     #[doc = "`IsActive()` overload"]
     fn is_active(self) -> bool {
         unsafe {
-            let __receiver = <CustomHeatHaze as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CustomHeatHaze as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomHeatHaze_unity2_raw::is_active(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsTileCompatible()` overload"]
     fn is_tile_compatible(self) -> bool {
         unsafe {
-            let __receiver = <CustomHeatHaze as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomHeatHaze_unity2_raw::is_tile_compatible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CustomHeatHaze as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomHeatHaze_unity2_raw::is_tile_compatible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CustomHeatHaze as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CustomHeatHaze as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomHeatHaze_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -230,19 +189,17 @@ impl CustomHeatHaze {
 #[cfg(feature = "unity_engine-rendering-universal-custom-customheathaze")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomHeatHaze;
-    pub use super::ICustomHeatHaze;
-    pub use super::ICustomHeatHazeMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{CustomHeatHaze, ICustomHeatHaze, ICustomHeatHazeMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::rendering::volumecomponent::IVolumeComponent;
     #[cfg(feature = "unity_engine-rendering-volumecomponent")]
     pub use crate::unity_engine::rendering::volumecomponent::IVolumeComponentMethods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, rendering::volumecomponent::IVolumeComponent, scriptableobject::IScriptableObject},
+    };
 }

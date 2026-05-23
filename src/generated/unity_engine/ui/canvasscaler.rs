@@ -2,35 +2,34 @@
 
 #[cfg(feature = "unity_engine-ui-canvasscaler-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScaleMode.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct CanvasScaler_ScaleMode {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for CanvasScaler_ScaleMode {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
         const NAME: &'static str = "CanvasScaler.ScaleMode";
+        const NAMESPACE: &'static str = "UnityEngine.UI";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,10 +40,7 @@ mod __types {
 
     impl ::unity2::IlType for CanvasScaler_ScaleMode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -62,71 +58,53 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScreenMatchMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct CanvasScaler_ScreenMatchMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "CanvasScaler.ScreenMatchMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for CanvasScaler_ScreenMatchMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl CanvasScaler_ScreenMatchMode {
-        pub fn match_width_or_height() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn expand() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn shrink() -> Self {
-            Self { value: 2 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/canvasscaler/CanvasScaler.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "CanvasScaler")]
+    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+    pub struct CanvasScaler {
+        #[rename(name = "m_UiScaleMode")]
+        pub m_ui_scale_mode: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode,
+        #[rename(name = "m_ReferencePixelsPerUnit")]
+        pub m_reference_pixels_per_unit: f32,
+        #[rename(name = "m_ScaleFactor")]
+        pub m_scale_factor: f32,
+        #[rename(name = "m_ReferenceResolution")]
+        pub m_reference_resolution: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_ScreenMatchMode")]
+        pub m_screen_match_mode: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode,
+        #[rename(name = "m_MatchWidthOrHeight")]
+        pub m_match_width_or_height: f32,
+        #[static_field]
+        #[rename(name = "kLogBase")]
+        pub k_log_base: f32,
+        #[rename(name = "m_PhysicalUnit")]
+        pub m_physical_unit: crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit,
+        #[rename(name = "m_FallbackScreenDPI")]
+        pub m_fallback_screen_dpi: f32,
+        #[rename(name = "m_DefaultSpriteDPI")]
+        pub m_default_sprite_dpi: f32,
+        #[rename(name = "m_DynamicPixelsPerUnit")]
+        pub m_dynamic_pixels_per_unit: f32,
+        #[rename(name = "m_Canvas")]
+        pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[rename(name = "m_PrevScaleFactor")]
+        pub m_prev_scale_factor: f32,
+        #[rename(name = "m_PrevReferencePixelsPerUnit")]
+        pub m_prev_reference_pixels_per_unit: f32,
+        #[rename(name = "m_PresetInfoIsWorld")]
+        pub m_preset_info_is_world: bool,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_Unit.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct CanvasScaler_Unit {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for CanvasScaler_Unit {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
         const NAME: &'static str = "CanvasScaler.Unit";
+        const NAMESPACE: &'static str = "UnityEngine.UI";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -137,10 +115,7 @@ mod __types {
 
     impl ::unity2::IlType for CanvasScaler_Unit {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -166,42 +141,42 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/canvasscaler/CanvasScaler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "CanvasScaler")]
-    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
-    pub struct CanvasScaler {
-        #[rename(name = "m_UiScaleMode")]
-        pub m_ui_scale_mode: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode,
-        #[rename(name = "m_ReferencePixelsPerUnit")]
-        pub m_reference_pixels_per_unit: f32,
-        #[rename(name = "m_ScaleFactor")]
-        pub m_scale_factor: f32,
-        #[rename(name = "m_ReferenceResolution")]
-        pub m_reference_resolution: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_ScreenMatchMode")]
-        pub m_screen_match_mode:
-            crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode,
-        #[rename(name = "m_MatchWidthOrHeight")]
-        pub m_match_width_or_height: f32,
-        #[static_field]
-        #[rename(name = "kLogBase")]
-        pub k_log_base: f32,
-        #[rename(name = "m_PhysicalUnit")]
-        pub m_physical_unit: crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit,
-        #[rename(name = "m_FallbackScreenDPI")]
-        pub m_fallback_screen_dpi: f32,
-        #[rename(name = "m_DefaultSpriteDPI")]
-        pub m_default_sprite_dpi: f32,
-        #[rename(name = "m_DynamicPixelsPerUnit")]
-        pub m_dynamic_pixels_per_unit: f32,
-        #[rename(name = "m_Canvas")]
-        pub m_canvas: crate::unity_engine::canvas::Canvas,
-        #[rename(name = "m_PrevScaleFactor")]
-        pub m_prev_scale_factor: f32,
-        #[rename(name = "m_PrevReferencePixelsPerUnit")]
-        pub m_prev_reference_pixels_per_unit: f32,
-        #[rename(name = "m_PresetInfoIsWorld")]
-        pub m_preset_info_is_world: bool,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScreenMatchMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct CanvasScaler_ScreenMatchMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode {
+        const NAME: &'static str = "CanvasScaler.ScreenMatchMode";
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for CanvasScaler_ScreenMatchMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl CanvasScaler_ScreenMatchMode {
+        pub fn match_width_or_height() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn expand() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn shrink() -> Self {
+            Self { value: 2 }
+        }
     }
 }
 
@@ -217,9 +192,7 @@ mod __CanvasScaler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_ui_scale_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -232,44 +205,32 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_uiScaleMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_uiScaleMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_ui_scale_mode(
         this: CanvasScaler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode {
-        let inner: extern "C" fn(
-            CanvasScaler,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ui_scale_mode::get_offset() as isize),
-            );
+        let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode =
+            ::core::mem::transmute(__lookup_get_ui_scale_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ui_scale_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScaleMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_uiScaleMode",
@@ -281,18 +242,15 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_uiScaleMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_uiScaleMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_ui_scale_mode(
@@ -300,24 +258,15 @@ mod __CanvasScaler_unity2_raw {
         value: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CanvasScaler,
-            crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_ui_scale_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CanvasScaler, crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_ui_scale_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reference_pixels_per_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -330,41 +279,28 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_referencePixelsPerUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_referencePixelsPerUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reference_pixels_per_unit(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_reference_pixels_per_unit(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_reference_pixels_per_unit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_reference_pixels_per_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_reference_pixels_per_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_referencePixelsPerUnit",
@@ -376,40 +312,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_referencePixelsPerUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_referencePixelsPerUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_reference_pixels_per_unit(
-        this: CanvasScaler,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_reference_pixels_per_unit(this: CanvasScaler, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_reference_pixels_per_unit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_reference_pixels_per_unit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scale_factor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -422,41 +345,28 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_scaleFactor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_scaleFactor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_scale_factor(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_scale_factor(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_scale_factor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_scale_factor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scale_factor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_scaleFactor",
@@ -468,40 +378,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_scaleFactor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_scaleFactor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_scale_factor(
-        this: CanvasScaler,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_scale_factor(this: CanvasScaler, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_scale_factor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_scale_factor::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reference_resolution {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -514,43 +411,31 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_referenceResolution",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_referenceResolution",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_reference_resolution(
         this: CanvasScaler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            CanvasScaler,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reference_resolution::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_reference_resolution::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_reference_resolution {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_referenceResolution",
@@ -562,18 +447,15 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_referenceResolution",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_referenceResolution",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_reference_resolution(
@@ -581,24 +463,15 @@ mod __CanvasScaler_unity2_raw {
         value: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CanvasScaler,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_reference_resolution::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CanvasScaler, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_reference_resolution::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_screen_match_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -611,35 +484,32 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_screenMatchMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_screenMatchMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_screen_match_mode(
         this: CanvasScaler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode {
-        let inner : extern "C" fn (CanvasScaler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScreenMatchMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_screen_match_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode =
+            ::core::mem::transmute(__lookup_get_screen_match_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_screen_match_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_ScreenMatchMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_screenMatchMode",
@@ -651,18 +521,15 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_screenMatchMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_screenMatchMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_screen_match_mode(
@@ -670,24 +537,15 @@ mod __CanvasScaler_unity2_raw {
         value: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CanvasScaler,
-            crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_screen_match_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CanvasScaler, crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_screen_match_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_match_width_or_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -700,41 +558,28 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_matchWidthOrHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_matchWidthOrHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_match_width_or_height(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_match_width_or_height(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_match_width_or_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_match_width_or_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_match_width_or_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_matchWidthOrHeight",
@@ -746,40 +591,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_matchWidthOrHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_matchWidthOrHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_match_width_or_height(
-        this: CanvasScaler,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_match_width_or_height(this: CanvasScaler, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_match_width_or_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_match_width_or_height::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_physical_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -792,43 +624,32 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_physicalUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_physicalUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_physical_unit(
         this: CanvasScaler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit {
-        let inner: extern "C" fn(
-            CanvasScaler,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_physical_unit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit =
+            ::core::mem::transmute(__lookup_get_physical_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_physical_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: canvasscaler :: CanvasScaler_Unit as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_physicalUnit",
@@ -840,18 +661,15 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_physicalUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_physicalUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_physical_unit(
@@ -859,24 +677,15 @@ mod __CanvasScaler_unity2_raw {
         value: crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CanvasScaler,
-            crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_physical_unit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CanvasScaler, crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_physical_unit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fallback_screen_dpi {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -889,41 +698,28 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_fallbackScreenDPI",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_fallbackScreenDPI",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_fallback_screen_dpi(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_fallback_screen_dpi(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_fallback_screen_dpi::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_fallback_screen_dpi::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fallback_screen_dpi {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_fallbackScreenDPI",
@@ -935,40 +731,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_fallbackScreenDPI",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_fallbackScreenDPI",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_fallback_screen_dpi(
-        this: CanvasScaler,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_fallback_screen_dpi(this: CanvasScaler, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_fallback_screen_dpi::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_fallback_screen_dpi::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_sprite_dpi {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -981,41 +764,28 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_defaultSpriteDPI",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_defaultSpriteDPI",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_default_sprite_dpi(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_default_sprite_dpi(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_default_sprite_dpi::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_default_sprite_dpi::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_default_sprite_dpi {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_defaultSpriteDPI",
@@ -1027,40 +797,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_defaultSpriteDPI",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_defaultSpriteDPI",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_default_sprite_dpi(
-        this: CanvasScaler,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_default_sprite_dpi(this: CanvasScaler, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_default_sprite_dpi::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_default_sprite_dpi::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dynamic_pixels_per_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -1073,41 +830,28 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "get_dynamicPixelsPerUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "get_dynamicPixelsPerUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_dynamic_pixels_per_unit(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_dynamic_pixels_per_unit(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_dynamic_pixels_per_unit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_dynamic_pixels_per_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dynamic_pixels_per_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
                 "set_dynamicPixelsPerUnit",
@@ -1119,82 +863,53 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "set_dynamicPixelsPerUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "set_dynamicPixelsPerUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_dynamic_pixels_per_unit(
-        this: CanvasScaler,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_dynamic_pixels_per_unit(this: CanvasScaler, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_dynamic_pixels_per_unit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_dynamic_pixels_per_unit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CanvasScaler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CanvasScaler as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -1207,39 +922,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_canvas_pre_will_render_canvases {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -1252,39 +955,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "Canvas_preWillRenderCanvases",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "Canvas_preWillRenderCanvases",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn canvas_pre_will_render_canvases(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn canvas_pre_will_render_canvases(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_canvas_pre_will_render_canvases::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_canvas_pre_will_render_canvases::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -1297,81 +988,54 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CanvasScaler as ::unity2::ClassIdentity>::class(),
-                "Handle",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CanvasScaler as ::unity2::ClassIdentity>::class(), "Handle", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "Handle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "Handle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn handle(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_handle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_handle_world_canvas {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -1384,39 +1048,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "HandleWorldCanvas",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "HandleWorldCanvas",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn handle_world_canvas(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn handle_world_canvas(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_handle_world_canvas::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_handle_world_canvas::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_handle_constant_pixel_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -1429,39 +1081,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "HandleConstantPixelSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "HandleConstantPixelSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn handle_constant_pixel_size(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn handle_constant_pixel_size(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_handle_constant_pixel_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_handle_constant_pixel_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_handle_scale_with_screen_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -1474,39 +1114,27 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "HandleScaleWithScreenSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "HandleScaleWithScreenSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn handle_scale_with_screen_size(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn handle_scale_with_screen_size(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_handle_scale_with_screen_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_handle_scale_with_screen_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_handle_constant_physical_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CanvasScaler as ::unity2::ClassIdentity>::class(),
@@ -1519,30 +1147,20 @@ mod __CanvasScaler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CanvasScaler as ::unity2::ClassIdentity>::NAME,
-                    "HandleConstantPhysicalSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CanvasScaler as ::unity2::ClassIdentity>::NAME,
+                        "HandleConstantPhysicalSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn handle_constant_physical_size(
-        this: CanvasScaler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn handle_constant_physical_size(this: CanvasScaler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CanvasScaler, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_handle_constant_physical_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_handle_constant_physical_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1552,351 +1170,204 @@ pub trait ICanvasScalerMethods: ICanvasScaler {
     #[doc = "`get_uiScaleMode()` overload"]
     fn get_ui_scale_mode(self) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CanvasScaler_unity2_raw::get_ui_scale_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_uiScaleMode(crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode)` overload"]
-    fn set_ui_scale_mode(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode>,
-    ) -> () {
+    fn set_ui_scale_mode(self, value: impl ::core::convert::Into<crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_ui_scale_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_ui_scale_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_referencePixelsPerUnit()` overload"]
     fn get_reference_pixels_per_unit(self) -> f32 {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::get_reference_pixels_per_unit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::get_reference_pixels_per_unit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_referencePixelsPerUnit(f32)` overload"]
     fn set_reference_pixels_per_unit(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_reference_pixels_per_unit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_reference_pixels_per_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_scaleFactor()` overload"]
     fn get_scale_factor(self) -> f32 {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CanvasScaler_unity2_raw::get_scale_factor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_scaleFactor(f32)` overload"]
     fn set_scale_factor(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_scale_factor(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_scale_factor(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_referenceResolution()` overload"]
     fn get_reference_resolution(self) -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::get_reference_resolution(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::get_reference_resolution(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_referenceResolution(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_reference_resolution(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
+    fn set_reference_resolution(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_reference_resolution(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_reference_resolution(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_screenMatchMode()` overload"]
-    fn get_screen_match_mode(
-        self,
-    ) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode {
+    fn get_screen_match_mode(self) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::get_screen_match_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::get_screen_match_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_screenMatchMode(crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode)` overload"]
-    fn set_screen_match_mode(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode,
-        >,
-    ) -> () {
+    fn set_screen_match_mode(self, value: impl ::core::convert::Into<crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_screen_match_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_screen_match_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_matchWidthOrHeight()` overload"]
     fn get_match_width_or_height(self) -> f32 {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::get_match_width_or_height(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::get_match_width_or_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_matchWidthOrHeight(f32)` overload"]
     fn set_match_width_or_height(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_match_width_or_height(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_match_width_or_height(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_physicalUnit()` overload"]
     fn get_physical_unit(self) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CanvasScaler_unity2_raw::get_physical_unit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_physicalUnit(crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit)` overload"]
-    fn set_physical_unit(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit>,
-    ) -> () {
+    fn set_physical_unit(self, value: impl ::core::convert::Into<crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_physical_unit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_physical_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_fallbackScreenDPI()` overload"]
     fn get_fallback_screen_dpi(self) -> f32 {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::get_fallback_screen_dpi(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::get_fallback_screen_dpi(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fallbackScreenDPI(f32)` overload"]
     fn set_fallback_screen_dpi(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_fallback_screen_dpi(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_fallback_screen_dpi(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_defaultSpriteDPI()` overload"]
     fn get_default_sprite_dpi(self) -> f32 {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::get_default_sprite_dpi(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::get_default_sprite_dpi(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_defaultSpriteDPI(f32)` overload"]
     fn set_default_sprite_dpi(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_default_sprite_dpi(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_default_sprite_dpi(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_dynamicPixelsPerUnit()` overload"]
     fn get_dynamic_pixels_per_unit(self) -> f32 {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::get_dynamic_pixels_per_unit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::get_dynamic_pixels_per_unit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_dynamicPixelsPerUnit(f32)` overload"]
     fn set_dynamic_pixels_per_unit(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::set_dynamic_pixels_per_unit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::set_dynamic_pixels_per_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CanvasScaler_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CanvasScaler_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Canvas_preWillRenderCanvases()` overload"]
     fn canvas_pre_will_render_canvases(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::canvas_pre_will_render_canvases(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::canvas_pre_will_render_canvases(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CanvasScaler_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Handle()` overload"]
     fn handle(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CanvasScaler_unity2_raw::handle(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HandleWorldCanvas()` overload"]
     fn handle_world_canvas(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CanvasScaler_unity2_raw::handle_world_canvas(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HandleConstantPixelSize()` overload"]
     fn handle_constant_pixel_size(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::handle_constant_pixel_size(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::handle_constant_pixel_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HandleScaleWithScreenSize()` overload"]
     fn handle_scale_with_screen_size(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::handle_scale_with_screen_size(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::handle_scale_with_screen_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HandleConstantPhysicalSize()` overload"]
     fn handle_constant_physical_size(self) -> () {
         unsafe {
-            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CanvasScaler_unity2_raw::handle_constant_physical_size(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CanvasScaler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CanvasScaler_unity2_raw::handle_constant_physical_size(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1908,13 +1379,8 @@ impl<__T: ICanvasScaler> ICanvasScalerMethods for __T {}
 impl CanvasScaler {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CanvasScaler),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CanvasScaler), ::core::stringify!(new),));
         <Self as ICanvasScalerMethods>::ctor(this);
         this
     }
@@ -1923,34 +1389,28 @@ impl CanvasScaler {
 #[cfg(feature = "unity_engine-ui-canvasscaler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CanvasScaler;
-    pub use super::CanvasScaler_ScaleMode;
-    pub use super::CanvasScaler_ScreenMatchMode;
-    pub use super::CanvasScaler_Unit;
-    pub use super::ICanvasScaler;
-    pub use super::ICanvasScalerMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{CanvasScaler, CanvasScaler_ScaleMode, CanvasScaler_ScreenMatchMode, CanvasScaler_Unit, ICanvasScaler, ICanvasScalerMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{
+            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+        },
+    };
 }

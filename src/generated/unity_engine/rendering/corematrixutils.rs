@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-corematrixutils-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/corematrixutils/CoreMatrixUtils.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "CoreMatrixUtils")]
@@ -25,9 +25,7 @@ mod __CoreMatrixUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_matrix_times_translation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -43,18 +41,15 @@ mod __CoreMatrixUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
-                    "MatrixTimesTranslation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
+                        "MatrixTimesTranslation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn matrix_times_translation(
@@ -66,20 +61,14 @@ mod __CoreMatrixUtils_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_matrix_times_translation::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_matrix_times_translation::get_method_info().method_ptr);
         inner(in_out_matrix, translation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_translation_times_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -95,18 +84,15 @@ mod __CoreMatrixUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
-                    "TranslationTimesMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
+                        "TranslationTimesMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn translation_times_matrix(
@@ -118,20 +104,14 @@ mod __CoreMatrixUtils_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_translation_times_matrix::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_translation_times_matrix::get_method_info().method_ptr);
         inner(in_out_matrix, translation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply_perspective_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -147,18 +127,15 @@ mod __CoreMatrixUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
-                    "MultiplyPerspectiveMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
+                        "MultiplyPerspectiveMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply_perspective_matrix(
@@ -170,20 +147,14 @@ mod __CoreMatrixUtils_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply_perspective_matrix::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_multiply_perspective_matrix::get_method_info().method_ptr);
         inner(perspective, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply_ortho_matrix_centered {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -199,18 +170,15 @@ mod __CoreMatrixUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
-                    "MultiplyOrthoMatrixCentered",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
+                        "MultiplyOrthoMatrixCentered",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply_ortho_matrix_centered(
@@ -222,20 +190,15 @@ mod __CoreMatrixUtils_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply_ortho_matrix_centered::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_multiply_ortho_matrix_centered::get_method_info().method_ptr);
         inner(ortho, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply_generic_ortho_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -251,18 +214,15 @@ mod __CoreMatrixUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
-                    "MultiplyGenericOrthoMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
+                        "MultiplyGenericOrthoMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply_generic_ortho_matrix(
@@ -274,20 +234,14 @@ mod __CoreMatrixUtils_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply_generic_ortho_matrix::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_multiply_generic_ortho_matrix::get_method_info().method_ptr);
         inner(ortho, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply_ortho_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -304,18 +258,15 @@ mod __CoreMatrixUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
-                    "MultiplyOrthoMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
+                        "MultiplyOrthoMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply_ortho_matrix(
@@ -329,20 +280,14 @@ mod __CoreMatrixUtils_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply_ortho_matrix::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_multiply_ortho_matrix::get_method_info().method_ptr);
         inner(ortho, rhs, centered, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply_projection_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -359,18 +304,15 @@ mod __CoreMatrixUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
-                    "MultiplyProjectionMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CoreMatrixUtils as ::unity2::ClassIdentity>::NAME,
+                        "MultiplyProjectionMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply_projection_matrix(
@@ -384,11 +326,7 @@ mod __CoreMatrixUtils_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply_projection_matrix::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_multiply_projection_matrix::get_method_info().method_ptr);
         inner(proj_matrix, rhs, ortho_centered, __unity2_method_info)
     }
 }
@@ -400,8 +338,7 @@ impl CoreMatrixUtils {
         translation: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __CoreMatrixUtils_unity2_raw::matrix_times_translation(
                 __out_0.as_mut_ptr(),
                 ::core::convert::Into::into(translation),
@@ -410,13 +347,13 @@ impl CoreMatrixUtils {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`TranslationTimesMatrix(*mutcrate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector3::Vector3)` overload"]
     pub fn translation_times_matrix(
         translation: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __CoreMatrixUtils_unity2_raw::translation_times_matrix(
                 __out_0.as_mut_ptr(),
                 ::core::convert::Into::into(translation),
@@ -425,6 +362,7 @@ impl CoreMatrixUtils {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`MultiplyPerspectiveMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn multiply_perspective_matrix(
         perspective: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -438,6 +376,7 @@ impl CoreMatrixUtils {
             )
         }
     }
+
     #[doc = "`MultiplyOrthoMatrixCentered(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn multiply_ortho_matrix_centered(
         ortho: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -451,6 +390,7 @@ impl CoreMatrixUtils {
             )
         }
     }
+
     #[doc = "`MultiplyGenericOrthoMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn multiply_generic_ortho_matrix(
         ortho: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -464,6 +404,7 @@ impl CoreMatrixUtils {
             )
         }
     }
+
     #[doc = "`MultiplyOrthoMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4, bool)` overload"]
     pub fn multiply_ortho_matrix(
         ortho: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -479,6 +420,7 @@ impl CoreMatrixUtils {
             )
         }
     }
+
     #[doc = "`MultiplyProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4, bool)` overload"]
     pub fn multiply_projection_matrix(
         proj_matrix: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -499,8 +441,7 @@ impl CoreMatrixUtils {
 #[cfg(feature = "unity_engine-rendering-corematrixutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CoreMatrixUtils;
-    pub use super::ICoreMatrixUtils;
+    pub use super::{CoreMatrixUtils, ICoreMatrixUtils};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

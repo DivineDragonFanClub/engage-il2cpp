@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-collections-generic-treeset_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::collections::generic::sortedset_1::{ISortedSet_1, SortedSet_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        collections::generic::sortedset_1::{ISortedSet_1, SortedSet_1},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/treeset_1/TreeSet_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "TreeSet`1")]
@@ -27,12 +29,7 @@ impl<T0: ::unity2::ClassIdentity> TreeSet_1<T0> {
 
     #[doc = "`.ctor(crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(
-        self,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
-    ) -> ();
+    pub fn ctor_2(self, comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>) -> ();
 
     #[doc = "`AddIfNotPresent(T0)` overload"]
     #[method(name = "AddIfNotPresent", args = 1)]
@@ -43,30 +40,16 @@ impl<T0: ::unity2::ClassIdentity> TreeSet_1<T0> {
 impl<T0: ::unity2::ClassIdentity> TreeSet_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TreeSet_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TreeSet_1), ::core::stringify!(new),));
         <Self as ITreeSet_1Methods<T0>>::ctor(this);
         this
     }
 
     #[doc = "`.ctor(crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` — overload selector"]
-    pub fn new_2(
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TreeSet_1),
-                ::core::stringify!(new_2),
-            )
-        });
+    pub fn new_2(comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TreeSet_1), ::core::stringify!(new_2),));
         <Self as ITreeSet_1Methods<T0>>::ctor_2(this, comparer);
         this
     }
@@ -75,13 +58,10 @@ impl<T0: ::unity2::ClassIdentity> TreeSet_1<T0> {
 #[cfg(feature = "system-collections-generic-treeset_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITreeSet_1;
-    pub use super::ITreeSet_1Methods;
-    pub use super::TreeSet_1;
-    pub use crate::system::collections::generic::sortedset_1::ISortedSet_1;
+    pub use super::{ITreeSet_1, ITreeSet_1Methods, TreeSet_1};
     #[cfg(feature = "system-collections-generic-sortedset_1")]
     pub use crate::system::collections::generic::sortedset_1::ISortedSet_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{collections::generic::sortedset_1::ISortedSet_1, object::IObject};
 }

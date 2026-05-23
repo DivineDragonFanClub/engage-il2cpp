@@ -2,13 +2,17 @@
 
 #[cfg(feature = "root-cinemachineshot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::playables::playableasset::{IPlayableAsset, PlayableAsset};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            playables::playableasset::{IPlayableAsset, PlayableAsset},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachineshot/CinemachineShot.md"))]
     #[::unity2::class(namespace = "", name = "CinemachineShot")]
@@ -31,10 +35,11 @@ mod __CinemachineShot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_playable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineShot as ::unity2::ClassIdentity>::class(),
                 "CreatePlayable",
@@ -46,18 +51,15 @@ mod __CinemachineShot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineShot as ::unity2::ClassIdentity>::NAME,
-                    "CreatePlayable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineShot as ::unity2::ClassIdentity>::NAME,
+                        "CreatePlayable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_playable(
@@ -71,21 +73,18 @@ mod __CinemachineShot_unity2_raw {
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_playable::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_playable::get_method_info().method_ptr);
         inner(this, graph, owner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_gather_properties {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playabledirector :: PlayableDirector as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playabledirector::PlayableDirector as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::timeline::ipropertycollector::IPropertyCollector as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineShot as ::unity2::ClassIdentity>::class(),
                 "GatherProperties",
@@ -97,18 +96,15 @@ mod __CinemachineShot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineShot as ::unity2::ClassIdentity>::NAME,
-                    "GatherProperties",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineShot as ::unity2::ClassIdentity>::NAME,
+                        "GatherProperties",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn gather_properties(
@@ -122,20 +118,14 @@ mod __CinemachineShot_unity2_raw {
             crate::unity_engine::playables::playabledirector::PlayableDirector,
             crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_gather_properties::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_gather_properties::get_method_info().method_ptr);
         inner(this, director, driver, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineShot as ::unity2::ClassIdentity>::class(),
@@ -148,30 +138,20 @@ mod __CinemachineShot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineShot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineShot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CinemachineShot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CinemachineShot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CinemachineShot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -185,9 +165,7 @@ pub trait ICinemachineShotMethods: ICinemachineShot {
         owner: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <CinemachineShot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CinemachineShot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CinemachineShot_unity2_raw::create_playable(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -199,17 +177,11 @@ pub trait ICinemachineShotMethods: ICinemachineShot {
     #[doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]
     fn gather_properties(
         self,
-        director: impl ::core::convert::Into<
-            crate::unity_engine::playables::playabledirector::PlayableDirector,
-        >,
-        driver: impl ::core::convert::Into<
-            crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
-        >,
+        director: impl ::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector>,
+        driver: impl ::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>,
     ) -> () {
         unsafe {
-            let __receiver = <CinemachineShot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CinemachineShot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CinemachineShot_unity2_raw::gather_properties(
                 __receiver,
                 ::core::convert::Into::into(director),
@@ -221,9 +193,7 @@ pub trait ICinemachineShotMethods: ICinemachineShot {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CinemachineShot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CinemachineShot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CinemachineShot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -251,19 +221,17 @@ impl CinemachineShot {
 #[cfg(feature = "root-cinemachineshot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CinemachineShot;
-    pub use super::ICinemachineShot;
-    pub use super::ICinemachineShotMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{CinemachineShot, ICinemachineShot, ICinemachineShotMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
     #[cfg(feature = "unity_engine-playables-playableasset")]
     pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, playables::playableasset::IPlayableAsset, scriptableobject::IScriptableObject},
+    };
 }

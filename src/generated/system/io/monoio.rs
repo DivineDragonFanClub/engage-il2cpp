@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-io-monoio-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/monoio/MonoIO.md"))]
     #[::unity2::class(namespace = "System.IO", name = "MonoIO")]
@@ -32,9 +32,7 @@ mod __MonoIO_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_directory {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
@@ -50,18 +48,15 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "CreateDirectory",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "CreateDirectory",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_directory(
@@ -69,24 +64,15 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_directory::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_create_directory::get_method_info().method_ptr);
         inner(path, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_directory {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
@@ -102,18 +88,15 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "RemoveDirectory",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "RemoveDirectory",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_directory(
@@ -121,24 +104,15 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_directory::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remove_directory::get_method_info().method_ptr);
         inner(path, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current_directory {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -152,69 +126,49 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "GetCurrentDirectory",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "GetCurrentDirectory",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_current_directory(
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current_directory::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_current_directory::get_method_info().method_ptr);
         inner(error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "MoveFile",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "MoveFile", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "MoveFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "MoveFile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn move_file(
@@ -228,47 +182,32 @@ mod __MonoIO_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_file::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_move_file::get_method_info().method_ptr);
         inner(path, dest, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "DeleteFile",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "DeleteFile", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "DeleteFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "DeleteFile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn delete_file(
@@ -276,24 +215,15 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_file::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_delete_file::get_method_info().method_ptr);
         inner(path, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_file_attributes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
@@ -309,18 +239,15 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "GetFileAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "GetFileAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_file_attributes(
@@ -332,47 +259,32 @@ mod __MonoIO_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> crate::system::io::fileattributes::FileAttributes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_file_attributes::get_offset() as isize),
-        );
+        ) -> crate::system::io::fileattributes::FileAttributes = ::core::mem::transmute(__lookup_get_file_attributes::get_method_info().method_ptr);
         inner(path, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_file_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "GetFileType",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "GetFileType", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "GetFileType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "GetFileType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_file_type(
@@ -384,49 +296,34 @@ mod __MonoIO_unity2_raw {
             ::unity2::IntPtr,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> crate::system::io::monofiletype::MonoFileType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_file_type::get_offset() as isize),
-        );
+        ) -> crate::system::io::monofiletype::MonoFileType = ::core::mem::transmute(__lookup_get_file_type::get_method_info().method_ptr);
         inner(handle, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_first_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "FindFirstFile",
-                4,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "FindFirstFile", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "FindFirstFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "FindFirstFile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_first_file(
@@ -442,55 +339,34 @@ mod __MonoIO_unity2_raw {
             *mut i32,
             *mut i32,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_first_file::get_offset() as isize),
-        );
-        inner(
-            path_with_pattern,
-            file_name,
-            file_attr,
-            error,
-            __unity2_method_info,
-        )
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_find_first_file::get_method_info().method_ptr);
+        inner(path_with_pattern, file_name, file_attr, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_next_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "FindNextFile",
-                4,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "FindNextFile", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "FindNextFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "FindNextFile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_next_file(
@@ -500,99 +376,53 @@ mod __MonoIO_unity2_raw {
         error: *mut i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            *mut ::unity2::Il2CppString,
-            *mut i32,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_next_file::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, *mut ::unity2::Il2CppString, *mut i32, *mut i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_find_next_file::get_method_info().method_ptr);
         inner(hnd, file_name, file_attr, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_close_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "FindCloseFile",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "FindCloseFile", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "FindCloseFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "FindCloseFile",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn find_close_file(
-        hnd: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn find_close_file(hnd: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_find_close_file::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_find_close_file::get_method_info().method_ptr);
         inner(hnd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exists {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "Exists",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "Exists", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "Exists",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MonoIO as ::unity2::ClassIdentity>::NAME, "Exists", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn exists(
@@ -600,51 +430,33 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exists::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_exists::get_method_info().method_ptr);
         inner(path, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exists_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "ExistsFile",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "ExistsFile", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "ExistsFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "ExistsFile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn exists_file(
@@ -652,24 +464,15 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exists_file::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_exists_file::get_method_info().method_ptr);
         inner(path, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exists_directory {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
@@ -685,18 +488,15 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "ExistsDirectory",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "ExistsDirectory",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn exists_directory(
@@ -704,51 +504,33 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exists_directory::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_exists_directory::get_method_info().method_ptr);
         inner(path, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exists_symlink {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "ExistsSymlink",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "ExistsSymlink", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "ExistsSymlink",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "ExistsSymlink",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn exists_symlink(
@@ -756,52 +538,34 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exists_symlink::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_exists_symlink::get_method_info().method_ptr);
         inner(path, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_file_stat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoiostat::MonoIOStat as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "GetFileStat",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "GetFileStat", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "GetFileStat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "GetFileStat",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_file_stat(
@@ -815,20 +579,14 @@ mod __MonoIO_unity2_raw {
             *mut crate::system::io::monoiostat::MonoIOStat,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_file_stat::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_get_file_stat::get_method_info().method_ptr);
         inner(path, stat, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::io::filemode::FileMode as ::unity2::IlType>::il_type(),
@@ -837,29 +595,13 @@ mod __MonoIO_unity2_raw {
                 <crate::system::io::fileoptions::FileOptions as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "Open",
-                6,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "Open", 6, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "Open",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MonoIO as ::unity2::ClassIdentity>::NAME, "Open", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn open(
@@ -879,55 +621,25 @@ mod __MonoIO_unity2_raw {
             crate::system::io::fileoptions::FileOptions,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_open::get_offset() as isize),
-        );
-        inner(
-            filename,
-            mode,
-            access,
-            share,
-            options,
-            error,
-            __unity2_method_info,
-        )
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
+        inner(filename, mode, access, share, options, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "Close",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "Close", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MonoIO as ::unity2::ClassIdentity>::NAME, "Close", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn close(
@@ -935,24 +647,15 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_close::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
         inner(handle, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
@@ -960,29 +663,13 @@ mod __MonoIO_unity2_raw {
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "Read",
-                5,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "Read", 5, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "Read",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MonoIO as ::unity2::ClassIdentity>::NAME, "Read", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn read(
@@ -1000,27 +687,14 @@ mod __MonoIO_unity2_raw {
             i32,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_read::get_offset() as isize),
-        );
-        inner(
-            handle,
-            dest,
-            dest_offset,
-            count,
-            error,
-            __unity2_method_info,
-        )
+        ) -> i32 = ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
+        inner(handle, dest, dest_offset, count, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
@@ -1028,29 +702,13 @@ mod __MonoIO_unity2_raw {
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "Write",
-                5,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "Write", 5, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "Write",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MonoIO as ::unity2::ClassIdentity>::NAME, "Write", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write(
@@ -1068,49 +726,27 @@ mod __MonoIO_unity2_raw {
             i32,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
         inner(handle, src, src_offset, count, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_seek {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
                 <crate::system::io::seekorigin::SeekOrigin as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "Seek",
-                4,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "Seek", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "Seek",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MonoIO as ::unity2::ClassIdentity>::NAME, "Seek", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn seek(
@@ -1126,47 +762,32 @@ mod __MonoIO_unity2_raw {
             crate::system::io::seekorigin::SeekOrigin,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> i64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_seek::get_offset() as isize),
-        );
+        ) -> i64 = ::core::mem::transmute(__lookup_seek::get_method_info().method_ptr);
         inner(handle, offset, origin, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "GetLength",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "GetLength", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "GetLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "GetLength",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_length(
@@ -1174,52 +795,34 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i64 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> i64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_length::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> i64 =
+            ::core::mem::transmute(__lookup_get_length::get_method_info().method_ptr);
         inner(handle, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "SetLength",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "SetLength", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "SetLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "SetLength",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_length(
@@ -1228,25 +831,15 @@ mod __MonoIO_unity2_raw {
         error: *mut crate::system::io::monoioerror::MonoIOError,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i64,
-            *mut crate::system::io::monoioerror::MonoIOError,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_length::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, i64, *mut crate::system::io::monoioerror::MonoIOError, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set_length::get_method_info().method_ptr);
         inner(handle, length, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_console_output {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1259,38 +852,27 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "get_ConsoleOutput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "get_ConsoleOutput",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_console_output(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn get_console_output(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_console_output::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_console_output::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_console_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1303,38 +885,27 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "get_ConsoleInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "get_ConsoleInput",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_console_input(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn get_console_input(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_console_input::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_console_input::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_console_error {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1347,66 +918,46 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "get_ConsoleError",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "get_ConsoleError",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_console_error(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn get_console_error(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_console_error::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_console_error::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_pipe {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "CreatePipe",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "CreatePipe", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "CreatePipe",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "CreatePipe",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_pipe(
@@ -1420,20 +971,14 @@ mod __MonoIO_unity2_raw {
             *mut ::unity2::IntPtr,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_pipe::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_create_pipe::get_method_info().method_ptr);
         inner(read_handle, write_handle, error, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_duplicate_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -1455,18 +1000,15 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "DuplicateHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "DuplicateHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn duplicate_handle(
@@ -1490,11 +1032,7 @@ mod __MonoIO_unity2_raw {
             i32,
             *mut crate::system::io::monoioerror::MonoIOError,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_duplicate_handle::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_duplicate_handle::get_method_info().method_ptr);
         inner(
             source_process_handle,
             source_handle,
@@ -1511,9 +1049,7 @@ mod __MonoIO_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_volume_separator_char {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1526,35 +1062,27 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "get_VolumeSeparatorChar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "get_VolumeSeparatorChar",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_volume_separator_char(__unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_volume_separator_char::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_volume_separator_char::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_directory_separator_char {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1567,37 +1095,27 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "get_DirectorySeparatorChar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "get_DirectorySeparatorChar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_directory_separator_char(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_directory_separator_char::get_offset() as isize),
-        );
+    pub unsafe fn get_directory_separator_char(__unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_directory_separator_char::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alt_directory_separator_char {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1610,37 +1128,27 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "get_AltDirectorySeparatorChar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "get_AltDirectorySeparatorChar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alt_directory_separator_char(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_alt_directory_separator_char::get_offset() as isize),
-        );
+    pub unsafe fn get_alt_directory_separator_char(__unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_alt_directory_separator_char::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_path_separator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1653,103 +1161,70 @@ mod __MonoIO_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "get_PathSeparator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "get_PathSeparator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_path_separator(__unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_path_separator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(__lookup_get_path_separator::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump_handles_fn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "DumpHandles",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "DumpHandles", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "DumpHandles",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "DumpHandles",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dump_handles_fn(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dump_handles_fn::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dump_handles_fn::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remap_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                "RemapPath",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), "RemapPath", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    "RemapPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoIO as ::unity2::ClassIdentity>::NAME,
+                        "RemapPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remap_path(
@@ -1757,56 +1232,27 @@ mod __MonoIO_unity2_raw {
         new_path: *mut ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remap_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remap_path::get_method_info().method_ptr);
         inner(path, new_path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoIO as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoIO as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoIO as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <MonoIO as ::unity2::ClassIdentity>::NAME, ".cctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1814,64 +1260,41 @@ mod __MonoIO_unity2_raw {
 #[cfg(feature = "system-io-monoio")]
 impl MonoIO {
     #[doc = "`CreateDirectory(::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn create_directory(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
+    pub fn create_directory(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::create_directory(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret =
+                { __MonoIO_unity2_raw::create_directory(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`RemoveDirectory(::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn remove_directory(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
+    pub fn remove_directory(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::remove_directory(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret =
+                { __MonoIO_unity2_raw::remove_directory(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`GetCurrentDirectory(*mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn get_current_directory() -> (
-        ::unity2::Il2CppString,
-        crate::system::io::monoioerror::MonoIOError,
-    ) {
+    pub fn get_current_directory() -> (::unity2::Il2CppString, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::get_current_directory(
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret = { __MonoIO_unity2_raw::get_current_directory(__out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`MoveFile(::unity2::Il2CppString, ::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn move_file(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
         dest: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::move_file(
                     ::core::convert::Into::into(path),
@@ -1883,23 +1306,16 @@ impl MonoIO {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`DeleteFile(::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn delete_file(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
+    pub fn delete_file(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::delete_file(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret = { __MonoIO_unity2_raw::delete_file(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`GetFileAttributes(::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn get_file_attributes(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1908,38 +1324,25 @@ impl MonoIO {
         crate::system::io::monoioerror::MonoIOError,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::get_file_attributes(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret =
+                { __MonoIO_unity2_raw::get_file_attributes(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`GetFileType(::unity2::IntPtr, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn get_file_type(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> (
-        crate::system::io::monofiletype::MonoFileType,
-        crate::system::io::monoioerror::MonoIOError,
-    ) {
+    ) -> (crate::system::io::monofiletype::MonoFileType, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::get_file_type(
-                    ::core::convert::Into::into(handle),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret =
+                { __MonoIO_unity2_raw::get_file_type(::core::convert::Into::into(handle), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`FindFirstFile(::unity2::Il2CppString, *mut::unity2::Il2CppString, *muti32, *muti32)` overload"]
     pub fn find_first_file(
         path_with_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1957,18 +1360,12 @@ impl MonoIO {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`FindNextFile(::unity2::IntPtr, *mut::unity2::Il2CppString, *muti32, *muti32)` overload"]
-    pub fn find_next_file(
-        hnd: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> (bool, ::unity2::Il2CppString, i32, i32) {
+    pub fn find_next_file(hnd: impl ::core::convert::Into<::unity2::IntPtr>) -> (bool, ::unity2::Il2CppString, i32, i32) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
@@ -1982,91 +1379,53 @@ impl MonoIO {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`FindCloseFile(::unity2::IntPtr)` overload"]
     pub fn find_close_file(hnd: impl ::core::convert::Into<::unity2::IntPtr>) -> bool {
-        unsafe {
-            __MonoIO_unity2_raw::find_close_file(
-                ::core::convert::Into::into(hnd),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MonoIO_unity2_raw::find_close_file(::core::convert::Into::into(hnd), ::core::option::Option::None) }
     }
+
     #[doc = "`Exists(::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn exists(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
+    pub fn exists(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::exists(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret = { __MonoIO_unity2_raw::exists(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`ExistsFile(::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn exists_file(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
+    pub fn exists_file(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::exists_file(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret = { __MonoIO_unity2_raw::exists_file(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`ExistsDirectory(::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn exists_directory(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
+    pub fn exists_directory(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::exists_directory(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret =
+                { __MonoIO_unity2_raw::exists_directory(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`ExistsSymlink(::unity2::Il2CppString, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn exists_symlink(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
+    pub fn exists_symlink(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::exists_symlink(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret =
+                { __MonoIO_unity2_raw::exists_symlink(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`GetFileStat(::unity2::Il2CppString, *mutcrate::system::io::monoiostat::MonoIOStat, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn get_file_stat(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -2076,10 +1435,8 @@ impl MonoIO {
         crate::system::io::monoioerror::MonoIOError,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoiostat::MonoIOStat>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoiostat::MonoIOStat>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::get_file_stat(
                     ::core::convert::Into::into(path),
@@ -2091,6 +1448,7 @@ impl MonoIO {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`Open(::unity2::Il2CppString, crate::system::io::filemode::FileMode, crate::system::io::fileaccess::FileAccess, crate::system::io::fileshare::FileShare, crate::system::io::fileoptions::FileOptions, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn open(
         filename: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -2098,13 +1456,9 @@ impl MonoIO {
         access: impl ::core::convert::Into<crate::system::io::fileaccess::FileAccess>,
         share: impl ::core::convert::Into<crate::system::io::fileshare::FileShare>,
         options: impl ::core::convert::Into<crate::system::io::fileoptions::FileOptions>,
-    ) -> (
-        ::unity2::IntPtr,
-        crate::system::io::monoioerror::MonoIOError,
-    ) {
+    ) -> (::unity2::IntPtr, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::open(
                     ::core::convert::Into::into(filename),
@@ -2119,23 +1473,16 @@ impl MonoIO {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Close(::unity2::IntPtr, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn close(
-        handle: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
+    pub fn close(handle: impl ::core::convert::Into<::unity2::IntPtr>) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::close(
-                    ::core::convert::Into::into(handle),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret = { __MonoIO_unity2_raw::close(::core::convert::Into::into(handle), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Read(::unity2::IntPtr, ::unity2::Array<u8>, i32, i32, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn read(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -2144,8 +1491,7 @@ impl MonoIO {
         count: impl ::core::convert::Into<i32>,
     ) -> (i32, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::read(
                     ::core::convert::Into::into(handle),
@@ -2159,6 +1505,7 @@ impl MonoIO {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Write(::unity2::IntPtr, ::unity2::Array<u8>, i32, i32, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn write(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -2167,8 +1514,7 @@ impl MonoIO {
         count: impl ::core::convert::Into<i32>,
     ) -> (i32, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::write(
                     ::core::convert::Into::into(handle),
@@ -2182,6 +1528,7 @@ impl MonoIO {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`Seek(::unity2::IntPtr, i64, crate::system::io::seekorigin::SeekOrigin, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn seek(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -2189,8 +1536,7 @@ impl MonoIO {
         origin: impl ::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>,
     ) -> (i64, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::seek(
                     ::core::convert::Into::into(handle),
@@ -2203,31 +1549,23 @@ impl MonoIO {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`GetLength(::unity2::IntPtr, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn get_length(
-        handle: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> (i64, crate::system::io::monoioerror::MonoIOError) {
+    pub fn get_length(handle: impl ::core::convert::Into<::unity2::IntPtr>) -> (i64, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::get_length(
-                    ::core::convert::Into::into(handle),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let __ret = { __MonoIO_unity2_raw::get_length(::core::convert::Into::into(handle), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`SetLength(::unity2::IntPtr, i64, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn set_length(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
         length: impl ::core::convert::Into<i64>,
     ) -> (bool, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::set_length(
                     ::core::convert::Into::into(handle),
@@ -2239,30 +1577,28 @@ impl MonoIO {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`get_ConsoleOutput()` overload"]
     pub fn get_console_output() -> ::unity2::IntPtr {
         unsafe { __MonoIO_unity2_raw::get_console_output(::core::option::Option::None) }
     }
+
     #[doc = "`get_ConsoleInput()` overload"]
     pub fn get_console_input() -> ::unity2::IntPtr {
         unsafe { __MonoIO_unity2_raw::get_console_input(::core::option::Option::None) }
     }
+
     #[doc = "`get_ConsoleError()` overload"]
     pub fn get_console_error() -> ::unity2::IntPtr {
         unsafe { __MonoIO_unity2_raw::get_console_error(::core::option::Option::None) }
     }
+
     #[doc = "`CreatePipe(*mut::unity2::IntPtr, *mut::unity2::IntPtr, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
-    pub fn create_pipe() -> (
-        bool,
-        ::unity2::IntPtr,
-        ::unity2::IntPtr,
-        crate::system::io::monoioerror::MonoIOError,
-    ) {
+    pub fn create_pipe() -> (bool, ::unity2::IntPtr, ::unity2::IntPtr, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::IntPtr>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::IntPtr>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::create_pipe(
                     __out_0.as_mut_ptr(),
@@ -2271,14 +1607,10 @@ impl MonoIO {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`DuplicateHandle(::unity2::IntPtr, ::unity2::IntPtr, ::unity2::IntPtr, *mut::unity2::IntPtr, i32, i32, i32, *mutcrate::system::io::monoioerror::MonoIOError)` overload"]
     pub fn duplicate_handle(
         source_process_handle: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -2287,15 +1619,10 @@ impl MonoIO {
         access: impl ::core::convert::Into<i32>,
         inherit: impl ::core::convert::Into<i32>,
         options: impl ::core::convert::Into<i32>,
-    ) -> (
-        bool,
-        ::unity2::IntPtr,
-        crate::system::io::monoioerror::MonoIOError,
-    ) {
+    ) -> (bool, ::unity2::IntPtr, crate::system::io::monoioerror::MonoIOError) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::IntPtr>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::system::io::monoioerror::MonoIOError>::uninit();
             let __ret = {
                 __MonoIO_unity2_raw::duplicate_handle(
                     ::core::convert::Into::into(source_process_handle),
@@ -2312,44 +1639,41 @@ impl MonoIO {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`get_VolumeSeparatorChar()` overload"]
     pub fn get_volume_separator_char() -> u16 {
         unsafe { __MonoIO_unity2_raw::get_volume_separator_char(::core::option::Option::None) }
     }
+
     #[doc = "`get_DirectorySeparatorChar()` overload"]
     pub fn get_directory_separator_char() -> u16 {
         unsafe { __MonoIO_unity2_raw::get_directory_separator_char(::core::option::Option::None) }
     }
+
     #[doc = "`get_AltDirectorySeparatorChar()` overload"]
     pub fn get_alt_directory_separator_char() -> u16 {
-        unsafe {
-            __MonoIO_unity2_raw::get_alt_directory_separator_char(::core::option::Option::None)
-        }
+        unsafe { __MonoIO_unity2_raw::get_alt_directory_separator_char(::core::option::Option::None) }
     }
+
     #[doc = "`get_PathSeparator()` overload"]
     pub fn get_path_separator() -> u16 {
         unsafe { __MonoIO_unity2_raw::get_path_separator(::core::option::Option::None) }
     }
+
     #[doc = "`DumpHandles()` overload"]
     pub fn dump_handles_fn() -> () {
         unsafe { __MonoIO_unity2_raw::dump_handles_fn(::core::option::Option::None) }
     }
+
     #[doc = "`RemapPath(::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
-    pub fn remap_path(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, ::unity2::Il2CppString) {
+    pub fn remap_path(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, ::unity2::Il2CppString) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let __ret = {
-                __MonoIO_unity2_raw::remap_path(
-                    ::core::convert::Into::into(path),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __ret = { __MonoIO_unity2_raw::remap_path(::core::convert::Into::into(path), __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __MonoIO_unity2_raw::cctor(::core::option::Option::None) }
@@ -2359,8 +1683,7 @@ impl MonoIO {
 #[cfg(feature = "system-io-monoio")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMonoIO;
-    pub use super::MonoIO;
+    pub use super::{IMonoIO, MonoIO};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

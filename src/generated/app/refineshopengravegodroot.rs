@@ -2,37 +2,53 @@
 
 #[cfg(feature = "app-refineshopengravegodroot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodRoot.ConfirmDialog.YesEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodRoot.ConfirmToReplaceDialog.YesMenuItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem {
+        #[rename(name = "m_YesEventHandler")]
+        pub m_yes_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ReturnEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopEngraveGodRoot.ReturnEventHandler"
-    )]
+    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodRoot.ReturnEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct RefineShopEngraveGodRoot_ReturnEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopEngraveGodRoot.ConfirmDialog.YesMenuItem"
-    )]
+    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodRoot.ConfirmDialog.YesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem {
-# [rename (name = "m_YesEventHandler")] pub m_yes_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler ,
-}
+        #[rename(name = "m_YesEventHandler")]
+        pub m_yes_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot.md"))]
     #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodRoot")]
@@ -48,11 +64,9 @@ mod __types {
         #[rename(name = "m_ItemDetailWindowTarget")]
         pub m_item_detail_window_target: crate::app::refineitemdetailwindow::RefineItemDetailWindow,
         #[rename(name = "m_RefineShopEngraveGodMenu")]
-        pub m_refine_shop_engrave_god_menu:
-            crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu,
+        pub m_refine_shop_engrave_god_menu: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu,
         #[rename(name = "m_ReturnEventHandler")]
-        pub m_return_event_handler:
-            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler,
+        pub m_return_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler,
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
         #[rename(name = "m_OwnerItemIndex")]
@@ -61,48 +75,293 @@ mod __types {
         pub m_god_data: crate::app::goddata::GodData,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopEngraveGodRoot.ConfirmToReplaceDialog.YesEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopEngraveGodRoot.ConfirmDialog.YesEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmToReplaceDialog.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopEngraveGodRoot.ConfirmToReplaceDialog"
-    )]
+    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodRoot.ConfirmToReplaceDialog")]
     #[parent(crate::system::object::Object)]
     pub struct RefineShopEngraveGodRoot_ConfirmToReplaceDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodRoot.ConfirmToReplaceDialog.YesEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmDialog.md"))]
     #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodRoot.ConfirmDialog")]
     #[parent(crate::system::object::Object)]
     pub struct RefineShopEngraveGodRoot_ConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodroot/RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopEngraveGodRoot.ConfirmToReplaceDialog.YesMenuItem"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem {
-# [rename (name = "m_YesEventHandler")] pub m_yes_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler ,
-}
 }
 
 #[cfg(feature = "app-refineshopengravegodroot-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+pub trait IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods: IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+impl<__T: IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler> IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+impl RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem,
+        yes_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem,
+            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, yes_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+pub trait IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods: IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler)` overload"]
+    fn ctor(
+        self,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+impl<__T: IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem> IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods for __T {}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+impl RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler)` — overload selector"]
+    pub fn new(yes_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods>::ctor(this, yes_event_handler);
+        this
+    }
+}
 
 #[cfg(feature = "app-refineshopengravegodroot")]
 #[doc(hidden)]
@@ -113,9 +372,7 @@ mod __RefineShopEngraveGodRoot_ReturnEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -131,18 +388,15 @@ mod __RefineShopEngraveGodRoot_ReturnEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -156,20 +410,14 @@ mod __RefineShopEngraveGodRoot_ReturnEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::basicmenu::BasicMenu_Result as ::unity2::IlType>::il_type(),
                 <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
@@ -186,18 +434,15 @@ mod __RefineShopEngraveGodRoot_ReturnEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -213,33 +458,19 @@ mod __RefineShopEngraveGodRoot_ReturnEventHandler_unity2_raw {
             crate::app::goddata::GodData,
             crate::app::unititem::UnitItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(
-            this,
-            result,
-            god_data,
-            after_unit_item,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, result, god_data, after_unit_item, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refineshopengravegodroot")]
-pub trait IRefineShopEngraveGodRoot_ReturnEventHandlerMethods:
-    IRefineShopEngraveGodRoot_ReturnEventHandler
-{
+pub trait IRefineShopEngraveGodRoot_ReturnEventHandlerMethods: IRefineShopEngraveGodRoot_ReturnEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineShopEngraveGodRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineShopEngraveGodRoot_ReturnEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -256,7 +487,9 @@ pub trait IRefineShopEngraveGodRoot_ReturnEventHandlerMethods:
         after_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> () {
         unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineShopEngraveGodRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineShopEngraveGodRoot_ReturnEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(result),
@@ -269,10 +502,7 @@ pub trait IRefineShopEngraveGodRoot_ReturnEventHandlerMethods:
 }
 
 #[cfg(feature = "app-refineshopengravegodroot")]
-impl<__T: IRefineShopEngraveGodRoot_ReturnEventHandler>
-    IRefineShopEngraveGodRoot_ReturnEventHandlerMethods for __T
-{
-}
+impl<__T: IRefineShopEngraveGodRoot_ReturnEventHandler> IRefineShopEngraveGodRoot_ReturnEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-refineshopengravegodroot")]
 impl RefineShopEngraveGodRoot_ReturnEventHandler {
@@ -299,46 +529,69 @@ mod __RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn ctor(
         this: RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem,
-        yes_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
+        yes_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem , crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem,
+            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, yes_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn a_call(
@@ -348,26 +601,22 @@ mod __RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem_unity2_raw {
         let inner: extern "C" fn(
             RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refineshopengravegodroot")]
-pub trait IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods:
-    IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem
-{
+pub trait IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods: IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem {
     #[doc = "`.ctor(crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler)` overload"]
     fn ctor(
         self,
-        yes_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler >,
+        yes_event_handler: impl ::core::convert::Into<crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(yes_event_handler),
@@ -378,27 +627,21 @@ pub trait IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-refineshopengravegodroot")]
-impl<__T: IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem>
-    IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods for __T
-{
-}
+impl<__T: IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem> IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods for __T {}
 
 #[cfg(feature = "app-refineshopengravegodroot")]
 impl RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem {
     #[doc = "`.ctor(crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler)` — overload selector"]
-    pub fn new(
-        yes_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
-    ) -> Self {
+    pub fn new(yes_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -406,10 +649,7 @@ impl RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods>::ctor(
-            this,
-            yes_event_handler,
-        );
+        <Self as IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods>::ctor(this, yes_event_handler);
         this
     }
 }
@@ -423,9 +663,7 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load_prefab_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
@@ -438,35 +676,26 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "LoadPrefabAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "LoadPrefabAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_prefab_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
@@ -479,35 +708,26 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
@@ -520,36 +740,33 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "UnloadPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "UnloadPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -561,18 +778,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -580,7 +794,7 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
         unit: crate::app::unit::Unit,
         item_index: i32,
-        return_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ReturnEventHandler,
+        return_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot {
         let inner: extern "C" fn(
@@ -590,13 +804,8 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
             i32,
             crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+        ) -> crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(
             super_,
             shop_weapon_model_renderer,
@@ -610,10 +819,14 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -625,18 +838,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -645,7 +855,7 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
         unit: crate::app::unit::Unit,
         item_index: i32,
-        return_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ReturnEventHandler,
+        return_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -656,11 +866,7 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
             i32,
             crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(
             this,
             super_,
@@ -675,10 +881,9 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
                 "Destroy",
@@ -690,41 +895,30 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy(
         root: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
@@ -737,40 +931,31 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RefineShopEngraveGodRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopEngraveGodRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_item_detail {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineitemdetailwindow :: RefineItemDetailWindow as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::refineitemdetailwindow::RefineItemDetailWindow as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
                 "UpdateItemDetail",
@@ -782,18 +967,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "UpdateItemDetail",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "UpdateItemDetail",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_item_detail(
@@ -807,21 +989,19 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
             crate::app::refineitemdetailwindow::RefineItemDetailWindow,
             crate::app::unititem::UnitItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_item_detail::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_update_item_detail::get_method_info().method_ptr);
         inner(this, item_detail_window, unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_item_detail_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineitemdetailwindow :: RefineItemDetailWindow as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::refineitemdetailwindow::RefineItemDetailWindow as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
                 "UpdateItemDetail",
@@ -833,18 +1013,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "UpdateItemDetail",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "UpdateItemDetail",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_item_detail_2(
@@ -860,26 +1037,14 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
             crate::app::unititem::UnitItem,
             crate::app::unititem::UnitItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_item_detail_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            item_detail_window,
-            unit_item_base,
-            unit_item_target,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_update_item_detail_2::get_method_info().method_ptr);
+        inner(this, item_detail_window, unit_item_base, unit_item_target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -895,18 +1060,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnSelectMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnSelectMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_select_menu_item(
@@ -920,22 +1082,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
             crate::app::goddata::GodData,
             crate::app::unititem::UnitItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select_menu_item::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_select_menu_item::get_method_info().method_ptr);
         inner(this, god_data, unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_decide_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
                 "OnDecideMenuItem",
@@ -947,18 +1102,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnDecideMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnDecideMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_decide_menu_item(
@@ -966,24 +1118,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         god_data: crate::app::goddata::GodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_decide_menu_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineShopEngraveGodRoot, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_decide_menu_item::get_method_info().method_ptr);
         inner(this, god_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_confirm_yes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
@@ -996,41 +1139,28 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnConfirmYes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnConfirmYes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_confirm_yes(
-        this: RefineShopEngraveGodRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_confirm_yes(this: RefineShopEngraveGodRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopEngraveGodRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_confirm_yes::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_confirm_yes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_engrave {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
                 "Engrave",
@@ -1042,18 +1172,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "Engrave",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "Engrave",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn engrave(
@@ -1061,24 +1188,15 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         reset_unit_item: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_engrave::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineShopEngraveGodRoot, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_engrave::get_method_info().method_ptr);
         inner(this, reset_unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_request_close_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
@@ -1091,39 +1209,27 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnRequestCloseMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnRequestCloseMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_request_close_menu(
-        this: RefineShopEngraveGodRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_request_close_menu(this: RefineShopEngraveGodRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopEngraveGodRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_request_close_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_request_close_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::class(),
@@ -1136,30 +1242,20 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close(
-        this: RefineShopEngraveGodRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close(this: RefineShopEngraveGodRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineShopEngraveGodRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1168,33 +1264,26 @@ mod __RefineShopEngraveGodRoot_unity2_raw {
 impl RefineShopEngraveGodRoot {
     #[doc = "`LoadPrefabAsync()` overload"]
     pub fn load_prefab_async() -> () {
-        unsafe {
-            __RefineShopEngraveGodRoot_unity2_raw::load_prefab_async(::core::option::Option::None)
-        }
+        unsafe { __RefineShopEngraveGodRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
     }
+
     #[doc = "`IsLoadingPrefab()` overload"]
     pub fn is_loading_prefab() -> bool {
-        unsafe {
-            __RefineShopEngraveGodRoot_unity2_raw::is_loading_prefab(::core::option::Option::None)
-        }
+        unsafe { __RefineShopEngraveGodRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`UnloadPrefab()` overload"]
     pub fn unload_prefab() -> () {
-        unsafe {
-            __RefineShopEngraveGodRoot_unity2_raw::unload_prefab(::core::option::Option::None)
-        }
+        unsafe { __RefineShopEngraveGodRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        shop_weapon_model_renderer: impl ::core::convert::Into<
-            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        >,
+        shop_weapon_model_renderer: impl ::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer>,
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         item_index: impl ::core::convert::Into<i32>,
-        return_event_handler: impl ::core::convert::Into<
-            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler,
-        >,
+        return_event_handler: impl ::core::convert::Into<crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler>,
     ) -> crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot {
         unsafe {
             __RefineShopEngraveGodRoot_unity2_raw::create_bind(
@@ -1207,16 +1296,10 @@ impl RefineShopEngraveGodRoot {
             )
         }
     }
+
     #[doc = "`Destroy(crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot)` overload"]
-    pub fn destroy(
-        root: impl ::core::convert::Into<crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot>,
-    ) -> () {
-        unsafe {
-            __RefineShopEngraveGodRoot_unity2_raw::destroy(
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn destroy(root: impl ::core::convert::Into<crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot>) -> () {
+        unsafe { __RefineShopEngraveGodRoot_unity2_raw::destroy(::core::convert::Into::into(root), ::core::option::Option::None) }
     }
 }
 
@@ -1226,20 +1309,14 @@ pub trait IRefineShopEngraveGodRootMethods: IRefineShopEngraveGodRoot {
     fn create(
         self,
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        shop_weapon_model_renderer: impl ::core::convert::Into<
-            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
-        >,
+        shop_weapon_model_renderer: impl ::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer>,
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         item_index: impl ::core::convert::Into<i32>,
-        return_event_handler: impl ::core::convert::Into<
-            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler,
-        >,
+        return_event_handler: impl ::core::convert::Into<crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ReturnEventHandler>,
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopEngraveGodRoot_unity2_raw::create(
                 __receiver,
                 ::core::convert::Into::into(super_),
@@ -1255,25 +1332,19 @@ pub trait IRefineShopEngraveGodRootMethods: IRefineShopEngraveGodRoot {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopEngraveGodRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateItemDetail(crate::app::refineitemdetailwindow::RefineItemDetailWindow, crate::app::unititem::UnitItem)` overload"]
     fn update_item_detail(
         self,
-        item_detail_window: impl ::core::convert::Into<
-            crate::app::refineitemdetailwindow::RefineItemDetailWindow,
-        >,
+        item_detail_window: impl ::core::convert::Into<crate::app::refineitemdetailwindow::RefineItemDetailWindow>,
         unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopEngraveGodRoot_unity2_raw::update_item_detail(
                 __receiver,
                 ::core::convert::Into::into(item_detail_window),
@@ -1285,17 +1356,13 @@ pub trait IRefineShopEngraveGodRootMethods: IRefineShopEngraveGodRoot {
     #[doc = "`UpdateItemDetail(crate::app::refineitemdetailwindow::RefineItemDetailWindow, crate::app::unititem::UnitItem, crate::app::unititem::UnitItem)` overload"]
     fn update_item_detail_2(
         self,
-        item_detail_window: impl ::core::convert::Into<
-            crate::app::refineitemdetailwindow::RefineItemDetailWindow,
-        >,
+        item_detail_window: impl ::core::convert::Into<crate::app::refineitemdetailwindow::RefineItemDetailWindow>,
         unit_item_base: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
         unit_item_target: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopEngraveGodRoot_unity2_raw::update_item_detail_2(
                 __receiver,
                 ::core::convert::Into::into(item_detail_window),
@@ -1313,9 +1380,7 @@ pub trait IRefineShopEngraveGodRootMethods: IRefineShopEngraveGodRoot {
     ) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopEngraveGodRoot_unity2_raw::on_select_menu_item(
                 __receiver,
                 ::core::convert::Into::into(god_data),
@@ -1325,15 +1390,10 @@ pub trait IRefineShopEngraveGodRootMethods: IRefineShopEngraveGodRoot {
         }
     }
     #[doc = "`OnDecideMenuItem(crate::app::goddata::GodData)` overload"]
-    fn on_decide_menu_item(
-        self,
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> () {
+    fn on_decide_menu_item(self, god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopEngraveGodRoot_unity2_raw::on_decide_menu_item(
                 __receiver,
                 ::core::convert::Into::into(god_data),
@@ -1345,52 +1405,31 @@ pub trait IRefineShopEngraveGodRootMethods: IRefineShopEngraveGodRoot {
     fn on_confirm_yes(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopEngraveGodRoot_unity2_raw::on_confirm_yes(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopEngraveGodRoot_unity2_raw::on_confirm_yes(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Engrave(crate::app::unititem::UnitItem)` overload"]
-    fn engrave(
-        self,
-        reset_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> () {
+    fn engrave(self, reset_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopEngraveGodRoot_unity2_raw::engrave(
-                __receiver,
-                ::core::convert::Into::into(reset_unit_item),
-                ::core::option::Option::None,
-            )
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopEngraveGodRoot_unity2_raw::engrave(__receiver, ::core::convert::Into::into(reset_unit_item), ::core::option::Option::None)
         }
     }
     #[doc = "`OnRequestCloseMenu()` overload"]
     fn on_request_close_menu(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefineShopEngraveGodRoot_unity2_raw::on_request_close_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefineShopEngraveGodRoot_unity2_raw::on_request_close_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Close()` overload"]
     fn close(self) -> () {
         unsafe {
             let __receiver =
-                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefineShopEngraveGodRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineShopEngraveGodRoot_unity2_raw::close(__receiver, ::core::option::Option::None)
         }
     }
@@ -1418,291 +1457,22 @@ impl RefineShopEngraveGodRoot {
 #[cfg(feature = "app-refineshopengravegodroot")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-pub trait IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods:
-    IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-impl<__T: IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler>
-    IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-impl RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-pub trait IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods:
-    IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-impl<__T: IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler>
-    IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-impl RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: goddata :: GodData as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodRoot_ConfirmToReplaceDialog as ::unity2::ClassIdentity>::class(
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+                <crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as ::unity2::IlType>::il_type(
                 ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmToReplaceDialog as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
                 4,
                 param_types,
@@ -1710,41 +1480,43 @@ mod __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmToReplaceDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmToReplaceDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         engraved_unit_item: crate::app::unititem::UnitItem,
         god_data: crate::app::goddata::GodData,
-        yes_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+        yes_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::yesnodialog::YesNoDialog {
-        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unititem :: UnitItem , crate :: app :: goddata :: GodData , crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: yesnodialog :: YesNoDialog = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
-        inner(
-            super_,
-            engraved_unit_item,
-            god_data,
-            yes_event_handler,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unititem::UnitItem,
+            crate::app::goddata::GodData,
+            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::yesnodialog::YesNoDialog = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, engraved_unit_item, god_data, yes_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopEngraveGodRoot_ConfirmToReplaceDialog as ::unity2::ClassIdentity>::class(
-                ),
+                <RefineShopEngraveGodRoot_ConfirmToReplaceDialog as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1752,26 +1524,22 @@ mod __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmToReplaceDialog as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmToReplaceDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot_ConfirmToReplaceDialog,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineShopEngraveGodRoot_ConfirmToReplaceDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1783,7 +1551,9 @@ impl RefineShopEngraveGodRoot_ConfirmToReplaceDialog {
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         engraved_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
         god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-        yes_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler >,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+        >,
     ) -> crate::app::yesnodialog::YesNoDialog {
         unsafe {
             __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_unity2_raw::create_bind(
@@ -1798,26 +1568,20 @@ impl RefineShopEngraveGodRoot_ConfirmToReplaceDialog {
 }
 
 #[cfg(feature = "app-refineshopengravegodroot")]
-pub trait IRefineShopEngraveGodRoot_ConfirmToReplaceDialogMethods:
-    IRefineShopEngraveGodRoot_ConfirmToReplaceDialog
-{
+pub trait IRefineShopEngraveGodRoot_ConfirmToReplaceDialogMethods: IRefineShopEngraveGodRoot_ConfirmToReplaceDialog {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmToReplaceDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmToReplaceDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-refineshopengravegodroot")]
-impl<__T: IRefineShopEngraveGodRoot_ConfirmToReplaceDialog>
-    IRefineShopEngraveGodRoot_ConfirmToReplaceDialogMethods for __T
-{
-}
+impl<__T: IRefineShopEngraveGodRoot_ConfirmToReplaceDialog> IRefineShopEngraveGodRoot_ConfirmToReplaceDialogMethods for __T {}
 
 #[cfg(feature = "app-refineshopengravegodroot")]
 impl RefineShopEngraveGodRoot_ConfirmToReplaceDialog {
@@ -1838,16 +1602,158 @@ impl RefineShopEngraveGodRoot_ConfirmToReplaceDialog {
 #[cfg(feature = "app-refineshopengravegodroot")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+pub trait IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods:
+    IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+impl<__T: IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler> IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+impl RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-refineshopengravegodroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RefineShopEngraveGodRoot_ConfirmDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: goddata :: GodData as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+                <crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot_ConfirmDialog as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -1859,43 +1765,38 @@ mod __RefineShopEngraveGodRoot_ConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         base_unit_item: crate::app::unititem::UnitItem,
         god_data: crate::app::goddata::GodData,
-        yes_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
+        yes_event_handler: crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
-        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unititem :: UnitItem , crate :: app :: goddata :: GodData , crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
-        inner(
-            super_,
-            base_unit_item,
-            god_data,
-            yes_event_handler,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unititem::UnitItem,
+            crate::app::goddata::GodData,
+            crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, base_unit_item, god_data, yes_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopEngraveGodRoot_ConfirmDialog as ::unity2::ClassIdentity>::class(),
@@ -1908,32 +1809,20 @@ mod __RefineShopEngraveGodRoot_ConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopEngraveGodRoot_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopEngraveGodRoot_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodRoot_ConfirmDialog,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot_ConfirmDialog,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: RefineShopEngraveGodRoot_ConfirmDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineShopEngraveGodRoot_ConfirmDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1945,7 +1834,7 @@ impl RefineShopEngraveGodRoot_ConfirmDialog {
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         base_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
         god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-        yes_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler >,
+        yes_event_handler: impl ::core::convert::Into<crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler>,
     ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog {
         unsafe {
             __RefineShopEngraveGodRoot_ConfirmDialog_unity2_raw::create_bind(
@@ -1960,26 +1849,20 @@ impl RefineShopEngraveGodRoot_ConfirmDialog {
 }
 
 #[cfg(feature = "app-refineshopengravegodroot")]
-pub trait IRefineShopEngraveGodRoot_ConfirmDialogMethods:
-    IRefineShopEngraveGodRoot_ConfirmDialog
-{
+pub trait IRefineShopEngraveGodRoot_ConfirmDialogMethods: IRefineShopEngraveGodRoot_ConfirmDialog {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineShopEngraveGodRoot_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopEngraveGodRoot_ConfirmDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-refineshopengravegodroot")]
-impl<__T: IRefineShopEngraveGodRoot_ConfirmDialog> IRefineShopEngraveGodRoot_ConfirmDialogMethods
-    for __T
-{
-}
+impl<__T: IRefineShopEngraveGodRoot_ConfirmDialog> IRefineShopEngraveGodRoot_ConfirmDialogMethods for __T {}
 
 #[cfg(feature = "app-refineshopengravegodroot")]
 impl RefineShopEngraveGodRoot_ConfirmDialog {
@@ -1999,183 +1882,43 @@ impl RefineShopEngraveGodRoot_ConfirmDialog {
 
 #[cfg(feature = "app-refineshopengravegodroot")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem,
-        yes_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem , crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
-        inner(this, yes_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-pub trait IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods:
-    IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem
-{
-    #[doc = "`.ctor(crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler)` overload"]
-    fn ctor(
-        self,
-        yes_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler >,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(yes_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-impl<__T: IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem>
-    IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-impl RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::refineshopengravegodroot::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler)` — overload selector"]
-    pub fn new(
-        yes_event_handler : crate :: app :: refineshopengravegodroot :: RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods>::ctor(
-            this,
-            yes_event_handler,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshopengravegodroot")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefineShopEngraveGodRoot;
-    pub use super::IRefineShopEngraveGodRootMethods;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmDialog;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmDialogMethods;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmToReplaceDialog;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmToReplaceDialogMethods;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem;
-    pub use super::IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods;
-    pub use super::IRefineShopEngraveGodRoot_ReturnEventHandler;
-    pub use super::IRefineShopEngraveGodRoot_ReturnEventHandlerMethods;
-    pub use super::RefineShopEngraveGodRoot;
-    pub use super::RefineShopEngraveGodRoot_ConfirmDialog;
-    pub use super::RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler;
-    pub use super::RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem;
-    pub use super::RefineShopEngraveGodRoot_ConfirmToReplaceDialog;
-    pub use super::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler;
-    pub use super::RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem;
-    pub use super::RefineShopEngraveGodRoot_ReturnEventHandler;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use super::{
+        IRefineShopEngraveGodRoot, IRefineShopEngraveGodRootMethods, IRefineShopEngraveGodRoot_ConfirmDialog,
+        IRefineShopEngraveGodRoot_ConfirmDialogMethods, IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler,
+        IRefineShopEngraveGodRoot_ConfirmDialog_YesEventHandlerMethods, IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem,
+        IRefineShopEngraveGodRoot_ConfirmDialog_YesMenuItemMethods, IRefineShopEngraveGodRoot_ConfirmToReplaceDialog,
+        IRefineShopEngraveGodRoot_ConfirmToReplaceDialogMethods, IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+        IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandlerMethods, IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem,
+        IRefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItemMethods, IRefineShopEngraveGodRoot_ReturnEventHandler,
+        IRefineShopEngraveGodRoot_ReturnEventHandlerMethods, RefineShopEngraveGodRoot, RefineShopEngraveGodRoot_ConfirmDialog,
+        RefineShopEngraveGodRoot_ConfirmDialog_YesEventHandler, RefineShopEngraveGodRoot_ConfirmDialog_YesMenuItem,
+        RefineShopEngraveGodRoot_ConfirmToReplaceDialog, RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesEventHandler,
+        RefineShopEngraveGodRoot_ConfirmToReplaceDialog_YesMenuItem, RefineShopEngraveGodRoot_ReturnEventHandler,
+    };
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     #[cfg(feature = "app-basicdialogitemyes")]
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::{basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes, basicmenuitem::IBasicMenuItem},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

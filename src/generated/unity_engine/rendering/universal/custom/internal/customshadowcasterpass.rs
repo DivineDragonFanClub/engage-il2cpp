@@ -2,56 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::universal::scriptablerenderpass::{
-        IScriptableRenderPass, ScriptableRenderPass,
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
-        name = "CustomShadowCasterPass"
-    )]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct CustomShadowCasterPass {
-        #[static_field]
-        #[rename(name = "k_MaxCascades")]
-        pub k_max_cascades: i32,
-        #[static_field]
-        #[rename(name = "k_ShadowmapBufferBits")]
-        pub k_shadowmap_buffer_bits: i32,
-        #[rename(name = "m_MaxShadowDistanceSq")]
-        pub m_max_shadow_distance_sq: f32,
-        #[rename(name = "m_ShadowmapWidth")]
-        pub m_shadowmap_width: i32,
-        #[rename(name = "m_ShadowmapHeight")]
-        pub m_shadowmap_height: i32,
-        #[rename(name = "m_ShadowCasterCascadesCount")]
-        pub m_shadow_caster_cascades_count: i32,
-        #[rename(name = "m_SupportsBoxFilterForShadows")]
-        pub m_supports_box_filter_for_shadows: bool,
-        #[rename(name = "m_CustomShadowmap")]
-        pub m_custom_shadowmap:
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_CustomShadowmapTexture")]
-        pub m_custom_shadowmap_texture: crate::unity_engine::rendertexture::RenderTexture,
-        #[rename(name = "m_CustomShadowMatrices")]
-        pub m_custom_shadow_matrices: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-        #[rename(name = "m_CascadeSlices")]
-        pub m_cascade_slices: ::unity2::Array<
-            crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
-        >,
-        #[rename(name = "m_CascadeSplitDistances")]
-        pub m_cascade_split_distances: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[static_field]
-        #[rename(name = "m_ProfilerTag")]
-        pub m_profiler_tag: ::unity2::Il2CppString,
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass_CustomShadowConstantBuffer.md"))]
     #[::unity2::class(
@@ -82,11 +39,46 @@ mod __types {
         #[rename(name = "_ShadowmapSize")]
         pub shadowmap_size: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomShadowCasterPass")]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct CustomShadowCasterPass {
+        #[static_field]
+        #[rename(name = "k_MaxCascades")]
+        pub k_max_cascades: i32,
+        #[static_field]
+        #[rename(name = "k_ShadowmapBufferBits")]
+        pub k_shadowmap_buffer_bits: i32,
+        #[rename(name = "m_MaxShadowDistanceSq")]
+        pub m_max_shadow_distance_sq: f32,
+        #[rename(name = "m_ShadowmapWidth")]
+        pub m_shadowmap_width: i32,
+        #[rename(name = "m_ShadowmapHeight")]
+        pub m_shadowmap_height: i32,
+        #[rename(name = "m_ShadowCasterCascadesCount")]
+        pub m_shadow_caster_cascades_count: i32,
+        #[rename(name = "m_SupportsBoxFilterForShadows")]
+        pub m_supports_box_filter_for_shadows: bool,
+        #[rename(name = "m_CustomShadowmap")]
+        pub m_custom_shadowmap: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_CustomShadowmapTexture")]
+        pub m_custom_shadowmap_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[rename(name = "m_CustomShadowMatrices")]
+        pub m_custom_shadow_matrices: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[rename(name = "m_CascadeSlices")]
+        pub m_cascade_slices: ::unity2::Array<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>,
+        #[rename(name = "m_CascadeSplitDistances")]
+        pub m_cascade_split_distances: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[static_field]
+        #[rename(name = "m_ProfilerTag")]
+        pub m_profiler_tag: ::unity2::Il2CppString,
+        #[rename(name = "m_ProfilingSampler")]
+        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
 }
 
-#[cfg(
-    feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass-types"
-)]
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")]
@@ -98,10 +90,9 @@ mod __CustomShadowCasterPass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomShadowCasterPass as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -113,18 +104,15 @@ mod __CustomShadowCasterPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -136,21 +124,16 @@ mod __CustomShadowCasterPass_unity2_raw {
             CustomShadowCasterPass,
             crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, evt, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomShadowCasterPass as ::unity2::ClassIdentity>::class(),
                 "Setup",
@@ -162,44 +145,38 @@ mod __CustomShadowCasterPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
         this: CustomShadowCasterPass,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
             CustomShadowCasterPass,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_configure {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomShadowCasterPass as ::unity2::ClassIdentity>::class(),
                 "Configure",
@@ -211,24 +188,21 @@ mod __CustomShadowCasterPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
-                    "Configure",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
+                        "Configure",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure(
         this: CustomShadowCasterPass,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        camera_texture_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
+        camera_texture_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -236,21 +210,18 @@ mod __CustomShadowCasterPass_unity2_raw {
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_configure::get_method_info().method_ptr);
         inner(this, cmd, camera_texture_descriptor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomShadowCasterPass as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -262,24 +233,21 @@ mod __CustomShadowCasterPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
         this: CustomShadowCasterPass,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -287,21 +255,16 @@ mod __CustomShadowCasterPass_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_camera_cleanup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomShadowCasterPass as ::unity2::ClassIdentity>::class(),
                 "OnCameraCleanup",
@@ -313,18 +276,15 @@ mod __CustomShadowCasterPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
-                    "OnCameraCleanup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
+                        "OnCameraCleanup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_camera_cleanup(
@@ -336,20 +296,14 @@ mod __CustomShadowCasterPass_unity2_raw {
             CustomShadowCasterPass,
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_camera_cleanup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_camera_cleanup::get_method_info().method_ptr);
         inner(this, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomShadowCasterPass as ::unity2::ClassIdentity>::class(),
@@ -362,40 +316,33 @@ mod __CustomShadowCasterPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: CustomShadowCasterPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: CustomShadowCasterPass, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomShadowCasterPass, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_render_shadowmap {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: lightdata :: LightData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowdata :: ShadowData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::lightdata::LightData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowdata::ShadowData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomShadowCasterPass as ::unity2::ClassIdentity>::class(),
                 "RenderShadowmap",
@@ -407,23 +354,20 @@ mod __CustomShadowCasterPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
-                    "RenderShadowmap",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
+                        "RenderShadowmap",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_shadowmap(
         this: CustomShadowCasterPass,
-        context : * mut crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext,
+        context: *mut crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
         cull_results: *mut crate::unity_engine::rendering::cullingresults::CullingResults,
         light_data: *mut crate::unity_engine::rendering::universal::lightdata::LightData,
         shadow_data: *mut crate::unity_engine::rendering::universal::shadowdata::ShadowData,
@@ -436,28 +380,19 @@ mod __CustomShadowCasterPass_unity2_raw {
             *mut crate::unity_engine::rendering::universal::lightdata::LightData,
             *mut crate::unity_engine::rendering::universal::shadowdata::ShadowData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_shadowmap::get_offset() as isize),
-        );
-        inner(
-            this,
-            context,
-            cull_results,
-            light_data,
-            shadow_data,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_render_shadowmap::get_method_info().method_ptr);
+        inner(this, context, cull_results, light_data, shadow_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_custom_shadow_receiver_constants {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: visiblelight :: VisibleLight as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::visiblelight::VisibleLight as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomShadowCasterPass as ::unity2::ClassIdentity>::class(),
                 "SetupCustomShadowReceiverConstants",
@@ -469,18 +404,15 @@ mod __CustomShadowCasterPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
-                    "SetupCustomShadowReceiverConstants",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomShadowCasterPass as ::unity2::ClassIdentity>::NAME,
+                        "SetupCustomShadowReceiverConstants",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_custom_shadow_receiver_constants(
@@ -496,11 +428,7 @@ mod __CustomShadowCasterPass_unity2_raw {
             crate::unity_engine::rendering::visiblelight::VisibleLight,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_custom_shadow_receiver_constants::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_custom_shadow_receiver_constants::get_method_info().method_ptr);
         inner(this, cmd, shadow_light, soft_shadows, __unity2_method_info)
     }
 }
@@ -508,44 +436,20 @@ mod __CustomShadowCasterPass_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")]
 pub trait ICustomShadowCasterPassMethods: ICustomShadowCasterPass {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` overload"]
-    fn ctor(
-        self,
-        evt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        >,
-    ) -> () {
+    fn ctor(self, evt: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>) -> () {
         unsafe {
-            let __receiver = <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomShadowCasterPass_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(evt),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomShadowCasterPass_unity2_raw::ctor(__receiver, ::core::convert::Into::into(evt), ::core::option::Option::None)
         }
     }
     #[doc = "`Setup(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn setup(
-        self,
-    ) -> (
-        bool,
-        crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) {
+    fn setup(self) -> (bool, crate::unity_engine::rendering::universal::renderingdata::RenderingData) {
         unsafe {
-            let __receiver = <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
-            let __ret = {
-                __CustomShadowCasterPass_unity2_raw::setup(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __receiver =
+                <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
+            let __ret = { __CustomShadowCasterPass_unity2_raw::setup(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
@@ -553,14 +457,11 @@ pub trait ICustomShadowCasterPassMethods: ICustomShadowCasterPass {
     fn configure(
         self,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        camera_texture_descriptor: impl ::core::convert::Into<
-            crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-        >,
+        camera_texture_descriptor: impl ::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>,
     ) -> () {
         unsafe {
-            let __receiver = <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomShadowCasterPass_unity2_raw::configure(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -572,17 +473,12 @@ pub trait ICustomShadowCasterPassMethods: ICustomShadowCasterPass {
     #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn execute(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver =
+                <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __CustomShadowCasterPass_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -593,27 +489,18 @@ pub trait ICustomShadowCasterPassMethods: ICustomShadowCasterPass {
         }
     }
     #[doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn on_camera_cleanup(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> () {
+    fn on_camera_cleanup(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
         unsafe {
-            let __receiver = <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomShadowCasterPass_unity2_raw::on_camera_cleanup(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomShadowCasterPass_unity2_raw::on_camera_cleanup(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomShadowCasterPass_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
@@ -627,21 +514,12 @@ pub trait ICustomShadowCasterPassMethods: ICustomShadowCasterPass {
         crate::unity_engine::rendering::universal::shadowdata::ShadowData,
     ) {
         unsafe {
-            let __receiver = <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::cullingresults::CullingResults,
-            >::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::lightdata::LightData,
-            >::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowdata::ShadowData,
-            >::uninit();
+            let __receiver =
+                <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::cullingresults::CullingResults>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::lightdata::LightData>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowdata::ShadowData>::uninit();
             __CustomShadowCasterPass_unity2_raw::render_shadowmap(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -650,27 +528,19 @@ pub trait ICustomShadowCasterPassMethods: ICustomShadowCasterPass {
                 __out_3.as_mut_ptr(),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init(), __out_3.assume_init())
         }
     }
     #[doc = "`SetupCustomShadowReceiverConstants(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::visiblelight::VisibleLight, bool)` overload"]
     fn setup_custom_shadow_receiver_constants(
         self,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        shadow_light: impl ::core::convert::Into<
-            crate::unity_engine::rendering::visiblelight::VisibleLight,
-        >,
+        shadow_light: impl ::core::convert::Into<crate::unity_engine::rendering::visiblelight::VisibleLight>,
         soft_shadows: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomShadowCasterPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomShadowCasterPass_unity2_raw::setup_custom_shadow_receiver_constants(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -688,9 +558,7 @@ impl<__T: ICustomShadowCasterPass> ICustomShadowCasterPassMethods for __T {}
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")]
 impl CustomShadowCasterPass {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` — overload selector"]
-    pub fn new(
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-    ) -> Self {
+    pub fn new(evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -706,15 +574,13 @@ impl CustomShadowCasterPass {
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomShadowCasterPass;
-    pub use super::CustomShadowCasterPass_CustomShadowConstantBuffer;
-    pub use super::ICustomShadowCasterPass;
-    pub use super::ICustomShadowCasterPassMethods;
-    pub use super::ICustomShadowCasterPass_CustomShadowConstantBuffer;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        CustomShadowCasterPass, CustomShadowCasterPass_CustomShadowConstantBuffer, ICustomShadowCasterPass, ICustomShadowCasterPassMethods,
+        ICustomShadowCasterPass_CustomShadowConstantBuffer,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
+    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
 }

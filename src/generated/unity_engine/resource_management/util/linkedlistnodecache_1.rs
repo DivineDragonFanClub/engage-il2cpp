@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-linkedlistnodecache_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/linkedlistnodecache_1/LinkedListNodeCache_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.Util",
-        name = "LinkedListNodeCache`1"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "LinkedListNodeCache`1")]
     #[parent(crate::system::object::Object)]
     pub struct LinkedListNodeCache_1<T0: ::unity2::ClassIdentity> {
         #[rename(name = "m_NodesCreated")]
@@ -29,17 +26,11 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity> LinkedListNodeCache_1<T0> {
     #[doc = "`Acquire(T0)` overload"]
     #[method(name = "Acquire", args = 1)]
-    pub fn acquire(
-        self,
-        val: T0,
-    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
+    pub fn acquire(self, val: T0) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
 
     #[doc = "`Release(crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>)` overload"]
     #[method(name = "Release", args = 1)]
-    pub fn release(
-        self,
-        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
-    ) -> ();
+    pub fn release(self, node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>) -> ();
 
     #[doc = "`get_CreatedNodeCount()` overload"]
     #[method(name = "get_CreatedNodeCount", args = 0)]
@@ -73,9 +64,7 @@ impl<T0: ::unity2::ClassIdentity> LinkedListNodeCache_1<T0> {
 #[cfg(feature = "unity_engine-resource_management-util-linkedlistnodecache_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILinkedListNodeCache_1;
-    pub use super::ILinkedListNodeCache_1Methods;
-    pub use super::LinkedListNodeCache_1;
+    pub use super::{ILinkedListNodeCache_1, ILinkedListNodeCache_1Methods, LinkedListNodeCache_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

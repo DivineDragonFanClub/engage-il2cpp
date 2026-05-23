@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-verticallayoutui-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/verticallayoutui/VerticalLayoutUI.md"))]
     #[::unity2::class(namespace = "Combat", name = "VerticalLayoutUI")]
@@ -40,9 +40,7 @@ mod __types {
         #[rename(name = "m_bInitialSelected")]
         pub m_b_initial_selected: bool,
         #[rename(name = "m_Widgets")]
-        pub m_widgets: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_widgets: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }
 }
 
@@ -58,9 +56,7 @@ mod __VerticalLayoutUI_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -76,18 +72,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -101,20 +94,14 @@ mod __VerticalLayoutUI_unity2_raw {
             crate::unity_engine::canvas::Canvas,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, canvas, anchor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VerticalLayoutUI as ::unity2::ClassIdentity>::class(),
@@ -127,41 +114,28 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: VerticalLayoutUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: VerticalLayoutUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VerticalLayoutUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VerticalLayoutUI as ::unity2::ClassIdentity>::class(),
                 "Text",
@@ -173,18 +147,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "Text",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "Text",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn text(
@@ -192,24 +163,15 @@ mod __VerticalLayoutUI_unity2_raw {
         text: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::text::Text {
-        let inner: extern "C" fn(
-            VerticalLayoutUI,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::text::Text = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_text::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VerticalLayoutUI, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::ui::text::Text =
+            ::core::mem::transmute(__lookup_text::get_method_info().method_ptr);
         inner(this, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_button {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::action::Action as ::unity2::IlType>::il_type(),
@@ -225,18 +187,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "Button",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "Button",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn button(
@@ -250,22 +209,15 @@ mod __VerticalLayoutUI_unity2_raw {
             ::unity2::Il2CppString,
             crate::system::action::Action,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::button::Button = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_button::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::ui::button::Button = ::core::mem::transmute(__lookup_button::get_method_info().method_ptr);
         inner(this, text, on_pressed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_minimize_left {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::button::Button as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::ui::button::Button as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VerticalLayoutUI as ::unity2::ClassIdentity>::class(),
                 "MinimizeLeft",
@@ -277,41 +229,30 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "MinimizeLeft",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "MinimizeLeft",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn minimize_left(
         button: crate::unity_engine::ui::button::Button,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::button::Button {
-        let inner: extern "C" fn(
-            crate::unity_engine::ui::button::Button,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::button::Button = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_minimize_left::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::ui::button::Button, ::unity2::OptionalMethod) -> crate::unity_engine::ui::button::Button =
+            ::core::mem::transmute(__lookup_minimize_left::get_method_info().method_ptr);
         inner(button, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_make_str {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -327,44 +268,32 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "MakeStr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "MakeStr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn make_str(
-        label: ::unity2::Il2CppString,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_make_str::get_offset() as isize),
-        );
+    pub unsafe fn make_str(label: ::unity2::Il2CppString, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_make_str::get_method_info().method_ptr);
         inner(label, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dropdown {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <crate::system::action_1::Action_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VerticalLayoutUI as ::unity2::ClassIdentity>::class(),
                 "Dropdown",
@@ -376,18 +305,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "Dropdown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "Dropdown",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dropdown(
@@ -403,28 +329,15 @@ mod __VerticalLayoutUI_unity2_raw {
             crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
             crate::system::action_1::Action_1<::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::dropdown::Dropdown = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dropdown::get_offset() as isize),
-        );
-        inner(
-            this,
-            headline,
-            items,
-            on_value_changed,
-            __unity2_method_info,
-        )
+        ) -> crate::unity_engine::ui::dropdown::Dropdown = ::core::mem::transmute(__lookup_dropdown::get_method_info().method_ptr);
+        inner(this, headline, items, on_value_changed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_toggle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VerticalLayoutUI as ::unity2::ClassIdentity>::class(),
                 "Toggle",
@@ -436,18 +349,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "Toggle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "Toggle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn toggle(
@@ -455,26 +365,16 @@ mod __VerticalLayoutUI_unity2_raw {
         text: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::toggle::Toggle {
-        let inner: extern "C" fn(
-            VerticalLayoutUI,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::toggle::Toggle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_toggle::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VerticalLayoutUI, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::ui::toggle::Toggle =
+            ::core::mem::transmute(__lookup_toggle::get_method_info().method_ptr);
         inner(this, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_space {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VerticalLayoutUI as ::unity2::ClassIdentity>::class(),
                 "Space",
@@ -486,40 +386,27 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "Space",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "Space",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn space(
-        this: VerticalLayoutUI,
-        space: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn space(this: VerticalLayoutUI, space: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VerticalLayoutUI, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_space::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_space::get_method_info().method_ptr);
         inner(this, space, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rect_transform_xw {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::component::Component as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -536,18 +423,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "SetRectTransformXW",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "SetRectTransformXW",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_rect_transform_xw(
@@ -556,28 +440,17 @@ mod __VerticalLayoutUI_unity2_raw {
         x: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::component::Component,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_rect_transform_xw::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::component::Component, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_rect_transform_xw::get_method_info().method_ptr);
         inner(com, w, x, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_colors {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::selectable::Selectable as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::selectable::Selectable as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VerticalLayoutUI as ::unity2::ClassIdentity>::class(),
                 "SetColors",
@@ -589,18 +462,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "SetColors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "SetColors",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_colors(
@@ -608,26 +478,16 @@ mod __VerticalLayoutUI_unity2_raw {
         widget: crate::unity_engine::ui::selectable::Selectable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VerticalLayoutUI,
-            crate::unity_engine::ui::selectable::Selectable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_colors::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VerticalLayoutUI, crate::unity_engine::ui::selectable::Selectable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_colors::get_method_info().method_ptr);
         inner(this, widget, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_colors_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::slider::Slider as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::ui::slider::Slider as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VerticalLayoutUI as ::unity2::ClassIdentity>::class(),
                 "SetColors",
@@ -639,18 +499,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "SetColors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "SetColors",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_colors_2(
@@ -658,24 +515,15 @@ mod __VerticalLayoutUI_unity2_raw {
         widget: crate::unity_engine::ui::slider::Slider,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VerticalLayoutUI,
-            crate::unity_engine::ui::slider::Slider,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_colors_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VerticalLayoutUI, crate::unity_engine::ui::slider::Slider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_colors_2::get_method_info().method_ptr);
         inner(this, widget, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_color_and_outline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::ui::text::Text as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -692,18 +540,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "SetTextColorAndOutline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "SetTextColorAndOutline",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_text_color_and_outline(
@@ -712,25 +557,15 @@ mod __VerticalLayoutUI_unity2_raw {
         outline: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::ui::text::Text,
-            crate::unity_engine::color::Color,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_color_and_outline::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::ui::text::Text, crate::unity_engine::color::Color, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_text_color_and_outline::get_method_info().method_ptr);
         inner(text, color, outline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::component::Component as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
@@ -746,18 +581,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "SetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "SetPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_position(
@@ -765,24 +597,15 @@ mod __VerticalLayoutUI_unity2_raw {
         v: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::component::Component,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::component::Component, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_position::get_method_info().method_ptr);
         inner(c, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::component::Component as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -799,18 +622,15 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "SetSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "SetSize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_size(
@@ -819,25 +639,15 @@ mod __VerticalLayoutUI_unity2_raw {
         height: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::component::Component,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_size::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::component::Component, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_size::get_method_info().method_ptr);
         inner(c, width, height, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_font_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::ui::text::Text as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -853,34 +663,20 @@ mod __VerticalLayoutUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
-                    "SetFontSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VerticalLayoutUI as ::unity2::ClassIdentity>::NAME,
+                        "SetFontSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_font_size(
-        widget: crate::unity_engine::ui::text::Text,
-        size: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::ui::text::Text,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_font_size::get_offset() as isize),
-        );
+    pub unsafe fn set_font_size(widget: crate::unity_engine::ui::text::Text, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::ui::text::Text, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_font_size::get_method_info().method_ptr);
         inner(widget, size, __unity2_method_info)
     }
 }
@@ -888,21 +684,12 @@ mod __VerticalLayoutUI_unity2_raw {
 #[cfg(feature = "combat-verticallayoutui")]
 impl VerticalLayoutUI {
     #[doc = "`MinimizeLeft(crate::unity_engine::ui::button::Button)` overload"]
-    pub fn minimize_left(
-        button: impl ::core::convert::Into<crate::unity_engine::ui::button::Button>,
-    ) -> crate::unity_engine::ui::button::Button {
-        unsafe {
-            __VerticalLayoutUI_unity2_raw::minimize_left(
-                ::core::convert::Into::into(button),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn minimize_left(button: impl ::core::convert::Into<crate::unity_engine::ui::button::Button>) -> crate::unity_engine::ui::button::Button {
+        unsafe { __VerticalLayoutUI_unity2_raw::minimize_left(::core::convert::Into::into(button), ::core::option::Option::None) }
     }
+
     #[doc = "`MakeStr(::unity2::Il2CppString, f32)` overload"]
-    pub fn make_str(
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> ::unity2::Il2CppString {
+    pub fn make_str(label: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<f32>) -> ::unity2::Il2CppString {
         unsafe {
             __VerticalLayoutUI_unity2_raw::make_str(
                 ::core::convert::Into::into(label),
@@ -911,6 +698,7 @@ impl VerticalLayoutUI {
             )
         }
     }
+
     #[doc = "`SetRectTransformXW(crate::unity_engine::component::Component, f32, f32)` overload"]
     pub fn set_rect_transform_xw(
         com: impl ::core::convert::Into<crate::unity_engine::component::Component>,
@@ -926,6 +714,7 @@ impl VerticalLayoutUI {
             )
         }
     }
+
     #[doc = "`SetTextColorAndOutline(crate::unity_engine::ui::text::Text, crate::unity_engine::color::Color, bool)` overload"]
     pub fn set_text_color_and_outline(
         text: impl ::core::convert::Into<crate::unity_engine::ui::text::Text>,
@@ -941,6 +730,7 @@ impl VerticalLayoutUI {
             )
         }
     }
+
     #[doc = "`SetPosition(crate::unity_engine::component::Component, crate::unity_engine::vector2::Vector2)` overload"]
     pub fn set_position(
         c: impl ::core::convert::Into<crate::unity_engine::component::Component>,
@@ -954,6 +744,7 @@ impl VerticalLayoutUI {
             )
         }
     }
+
     #[doc = "`SetSize(crate::unity_engine::component::Component, f32, f32)` overload"]
     pub fn set_size(
         c: impl ::core::convert::Into<crate::unity_engine::component::Component>,
@@ -969,11 +760,9 @@ impl VerticalLayoutUI {
             )
         }
     }
+
     #[doc = "`SetFontSize(crate::unity_engine::ui::text::Text, i32)` overload"]
-    pub fn set_font_size(
-        widget: impl ::core::convert::Into<crate::unity_engine::ui::text::Text>,
-        size: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn set_font_size(widget: impl ::core::convert::Into<crate::unity_engine::ui::text::Text>, size: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __VerticalLayoutUI_unity2_raw::set_font_size(
                 ::core::convert::Into::into(widget),
@@ -993,9 +782,7 @@ pub trait IVerticalLayoutUIMethods: IVerticalLayoutUI {
         anchor: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> () {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VerticalLayoutUI_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(canvas),
@@ -1007,26 +794,15 @@ pub trait IVerticalLayoutUIMethods: IVerticalLayoutUI {
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VerticalLayoutUI_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Text(::unity2::Il2CppString)` overload"]
-    fn text(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::ui::text::Text {
+    fn text(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::ui::text::Text {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VerticalLayoutUI_unity2_raw::text(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VerticalLayoutUI_unity2_raw::text(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
         }
     }
     #[doc = "`Button(::unity2::Il2CppString, crate::system::action::Action)` overload"]
@@ -1036,9 +812,7 @@ pub trait IVerticalLayoutUIMethods: IVerticalLayoutUI {
         on_pressed: impl ::core::convert::Into<crate::system::action::Action>,
     ) -> crate::unity_engine::ui::button::Button {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VerticalLayoutUI_unity2_raw::button(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -1051,17 +825,11 @@ pub trait IVerticalLayoutUIMethods: IVerticalLayoutUI {
     fn dropdown(
         self,
         headline: impl ::core::convert::Into<::unity2::Il2CppString>,
-        items: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        >,
-        on_value_changed: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<::unity2::Il2CppString>,
-        >,
+        items: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>>,
+        on_value_changed: impl ::core::convert::Into<crate::system::action_1::Action_1<::unity2::Il2CppString>>,
     ) -> crate::unity_engine::ui::dropdown::Dropdown {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VerticalLayoutUI_unity2_raw::dropdown(
                 __receiver,
                 ::core::convert::Into::into(headline),
@@ -1072,64 +840,31 @@ pub trait IVerticalLayoutUIMethods: IVerticalLayoutUI {
         }
     }
     #[doc = "`Toggle(::unity2::Il2CppString)` overload"]
-    fn toggle(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::ui::toggle::Toggle {
+    fn toggle(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::ui::toggle::Toggle {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VerticalLayoutUI_unity2_raw::toggle(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VerticalLayoutUI_unity2_raw::toggle(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
         }
     }
     #[doc = "`Space(f32)` overload"]
     fn space(self, space: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VerticalLayoutUI_unity2_raw::space(
-                __receiver,
-                ::core::convert::Into::into(space),
-                ::core::option::Option::None,
-            )
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VerticalLayoutUI_unity2_raw::space(__receiver, ::core::convert::Into::into(space), ::core::option::Option::None)
         }
     }
     #[doc = "`SetColors(crate::unity_engine::ui::selectable::Selectable)` overload"]
-    fn set_colors(
-        self,
-        widget: impl ::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>,
-    ) -> () {
+    fn set_colors(self, widget: impl ::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>) -> () {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VerticalLayoutUI_unity2_raw::set_colors(
-                __receiver,
-                ::core::convert::Into::into(widget),
-                ::core::option::Option::None,
-            )
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VerticalLayoutUI_unity2_raw::set_colors(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)
         }
     }
     #[doc = "`SetColors(crate::unity_engine::ui::slider::Slider)` overload"]
-    fn set_colors_2(
-        self,
-        widget: impl ::core::convert::Into<crate::unity_engine::ui::slider::Slider>,
-    ) -> () {
+    fn set_colors_2(self, widget: impl ::core::convert::Into<crate::unity_engine::ui::slider::Slider>) -> () {
         unsafe {
-            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VerticalLayoutUI_unity2_raw::set_colors_2(
-                __receiver,
-                ::core::convert::Into::into(widget),
-                ::core::option::Option::None,
-            )
+            let __receiver = <VerticalLayoutUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VerticalLayoutUI_unity2_raw::set_colors_2(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)
         }
     }
 }
@@ -1140,10 +875,7 @@ impl<__T: IVerticalLayoutUI> IVerticalLayoutUIMethods for __T {}
 #[cfg(feature = "combat-verticallayoutui")]
 impl VerticalLayoutUI {
     #[doc = "`.ctor(crate::unity_engine::canvas::Canvas, crate::unity_engine::vector3::Vector3)` — overload selector"]
-    pub fn new(
-        canvas: crate::unity_engine::canvas::Canvas,
-        anchor: crate::unity_engine::vector3::Vector3,
-    ) -> Self {
+    pub fn new(canvas: crate::unity_engine::canvas::Canvas, anchor: crate::unity_engine::vector3::Vector3) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -1159,9 +891,7 @@ impl VerticalLayoutUI {
 #[cfg(feature = "combat-verticallayoutui")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IVerticalLayoutUI;
-    pub use super::IVerticalLayoutUIMethods;
-    pub use super::VerticalLayoutUI;
+    pub use super::{IVerticalLayoutUI, IVerticalLayoutUIMethods, VerticalLayoutUI};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

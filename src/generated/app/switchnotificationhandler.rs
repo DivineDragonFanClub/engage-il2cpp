@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-switchnotificationhandler-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/switchnotificationhandler/SwitchNotificationHandler.md"))]
     #[::unity2::class(namespace = "App", name = "SwitchNotificationHandler")]
@@ -32,9 +32,7 @@ mod __SwitchNotificationHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_docked {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
@@ -47,35 +45,26 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "get_IsDocked",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "get_IsDocked",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_is_docked(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_docked::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_docked::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_boosted {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
@@ -88,35 +77,26 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "get_IsBoosted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "get_IsBoosted",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_is_boosted(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_boosted::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_boosted::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_operation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
@@ -129,34 +109,31 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "get_OperationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "get_OperationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_operation_mode(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::switch::operation::Operation_OperationMode {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: operation :: Operation_OperationMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_operation_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::switch::operation::Operation_OperationMode =
+            ::core::mem::transmute(__lookup_get_operation_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_operation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: operation :: Operation_OperationMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::switch::operation::Operation_OperationMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
                 "set_OperationMode",
@@ -168,41 +145,30 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "set_OperationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "set_OperationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_operation_mode(
         value: crate::unity_engine::switch::operation::Operation_OperationMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::switch::operation::Operation_OperationMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_operation_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::switch::operation::Operation_OperationMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_operation_mode::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_performance_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
@@ -215,34 +181,31 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "get_PerformanceMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "get_PerformanceMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_performance_mode(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::switch::performance::Performance_PerformanceMode {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: switch :: performance :: Performance_PerformanceMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_performance_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::switch::performance::Performance_PerformanceMode =
+            ::core::mem::transmute(__lookup_get_performance_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_performance_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: performance :: Performance_PerformanceMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::switch::performance::Performance_PerformanceMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
                 "set_PerformanceMode",
@@ -254,41 +217,30 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "set_PerformanceMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "set_PerformanceMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_performance_mode(
         value: crate::unity_engine::switch::performance::Performance_PerformanceMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::switch::performance::Performance_PerformanceMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_performance_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::switch::performance::Performance_PerformanceMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_performance_mode::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_runtime_method_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
@@ -301,36 +253,29 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "OnRuntimeMethodLoad",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "OnRuntimeMethodLoad",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_runtime_method_load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_runtime_method_load::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_runtime_method_load::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_notification_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: notification :: Notification_Message as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::switch::notification::Notification_Message as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
                 "OnNotificationMessage",
@@ -342,41 +287,30 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "OnNotificationMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "OnNotificationMessage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_notification_message(
         message: crate::unity_engine::switch::notification::Notification_Message,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::switch::notification::Notification_Message,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_notification_message::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::switch::notification::Notification_Message, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_notification_message::get_method_info().method_ptr);
         inner(message, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_operation_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
@@ -389,35 +323,27 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "UpdateOperationMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "UpdateOperationMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_operation_mode(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_operation_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_operation_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_performance_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
@@ -430,35 +356,27 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    "UpdatePerformanceMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        "UpdatePerformanceMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_performance_mode(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_performance_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_performance_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SwitchNotificationHandler as ::unity2::ClassIdentity>::class(),
@@ -471,26 +389,19 @@ mod __SwitchNotificationHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SwitchNotificationHandler as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -499,94 +410,54 @@ mod __SwitchNotificationHandler_unity2_raw {
 impl SwitchNotificationHandler {
     #[doc = "`get_IsDocked()` overload"]
     pub fn get_is_docked() -> bool {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::get_is_docked(::core::option::Option::None)
-        }
+        unsafe { __SwitchNotificationHandler_unity2_raw::get_is_docked(::core::option::Option::None) }
     }
+
     #[doc = "`get_IsBoosted()` overload"]
     pub fn get_is_boosted() -> bool {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::get_is_boosted(::core::option::Option::None)
-        }
+        unsafe { __SwitchNotificationHandler_unity2_raw::get_is_boosted(::core::option::Option::None) }
     }
+
     #[doc = "`get_OperationMode()` overload"]
     pub fn get_operation_mode() -> crate::unity_engine::switch::operation::Operation_OperationMode {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::get_operation_mode(::core::option::Option::None)
-        }
+        unsafe { __SwitchNotificationHandler_unity2_raw::get_operation_mode(::core::option::Option::None) }
     }
+
     #[doc = "`set_OperationMode(crate::unity_engine::switch::operation::Operation_OperationMode)` overload"]
-    pub fn set_operation_mode(
-        value: impl ::core::convert::Into<
-            crate::unity_engine::switch::operation::Operation_OperationMode,
-        >,
-    ) -> () {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::set_operation_mode(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_operation_mode(value: impl ::core::convert::Into<crate::unity_engine::switch::operation::Operation_OperationMode>) -> () {
+        unsafe { __SwitchNotificationHandler_unity2_raw::set_operation_mode(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_PerformanceMode()` overload"]
-    pub fn get_performance_mode(
-    ) -> crate::unity_engine::switch::performance::Performance_PerformanceMode {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::get_performance_mode(
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_performance_mode() -> crate::unity_engine::switch::performance::Performance_PerformanceMode {
+        unsafe { __SwitchNotificationHandler_unity2_raw::get_performance_mode(::core::option::Option::None) }
     }
+
     #[doc = "`set_PerformanceMode(crate::unity_engine::switch::performance::Performance_PerformanceMode)` overload"]
-    pub fn set_performance_mode(
-        value: impl ::core::convert::Into<
-            crate::unity_engine::switch::performance::Performance_PerformanceMode,
-        >,
-    ) -> () {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::set_performance_mode(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_performance_mode(value: impl ::core::convert::Into<crate::unity_engine::switch::performance::Performance_PerformanceMode>) -> () {
+        unsafe { __SwitchNotificationHandler_unity2_raw::set_performance_mode(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`OnRuntimeMethodLoad()` overload"]
     pub fn on_runtime_method_load() -> () {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::on_runtime_method_load(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SwitchNotificationHandler_unity2_raw::on_runtime_method_load(::core::option::Option::None) }
     }
+
     #[doc = "`OnNotificationMessage(crate::unity_engine::switch::notification::Notification_Message)` overload"]
-    pub fn on_notification_message(
-        message: impl ::core::convert::Into<
-            crate::unity_engine::switch::notification::Notification_Message,
-        >,
-    ) -> () {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::on_notification_message(
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn on_notification_message(message: impl ::core::convert::Into<crate::unity_engine::switch::notification::Notification_Message>) -> () {
+        unsafe { __SwitchNotificationHandler_unity2_raw::on_notification_message(::core::convert::Into::into(message), ::core::option::Option::None) }
     }
+
     #[doc = "`UpdateOperationMode()` overload"]
     pub fn update_operation_mode() -> () {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::update_operation_mode(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SwitchNotificationHandler_unity2_raw::update_operation_mode(::core::option::Option::None) }
     }
+
     #[doc = "`UpdatePerformanceMode()` overload"]
     pub fn update_performance_mode() -> () {
-        unsafe {
-            __SwitchNotificationHandler_unity2_raw::update_performance_mode(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SwitchNotificationHandler_unity2_raw::update_performance_mode(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __SwitchNotificationHandler_unity2_raw::cctor(::core::option::Option::None) }
@@ -596,8 +467,7 @@ impl SwitchNotificationHandler {
 #[cfg(feature = "app-switchnotificationhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISwitchNotificationHandler;
-    pub use super::SwitchNotificationHandler;
+    pub use super::{ISwitchNotificationHandler, SwitchNotificationHandler};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

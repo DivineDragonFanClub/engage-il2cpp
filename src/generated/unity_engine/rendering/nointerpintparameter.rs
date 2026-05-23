@@ -2,14 +2,16 @@
 
 #[cfg(feature = "unity_engine-rendering-nointerpintparameter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter, VolumeParameter};
-    use crate::unity_engine::rendering::volumeparameter_1::{
-        IVolumeParameter_1, VolumeParameter_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/nointerpintparameter/NoInterpIntParameter.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "NoInterpIntParameter")]
@@ -29,13 +31,9 @@ mod __NoInterpIntParameter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NoInterpIntParameter as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -47,32 +45,20 @@ mod __NoInterpIntParameter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NoInterpIntParameter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NoInterpIntParameter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: NoInterpIntParameter,
-        value: i32,
-        override_state: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: NoInterpIntParameter, value: i32, override_state: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(NoInterpIntParameter, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, value, override_state, __unity2_method_info)
     }
 }
@@ -80,15 +66,10 @@ mod __NoInterpIntParameter_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-nointerpintparameter")]
 pub trait INoInterpIntParameterMethods: INoInterpIntParameter {
     #[doc = "`.ctor(i32, bool)` overload"]
-    fn ctor(
-        self,
-        value: impl ::core::convert::Into<i32>,
-        override_state: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor(self, value: impl ::core::convert::Into<i32>, override_state: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <NoInterpIntParameter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <NoInterpIntParameter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NoInterpIntParameter_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -121,16 +102,15 @@ impl NoInterpIntParameter {
 #[cfg(feature = "unity_engine-rendering-nointerpintparameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INoInterpIntParameter;
-    pub use super::INoInterpIntParameterMethods;
-    pub use super::NoInterpIntParameter;
-    pub use crate::system::object::IObject;
+    pub use super::{INoInterpIntParameter, INoInterpIntParameterMethods, NoInterpIntParameter};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
     #[cfg(feature = "unity_engine-rendering-volumeparameter")]
     pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
     #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
     pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }

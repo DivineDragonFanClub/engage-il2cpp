@@ -2,95 +2,16 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.RenderingFeatures"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer_RenderingFeatures {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.Profiling.RenderPass"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer_Profiling_RenderPass {
-        #[static_field]
-        #[rename(name = "k_Name")]
-        pub k_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "configure")]
-        pub configure: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ScriptableRenderer_RenderBlocks_BlockRange {
-        pub m_current: i32,
-        pub m_end: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks_BlockRange {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-        const NAME: &'static str = "ScriptableRenderer.RenderBlocks.BlockRange";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ScriptableRenderer_RenderBlocks_BlockRange {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderBlock.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.Profiling.RenderBlock"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer_Profiling_RenderBlock {
-        #[static_field]
-        #[rename(name = "k_Name")]
-        pub k_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "beforeRendering")]
-        pub before_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "mainRenderingOpaque")]
-        pub main_rendering_opaque:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "mainRenderingTransparent")]
-        pub main_rendering_transparent:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "afterRendering")]
-        pub after_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.RenderPassBlock"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRenderer.RenderPassBlock")]
     #[parent(crate::system::object::Object)]
     pub struct ScriptableRenderer_RenderPassBlock {
         #[static_field]
@@ -107,59 +28,25 @@ mod __types {
         pub after_rendering: i32,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ScriptableRenderer_RenderBlocks {}
-
-    impl ::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-        const NAME: &'static str = "ScriptableRenderer.RenderBlocks";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ScriptableRenderer_RenderBlocks {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRenderer.Profiling.RenderPass")]
     #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer {
-# [static_field] # [rename (name = "current")] pub current : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer ,
-# [static_field] # [rename (name = "k_RenderPassBlockCount")] pub k_render_pass_block_count : i32 ,
-# [rename (name = "m_ActiveRenderPassQueue")] pub m_active_render_pass_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > ,
-# [rename (name = "m_RendererFeatures")] pub m_renderer_features : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > ,
-# [rename (name = "m_CameraColorTarget")] pub m_camera_color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [rename (name = "m_CameraDepthTarget")] pub m_camera_depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [rename (name = "m_FirstTimeCameraColorTargetIsBound")] pub m_first_time_camera_color_target_is_bound : bool ,
-# [rename (name = "m_FirstTimeCameraDepthTargetIsBound")] pub m_first_time_camera_depth_target_is_bound : bool ,
-# [rename (name = "m_IsPipelineExecuting")] pub m_is_pipeline_executing : bool ,
-# [rename (name = "isCameraColorTargetValid")] pub is_camera_color_target_valid : bool ,
-# [static_field] # [rename (name = "m_ActiveColorAttachments")] pub m_active_color_attachments : :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > ,
-# [static_field] # [rename (name = "m_ActiveDepthAttachment")] pub m_active_depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [static_field] # [rename (name = "m_TrimmedColorAttachmentCopies")] pub m_trimmed_color_attachment_copies : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > > ,
-}
+    pub struct ScriptableRenderer_Profiling_RenderPass {
+        #[static_field]
+        #[rename(name = "k_Name")]
+        pub k_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "configure")]
+        pub configure: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRenderer.RenderingFeatures")]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptableRenderer_RenderingFeatures {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.Profiling"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRenderer.Profiling")]
     #[parent(crate::system::object::Object)]
     pub struct ScriptableRenderer_Profiling {
         #[static_field]
@@ -167,8 +54,7 @@ mod __types {
         pub k_name: ::unity2::Il2CppString,
         #[static_field]
         #[rename(name = "setPerCameraShaderVariables")]
-        pub set_per_camera_shader_variables:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        pub set_per_camera_shader_variables: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "sortRenderPasses")]
         pub sort_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
@@ -183,21 +69,222 @@ mod __types {
         pub add_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "clearRenderingState")]
-        pub clear_rendering_state:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        pub clear_rendering_state: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "internalStartRendering")]
-        pub internal_start_rendering:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        pub internal_start_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "internalFinishRendering")]
-        pub internal_finish_rendering:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        pub internal_finish_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRenderer")]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptableRenderer {
+        #[static_field]
+        #[rename(name = "current")]
+        pub current: crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
+        #[static_field]
+        #[rename(name = "k_RenderPassBlockCount")]
+        pub k_render_pass_block_count: i32,
+        #[rename(name = "m_ActiveRenderPassQueue")]
+        pub m_active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+        #[rename(name = "m_RendererFeatures")]
+        pub m_renderer_features: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature,
+        >,
+        #[rename(name = "m_CameraColorTarget")]
+        pub m_camera_color_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        #[rename(name = "m_CameraDepthTarget")]
+        pub m_camera_depth_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        #[rename(name = "m_FirstTimeCameraColorTargetIsBound")]
+        pub m_first_time_camera_color_target_is_bound: bool,
+        #[rename(name = "m_FirstTimeCameraDepthTargetIsBound")]
+        pub m_first_time_camera_depth_target_is_bound: bool,
+        #[rename(name = "m_IsPipelineExecuting")]
+        pub m_is_pipeline_executing: bool,
+        #[rename(name = "isCameraColorTargetValid")]
+        pub is_camera_color_target_valid: bool,
+        #[static_field]
+        #[rename(name = "m_ActiveColorAttachments")]
+        pub m_active_color_attachments: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        #[static_field]
+        #[rename(name = "m_ActiveDepthAttachment")]
+        pub m_active_depth_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        #[static_field]
+        #[rename(name = "m_TrimmedColorAttachmentCopies")]
+        pub m_trimmed_color_attachment_copies:
+            ::unity2::Array<::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>>,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ScriptableRenderer_RenderBlocks {}
+
+    impl ::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks {
+        const NAME: &'static str = "ScriptableRenderer.RenderBlocks";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ScriptableRenderer_RenderBlocks {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderBlock.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRenderer.Profiling.RenderBlock")]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptableRenderer_Profiling_RenderBlock {
+        #[static_field]
+        #[rename(name = "k_Name")]
+        pub k_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "beforeRendering")]
+        pub before_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "mainRenderingOpaque")]
+        pub main_rendering_opaque: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "mainRenderingTransparent")]
+        pub main_rendering_transparent: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "afterRendering")]
+        pub after_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ScriptableRenderer_RenderBlocks_BlockRange {
+        pub m_current: i32,
+        pub m_end: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks_BlockRange {
+        const NAME: &'static str = "ScriptableRenderer.RenderBlocks.BlockRange";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ScriptableRenderer_RenderBlocks_BlockRange {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRenderer_RenderPassBlock_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderPassBlock as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderPassBlock as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_RenderPassBlock {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ScriptableRenderer_RenderPassBlock_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRenderer_Profiling_RenderPass_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_Profiling_RenderPass as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_Profiling_RenderPass as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_Profiling_RenderPass {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ScriptableRenderer_Profiling_RenderPass_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[doc(hidden)]
@@ -208,9 +295,7 @@ mod __ScriptableRenderer_RenderingFeatures_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_stacking {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::class(),
@@ -223,43 +308,28 @@ mod __ScriptableRenderer_RenderingFeatures_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                    "get_cameraStacking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
+                        "get_cameraStacking",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_camera_stacking(
-        this: ScriptableRenderer_RenderingFeatures,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderingFeatures,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera_stacking::get_offset() as isize),
-        );
+    pub unsafe fn get_camera_stacking(this: ScriptableRenderer_RenderingFeatures, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ScriptableRenderer_RenderingFeatures, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_camera_stacking::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_camera_stacking {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::class(),
                 "set_cameraStacking",
@@ -271,43 +341,27 @@ mod __ScriptableRenderer_RenderingFeatures_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                    "set_cameraStacking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
+                        "set_cameraStacking",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_camera_stacking(
-        this: ScriptableRenderer_RenderingFeatures,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderingFeatures,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_camera_stacking::get_offset() as isize),
-        );
+    pub unsafe fn set_camera_stacking(this: ScriptableRenderer_RenderingFeatures, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptableRenderer_RenderingFeatures, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_camera_stacking::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_msaa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::class(),
@@ -320,43 +374,28 @@ mod __ScriptableRenderer_RenderingFeatures_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                    "get_msaa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
+                        "get_msaa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_msaa(
-        this: ScriptableRenderer_RenderingFeatures,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderingFeatures,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_msaa::get_offset() as isize),
-        );
+    pub unsafe fn get_msaa(this: ScriptableRenderer_RenderingFeatures, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ScriptableRenderer_RenderingFeatures, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_msaa::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_msaa {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::class(),
                 "set_msaa",
@@ -368,43 +407,27 @@ mod __ScriptableRenderer_RenderingFeatures_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                    "set_msaa",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
+                        "set_msaa",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_msaa(
-        this: ScriptableRenderer_RenderingFeatures,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderingFeatures,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_msaa::get_offset() as isize),
-        );
+    pub unsafe fn set_msaa(this: ScriptableRenderer_RenderingFeatures, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptableRenderer_RenderingFeatures, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_msaa::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::class(),
@@ -417,54 +440,41 @@ mod __ScriptableRenderer_RenderingFeatures_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderingFeatures as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ScriptableRenderer_RenderingFeatures,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderingFeatures,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: ScriptableRenderer_RenderingFeatures, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptableRenderer_RenderingFeatures, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-pub trait IScriptableRenderer_RenderingFeaturesMethods:
-    IScriptableRenderer_RenderingFeatures
-{
+pub trait IScriptableRenderer_RenderingFeaturesMethods: IScriptableRenderer_RenderingFeatures {
     #[doc = "`get_cameraStacking()` overload"]
     fn get_camera_stacking(self) -> bool {
         unsafe {
-            let __receiver = < ScriptableRenderer_RenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ScriptableRenderer_RenderingFeatures_unity2_raw::get_camera_stacking(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer_RenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ScriptableRenderer_RenderingFeatures_unity2_raw::get_camera_stacking(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_cameraStacking(bool)` overload"]
     fn set_camera_stacking(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < ScriptableRenderer_RenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ScriptableRenderer_RenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ScriptableRenderer_RenderingFeatures_unity2_raw::set_camera_stacking(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -475,41 +485,34 @@ pub trait IScriptableRenderer_RenderingFeaturesMethods:
     #[doc = "`get_msaa()` overload"]
     fn get_msaa(self) -> bool {
         unsafe {
-            let __receiver = < ScriptableRenderer_RenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ScriptableRenderer_RenderingFeatures_unity2_raw::get_msaa(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer_RenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ScriptableRenderer_RenderingFeatures_unity2_raw::get_msaa(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_msaa(bool)` overload"]
     fn set_msaa(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < ScriptableRenderer_RenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ScriptableRenderer_RenderingFeatures_unity2_raw::set_msaa(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer_RenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ScriptableRenderer_RenderingFeatures_unity2_raw::set_msaa(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < ScriptableRenderer_RenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ScriptableRenderer_RenderingFeatures_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer_RenderingFeatures as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ScriptableRenderer_RenderingFeatures_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl<__T: IScriptableRenderer_RenderingFeatures> IScriptableRenderer_RenderingFeaturesMethods
-    for __T
-{
-}
+impl<__T: IScriptableRenderer_RenderingFeatures> IScriptableRenderer_RenderingFeaturesMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 impl ScriptableRenderer_RenderingFeatures {
@@ -530,18 +533,16 @@ impl ScriptableRenderer_RenderingFeatures {
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_Profiling_RenderPass_unity2_raw {
+mod __ScriptableRenderer_Profiling_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_Profiling_RenderPass as ::unity2::ClassIdentity>::class(),
+                <ScriptableRenderer_Profiling as ::unity2::ClassIdentity>::class(),
                 ".cctor",
                 0,
                 param_types,
@@ -551,732 +552,28 @@ mod __ScriptableRenderer_Profiling_RenderPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_Profiling_RenderPass as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_Profiling as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_Profiling_RenderPass {
+impl ScriptableRenderer_Profiling {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
-        unsafe {
-            __ScriptableRenderer_Profiling_RenderPass_unity2_raw::cctor(
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ScriptableRenderer_RenderBlocks_BlockRange,
-        begin: i32,
-        end: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderBlocks_BlockRange,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, begin, end, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_enumerator (this : ScriptableRenderer_RenderBlocks_BlockRange , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange{
-        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks_BlockRange , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_enumerator :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
-                    "MoveNext",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn move_next(
-        this: ScriptableRenderer_RenderBlocks_BlockRange,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderBlocks_BlockRange,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_next::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current(
-        this: ScriptableRenderer_RenderBlocks_BlockRange,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderBlocks_BlockRange,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: ScriptableRenderer_RenderBlocks_BlockRange,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderBlocks_BlockRange,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispose::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_RenderBlocks_BlockRange {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    pub fn ctor(
-        self,
-        begin: impl ::core::convert::Into<i32>,
-        end: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(begin),
-                ::core::convert::Into::into(end),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetEnumerator()` overload"]    pub fn get_enumerator (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange{
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::get_enumerator(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::move_next(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> i32 {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::get_current(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::dispose(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_Profiling_RenderBlock_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_Profiling_RenderBlock as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_Profiling_RenderBlock as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_Profiling_RenderBlock {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __ScriptableRenderer_Profiling_RenderBlock_unity2_raw::cctor(
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_RenderPassBlock_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderPassBlock as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderPassBlock as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_RenderPassBlock {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __ScriptableRenderer_RenderPassBlock_unity2_raw::cctor(::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_RenderBlocks_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ScriptableRenderer_RenderBlocks,
-        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
-        inner(this, active_render_pass_queue, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: ScriptableRenderer_RenderBlocks,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fill_block_ranges {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                "FillBlockRanges",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    "FillBlockRanges",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fill_block_ranges(
-        this: ScriptableRenderer_RenderBlocks,
-        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_fill_block_ranges :: get_offset () as isize) ,) ;
-        inner(this, active_render_pass_queue, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                "GetLength",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    "GetLength",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_length(
-        this: ScriptableRenderer_RenderBlocks,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderBlocks,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_length::get_offset() as isize),
-        );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                "GetRange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    "GetRange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_range (this : ScriptableRenderer_RenderBlocks , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange{
-        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_range :: get_offset () as isize) ,) ;
-        inner(this, index, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_RenderBlocks {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
-    pub fn ctor(
-        self,
-        active_render_pass_queue : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > >,
-    ) -> () {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(active_render_pass_queue),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::dispose(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FillBlockRanges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
-    pub fn fill_block_ranges(
-        self,
-        active_render_pass_queue : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > >,
-    ) -> () {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::fill_block_ranges(
-                self,
-                ::core::convert::Into::into(active_render_pass_queue),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetLength(i32)` overload"]
-    pub fn get_length(self, index: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::get_length(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetRange(i32)` overload"]    pub fn get_range (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange{
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::get_range(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptableRenderer_Profiling_unity2_raw::cctor(::core::option::Option::None) }
     }
 }
 
@@ -1289,9 +586,7 @@ mod __ScriptableRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_depth {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -1304,34 +599,33 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_cameraDepth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_cameraDepth",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_depth(
         this: ScriptableRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
-        let inner : extern "C" fn (ScriptableRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_camera_depth :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier =
+            ::core::mem::transmute(__lookup_get_camera_depth::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_profiling_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -1344,35 +638,32 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_profilingExecute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_profilingExecute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_profiling_execute(
         this: ScriptableRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler {
-        let inner : extern "C" fn (ScriptableRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_profiling_execute :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(ScriptableRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler =
+            ::core::mem::transmute(__lookup_get_profiling_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_profiling_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::profilingsampler::ProfilingSampler as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "set_profilingExecute",
@@ -1384,18 +675,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_profilingExecute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_profilingExecute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_profiling_execute(
@@ -1407,21 +695,19 @@ mod __ScriptableRenderer_unity2_raw {
             ScriptableRenderer,
             crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_profiling_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_profiling_execute::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_camera_matrices {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetCameraMatrices",
@@ -1433,18 +719,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetCameraMatrices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetCameraMatrices",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_camera_matrices(
@@ -1458,21 +741,18 @@ mod __ScriptableRenderer_unity2_raw {
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_camera_matrices::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_camera_matrices::get_method_info().method_ptr);
         inner(cmd, camera_data, set_inverse_matrices, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_per_camera_shader_variables {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetPerCameraShaderVariables",
@@ -1484,18 +764,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetPerCameraShaderVariables",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetPerCameraShaderVariables",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_per_camera_shader_variables(
@@ -1509,21 +786,20 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_per_camera_shader_variables::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_per_camera_shader_variables::get_method_info().method_ptr);
         inner(this, cmd, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shader_time_values {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetShaderTimeValues",
@@ -1535,18 +811,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetShaderTimeValues",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetShaderTimeValues",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_shader_time_values(
@@ -1564,27 +837,14 @@ mod __ScriptableRenderer_unity2_raw {
             f32,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_shader_time_values::get_offset() as isize),
-        );
-        inner(
-            this,
-            cmd,
-            time,
-            delta_time,
-            smooth_delta_time,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_shader_time_values::get_method_info().method_ptr);
+        inner(this, cmd, time, delta_time, smooth_delta_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_color_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -1597,34 +857,33 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_cameraColorTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_cameraColorTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_color_target(
         this: ScriptableRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
-        let inner : extern "C" fn (ScriptableRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_camera_color_target :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier =
+            ::core::mem::transmute(__lookup_get_camera_color_target::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_depth_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -1637,34 +896,33 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_cameraDepthTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_cameraDepthTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_depth_target(
         this: ScriptableRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
-        let inner : extern "C" fn (ScriptableRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_camera_depth_target :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier =
+            ::core::mem::transmute(__lookup_get_camera_depth_target::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_renderer_features {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -1677,30 +935,36 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_rendererFeatures",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_rendererFeatures",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_renderer_features (this : ScriptableRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature >{
-        let inner : extern "C" fn (ScriptableRenderer , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_renderer_features :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_renderer_features(
+        this: ScriptableRenderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature,
+    > {
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature,
+        > = ::core::mem::transmute(__lookup_get_renderer_features::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_active_render_pass_queue {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -1713,45 +977,35 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_activeRenderPassQueue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_activeRenderPassQueue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_active_render_pass_queue(
         this: ScriptableRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>
+    {
         let inner: extern "C" fn(
             ScriptableRenderer,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_active_render_pass_queue::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_get_active_render_pass_queue::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_supported_rendering_features {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -1764,31 +1018,36 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_supportedRenderingFeatures",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_supportedRenderingFeatures",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_supported_rendering_features (this : ScriptableRenderer , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures{
-        let inner : extern "C" fn (ScriptableRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_supported_rendering_features :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_supported_rendering_features(
+        this: ScriptableRenderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderingFeatures {
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderingFeatures =
+            ::core::mem::transmute(__lookup_get_supported_rendering_features::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_supported_rendering_features {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderingFeatures as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "set_supportedRenderingFeatures",
@@ -1800,35 +1059,34 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_supportedRenderingFeatures",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_supportedRenderingFeatures",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_supported_rendering_features(
         this: ScriptableRenderer,
-        value : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures,
+        value: crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderingFeatures,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ScriptableRenderer , crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_supported_rendering_features :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderingFeatures,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_supported_rendering_features::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unsupported_graphics_device_types {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -1841,48 +1099,35 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_unsupportedGraphicsDeviceTypes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_unsupportedGraphicsDeviceTypes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_unsupported_graphics_device_types(
         this: ScriptableRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType>
-    {
+    ) -> ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType> {
         let inner: extern "C" fn(
             ScriptableRenderer,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unsupported_graphics_device_types::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType> =
+            ::core::mem::transmute(__lookup_get_unsupported_graphics_device_types::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unsupported_graphics_device_types {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "set_unsupportedGraphicsDeviceTypes",
@@ -1894,46 +1139,38 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_unsupportedGraphicsDeviceTypes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_unsupportedGraphicsDeviceTypes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unsupported_graphics_device_types(
         this: ScriptableRenderer,
-        value: ::unity2::Array<
-            crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType,
-        >,
+        value: ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ScriptableRenderer,
             ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unsupported_graphics_device_types::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_unsupported_graphics_device_types::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_configure_active_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "ConfigureActiveTarget",
@@ -1945,44 +1182,36 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "ConfigureActiveTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "ConfigureActiveTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure_active_target(
-        color_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        color_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        depth_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure_active_target::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_configure_active_target::get_method_info().method_ptr);
         inner(color_attachment, depth_attachment, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -1994,35 +1223,34 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: ScriptableRenderer,
-        data : crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData,
+        data: crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ScriptableRenderer , crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -2035,41 +1263,28 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: ScriptableRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: ScriptableRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "Dispose",
@@ -2081,41 +1296,31 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose_2(
-        this: ScriptableRenderer,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose_2(this: ScriptableRenderer, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRenderer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose_2::get_method_info().method_ptr);
         inner(this, disposing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_configure_camera_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "ConfigureCameraTarget",
@@ -2127,24 +1332,21 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "ConfigureCameraTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "ConfigureCameraTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure_camera_target(
         this: ScriptableRenderer,
-        color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        color_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        depth_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -2152,21 +1354,16 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure_camera_target::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_configure_camera_target::get_method_info().method_ptr);
         inner(this, color_target, depth_target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_configure_camera_color_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "ConfigureCameraColorTarget",
@@ -2178,44 +1375,38 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "ConfigureCameraColorTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "ConfigureCameraColorTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn configure_camera_color_target(
         this: ScriptableRenderer,
-        color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        color_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ScriptableRenderer,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_configure_camera_color_target::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_configure_camera_color_target::get_method_info().method_ptr);
         inner(this, color_target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "Setup",
@@ -2227,24 +1418,21 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
         this: ScriptableRenderer,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -2252,21 +1440,18 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_lights {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetupLights",
@@ -2278,24 +1463,21 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetupLights",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetupLights",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_lights(
         this: ScriptableRenderer,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -2303,21 +1485,18 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_lights::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_lights::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_culling_parameters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetupCullingParameters",
@@ -2329,37 +1508,38 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetupCullingParameters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetupCullingParameters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_culling_parameters(
         this: ScriptableRenderer,
-        culling_parameters : * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters,
+        culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
         camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ScriptableRenderer , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_setup_culling_parameters :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
+            *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_setup_culling_parameters::get_method_info().method_ptr);
         inner(this, culling_parameters, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finish_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "FinishRendering",
@@ -2371,18 +1551,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "FinishRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "FinishRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn finish_rendering(
@@ -2390,24 +1567,15 @@ mod __ScriptableRenderer_unity2_raw {
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScriptableRenderer,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_finish_rendering::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScriptableRenderer, crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_finish_rendering::get_method_info().method_ptr);
         inner(this, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sub_light_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -2420,42 +1588,31 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetSubLightTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetSubLightTag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sub_light_tag(
-        this: ScriptableRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ScriptableRenderer,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sub_light_tag::get_offset() as isize),
-        );
+    pub unsafe fn get_sub_light_tag(this: ScriptableRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ScriptableRenderer, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_sub_light_tag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -2467,24 +1624,21 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
         this: ScriptableRenderer,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -2492,21 +1646,16 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enqueue_pass {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "EnqueuePass",
@@ -2518,18 +1667,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "EnqueuePass",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "EnqueuePass",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enqueue_pass(
@@ -2541,21 +1687,16 @@ mod __ScriptableRenderer_unity2_raw {
             ScriptableRenderer,
             crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enqueue_pass::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_enqueue_pass::get_method_info().method_ptr);
         inner(this, pass, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_clear_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "GetCameraClearFlag",
@@ -2567,18 +1708,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetCameraClearFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetCameraClearFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_clear_flag(
@@ -2588,21 +1726,17 @@ mod __ScriptableRenderer_unity2_raw {
         let inner: extern "C" fn(
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::clearflag::ClearFlag = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera_clear_flag::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::rendering::clearflag::ClearFlag =
+            ::core::mem::transmute(__lookup_get_camera_clear_flag::get_method_info().method_ptr);
         inner(camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_render_passes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "AddRenderPasses",
@@ -2614,44 +1748,36 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "AddRenderPasses",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "AddRenderPasses",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_render_passes(
         this: ScriptableRenderer,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ScriptableRenderer,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_render_passes::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_render_passes::get_method_info().method_ptr);
         inner(this, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_rendering_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "ClearRenderingState",
@@ -2663,18 +1789,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "ClearRenderingState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "ClearRenderingState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_rendering_state(
@@ -2682,25 +1805,17 @@ mod __ScriptableRenderer_unity2_raw {
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ScriptableRenderer,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_rendering_state::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ScriptableRenderer, crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_rendering_state::get_method_info().method_ptr);
         inner(this, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "Clear",
@@ -2712,18 +1827,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(
@@ -2735,21 +1847,21 @@ mod __ScriptableRenderer_unity2_raw {
             ScriptableRenderer,
             crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, camera_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute_block {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "ExecuteBlock",
@@ -2761,48 +1873,47 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteBlock",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "ExecuteBlock",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute_block(
         this: ScriptableRenderer,
         block_index: i32,
-        render_blocks : * mut crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks,
+        render_blocks: *mut crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         submit: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ScriptableRenderer , i32 , * mut crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_execute_block :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            block_index,
-            render_blocks,
-            context,
-            rendering_data,
-            submit,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            ScriptableRenderer,
+            i32,
+            *mut crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks,
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_block::get_method_info().method_ptr);
+        inner(this, block_index, render_blocks, context, rendering_data, submit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute_render_pass {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "ExecuteRenderPass",
@@ -2814,25 +1925,22 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteRenderPass",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "ExecuteRenderPass",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute_render_pass(
         this: ScriptableRenderer,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        render_pass : crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        render_pass: crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -2841,27 +1949,19 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_render_pass::get_offset() as isize),
-        );
-        inner(
-            this,
-            context,
-            render_pass,
-            rendering_data,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_execute_render_pass::get_method_info().method_ptr);
+        inner(this, context, render_pass, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_pass_attachments {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetRenderPassAttachments",
@@ -2873,24 +1973,21 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderPassAttachments",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderPassAttachments",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_pass_attachments(
         this: ScriptableRenderer,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        render_pass : crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass,
+        render_pass: crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
         camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -2900,21 +1997,19 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_pass_attachments::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_pass_attachments::get_method_info().method_ptr);
         inner(this, cmd, render_pass, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_begin_xr_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "BeginXRRendering",
@@ -2926,18 +2021,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "BeginXRRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "BeginXRRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn begin_xr_rendering(
@@ -2953,21 +2045,19 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_xr_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_begin_xr_rendering::get_method_info().method_ptr);
         inner(this, cmd, context, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_xr_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "EndXRRendering",
@@ -2979,18 +2069,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "EndXRRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "EndXRRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn end_xr_rendering(
@@ -3006,21 +2093,21 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_xr_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_end_xr_rendering::get_method_info().method_ptr);
         inner(this, cmd, context, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: clearflag :: ClearFlag as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::clearflag::ClearFlag as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3032,24 +2119,21 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        color_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        color_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        depth_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         clear_flag: crate::unity_engine::rendering::clearflag::ClearFlag,
         clear_color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -3061,28 +2145,22 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::clearflag::ClearFlag,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target::get_offset() as isize),
-        );
-        inner(
-            cmd,
-            color_attachment,
-            depth_attachment,
-            clear_flag,
-            clear_color,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target::get_method_info().method_ptr);
+        inner(cmd, color_attachment, depth_attachment, clear_flag, clear_color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: clearflag :: ClearFlag as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::clearflag::ClearFlag as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3094,25 +2172,22 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_2(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        color_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        color_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        color_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         clear_flags: crate::unity_engine::rendering::clearflag::ClearFlag,
         clear_color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -3125,11 +2200,7 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::clearflag::ClearFlag,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_2::get_method_info().method_ptr);
         inner(
             cmd,
             color_attachment,
@@ -3144,10 +2215,18 @@ mod __ScriptableRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: clearflag :: ClearFlag as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::clearflag::ClearFlag as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3159,28 +2238,25 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_3(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        color_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
-        depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
-        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        color_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        color_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        color_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
+        depth_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        depth_load_action: crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
+        depth_store_action: crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
         clear_flags: crate::unity_engine::rendering::clearflag::ClearFlag,
         clear_color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -3196,11 +2272,7 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::clearflag::ClearFlag,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_3::get_method_info().method_ptr);
         inner(
             cmd,
             color_attachment,
@@ -3218,10 +2290,14 @@ mod __ScriptableRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_target_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: clearflag :: ClearFlag as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::clearflag::ClearFlag as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SetRenderTarget",
@@ -3233,61 +2309,45 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_target_4(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        color_attachments: ::unity2::Array<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        color_attachments: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         clear_flag: crate::unity_engine::rendering::clearflag::ClearFlag,
         clear_color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            ::unity2::Array<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >,
+            ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::clearflag::ClearFlag,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_target_4::get_offset() as isize),
-        );
-        inner(
-            cmd,
-            color_attachments,
-            depth_attachment,
-            clear_flag,
-            clear_color,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_render_target_4::get_method_info().method_ptr);
+        inner(cmd, color_attachments, depth_attachment, clear_flag, clear_color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_gizmos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: gizmosubset :: GizmoSubset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::gizmosubset::GizmoSubset as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "DrawGizmos",
@@ -3299,18 +2359,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "DrawGizmos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "DrawGizmos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_gizmos(
@@ -3326,21 +2383,18 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::camera::Camera,
             crate::unity_engine::rendering::gizmosubset::GizmoSubset,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_gizmos::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_draw_gizmos::get_method_info().method_ptr);
         inner(this, context, camera, gizmo_subset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_wire_overlay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "DrawWireOverlay",
@@ -3352,18 +2406,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "DrawWireOverlay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "DrawWireOverlay",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_wire_overlay(
@@ -3377,21 +2428,18 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_wire_overlay::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_draw_wire_overlay::get_method_info().method_ptr);
         inner(this, context, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_start_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "InternalStartRendering",
@@ -3403,24 +2451,21 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "InternalStartRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "InternalStartRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_start_rendering(
         this: ScriptableRenderer,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -3428,21 +2473,18 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_start_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_start_rendering::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_finish_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "InternalFinishRendering",
@@ -3454,18 +2496,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "InternalFinishRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "InternalFinishRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_finish_rendering(
@@ -3479,21 +2518,17 @@ mod __ScriptableRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_finish_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_finish_rendering::get_method_info().method_ptr);
         inner(this, context, resolve_final_target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sort_stable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
                 "SortStable",
@@ -3505,18 +2540,15 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SortStable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SortStable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sort_stable(
@@ -3525,16 +2557,17 @@ mod __ScriptableRenderer_unity2_raw {
         >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_sort_stable :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_sort_stable::get_method_info().method_ptr);
         inner(list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRenderer as ::unity2::ClassIdentity>::class(),
@@ -3547,26 +2580,19 @@ mod __ScriptableRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -3579,9 +2605,7 @@ impl ScriptableRenderer {
         set_inverse_matrices: impl ::core::convert::Into<bool>,
     ) -> crate::unity_engine::rendering::universal::cameradata::CameraData {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
             __ScriptableRenderer_unity2_raw::set_camera_matrices(
                 ::core::convert::Into::into(cmd),
                 __out_0.as_mut_ptr(),
@@ -3591,14 +2615,11 @@ impl ScriptableRenderer {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`ConfigureActiveTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
     pub fn configure_active_target(
-        color_attachment: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth_attachment: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        color_attachment: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth_attachment: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
             __ScriptableRenderer_unity2_raw::configure_active_target(
@@ -3608,33 +2629,24 @@ impl ScriptableRenderer {
             )
         }
     }
+
     #[doc = "`GetCameraClearFlag(*mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]
     pub fn get_camera_clear_flag() -> (
         crate::unity_engine::rendering::clearflag::ClearFlag,
         crate::unity_engine::rendering::universal::cameradata::CameraData,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
-            let __ret = {
-                __ScriptableRenderer_unity2_raw::get_camera_clear_flag(
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
+            let __ret = { __ScriptableRenderer_unity2_raw::get_camera_clear_flag(__out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::clearflag::ClearFlag, crate::unity_engine::color::Color)` overload"]
     pub fn set_render_target(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        color_attachment: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth_attachment: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        color_attachment: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth_attachment: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         clear_flag: impl ::core::convert::Into<crate::unity_engine::rendering::clearflag::ClearFlag>,
         clear_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
@@ -3649,18 +2661,13 @@ impl ScriptableRenderer {
             )
         }
     }
+
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::clearflag::ClearFlag, crate::unity_engine::color::Color)` overload"]
     pub fn set_render_target_2(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        color_attachment: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        color_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        color_attachment: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        color_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
         clear_flags: impl ::core::convert::Into<crate::unity_engine::rendering::clearflag::ClearFlag>,
         clear_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
@@ -3676,27 +2683,16 @@ impl ScriptableRenderer {
             )
         }
     }
+
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction, crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction, crate::unity_engine::rendering::clearflag::ClearFlag, crate::unity_engine::color::Color)` overload"]
     pub fn set_render_target_3(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        color_attachment: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        color_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        color_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
-        depth_attachment: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth_load_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction,
-        >,
-        depth_store_action: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction,
-        >,
+        color_attachment: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        color_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        color_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
+        depth_attachment: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth_load_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferloadaction::RenderBufferLoadAction>,
+        depth_store_action: impl ::core::convert::Into<crate::unity_engine::rendering::renderbufferstoreaction::RenderBufferStoreAction>,
         clear_flags: impl ::core::convert::Into<crate::unity_engine::rendering::clearflag::ClearFlag>,
         clear_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
@@ -3715,17 +2711,12 @@ impl ScriptableRenderer {
             )
         }
     }
+
     #[doc = "`SetRenderTarget(crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::clearflag::ClearFlag, crate::unity_engine::color::Color)` overload"]
     pub fn set_render_target_4(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        color_attachments: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            >,
-        >,
-        depth_attachment: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        color_attachments: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>>,
+        depth_attachment: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         clear_flag: impl ::core::convert::Into<crate::unity_engine::rendering::clearflag::ClearFlag>,
         clear_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
@@ -3740,17 +2731,18 @@ impl ScriptableRenderer {
             )
         }
     }
+
     #[doc = "`SortStable(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
     pub fn sort_stable(
-        list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > >,
+        list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+            >,
+        >,
     ) -> () {
-        unsafe {
-            __ScriptableRenderer_unity2_raw::sort_stable(
-                ::core::convert::Into::into(list),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptableRenderer_unity2_raw::sort_stable(::core::convert::Into::into(list), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __ScriptableRenderer_unity2_raw::cctor(::core::option::Option::None) }
@@ -3760,49 +2752,24 @@ impl ScriptableRenderer {
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`get_cameraDepth()` overload"]
-    fn get_camera_depth(
-        self,
-    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+    fn get_camera_depth(self) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_camera_depth(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_camera_depth(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_profilingExecute()` overload"]
-    fn get_profiling_execute(
-        self,
-    ) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler {
+    fn get_profiling_execute(self) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_profiling_execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_profiling_execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_profilingExecute(crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"]
-    fn set_profiling_execute(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        >,
-    ) -> () {
+    fn set_profiling_execute(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::profilingsampler::ProfilingSampler>) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::set_profiling_execute(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::set_profiling_execute(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SetPerCameraShaderVariables(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]
@@ -3811,12 +2778,8 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
     ) -> crate::unity_engine::rendering::universal::cameradata::CameraData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
             __ScriptableRenderer_unity2_raw::set_per_camera_shader_variables(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -3835,9 +2798,7 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
         smooth_delta_time: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::set_shader_time_values(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -3849,80 +2810,54 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
         }
     }
     #[doc = "`get_cameraColorTarget()` overload"]
-    fn get_camera_color_target(
-        self,
-    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+    fn get_camera_color_target(self) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_camera_color_target(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_camera_color_target(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_cameraDepthTarget()` overload"]
-    fn get_camera_depth_target(
-        self,
-    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
+    fn get_camera_depth_target(self) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_camera_depth_target(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_camera_depth_target(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`get_rendererFeatures()` overload"]    fn get_renderer_features (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature >{
+    #[doc = "`get_rendererFeatures()` overload"]
+    fn get_renderer_features(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature,
+    > {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_renderer_features(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_renderer_features(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_activeRenderPassQueue()` overload"]
     fn get_active_render_pass_queue(
         self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>
+    {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_active_render_pass_queue(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_active_render_pass_queue(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`get_supportedRenderingFeatures()` overload"]    fn get_supported_rendering_features (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures{
+    #[doc = "`get_supportedRenderingFeatures()` overload"]
+    fn get_supported_rendering_features(self) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderingFeatures {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_supported_rendering_features(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_supported_rendering_features(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_supportedRenderingFeatures(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderingFeatures)` overload"]
     fn set_supported_rendering_features(
         self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderingFeatures>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::set_supported_rendering_features(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -3931,31 +2866,19 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
         }
     }
     #[doc = "`get_unsupportedGraphicsDeviceTypes()` overload"]
-    fn get_unsupported_graphics_device_types(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType>
-    {
+    fn get_unsupported_graphics_device_types(self) -> ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType> {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_unsupported_graphics_device_types(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_unsupported_graphics_device_types(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_unsupportedGraphicsDeviceTypes(::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType>)` overload"]
     fn set_unsupported_graphics_device_types(
         self,
-        value: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType>,
-        >,
+        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType>>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::set_unsupported_graphics_device_types(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -3964,57 +2887,34 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
         }
     }
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)` overload"]
-    fn ctor(
-        self,
-        data : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData >,
-    ) -> () {
+    fn ctor(self, data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData>) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose(bool)` overload"]
     fn dispose_2(self, disposing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::dispose_2(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
         }
     }
     #[doc = "`ConfigureCameraTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
     fn configure_camera_target(
         self,
-        color_target: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth_target: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        color_target: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth_target: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::configure_camera_target(
                 __receiver,
                 ::core::convert::Into::into(color_target),
@@ -4026,14 +2926,10 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`ConfigureCameraColorTarget(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
     fn configure_camera_color_target(
         self,
-        color_target: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        color_target: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::configure_camera_color_target(
                 __receiver,
                 ::core::convert::Into::into(color_target),
@@ -4044,17 +2940,11 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn setup(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ScriptableRenderer_unity2_raw::setup(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -4067,17 +2957,11 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`SetupLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn setup_lights(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ScriptableRenderer_unity2_raw::setup_lights(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -4095,13 +2979,10 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
         crate::unity_engine::rendering::universal::cameradata::CameraData,
     ) {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ;
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
             __ScriptableRenderer_unity2_raw::setup_culling_parameters(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -4112,47 +2993,27 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
         }
     }
     #[doc = "`FinishRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn finish_rendering(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> () {
+    fn finish_rendering(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::finish_rendering(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::finish_rendering(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSubLightTag()` overload"]
     fn get_sub_light_tag(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::get_sub_light_tag(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::get_sub_light_tag(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn execute(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ScriptableRenderer_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -4165,83 +3026,51 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`EnqueuePass(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)` overload"]
     fn enqueue_pass(
         self,
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::enqueue_pass(
-                __receiver,
-                ::core::convert::Into::into(pass),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::enqueue_pass(__receiver, ::core::convert::Into::into(pass), ::core::option::Option::None)
         }
     }
     #[doc = "`AddRenderPasses(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    fn add_render_passes(
-        self,
-    ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
+    fn add_render_passes(self) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
-            __ScriptableRenderer_unity2_raw::add_render_passes(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
+            __ScriptableRenderer_unity2_raw::add_render_passes(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`ClearRenderingState(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn clear_rendering_state(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> () {
+    fn clear_rendering_state(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::clear_rendering_state(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::clear_rendering_state(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear(crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType)` overload"]
-    fn clear(
-        self,
-        camera_type: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
-        >,
-    ) -> () {
+    fn clear(self, camera_type: impl ::core::convert::Into<crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType>) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ScriptableRenderer_unity2_raw::clear(
-                __receiver,
-                ::core::convert::Into::into(camera_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRenderer_unity2_raw::clear(__receiver, ::core::convert::Into::into(camera_type), ::core::option::Option::None)
         }
     }
-    #[doc = "`ExecuteBlock(i32, *mutcrate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks, crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData, bool)` overload"]    fn execute_block (self , block_index : impl :: core :: convert :: Into < i32 > , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext > , submit : impl :: core :: convert :: Into < bool >) -> (crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks , crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData){
+    #[doc = "`ExecuteBlock(i32, *mutcrate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks, crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData, bool)` overload"]
+    fn execute_block(
+        self,
+        block_index: impl ::core::convert::Into<i32>,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
+        submit: impl ::core::convert::Into<bool>,
+    ) -> (
+        crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks,
+        crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks > :: uninit () ;
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ScriptableRenderer_unity2_raw::execute_block(
                 __receiver,
                 ::core::convert::Into::into(block_index),
@@ -4257,20 +3086,12 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`ExecuteRenderPass(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn execute_render_pass(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
-        render_pass: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
+        render_pass: impl ::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ScriptableRenderer_unity2_raw::execute_render_pass(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -4285,17 +3106,11 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     fn set_render_pass_attachments(
         self,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        render_pass: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
+        render_pass: impl ::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>,
     ) -> crate::unity_engine::rendering::universal::cameradata::CameraData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
             __ScriptableRenderer_unity2_raw::set_render_pass_attachments(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -4310,17 +3125,11 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     fn begin_xr_rendering(
         self,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::cameradata::CameraData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
             __ScriptableRenderer_unity2_raw::begin_xr_rendering(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -4335,17 +3144,11 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     fn end_xr_rendering(
         self,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::cameradata::CameraData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
             __ScriptableRenderer_unity2_raw::end_xr_rendering(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -4359,18 +3162,12 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`DrawGizmos(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::camera::Camera, crate::unity_engine::rendering::gizmosubset::GizmoSubset)` overload"]
     fn draw_gizmos(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-        gizmo_subset: impl ::core::convert::Into<
-            crate::unity_engine::rendering::gizmosubset::GizmoSubset,
-        >,
+        gizmo_subset: impl ::core::convert::Into<crate::unity_engine::rendering::gizmosubset::GizmoSubset>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::draw_gizmos(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -4383,15 +3180,11 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`DrawWireOverlay(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::camera::Camera)` overload"]
     fn draw_wire_overlay(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::draw_wire_overlay(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -4403,17 +3196,11 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`InternalStartRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn internal_start_rendering(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ScriptableRenderer_unity2_raw::internal_start_rendering(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -4426,15 +3213,11 @@ pub trait IScriptableRendererMethods: IScriptableRenderer {
     #[doc = "`InternalFinishRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, bool)` overload"]
     fn internal_finish_rendering(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         resolve_final_target: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptableRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRenderer_unity2_raw::internal_finish_rendering(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -4451,9 +3234,7 @@ impl<__T: IScriptableRenderer> IScriptableRendererMethods for __T {}
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 impl ScriptableRenderer {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)` — overload selector"]
-    pub fn new(
-        data : crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData,
-    ) -> Self {
+    pub fn new(data: crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -4469,18 +3250,276 @@ impl ScriptableRenderer {
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_Profiling_unity2_raw {
+mod __ScriptableRenderer_RenderBlocks_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+            > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ScriptableRenderer_RenderBlocks,
+        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ScriptableRenderer_RenderBlocks,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, active_render_pass_queue, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: ScriptableRenderer_RenderBlocks, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fill_block_ranges {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+            > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                "FillBlockRanges",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                        "FillBlockRanges",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn fill_block_ranges(
+        this: ScriptableRenderer_RenderBlocks,
+        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ScriptableRenderer_RenderBlocks,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_fill_block_ranges::get_method_info().method_ptr);
+        inner(this, active_render_pass_queue, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                "GetLength",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                        "GetLength",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_length(this: ScriptableRenderer_RenderBlocks, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_length::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                "GetRange",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                        "GetRange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_range(
+        this: ScriptableRenderer_RenderBlocks,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange {
+        let inner: extern "C" fn(
+            ScriptableRenderer_RenderBlocks,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange =
+            ::core::mem::transmute(__lookup_get_range::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_RenderBlocks {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
+    pub fn ctor(
+        self,
+        active_render_pass_queue: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __ScriptableRenderer_RenderBlocks_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(active_render_pass_queue),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __ScriptableRenderer_RenderBlocks_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`FillBlockRanges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
+    pub fn fill_block_ranges(
+        self,
+        active_render_pass_queue: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __ScriptableRenderer_RenderBlocks_unity2_raw::fill_block_ranges(
+                self,
+                ::core::convert::Into::into(active_render_pass_queue),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`GetLength(i32)` overload"]
+    pub fn get_length(self, index: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe { __ScriptableRenderer_RenderBlocks_unity2_raw::get_length(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetRange(i32)` overload"]
+    pub fn get_range(
+        self,
+        index: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange {
+        unsafe { __ScriptableRenderer_RenderBlocks_unity2_raw::get_range(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRenderer_Profiling_RenderBlock_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_Profiling as ::unity2::ClassIdentity>::class(),
+                <ScriptableRenderer_Profiling_RenderBlock as ::unity2::ClassIdentity>::class(),
                 ".cctor",
                 0,
                 param_types,
@@ -4490,61 +3529,258 @@ mod __ScriptableRenderer_Profiling_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_Profiling as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_Profiling_RenderBlock as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_Profiling {
+impl ScriptableRenderer_Profiling_RenderBlock {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
-        unsafe { __ScriptableRenderer_Profiling_unity2_raw::cctor(::core::option::Option::None) }
+        unsafe { __ScriptableRenderer_Profiling_RenderBlock_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: ScriptableRenderer_RenderBlocks_BlockRange, begin: i32, end: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks_BlockRange, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, begin, end, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
+                "GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_enumerator(
+        this: ScriptableRenderer_RenderBlocks_BlockRange,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange {
+        let inner: extern "C" fn(
+            ScriptableRenderer_RenderBlocks_BlockRange,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange =
+            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
+                "MoveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn move_next(this: ScriptableRenderer_RenderBlocks_BlockRange, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks_BlockRange, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
+                "get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current(this: ScriptableRenderer_RenderBlocks_BlockRange, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks_BlockRange, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRenderer_RenderBlocks_BlockRange as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: ScriptableRenderer_RenderBlocks_BlockRange, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks_BlockRange, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_RenderBlocks_BlockRange {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    pub fn ctor(self, begin: impl ::core::convert::Into<i32>, end: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(begin),
+                ::core::convert::Into::into(end),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`GetEnumerator()` overload"]
+    pub fn get_enumerator(self) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange {
+        unsafe { __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::get_enumerator(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`MoveNext()` overload"]
+    pub fn move_next(self) -> bool {
+        unsafe { __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::move_next(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Current()` overload"]
+    pub fn get_current(self) -> i32 {
+        unsafe { __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::get_current(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptableRenderer;
-    pub use super::IScriptableRendererMethods;
-    pub use super::IScriptableRenderer_Profiling;
-    pub use super::IScriptableRenderer_Profiling_RenderBlock;
-    pub use super::IScriptableRenderer_Profiling_RenderPass;
-    pub use super::IScriptableRenderer_RenderPassBlock;
-    pub use super::IScriptableRenderer_RenderingFeatures;
-    pub use super::IScriptableRenderer_RenderingFeaturesMethods;
-    pub use super::ScriptableRenderer;
-    pub use super::ScriptableRenderer_Profiling;
-    pub use super::ScriptableRenderer_Profiling_RenderBlock;
-    pub use super::ScriptableRenderer_Profiling_RenderPass;
-    pub use super::ScriptableRenderer_RenderBlocks;
-    pub use super::ScriptableRenderer_RenderBlocks_BlockRange;
-    pub use super::ScriptableRenderer_RenderPassBlock;
-    pub use super::ScriptableRenderer_RenderingFeatures;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IScriptableRenderer, IScriptableRendererMethods, IScriptableRenderer_Profiling, IScriptableRenderer_Profiling_RenderBlock,
+        IScriptableRenderer_Profiling_RenderPass, IScriptableRenderer_RenderPassBlock, IScriptableRenderer_RenderingFeatures,
+        IScriptableRenderer_RenderingFeaturesMethods, ScriptableRenderer, ScriptableRenderer_Profiling, ScriptableRenderer_Profiling_RenderBlock,
+        ScriptableRenderer_Profiling_RenderPass, ScriptableRenderer_RenderBlocks, ScriptableRenderer_RenderBlocks_BlockRange,
+        ScriptableRenderer_RenderPassBlock, ScriptableRenderer_RenderingFeatures,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

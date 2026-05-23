@@ -2,12 +2,14 @@
 
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/treewalkpredicate_1/TreeWalkPredicate_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "TreeWalkPredicate`1")]
@@ -29,10 +31,7 @@ impl<T0: ::unity2::ClassIdentity> TreeWalkPredicate_1<T0> {
 
     #[doc = "`Invoke(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
     #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> bool;
+    pub fn invoke(self, node: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>) -> bool;
 }
 
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1")]
@@ -54,16 +53,12 @@ impl<T0: ::unity2::ClassIdentity> TreeWalkPredicate_1<T0> {
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITreeWalkPredicate_1;
-    pub use super::ITreeWalkPredicate_1Methods;
-    pub use super::TreeWalkPredicate_1;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{ITreeWalkPredicate_1, ITreeWalkPredicate_1Methods, TreeWalkPredicate_1};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

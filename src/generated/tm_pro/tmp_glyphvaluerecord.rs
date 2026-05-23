@@ -2,11 +2,13 @@
 
 #[cfg(feature = "tm_pro-tmp_glyphvaluerecord-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_glyphvaluerecord/TMP_GlyphValueRecord.md"))]
     #[repr(C)]
@@ -19,9 +21,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for TMP_GlyphValueRecord {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "TMP_GlyphValueRecord";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -32,10 +33,7 @@ mod __types {
 
     impl ::unity2::IlType for TMP_GlyphValueRecord {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -52,9 +50,7 @@ mod __TMP_GlyphValueRecord_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_x_placement {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
@@ -67,41 +63,28 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_xPlacement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_xPlacement",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_x_placement(
-        this: TMP_GlyphValueRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_x_placement(this: TMP_GlyphValueRecord, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_GlyphValueRecord, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_x_placement::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_x_placement::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_x_placement {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
                 "set_xPlacement",
@@ -113,40 +96,27 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "set_xPlacement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "set_xPlacement",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_x_placement(
-        this: TMP_GlyphValueRecord,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_x_placement(this: TMP_GlyphValueRecord, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_GlyphValueRecord, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_x_placement::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_x_placement::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_y_placement {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
@@ -159,41 +129,28 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_yPlacement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_yPlacement",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_y_placement(
-        this: TMP_GlyphValueRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_y_placement(this: TMP_GlyphValueRecord, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_GlyphValueRecord, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_y_placement::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_y_placement::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_y_placement {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
                 "set_yPlacement",
@@ -205,40 +162,27 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "set_yPlacement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "set_yPlacement",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_y_placement(
-        this: TMP_GlyphValueRecord,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_y_placement(this: TMP_GlyphValueRecord, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_GlyphValueRecord, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_y_placement::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_y_placement::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_x_advance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
@@ -251,41 +195,28 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_xAdvance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_xAdvance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_x_advance(
-        this: TMP_GlyphValueRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_x_advance(this: TMP_GlyphValueRecord, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_GlyphValueRecord, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_x_advance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_x_advance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_x_advance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
                 "set_xAdvance",
@@ -297,40 +228,27 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "set_xAdvance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "set_xAdvance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_x_advance(
-        this: TMP_GlyphValueRecord,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_x_advance(this: TMP_GlyphValueRecord, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_GlyphValueRecord, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_x_advance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_x_advance::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_y_advance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
@@ -343,41 +261,28 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "get_yAdvance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "get_yAdvance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_y_advance(
-        this: TMP_GlyphValueRecord,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_y_advance(this: TMP_GlyphValueRecord, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_GlyphValueRecord, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_y_advance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_y_advance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_y_advance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
                 "set_yAdvance",
@@ -389,40 +294,27 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "set_yAdvance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "set_yAdvance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_y_advance(
-        this: TMP_GlyphValueRecord,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_y_advance(this: TMP_GlyphValueRecord, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_GlyphValueRecord, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_y_advance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_y_advance::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -440,18 +332,15 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -462,35 +351,17 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         y_advance: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_GlyphValueRecord,
-            f32,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            x_placement,
-            y_placement,
-            x_advance,
-            y_advance,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(TMP_GlyphValueRecord, f32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, x_placement, y_placement, x_advance, y_advance, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -502,18 +373,15 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -525,21 +393,16 @@ mod __TMP_GlyphValueRecord_unity2_raw {
             TMP_GlyphValueRecord,
             crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, value_record, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -551,18 +414,15 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -574,21 +434,18 @@ mod __TMP_GlyphValueRecord_unity2_raw {
             TMP_GlyphValueRecord,
             crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
         inner(this, value_record, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::class(),
                 "op_Addition",
@@ -600,18 +457,15 @@ mod __TMP_GlyphValueRecord_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_GlyphValueRecord as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition(
@@ -623,12 +477,7 @@ mod __TMP_GlyphValueRecord_unity2_raw {
             crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord,
             crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord,
             ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_addition::get_offset() as isize),
-        );
+        ) -> crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord = ::core::mem::transmute(__lookup_op_addition::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
 }
@@ -654,68 +503,44 @@ impl TMP_GlyphValueRecord {
 impl TMP_GlyphValueRecord {
     #[doc = "`get_xPlacement()` overload"]
     pub fn get_x_placement(self) -> f32 {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::get_x_placement(self, ::core::option::Option::None)
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::get_x_placement(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_xPlacement(f32)` overload"]
     pub fn set_x_placement(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::set_x_placement(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::set_x_placement(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_yPlacement()` overload"]
     pub fn get_y_placement(self) -> f32 {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::get_y_placement(self, ::core::option::Option::None)
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::get_y_placement(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_yPlacement(f32)` overload"]
     pub fn set_y_placement(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::set_y_placement(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::set_y_placement(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_xAdvance()` overload"]
     pub fn get_x_advance(self) -> f32 {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::get_x_advance(self, ::core::option::Option::None)
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::get_x_advance(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_xAdvance(f32)` overload"]
     pub fn set_x_advance(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::set_x_advance(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::set_x_advance(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_yAdvance()` overload"]
     pub fn get_y_advance(self) -> f32 {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::get_y_advance(self, ::core::option::Option::None)
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::get_y_advance(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_yAdvance(f32)` overload"]
     pub fn set_y_advance(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::set_y_advance(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::set_y_advance(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(f32, f32, f32, f32)` overload"]
     pub fn ctor(
         self,
@@ -735,35 +560,18 @@ impl TMP_GlyphValueRecord {
             )
         }
     }
+
     #[doc = "`.ctor(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]
-    pub fn ctor_2(
-        self,
-        value_record: impl ::core::convert::Into<
-            crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
-        >,
-    ) -> () {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(value_record),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn ctor_2(self, value_record: impl ::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy>) -> () {
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::ctor_2(self, ::core::convert::Into::into(value_record), ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"]
     pub fn ctor_3(
         self,
-        value_record: impl ::core::convert::Into<
-            crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord,
-        >,
+        value_record: impl ::core::convert::Into<crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord>,
     ) -> () {
-        unsafe {
-            __TMP_GlyphValueRecord_unity2_raw::ctor_3(
-                self,
-                ::core::convert::Into::into(value_record),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_GlyphValueRecord_unity2_raw::ctor_3(self, ::core::convert::Into::into(value_record), ::core::option::Option::None) }
     }
 }
 
@@ -771,10 +579,9 @@ impl TMP_GlyphValueRecord {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_GlyphValueRecord;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

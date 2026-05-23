@@ -2,17 +2,19 @@
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-framework-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/compatibility/framework/Framework.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Compatibility", name = "Framework")]
     #[parent(crate::system::object::Object)]
     pub struct Framework {
-# [static_field] # [rename (name = "s_FrameworkCurrent")] pub s_framework_current : crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkcurrent :: FrameworkCurrent ,
-}
+        #[static_field]
+        #[rename(name = "s_FrameworkCurrent")]
+        pub s_framework_current: crate::moon_sharp::interpreter::compatibility::frameworks::frameworkcurrent::FrameworkCurrent,
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-framework-types")]
@@ -27,81 +29,57 @@ mod __Framework_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_do {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Framework as ::unity2::ClassIdentity>::class(),
-                "get_Do",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Framework as ::unity2::ClassIdentity>::class(), "get_Do", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Framework as ::unity2::ClassIdentity>::NAME,
-                    "get_Do",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Framework as ::unity2::ClassIdentity>::NAME,
+                        "get_Do",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_do(
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase
-    {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkbase :: FrameworkBase = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_do :: get_offset () as isize) ,) ;
+    ) -> crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase =
+            ::core::mem::transmute(__lookup_get_do::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Framework as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Framework as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Framework as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Framework as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -109,11 +87,10 @@ mod __Framework_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-compatibility-framework")]
 impl Framework {
     #[doc = "`get_Do()` overload"]
-    pub fn get_do(
-    ) -> crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase
-    {
+    pub fn get_do() -> crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase {
         unsafe { __Framework_unity2_raw::get_do(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Framework_unity2_raw::cctor(::core::option::Option::None) }
@@ -123,8 +100,7 @@ impl Framework {
 #[cfg(feature = "moon_sharp-interpreter-compatibility-framework")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Framework;
-    pub use super::IFramework;
+    pub use super::{Framework, IFramework};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

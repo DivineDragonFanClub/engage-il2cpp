@@ -2,12 +2,14 @@
 
 #[cfg(feature = "app-hubaccessmanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))]
     #[::unity2::class(namespace = "App", name = "HubAccessManager.MaterialCalculator")]
@@ -21,21 +23,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct HubAccessManager_MaterialCalculator_Type {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for HubAccessManager_MaterialCalculator_Type {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "HubAccessManager.MaterialCalculator.Type";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -46,10 +41,7 @@ mod __types {
 
     impl ::unity2::IlType for HubAccessManager_MaterialCalculator_Type {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -80,11 +72,8 @@ mod __HubAccessManager_MaterialCalculator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_generate_higher_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::class(),
                 "GenerateHigherMaterials",
@@ -96,43 +85,40 @@ mod __HubAccessManager_MaterialCalculator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GenerateHigherMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GenerateHigherMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn generate_higher_materials(
         num: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-        i32,
-    > {
-        let inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , i32 > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_generate_higher_materials :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type, i32>
+    {
+        let inner: extern "C" fn(
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+            i32,
+        > = ::core::mem::transmute(__lookup_generate_higher_materials::get_method_info().method_ptr);
         inner(num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_valid_higher_materiasl_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-                    i32,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::dictionary_2::Dictionary_2<
+                crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+                i32,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::class(),
                 "GetValidHigherMateriaslType",
@@ -144,18 +130,15 @@ mod __HubAccessManager_MaterialCalculator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
-                    "GetValidHigherMateriaslType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
+                        "GetValidHigherMateriaslType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_valid_higher_materiasl_type(
@@ -165,17 +148,23 @@ mod __HubAccessManager_MaterialCalculator_unity2_raw {
         >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type {
-        let inner : extern "C" fn (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , i32 > , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_valid_higher_materiasl_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+                i32,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type =
+            ::core::mem::transmute(__lookup_get_valid_higher_materiasl_type::get_method_info().method_ptr);
         inner(materials, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_to_lower_material_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::class(),
                 "ConvertToLowerMaterialType",
@@ -187,40 +176,37 @@ mod __HubAccessManager_MaterialCalculator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
-                    "ConvertToLowerMaterialType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
+                        "ConvertToLowerMaterialType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_to_lower_material_type(
         r#type: crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type {
-        let inner : extern "C" fn (crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_convert_to_lower_material_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type =
+            ::core::mem::transmute(__lookup_convert_to_lower_material_type::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_filter_lower_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-                    i32,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::dictionary_2::Dictionary_2<
+                crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
+                i32,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::class(),
                 "FilterLowerMaterials",
@@ -232,18 +218,15 @@ mod __HubAccessManager_MaterialCalculator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
-                    "FilterLowerMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
+                        "FilterLowerMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn filter_lower_materials(
@@ -259,20 +242,14 @@ mod __HubAccessManager_MaterialCalculator_unity2_raw {
                 i32,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_filter_lower_materials::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_filter_lower_materials::get_method_info().method_ptr);
         inner(materials, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::class(),
@@ -285,32 +262,20 @@ mod __HubAccessManager_MaterialCalculator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager_MaterialCalculator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubAccessManager_MaterialCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubAccessManager_MaterialCalculator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: HubAccessManager_MaterialCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubAccessManager_MaterialCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -320,10 +285,8 @@ impl HubAccessManager_MaterialCalculator {
     #[doc = "`GenerateHigherMaterials(i32)` overload"]
     pub fn generate_higher_materials(
         num: impl ::core::convert::Into<i32>,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-        i32,
-    > {
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type, i32>
+    {
         unsafe {
             __HubAccessManager_MaterialCalculator_unity2_raw::generate_higher_materials(
                 ::core::convert::Into::into(num),
@@ -331,6 +294,7 @@ impl HubAccessManager_MaterialCalculator {
             )
         }
     }
+
     #[doc = "`GetValidHigherMateriaslType(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]
     pub fn get_valid_higher_materiasl_type(
         materials: impl ::core::convert::Into<
@@ -347,11 +311,10 @@ impl HubAccessManager_MaterialCalculator {
             )
         }
     }
+
     #[doc = "`ConvertToLowerMaterialType(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)` overload"]
     pub fn convert_to_lower_material_type(
-        r#type: impl ::core::convert::Into<
-            crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,
-        >,
+        r#type: impl ::core::convert::Into<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type>,
     ) -> crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type {
         unsafe {
             __HubAccessManager_MaterialCalculator_unity2_raw::convert_to_lower_material_type(
@@ -360,6 +323,7 @@ impl HubAccessManager_MaterialCalculator {
             )
         }
     }
+
     #[doc = "`FilterLowerMaterials(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]
     pub fn filter_lower_materials(
         materials: impl ::core::convert::Into<
@@ -379,29 +343,20 @@ impl HubAccessManager_MaterialCalculator {
 }
 
 #[cfg(feature = "app-hubaccessmanager")]
-pub trait IHubAccessManager_MaterialCalculatorMethods:
-    IHubAccessManager_MaterialCalculator
-{
+pub trait IHubAccessManager_MaterialCalculatorMethods: IHubAccessManager_MaterialCalculator {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <HubAccessManager_MaterialCalculator as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubAccessManager_MaterialCalculator_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager_MaterialCalculator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessManager_MaterialCalculator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-hubaccessmanager")]
-impl<__T: IHubAccessManager_MaterialCalculator> IHubAccessManager_MaterialCalculatorMethods
-    for __T
-{
-}
+impl<__T: IHubAccessManager_MaterialCalculator> IHubAccessManager_MaterialCalculatorMethods for __T {}
 
 #[cfg(feature = "app-hubaccessmanager")]
 impl HubAccessManager_MaterialCalculator {
@@ -428,9 +383,7 @@ mod __HubAccessManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_scene_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -443,43 +396,28 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "get_SceneName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "get_SceneName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_scene_name(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scene_name::get_offset() as isize),
-        );
+    pub unsafe fn get_scene_name(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_scene_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scene_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "set_SceneName",
@@ -491,43 +429,27 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "set_SceneName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "set_SceneName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_scene_name(
-        this: HubAccessManager,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scene_name::get_offset() as isize),
-        );
+    pub unsafe fn set_scene_name(this: HubAccessManager, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scene_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_access_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -540,48 +462,36 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "get_AccessList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "get_AccessList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_access_list(
         this: HubAccessManager,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData> {
         let inner: extern "C" fn(
             HubAccessManager,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::hubaccessdata::HubAccessData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_access_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData> =
+            ::core::mem::transmute(__lookup_get_access_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_access_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::hubaccessdata::HubAccessData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::hubaccessdata::HubAccessData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "set_AccessList",
@@ -593,47 +503,34 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "set_AccessList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "set_AccessList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_access_list(
         this: HubAccessManager,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::hubaccessdata::HubAccessData,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             HubAccessManager,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubaccessdata::HubAccessData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_access_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_access_list::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dispos_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -646,48 +543,36 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "get_DisposList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "get_DisposList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_dispos_list(
         this: HubAccessManager,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> {
         let inner: extern "C" fn(
             HubAccessManager,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::hubdisposdata::HubDisposData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dispos_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> =
+            ::core::mem::transmute(__lookup_get_dispos_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dispos_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::hubdisposdata::HubDisposData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::hubdisposdata::HubDisposData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "set_DisposList",
@@ -699,47 +584,34 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "set_DisposList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "set_DisposList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_dispos_list(
         this: HubAccessManager,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::hubdisposdata::HubDisposData,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             HubAccessManager,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubdisposdata::HubDisposData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_dispos_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_dispos_list::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dispos_item_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -752,48 +624,36 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "get_DisposItemList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "get_DisposItemList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_dispos_item_list(
         this: HubAccessManager,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> {
         let inner: extern "C" fn(
             HubAccessManager,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::hubdisposdata::HubDisposData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dispos_item_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> =
+            ::core::mem::transmute(__lookup_get_dispos_item_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dispos_item_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::hubdisposdata::HubDisposData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::hubdisposdata::HubDisposData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "set_DisposItemList",
@@ -805,47 +665,34 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "set_DisposItemList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "set_DisposItemList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_dispos_item_list(
         this: HubAccessManager,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::hubdisposdata::HubDisposData,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             HubAccessManager,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubdisposdata::HubDisposData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_dispos_item_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_dispos_item_list::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_animal_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -858,48 +705,35 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "get_AnimalDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "get_AnimalDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_animal_data_list(
         this: HubAccessManager,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> {
         let inner: extern "C" fn(
             HubAccessManager,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::animaldata::AnimalData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_animal_data_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> =
+            ::core::mem::transmute(__lookup_get_animal_data_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_animal_data_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::animaldata::AnimalData,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "set_AnimalDataList",
@@ -911,47 +745,35 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "set_AnimalDataList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "set_AnimalDataList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_animal_data_list(
         this: HubAccessManager,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::animaldata::AnimalData,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             HubAccessManager,
             crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_animal_data_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_animal_data_list::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_item_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "IsItemType",
@@ -963,41 +785,27 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "IsItemType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "IsItemType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_item_type(
-        dispos: crate::app::hubdisposdata::HubDisposData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::hubdisposdata::HubDisposData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_item_type::get_offset() as isize),
-        );
+    pub unsafe fn is_item_type(dispos: crate::app::hubdisposdata::HubDisposData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::hubdisposdata::HubDisposData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_item_type::get_method_info().method_ptr);
         inner(dispos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::hubutil::HubUtil_TimezoneType as ::unity2::IlType>::il_type(),
@@ -1013,18 +821,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
@@ -1038,20 +843,14 @@ mod __HubAccessManager_unity2_raw {
             ::unity2::Il2CppString,
             crate::app::hubutil::HubUtil_TimezoneType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, scene_name, timezone_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_confirm_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -1064,39 +863,27 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "ConfirmContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "ConfirmContent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn confirm_content(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn confirm_content(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_confirm_content::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_confirm_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -1109,39 +896,27 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_refresh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -1154,41 +929,28 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "Refresh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "Refresh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn refresh(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn refresh(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_refresh::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_refresh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_used_locator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "IsUsedLocator",
@@ -1200,18 +962,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "IsUsedLocator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "IsUsedLocator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_used_locator(
@@ -1219,24 +978,15 @@ mod __HubAccessManager_unity2_raw {
         locator_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_used_locator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_used_locator::get_method_info().method_ptr);
         inner(this, locator_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_set_access_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type(),
                 <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
@@ -1252,18 +1002,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "TrySetAccessObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "TrySetAccessObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_set_access_object(
@@ -1277,22 +1024,15 @@ mod __HubAccessManager_unity2_raw {
             crate::app::hubdisposdata::HubDisposData,
             crate::app::random_2::Random_2,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_access_object::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_try_set_access_object::get_method_info().method_ptr);
         inner(this, data, random, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_remove_access_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "TryRemoveAccessObject",
@@ -1304,18 +1044,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "TryRemoveAccessObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "TryRemoveAccessObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_remove_access_object(
@@ -1323,26 +1060,16 @@ mod __HubAccessManager_unity2_raw {
         data: crate::app::hubdisposdata::HubDisposData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            crate::app::hubdisposdata::HubDisposData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_remove_access_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, crate::app::hubdisposdata::HubDisposData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_try_remove_access_object::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_new_locator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "AddNewLocator",
@@ -1354,18 +1081,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "AddNewLocator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "AddNewLocator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_new_locator(
@@ -1373,26 +1097,16 @@ mod __HubAccessManager_unity2_raw {
         locator: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::hubaccessdata::HubAccessData {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubaccessdata::HubAccessData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_new_locator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::hubaccessdata::HubAccessData =
+            ::core::mem::transmute(__lookup_add_new_locator::get_method_info().method_ptr);
         inner(this, locator, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_locator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "ClearLocator",
@@ -1404,45 +1118,28 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "ClearLocator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "ClearLocator",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_locator(
-        this: HubAccessManager,
-        locator: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_locator::get_offset() as isize),
-        );
+    pub unsafe fn clear_locator(this: HubAccessManager, locator: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_locator::get_method_info().method_ptr);
         inner(this, locator, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_locator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "FindLocator",
@@ -1454,18 +1151,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "FindLocator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "FindLocator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_locator(
@@ -1473,26 +1167,16 @@ mod __HubAccessManager_unity2_raw {
         locator: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::hubaccessdata::HubAccessData {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubaccessdata::HubAccessData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_locator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::hubaccessdata::HubAccessData =
+            ::core::mem::transmute(__lookup_find_locator::get_method_info().method_ptr);
         inner(this, locator, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "FindPID",
@@ -1504,18 +1188,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "FindPID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "FindPID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_pid(
@@ -1523,26 +1204,16 @@ mod __HubAccessManager_unity2_raw {
         pid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::hubaccessdata::HubAccessData {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubaccessdata::HubAccessData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_pid::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::hubaccessdata::HubAccessData =
+            ::core::mem::transmute(__lookup_find_pid::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_already_located {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "IsAlreadyLocated",
@@ -1554,43 +1225,27 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "IsAlreadyLocated",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "IsAlreadyLocated",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_already_located(
-        this: HubAccessManager,
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_already_located::get_offset() as isize),
-        );
+    pub unsafe fn is_already_located(this: HubAccessManager, pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_already_located::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_available_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1606,18 +1261,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "IsAvailablePID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "IsAvailablePID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_available_pid(
@@ -1626,27 +1278,16 @@ mod __HubAccessManager_unity2_raw {
         disabled_talk: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_available_pid::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_available_pid::get_method_info().method_ptr);
         inner(this, pid, disabled_talk, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selected_god_with_special {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "GetSelectedGodWithSpecial",
@@ -1658,18 +1299,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectedGodWithSpecial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectedGodWithSpecial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_selected_god_with_special(
@@ -1677,24 +1315,15 @@ mod __HubAccessManager_unity2_raw {
         god_unit: crate::app::godunit::GodUnit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_selected_god_with_special::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_selected_god_with_special::get_method_info().method_ptr);
         inner(this, god_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_player_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -1707,41 +1336,27 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "GetPlayerGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayerGod",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_player_god(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_player_god::get_offset() as isize),
-        );
+    pub unsafe fn get_player_god(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_player_god::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_choose_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1758,18 +1373,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "GetChooseID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "GetChooseID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_choose_id(
@@ -1785,20 +1397,14 @@ mod __HubAccessManager_unity2_raw {
             *mut i32,
             crate::app::random_2::Random_2,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_choose_id::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_choose_id::get_method_info().method_ptr);
         inner(this, data, count, random, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_choose_animal_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type(),
                 <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
@@ -1814,18 +1420,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "GetChooseAnimalID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "GetChooseAnimalID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_choose_animal_id(
@@ -1839,22 +1442,15 @@ mod __HubAccessManager_unity2_raw {
             crate::app::hubdisposdata::HubDisposData,
             crate::app::random_2::Random_2,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_choose_animal_id::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_choose_animal_id::get_method_info().method_ptr);
         inner(this, data, random, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_choose_animal_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubdisposdata::HubDisposData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "GetChooseAnimalItem",
@@ -1866,18 +1462,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "GetChooseAnimalItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "GetChooseAnimalItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_choose_animal_item(
@@ -1885,26 +1478,16 @@ mod __HubAccessManager_unity2_raw {
         data: crate::app::hubdisposdata::HubDisposData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            crate::app::hubdisposdata::HubDisposData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_choose_animal_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, crate::app::hubdisposdata::HubDisposData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_choose_animal_item::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_talk_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "EntryTalkLimit",
@@ -1916,18 +1499,15 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "EntryTalkLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "EntryTalkLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_talk_limit(
@@ -1935,24 +1515,15 @@ mod __HubAccessManager_unity2_raw {
         talk_type: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            HubAccessManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_talk_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAccessManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_entry_talk_limit::get_method_info().method_ptr);
         inner(this, talk_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_not_taked_piece_of_bond {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -1965,39 +1536,27 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "GetNotTakedPieceOfBond",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "GetNotTakedPieceOfBond",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_not_taked_piece_of_bond(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_not_taked_piece_of_bond(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_not_taked_piece_of_bond::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_not_taked_piece_of_bond::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -2010,41 +1569,28 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "Dump",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "Dump",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dump(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dump(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dump::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dump::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_dispos_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
                 "CopyDisposList",
@@ -2056,46 +1602,35 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "CopyDisposList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "CopyDisposList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_dispos_list(
         this: HubAccessManager,
         scene_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> {
         let inner: extern "C" fn(
             HubAccessManager,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::hubdisposdata::HubDisposData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_dispos_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> =
+            ::core::mem::transmute(__lookup_copy_dispos_list::get_method_info().method_ptr);
         inner(this, scene_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_animal_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -2108,44 +1643,33 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "CopyAnimalList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "CopyAnimalList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_animal_list(
         this: HubAccessManager,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> {
         let inner: extern "C" fn(
             HubAccessManager,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::animaldata::AnimalData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_animal_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> =
+            ::core::mem::transmute(__lookup_copy_animal_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_confirm_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -2158,39 +1682,27 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    "ConfirmMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        "ConfirmMaterial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn confirm_material(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn confirm_material(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_confirm_material::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_confirm_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAccessManager as ::unity2::ClassIdentity>::class(),
@@ -2203,30 +1715,20 @@ mod __HubAccessManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAccessManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubAccessManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: HubAccessManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAccessManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2234,15 +1736,8 @@ mod __HubAccessManager_unity2_raw {
 #[cfg(feature = "app-hubaccessmanager")]
 impl HubAccessManager {
     #[doc = "`IsItemType(crate::app::hubdisposdata::HubDisposData)` overload"]
-    pub fn is_item_type(
-        dispos: impl ::core::convert::Into<crate::app::hubdisposdata::HubDisposData>,
-    ) -> bool {
-        unsafe {
-            __HubAccessManager_unity2_raw::is_item_type(
-                ::core::convert::Into::into(dispos),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_item_type(dispos: impl ::core::convert::Into<crate::app::hubdisposdata::HubDisposData>) -> bool {
+        unsafe { __HubAccessManager_unity2_raw::is_item_type(::core::convert::Into::into(dispos), ::core::option::Option::None) }
     }
 }
 
@@ -2251,155 +1746,83 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
     #[doc = "`get_SceneName()` overload"]
     fn get_scene_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::get_scene_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SceneName(::unity2::Il2CppString)` overload"]
     fn set_scene_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::set_scene_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::set_scene_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AccessList()` overload"]
-    fn get_access_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>
-    {
+    fn get_access_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData> {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::get_access_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AccessList(crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>)` overload"]
     fn set_access_list(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubaccessdata::HubAccessData,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>>,
     ) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::set_access_list(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::set_access_list(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DisposList()` overload"]
-    fn get_dispos_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>
-    {
+    fn get_dispos_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::get_dispos_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DisposList(crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>)` overload"]
     fn set_dispos_list(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubdisposdata::HubDisposData,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>>,
     ) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::set_dispos_list(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::set_dispos_list(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DisposItemList()` overload"]
-    fn get_dispos_item_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>
-    {
+    fn get_dispos_item_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::get_dispos_item_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::get_dispos_item_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DisposItemList(crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>)` overload"]
     fn set_dispos_item_list(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubdisposdata::HubDisposData,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>>,
     ) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::set_dispos_item_list(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::set_dispos_item_list(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AnimalDataList()` overload"]
-    fn get_animal_data_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>
-    {
+    fn get_animal_data_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::get_animal_data_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::get_animal_data_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AnimalDataList(crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>)` overload"]
     fn set_animal_data_list(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>>,
     ) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::set_animal_data_list(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::set_animal_data_list(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Setup(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"]
@@ -2409,9 +1832,7 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
         timezone_type: impl ::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>,
     ) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::setup(
                 __receiver,
                 ::core::convert::Into::into(scene_name),
@@ -2423,44 +1844,29 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
     #[doc = "`ConfirmContent()` overload"]
     fn confirm_content(self) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::confirm_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Refresh()` overload"]
     fn refresh(self) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::refresh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsUsedLocator(::unity2::Il2CppString)` overload"]
-    fn is_used_locator(
-        self,
-        locator_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn is_used_locator(self, locator_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::is_used_locator(
-                __receiver,
-                ::core::convert::Into::into(locator_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::is_used_locator(__receiver, ::core::convert::Into::into(locator_name), ::core::option::Option::None)
         }
     }
     #[doc = "`TrySetAccessObject(crate::app::hubdisposdata::HubDisposData, crate::app::random_2::Random_2)` overload"]
@@ -2470,9 +1876,7 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
         random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
     ) -> bool {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::try_set_access_object(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2482,105 +1886,51 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
         }
     }
     #[doc = "`TryRemoveAccessObject(crate::app::hubdisposdata::HubDisposData)` overload"]
-    fn try_remove_access_object(
-        self,
-        data: impl ::core::convert::Into<crate::app::hubdisposdata::HubDisposData>,
-    ) -> bool {
+    fn try_remove_access_object(self, data: impl ::core::convert::Into<crate::app::hubdisposdata::HubDisposData>) -> bool {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::try_remove_access_object(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::try_remove_access_object(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`AddNewLocator(::unity2::Il2CppString)` overload"]
-    fn add_new_locator(
-        self,
-        locator: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::hubaccessdata::HubAccessData {
+    fn add_new_locator(self, locator: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::hubaccessdata::HubAccessData {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::add_new_locator(
-                __receiver,
-                ::core::convert::Into::into(locator),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::add_new_locator(__receiver, ::core::convert::Into::into(locator), ::core::option::Option::None)
         }
     }
     #[doc = "`ClearLocator(::unity2::Il2CppString)` overload"]
     fn clear_locator(self, locator: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::clear_locator(
-                __receiver,
-                ::core::convert::Into::into(locator),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::clear_locator(__receiver, ::core::convert::Into::into(locator), ::core::option::Option::None)
         }
     }
     #[doc = "`FindLocator(::unity2::Il2CppString)` overload"]
-    fn find_locator(
-        self,
-        locator: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::hubaccessdata::HubAccessData {
+    fn find_locator(self, locator: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::hubaccessdata::HubAccessData {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::find_locator(
-                __receiver,
-                ::core::convert::Into::into(locator),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::find_locator(__receiver, ::core::convert::Into::into(locator), ::core::option::Option::None)
         }
     }
     #[doc = "`FindPID(::unity2::Il2CppString)` overload"]
-    fn find_pid(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::hubaccessdata::HubAccessData {
+    fn find_pid(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::hubaccessdata::HubAccessData {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::find_pid(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::find_pid(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`IsAlreadyLocated(::unity2::Il2CppString)` overload"]
     fn is_already_located(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::is_already_located(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::is_already_located(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`IsAvailablePID(::unity2::Il2CppString, bool)` overload"]
-    fn is_available_pid(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        disabled_talk: impl ::core::convert::Into<bool>,
-    ) -> bool {
+    fn is_available_pid(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>, disabled_talk: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::is_available_pid(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -2590,14 +1940,9 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
         }
     }
     #[doc = "`GetSelectedGodWithSpecial(crate::app::godunit::GodUnit)` overload"]
-    fn get_selected_god_with_special(
-        self,
-        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> ::unity2::Il2CppString {
+    fn get_selected_god_with_special(self, god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::get_selected_god_with_special(
                 __receiver,
                 ::core::convert::Into::into(god_unit),
@@ -2608,9 +1953,7 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
     #[doc = "`GetPlayerGod()` overload"]
     fn get_player_god(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::get_player_god(__receiver, ::core::option::Option::None)
         }
     }
@@ -2621,9 +1964,7 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
         random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
     ) -> (::unity2::Il2CppString, i32) {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
             let __ret = {
                 __HubAccessManager_unity2_raw::get_choose_id(
@@ -2644,9 +1985,7 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
         random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
     ) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::get_choose_animal_id(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2656,55 +1995,30 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
         }
     }
     #[doc = "`GetChooseAnimalItem(crate::app::hubdisposdata::HubDisposData)` overload"]
-    fn get_choose_animal_item(
-        self,
-        data: impl ::core::convert::Into<crate::app::hubdisposdata::HubDisposData>,
-    ) -> ::unity2::Il2CppString {
+    fn get_choose_animal_item(self, data: impl ::core::convert::Into<crate::app::hubdisposdata::HubDisposData>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::get_choose_animal_item(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::get_choose_animal_item(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`EntryTalkLimit(::unity2::Il2CppString)` overload"]
-    fn entry_talk_limit(
-        self,
-        talk_type: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn entry_talk_limit(self, talk_type: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::entry_talk_limit(
-                __receiver,
-                ::core::convert::Into::into(talk_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::entry_talk_limit(__receiver, ::core::convert::Into::into(talk_type), ::core::option::Option::None)
         }
     }
     #[doc = "`GetNotTakedPieceOfBond()` overload"]
     fn get_not_taked_piece_of_bond(self) -> i32 {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::get_not_taked_piece_of_bond(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::get_not_taked_piece_of_bond(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dump()` overload"]
     fn dump(self) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::dump(__receiver, ::core::option::Option::None)
         }
     }
@@ -2712,52 +2026,30 @@ pub trait IHubAccessManagerMethods: IHubAccessManager {
     fn copy_dispos_list(
         self,
         scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::copy_dispos_list(
-                __receiver,
-                ::core::convert::Into::into(scene_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::copy_dispos_list(__receiver, ::core::convert::Into::into(scene_name), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyAnimalList()` overload"]
-    fn copy_animal_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>
-    {
+    fn copy_animal_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::copy_animal_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::copy_animal_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ConfirmMaterial()` overload"]
     fn confirm_material(self) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAccessManager_unity2_raw::confirm_material(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAccessManager_unity2_raw::confirm_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAccessManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAccessManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2785,20 +2077,15 @@ impl HubAccessManager {
 #[cfg(feature = "app-hubaccessmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubAccessManager;
-    pub use super::HubAccessManager_MaterialCalculator;
-    pub use super::HubAccessManager_MaterialCalculator_Type;
-    pub use super::IHubAccessManager;
-    pub use super::IHubAccessManagerMethods;
-    pub use super::IHubAccessManager_MaterialCalculator;
-    pub use super::IHubAccessManager_MaterialCalculatorMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        HubAccessManager, HubAccessManager_MaterialCalculator, HubAccessManager_MaterialCalculator_Type, IHubAccessManager, IHubAccessManagerMethods,
+        IHubAccessManager_MaterialCalculator, IHubAccessManager_MaterialCalculatorMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

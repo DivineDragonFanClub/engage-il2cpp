@@ -25,10 +25,7 @@ pub mod colortween_2;
 #[cfg(feature = "tm_pro-colortween_2")]
 pub use colortween_2::IColorTween_ColorTweenCallback_2Methods;
 #[cfg(feature = "tm_pro-colortween_2-types")]
-pub use colortween_2::{
-    ColorTween_2, ColorTween_ColorTweenCallback_2, ColorTween_ColorTweenMode_2,
-    IColorTween_ColorTweenCallback_2,
-};
+pub use colortween_2::{ColorTween_2, ColorTween_ColorTweenCallback_2, ColorTween_ColorTweenMode_2, IColorTween_ColorTweenCallback_2};
 #[cfg(any(feature = "tm_pro-compute_distancetransform_eventtypes-types"))]
 pub mod compute_distancetransform_eventtypes;
 #[cfg(feature = "tm_pro-compute_distancetransform_eventtypes-types")]
@@ -78,9 +75,7 @@ pub mod floattween_2;
 #[cfg(feature = "tm_pro-floattween_2")]
 pub use floattween_2::IFloatTween_FloatTweenCallback_2Methods;
 #[cfg(feature = "tm_pro-floattween_2-types")]
-pub use floattween_2::{
-    FloatTween_2, FloatTween_FloatTweenCallback_2, IFloatTween_FloatTweenCallback_2,
-};
+pub use floattween_2::{FloatTween_2, FloatTween_FloatTweenCallback_2, IFloatTween_FloatTweenCallback_2};
 #[cfg(any(feature = "tm_pro-fontassetcreationsettings-types"))]
 pub mod fontassetcreationsettings;
 #[cfg(feature = "tm_pro-fontassetcreationsettings-types")]
@@ -269,28 +264,22 @@ pub use tmp_colorgradient::{ITMP_ColorGradient, TMP_ColorGradient};
 #[cfg(any(feature = "tm_pro-tmp_compatibility-types"))]
 pub mod tmp_compatibility;
 #[cfg(feature = "tm_pro-tmp_compatibility-types")]
-pub use tmp_compatibility::{
-    ITMP_Compatibility, TMP_Compatibility, TMP_Compatibility_AnchorPositions,
-};
+pub use tmp_compatibility::{ITMP_Compatibility, TMP_Compatibility, TMP_Compatibility_AnchorPositions};
 #[cfg(any(feature = "tm_pro-tmp_defaultcontrols-types"))]
 pub mod tmp_defaultcontrols;
 #[cfg(feature = "tm_pro-tmp_defaultcontrols-types")]
-pub use tmp_defaultcontrols::{
-    ITMP_DefaultControls, TMP_DefaultControls, TMP_DefaultControls_Resources,
-};
+pub use tmp_defaultcontrols::{ITMP_DefaultControls, TMP_DefaultControls, TMP_DefaultControls_Resources};
 #[cfg(any(feature = "tm_pro-tmp_dropdown-types"))]
 pub mod tmp_dropdown;
 #[cfg(feature = "tm_pro-tmp_dropdown-types")]
 pub use tmp_dropdown::{
-    ITMP_Dropdown, ITMP_Dropdown_DropdownEvent, ITMP_Dropdown_DropdownItem,
-    ITMP_Dropdown_OptionData, ITMP_Dropdown_OptionDataList, TMP_Dropdown,
-    TMP_Dropdown_DropdownEvent, TMP_Dropdown_DropdownItem, TMP_Dropdown_OptionData,
-    TMP_Dropdown_OptionDataList,
+    ITMP_Dropdown, ITMP_Dropdown_DropdownEvent, ITMP_Dropdown_DropdownItem, ITMP_Dropdown_OptionData, ITMP_Dropdown_OptionDataList, TMP_Dropdown,
+    TMP_Dropdown_DropdownEvent, TMP_Dropdown_DropdownItem, TMP_Dropdown_OptionData, TMP_Dropdown_OptionDataList,
 };
 #[cfg(feature = "tm_pro-tmp_dropdown")]
 pub use tmp_dropdown::{
-    ITMP_DropdownMethods, ITMP_Dropdown_DropdownEventMethods, ITMP_Dropdown_DropdownItemMethods,
-    ITMP_Dropdown_OptionDataListMethods, ITMP_Dropdown_OptionDataMethods,
+    ITMP_DropdownMethods, ITMP_Dropdown_DropdownEventMethods, ITMP_Dropdown_DropdownItemMethods, ITMP_Dropdown_OptionDataListMethods,
+    ITMP_Dropdown_OptionDataMethods,
 };
 #[cfg(any(feature = "tm_pro-tmp_fontasset-types"))]
 pub mod tmp_fontasset;
@@ -337,9 +326,7 @@ pub mod tmp_glyphpairadjustmentrecord;
 #[cfg(feature = "tm_pro-tmp_glyphpairadjustmentrecord")]
 pub use tmp_glyphpairadjustmentrecord::ITMP_GlyphPairAdjustmentRecordMethods;
 #[cfg(feature = "tm_pro-tmp_glyphpairadjustmentrecord-types")]
-pub use tmp_glyphpairadjustmentrecord::{
-    ITMP_GlyphPairAdjustmentRecord, TMP_GlyphPairAdjustmentRecord,
-};
+pub use tmp_glyphpairadjustmentrecord::{ITMP_GlyphPairAdjustmentRecord, TMP_GlyphPairAdjustmentRecord};
 #[cfg(any(feature = "tm_pro-tmp_glyphvaluerecord-types"))]
 pub mod tmp_glyphvaluerecord;
 #[cfg(feature = "tm_pro-tmp_glyphvaluerecord-types")]
@@ -348,20 +335,16 @@ pub use tmp_glyphvaluerecord::TMP_GlyphValueRecord;
 pub mod tmp_inputfield;
 #[cfg(feature = "tm_pro-tmp_inputfield-types")]
 pub use tmp_inputfield::{
-    ITMP_InputField, ITMP_InputField_OnChangeEvent, ITMP_InputField_OnValidateInput,
-    ITMP_InputField_SelectionEvent, ITMP_InputField_SubmitEvent,
-    ITMP_InputField_TextSelectionEvent, ITMP_InputField_TouchScreenKeyboardEvent, TMP_InputField,
-    TMP_InputField_CharacterValidation, TMP_InputField_ContentType, TMP_InputField_EditState,
-    TMP_InputField_InputType, TMP_InputField_LineType, TMP_InputField_OnChangeEvent,
-    TMP_InputField_OnValidateInput, TMP_InputField_SelectionEvent, TMP_InputField_SubmitEvent,
-    TMP_InputField_TextSelectionEvent, TMP_InputField_TouchScreenKeyboardEvent,
+    ITMP_InputField, ITMP_InputField_OnChangeEvent, ITMP_InputField_OnValidateInput, ITMP_InputField_SelectionEvent, ITMP_InputField_SubmitEvent,
+    ITMP_InputField_TextSelectionEvent, ITMP_InputField_TouchScreenKeyboardEvent, TMP_InputField, TMP_InputField_CharacterValidation,
+    TMP_InputField_ContentType, TMP_InputField_EditState, TMP_InputField_InputType, TMP_InputField_LineType, TMP_InputField_OnChangeEvent,
+    TMP_InputField_OnValidateInput, TMP_InputField_SelectionEvent, TMP_InputField_SubmitEvent, TMP_InputField_TextSelectionEvent,
+    TMP_InputField_TouchScreenKeyboardEvent,
 };
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 pub use tmp_inputfield::{
-    ITMP_InputFieldMethods, ITMP_InputField_OnChangeEventMethods,
-    ITMP_InputField_OnValidateInputMethods, ITMP_InputField_SelectionEventMethods,
-    ITMP_InputField_SubmitEventMethods, ITMP_InputField_TextSelectionEventMethods,
-    ITMP_InputField_TouchScreenKeyboardEventMethods,
+    ITMP_InputFieldMethods, ITMP_InputField_OnChangeEventMethods, ITMP_InputField_OnValidateInputMethods, ITMP_InputField_SelectionEventMethods,
+    ITMP_InputField_SubmitEventMethods, ITMP_InputField_TextSelectionEventMethods, ITMP_InputField_TouchScreenKeyboardEventMethods,
 };
 #[cfg(any(feature = "tm_pro-tmp_inputvalidator-types"))]
 pub mod tmp_inputvalidator;
@@ -385,14 +368,11 @@ pub use tmp_listpool_1::{ITMP_ListPool_1, TMP_ListPool_1};
 pub mod tmp_materialmanager;
 #[cfg(feature = "tm_pro-tmp_materialmanager-types")]
 pub use tmp_materialmanager::{
-    ITMP_MaterialManager, ITMP_MaterialManager_FallbackMaterial,
-    ITMP_MaterialManager_MaskingMaterial, TMP_MaterialManager,
+    ITMP_MaterialManager, ITMP_MaterialManager_FallbackMaterial, ITMP_MaterialManager_MaskingMaterial, TMP_MaterialManager,
     TMP_MaterialManager_FallbackMaterial, TMP_MaterialManager_MaskingMaterial,
 };
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
-pub use tmp_materialmanager::{
-    ITMP_MaterialManager_FallbackMaterialMethods, ITMP_MaterialManager_MaskingMaterialMethods,
-};
+pub use tmp_materialmanager::{ITMP_MaterialManager_FallbackMaterialMethods, ITMP_MaterialManager_MaskingMaterialMethods};
 #[cfg(any(feature = "tm_pro-tmp_materialreference-types"))]
 pub mod tmp_materialreference;
 #[cfg(feature = "tm_pro-tmp_materialreference-types")]
@@ -440,9 +420,7 @@ pub use tmp_selectioncaret::{ITMP_SelectionCaret, TMP_SelectionCaret};
 #[cfg(any(feature = "tm_pro-tmp_settings-types"))]
 pub mod tmp_settings;
 #[cfg(feature = "tm_pro-tmp_settings-types")]
-pub use tmp_settings::{
-    ITMP_Settings, ITMP_Settings_LineBreakingTable, TMP_Settings, TMP_Settings_LineBreakingTable,
-};
+pub use tmp_settings::{ITMP_Settings, ITMP_Settings_LineBreakingTable, TMP_Settings, TMP_Settings_LineBreakingTable};
 #[cfg(feature = "tm_pro-tmp_settings")]
 pub use tmp_settings::{ITMP_SettingsMethods, ITMP_Settings_LineBreakingTableMethods};
 #[cfg(any(feature = "tm_pro-tmp_sprite-types"))]
@@ -509,8 +487,8 @@ pub mod tmp_text;
 pub use tmp_text::ITMP_TextMethods;
 #[cfg(feature = "tm_pro-tmp_text-types")]
 pub use tmp_text::{
-    ITMP_Text, TMP_Text, TMP_Text_CharacterSubstitution, TMP_Text_SpecialCharacter,
-    TMP_Text_TextBackingContainer, TMP_Text_TextInputSources, TMP_Text_UnicodeChar,
+    ITMP_Text, TMP_Text, TMP_Text_CharacterSubstitution, TMP_Text_SpecialCharacter, TMP_Text_TextBackingContainer, TMP_Text_TextInputSources,
+    TMP_Text_UnicodeChar,
 };
 #[cfg(any(feature = "tm_pro-tmp_textelement-types"))]
 pub mod tmp_textelement;

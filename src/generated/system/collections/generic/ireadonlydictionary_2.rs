@@ -2,15 +2,12 @@
 
 #[cfg(feature = "system-collections-generic-ireadonlydictionary_2-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ireadonlydictionary_2/IReadOnlyDictionary_2.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Generic",
-        name = "IReadOnlyDictionary`2"
-    )]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "IReadOnlyDictionary`2")]
     pub struct IReadOnlyDictionary_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
 }
 
@@ -28,7 +25,5 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IReadOnlyDictiona
 #[cfg(feature = "system-collections-generic-ireadonlydictionary_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIReadOnlyDictionary_2;
-    pub use super::IIReadOnlyDictionary_2Methods;
-    pub use super::IReadOnlyDictionary_2;
+    pub use super::{IIReadOnlyDictionary_2, IIReadOnlyDictionary_2Methods, IReadOnlyDictionary_2};
 }

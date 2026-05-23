@@ -2,22 +2,27 @@
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performancestatistics-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performancestatistics/PerformanceStatistics.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Diagnostics",
-        name = "PerformanceStatistics"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Diagnostics", name = "PerformanceStatistics")]
     #[parent(crate::system::object::Object)]
     pub struct PerformanceStatistics {
-# [rename (name = "m_Stopwatches")] pub m_stopwatches : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: iperformancestopwatch_interface :: IPerformanceStopwatch_Interface > ,
-# [static_field] # [rename (name = "m_GlobalStopwatches")] pub m_global_stopwatches : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: iperformancestopwatch_interface :: IPerformanceStopwatch_Interface > ,
-# [rename (name = "m_Enabled")] pub m_enabled : bool ,
-}
+        #[rename(name = "m_Stopwatches")]
+        pub m_stopwatches: ::unity2::Array<
+            crate::moon_sharp::interpreter::diagnostics::performance_counters::iperformancestopwatch_interface::IPerformanceStopwatch_Interface,
+        >,
+        #[static_field]
+        #[rename(name = "m_GlobalStopwatches")]
+        pub m_global_stopwatches: ::unity2::Array<
+            crate::moon_sharp::interpreter::diagnostics::performance_counters::iperformancestopwatch_interface::IPerformanceStopwatch_Interface,
+        >,
+        #[rename(name = "m_Enabled")]
+        pub m_enabled: bool,
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performancestatistics-types")]
@@ -32,9 +37,7 @@ mod __PerformanceStatistics_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PerformanceStatistics as ::unity2::ClassIdentity>::class(),
@@ -47,41 +50,28 @@ mod __PerformanceStatistics_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
-                    "get_Enabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
+                        "get_Enabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enabled(
-        this: PerformanceStatistics,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_enabled(this: PerformanceStatistics, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PerformanceStatistics, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_enabled::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PerformanceStatistics as ::unity2::ClassIdentity>::class(),
                 "set_Enabled",
@@ -93,41 +83,29 @@ mod __PerformanceStatistics_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
-                    "set_Enabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
+                        "set_Enabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_enabled(
-        this: PerformanceStatistics,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_enabled(this: PerformanceStatistics, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PerformanceStatistics, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_enabled::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_performance_counter_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PerformanceStatistics as ::unity2::ClassIdentity>::class(),
                 "GetPerformanceCounterResult",
@@ -139,18 +117,15 @@ mod __PerformanceStatistics_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
-                    "GetPerformanceCounterResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
+                        "GetPerformanceCounterResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_performance_counter_result(
@@ -158,16 +133,19 @@ mod __PerformanceStatistics_unity2_raw {
         pc: crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult {
-        let inner : extern "C" fn (PerformanceStatistics , crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: diagnostics :: performanceresult :: PerformanceResult = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_performance_counter_result :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            PerformanceStatistics,
+            crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult =
+            ::core::mem::transmute(__lookup_get_performance_counter_result::get_method_info().method_ptr);
         inner(this, pc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_performance_log {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PerformanceStatistics as ::unity2::ClassIdentity>::class(),
@@ -180,41 +158,27 @@ mod __PerformanceStatistics_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
-                    "GetPerformanceLog",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
+                        "GetPerformanceLog",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_performance_log(
-        this: PerformanceStatistics,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PerformanceStatistics,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_performance_log::get_offset() as isize),
-        );
+    pub unsafe fn get_performance_log(this: PerformanceStatistics, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PerformanceStatistics, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_performance_log::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PerformanceStatistics as ::unity2::ClassIdentity>::class(),
@@ -227,39 +191,27 @@ mod __PerformanceStatistics_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PerformanceStatistics,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PerformanceStatistics, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PerformanceStatistics, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PerformanceStatistics as ::unity2::ClassIdentity>::class(),
@@ -272,26 +224,19 @@ mod __PerformanceStatistics_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PerformanceStatistics as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -309,39 +254,27 @@ pub trait IPerformanceStatisticsMethods: IPerformanceStatistics {
     #[doc = "`get_Enabled()` overload"]
     fn get_enabled(self) -> bool {
         unsafe {
-            let __receiver = <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PerformanceStatistics_unity2_raw::get_enabled(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PerformanceStatistics_unity2_raw::get_enabled(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Enabled(bool)` overload"]
     fn set_enabled(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PerformanceStatistics_unity2_raw::set_enabled(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PerformanceStatistics_unity2_raw::set_enabled(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPerformanceCounterResult(crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)` overload"]
     fn get_performance_counter_result(
         self,
-        pc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter,
-        >,
+        pc: impl ::core::convert::Into<crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter>,
     ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult {
         unsafe {
-            let __receiver = <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PerformanceStatistics_unity2_raw::get_performance_counter_result(
                 __receiver,
                 ::core::convert::Into::into(pc),
@@ -352,21 +285,16 @@ pub trait IPerformanceStatisticsMethods: IPerformanceStatistics {
     #[doc = "`GetPerformanceLog()` overload"]
     fn get_performance_log(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PerformanceStatistics_unity2_raw::get_performance_log(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PerformanceStatistics_unity2_raw::get_performance_log(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PerformanceStatistics as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PerformanceStatistics_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -394,9 +322,7 @@ impl PerformanceStatistics {
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performancestatistics")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPerformanceStatistics;
-    pub use super::IPerformanceStatisticsMethods;
-    pub use super::PerformanceStatistics;
+    pub use super::{IPerformanceStatistics, IPerformanceStatisticsMethods, PerformanceStatistics};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

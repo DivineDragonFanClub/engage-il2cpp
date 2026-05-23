@@ -2,12 +2,16 @@
 
 #[cfg(feature = "combat-fsmbuilderengattack-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::fsmbuilder::{FSMBuilder, IFSMBuilder};
-    use crate::combat::fsmbuilderstandard::{FSMBuilderStandard, IFSMBuilderStandard};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::{
+            fsmbuilder::{FSMBuilder, IFSMBuilder},
+            fsmbuilderstandard::{FSMBuilderStandard, IFSMBuilderStandard},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderengattack/FSMBuilderEngAttack.md"))]
     #[::unity2::class(namespace = "Combat", name = "FSMBuilderEngAttack")]
@@ -27,9 +31,7 @@ mod __FSMBuilderEngAttack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderEngAttack as ::unity2::ClassIdentity>::class(),
@@ -42,39 +44,27 @@ mod __FSMBuilderEngAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
-                    "Build",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build(
-        this: FSMBuilderEngAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build(this: FSMBuilderEngAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderEngAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderEngAttack as ::unity2::ClassIdentity>::class(),
@@ -87,39 +77,27 @@ mod __FSMBuilderEngAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
-                    "BuildStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
+                        "BuildStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_start(
-        this: FSMBuilderEngAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_start(this: FSMBuilderEngAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderEngAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_main {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderEngAttack as ::unity2::ClassIdentity>::class(),
@@ -132,39 +110,27 @@ mod __FSMBuilderEngAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
-                    "BuildMain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
+                        "BuildMain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_main(
-        this: FSMBuilderEngAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_main(this: FSMBuilderEngAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderEngAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_main::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_main::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_all_for_one {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderEngAttack as ::unity2::ClassIdentity>::class(),
@@ -177,39 +143,27 @@ mod __FSMBuilderEngAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
-                    "BuildAllForOne",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
+                        "BuildAllForOne",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_all_for_one(
-        this: FSMBuilderEngAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_all_for_one(this: FSMBuilderEngAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderEngAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_all_for_one::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_all_for_one::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderEngAttack as ::unity2::ClassIdentity>::class(),
@@ -222,39 +176,27 @@ mod __FSMBuilderEngAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
-                    "BuildEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
+                        "BuildEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_end(
-        this: FSMBuilderEngAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_end(this: FSMBuilderEngAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderEngAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_make_last_situation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderEngAttack as ::unity2::ClassIdentity>::class(),
@@ -267,35 +209,26 @@ mod __FSMBuilderEngAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
-                    "MakeLastSituation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
+                        "MakeLastSituation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn make_last_situation(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_make_last_situation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_make_last_situation::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FSMBuilderEngAttack as ::unity2::ClassIdentity>::class(),
@@ -308,30 +241,20 @@ mod __FSMBuilderEngAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FSMBuilderEngAttack as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: FSMBuilderEngAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: FSMBuilderEngAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FSMBuilderEngAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -340,9 +263,7 @@ mod __FSMBuilderEngAttack_unity2_raw {
 impl FSMBuilderEngAttack {
     #[doc = "`MakeLastSituation()` overload"]
     pub fn make_last_situation() -> () {
-        unsafe {
-            __FSMBuilderEngAttack_unity2_raw::make_last_situation(::core::option::Option::None)
-        }
+        unsafe { __FSMBuilderEngAttack_unity2_raw::make_last_situation(::core::option::Option::None) }
     }
 }
 
@@ -351,57 +272,42 @@ pub trait IFSMBuilderEngAttackMethods: IFSMBuilderEngAttack {
     #[doc = "`Build()` overload"]
     fn build(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FSMBuilderEngAttack_unity2_raw::build(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildStart()` overload"]
     fn build_start(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FSMBuilderEngAttack_unity2_raw::build_start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildMain()` overload"]
     fn build_main(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FSMBuilderEngAttack_unity2_raw::build_main(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildAllForOne()` overload"]
     fn build_all_for_one(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FSMBuilderEngAttack_unity2_raw::build_all_for_one(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FSMBuilderEngAttack_unity2_raw::build_all_for_one(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildEnd()` overload"]
     fn build_end(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FSMBuilderEngAttack_unity2_raw::build_end(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FSMBuilderEngAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FSMBuilderEngAttack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -429,16 +335,15 @@ impl FSMBuilderEngAttack {
 #[cfg(feature = "combat-fsmbuilderengattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FSMBuilderEngAttack;
-    pub use super::IFSMBuilderEngAttack;
-    pub use super::IFSMBuilderEngAttackMethods;
-    pub use crate::combat::fsmbuilder::IFSMBuilder;
+    pub use super::{FSMBuilderEngAttack, IFSMBuilderEngAttack, IFSMBuilderEngAttackMethods};
     #[cfg(feature = "combat-fsmbuilder")]
     pub use crate::combat::fsmbuilder::IFSMBuilderMethods;
-    pub use crate::combat::fsmbuilderstandard::IFSMBuilderStandard;
     #[cfg(feature = "combat-fsmbuilderstandard")]
     pub use crate::combat::fsmbuilderstandard::IFSMBuilderStandardMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::{fsmbuilder::IFSMBuilder, fsmbuilderstandard::IFSMBuilderStandard},
+        system::object::IObject,
+    };
 }

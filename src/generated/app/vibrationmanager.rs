@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-vibrationmanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationmanager/VibrationManager_VibHandle.md"))]
     #[::unity2::class(namespace = "App", name = "VibrationManager.VibHandle")]
@@ -17,11 +17,9 @@ mod __types {
         #[rename(name = "m_deviceCount")]
         pub m_device_count: i32,
         #[rename(name = "m_deviceHandles")]
-        pub m_device_handles:
-            ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
+        pub m_device_handles: ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
         #[rename(name = "m_deviceInfos")]
-        pub m_device_infos:
-            ::unity2::Array<crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo>,
+        pub m_device_infos: ::unity2::Array<crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo>,
         #[rename(name = "m_value")]
         pub m_value: crate::nn::hid::vibrationvalue::VibrationValue,
         #[rename(name = "m_amplitudeMagnitude")]
@@ -40,10 +38,7 @@ mod __types {
     pub struct VibrationManager {
         #[rename(name = "m_vibrationFileDictionary")]
         pub m_vibration_file_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::app::vibrationfile::VibrationFile,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::vibrationfile::VibrationFile>,
         #[rename(name = "m_handle")]
         pub m_handle: crate::app::vibrationmanager::VibrationManager_VibHandle,
     }
@@ -61,9 +56,7 @@ mod __VibrationManager_VibHandle_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager_VibHandle as ::unity2::ClassIdentity>::class(),
@@ -76,39 +69,27 @@ mod __VibrationManager_VibHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: VibrationManager_VibHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: VibrationManager_VibHandle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager_VibHandle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_pad {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
                 <crate::nn::hid::npadstyle::NpadStyle as ::unity2::IlType>::il_type(),
@@ -124,18 +105,15 @@ mod __VibrationManager_VibHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
-                    "SetupPad",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
+                        "SetupPad",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_pad(
@@ -149,20 +127,14 @@ mod __VibrationManager_VibHandle_unity2_raw {
             crate::nn::hid::npadid::NpadId,
             crate::nn::hid::npadstyle::NpadStyle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_pad::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_pad::get_method_info().method_ptr);
         inner(this, npad_id, npad_style, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager_VibHandle as ::unity2::ClassIdentity>::class(),
@@ -175,39 +147,27 @@ mod __VibrationManager_VibHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: VibrationManager_VibHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: VibrationManager_VibHandle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager_VibHandle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::vibrationfile::VibrationFile as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -223,18 +183,15 @@ mod __VibrationManager_VibHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set(
@@ -243,27 +200,16 @@ mod __VibrationManager_VibHandle_unity2_raw {
         is_loop: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VibrationManager_VibHandle,
-            crate::app::vibrationfile::VibrationFile,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VibrationManager_VibHandle, crate::app::vibrationfile::VibrationFile, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, file, is_loop, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_amplitude_magnitude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager_VibHandle as ::unity2::ClassIdentity>::class(),
                 "SetAmplitudeMagnitude",
@@ -275,18 +221,15 @@ mod __VibrationManager_VibHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
-                    "SetAmplitudeMagnitude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
+                        "SetAmplitudeMagnitude",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_amplitude_magnitude(
@@ -295,24 +238,15 @@ mod __VibrationManager_VibHandle_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(VibrationManager_VibHandle, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_amplitude_magnitude::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_amplitude_magnitude::get_method_info().method_ptr);
         inner(this, amplitude_magnitude, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_amplitude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager_VibHandle as ::unity2::ClassIdentity>::class(),
                 "SetAmplitude",
@@ -324,49 +258,28 @@ mod __VibrationManager_VibHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
-                    "SetAmplitude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
+                        "SetAmplitude",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_amplitude(
-        this: VibrationManager_VibHandle,
-        amp_low: f32,
-        amp_high: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VibrationManager_VibHandle,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_amplitude::get_offset() as isize),
-        );
+    pub unsafe fn set_amplitude(this: VibrationManager_VibHandle, amp_low: f32, amp_high: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VibrationManager_VibHandle, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_amplitude::get_method_info().method_ptr);
         inner(this, amp_low, amp_high, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_frequecy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager_VibHandle as ::unity2::ClassIdentity>::class(),
                 "SetFrequecy",
@@ -378,18 +291,15 @@ mod __VibrationManager_VibHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
-                    "SetFrequecy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
+                        "SetFrequecy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_frequecy(
@@ -398,25 +308,15 @@ mod __VibrationManager_VibHandle_unity2_raw {
         freq_high: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VibrationManager_VibHandle,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_frequecy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VibrationManager_VibHandle, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_frequecy::get_method_info().method_ptr);
         inner(this, freq_low, freq_high, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager_VibHandle as ::unity2::ClassIdentity>::class(),
@@ -429,30 +329,20 @@ mod __VibrationManager_VibHandle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager_VibHandle as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: VibrationManager_VibHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: VibrationManager_VibHandle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager_VibHandle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -463,9 +353,7 @@ pub trait IVibrationManager_VibHandleMethods: IVibrationManager_VibHandle {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_VibHandle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -477,9 +365,7 @@ pub trait IVibrationManager_VibHandleMethods: IVibrationManager_VibHandle {
     ) -> () {
         unsafe {
             let __receiver =
-                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_VibHandle_unity2_raw::setup_pad(
                 __receiver,
                 ::core::convert::Into::into(npad_id),
@@ -492,23 +378,15 @@ pub trait IVibrationManager_VibHandleMethods: IVibrationManager_VibHandle {
     fn clear(self) -> () {
         unsafe {
             let __receiver =
-                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_VibHandle_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Set(crate::app::vibrationfile::VibrationFile, bool)` overload"]
-    fn set(
-        self,
-        file: impl ::core::convert::Into<crate::app::vibrationfile::VibrationFile>,
-        is_loop: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set(self, file: impl ::core::convert::Into<crate::app::vibrationfile::VibrationFile>, is_loop: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_VibHandle_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(file),
@@ -521,9 +399,7 @@ pub trait IVibrationManager_VibHandleMethods: IVibrationManager_VibHandle {
     fn set_amplitude_magnitude(self, amplitude_magnitude: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_VibHandle_unity2_raw::set_amplitude_magnitude(
                 __receiver,
                 ::core::convert::Into::into(amplitude_magnitude),
@@ -532,16 +408,10 @@ pub trait IVibrationManager_VibHandleMethods: IVibrationManager_VibHandle {
         }
     }
     #[doc = "`SetAmplitude(f32, f32)` overload"]
-    fn set_amplitude(
-        self,
-        amp_low: impl ::core::convert::Into<f32>,
-        amp_high: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_amplitude(self, amp_low: impl ::core::convert::Into<f32>, amp_high: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_VibHandle_unity2_raw::set_amplitude(
                 __receiver,
                 ::core::convert::Into::into(amp_low),
@@ -551,16 +421,10 @@ pub trait IVibrationManager_VibHandleMethods: IVibrationManager_VibHandle {
         }
     }
     #[doc = "`SetFrequecy(f32, f32)` overload"]
-    fn set_frequecy(
-        self,
-        freq_low: impl ::core::convert::Into<f32>,
-        freq_high: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_frequecy(self, freq_low: impl ::core::convert::Into<f32>, freq_high: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_VibHandle_unity2_raw::set_frequecy(
                 __receiver,
                 ::core::convert::Into::into(freq_low),
@@ -573,13 +437,8 @@ pub trait IVibrationManager_VibHandleMethods: IVibrationManager_VibHandle {
     fn update(self) -> () {
         unsafe {
             let __receiver =
-                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VibrationManager_VibHandle_unity2_raw::update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <VibrationManager_VibHandle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VibrationManager_VibHandle_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -612,9 +471,7 @@ mod __VibrationManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager as ::unity2::ClassIdentity>::class(),
@@ -627,39 +484,27 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: VibrationManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: VibrationManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_file {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::vibrationfile::VibrationFile as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -675,18 +520,15 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "SetFile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "SetFile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_file(
@@ -695,27 +537,16 @@ mod __VibrationManager_unity2_raw {
         is_loop: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VibrationManager,
-            crate::app::vibrationfile::VibrationFile,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_file::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VibrationManager, crate::app::vibrationfile::VibrationFile, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_file::get_method_info().method_ptr);
         inner(this, file, is_loop, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_amplitude_magnitude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager as ::unity2::ClassIdentity>::class(),
                 "SetAmplitudeMagnitude",
@@ -727,44 +558,28 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "SetAmplitudeMagnitude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "SetAmplitudeMagnitude",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_amplitude_magnitude(
-        this: VibrationManager,
-        amplitude_magnitude: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_amplitude_magnitude(this: VibrationManager, amplitude_magnitude: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_amplitude_magnitude::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_amplitude_magnitude::get_method_info().method_ptr);
         inner(this, amplitude_magnitude, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_amplitude {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager as ::unity2::ClassIdentity>::class(),
                 "SetAmplitude",
@@ -776,45 +591,28 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "SetAmplitude",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "SetAmplitude",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_amplitude(
-        this: VibrationManager,
-        amp_low: f32,
-        amp_high: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_amplitude(this: VibrationManager, amp_low: f32, amp_high: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_amplitude::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_amplitude::get_method_info().method_ptr);
         inner(this, amp_low, amp_high, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_frequecy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager as ::unity2::ClassIdentity>::class(),
                 "SetFrequecy",
@@ -826,41 +624,27 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "SetFrequecy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "SetFrequecy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_frequecy(
-        this: VibrationManager,
-        freq_low: f32,
-        freq_high: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_frequecy(this: VibrationManager, freq_low: f32, freq_high: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_frequecy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_frequecy::get_method_info().method_ptr);
         inner(this, freq_low, freq_high, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_one_shot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -878,18 +662,15 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "OneShot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "OneShot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn one_shot(
@@ -900,34 +681,15 @@ mod __VibrationManager_unity2_raw {
         amp_high: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VibrationManager,
-            f32,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_one_shot::get_offset() as isize),
-        );
-        inner(
-            this,
-            time,
-            amplitude_magnitude,
-            amp_low,
-            amp_high,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(VibrationManager, f32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_one_shot::get_method_info().method_ptr);
+        inner(this, time, amplitude_magnitude, amp_low, amp_high, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_one_shot_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -947,18 +709,15 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "OneShot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "OneShot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn one_shot_2(
@@ -971,20 +730,8 @@ mod __VibrationManager_unity2_raw {
         freq_high: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VibrationManager,
-            f32,
-            f32,
-            f32,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_one_shot_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VibrationManager, f32, f32, f32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_one_shot_2::get_method_info().method_ptr);
         inner(
             this,
             time,
@@ -1000,9 +747,7 @@ mod __VibrationManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_stop_vibe {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager as ::unity2::ClassIdentity>::class(),
@@ -1015,39 +760,27 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "StopVibe",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "StopVibe",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_vibe(
-        this: VibrationManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop_vibe(this: VibrationManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_vibe::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop_vibe::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_by_game_sound_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -1064,18 +797,15 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "PlayByGameSoundEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "PlayByGameSoundEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_by_game_sound_event(
@@ -1085,26 +815,15 @@ mod __VibrationManager_unity2_raw {
         is_loop: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VibrationManager,
-            ::unity2::Il2CppString,
-            f32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_by_game_sound_event::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VibrationManager, ::unity2::Il2CppString, f32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_by_game_sound_event::get_method_info().method_ptr);
         inner(this, event_name, time, is_loop, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_by_vibration_file_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -1122,18 +841,15 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "PlayByVibrationFileName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "PlayByVibrationFileName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_by_vibration_file_name(
@@ -1144,34 +860,15 @@ mod __VibrationManager_unity2_raw {
         is_loop: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VibrationManager,
-            ::unity2::Il2CppString,
-            f32,
-            f32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_by_vibration_file_name::get_offset() as isize),
-        );
-        inner(
-            this,
-            vib_file_name,
-            amplitude_magnitude,
-            time,
-            is_loop,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(VibrationManager, ::unity2::Il2CppString, f32, f32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_by_vibration_file_name::get_method_info().method_ptr);
+        inner(this, vib_file_name, amplitude_magnitude, time, is_loop, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationManager as ::unity2::ClassIdentity>::class(),
@@ -1184,39 +881,27 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: VibrationManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: VibrationManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VibrationManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_pad {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
                 <crate::nn::hid::npadstyle::NpadStyle as ::unity2::IlType>::il_type(),
@@ -1232,18 +917,15 @@ mod __VibrationManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VibrationManager as ::unity2::ClassIdentity>::NAME,
-                    "SetupPad",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VibrationManager as ::unity2::ClassIdentity>::NAME,
+                        "SetupPad",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_pad(
@@ -1257,11 +939,7 @@ mod __VibrationManager_unity2_raw {
             crate::nn::hid::npadid::NpadId,
             crate::nn::hid::npadstyle::NpadStyle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_pad::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_pad::get_method_info().method_ptr);
         inner(this, npad_id, npad_style, __unity2_method_info)
     }
 }
@@ -1271,22 +949,14 @@ pub trait IVibrationManagerMethods: IVibrationManager {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetFile(crate::app::vibrationfile::VibrationFile, bool)` overload"]
-    fn set_file(
-        self,
-        file: impl ::core::convert::Into<crate::app::vibrationfile::VibrationFile>,
-        is_loop: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_file(self, file: impl ::core::convert::Into<crate::app::vibrationfile::VibrationFile>, is_loop: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::set_file(
                 __receiver,
                 ::core::convert::Into::into(file),
@@ -1298,9 +968,7 @@ pub trait IVibrationManagerMethods: IVibrationManager {
     #[doc = "`SetAmplitudeMagnitude(f32)` overload"]
     fn set_amplitude_magnitude(self, amplitude_magnitude: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::set_amplitude_magnitude(
                 __receiver,
                 ::core::convert::Into::into(amplitude_magnitude),
@@ -1309,15 +977,9 @@ pub trait IVibrationManagerMethods: IVibrationManager {
         }
     }
     #[doc = "`SetAmplitude(f32, f32)` overload"]
-    fn set_amplitude(
-        self,
-        amp_low: impl ::core::convert::Into<f32>,
-        amp_high: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_amplitude(self, amp_low: impl ::core::convert::Into<f32>, amp_high: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::set_amplitude(
                 __receiver,
                 ::core::convert::Into::into(amp_low),
@@ -1327,15 +989,9 @@ pub trait IVibrationManagerMethods: IVibrationManager {
         }
     }
     #[doc = "`SetFrequecy(f32, f32)` overload"]
-    fn set_frequecy(
-        self,
-        freq_low: impl ::core::convert::Into<f32>,
-        freq_high: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_frequecy(self, freq_low: impl ::core::convert::Into<f32>, freq_high: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::set_frequecy(
                 __receiver,
                 ::core::convert::Into::into(freq_low),
@@ -1353,9 +1009,7 @@ pub trait IVibrationManagerMethods: IVibrationManager {
         amp_high: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::one_shot(
                 __receiver,
                 ::core::convert::Into::into(time),
@@ -1377,9 +1031,7 @@ pub trait IVibrationManagerMethods: IVibrationManager {
         freq_high: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::one_shot_2(
                 __receiver,
                 ::core::convert::Into::into(time),
@@ -1395,9 +1047,7 @@ pub trait IVibrationManagerMethods: IVibrationManager {
     #[doc = "`StopVibe()` overload"]
     fn stop_vibe(self) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::stop_vibe(__receiver, ::core::option::Option::None)
         }
     }
@@ -1409,9 +1059,7 @@ pub trait IVibrationManagerMethods: IVibrationManager {
         is_loop: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::play_by_game_sound_event(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -1430,9 +1078,7 @@ pub trait IVibrationManagerMethods: IVibrationManager {
         is_loop: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::play_by_vibration_file_name(
                 __receiver,
                 ::core::convert::Into::into(vib_file_name),
@@ -1446,9 +1092,7 @@ pub trait IVibrationManagerMethods: IVibrationManager {
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
@@ -1459,9 +1103,7 @@ pub trait IVibrationManagerMethods: IVibrationManager {
         npad_style: impl ::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>,
     ) -> () {
         unsafe {
-            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VibrationManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VibrationManager_unity2_raw::setup_pad(
                 __receiver,
                 ::core::convert::Into::into(npad_id),
@@ -1494,12 +1136,10 @@ impl VibrationManager {
 #[cfg(feature = "app-vibrationmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IVibrationManager;
-    pub use super::IVibrationManagerMethods;
-    pub use super::IVibrationManager_VibHandle;
-    pub use super::IVibrationManager_VibHandleMethods;
-    pub use super::VibrationManager;
-    pub use super::VibrationManager_VibHandle;
+    pub use super::{
+        IVibrationManager, IVibrationManagerMethods, IVibrationManager_VibHandle, IVibrationManager_VibHandleMethods, VibrationManager,
+        VibrationManager_VibHandle,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

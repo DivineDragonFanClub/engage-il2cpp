@@ -2,20 +2,19 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standardenumuserdatadescriptor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: dispatchinguserdatadescriptor :: { DispatchingUserDataDescriptor , IDispatchingUserDataDescriptor }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::{
+            DispatchingUserDataDescriptor, IDispatchingUserDataDescriptor,
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/standardenumuserdatadescriptor/StandardEnumUserDataDescriptor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "StandardEnumUserDataDescriptor"
-    )]
-    # [parent (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: dispatchinguserdatadescriptor :: DispatchingUserDataDescriptor)]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "StandardEnumUserDataDescriptor")]
+    #[parent(crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::DispatchingUserDataDescriptor)]
     pub struct StandardEnumUserDataDescriptor {
         #[rename(name = "m_EnumToULong")]
         pub m_enum_to_u_long: crate::system::func_2::Func_2<crate::system::object::Object, u64>,
@@ -40,9 +39,7 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_underlying_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
@@ -55,43 +52,28 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_UnderlyingType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_UnderlyingType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_underlying_type(
-        this: StandardEnumUserDataDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            StandardEnumUserDataDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_underlying_type::get_offset() as isize),
-        );
+    pub unsafe fn get_underlying_type(this: StandardEnumUserDataDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(StandardEnumUserDataDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_underlying_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_underlying_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_UnderlyingType",
@@ -103,18 +85,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_UnderlyingType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_UnderlyingType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_underlying_type(
@@ -122,24 +101,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         value: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StandardEnumUserDataDescriptor,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_underlying_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StandardEnumUserDataDescriptor, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_underlying_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_unsigned {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
@@ -152,41 +122,28 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_IsUnsigned",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_IsUnsigned",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_unsigned(
-        this: StandardEnumUserDataDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_unsigned(this: StandardEnumUserDataDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandardEnumUserDataDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_unsigned::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_unsigned::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_unsigned {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_IsUnsigned",
@@ -198,43 +155,27 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_IsUnsigned",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_IsUnsigned",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_unsigned(
-        this: StandardEnumUserDataDescriptor,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            StandardEnumUserDataDescriptor,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_unsigned::get_offset() as isize),
-        );
+    pub unsafe fn set_is_unsigned(this: StandardEnumUserDataDescriptor, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(StandardEnumUserDataDescriptor, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_unsigned::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
@@ -247,41 +188,28 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_IsFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_IsFlags",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_flags(
-        this: StandardEnumUserDataDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_flags(this: StandardEnumUserDataDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandardEnumUserDataDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_flags::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_flags::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_IsFlags",
@@ -293,43 +221,27 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_IsFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_IsFlags",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_flags(
-        this: StandardEnumUserDataDescriptor,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            StandardEnumUserDataDescriptor,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_flags::get_offset() as isize),
-        );
+    pub unsafe fn set_is_flags(this: StandardEnumUserDataDescriptor, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(StandardEnumUserDataDescriptor, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_flags::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -348,18 +260,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -379,28 +288,14 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            enum_type,
-            friendly_name,
-            names,
-            values,
-            underlying_type,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, enum_type, friendly_name, names, values, underlying_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fill_member_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
                 <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
@@ -416,18 +311,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "FillMemberList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "FillMemberList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn fill_member_list(
@@ -441,20 +333,14 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             ::unity2::Array<::unity2::Il2CppString>,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fill_member_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_fill_member_list::get_method_info().method_ptr);
         inner(this, names, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_enum_method {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
@@ -470,18 +356,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "AddEnumMethod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "AddEnumMethod",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_enum_method(
@@ -495,23 +378,16 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_enum_method::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_enum_method::get_method_info().method_ptr);
         inner(this, name, dyn_value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_signed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "GetValueSigned",
@@ -523,18 +399,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "GetValueSigned",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "GetValueSigned",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value_signed(
@@ -546,23 +419,16 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             StandardEnumUserDataDescriptor,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> i64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value_signed::get_offset() as isize),
-        );
+        ) -> i64 = ::core::mem::transmute(__lookup_get_value_signed::get_method_info().method_ptr);
         inner(this, dv, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_unsigned {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "GetValueUnsigned",
@@ -574,18 +440,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "GetValueUnsigned",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "GetValueUnsigned",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value_unsigned(
@@ -597,22 +460,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             StandardEnumUserDataDescriptor,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> u64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value_unsigned::get_offset() as isize),
-        );
+        ) -> u64 = ::core::mem::transmute(__lookup_get_value_unsigned::get_method_info().method_ptr);
         inner(this, dv, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_value_signed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "CreateValueSigned",
@@ -624,18 +480,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CreateValueSigned",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CreateValueSigned",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_value_signed(
@@ -647,22 +500,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             StandardEnumUserDataDescriptor,
             i64,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_value_signed::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_create_value_signed::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_value_unsigned {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "CreateValueUnsigned",
@@ -674,18 +520,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CreateValueUnsigned",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CreateValueUnsigned",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_value_unsigned(
@@ -697,20 +540,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             StandardEnumUserDataDescriptor,
             u64,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_value_unsigned::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_create_value_unsigned::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_signed_conversion_functions {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
@@ -723,39 +561,27 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CreateSignedConversionFunctions",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CreateSignedConversionFunctions",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_signed_conversion_functions(
-        this: StandardEnumUserDataDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_signed_conversion_functions(this: StandardEnumUserDataDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandardEnumUserDataDescriptor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_signed_conversion_functions::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_signed_conversion_functions::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_unsigned_conversion_functions {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
@@ -768,40 +594,33 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CreateUnsignedConversionFunctions",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CreateUnsignedConversionFunctions",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_unsigned_conversion_functions(
-        this: StandardEnumUserDataDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_unsigned_conversion_functions(this: StandardEnumUserDataDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandardEnumUserDataDescriptor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_unsigned_conversion_functions::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_unsigned_conversion_functions::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perform_binary_operation_s {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_3 :: Func_3 < i64 , i64 , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+                <crate::system::func_3::Func_3<i64, i64, crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "PerformBinaryOperationS",
@@ -813,18 +632,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PerformBinaryOperationS",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PerformBinaryOperationS",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perform_binary_operation_s(
@@ -832,11 +648,7 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         func_name: ::unity2::Il2CppString,
         ctx: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        operation: crate::system::func_3::Func_3<
-            i64,
-            i64,
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-        >,
+        operation: crate::system::func_3::Func_3<i64, i64, crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         let inner: extern "C" fn(
@@ -844,27 +656,23 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-            crate::system::func_3::Func_3<
-                i64,
-                i64,
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            >,
+            crate::system::func_3::Func_3<i64, i64, crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perform_binary_operation_s::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_perform_binary_operation_s::get_method_info().method_ptr);
         inner(this, func_name, ctx, args, operation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perform_binary_operation_u {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_3 :: Func_3 < u64 , u64 , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+                <crate::system::func_3::Func_3<u64, u64, crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "PerformBinaryOperationU",
@@ -876,18 +684,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PerformBinaryOperationU",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PerformBinaryOperationU",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perform_binary_operation_u(
@@ -895,11 +700,7 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         func_name: ::unity2::Il2CppString,
         ctx: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        operation: crate::system::func_3::Func_3<
-            u64,
-            u64,
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-        >,
+        operation: crate::system::func_3::Func_3<u64, u64, crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         let inner: extern "C" fn(
@@ -907,27 +708,23 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-            crate::system::func_3::Func_3<
-                u64,
-                u64,
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            >,
+            crate::system::func_3::Func_3<u64, u64, crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perform_binary_operation_u::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_perform_binary_operation_u::get_method_info().method_ptr);
         inner(this, func_name, ctx, args, operation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perform_binary_operation_s_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_3 :: Func_3 < i64 , i64 , i64 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+                <crate::system::func_3::Func_3<i64, i64, i64> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "PerformBinaryOperationS",
@@ -939,18 +736,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PerformBinaryOperationS",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PerformBinaryOperationS",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perform_binary_operation_s_2(
@@ -968,21 +762,21 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             crate::system::func_3::Func_3<i64, i64, i64>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perform_binary_operation_s_2::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_perform_binary_operation_s_2::get_method_info().method_ptr);
         inner(this, func_name, ctx, args, operation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perform_binary_operation_u_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_3 :: Func_3 < u64 , u64 , u64 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+                <crate::system::func_3::Func_3<u64, u64, u64> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "PerformBinaryOperationU",
@@ -994,18 +788,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PerformBinaryOperationU",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PerformBinaryOperationU",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perform_binary_operation_u_2(
@@ -1023,21 +814,21 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             crate::system::func_3::Func_3<u64, u64, u64>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perform_binary_operation_u_2::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_perform_binary_operation_u_2::get_method_info().method_ptr);
         inner(this, func_name, ctx, args, operation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perform_unary_operation_s {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < i64 , i64 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+                <crate::system::func_2::Func_2<i64, i64> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "PerformUnaryOperationS",
@@ -1049,18 +840,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PerformUnaryOperationS",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PerformUnaryOperationS",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perform_unary_operation_s(
@@ -1078,21 +866,21 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             crate::system::func_2::Func_2<i64, i64>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perform_unary_operation_s::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_perform_unary_operation_s::get_method_info().method_ptr);
         inner(this, func_name, ctx, args, operation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perform_unary_operation_u {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < u64 , u64 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+                <crate::system::func_2::Func_2<u64, u64> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "PerformUnaryOperationU",
@@ -1104,18 +892,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PerformUnaryOperationU",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PerformUnaryOperationU",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perform_unary_operation_u(
@@ -1133,21 +918,19 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             crate::system::func_2::Func_2<u64, u64>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perform_unary_operation_u::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_perform_unary_operation_u::get_method_info().method_ptr);
         inner(this, func_name, ctx, args, operation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_callback_or {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "Callback_Or",
@@ -1159,18 +942,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Callback_Or",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Callback_Or",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn callback_or(
@@ -1184,21 +964,18 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_callback_or::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_callback_or::get_method_info().method_ptr);
         inner(this, ctx, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_callback_and {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "Callback_And",
@@ -1210,18 +987,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Callback_And",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Callback_And",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn callback_and(
@@ -1235,21 +1009,18 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_callback_and::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_callback_and::get_method_info().method_ptr);
         inner(this, ctx, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_callback_xor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "Callback_Xor",
@@ -1261,18 +1032,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Callback_Xor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Callback_Xor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn callback_xor(
@@ -1286,21 +1054,18 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_callback_xor::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_callback_xor::get_method_info().method_ptr);
         inner(this, ctx, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_callback_bw_not {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "Callback_BwNot",
@@ -1312,18 +1077,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Callback_BwNot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Callback_BwNot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn callback_bw_not(
@@ -1337,21 +1099,18 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_callback_bw_not::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_callback_bw_not::get_method_info().method_ptr);
         inner(this, ctx, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_callback_has_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "Callback_HasAll",
@@ -1363,18 +1122,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Callback_HasAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Callback_HasAll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn callback_has_all(
@@ -1388,21 +1144,18 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_callback_has_all::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_callback_has_all::get_method_info().method_ptr);
         inner(this, ctx, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_callback_has_any {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "Callback_HasAny",
@@ -1414,18 +1167,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Callback_HasAny",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Callback_HasAny",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn callback_has_any(
@@ -1439,20 +1189,14 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_callback_has_any::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_callback_has_any::get_method_info().method_ptr);
         inner(this, ctx, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_type_compatible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1468,18 +1212,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "IsTypeCompatible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "IsTypeCompatible",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_type_compatible(
@@ -1493,20 +1234,14 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             ::unity2::SystemType,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_type_compatible::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_type_compatible::get_method_info().method_ptr);
         inner(this, r#type, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_meta_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1523,18 +1258,15 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "MetaIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandardEnumUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "MetaIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn meta_index(
@@ -1550,11 +1282,7 @@ mod __StandardEnumUserDataDescriptor_unity2_raw {
             crate::system::object::Object,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_meta_index::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_meta_index::get_method_info().method_ptr);
         inner(this, script, obj, metaname, __unity2_method_info)
     }
 }
@@ -1565,22 +1293,15 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     fn get_underlying_type(self) -> ::unity2::SystemType {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::get_underlying_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::get_underlying_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_UnderlyingType(::unity2::SystemType)` overload"]
     fn set_underlying_type(self, value: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::set_underlying_type(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1592,54 +1313,32 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     fn get_is_unsigned(self) -> bool {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::get_is_unsigned(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::get_is_unsigned(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsUnsigned(bool)` overload"]
     fn set_is_unsigned(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::set_is_unsigned(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::set_is_unsigned(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsFlags()` overload"]
     fn get_is_flags(self) -> bool {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::get_is_flags(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::get_is_flags(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsFlags(bool)` overload"]
     fn set_is_flags(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::set_is_flags(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::set_is_flags(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, ::unity2::Array<crate::system::object::Object>, ::unity2::SystemType)` overload"]
@@ -1653,9 +1352,7 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     ) -> () {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(enum_type),
@@ -1675,9 +1372,7 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     ) -> () {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::fill_member_list(
                 __receiver,
                 ::core::convert::Into::into(names),
@@ -1694,9 +1389,7 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     ) -> () {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::add_enum_method(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1706,49 +1399,26 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
         }
     }
     #[doc = "`GetValueSigned(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    fn get_value_signed(
-        self,
-        dv: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> i64 {
+    fn get_value_signed(self, dv: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> i64 {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::get_value_signed(
-                __receiver,
-                ::core::convert::Into::into(dv),
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::get_value_signed(__receiver, ::core::convert::Into::into(dv), ::core::option::Option::None)
         }
     }
     #[doc = "`GetValueUnsigned(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    fn get_value_unsigned(
-        self,
-        dv: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> u64 {
+    fn get_value_unsigned(self, dv: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> u64 {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::get_value_unsigned(
-                __receiver,
-                ::core::convert::Into::into(dv),
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::get_value_unsigned(__receiver, ::core::convert::Into::into(dv), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateValueSigned(i64)` overload"]
-    fn create_value_signed(
-        self,
-        value: impl ::core::convert::Into<i64>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+    fn create_value_signed(self, value: impl ::core::convert::Into<i64>) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::create_value_signed(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1757,15 +1427,10 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
         }
     }
     #[doc = "`CreateValueUnsigned(u64)` overload"]
-    fn create_value_unsigned(
-        self,
-        value: impl ::core::convert::Into<u64>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+    fn create_value_unsigned(self, value: impl ::core::convert::Into<u64>) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::create_value_unsigned(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1777,51 +1442,29 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     fn create_signed_conversion_functions(self) -> () {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::create_signed_conversion_functions(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::create_signed_conversion_functions(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateUnsignedConversionFunctions()` overload"]
     fn create_unsigned_conversion_functions(self) -> () {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StandardEnumUserDataDescriptor_unity2_raw::create_unsigned_conversion_functions(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandardEnumUserDataDescriptor_unity2_raw::create_unsigned_conversion_functions(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PerformBinaryOperationS(::unity2::Il2CppString, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, crate::system::func_3::Func_3<i64,i64,crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     fn perform_binary_operation_s(
         self,
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
-        operation: impl ::core::convert::Into<
-            crate::system::func_3::Func_3<
-                i64,
-                i64,
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            >,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
+        operation: impl ::core::convert::Into<crate::system::func_3::Func_3<i64, i64, crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::perform_binary_operation_s(
                 __receiver,
                 ::core::convert::Into::into(func_name),
@@ -1836,25 +1479,13 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     fn perform_binary_operation_u(
         self,
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
-        operation: impl ::core::convert::Into<
-            crate::system::func_3::Func_3<
-                u64,
-                u64,
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            >,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
+        operation: impl ::core::convert::Into<crate::system::func_3::Func_3<u64, u64, crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::perform_binary_operation_u(
                 __receiver,
                 ::core::convert::Into::into(func_name),
@@ -1869,19 +1500,13 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     fn perform_binary_operation_s_2(
         self,
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
         operation: impl ::core::convert::Into<crate::system::func_3::Func_3<i64, i64, i64>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::perform_binary_operation_s_2(
                 __receiver,
                 ::core::convert::Into::into(func_name),
@@ -1896,19 +1521,13 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     fn perform_binary_operation_u_2(
         self,
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
         operation: impl ::core::convert::Into<crate::system::func_3::Func_3<u64, u64, u64>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::perform_binary_operation_u_2(
                 __receiver,
                 ::core::convert::Into::into(func_name),
@@ -1923,19 +1542,13 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     fn perform_unary_operation_s(
         self,
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
         operation: impl ::core::convert::Into<crate::system::func_2::Func_2<i64, i64>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::perform_unary_operation_s(
                 __receiver,
                 ::core::convert::Into::into(func_name),
@@ -1950,19 +1563,13 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     fn perform_unary_operation_u(
         self,
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
         operation: impl ::core::convert::Into<crate::system::func_2::Func_2<u64, u64>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::perform_unary_operation_u(
                 __receiver,
                 ::core::convert::Into::into(func_name),
@@ -1976,18 +1583,12 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     #[doc = "`Callback_Or(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     fn callback_or(
         self,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::callback_or(
                 __receiver,
                 ::core::convert::Into::into(ctx),
@@ -1999,18 +1600,12 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     #[doc = "`Callback_And(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     fn callback_and(
         self,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::callback_and(
                 __receiver,
                 ::core::convert::Into::into(ctx),
@@ -2022,18 +1617,12 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     #[doc = "`Callback_Xor(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     fn callback_xor(
         self,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::callback_xor(
                 __receiver,
                 ::core::convert::Into::into(ctx),
@@ -2045,18 +1634,12 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     #[doc = "`Callback_BwNot(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     fn callback_bw_not(
         self,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::callback_bw_not(
                 __receiver,
                 ::core::convert::Into::into(ctx),
@@ -2068,18 +1651,12 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     #[doc = "`Callback_HasAll(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     fn callback_has_all(
         self,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::callback_has_all(
                 __receiver,
                 ::core::convert::Into::into(ctx),
@@ -2091,18 +1668,12 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     #[doc = "`Callback_HasAny(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     fn callback_has_any(
         self,
-        ctx: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        ctx: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::callback_has_any(
                 __receiver,
                 ::core::convert::Into::into(ctx),
@@ -2119,9 +1690,7 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     ) -> bool {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::is_type_compatible(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -2139,9 +1708,7 @@ pub trait IStandardEnumUserDataDescriptorMethods: IStandardEnumUserDataDescripto
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StandardEnumUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandardEnumUserDataDescriptor_unity2_raw::meta_index(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -2173,14 +1740,7 @@ impl StandardEnumUserDataDescriptor {
                 ::core::stringify!(new),
             )
         });
-        <Self as IStandardEnumUserDataDescriptorMethods>::ctor(
-            this,
-            enum_type,
-            friendly_name,
-            names,
-            values,
-            underlying_type,
-        );
+        <Self as IStandardEnumUserDataDescriptorMethods>::ctor(this, enum_type, friendly_name, names, values, underlying_type);
         this
     }
 }
@@ -2188,11 +1748,12 @@ impl StandardEnumUserDataDescriptor {
 #[cfg(feature = "moon_sharp-interpreter-interop-standardenumuserdatadescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::StandardEnumUserDataDescriptor;
-    pub use super::IStandardEnumUserDataDescriptor;
-    pub use super::IStandardEnumUserDataDescriptorMethods;
-    pub use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptor;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")] pub use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptorMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IStandardEnumUserDataDescriptor, IStandardEnumUserDataDescriptorMethods, StandardEnumUserDataDescriptor};
+    #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]
+    pub use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptorMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptor, system::object::IObject,
+    };
 }

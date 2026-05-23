@@ -2,10 +2,10 @@
 
 #[cfg(feature = "nn-hid-controllerfirmwareupdate-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/controllerfirmwareupdate/ControllerFirmwareUpdate.md"))]
     #[::unity2::class(namespace = "nn.hid", name = "ControllerFirmwareUpdate")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "nn-hid-controllerfirmwareupdate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ControllerFirmwareUpdate;
-    pub use super::IControllerFirmwareUpdate;
+    pub use super::{ControllerFirmwareUpdate, IControllerFirmwareUpdate};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

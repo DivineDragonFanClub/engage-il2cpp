@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-memberinfoitem_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::menuitem::{IMenuItem, MenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::menuitem::{IMenuItem, MenuItem},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/memberinfoitem_1/MemberInfoItem_1.md"))]
     #[::unity2::class(namespace = "App", name = "MemberInfoItem`1")]
@@ -98,13 +100,10 @@ impl<T0: ::unity2::ClassIdentity> MemberInfoItem_1<T0> {
 #[cfg(feature = "app-memberinfoitem_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMemberInfoItem_1;
-    pub use super::IMemberInfoItem_1Methods;
-    pub use super::MemberInfoItem_1;
-    pub use crate::app::menuitem::IMenuItem;
+    pub use super::{IMemberInfoItem_1, IMemberInfoItem_1Methods, MemberInfoItem_1};
     #[cfg(feature = "app-menuitem")]
     pub use crate::app::menuitem::IMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::menuitem::IMenuItem, system::object::IObject};
 }

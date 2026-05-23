@@ -2,161 +2,26 @@
 
 #[cfg(feature = "app-telopmanager-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcRelayResult_Label2.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TelopManager_ProcRelayResult_Label2 {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TelopManager_ProcRelayResult_Label2 {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TelopManager.ProcRelayResult.Label2";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TelopManager_ProcRelayResult_Label2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TelopManager_ProcRelayResult_Label2 {
-        pub fn play_telop() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondEngageBase_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TelopManager_ProcBondEngageBase_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TelopManager_ProcBondEngageBase_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TelopManager.ProcBondEngageBase.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TelopManager_ProcBondEngageBase_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TelopManager_ProcBondEngageBase_Label {
-        pub fn entry() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondLevelUp_Label2.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TelopManager_ProcBondLevelUp_Label2 {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TelopManager_ProcBondLevelUp_Label2 {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TelopManager.ProcBondLevelUp.Label2";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TelopManager_ProcBondLevelUp_Label2 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TelopManager_ProcBondLevelUp_Label2 {
-        pub fn entry() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager.md"))]
-    #[::unity2::class(namespace = "App", name = "TelopManager")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: telopmanager :: TelopManager >)]
-    pub struct TelopManager {
-        #[static_field]
-        #[rename(name = "CanvasSize")]
-        pub canvas_size: crate::unity_engine::vector2::Vector2,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngageQuartette.md"))]
     #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngageQuartette")]
@@ -168,6 +33,55 @@ mod __types {
         pub m_2nd_main_god: crate::app::goddata::GodData,
         #[rename(name = "m_3rdMainGod")]
         pub m_3rd_main_god: crate::app::goddata::GodData,
+        #[rename(name = "m_SubGod")]
+        pub m_sub_god: crate::app::goddata::GodData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondLevelUp.md"))]
+    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondLevelUp")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TelopManager_ProcBondLevelUp {
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_God")]
+        pub m_god: crate::app::godunit::GodUnit,
+        #[rename(name = "m_Level")]
+        pub m_level: i32,
+        #[rename(name = "m_NextLevel")]
+        pub m_next_level: i32,
+        #[rename(name = "m_GodData")]
+        pub m_god_data: crate::app::goddata::GodData,
+        #[rename(name = "m_RootTelop")]
+        pub m_root_telop: crate::app::telopinstance::TelopInstance,
+        #[rename(name = "m_LevelTelop")]
+        pub m_level_telop: crate::app::telopinstance::TelopInstance,
+        #[rename(name = "m_SkillObj")]
+        pub m_skill_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_EffectObj")]
+        pub m_effect_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_MenuItemList")]
+        pub m_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[rename(name = "m_MenuItemIndex")]
+        pub m_menu_item_index: i32,
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::telopmanager::TelopManager_ProcBondLevelUp_Sequence,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager.md"))]
+    #[::unity2::class(namespace = "App", name = "TelopManager")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: telopmanager :: TelopManager >)]
+    pub struct TelopManager {
+        #[static_field]
+        #[rename(name = "CanvasSize")]
+        pub canvas_size: crate::unity_engine::vector2::Vector2,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngagePair.md"))]
+    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngagePair")]
+    #[parent(crate::app::telopmanager::TelopManager_ProcBondEngageBase)]
+    pub struct TelopManager_ProcBondEngagePair {
+        #[rename(name = "m_MainGod")]
+        pub m_main_god: crate::app::goddata::GodData,
         #[rename(name = "m_SubGod")]
         pub m_sub_god: crate::app::goddata::GodData,
     }
@@ -188,21 +102,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondLevelUp_Sequence.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TelopManager_ProcBondLevelUp_Sequence {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TelopManager_ProcBondLevelUp_Sequence {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "TelopManager.ProcBondLevelUp.Sequence";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -213,10 +120,7 @@ mod __types {
 
     impl ::unity2::IlType for TelopManager_ProcBondLevelUp_Sequence {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -230,23 +134,104 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngageBase.md"))]
+    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngageBase")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TelopManager_ProcBondEngageBase {
+        #[static_field]
+        #[rename(name = "EventName")]
+        pub event_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "WaitFrame")]
+        pub wait_frame: i32,
+        #[rename(name = "m_RootTelop")]
+        pub m_root_telop: crate::app::telopinstance::TelopInstance,
+        #[rename(name = "m_AssetTableResult")]
+        pub m_asset_table_result: crate::app::assettable::AssetTable_Result,
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::telopmanager::TelopManager_ProcBondEngageBase_Sequence,
+        #[rename(name = "m_WaitFrame")]
+        pub m_wait_frame: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcRelayResult_Label2.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TelopManager_ProcRelayResult_Label2 {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TelopManager_ProcRelayResult_Label2 {
+        const NAME: &'static str = "TelopManager.ProcRelayResult.Label2";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TelopManager_ProcRelayResult_Label2 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TelopManager_ProcRelayResult_Label2 {
+        pub fn play_telop() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondEngageBase_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TelopManager_ProcBondEngageBase_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TelopManager_ProcBondEngageBase_Label {
+        const NAME: &'static str = "TelopManager.ProcBondEngageBase.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TelopManager_ProcBondEngageBase_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TelopManager_ProcBondEngageBase_Label {
+        pub fn entry() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondEngageBase_Sequence.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TelopManager_ProcBondEngageBase_Sequence {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TelopManager_ProcBondEngageBase_Sequence {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "TelopManager.ProcBondEngageBase.Sequence";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -257,10 +242,7 @@ mod __types {
 
     impl ::unity2::IlType for TelopManager_ProcBondEngageBase_Sequence {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -294,1927 +276,43 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngagePair.md"))]
-    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngagePair")]
-    #[parent(crate::app::telopmanager::TelopManager_ProcBondEngageBase)]
-    pub struct TelopManager_ProcBondEngagePair {
-        #[rename(name = "m_MainGod")]
-        pub m_main_god: crate::app::goddata::GodData,
-        #[rename(name = "m_SubGod")]
-        pub m_sub_god: crate::app::goddata::GodData,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/telopmanager/TelopManager_ProcBondLevelUp_Label2.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TelopManager_ProcBondLevelUp_Label2 {
+        pub value: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondLevelUp.md"))]
-    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondLevelUp")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TelopManager_ProcBondLevelUp {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_God")]
-        pub m_god: crate::app::godunit::GodUnit,
-        #[rename(name = "m_Level")]
-        pub m_level: i32,
-        #[rename(name = "m_NextLevel")]
-        pub m_next_level: i32,
-        #[rename(name = "m_GodData")]
-        pub m_god_data: crate::app::goddata::GodData,
-        #[rename(name = "m_RootTelop")]
-        pub m_root_telop: crate::app::telopinstance::TelopInstance,
-        #[rename(name = "m_LevelTelop")]
-        pub m_level_telop: crate::app::telopinstance::TelopInstance,
-        #[rename(name = "m_SkillObj")]
-        pub m_skill_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_EffectObj")]
-        pub m_effect_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_MenuItemList")]
-        pub m_menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        #[rename(name = "m_MenuItemIndex")]
-        pub m_menu_item_index: i32,
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::telopmanager::TelopManager_ProcBondLevelUp_Sequence,
+    impl ::unity2::ClassIdentity for TelopManager_ProcBondLevelUp_Label2 {
+        const NAME: &'static str = "TelopManager.ProcBondLevelUp.Label2";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopmanager/TelopManager_ProcBondEngageBase.md"))]
-    #[::unity2::class(namespace = "App", name = "TelopManager.ProcBondEngageBase")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TelopManager_ProcBondEngageBase {
-        #[static_field]
-        #[rename(name = "EventName")]
-        pub event_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "WaitFrame")]
-        pub wait_frame: i32,
-        #[rename(name = "m_RootTelop")]
-        pub m_root_telop: crate::app::telopinstance::TelopInstance,
-        #[rename(name = "m_AssetTableResult")]
-        pub m_asset_table_result: crate::app::assettable::AssetTable_Result,
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::telopmanager::TelopManager_ProcBondEngageBase_Sequence,
-        #[rename(name = "m_WaitFrame")]
-        pub m_wait_frame: i32,
+    impl ::unity2::IlType for TelopManager_ProcBondLevelUp_Label2 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TelopManager_ProcBondLevelUp_Label2 {
+        pub fn entry() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
     }
 }
 
 #[cfg(feature = "app-telopmanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-telopmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TelopManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateBindImpl",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind_impl(
-        this: TelopManager,
-        super_: crate::app::procinst::ProcInst,
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::resourceobject::ResourceObject {
-        let inner: extern "C" fn(
-            TelopManager,
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_impl::get_offset() as isize),
-        );
-        inner(this, super_, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::resourceobject::ResourceObject {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "TrySetText",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "TrySetText",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_set_text(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        object_name: ::unity2::Il2CppString,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_text::get_offset() as isize),
-        );
-        inner(root_object, object_name, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_text_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "TrySetText",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "TrySetText",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_set_text_2(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_text_2::get_offset() as isize),
-        );
-        inner(root_object, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_text_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "TrySetText",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "TrySetText",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_set_text_3(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        object_name: ::unity2::Il2CppString,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_text_3::get_offset() as isize),
-        );
-        inner(root_object, object_name, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "TrySetTextColor",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "TrySetTextColor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_set_text_color(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        object_name: ::unity2::Il2CppString,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Il2CppString,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_text_color::get_offset() as isize),
-        );
-        inner(root_object, object_name, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_text_outline_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "TrySetTextOutlineColor",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "TrySetTextOutlineColor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_set_text_outline_color(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        object_name: ::unity2::Il2CppString,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Il2CppString,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_text_outline_color::get_offset() as isize),
-        );
-        inner(root_object, object_name, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_image_sprite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "TrySetImageSprite",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "TrySetImageSprite",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_set_image_sprite(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        object_name: ::unity2::Il2CppString,
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Il2CppString,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_image_sprite::get_offset() as isize),
-        );
-        inner(root_object, object_name, sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_set_image_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "TrySetImageColor",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "TrySetImageColor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_set_image_color(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        object_name: ::unity2::Il2CppString,
-        color: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Il2CppString,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_image_color::get_offset() as isize),
-        );
-        inner(root_object, object_name, color, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_purpose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreatePurpose",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreatePurpose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_purpose(
-        parent: crate::app::procinst::ProcInst,
-        text_win: ::unity2::Il2CppString,
-        text_lose: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_purpose::get_offset() as isize),
-        );
-        inner(parent, text_win, text_lose, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_phase_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreatePhaseChange",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreatePhaseChange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_phase_change(
-        super_: crate::app::procinst::ProcInst,
-        force_type: crate::app::force::Force_Type,
-        now_turn: i32,
-        limit_turn: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::force::Force_Type,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_phase_change::get_offset() as isize),
-        );
-        inner(
-            super_,
-            force_type,
-            now_turn,
-            limit_turn,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_coroutine {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "Coroutine",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "Coroutine",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn coroutine(
-        go: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_coroutine::get_offset() as isize),
-        );
-        inner(go, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_complete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateComplete",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateComplete",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_complete(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_complete::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_game_over {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateGameOver",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateGameOver",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_game_over(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_game_over::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_level_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateLevelUp",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateLevelUp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_level_up(
-        super_: crate::app::procinst::ProcInst,
-        level: i32,
-        next_level: i32,
-        unit: crate::app::unit::Unit,
-        is_show_chara_image: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            i32,
-            i32,
-            crate::app::unit::Unit,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_level_up::get_offset() as isize),
-        );
-        inner(
-            super_,
-            level,
-            next_level,
-            unit,
-            is_show_chara_image,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bond_level_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateBondLevelUp",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateBondLevelUp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bond_level_up(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        god: crate::app::godunit::GodUnit,
-        level: i32,
-        next_level: i32,
-        god_data: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            crate::app::godunit::GodUnit,
-            i32,
-            i32,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bond_level_up::get_offset() as isize),
-        );
-        inner(
-            super_,
-            unit,
-            god,
-            level,
-            next_level,
-            god_data,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bond_level_face_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "GetBondLevelFacePath",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "GetBondLevelFacePath",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_bond_level_face_path(
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bond_level_face_path::get_offset() as isize),
-        );
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bond_level_face_path_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "GetBondLevelFacePath",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "GetBondLevelFacePath",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_bond_level_face_path_2(
-        god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bond_level_face_path_2::get_offset() as isize),
-        );
-        inner(god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bond_level_face_path_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "GetBondLevelFacePath",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "GetBondLevelFacePath",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_bond_level_face_path_3(
-        data: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bond_level_face_path_3::get_offset() as isize),
-        );
-        inner(data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_class_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
-                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateClassChange",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateClassChange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_class_change(
-        super_: crate::app::procinst::ProcInst,
-        before: crate::app::jobdata::JobData,
-        after: crate::app::jobdata::JobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::jobdata::JobData,
-            crate::app::jobdata::JobData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_class_change::get_offset() as isize),
-        );
-        inner(super_, before, after, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_engage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateEngage",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateEngage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_engage(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_engage::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_chapter_title {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateChapterTitle",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateChapterTitle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_chapter_title(
-        super_: crate::app::procinst::ProcInst,
-        chapter: crate::app::chapterdata::ChapterData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::chapterdata::ChapterData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_chapter_title::get_offset() as isize),
-        );
-        inner(super_, chapter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_nation_level_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::hubnationdata::HubNationData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::resourceobject::ResourceObject_Callback as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateNationLevelUp",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateNationLevelUp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_nation_level_up(
-        super_: crate::app::procinst::ProcInst,
-        nation_data: crate::app::hubnationdata::HubNationData,
-        level: i32,
-        next_level: i32,
-        end_callback: crate::app::resourceobject::ResourceObject_Callback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::hubnationdata::HubNationData,
-            i32,
-            i32,
-            crate::app::resourceobject::ResourceObject_Callback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_nation_level_up::get_offset() as isize),
-        );
-        inner(
-            super_,
-            nation_data,
-            level,
-            next_level,
-            end_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_relay_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateRelayResult",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateRelayResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_relay_result(
-        super_: crate::app::procinst::ProcInst,
-        raids: ::unity2::Array<::unity2::Il2CppString>,
-        is_awarded: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Array<::unity2::Il2CppString>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_relay_result::get_offset() as isize),
-        );
-        inner(super_, raids, is_awarded, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_summon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::persondata::PersonData_Ranks as ::unity2::IlType>::il_type(),
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                "CreateSummon",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateSummon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_summon(
-        super_: crate::app::procinst::ProcInst,
-        owner: crate::app::unit::Unit,
-        rank: crate::app::persondata::PersonData_Ranks,
-        person: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            crate::app::persondata::PersonData_Ranks,
-            crate::app::persondata::PersonData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_summon::get_offset() as isize),
-        );
-        inner(super_, owner, rank, person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: TelopManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TelopManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-impl TelopManager {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::resourceobject::ResourceObject {
-        unsafe {
-            __TelopManager_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TrySetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn try_set_text(
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::try_set_text(
-                ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(object_name),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TrySetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    pub fn try_set_text_2(
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::try_set_text_2(
-                ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TrySetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, i32)` overload"]
-    pub fn try_set_text_3(
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::try_set_text_3(
-                ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(object_name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TrySetTextColor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]
-    pub fn try_set_text_color(
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::try_set_text_color(
-                ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(object_name),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TrySetTextOutlineColor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]
-    pub fn try_set_text_outline_color(
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::try_set_text_outline_color(
-                ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(object_name),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TrySetImageSprite(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"]
-    pub fn try_set_image_sprite(
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::try_set_image_sprite(
-                ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(object_name),
-                ::core::convert::Into::into(sprite),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TrySetImageColor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]
-    pub fn try_set_image_color(
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::try_set_image_color(
-                ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(object_name),
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreatePurpose(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn create_purpose(
-        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        text_win: impl ::core::convert::Into<::unity2::Il2CppString>,
-        text_lose: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_purpose(
-                ::core::convert::Into::into(parent),
-                ::core::convert::Into::into(text_win),
-                ::core::convert::Into::into(text_lose),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreatePhaseChange(crate::app::procinst::ProcInst, crate::app::force::Force_Type, i32, i32)` overload"]
-    pub fn create_phase_change(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
-        now_turn: impl ::core::convert::Into<i32>,
-        limit_turn: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_phase_change(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(force_type),
-                ::core::convert::Into::into(now_turn),
-                ::core::convert::Into::into(limit_turn),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Coroutine(crate::unity_engine::gameobject::GameObject)` overload"]
-    pub fn coroutine(
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            __TelopManager_unity2_raw::coroutine(
-                ::core::convert::Into::into(go),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateComplete(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_complete(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_complete(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateGameOver(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_game_over(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_game_over(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateLevelUp(crate::app::procinst::ProcInst, i32, i32, crate::app::unit::Unit, bool)` overload"]
-    pub fn create_level_up(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        level: impl ::core::convert::Into<i32>,
-        next_level: impl ::core::convert::Into<i32>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        is_show_chara_image: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_level_up(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(next_level),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(is_show_chara_image),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateBondLevelUp(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, i32, i32, crate::app::goddata::GodData)` overload"]
-    pub fn create_bond_level_up(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        level: impl ::core::convert::Into<i32>,
-        next_level: impl ::core::convert::Into<i32>,
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_bond_level_up(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(god),
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(next_level),
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetBondLevelFacePath(crate::app::unit::Unit)` overload"]
-    pub fn get_bond_level_face_path(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TelopManager_unity2_raw::get_bond_level_face_path(
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetBondLevelFacePath(crate::app::godunit::GodUnit)` overload"]
-    pub fn get_bond_level_face_path_2(
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TelopManager_unity2_raw::get_bond_level_face_path_2(
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetBondLevelFacePath(crate::app::goddata::GodData)` overload"]
-    pub fn get_bond_level_face_path_3(
-        data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TelopManager_unity2_raw::get_bond_level_face_path_3(
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateClassChange(crate::app::procinst::ProcInst, crate::app::jobdata::JobData, crate::app::jobdata::JobData)` overload"]
-    pub fn create_class_change(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        before: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-        after: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_class_change(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(before),
-                ::core::convert::Into::into(after),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateEngage(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_engage(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_engage(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateChapterTitle(crate::app::procinst::ProcInst, crate::app::chapterdata::ChapterData)` overload"]
-    pub fn create_chapter_title(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_chapter_title(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(chapter),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateNationLevelUp(crate::app::procinst::ProcInst, crate::app::hubnationdata::HubNationData, i32, i32, crate::app::resourceobject::ResourceObject_Callback)` overload"]
-    pub fn create_nation_level_up(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        nation_data: impl ::core::convert::Into<crate::app::hubnationdata::HubNationData>,
-        level: impl ::core::convert::Into<i32>,
-        next_level: impl ::core::convert::Into<i32>,
-        end_callback: impl ::core::convert::Into<crate::app::resourceobject::ResourceObject_Callback>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_nation_level_up(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(nation_data),
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(next_level),
-                ::core::convert::Into::into(end_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateRelayResult(crate::app::procinst::ProcInst, ::unity2::Array<::unity2::Il2CppString>, bool)` overload"]
-    pub fn create_relay_result(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        raids: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        is_awarded: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_relay_result(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(raids),
-                ::core::convert::Into::into(is_awarded),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateSummon(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::persondata::PersonData_Ranks, crate::app::persondata::PersonData)` overload"]
-    pub fn create_summon(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        owner: impl ::core::convert::Into<crate::app::unit::Unit>,
-        rank: impl ::core::convert::Into<crate::app::persondata::PersonData_Ranks>,
-        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-    ) -> () {
-        unsafe {
-            __TelopManager_unity2_raw::create_summon(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(owner),
-                ::core::convert::Into::into(rank),
-                ::core::convert::Into::into(person),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __TelopManager_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-pub trait ITelopManagerMethods: ITelopManager {
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    fn create_bind_impl(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::resourceobject::ResourceObject {
-        unsafe {
-            let __receiver = <TelopManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TelopManager_unity2_raw::create_bind_impl(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TelopManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TelopManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-impl<__T: ITelopManager> ITelopManagerMethods for __T {}
-
-#[cfg(feature = "app-telopmanager")]
-impl TelopManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TelopManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITelopManagerMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-telopmanager")]
 #[doc(hidden)]
@@ -2225,9 +323,7 @@ mod __TelopManager_ProcBondEngageQuartette_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
                 <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
@@ -2245,18 +341,15 @@ mod __TelopManager_ProcBondEngageQuartette_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -2274,27 +367,14 @@ mod __TelopManager_ProcBondEngageQuartette_unity2_raw {
             crate::app::goddata::GodData,
             crate::app::goddata::GodData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            first_main_god,
-            second_main_god,
-            third_main_god,
-            sub_god,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, first_main_god, second_main_god, third_main_god, sub_god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_face {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::class(),
@@ -2307,41 +387,27 @@ mod __TelopManager_ProcBondEngageQuartette_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
-                    "LoadFace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
+                        "LoadFace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_face(
-        this: TelopManager_ProcBondEngageQuartette,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TelopManager_ProcBondEngageQuartette,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_face::get_offset() as isize),
-        );
+    pub unsafe fn load_face(this: TelopManager_ProcBondEngageQuartette, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TelopManager_ProcBondEngageQuartette, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_face::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_telop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::class(),
@@ -2354,41 +420,27 @@ mod __TelopManager_ProcBondEngageQuartette_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
-                    "PlayTelop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
+                        "PlayTelop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_telop(
-        this: TelopManager_ProcBondEngageQuartette,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TelopManager_ProcBondEngageQuartette,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_telop::get_offset() as isize),
-        );
+    pub unsafe fn play_telop(this: TelopManager_ProcBondEngageQuartette, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TelopManager_ProcBondEngageQuartette, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_telop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_face {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::class(),
@@ -2401,41 +453,27 @@ mod __TelopManager_ProcBondEngageQuartette_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseFace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseFace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_face(
-        this: TelopManager_ProcBondEngageQuartette,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TelopManager_ProcBondEngageQuartette,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_face::get_offset() as isize),
-        );
+    pub unsafe fn release_face(this: TelopManager_ProcBondEngageQuartette, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TelopManager_ProcBondEngageQuartette, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_face::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
@@ -2454,18 +492,15 @@ mod __TelopManager_ProcBondEngageQuartette_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngageQuartette as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -2483,19 +518,8 @@ mod __TelopManager_ProcBondEngageQuartette_unity2_raw {
             crate::app::goddata::GodData,
             crate::app::goddata::GodData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            first_main_god,
-            second_main_god,
-            third_main_god,
-            sub_god,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, first_main_god, second_main_god, third_main_god, sub_god, __unity2_method_info)
     }
 }
 
@@ -2523,9 +547,7 @@ impl TelopManager_ProcBondEngageQuartette {
 }
 
 #[cfg(feature = "app-telopmanager")]
-pub trait ITelopManager_ProcBondEngageQuartetteMethods:
-    ITelopManager_ProcBondEngageQuartette
-{
+pub trait ITelopManager_ProcBondEngageQuartetteMethods: ITelopManager_ProcBondEngageQuartette {
     #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData, crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
     fn ctor(
         self,
@@ -2535,7 +557,9 @@ pub trait ITelopManager_ProcBondEngageQuartetteMethods:
         sub_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
     ) -> () {
         unsafe {
-            let __receiver = < TelopManager_ProcBondEngageQuartette as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <TelopManager_ProcBondEngageQuartette as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __TelopManager_ProcBondEngageQuartette_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(first_main_god),
@@ -2549,40 +573,34 @@ pub trait ITelopManager_ProcBondEngageQuartetteMethods:
     #[doc = "`LoadFace()` overload"]
     fn load_face(self) -> () {
         unsafe {
-            let __receiver = < TelopManager_ProcBondEngageQuartette as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TelopManager_ProcBondEngageQuartette_unity2_raw::load_face(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TelopManager_ProcBondEngageQuartette as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TelopManager_ProcBondEngageQuartette_unity2_raw::load_face(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayTelop()` overload"]
     fn play_telop(self) -> () {
         unsafe {
-            let __receiver = < TelopManager_ProcBondEngageQuartette as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TelopManager_ProcBondEngageQuartette_unity2_raw::play_telop(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TelopManager_ProcBondEngageQuartette as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TelopManager_ProcBondEngageQuartette_unity2_raw::play_telop(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseFace()` overload"]
     fn release_face(self) -> () {
         unsafe {
-            let __receiver = < TelopManager_ProcBondEngageQuartette as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TelopManager_ProcBondEngageQuartette_unity2_raw::release_face(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TelopManager_ProcBondEngageQuartette as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TelopManager_ProcBondEngageQuartette_unity2_raw::release_face(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-telopmanager")]
-impl<__T: ITelopManager_ProcBondEngageQuartette> ITelopManager_ProcBondEngageQuartetteMethods
-    for __T
-{
-}
+impl<__T: ITelopManager_ProcBondEngageQuartette> ITelopManager_ProcBondEngageQuartetteMethods for __T {}
 
 #[cfg(feature = "app-telopmanager")]
 impl TelopManager_ProcBondEngageQuartette {
@@ -2600,660 +618,7 @@ impl TelopManager_ProcBondEngageQuartette {
                 ::core::stringify!(new),
             )
         });
-        <Self as ITelopManager_ProcBondEngageQuartetteMethods>::ctor(
-            this,
-            first_main_god,
-            second_main_god,
-            third_main_god,
-            sub_god,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TelopManager_ProcRelayResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_crate_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::class(),
-                "CrateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::NAME,
-                    "CrateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn crate_bind(
-        super_: crate::app::procinst::ProcInst,
-        raids: ::unity2::Array<::unity2::Il2CppString>,
-        is_awarded: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Array<::unity2::Il2CppString>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_crate_bind::get_offset() as isize),
-        );
-        inner(super_, raids, is_awarded, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TelopManager_ProcRelayResult,
-        raids: ::unity2::Array<::unity2::Il2CppString>,
-        is_awarded: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TelopManager_ProcRelayResult,
-            ::unity2::Array<::unity2::Il2CppString>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, raids, is_awarded, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_telop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::class(),
-                "PlayTelop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::NAME,
-                    "PlayTelop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_telop(
-        this: TelopManager_ProcRelayResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TelopManager_ProcRelayResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_telop::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_have_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::class(),
-                "IsHaveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::NAME,
-                    "IsHaveNext",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_have_next(
-        this: TelopManager_ProcRelayResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(TelopManager_ProcRelayResult, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_have_next::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-impl TelopManager_ProcRelayResult {
-    #[doc = "`CrateBind(crate::app::procinst::ProcInst, ::unity2::Array<::unity2::Il2CppString>, bool)` overload"]
-    pub fn crate_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        raids: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        is_awarded: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __TelopManager_ProcRelayResult_unity2_raw::crate_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(raids),
-                ::core::convert::Into::into(is_awarded),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-pub trait ITelopManager_ProcRelayResultMethods: ITelopManager_ProcRelayResult {
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool)` overload"]
-    fn ctor(
-        self,
-        raids: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        is_awarded: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TelopManager_ProcRelayResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcRelayResult_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(raids),
-                ::core::convert::Into::into(is_awarded),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayTelop()` overload"]
-    fn play_telop(self) -> () {
-        unsafe {
-            let __receiver =
-                <TelopManager_ProcRelayResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcRelayResult_unity2_raw::play_telop(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsHaveNext()` overload"]
-    fn is_have_next(self) -> bool {
-        unsafe {
-            let __receiver =
-                <TelopManager_ProcRelayResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcRelayResult_unity2_raw::is_have_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-impl<__T: ITelopManager_ProcRelayResult> ITelopManager_ProcRelayResultMethods for __T {}
-
-#[cfg(feature = "app-telopmanager")]
-impl TelopManager_ProcRelayResult {
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool)` — overload selector"]
-    pub fn new(raids: ::unity2::Array<::unity2::Il2CppString>, is_awarded: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TelopManager_ProcRelayResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITelopManager_ProcRelayResultMethods>::ctor(this, raids, is_awarded);
-        this
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TelopManager_ProcBondEngagePair_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
-                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TelopManager_ProcBondEngagePair,
-        main_god: crate::app::goddata::GodData,
-        sub_god: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TelopManager_ProcBondEngagePair,
-            crate::app::goddata::GodData,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, main_god, sub_god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_face {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
-                "LoadFace",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
-                    "LoadFace",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_face(
-        this: TelopManager_ProcBondEngagePair,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TelopManager_ProcBondEngagePair, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_face::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_telop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
-                "PlayTelop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
-                    "PlayTelop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_telop(
-        this: TelopManager_ProcBondEngagePair,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TelopManager_ProcBondEngagePair, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_telop::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release_face {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
-                "ReleaseFace",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseFace",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn release_face(
-        this: TelopManager_ProcBondEngagePair,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TelopManager_ProcBondEngagePair, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release_face::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
-                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        main_god: crate::app::goddata::GodData,
-        sub_god: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::goddata::GodData,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, main_god, sub_god, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-impl TelopManager_ProcBondEngagePair {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        main_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
-        sub_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> () {
-        unsafe {
-            __TelopManager_ProcBondEngagePair_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(main_god),
-                ::core::convert::Into::into(sub_god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-pub trait ITelopManager_ProcBondEngagePairMethods: ITelopManager_ProcBondEngagePair {
-    #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
-    fn ctor(
-        self,
-        main_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
-        sub_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TelopManager_ProcBondEngagePair as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondEngagePair_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(main_god),
-                ::core::convert::Into::into(sub_god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`LoadFace()` overload"]
-    fn load_face(self) -> () {
-        unsafe {
-            let __receiver =
-                <TelopManager_ProcBondEngagePair as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondEngagePair_unity2_raw::load_face(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayTelop()` overload"]
-    fn play_telop(self) -> () {
-        unsafe {
-            let __receiver =
-                <TelopManager_ProcBondEngagePair as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondEngagePair_unity2_raw::play_telop(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReleaseFace()` overload"]
-    fn release_face(self) -> () {
-        unsafe {
-            let __receiver =
-                <TelopManager_ProcBondEngagePair as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondEngagePair_unity2_raw::release_face(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-telopmanager")]
-impl<__T: ITelopManager_ProcBondEngagePair> ITelopManager_ProcBondEngagePairMethods for __T {}
-
-#[cfg(feature = "app-telopmanager")]
-impl TelopManager_ProcBondEngagePair {
-    #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData)` — overload selector"]
-    pub fn new(
-        main_god: crate::app::goddata::GodData,
-        sub_god: crate::app::goddata::GodData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TelopManager_ProcBondEngagePair),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITelopManager_ProcBondEngagePairMethods>::ctor(this, main_god, sub_god);
+        <Self as ITelopManager_ProcBondEngageQuartetteMethods>::ctor(this, first_main_god, second_main_god, third_main_god, sub_god);
         this
     }
 }
@@ -3267,9 +632,7 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
@@ -3288,18 +651,15 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -3319,28 +679,14 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
             i32,
             crate::app::goddata::GodData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            god,
-            level,
-            next_level,
-            god_data,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, god, level, next_level, god_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_face {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::class(),
@@ -3353,39 +699,27 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
-                    "LoadFace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
+                        "LoadFace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_face(
-        this: TelopManager_ProcBondLevelUp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_face(this: TelopManager_ProcBondLevelUp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TelopManager_ProcBondLevelUp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_face::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_face::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_telop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::class(),
@@ -3398,39 +732,27 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
-                    "PlayTelop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
+                        "PlayTelop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_telop(
-        this: TelopManager_ProcBondLevelUp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_telop(this: TelopManager_ProcBondLevelUp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TelopManager_ProcBondLevelUp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_telop::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_telop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_face {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::class(),
@@ -3443,39 +765,27 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseFace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseFace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_face(
-        this: TelopManager_ProcBondLevelUp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn release_face(this: TelopManager_ProcBondLevelUp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TelopManager_ProcBondLevelUp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release_face::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_release_face::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::class(),
@@ -3488,39 +798,27 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_create(
-        this: TelopManager_ProcBondLevelUp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_create(this: TelopManager_ProcBondLevelUp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TelopManager_ProcBondLevelUp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::class(),
@@ -3533,39 +831,27 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: TelopManager_ProcBondLevelUp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: TelopManager_ProcBondLevelUp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TelopManager_ProcBondLevelUp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_crate_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -3585,18 +871,15 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
-                    "CrateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondLevelUp as ::unity2::ClassIdentity>::NAME,
+                        "CrateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn crate_bind(
@@ -3616,20 +899,8 @@ mod __TelopManager_ProcBondLevelUp_unity2_raw {
             i32,
             crate::app::goddata::GodData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_crate_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            unit,
-            god,
-            level,
-            next_level,
-            god_data,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_crate_bind::get_method_info().method_ptr);
+        inner(super_, unit, god, level, next_level, god_data, __unity2_method_info)
     }
 }
 
@@ -3671,9 +942,7 @@ pub trait ITelopManager_ProcBondLevelUpMethods: ITelopManager_ProcBondLevelUp {
     ) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TelopManager_ProcBondLevelUp_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3689,65 +958,40 @@ pub trait ITelopManager_ProcBondLevelUpMethods: ITelopManager_ProcBondLevelUp {
     fn load_face(self) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondLevelUp_unity2_raw::load_face(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondLevelUp_unity2_raw::load_face(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayTelop()` overload"]
     fn play_telop(self) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondLevelUp_unity2_raw::play_telop(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondLevelUp_unity2_raw::play_telop(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseFace()` overload"]
     fn release_face(self) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondLevelUp_unity2_raw::release_face(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondLevelUp_unity2_raw::release_face(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnCreate()` overload"]
     fn on_create(self) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondLevelUp_unity2_raw::on_create(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondLevelUp_unity2_raw::on_create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondLevelUp_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TelopManager_ProcBondLevelUp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondLevelUp_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -3772,9 +1016,2002 @@ impl TelopManager_ProcBondLevelUp {
                 ::core::stringify!(new),
             )
         });
-        <Self as ITelopManager_ProcBondLevelUpMethods>::ctor(
-            this, unit, god, level, next_level, god_data,
-        );
+        <Self as ITelopManager_ProcBondLevelUpMethods>::ctor(this, unit, god, level, next_level, god_data);
+        this
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TelopManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateBindImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind_impl(
+        this: TelopManager,
+        super_: crate::app::procinst::ProcInst,
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            TelopManager,
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(__lookup_create_bind_impl::get_method_info().method_ptr);
+        inner(this, super_, path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::resourceobject::ResourceObject {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::resourceobject::ResourceObject = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "TrySetText",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "TrySetText",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_set_text(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        object_name: ::unity2::Il2CppString,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_try_set_text::get_method_info().method_ptr);
+        inner(root_object, object_name, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_text_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "TrySetText",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "TrySetText",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_set_text_2(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_set_text_2::get_method_info().method_ptr);
+        inner(root_object, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_text_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "TrySetText",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "TrySetText",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_set_text_3(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        object_name: ::unity2::Il2CppString,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_set_text_3::get_method_info().method_ptr);
+        inner(root_object, object_name, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "TrySetTextColor",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "TrySetTextColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_set_text_color(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        object_name: ::unity2::Il2CppString,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_try_set_text_color::get_method_info().method_ptr);
+        inner(root_object, object_name, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_text_outline_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "TrySetTextOutlineColor",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "TrySetTextOutlineColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_set_text_outline_color(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        object_name: ::unity2::Il2CppString,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_try_set_text_outline_color::get_method_info().method_ptr);
+        inner(root_object, object_name, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_image_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "TrySetImageSprite",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "TrySetImageSprite",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_set_image_sprite(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        object_name: ::unity2::Il2CppString,
+        sprite: crate::unity_engine::sprite::Sprite,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_try_set_image_sprite::get_method_info().method_ptr);
+        inner(root_object, object_name, sprite, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_image_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "TrySetImageColor",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "TrySetImageColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_set_image_color(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        object_name: ::unity2::Il2CppString,
+        color: crate::unity_engine::color::Color,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            crate::unity_engine::color::Color,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_try_set_image_color::get_method_info().method_ptr);
+        inner(root_object, object_name, color, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_purpose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreatePurpose",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreatePurpose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_purpose(
+        parent: crate::app::procinst::ProcInst,
+        text_win: ::unity2::Il2CppString,
+        text_lose: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_purpose::get_method_info().method_ptr);
+        inner(parent, text_win, text_lose, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_phase_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreatePhaseChange",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreatePhaseChange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_phase_change(
+        super_: crate::app::procinst::ProcInst,
+        force_type: crate::app::force::Force_Type,
+        now_turn: i32,
+        limit_turn: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::force::Force_Type, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_phase_change::get_method_info().method_ptr);
+        inner(super_, force_type, now_turn, limit_turn, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_coroutine {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "Coroutine",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "Coroutine",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn coroutine(
+        go: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_coroutine::get_method_info().method_ptr);
+        inner(go, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_complete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateComplete",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateComplete",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_complete(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_complete::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_game_over {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateGameOver",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateGameOver",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_game_over(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_game_over::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_level_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateLevelUp",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateLevelUp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_level_up(
+        super_: crate::app::procinst::ProcInst,
+        level: i32,
+        next_level: i32,
+        unit: crate::app::unit::Unit,
+        is_show_chara_image: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, i32, i32, crate::app::unit::Unit, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_level_up::get_method_info().method_ptr);
+        inner(super_, level, next_level, unit, is_show_chara_image, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bond_level_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateBondLevelUp",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateBondLevelUp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bond_level_up(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        god: crate::app::godunit::GodUnit,
+        level: i32,
+        next_level: i32,
+        god_data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unit::Unit,
+            crate::app::godunit::GodUnit,
+            i32,
+            i32,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bond_level_up::get_method_info().method_ptr);
+        inner(super_, unit, god, level, next_level, god_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bond_level_face_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "GetBondLevelFacePath",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "GetBondLevelFacePath",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_bond_level_face_path(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_bond_level_face_path::get_method_info().method_ptr);
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bond_level_face_path_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "GetBondLevelFacePath",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "GetBondLevelFacePath",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_bond_level_face_path_2(
+        god: crate::app::godunit::GodUnit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_bond_level_face_path_2::get_method_info().method_ptr);
+        inner(god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bond_level_face_path_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "GetBondLevelFacePath",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "GetBondLevelFacePath",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_bond_level_face_path_3(
+        data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::goddata::GodData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_bond_level_face_path_3::get_method_info().method_ptr);
+        inner(data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_class_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateClassChange",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateClassChange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_class_change(
+        super_: crate::app::procinst::ProcInst,
+        before: crate::app::jobdata::JobData,
+        after: crate::app::jobdata::JobData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::jobdata::JobData,
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_class_change::get_method_info().method_ptr);
+        inner(super_, before, after, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_engage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateEngage",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateEngage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_engage(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_engage::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_chapter_title {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateChapterTitle",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateChapterTitle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_chapter_title(
+        super_: crate::app::procinst::ProcInst,
+        chapter: crate::app::chapterdata::ChapterData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::chapterdata::ChapterData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_chapter_title::get_method_info().method_ptr);
+        inner(super_, chapter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_nation_level_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::hubnationdata::HubNationData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::resourceobject::ResourceObject_Callback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateNationLevelUp",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateNationLevelUp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_nation_level_up(
+        super_: crate::app::procinst::ProcInst,
+        nation_data: crate::app::hubnationdata::HubNationData,
+        level: i32,
+        next_level: i32,
+        end_callback: crate::app::resourceobject::ResourceObject_Callback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::hubnationdata::HubNationData,
+            i32,
+            i32,
+            crate::app::resourceobject::ResourceObject_Callback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_nation_level_up::get_method_info().method_ptr);
+        inner(super_, nation_data, level, next_level, end_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_relay_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateRelayResult",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateRelayResult",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_relay_result(
+        super_: crate::app::procinst::ProcInst,
+        raids: ::unity2::Array<::unity2::Il2CppString>,
+        is_awarded: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Array<::unity2::Il2CppString>, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_relay_result::get_method_info().method_ptr);
+        inner(super_, raids, is_awarded, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_summon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::persondata::PersonData_Ranks as ::unity2::IlType>::il_type(),
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager as ::unity2::ClassIdentity>::class(),
+                "CreateSummon",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateSummon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_summon(
+        super_: crate::app::procinst::ProcInst,
+        owner: crate::app::unit::Unit,
+        rank: crate::app::persondata::PersonData_Ranks,
+        person: crate::app::persondata::PersonData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unit::Unit,
+            crate::app::persondata::PersonData_Ranks,
+            crate::app::persondata::PersonData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_summon::get_method_info().method_ptr);
+        inner(super_, owner, rank, person, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<TelopManager as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TelopManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TelopManager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<TelopManager as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+impl TelopManager {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            __TelopManager_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TrySetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn try_set_text(
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::try_set_text(
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(object_name),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TrySetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
+    pub fn try_set_text_2(
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::try_set_text_2(
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TrySetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, i32)` overload"]
+    pub fn try_set_text_3(
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::try_set_text_3(
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(object_name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TrySetTextColor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]
+    pub fn try_set_text_color(
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::try_set_text_color(
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(object_name),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TrySetTextOutlineColor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]
+    pub fn try_set_text_outline_color(
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::try_set_text_outline_color(
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(object_name),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TrySetImageSprite(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"]
+    pub fn try_set_image_sprite(
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::try_set_image_sprite(
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(object_name),
+                ::core::convert::Into::into(sprite),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TrySetImageColor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]
+    pub fn try_set_image_color(
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::try_set_image_color(
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(object_name),
+                ::core::convert::Into::into(color),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreatePurpose(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn create_purpose(
+        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        text_win: impl ::core::convert::Into<::unity2::Il2CppString>,
+        text_lose: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_purpose(
+                ::core::convert::Into::into(parent),
+                ::core::convert::Into::into(text_win),
+                ::core::convert::Into::into(text_lose),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreatePhaseChange(crate::app::procinst::ProcInst, crate::app::force::Force_Type, i32, i32)` overload"]
+    pub fn create_phase_change(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
+        now_turn: impl ::core::convert::Into<i32>,
+        limit_turn: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_phase_change(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(force_type),
+                ::core::convert::Into::into(now_turn),
+                ::core::convert::Into::into(limit_turn),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Coroutine(crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn coroutine(
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe { __TelopManager_unity2_raw::coroutine(::core::convert::Into::into(go), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateComplete(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_complete(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __TelopManager_unity2_raw::create_complete(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateGameOver(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_game_over(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __TelopManager_unity2_raw::create_game_over(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateLevelUp(crate::app::procinst::ProcInst, i32, i32, crate::app::unit::Unit, bool)` overload"]
+    pub fn create_level_up(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        level: impl ::core::convert::Into<i32>,
+        next_level: impl ::core::convert::Into<i32>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        is_show_chara_image: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_level_up(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(next_level),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(is_show_chara_image),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreateBondLevelUp(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, i32, i32, crate::app::goddata::GodData)` overload"]
+    pub fn create_bond_level_up(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+        level: impl ::core::convert::Into<i32>,
+        next_level: impl ::core::convert::Into<i32>,
+        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_bond_level_up(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(god),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(next_level),
+                ::core::convert::Into::into(god_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`GetBondLevelFacePath(crate::app::unit::Unit)` overload"]
+    pub fn get_bond_level_face_path(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> ::unity2::Il2CppString {
+        unsafe { __TelopManager_unity2_raw::get_bond_level_face_path(::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetBondLevelFacePath(crate::app::godunit::GodUnit)` overload"]
+    pub fn get_bond_level_face_path_2(god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> ::unity2::Il2CppString {
+        unsafe { __TelopManager_unity2_raw::get_bond_level_face_path_2(::core::convert::Into::into(god), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetBondLevelFacePath(crate::app::goddata::GodData)` overload"]
+    pub fn get_bond_level_face_path_3(data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> ::unity2::Il2CppString {
+        unsafe { __TelopManager_unity2_raw::get_bond_level_face_path_3(::core::convert::Into::into(data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateClassChange(crate::app::procinst::ProcInst, crate::app::jobdata::JobData, crate::app::jobdata::JobData)` overload"]
+    pub fn create_class_change(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        before: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+        after: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_class_change(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(before),
+                ::core::convert::Into::into(after),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreateEngage(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_engage(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __TelopManager_unity2_raw::create_engage(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateChapterTitle(crate::app::procinst::ProcInst, crate::app::chapterdata::ChapterData)` overload"]
+    pub fn create_chapter_title(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_chapter_title(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(chapter),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreateNationLevelUp(crate::app::procinst::ProcInst, crate::app::hubnationdata::HubNationData, i32, i32, crate::app::resourceobject::ResourceObject_Callback)` overload"]
+    pub fn create_nation_level_up(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        nation_data: impl ::core::convert::Into<crate::app::hubnationdata::HubNationData>,
+        level: impl ::core::convert::Into<i32>,
+        next_level: impl ::core::convert::Into<i32>,
+        end_callback: impl ::core::convert::Into<crate::app::resourceobject::ResourceObject_Callback>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_nation_level_up(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(nation_data),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(next_level),
+                ::core::convert::Into::into(end_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreateRelayResult(crate::app::procinst::ProcInst, ::unity2::Array<::unity2::Il2CppString>, bool)` overload"]
+    pub fn create_relay_result(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        raids: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+        is_awarded: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_relay_result(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(raids),
+                ::core::convert::Into::into(is_awarded),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreateSummon(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::persondata::PersonData_Ranks, crate::app::persondata::PersonData)` overload"]
+    pub fn create_summon(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        owner: impl ::core::convert::Into<crate::app::unit::Unit>,
+        rank: impl ::core::convert::Into<crate::app::persondata::PersonData_Ranks>,
+        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
+    ) -> () {
+        unsafe {
+            __TelopManager_unity2_raw::create_summon(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(owner),
+                ::core::convert::Into::into(rank),
+                ::core::convert::Into::into(person),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __TelopManager_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+pub trait ITelopManagerMethods: ITelopManager {
+    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    fn create_bind_impl(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::resourceobject::ResourceObject {
+        unsafe {
+            let __receiver = <TelopManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_unity2_raw::create_bind_impl(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TelopManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+impl<__T: ITelopManager> ITelopManagerMethods for __T {}
+
+#[cfg(feature = "app-telopmanager")]
+impl TelopManager {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TelopManager), ::core::stringify!(new),));
+        <Self as ITelopManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TelopManager_ProcBondEngagePair_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TelopManager_ProcBondEngagePair,
+        main_god: crate::app::goddata::GodData,
+        sub_god: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TelopManager_ProcBondEngagePair,
+            crate::app::goddata::GodData,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, main_god, sub_god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_face {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
+                "LoadFace",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
+                        "LoadFace",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_face(this: TelopManager_ProcBondEngagePair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TelopManager_ProcBondEngagePair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_face::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_telop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
+                "PlayTelop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
+                        "PlayTelop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_telop(this: TelopManager_ProcBondEngagePair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TelopManager_ProcBondEngagePair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_telop::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release_face {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
+                "ReleaseFace",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseFace",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn release_face(this: TelopManager_ProcBondEngagePair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TelopManager_ProcBondEngagePair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_face::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngagePair as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        main_god: crate::app::goddata::GodData,
+        sub_god: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::goddata::GodData,
+            crate::app::goddata::GodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, main_god, sub_god, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+impl TelopManager_ProcBondEngagePair {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        main_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
+        sub_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> () {
+        unsafe {
+            __TelopManager_ProcBondEngagePair_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(main_god),
+                ::core::convert::Into::into(sub_god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+pub trait ITelopManager_ProcBondEngagePairMethods: ITelopManager_ProcBondEngagePair {
+    #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData)` overload"]
+    fn ctor(
+        self,
+        main_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
+        sub_god: impl ::core::convert::Into<crate::app::goddata::GodData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TelopManager_ProcBondEngagePair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondEngagePair_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(main_god),
+                ::core::convert::Into::into(sub_god),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadFace()` overload"]
+    fn load_face(self) -> () {
+        unsafe {
+            let __receiver =
+                <TelopManager_ProcBondEngagePair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondEngagePair_unity2_raw::load_face(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PlayTelop()` overload"]
+    fn play_telop(self) -> () {
+        unsafe {
+            let __receiver =
+                <TelopManager_ProcBondEngagePair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondEngagePair_unity2_raw::play_telop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReleaseFace()` overload"]
+    fn release_face(self) -> () {
+        unsafe {
+            let __receiver =
+                <TelopManager_ProcBondEngagePair as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondEngagePair_unity2_raw::release_face(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+impl<__T: ITelopManager_ProcBondEngagePair> ITelopManager_ProcBondEngagePairMethods for __T {}
+
+#[cfg(feature = "app-telopmanager")]
+impl TelopManager_ProcBondEngagePair {
+    #[doc = "`.ctor(crate::app::goddata::GodData, crate::app::goddata::GodData)` — overload selector"]
+    pub fn new(main_god: crate::app::goddata::GodData, sub_god: crate::app::goddata::GodData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TelopManager_ProcBondEngagePair),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITelopManager_ProcBondEngagePairMethods>::ctor(this, main_god, sub_god);
+        this
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TelopManager_ProcRelayResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_crate_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::class(),
+                "CrateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::NAME,
+                        "CrateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn crate_bind(
+        super_: crate::app::procinst::ProcInst,
+        raids: ::unity2::Array<::unity2::Il2CppString>,
+        is_awarded: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Array<::unity2::Il2CppString>, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_crate_bind::get_method_info().method_ptr);
+        inner(super_, raids, is_awarded, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TelopManager_ProcRelayResult,
+        raids: ::unity2::Array<::unity2::Il2CppString>,
+        is_awarded: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TelopManager_ProcRelayResult, ::unity2::Array<::unity2::Il2CppString>, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, raids, is_awarded, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_telop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::class(),
+                "PlayTelop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::NAME,
+                        "PlayTelop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_telop(this: TelopManager_ProcRelayResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TelopManager_ProcRelayResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_telop::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_have_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::class(),
+                "IsHaveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcRelayResult as ::unity2::ClassIdentity>::NAME,
+                        "IsHaveNext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_have_next(this: TelopManager_ProcRelayResult, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TelopManager_ProcRelayResult, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_have_next::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+impl TelopManager_ProcRelayResult {
+    #[doc = "`CrateBind(crate::app::procinst::ProcInst, ::unity2::Array<::unity2::Il2CppString>, bool)` overload"]
+    pub fn crate_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        raids: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+        is_awarded: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __TelopManager_ProcRelayResult_unity2_raw::crate_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(raids),
+                ::core::convert::Into::into(is_awarded),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+pub trait ITelopManager_ProcRelayResultMethods: ITelopManager_ProcRelayResult {
+    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool)` overload"]
+    fn ctor(self, raids: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>, is_awarded: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <TelopManager_ProcRelayResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcRelayResult_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(raids),
+                ::core::convert::Into::into(is_awarded),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayTelop()` overload"]
+    fn play_telop(self) -> () {
+        unsafe {
+            let __receiver =
+                <TelopManager_ProcRelayResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcRelayResult_unity2_raw::play_telop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsHaveNext()` overload"]
+    fn is_have_next(self) -> bool {
+        unsafe {
+            let __receiver =
+                <TelopManager_ProcRelayResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcRelayResult_unity2_raw::is_have_next(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-telopmanager")]
+impl<__T: ITelopManager_ProcRelayResult> ITelopManager_ProcRelayResultMethods for __T {}
+
+#[cfg(feature = "app-telopmanager")]
+impl TelopManager_ProcRelayResult {
+    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, bool)` — overload selector"]
+    pub fn new(raids: ::unity2::Array<::unity2::Il2CppString>, is_awarded: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TelopManager_ProcRelayResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITelopManager_ProcRelayResultMethods>::ctor(this, raids, is_awarded);
         this
     }
 }
@@ -3788,9 +3025,7 @@ mod __TelopManager_ProcBondEngageBase_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_execute_audio_playback_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
                 <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
@@ -3807,18 +3042,15 @@ mod __TelopManager_ProcBondEngageBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngageBase as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteAudioPlaybackSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngageBase as ::unity2::ClassIdentity>::NAME,
+                        "ExecuteAudioPlaybackSequence",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute_audio_playback_sequence(
@@ -3834,22 +3066,15 @@ mod __TelopManager_ProcBondEngageBase_unity2_raw {
             crate::app::goddata::GodData,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_audio_playback_sequence::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute_audio_playback_sequence::get_method_info().method_ptr);
         inner(this, main_data, sub_data, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondEngageBase as ::unity2::ClassIdentity>::class(),
                 "PlayVoice",
@@ -3861,18 +3086,15 @@ mod __TelopManager_ProcBondEngageBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngageBase as ::unity2::ClassIdentity>::NAME,
-                    "PlayVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngageBase as ::unity2::ClassIdentity>::NAME,
+                        "PlayVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_voice(
@@ -3880,24 +3102,15 @@ mod __TelopManager_ProcBondEngageBase_unity2_raw {
         god_data: crate::app::goddata::GodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TelopManager_ProcBondEngageBase,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_voice::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TelopManager_ProcBondEngageBase, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_voice::get_method_info().method_ptr);
         inner(this, god_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TelopManager_ProcBondEngageBase as ::unity2::ClassIdentity>::class(),
@@ -3910,30 +3123,20 @@ mod __TelopManager_ProcBondEngageBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TelopManager_ProcBondEngageBase as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TelopManager_ProcBondEngageBase as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TelopManager_ProcBondEngageBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TelopManager_ProcBondEngageBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TelopManager_ProcBondEngageBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -3949,9 +3152,7 @@ pub trait ITelopManager_ProcBondEngageBaseMethods: ITelopManager_ProcBondEngageB
     ) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondEngageBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TelopManager_ProcBondEngageBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TelopManager_ProcBondEngageBase_unity2_raw::execute_audio_playback_sequence(
                 __receiver,
                 ::core::convert::Into::into(main_data),
@@ -3965,27 +3166,16 @@ pub trait ITelopManager_ProcBondEngageBaseMethods: ITelopManager_ProcBondEngageB
     fn play_voice(self, god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondEngageBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondEngageBase_unity2_raw::play_voice(
-                __receiver,
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
+                <TelopManager_ProcBondEngageBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondEngageBase_unity2_raw::play_voice(__receiver, ::core::convert::Into::into(god_data), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <TelopManager_ProcBondEngageBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TelopManager_ProcBondEngageBase_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <TelopManager_ProcBondEngageBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TelopManager_ProcBondEngageBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -4012,54 +3202,36 @@ impl TelopManager_ProcBondEngageBase {
 #[cfg(feature = "app-telopmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITelopManager;
-    pub use super::ITelopManagerMethods;
-    pub use super::ITelopManager_ProcBondEngageBase;
-    pub use super::ITelopManager_ProcBondEngageBaseMethods;
-    pub use super::ITelopManager_ProcBondEngagePair;
-    pub use super::ITelopManager_ProcBondEngagePairMethods;
-    pub use super::ITelopManager_ProcBondEngageQuartette;
-    pub use super::ITelopManager_ProcBondEngageQuartetteMethods;
-    pub use super::ITelopManager_ProcBondLevelUp;
-    pub use super::ITelopManager_ProcBondLevelUpMethods;
-    pub use super::ITelopManager_ProcRelayResult;
-    pub use super::ITelopManager_ProcRelayResultMethods;
-    pub use super::TelopManager;
-    pub use super::TelopManager_ProcBondEngageBase;
-    pub use super::TelopManager_ProcBondEngageBase_Label;
-    pub use super::TelopManager_ProcBondEngageBase_Sequence;
-    pub use super::TelopManager_ProcBondEngagePair;
-    pub use super::TelopManager_ProcBondEngageQuartette;
-    pub use super::TelopManager_ProcBondLevelUp;
-    pub use super::TelopManager_ProcBondLevelUp_Label2;
-    pub use super::TelopManager_ProcBondLevelUp_Sequence;
-    pub use super::TelopManager_ProcRelayResult;
-    pub use super::TelopManager_ProcRelayResult_Label2;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        ITelopManager, ITelopManagerMethods, ITelopManager_ProcBondEngageBase, ITelopManager_ProcBondEngageBaseMethods,
+        ITelopManager_ProcBondEngagePair, ITelopManager_ProcBondEngagePairMethods, ITelopManager_ProcBondEngageQuartette,
+        ITelopManager_ProcBondEngageQuartetteMethods, ITelopManager_ProcBondLevelUp, ITelopManager_ProcBondLevelUpMethods,
+        ITelopManager_ProcRelayResult, ITelopManager_ProcRelayResultMethods, TelopManager, TelopManager_ProcBondEngageBase,
+        TelopManager_ProcBondEngageBase_Label, TelopManager_ProcBondEngageBase_Sequence, TelopManager_ProcBondEngagePair,
+        TelopManager_ProcBondEngageQuartette, TelopManager_ProcBondLevelUp, TelopManager_ProcBondLevelUp_Label2,
+        TelopManager_ProcBondLevelUp_Sequence, TelopManager_ProcRelayResult, TelopManager_ProcRelayResult_Label2,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     #[cfg(feature = "app-singletonmonobehaviour_1")]
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonmonobehaviour_1::ISingletonMonoBehaviour_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

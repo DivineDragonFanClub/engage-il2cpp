@@ -2,10 +2,10 @@
 
 #[cfg(feature = "tm_pro-tmp_objectpool_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_objectpool_1/TMP_ObjectPool_1.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_ObjectPool`1")]
@@ -81,9 +81,7 @@ impl<T0: ::unity2::ClassIdentity> TMP_ObjectPool_1<T0> {
 #[cfg(feature = "tm_pro-tmp_objectpool_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_ObjectPool_1;
-    pub use super::ITMP_ObjectPool_1Methods;
-    pub use super::TMP_ObjectPool_1;
+    pub use super::{ITMP_ObjectPool_1, ITMP_ObjectPool_1Methods, TMP_ObjectPool_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-mapedithistory-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_RotateObjectCommand.md"))]
     #[::unity2::class(namespace = "App", name = "MapEditHistory.RotateObjectCommand")]
@@ -22,18 +24,16 @@ mod __types {
         pub m_next_rotate: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_DeleteObjectCommand.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEditHistory.DeleteObjectCommand")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_CreateObjectCommand.md"))]
+    #[::unity2::class(namespace = "App", name = "MapEditHistory.CreateObjectCommand")]
     #[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]
-    pub struct MapEditHistory_DeleteObjectCommand {
+    pub struct MapEditHistory_CreateObjectCommand {
         #[rename(name = "m_X")]
         pub m_x: i32,
         #[rename(name = "m_Z")]
         pub m_z: i32,
-        #[rename(name = "m_DeleteObjectName")]
-        pub m_delete_object_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Rotate")]
-        pub m_rotate: i32,
+        #[rename(name = "m_ObjectName")]
+        pub m_object_name: ::unity2::Il2CppString,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory.md"))]
@@ -44,17 +44,10 @@ mod __types {
         #[rename(name = "MaxCommandCount")]
         pub max_command_count: i32,
         #[rename(name = "m_CommandList")]
-        pub m_command_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::mapedithistory::MapEditHistory_MapEditCommand,
-        >,
+        pub m_command_list: crate::system::collections::generic::list_1::List_1<crate::app::mapedithistory::MapEditHistory_MapEditCommand>,
         #[rename(name = "m_Index")]
         pub m_index: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_MapEditCommand.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEditHistory.MapEditCommand")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapEditHistory_MapEditCommand {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_ReplaceObjectCommand.md"))]
     #[::unity2::class(namespace = "App", name = "MapEditHistory.ReplaceObjectCommand")]
@@ -72,16 +65,23 @@ mod __types {
         pub m_create_obj_name: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_CreateObjectCommand.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEditHistory.CreateObjectCommand")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_MapEditCommand.md"))]
+    #[::unity2::class(namespace = "App", name = "MapEditHistory.MapEditCommand")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapEditHistory_MapEditCommand {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_DeleteObjectCommand.md"))]
+    #[::unity2::class(namespace = "App", name = "MapEditHistory.DeleteObjectCommand")]
     #[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]
-    pub struct MapEditHistory_CreateObjectCommand {
+    pub struct MapEditHistory_DeleteObjectCommand {
         #[rename(name = "m_X")]
         pub m_x: i32,
         #[rename(name = "m_Z")]
         pub m_z: i32,
-        #[rename(name = "m_ObjectName")]
-        pub m_object_name: ::unity2::Il2CppString,
+        #[rename(name = "m_DeleteObjectName")]
+        pub m_delete_object_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Rotate")]
+        pub m_rotate: i32,
     }
 }
 
@@ -97,9 +97,7 @@ mod __MapEditHistory_RotateObjectCommand_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -117,18 +115,15 @@ mod __MapEditHistory_RotateObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -139,27 +134,15 @@ mod __MapEditHistory_RotateObjectCommand_unity2_raw {
         next_rotate: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_RotateObjectCommand,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapEditHistory_RotateObjectCommand, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, x, z, prev_rotate, next_rotate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_do {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::class(),
@@ -172,41 +155,27 @@ mod __MapEditHistory_RotateObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "Do",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "Do",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn r#do(
-        this: MapEditHistory_RotateObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_RotateObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do::get_offset() as isize),
-        );
+    pub unsafe fn r#do(this: MapEditHistory_RotateObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEditHistory_RotateObjectCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_do::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_undo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::class(),
@@ -219,41 +188,27 @@ mod __MapEditHistory_RotateObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "Undo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "Undo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn undo(
-        this: MapEditHistory_RotateObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_RotateObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_undo::get_offset() as isize),
-        );
+    pub unsafe fn undo(this: MapEditHistory_RotateObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEditHistory_RotateObjectCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_undo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::class(),
@@ -266,32 +221,20 @@ mod __MapEditHistory_RotateObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_RotateObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: MapEditHistory_RotateObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapEditHistory_RotateObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: MapEditHistory_RotateObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MapEditHistory_RotateObjectCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -307,10 +250,9 @@ pub trait IMapEditHistory_RotateObjectCommandMethods: IMapEditHistory_RotateObje
         next_rotate: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_RotateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapEditHistory_RotateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapEditHistory_RotateObjectCommand_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -324,40 +266,28 @@ pub trait IMapEditHistory_RotateObjectCommandMethods: IMapEditHistory_RotateObje
     #[doc = "`Do()` overload"]
     fn r#do(self) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_RotateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_RotateObjectCommand_unity2_raw::r#do(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_RotateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_RotateObjectCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Undo()` overload"]
     fn undo(self) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_RotateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_RotateObjectCommand_unity2_raw::undo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_RotateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_RotateObjectCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <MapEditHistory_RotateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_RotateObjectCommand_unity2_raw::to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_RotateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_RotateObjectCommand_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -376,13 +306,7 @@ impl MapEditHistory_RotateObjectCommand {
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapEditHistory_RotateObjectCommandMethods>::ctor(
-            this,
-            x,
-            z,
-            prev_rotate,
-            next_rotate,
-        );
+        <Self as IMapEditHistory_RotateObjectCommandMethods>::ctor(this, x, z, prev_rotate, next_rotate);
         this
     }
 }
@@ -390,25 +314,22 @@ impl MapEditHistory_RotateObjectCommand {
 #[cfg(feature = "app-mapedithistory")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEditHistory_DeleteObjectCommand_unity2_raw {
+mod __MapEditHistory_CreateObjectCommand_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::class(),
+                <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                4,
+                3,
                 param_types,
                 false,
             )
@@ -416,52 +337,36 @@ mod __MapEditHistory_DeleteObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: MapEditHistory_DeleteObjectCommand,
+        this: MapEditHistory_CreateObjectCommand,
         x: i32,
         z: i32,
-        delete_object_name: ::unity2::Il2CppString,
-        rotate: i32,
+        object_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_DeleteObjectCommand,
-            i32,
-            i32,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, x, z, delete_object_name, rotate, __unity2_method_info)
+        let inner: extern "C" fn(MapEditHistory_CreateObjectCommand, i32, i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, x, z, object_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_do {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::class(),
+                <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::class(),
                 "Do",
                 0,
                 param_types,
@@ -471,44 +376,30 @@ mod __MapEditHistory_DeleteObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "Do",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "Do",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn r#do(
-        this: MapEditHistory_DeleteObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_DeleteObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do::get_offset() as isize),
-        );
+    pub unsafe fn r#do(this: MapEditHistory_CreateObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEditHistory_CreateObjectCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_do::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_undo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::class(),
+                <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::class(),
                 "Undo",
                 0,
                 param_types,
@@ -518,44 +409,30 @@ mod __MapEditHistory_DeleteObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "Undo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "Undo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn undo(
-        this: MapEditHistory_DeleteObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_DeleteObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_undo::get_offset() as isize),
-        );
+    pub unsafe fn undo(this: MapEditHistory_CreateObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEditHistory_CreateObjectCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_undo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::class(),
+                <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::class(),
                 "ToString",
                 0,
                 param_types,
@@ -565,57 +442,42 @@ mod __MapEditHistory_DeleteObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: MapEditHistory_DeleteObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapEditHistory_DeleteObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: MapEditHistory_CreateObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MapEditHistory_CreateObjectCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapedithistory")]
-pub trait IMapEditHistory_DeleteObjectCommandMethods: IMapEditHistory_DeleteObjectCommand {
-    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString, i32)` overload"]
+pub trait IMapEditHistory_CreateObjectCommandMethods: IMapEditHistory_CreateObjectCommand {
+    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString)` overload"]
     fn ctor(
         self,
         x: impl ::core::convert::Into<i32>,
         z: impl ::core::convert::Into<i32>,
-        delete_object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        rotate: impl ::core::convert::Into<i32>,
+        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_DeleteObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_DeleteObjectCommand_unity2_raw::ctor(
+            let __receiver = <MapEditHistory_CreateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_CreateObjectCommand_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(x),
                 ::core::convert::Into::into(z),
-                ::core::convert::Into::into(delete_object_name),
-                ::core::convert::Into::into(rotate),
+                ::core::convert::Into::into(object_name),
                 ::core::option::Option::None,
             )
         }
@@ -623,65 +485,47 @@ pub trait IMapEditHistory_DeleteObjectCommandMethods: IMapEditHistory_DeleteObje
     #[doc = "`Do()` overload"]
     fn r#do(self) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_DeleteObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_DeleteObjectCommand_unity2_raw::r#do(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_CreateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_CreateObjectCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Undo()` overload"]
     fn undo(self) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_DeleteObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_DeleteObjectCommand_unity2_raw::undo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_CreateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_CreateObjectCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <MapEditHistory_DeleteObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_DeleteObjectCommand_unity2_raw::to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_CreateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_CreateObjectCommand_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapedithistory")]
-impl<__T: IMapEditHistory_DeleteObjectCommand> IMapEditHistory_DeleteObjectCommandMethods for __T {}
+impl<__T: IMapEditHistory_CreateObjectCommand> IMapEditHistory_CreateObjectCommandMethods for __T {}
 
 #[cfg(feature = "app-mapedithistory")]
-impl MapEditHistory_DeleteObjectCommand {
-    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString, i32)` — overload selector"]
-    pub fn new(x: i32, z: i32, delete_object_name: ::unity2::Il2CppString, rotate: i32) -> Self {
+impl MapEditHistory_CreateObjectCommand {
+    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(x: i32, z: i32, object_name: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditHistory_DeleteObjectCommand),
+                ::core::stringify!(MapEditHistory_CreateObjectCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapEditHistory_DeleteObjectCommandMethods>::ctor(
-            this,
-            x,
-            z,
-            delete_object_name,
-            rotate,
-        );
+        <Self as IMapEditHistory_CreateObjectCommandMethods>::ctor(this, x, z, object_name);
         this
     }
 }
@@ -695,9 +539,7 @@ mod __MapEditHistory_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory as ::unity2::ClassIdentity>::class(),
@@ -710,39 +552,27 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_create(
-        this: MapEditHistory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_create(this: MapEditHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory as ::unity2::ClassIdentity>::class(),
@@ -755,126 +585,81 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: MapEditHistory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: MapEditHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_undo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory as ::unity2::ClassIdentity>::class(),
-                "Undo",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEditHistory as ::unity2::ClassIdentity>::class(), "Undo", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "Undo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "Undo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn undo(
-        this: MapEditHistory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn undo(this: MapEditHistory, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapEditHistory, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_undo::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_undo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_redo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory as ::unity2::ClassIdentity>::class(),
-                "Redo",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEditHistory as ::unity2::ClassIdentity>::class(), "Redo", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "Redo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "Redo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn redo(this: MapEditHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_redo::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_redo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory as ::unity2::ClassIdentity>::class(),
@@ -887,39 +672,27 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: MapEditHistory,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: MapEditHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_create_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -936,18 +709,15 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "AddCreateObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "AddCreateObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_create_object(
@@ -957,26 +727,15 @@ mod __MapEditHistory_unity2_raw {
         object_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory,
-            i32,
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_create_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapEditHistory, i32, i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_create_object::get_method_info().method_ptr);
         inner(this, x, z, object_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_delete_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -994,18 +753,15 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "AddDeleteObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "AddDeleteObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_delete_object(
@@ -1016,27 +772,15 @@ mod __MapEditHistory_unity2_raw {
         rotate: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory,
-            i32,
-            i32,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_delete_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapEditHistory, i32, i32, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_delete_object::get_method_info().method_ptr);
         inner(this, x, z, delete_object_name, rotate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_replace_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1055,18 +799,15 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "AddReplaceObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "AddReplaceObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_replace_object(
@@ -1078,36 +819,15 @@ mod __MapEditHistory_unity2_raw {
         create_obj_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory,
-            i32,
-            i32,
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_replace_object::get_offset() as isize),
-        );
-        inner(
-            this,
-            x,
-            z,
-            delete_rotate,
-            delete_obj_name,
-            create_obj_name,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(MapEditHistory, i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_replace_object::get_method_info().method_ptr);
+        inner(this, x, z, delete_rotate, delete_obj_name, create_obj_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_rotate_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1125,18 +845,15 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "AddRotateObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "AddRotateObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_rotate_object(
@@ -1147,28 +864,17 @@ mod __MapEditHistory_unity2_raw {
         next_rotate: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_rotate_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapEditHistory, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_rotate_object::get_method_info().method_ptr);
         inner(this, x, z, prev_rotate, next_rotate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_command {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapedithistory :: MapEditHistory_MapEditCommand as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mapedithistory::MapEditHistory_MapEditCommand as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory as ::unity2::ClassIdentity>::class(),
                 "AddCommand",
@@ -1180,18 +886,15 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "AddCommand",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "AddCommand",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_command(
@@ -1199,25 +902,17 @@ mod __MapEditHistory_unity2_raw {
         command: crate::app::mapedithistory::MapEditHistory_MapEditCommand,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory,
-            crate::app::mapedithistory::MapEditHistory_MapEditCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_command::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapEditHistory, crate::app::mapedithistory::MapEditHistory_MapEditCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_command::get_method_info().method_ptr);
         inner(this, command, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_list_add_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapedithistory :: MapEditHistory_MapEditCommand as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mapedithistory::MapEditHistory_MapEditCommand as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory as ::unity2::ClassIdentity>::class(),
                 "ListAddImpl",
@@ -1229,18 +924,15 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "ListAddImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "ListAddImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn list_add_impl(
@@ -1248,26 +940,16 @@ mod __MapEditHistory_unity2_raw {
         command: crate::app::mapedithistory::MapEditHistory_MapEditCommand,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory,
-            crate::app::mapedithistory::MapEditHistory_MapEditCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_list_add_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapEditHistory, crate::app::mapedithistory::MapEditHistory_MapEditCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_list_add_impl::get_method_info().method_ptr);
         inner(this, command, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_list_remove_at_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory as ::unity2::ClassIdentity>::class(),
                 "ListRemoveAtImpl",
@@ -1279,82 +961,54 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "ListRemoveAtImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "ListRemoveAtImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn list_remove_at_impl(
-        this: MapEditHistory,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn list_remove_at_impl(this: MapEditHistory, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_list_remove_at_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_list_remove_at_impl::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory as ::unity2::ClassIdentity>::class(),
-                "Dump",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEditHistory as ::unity2::ClassIdentity>::class(), "Dump", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    "Dump",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        "Dump",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dump(this: MapEditHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dump::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dump::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory as ::unity2::ClassIdentity>::class(),
@@ -1367,27 +1021,20 @@ mod __MapEditHistory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapEditHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1397,45 +1044,35 @@ pub trait IMapEditHistoryMethods: IMapEditHistory {
     #[doc = "`OnCreate()` overload"]
     fn on_create(self) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::on_create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Undo()` overload"]
     fn undo(self) -> bool {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::undo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Redo()` overload"]
     fn redo(self) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::redo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
@@ -1447,9 +1084,7 @@ pub trait IMapEditHistoryMethods: IMapEditHistory {
         object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::add_create_object(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1468,9 +1103,7 @@ pub trait IMapEditHistoryMethods: IMapEditHistory {
         rotate: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::add_delete_object(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1491,9 +1124,7 @@ pub trait IMapEditHistoryMethods: IMapEditHistory {
         create_obj_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::add_replace_object(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1514,9 +1145,7 @@ pub trait IMapEditHistoryMethods: IMapEditHistory {
         next_rotate: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::add_rotate_object(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1528,65 +1157,37 @@ pub trait IMapEditHistoryMethods: IMapEditHistory {
         }
     }
     #[doc = "`AddCommand(crate::app::mapedithistory::MapEditHistory_MapEditCommand)` overload"]
-    fn add_command(
-        self,
-        command: impl ::core::convert::Into<crate::app::mapedithistory::MapEditHistory_MapEditCommand>,
-    ) -> () {
+    fn add_command(self, command: impl ::core::convert::Into<crate::app::mapedithistory::MapEditHistory_MapEditCommand>) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEditHistory_unity2_raw::add_command(
-                __receiver,
-                ::core::convert::Into::into(command),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEditHistory_unity2_raw::add_command(__receiver, ::core::convert::Into::into(command), ::core::option::Option::None)
         }
     }
     #[doc = "`ListAddImpl(crate::app::mapedithistory::MapEditHistory_MapEditCommand)` overload"]
-    fn list_add_impl(
-        self,
-        command: impl ::core::convert::Into<crate::app::mapedithistory::MapEditHistory_MapEditCommand>,
-    ) -> () {
+    fn list_add_impl(self, command: impl ::core::convert::Into<crate::app::mapedithistory::MapEditHistory_MapEditCommand>) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEditHistory_unity2_raw::list_add_impl(
-                __receiver,
-                ::core::convert::Into::into(command),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEditHistory_unity2_raw::list_add_impl(__receiver, ::core::convert::Into::into(command), ::core::option::Option::None)
         }
     }
     #[doc = "`ListRemoveAtImpl(i32)` overload"]
     fn list_remove_at_impl(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEditHistory_unity2_raw::list_remove_at_impl(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEditHistory_unity2_raw::list_remove_at_impl(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`Dump()` overload"]
     fn dump(self) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::dump(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapEditHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEditHistory_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1614,15 +1215,247 @@ impl MapEditHistory {
 #[cfg(feature = "app-mapedithistory")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapEditHistory_ReplaceObjectCommand_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapEditHistory_ReplaceObjectCommand,
+        x: i32,
+        z: i32,
+        delete_rotate: i32,
+        delete_obj_name: ::unity2::Il2CppString,
+        create_obj_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapEditHistory_ReplaceObjectCommand,
+            i32,
+            i32,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, x, z, delete_rotate, delete_obj_name, create_obj_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::class(),
+                "Do",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "Do",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn r#do(this: MapEditHistory_ReplaceObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEditHistory_ReplaceObjectCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_do::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_undo {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::class(),
+                "Undo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "Undo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn undo(this: MapEditHistory_ReplaceObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEditHistory_ReplaceObjectCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_undo::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_string(this: MapEditHistory_ReplaceObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MapEditHistory_ReplaceObjectCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapedithistory")]
+pub trait IMapEditHistory_ReplaceObjectCommandMethods: IMapEditHistory_ReplaceObjectCommand {
+    #[doc = "`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        delete_rotate: impl ::core::convert::Into<i32>,
+        delete_obj_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        create_obj_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapEditHistory_ReplaceObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_ReplaceObjectCommand_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(delete_rotate),
+                ::core::convert::Into::into(delete_obj_name),
+                ::core::convert::Into::into(create_obj_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Do()` overload"]
+    fn r#do(self) -> () {
+        unsafe {
+            let __receiver = <MapEditHistory_ReplaceObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_ReplaceObjectCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Undo()` overload"]
+    fn undo(self) -> () {
+        unsafe {
+            let __receiver = <MapEditHistory_ReplaceObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_ReplaceObjectCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <MapEditHistory_ReplaceObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_ReplaceObjectCommand_unity2_raw::to_string(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapedithistory")]
+impl<__T: IMapEditHistory_ReplaceObjectCommand> IMapEditHistory_ReplaceObjectCommandMethods for __T {}
+
+#[cfg(feature = "app-mapedithistory")]
+impl MapEditHistory_ReplaceObjectCommand {
+    #[doc = "`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(x: i32, z: i32, delete_rotate: i32, delete_obj_name: ::unity2::Il2CppString, create_obj_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEditHistory_ReplaceObjectCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEditHistory_ReplaceObjectCommandMethods>::ctor(this, x, z, delete_rotate, delete_obj_name, create_obj_name);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapedithistory")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapEditHistory_MapEditCommand_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_do {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::class(),
@@ -1635,39 +1468,27 @@ mod __MapEditHistory_MapEditCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::NAME,
-                    "Do",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::NAME,
+                        "Do",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn r#do(
-        this: MapEditHistory_MapEditCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn r#do(this: MapEditHistory_MapEditCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory_MapEditCommand, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_do::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_do::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_undo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::class(),
@@ -1680,39 +1501,27 @@ mod __MapEditHistory_MapEditCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::NAME,
-                    "Undo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::NAME,
+                        "Undo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn undo(
-        this: MapEditHistory_MapEditCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn undo(this: MapEditHistory_MapEditCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory_MapEditCommand, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_undo::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_undo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::class(),
@@ -1725,30 +1534,20 @@ mod __MapEditHistory_MapEditCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_MapEditCommand as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapEditHistory_MapEditCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapEditHistory_MapEditCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEditHistory_MapEditCommand, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1759,39 +1558,24 @@ pub trait IMapEditHistory_MapEditCommandMethods: IMapEditHistory_MapEditCommand 
     fn r#do(self) -> () {
         unsafe {
             let __receiver =
-                <MapEditHistory_MapEditCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_MapEditCommand_unity2_raw::r#do(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapEditHistory_MapEditCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEditHistory_MapEditCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Undo()` overload"]
     fn undo(self) -> () {
         unsafe {
             let __receiver =
-                <MapEditHistory_MapEditCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_MapEditCommand_unity2_raw::undo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapEditHistory_MapEditCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEditHistory_MapEditCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MapEditHistory_MapEditCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_MapEditCommand_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapEditHistory_MapEditCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEditHistory_MapEditCommand_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1818,26 +1602,23 @@ impl MapEditHistory_MapEditCommand {
 #[cfg(feature = "app-mapedithistory")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEditHistory_ReplaceObjectCommand_unity2_raw {
+mod __MapEditHistory_DeleteObjectCommand_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::class(),
+                <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                5,
+                4,
                 param_types,
                 false,
             )
@@ -1845,62 +1626,37 @@ mod __MapEditHistory_ReplaceObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: MapEditHistory_ReplaceObjectCommand,
+        this: MapEditHistory_DeleteObjectCommand,
         x: i32,
         z: i32,
-        delete_rotate: i32,
-        delete_obj_name: ::unity2::Il2CppString,
-        create_obj_name: ::unity2::Il2CppString,
+        delete_object_name: ::unity2::Il2CppString,
+        rotate: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_ReplaceObjectCommand,
-            i32,
-            i32,
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            x,
-            z,
-            delete_rotate,
-            delete_obj_name,
-            create_obj_name,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(MapEditHistory_DeleteObjectCommand, i32, i32, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, x, z, delete_object_name, rotate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_do {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::class(),
+                <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::class(),
                 "Do",
                 0,
                 param_types,
@@ -1910,44 +1666,30 @@ mod __MapEditHistory_ReplaceObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "Do",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "Do",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn r#do(
-        this: MapEditHistory_ReplaceObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_ReplaceObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do::get_offset() as isize),
-        );
+    pub unsafe fn r#do(this: MapEditHistory_DeleteObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEditHistory_DeleteObjectCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_do::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_undo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::class(),
+                <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::class(),
                 "Undo",
                 0,
                 param_types,
@@ -1957,44 +1699,30 @@ mod __MapEditHistory_ReplaceObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "Undo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "Undo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn undo(
-        this: MapEditHistory_ReplaceObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_ReplaceObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_undo::get_offset() as isize),
-        );
+    pub unsafe fn undo(this: MapEditHistory_DeleteObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEditHistory_DeleteObjectCommand, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_undo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::class(),
+                <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::class(),
                 "ToString",
                 0,
                 param_types,
@@ -2004,61 +1732,44 @@ mod __MapEditHistory_ReplaceObjectCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_ReplaceObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEditHistory_DeleteObjectCommand as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: MapEditHistory_ReplaceObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapEditHistory_ReplaceObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: MapEditHistory_DeleteObjectCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MapEditHistory_DeleteObjectCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapedithistory")]
-pub trait IMapEditHistory_ReplaceObjectCommandMethods:
-    IMapEditHistory_ReplaceObjectCommand
-{
-    #[doc = "`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+pub trait IMapEditHistory_DeleteObjectCommandMethods: IMapEditHistory_DeleteObjectCommand {
+    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString, i32)` overload"]
     fn ctor(
         self,
         x: impl ::core::convert::Into<i32>,
         z: impl ::core::convert::Into<i32>,
-        delete_rotate: impl ::core::convert::Into<i32>,
-        delete_obj_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        create_obj_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        delete_object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        rotate: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_ReplaceObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_ReplaceObjectCommand_unity2_raw::ctor(
+            let __receiver = <MapEditHistory_DeleteObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_DeleteObjectCommand_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(x),
                 ::core::convert::Into::into(z),
-                ::core::convert::Into::into(delete_rotate),
-                ::core::convert::Into::into(delete_obj_name),
-                ::core::convert::Into::into(create_obj_name),
+                ::core::convert::Into::into(delete_object_name),
+                ::core::convert::Into::into(rotate),
                 ::core::option::Option::None,
             )
         }
@@ -2066,363 +1777,47 @@ pub trait IMapEditHistory_ReplaceObjectCommandMethods:
     #[doc = "`Do()` overload"]
     fn r#do(self) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_ReplaceObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_ReplaceObjectCommand_unity2_raw::r#do(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_DeleteObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_DeleteObjectCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Undo()` overload"]
     fn undo(self) -> () {
         unsafe {
-            let __receiver =
-                <MapEditHistory_ReplaceObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_ReplaceObjectCommand_unity2_raw::undo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_DeleteObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_DeleteObjectCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <MapEditHistory_ReplaceObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_ReplaceObjectCommand_unity2_raw::to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapEditHistory_DeleteObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapEditHistory_DeleteObjectCommand_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapedithistory")]
-impl<__T: IMapEditHistory_ReplaceObjectCommand> IMapEditHistory_ReplaceObjectCommandMethods
-    for __T
-{
-}
+impl<__T: IMapEditHistory_DeleteObjectCommand> IMapEditHistory_DeleteObjectCommandMethods for __T {}
 
 #[cfg(feature = "app-mapedithistory")]
-impl MapEditHistory_ReplaceObjectCommand {
-    #[doc = "`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        x: i32,
-        z: i32,
-        delete_rotate: i32,
-        delete_obj_name: ::unity2::Il2CppString,
-        create_obj_name: ::unity2::Il2CppString,
-    ) -> Self {
+impl MapEditHistory_DeleteObjectCommand {
+    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString, i32)` — overload selector"]
+    pub fn new(x: i32, z: i32, delete_object_name: ::unity2::Il2CppString, rotate: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditHistory_ReplaceObjectCommand),
+                ::core::stringify!(MapEditHistory_DeleteObjectCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapEditHistory_ReplaceObjectCommandMethods>::ctor(
-            this,
-            x,
-            z,
-            delete_rotate,
-            delete_obj_name,
-            create_obj_name,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-mapedithistory")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEditHistory_CreateObjectCommand_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapEditHistory_CreateObjectCommand,
-        x: i32,
-        z: i32,
-        object_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_CreateObjectCommand,
-            i32,
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, x, z, object_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::class(),
-                "Do",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "Do",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn r#do(
-        this: MapEditHistory_CreateObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_CreateObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_undo {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::class(),
-                "Undo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "Undo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn undo(
-        this: MapEditHistory_CreateObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEditHistory_CreateObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_undo::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEditHistory_CreateObjectCommand as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_string(
-        this: MapEditHistory_CreateObjectCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MapEditHistory_CreateObjectCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapedithistory")]
-pub trait IMapEditHistory_CreateObjectCommandMethods: IMapEditHistory_CreateObjectCommand {
-    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString)` overload"]
-    fn ctor(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        object_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapEditHistory_CreateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_CreateObjectCommand_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(object_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Do()` overload"]
-    fn r#do(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapEditHistory_CreateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_CreateObjectCommand_unity2_raw::r#do(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Undo()` overload"]
-    fn undo(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapEditHistory_CreateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_CreateObjectCommand_unity2_raw::undo(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ToString()` overload"]
-    fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <MapEditHistory_CreateObjectCommand as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapEditHistory_CreateObjectCommand_unity2_raw::to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapedithistory")]
-impl<__T: IMapEditHistory_CreateObjectCommand> IMapEditHistory_CreateObjectCommandMethods for __T {}
-
-#[cfg(feature = "app-mapedithistory")]
-impl MapEditHistory_CreateObjectCommand {
-    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(x: i32, z: i32, object_name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditHistory_CreateObjectCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEditHistory_CreateObjectCommandMethods>::ctor(this, x, z, object_name);
+        <Self as IMapEditHistory_DeleteObjectCommandMethods>::ctor(this, x, z, delete_object_name, rotate);
         this
     }
 }
@@ -2430,28 +1825,16 @@ impl MapEditHistory_CreateObjectCommand {
 #[cfg(feature = "app-mapedithistory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapEditHistory;
-    pub use super::IMapEditHistoryMethods;
-    pub use super::IMapEditHistory_CreateObjectCommand;
-    pub use super::IMapEditHistory_CreateObjectCommandMethods;
-    pub use super::IMapEditHistory_DeleteObjectCommand;
-    pub use super::IMapEditHistory_DeleteObjectCommandMethods;
-    pub use super::IMapEditHistory_MapEditCommand;
-    pub use super::IMapEditHistory_MapEditCommandMethods;
-    pub use super::IMapEditHistory_ReplaceObjectCommand;
-    pub use super::IMapEditHistory_ReplaceObjectCommandMethods;
-    pub use super::IMapEditHistory_RotateObjectCommand;
-    pub use super::IMapEditHistory_RotateObjectCommandMethods;
-    pub use super::MapEditHistory;
-    pub use super::MapEditHistory_CreateObjectCommand;
-    pub use super::MapEditHistory_DeleteObjectCommand;
-    pub use super::MapEditHistory_MapEditCommand;
-    pub use super::MapEditHistory_ReplaceObjectCommand;
-    pub use super::MapEditHistory_RotateObjectCommand;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use super::{
+        IMapEditHistory, IMapEditHistoryMethods, IMapEditHistory_CreateObjectCommand, IMapEditHistory_CreateObjectCommandMethods,
+        IMapEditHistory_DeleteObjectCommand, IMapEditHistory_DeleteObjectCommandMethods, IMapEditHistory_MapEditCommand,
+        IMapEditHistory_MapEditCommandMethods, IMapEditHistory_ReplaceObjectCommand, IMapEditHistory_ReplaceObjectCommandMethods,
+        IMapEditHistory_RotateObjectCommand, IMapEditHistory_RotateObjectCommandMethods, MapEditHistory, MapEditHistory_CreateObjectCommand,
+        MapEditHistory_DeleteObjectCommand, MapEditHistory_MapEditCommand, MapEditHistory_ReplaceObjectCommand, MapEditHistory_RotateObjectCommand,
+    };
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::singletonclass_1::ISingletonClass_1, system::object::IObject};
 }

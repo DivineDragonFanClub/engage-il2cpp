@@ -2,36 +2,31 @@
 
 #[cfg(feature = "unity_engine-timeline-timelineplayable-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::playables::playablebehaviour::{
-        IPlayableBehaviour, PlayableBehaviour,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineplayable/TimelinePlayable.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelinePlayable")]
     #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
     pub struct TimelinePlayable {
         #[rename(name = "m_IntervalTree")]
-        pub m_interval_tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-            crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-        >,
+        pub m_interval_tree:
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         #[rename(name = "m_ActiveClips")]
-        pub m_active_clips: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-        >,
+        pub m_active_clips: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         #[rename(name = "m_CurrentListOfActiveClips")]
-        pub m_current_list_of_active_clips: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-        >,
+        pub m_current_list_of_active_clips:
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         #[rename(name = "m_ActiveBit")]
         pub m_active_bit: i32,
         #[rename(name = "m_EvaluateCallbacks")]
-        pub m_evaluate_callbacks: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::itimelineevaluatecallback::ITimelineEvaluateCallback,
-        >,
+        pub m_evaluate_callbacks:
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::itimelineevaluatecallback::ITimelineEvaluateCallback>,
         #[rename(name = "m_PlayableCache")]
         pub m_playable_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::timeline::trackasset::TrackAsset,
@@ -55,9 +50,7 @@ mod __TimelinePlayable_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
@@ -70,49 +63,42 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
-        tracks: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-        >,
+        tracks: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
         go: crate::unity_engine::gameobject::GameObject,
         auto_rebalance: bool,
         create_outputs: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<
-        crate::unity_engine::timeline::timelineplayable::TimelinePlayable,
-    > {
-        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > , crate :: unity_engine :: gameobject :: GameObject , bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: scriptplayable_1 :: ScriptPlayable_1 < crate :: unity_engine :: timeline :: timelineplayable :: TimelinePlayable > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
-        inner(
-            graph,
-            tracks,
-            go,
-            auto_rebalance,
-            create_outputs,
-            __unity2_method_info,
-        )
+    ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<crate::unity_engine::timeline::timelineplayable::TimelinePlayable> {
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
+            crate::unity_engine::gameobject::GameObject,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<
+            crate::unity_engine::timeline::timelineplayable::TimelinePlayable,
+        > = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(graph, tracks, go, auto_rebalance, create_outputs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compile {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
@@ -125,27 +111,22 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "Compile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "Compile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compile(
         this: TimelinePlayable,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         timeline_playable: crate::unity_engine::playables::playable::Playable,
-        tracks: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-        >,
+        tracks: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
         go: crate::unity_engine::gameobject::GameObject,
         auto_rebalance: bool,
         create_outputs: bool,
@@ -155,18 +136,12 @@ mod __TimelinePlayable_unity2_raw {
             TimelinePlayable,
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::playables::playable::Playable,
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::unity_engine::timeline::trackasset::TrackAsset,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
             crate::unity_engine::gameobject::GameObject,
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
         inner(
             this,
             graph,
@@ -182,9 +157,7 @@ mod __TimelinePlayable_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_compile_track_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: trackasset :: TrackAsset > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
@@ -197,27 +170,22 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "CompileTrackList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "CompileTrackList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compile_track_list(
         this: TimelinePlayable,
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         timeline_playable: crate::unity_engine::playables::playable::Playable,
-        tracks: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-        >,
+        tracks: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
         go: crate::unity_engine::gameobject::GameObject,
         create_outputs: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -226,35 +194,25 @@ mod __TimelinePlayable_unity2_raw {
             TimelinePlayable,
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::playables::playable::Playable,
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::unity_engine::timeline::trackasset::TrackAsset,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
             crate::unity_engine::gameobject::GameObject,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile_track_list::get_offset() as isize),
-        );
-        inner(
-            this,
-            graph,
-            timeline_playable,
-            tracks,
-            go,
-            create_outputs,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_compile_track_list::get_method_info().method_ptr);
+        inner(this, graph, timeline_playable, tracks, go, create_outputs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_track_output {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
                 "CreateTrackOutput",
@@ -266,18 +224,15 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "CreateTrackOutput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "CreateTrackOutput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_track_output(
@@ -297,21 +252,18 @@ mod __TimelinePlayable_unity2_raw {
             crate::unity_engine::playables::playable::Playable,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_track_output::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_track_output::get_method_info().method_ptr);
         inner(this, graph, track, go, playable, port, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate_weights_for_animation_playable_output {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
                 "EvaluateWeightsForAnimationPlayableOutput",
@@ -323,24 +275,21 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "EvaluateWeightsForAnimationPlayableOutput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "EvaluateWeightsForAnimationPlayableOutput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn evaluate_weights_for_animation_playable_output(
         this: TimelinePlayable,
         track: crate::unity_engine::timeline::trackasset::TrackAsset,
-        anim_output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput,
+        anim_output: crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -348,22 +297,14 @@ mod __TimelinePlayable_unity2_raw {
             crate::unity_engine::timeline::trackasset::TrackAsset,
             crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_evaluate_weights_for_animation_playable_output::get_offset() as isize,
-                ),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_evaluate_weights_for_animation_playable_output::get_method_info().method_ptr);
         inner(this, track, anim_output, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_playable_graph {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: intervaltree_1 :: IntervalTree_1 < crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
@@ -376,27 +317,22 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "CreatePlayableGraph",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "CreatePlayableGraph",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_playable_graph(
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         asset: crate::unity_engine::timeline::trackasset::TrackAsset,
         go: crate::unity_engine::gameobject::GameObject,
-        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-            crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-        >,
+        tree: crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         timeline_playable: crate::unity_engine::playables::playable::Playable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playable::Playable {
@@ -404,33 +340,25 @@ mod __TimelinePlayable_unity2_raw {
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             crate::unity_engine::timeline::trackasset::TrackAsset,
             crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
             crate::unity_engine::playables::playable::Playable,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_playable_graph::get_offset() as isize),
-        );
-        inner(
-            graph,
-            asset,
-            go,
-            tree,
-            timeline_playable,
-            __unity2_method_info,
-        )
+        ) -> crate::unity_engine::playables::playable::Playable =
+            ::core::mem::transmute(__lookup_create_playable_graph::get_method_info().method_ptr);
+        inner(graph, asset, go, tree, timeline_playable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_track_playable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
                 "CreateTrackPlayable",
@@ -442,18 +370,15 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "CreateTrackPlayable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "CreateTrackPlayable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_track_playable(
@@ -473,32 +398,18 @@ mod __TimelinePlayable_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_track_playable::get_offset() as isize),
-        );
-        inner(
-            this,
-            graph,
-            timeline_playable,
-            track,
-            go,
-            create_outputs,
-            __unity2_method_info,
-        )
+        ) -> crate::unity_engine::playables::playable::Playable =
+            ::core::mem::transmute(__lookup_create_track_playable::get_method_info().method_ptr);
+        inner(this, graph, timeline_playable, track, go, create_outputs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
@@ -511,18 +422,15 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "PrepareFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "PrepareFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_frame(
@@ -536,24 +444,17 @@ mod __TimelinePlayable_unity2_raw {
             crate::unity_engine::playables::playable::Playable,
             crate::unity_engine::playables::framedata::FrameData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_frame::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_prepare_frame::get_method_info().method_ptr);
         inner(this, playable, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_evaluate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
@@ -566,18 +467,15 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "Evaluate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "Evaluate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn evaluate(
@@ -591,21 +489,20 @@ mod __TimelinePlayable_unity2_raw {
             crate::unity_engine::playables::playable::Playable,
             crate::unity_engine::playables::framedata::FrameData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_evaluate::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_evaluate::get_method_info().method_ptr);
         inner(this, playable, frame_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cache_track {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playable :: Playable as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
                 "CacheTrack",
@@ -617,18 +514,15 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    "CacheTrack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        "CacheTrack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cache_track(
@@ -646,20 +540,14 @@ mod __TimelinePlayable_unity2_raw {
             i32,
             crate::unity_engine::playables::playable::Playable,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cache_track::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_cache_track::get_method_info().method_ptr);
         inner(this, track, playable, port, parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
@@ -672,39 +560,27 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TimelinePlayable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TimelinePlayable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TimelinePlayable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelinePlayable as ::unity2::ClassIdentity>::class(),
@@ -717,26 +593,19 @@ mod __TimelinePlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelinePlayable as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -747,16 +616,12 @@ impl TimelinePlayable {
     pub fn create(
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
         tracks: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::unity_engine::timeline::trackasset::TrackAsset,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
         >,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         auto_rebalance: impl ::core::convert::Into<bool>,
         create_outputs: impl ::core::convert::Into<bool>,
-    ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<
-        crate::unity_engine::timeline::timelineplayable::TimelinePlayable,
-    > {
+    ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<crate::unity_engine::timeline::timelineplayable::TimelinePlayable> {
         unsafe {
             __TimelinePlayable_unity2_raw::create(
                 ::core::convert::Into::into(graph),
@@ -768,19 +633,16 @@ impl TimelinePlayable {
             )
         }
     }
+
     #[doc = "`CreatePlayableGraph(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::timeline::trackasset::TrackAsset, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>, crate::unity_engine::playables::playable::Playable)` overload"]
     pub fn create_playable_graph(
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
         asset: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         tree: impl ::core::convert::Into<
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<
-                crate::unity_engine::timeline::runtimeelement::RuntimeElement,
-            >,
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
         >,
-        timeline_playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playable::Playable,
-        >,
+        timeline_playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
             __TimelinePlayable_unity2_raw::create_playable_graph(
@@ -793,6 +655,7 @@ impl TimelinePlayable {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TimelinePlayable_unity2_raw::cctor(::core::option::Option::None) }
@@ -805,22 +668,16 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
     fn compile(
         self,
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-        timeline_playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playable::Playable,
-        >,
+        timeline_playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
         tracks: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::unity_engine::timeline::trackasset::TrackAsset,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
         >,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         auto_rebalance: impl ::core::convert::Into<bool>,
         create_outputs: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::compile(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -837,21 +694,15 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
     fn compile_track_list(
         self,
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-        timeline_playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playable::Playable,
-        >,
+        timeline_playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
         tracks: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::unity_engine::timeline::trackasset::TrackAsset,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
         >,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         create_outputs: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::compile_track_list(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -873,9 +724,7 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
         port: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::create_track_output(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -891,14 +740,10 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
     fn evaluate_weights_for_animation_playable_output(
         self,
         track: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-        anim_output: impl ::core::convert::Into<
-            crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
-        >,
+        anim_output: impl ::core::convert::Into<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::evaluate_weights_for_animation_playable_output(
                 __receiver,
                 ::core::convert::Into::into(track),
@@ -911,17 +756,13 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
     fn create_track_playable(
         self,
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-        timeline_playable: impl ::core::convert::Into<
-            crate::unity_engine::playables::playable::Playable,
-        >,
+        timeline_playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
         track: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         create_outputs: impl ::core::convert::Into<bool>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::create_track_playable(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -940,9 +781,7 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
         info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::prepare_frame(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -958,9 +797,7 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
         frame_data: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::evaluate(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -978,9 +815,7 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
         parent: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
     ) -> () {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::cache_track(
                 __receiver,
                 ::core::convert::Into::into(track),
@@ -994,9 +829,7 @@ pub trait ITimelinePlayableMethods: ITimelinePlayable {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TimelinePlayable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TimelinePlayable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1024,13 +857,10 @@ impl TimelinePlayable {
 #[cfg(feature = "unity_engine-timeline-timelineplayable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITimelinePlayable;
-    pub use super::ITimelinePlayableMethods;
-    pub use super::TimelinePlayable;
-    pub use crate::system::object::IObject;
+    pub use super::{ITimelinePlayable, ITimelinePlayableMethods, TimelinePlayable};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
     #[cfg(feature = "unity_engine-playables-playablebehaviour")]
     pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
 }

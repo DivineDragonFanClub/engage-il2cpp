@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-animsetname-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animsetname/AnimsetName.md"))]
     #[::unity2::class(namespace = "Combat", name = "AnimsetName")]
@@ -25,9 +25,7 @@ mod __AnimsetName_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_change_nml {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
@@ -43,34 +41,20 @@ mod __AnimsetName_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimsetName as ::unity2::ClassIdentity>::NAME,
-                    "ChangeNML",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimsetName as ::unity2::ClassIdentity>::NAME,
+                        "ChangeNML",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn change_nml(
-        aoc: ::unity2::Il2CppString,
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_nml::get_offset() as isize),
-        );
+    pub unsafe fn change_nml(aoc: ::unity2::Il2CppString, c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, u16, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_change_nml::get_method_info().method_ptr);
         inner(aoc, c, __unity2_method_info)
     }
 }
@@ -78,10 +62,7 @@ mod __AnimsetName_unity2_raw {
 #[cfg(feature = "combat-animsetname")]
 impl AnimsetName {
     #[doc = "`ChangeNML(::unity2::Il2CppString, u16)` overload"]
-    pub fn change_nml(
-        aoc: impl ::core::convert::Into<::unity2::Il2CppString>,
-        c: impl ::core::convert::Into<u16>,
-    ) -> ::unity2::Il2CppString {
+    pub fn change_nml(aoc: impl ::core::convert::Into<::unity2::Il2CppString>, c: impl ::core::convert::Into<u16>) -> ::unity2::Il2CppString {
         unsafe {
             __AnimsetName_unity2_raw::change_nml(
                 ::core::convert::Into::into(aoc),
@@ -95,8 +76,7 @@ impl AnimsetName {
 #[cfg(feature = "combat-animsetname")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimsetName;
-    pub use super::IAnimsetName;
+    pub use super::{AnimsetName, IAnimsetName};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

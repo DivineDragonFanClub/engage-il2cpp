@@ -2,66 +2,35 @@
 
 #[cfg(feature = "app-shopdatabase_1-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdataarray_1::{IStructDataArray_1, StructDataArray_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopDataBase`1")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < T0 >)]
-    # [parent (crate :: app :: structtemplate_1 :: StructTemplate_1 < T0 >)]
-    #[parent(crate::app::structbase::StructBase)]
-    #[parent(crate::system::object::Object)]
-    pub struct ShopDataBase_1<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "Infinity")]
-        pub infinity: i32,
-        #[static_field]
-        #[rename(name = "m_RandomGiftList")]
-        pub m_random_gift_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1_GetStockKeyFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopDataBase`1.GetStockKeyFunc")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct ShopDataBase_1_GetStockKeyFunc<T0: ::unity2::ClassIdentity> {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1_GetStockAddedKeyFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopDataBase`1.GetStockAddedKeyFunc")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct ShopDataBase_1_GetStockAddedKeyFunc<T0: ::unity2::ClassIdentity> {}
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopdatabase_1/ShopDataBase_1_AttributeType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct ShopDataBase_1_AttributeType<T0: ::unity2::ClassIdentity> {
         pub value: i32,
         pub _phantom: ::core::marker::PhantomData<(T0)>,
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ShopDataBase_1_AttributeType<T0> {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "ShopDataBase`1.AttributeType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -72,10 +41,7 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ShopDataBase_1_AttributeType<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -94,10 +60,67 @@ mod __types {
             }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1_GetStockKeyFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopDataBase`1.GetStockKeyFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopDataBase_1_GetStockKeyFunc<T0: ::unity2::ClassIdentity> {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopDataBase`1")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < T0 >)]
+    # [parent (crate :: app :: structtemplate_1 :: StructTemplate_1 < T0 >)]
+    #[parent(crate::app::structbase::StructBase)]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopDataBase_1<T0: ::unity2::ClassIdentity> {
+        #[static_field]
+        #[rename(name = "Infinity")]
+        pub infinity: i32,
+        #[static_field]
+        #[rename(name = "m_RandomGiftList")]
+        pub m_random_gift_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1_GetStockAddedKeyFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopDataBase`1.GetStockAddedKeyFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopDataBase_1_GetStockAddedKeyFunc<T0: ::unity2::ClassIdentity> {}
 }
 
 #[cfg(feature = "app-shopdatabase_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-shopdatabase_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ShopDataBase_1_GetStockKeyFunc<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, condition: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-shopdatabase_1")]
+impl<T0: ::unity2::ClassIdentity> ShopDataBase_1_GetStockKeyFunc<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopDataBase_1_GetStockKeyFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopDataBase_1_GetStockKeyFuncMethods<T0>>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-shopdatabase_1")]
 #[::unity2::methods]
@@ -170,29 +193,19 @@ impl<T0: ::unity2::ClassIdentity> ShopDataBase_1<T0> {
 
     #[doc = "`GetStockNumImpl(::unity2::Il2CppString, crate::app::shopdatabase_1::ShopDataBase_1_GetStockKeyFunc<T0>)` overload"]
     #[method(name = "GetStockNumImpl", args = 2)]
-    pub fn get_stock_num_impl(
-        iid: ::unity2::Il2CppString,
-        get_stock_key: crate::app::shopdatabase_1::ShopDataBase_1_GetStockKeyFunc<T0>,
-    ) -> i32;
+    pub fn get_stock_num_impl(iid: ::unity2::Il2CppString, get_stock_key: crate::app::shopdatabase_1::ShopDataBase_1_GetStockKeyFunc<T0>) -> i32;
 
     #[doc = "`IsInfinityImpl(::unity2::Il2CppString, crate::app::shopdatabase_1::ShopDataBase_1_GetStockKeyFunc<T0>)` overload"]
     #[method(name = "IsInfinityImpl", args = 2)]
-    pub fn is_infinity_impl(
-        iid: ::unity2::Il2CppString,
-        get_stock_key: crate::app::shopdatabase_1::ShopDataBase_1_GetStockKeyFunc<T0>,
-    ) -> bool;
+    pub fn is_infinity_impl(iid: ::unity2::Il2CppString, get_stock_key: crate::app::shopdatabase_1::ShopDataBase_1_GetStockKeyFunc<T0>) -> bool;
 
     #[doc = "`SetRandomGift(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]
     #[method(name = "SetRandomGift", args = 1)]
-    pub fn set_random_gift(
-        iid_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    ) -> ();
+    pub fn set_random_gift(iid_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>) -> ();
 
     #[doc = "`GenerateRandomGift(i32)` overload"]
     #[method(name = "GenerateRandomGift", args = 1)]
-    pub fn generate_random_gift(
-        count: i32,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
+    pub fn generate_random_gift(count: i32) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -215,34 +228,6 @@ impl<T0: ::unity2::ClassIdentity> ShopDataBase_1<T0> {
             )
         });
         <Self as IShopDataBase_1Methods<T0>>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-shopdatabase_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ShopDataBase_1_GetStockKeyFunc<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, condition: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-shopdatabase_1")]
-impl<T0: ::unity2::ClassIdentity> ShopDataBase_1_GetStockKeyFunc<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ShopDataBase_1_GetStockKeyFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IShopDataBase_1_GetStockKeyFuncMethods<T0>>::ctor(this, object, method);
         this
     }
 }
@@ -278,38 +263,29 @@ impl<T0: ::unity2::ClassIdentity> ShopDataBase_1_GetStockAddedKeyFunc<T0> {
 #[cfg(feature = "app-shopdatabase_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShopDataBase_1;
-    pub use super::IShopDataBase_1Methods;
-    pub use super::IShopDataBase_1_GetStockAddedKeyFunc;
-    pub use super::IShopDataBase_1_GetStockAddedKeyFuncMethods;
-    pub use super::IShopDataBase_1_GetStockKeyFunc;
-    pub use super::IShopDataBase_1_GetStockKeyFuncMethods;
-    pub use super::ShopDataBase_1;
-    pub use super::ShopDataBase_1_AttributeType;
-    pub use super::ShopDataBase_1_GetStockAddedKeyFunc;
-    pub use super::ShopDataBase_1_GetStockKeyFunc;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{
+        IShopDataBase_1, IShopDataBase_1Methods, IShopDataBase_1_GetStockAddedKeyFunc, IShopDataBase_1_GetStockAddedKeyFuncMethods,
+        IShopDataBase_1_GetStockKeyFunc, IShopDataBase_1_GetStockKeyFuncMethods, ShopDataBase_1, ShopDataBase_1_AttributeType,
+        ShopDataBase_1_GetStockAddedKeyFunc, ShopDataBase_1_GetStockKeyFunc,
+    };
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
     #[cfg(feature = "app-structdataarray_1")]
     pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

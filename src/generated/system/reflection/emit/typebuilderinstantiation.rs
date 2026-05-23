@@ -2,18 +2,19 @@
 
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::reflection::memberinfo::{IMemberInfo, MemberInfo};
-    use crate::system::reflection::typeinfo::{ITypeInfo, TypeInfo};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        reflection::{
+            memberinfo::{IMemberInfo, MemberInfo},
+            typeinfo::{ITypeInfo, TypeInfo},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/typebuilderinstantiation/TypeBuilderInstantiation.md"))]
-    #[::unity2::class(
-        namespace = "System.Reflection.Emit",
-        name = "TypeBuilderInstantiation"
-    )]
+    #[::unity2::class(namespace = "System.Reflection.Emit", name = "TypeBuilderInstantiation")]
     #[parent(crate::system::reflection::typeinfo::TypeInfo)]
     pub struct TypeBuilderInstantiation {}
 }
@@ -30,9 +31,7 @@ mod __TypeBuilderInstantiation_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_make_generic_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
@@ -48,18 +47,15 @@ mod __TypeBuilderInstantiation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TypeBuilderInstantiation as ::unity2::ClassIdentity>::NAME,
-                    "MakeGenericType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TypeBuilderInstantiation as ::unity2::ClassIdentity>::NAME,
+                        "MakeGenericType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn make_generic_type(
@@ -67,15 +63,8 @@ mod __TypeBuilderInstantiation_unity2_raw {
         type_arguments: ::unity2::Array<::unity2::SystemType>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::Array<::unity2::SystemType>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_make_generic_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_make_generic_type::get_method_info().method_ptr);
         inner(r#type, type_arguments, __unity2_method_info)
     }
 }
@@ -100,15 +89,15 @@ impl TypeBuilderInstantiation {
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITypeBuilderInstantiation;
-    pub use super::TypeBuilderInstantiation;
-    pub use crate::system::object::IObject;
+    pub use super::{ITypeBuilderInstantiation, TypeBuilderInstantiation};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::reflection::memberinfo::IMemberInfo;
     #[cfg(feature = "system-reflection-memberinfo")]
     pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    pub use crate::system::reflection::typeinfo::ITypeInfo;
     #[cfg(feature = "system-reflection-typeinfo")]
     pub use crate::system::reflection::typeinfo::ITypeInfoMethods;
+    pub use crate::system::{
+        object::IObject,
+        reflection::{memberinfo::IMemberInfo, typeinfo::ITypeInfo},
+    };
 }

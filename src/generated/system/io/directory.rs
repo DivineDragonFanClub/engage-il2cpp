@@ -2,10 +2,15 @@
 
 #[cfg(feature = "system-io-directory-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "Directory")]
+    #[parent(crate::system::object::Object)]
+    pub struct Directory {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory_SearchData.md"))]
     #[::unity2::class(namespace = "System.IO", name = "Directory.SearchData")]
@@ -18,15 +23,971 @@ mod __types {
         #[rename(name = "searchOption")]
         pub search_option: crate::system::io::searchoption::SearchOption,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "Directory")]
-    #[parent(crate::system::object::Object)]
-    pub struct Directory {}
 }
 
 #[cfg(feature = "system-io-directory-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-io-directory")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Directory_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_files {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Directory as ::unity2::ClassIdentity>::class(), "GetFiles", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "GetFiles",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_files(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_files::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_files_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Directory as ::unity2::ClassIdentity>::class(), "GetFiles", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "GetFiles",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_files_2(
+        path: ::unity2::Il2CppString,
+        search_pattern: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(__lookup_get_files_2::get_method_info().method_ptr);
+        inner(path, search_pattern, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_get_files {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "InternalGetFiles",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "InternalGetFiles",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn internal_get_files(
+        path: ::unity2::Il2CppString,
+        search_pattern: ::unity2::Il2CppString,
+        search_option: crate::system::io::searchoption::SearchOption,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::io::searchoption::SearchOption,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(__lookup_internal_get_files::get_method_info().method_ptr);
+        inner(path, search_pattern, search_option, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_directories {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "GetDirectories",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "GetDirectories",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_directories(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_directories::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_directories_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "GetDirectories",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "GetDirectories",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_directories_2(
+        path: ::unity2::Il2CppString,
+        search_pattern: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(__lookup_get_directories_2::get_method_info().method_ptr);
+        inner(path, search_pattern, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_get_directories {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "InternalGetDirectories",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "InternalGetDirectories",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn internal_get_directories(
+        path: ::unity2::Il2CppString,
+        search_pattern: ::unity2::Il2CppString,
+        search_option: crate::system::io::searchoption::SearchOption,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::io::searchoption::SearchOption,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(__lookup_internal_get_directories::get_method_info().method_ptr);
+        inner(path, search_pattern, search_option, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_get_file_directory_names {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "InternalGetFileDirectoryNames",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "InternalGetFileDirectoryNames",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn internal_get_file_directory_names(
+        path: ::unity2::Il2CppString,
+        user_path_original: ::unity2::Il2CppString,
+        search_pattern: ::unity2::Il2CppString,
+        include_files: bool,
+        include_dirs: bool,
+        search_option: crate::system::io::searchoption::SearchOption,
+        check_host: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            bool,
+            bool,
+            crate::system::io::searchoption::SearchOption,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_internal_get_file_directory_names::get_method_info().method_ptr);
+        inner(
+            path,
+            user_path_original,
+            search_pattern,
+            include_files,
+            include_dirs,
+            search_option,
+            check_host,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_files {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "EnumerateFiles",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateFiles",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_files(
+        path: ::unity2::Il2CppString,
+        search_pattern: ::unity2::Il2CppString,
+        search_option: crate::system::io::searchoption::SearchOption,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::io::searchoption::SearchOption,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_enumerate_files::get_method_info().method_ptr);
+        inner(path, search_pattern, search_option, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_internal_enumerate_files {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "InternalEnumerateFiles",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "InternalEnumerateFiles",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn internal_enumerate_files(
+        path: ::unity2::Il2CppString,
+        search_pattern: ::unity2::Il2CppString,
+        search_option: crate::system::io::searchoption::SearchOption,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::io::searchoption::SearchOption,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_internal_enumerate_files::get_method_info().method_ptr);
+        inner(path, search_pattern, search_option, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_file_system_names {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "EnumerateFileSystemNames",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateFileSystemNames",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_file_system_names(
+        path: ::unity2::Il2CppString,
+        search_pattern: ::unity2::Il2CppString,
+        search_option: crate::system::io::searchoption::SearchOption,
+        include_files: bool,
+        include_dirs: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::io::searchoption::SearchOption,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_enumerate_file_system_names::get_method_info().method_ptr);
+        inner(path, search_pattern, search_option, include_files, include_dirs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_directory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "CreateDirectory",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "CreateDirectory",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_directory(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::io::directoryinfo::DirectoryInfo {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::system::io::directoryinfo::DirectoryInfo =
+            ::core::mem::transmute(__lookup_create_directory::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_directories_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "CreateDirectoriesInternal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "CreateDirectoriesInternal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_directories_internal(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::io::directoryinfo::DirectoryInfo {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::system::io::directoryinfo::DirectoryInfo =
+            ::core::mem::transmute(__lookup_create_directories_internal::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Directory as ::unity2::ClassIdentity>::class(), "Delete", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recursive_delete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "RecursiveDelete",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "RecursiveDelete",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn recursive_delete(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_recursive_delete::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Directory as ::unity2::ClassIdentity>::class(), "Delete", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete_2(path: ::unity2::Il2CppString, recursive: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_2::get_method_info().method_ptr);
+        inner(path, recursive, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exists {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Directory as ::unity2::ClassIdentity>::class(), "Exists", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "Exists",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exists(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_exists::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_directory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "GetCurrentDirectory",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "GetCurrentDirectory",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current_directory(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_current_directory::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insecure_get_current_directory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "InsecureGetCurrentDirectory",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "InsecureGetCurrentDirectory",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn insecure_get_current_directory(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_insecure_get_current_directory::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_demand_dir {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Directory as ::unity2::ClassIdentity>::class(),
+                "GetDemandDir",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory as ::unity2::ClassIdentity>::NAME,
+                        "GetDemandDir",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_demand_dir(
+        full_path: ::unity2::Il2CppString,
+        this_dir_only: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_demand_dir::get_method_info().method_ptr);
+        inner(full_path, this_dir_only, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-io-directory")]
+impl Directory {
+    #[doc = "`GetFiles(::unity2::Il2CppString)` overload"]
+    pub fn get_files(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe { __Directory_unity2_raw::get_files(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetFiles(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn get_files_2(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            __Directory_unity2_raw::get_files_2(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(search_pattern),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`InternalGetFiles(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
+    pub fn internal_get_files(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            __Directory_unity2_raw::internal_get_files(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(search_pattern),
+                ::core::convert::Into::into(search_option),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`GetDirectories(::unity2::Il2CppString)` overload"]
+    pub fn get_directories(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe { __Directory_unity2_raw::get_directories(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetDirectories(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn get_directories_2(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            __Directory_unity2_raw::get_directories_2(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(search_pattern),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`InternalGetDirectories(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
+    pub fn internal_get_directories(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            __Directory_unity2_raw::internal_get_directories(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(search_pattern),
+                ::core::convert::Into::into(search_option),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`InternalGetFileDirectoryNames(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool, crate::system::io::searchoption::SearchOption, bool)` overload"]
+    pub fn internal_get_file_directory_names(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        user_path_original: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+        include_files: impl ::core::convert::Into<bool>,
+        include_dirs: impl ::core::convert::Into<bool>,
+        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
+        check_host: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<::unity2::Il2CppString> {
+        unsafe {
+            __Directory_unity2_raw::internal_get_file_directory_names(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(user_path_original),
+                ::core::convert::Into::into(search_pattern),
+                ::core::convert::Into::into(include_files),
+                ::core::convert::Into::into(include_dirs),
+                ::core::convert::Into::into(search_option),
+                ::core::convert::Into::into(check_host),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`EnumerateFiles(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
+    pub fn enumerate_files(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
+        unsafe {
+            __Directory_unity2_raw::enumerate_files(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(search_pattern),
+                ::core::convert::Into::into(search_option),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`InternalEnumerateFiles(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
+    pub fn internal_enumerate_files(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
+        unsafe {
+            __Directory_unity2_raw::internal_enumerate_files(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(search_pattern),
+                ::core::convert::Into::into(search_option),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`EnumerateFileSystemNames(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption, bool, bool)` overload"]
+    pub fn enumerate_file_system_names(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
+        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
+        include_files: impl ::core::convert::Into<bool>,
+        include_dirs: impl ::core::convert::Into<bool>,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
+        unsafe {
+            __Directory_unity2_raw::enumerate_file_system_names(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(search_pattern),
+                ::core::convert::Into::into(search_option),
+                ::core::convert::Into::into(include_files),
+                ::core::convert::Into::into(include_dirs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreateDirectory(::unity2::Il2CppString)` overload"]
+    pub fn create_directory(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::system::io::directoryinfo::DirectoryInfo {
+        unsafe { __Directory_unity2_raw::create_directory(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateDirectoriesInternal(::unity2::Il2CppString)` overload"]
+    pub fn create_directories_internal(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::system::io::directoryinfo::DirectoryInfo {
+        unsafe { __Directory_unity2_raw::create_directories_internal(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Delete(::unity2::Il2CppString)` overload"]
+    pub fn delete(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __Directory_unity2_raw::delete(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`RecursiveDelete(::unity2::Il2CppString)` overload"]
+    pub fn recursive_delete(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __Directory_unity2_raw::recursive_delete(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Delete(::unity2::Il2CppString, bool)` overload"]
+    pub fn delete_2(path: impl ::core::convert::Into<::unity2::Il2CppString>, recursive: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __Directory_unity2_raw::delete_2(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(recursive),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Exists(::unity2::Il2CppString)` overload"]
+    pub fn exists(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __Directory_unity2_raw::exists(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetCurrentDirectory()` overload"]
+    pub fn get_current_directory() -> ::unity2::Il2CppString {
+        unsafe { __Directory_unity2_raw::get_current_directory(::core::option::Option::None) }
+    }
+
+    #[doc = "`InsecureGetCurrentDirectory()` overload"]
+    pub fn insecure_get_current_directory() -> ::unity2::Il2CppString {
+        unsafe { __Directory_unity2_raw::insecure_get_current_directory(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetDemandDir(::unity2::Il2CppString, bool)` overload"]
+    pub fn get_demand_dir(
+        full_path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        this_dir_only: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __Directory_unity2_raw::get_demand_dir(
+                ::core::convert::Into::into(full_path),
+                ::core::convert::Into::into(this_dir_only),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "system-io-directory")]
 #[doc(hidden)]
@@ -37,9 +998,7 @@ mod __Directory_SearchData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -56,18 +1015,15 @@ mod __Directory_SearchData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory_SearchData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Directory_SearchData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -83,18 +1039,8 @@ mod __Directory_SearchData_unity2_raw {
             ::unity2::Il2CppString,
             crate::system::io::searchoption::SearchOption,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            full_path,
-            user_path,
-            search_option,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, full_path, user_path, search_option, __unity2_method_info)
     }
 }
 
@@ -108,9 +1054,8 @@ pub trait IDirectory_SearchDataMethods: IDirectory_SearchData {
         search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
     ) -> () {
         unsafe {
-            let __receiver = <Directory_SearchData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Directory_SearchData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Directory_SearchData_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(full_path),
@@ -147,1222 +1092,8 @@ impl Directory_SearchData {
 
 #[cfg(feature = "system-io-directory")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Directory_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_files {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "GetFiles",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "GetFiles",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_files(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_files::get_offset() as isize),
-        );
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_files_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "GetFiles",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "GetFiles",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_files_2(
-        path: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_files_2::get_offset() as isize),
-        );
-        inner(path, search_pattern, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_get_files {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "InternalGetFiles",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "InternalGetFiles",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn internal_get_files(
-        path: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-        search_option: crate::system::io::searchoption::SearchOption,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::system::io::searchoption::SearchOption,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_files::get_offset() as isize),
-        );
-        inner(path, search_pattern, search_option, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_directories {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "GetDirectories",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "GetDirectories",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_directories(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_directories::get_offset() as isize),
-        );
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_directories_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "GetDirectories",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "GetDirectories",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_directories_2(
-        path: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_directories_2::get_offset() as isize),
-        );
-        inner(path, search_pattern, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_get_directories {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "InternalGetDirectories",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "InternalGetDirectories",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn internal_get_directories(
-        path: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-        search_option: crate::system::io::searchoption::SearchOption,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::system::io::searchoption::SearchOption,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_directories::get_offset() as isize),
-        );
-        inner(path, search_pattern, search_option, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_get_file_directory_names {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "InternalGetFileDirectoryNames",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "InternalGetFileDirectoryNames",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn internal_get_file_directory_names(
-        path: ::unity2::Il2CppString,
-        user_path_original: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-        include_files: bool,
-        include_dirs: bool,
-        search_option: crate::system::io::searchoption::SearchOption,
-        check_host: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            bool,
-            bool,
-            crate::system::io::searchoption::SearchOption,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_file_directory_names::get_offset() as isize),
-        );
-        inner(
-            path,
-            user_path_original,
-            search_pattern,
-            include_files,
-            include_dirs,
-            search_option,
-            check_host,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_files {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "EnumerateFiles",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateFiles",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_files(
-        path: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-        search_option: crate::system::io::searchoption::SearchOption,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
-        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: io :: searchoption :: SearchOption , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_enumerate_files :: get_offset () as isize) ,) ;
-        inner(path, search_pattern, search_option, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_internal_enumerate_files {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "InternalEnumerateFiles",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "InternalEnumerateFiles",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn internal_enumerate_files(
-        path: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-        search_option: crate::system::io::searchoption::SearchOption,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
-        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: io :: searchoption :: SearchOption , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_internal_enumerate_files :: get_offset () as isize) ,) ;
-        inner(path, search_pattern, search_option, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_file_system_names {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::io::searchoption::SearchOption as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "EnumerateFileSystemNames",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateFileSystemNames",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_file_system_names(
-        path: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-        search_option: crate::system::io::searchoption::SearchOption,
-        include_files: bool,
-        include_dirs: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
-        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: io :: searchoption :: SearchOption , bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_enumerate_file_system_names :: get_offset () as isize) ,) ;
-        inner(
-            path,
-            search_pattern,
-            search_option,
-            include_files,
-            include_dirs,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_directory {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "CreateDirectory",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "CreateDirectory",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_directory(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::io::directoryinfo::DirectoryInfo {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::io::directoryinfo::DirectoryInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_directory::get_offset() as isize),
-        );
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_directories_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "CreateDirectoriesInternal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "CreateDirectoriesInternal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_directories_internal(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::io::directoryinfo::DirectoryInfo {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::io::directoryinfo::DirectoryInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_directories_internal::get_offset() as isize),
-        );
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "Delete",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete::get_offset() as isize),
-            );
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_recursive_delete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "RecursiveDelete",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "RecursiveDelete",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn recursive_delete(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_recursive_delete::get_offset() as isize),
-            );
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "Delete",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete_2(
-        path: ::unity2::Il2CppString,
-        recursive: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_2::get_offset() as isize),
-            );
-        inner(path, recursive, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exists {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "Exists",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "Exists",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exists(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exists::get_offset() as isize),
-            );
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_directory {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "GetCurrentDirectory",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "GetCurrentDirectory",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current_directory(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_current_directory::get_offset() as isize),
-            );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_insecure_get_current_directory {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "InsecureGetCurrentDirectory",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "InsecureGetCurrentDirectory",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn insecure_get_current_directory(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_insecure_get_current_directory::get_offset() as isize),
-            );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_demand_dir {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Directory as ::unity2::ClassIdentity>::class(),
-                "GetDemandDir",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Directory as ::unity2::ClassIdentity>::NAME,
-                    "GetDemandDir",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_demand_dir(
-        full_path: ::unity2::Il2CppString,
-        this_dir_only: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_demand_dir::get_offset() as isize),
-        );
-        inner(full_path, this_dir_only, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-io-directory")]
-impl Directory {
-    #[doc = "`GetFiles(::unity2::Il2CppString)` overload"]
-    pub fn get_files(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __Directory_unity2_raw::get_files(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetFiles(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn get_files_2(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __Directory_unity2_raw::get_files_2(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(search_pattern),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InternalGetFiles(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
-    pub fn internal_get_files(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __Directory_unity2_raw::internal_get_files(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(search_pattern),
-                ::core::convert::Into::into(search_option),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetDirectories(::unity2::Il2CppString)` overload"]
-    pub fn get_directories(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __Directory_unity2_raw::get_directories(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetDirectories(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn get_directories_2(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __Directory_unity2_raw::get_directories_2(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(search_pattern),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InternalGetDirectories(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
-    pub fn internal_get_directories(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __Directory_unity2_raw::internal_get_directories(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(search_pattern),
-                ::core::convert::Into::into(search_option),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InternalGetFileDirectoryNames(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool, crate::system::io::searchoption::SearchOption, bool)` overload"]
-    pub fn internal_get_file_directory_names(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        user_path_original: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
-        include_files: impl ::core::convert::Into<bool>,
-        include_dirs: impl ::core::convert::Into<bool>,
-        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
-        check_host: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __Directory_unity2_raw::internal_get_file_directory_names(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(user_path_original),
-                ::core::convert::Into::into(search_pattern),
-                ::core::convert::Into::into(include_files),
-                ::core::convert::Into::into(include_dirs),
-                ::core::convert::Into::into(search_option),
-                ::core::convert::Into::into(check_host),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnumerateFiles(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
-    pub fn enumerate_files(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
-        unsafe {
-            __Directory_unity2_raw::enumerate_files(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(search_pattern),
-                ::core::convert::Into::into(search_option),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InternalEnumerateFiles(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]
-    pub fn internal_enumerate_files(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
-        unsafe {
-            __Directory_unity2_raw::internal_enumerate_files(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(search_pattern),
-                ::core::convert::Into::into(search_option),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnumerateFileSystemNames(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption, bool, bool)` overload"]
-    pub fn enumerate_file_system_names(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_pattern: impl ::core::convert::Into<::unity2::Il2CppString>,
-        search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
-        include_files: impl ::core::convert::Into<bool>,
-        include_dirs: impl ::core::convert::Into<bool>,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
-        unsafe {
-            __Directory_unity2_raw::enumerate_file_system_names(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(search_pattern),
-                ::core::convert::Into::into(search_option),
-                ::core::convert::Into::into(include_files),
-                ::core::convert::Into::into(include_dirs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateDirectory(::unity2::Il2CppString)` overload"]
-    pub fn create_directory(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::system::io::directoryinfo::DirectoryInfo {
-        unsafe {
-            __Directory_unity2_raw::create_directory(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateDirectoriesInternal(::unity2::Il2CppString)` overload"]
-    pub fn create_directories_internal(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::system::io::directoryinfo::DirectoryInfo {
-        unsafe {
-            __Directory_unity2_raw::create_directories_internal(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Delete(::unity2::Il2CppString)` overload"]
-    pub fn delete(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __Directory_unity2_raw::delete(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RecursiveDelete(::unity2::Il2CppString)` overload"]
-    pub fn recursive_delete(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __Directory_unity2_raw::recursive_delete(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Delete(::unity2::Il2CppString, bool)` overload"]
-    pub fn delete_2(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        recursive: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __Directory_unity2_raw::delete_2(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(recursive),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Exists(::unity2::Il2CppString)` overload"]
-    pub fn exists(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Directory_unity2_raw::exists(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCurrentDirectory()` overload"]
-    pub fn get_current_directory() -> ::unity2::Il2CppString {
-        unsafe { __Directory_unity2_raw::get_current_directory(::core::option::Option::None) }
-    }
-    #[doc = "`InsecureGetCurrentDirectory()` overload"]
-    pub fn insecure_get_current_directory() -> ::unity2::Il2CppString {
-        unsafe {
-            __Directory_unity2_raw::insecure_get_current_directory(::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDemandDir(::unity2::Il2CppString, bool)` overload"]
-    pub fn get_demand_dir(
-        full_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        this_dir_only: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __Directory_unity2_raw::get_demand_dir(
-                ::core::convert::Into::into(full_path),
-                ::core::convert::Into::into(this_dir_only),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-io-directory")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::Directory;
-    pub use super::Directory_SearchData;
-    pub use super::IDirectory;
-    pub use super::IDirectory_SearchData;
-    pub use super::IDirectory_SearchDataMethods;
+    pub use super::{Directory, Directory_SearchData, IDirectory, IDirectory_SearchData, IDirectory_SearchDataMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

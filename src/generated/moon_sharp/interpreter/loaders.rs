@@ -5,9 +5,7 @@ pub mod embeddedresourcesscriptloader;
 #[cfg(feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader")]
 pub use embeddedresourcesscriptloader::IEmbeddedResourcesScriptLoaderMethods;
 #[cfg(feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader-types")]
-pub use embeddedresourcesscriptloader::{
-    EmbeddedResourcesScriptLoader, IEmbeddedResourcesScriptLoader,
-};
+pub use embeddedresourcesscriptloader::{EmbeddedResourcesScriptLoader, IEmbeddedResourcesScriptLoader};
 #[cfg(any(feature = "moon_sharp-interpreter-loaders-filesystemscriptloader-types"))]
 pub mod filesystemscriptloader;
 #[cfg(feature = "moon_sharp-interpreter-loaders-filesystemscriptloader")]

@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SurfaceDataAttributes")]
@@ -34,10 +34,14 @@ mod __SurfaceDataAttributes_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::fieldprecision::FieldPrecision as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SurfaceDataAttributes as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -49,18 +53,15 @@ mod __SurfaceDataAttributes_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SurfaceDataAttributes as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SurfaceDataAttributes as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -80,11 +81,7 @@ mod __SurfaceDataAttributes_unity2_raw {
             crate::unity_engine::rendering::fieldprecision::FieldPrecision,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             display_name,
@@ -99,10 +96,14 @@ mod __SurfaceDataAttributes_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fieldprecision :: FieldPrecision as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::fieldprecision::FieldPrecision as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SurfaceDataAttributes as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -114,18 +115,15 @@ mod __SurfaceDataAttributes_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SurfaceDataAttributes as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SurfaceDataAttributes as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -145,11 +143,7 @@ mod __SurfaceDataAttributes_unity2_raw {
             bool,
             crate::unity_engine::rendering::fieldprecision::FieldPrecision,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(
             this,
             display_names,
@@ -170,15 +164,12 @@ pub trait ISurfaceDataAttributesMethods: ISurfaceDataAttributes {
         display_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         is_direction: impl ::core::convert::Into<bool>,
         s_rgb_display: impl ::core::convert::Into<bool>,
-        precision: impl ::core::convert::Into<
-            crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-        >,
+        precision: impl ::core::convert::Into<crate::unity_engine::rendering::fieldprecision::FieldPrecision>,
         check_is_normalized: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <SurfaceDataAttributes as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SurfaceDataAttributes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SurfaceDataAttributes_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(display_name),
@@ -197,14 +188,11 @@ pub trait ISurfaceDataAttributesMethods: ISurfaceDataAttributes {
         is_direction: impl ::core::convert::Into<bool>,
         s_rgb_display: impl ::core::convert::Into<bool>,
         check_is_normalized: impl ::core::convert::Into<bool>,
-        precision: impl ::core::convert::Into<
-            crate::unity_engine::rendering::fieldprecision::FieldPrecision,
-        >,
+        precision: impl ::core::convert::Into<crate::unity_engine::rendering::fieldprecision::FieldPrecision>,
     ) -> () {
         unsafe {
-            let __receiver = <SurfaceDataAttributes as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SurfaceDataAttributes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SurfaceDataAttributes_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(display_names),
@@ -238,14 +226,7 @@ impl SurfaceDataAttributes {
                 ::core::stringify!(new),
             )
         });
-        <Self as ISurfaceDataAttributesMethods>::ctor(
-            this,
-            display_name,
-            is_direction,
-            s_rgb_display,
-            precision,
-            check_is_normalized,
-        );
+        <Self as ISurfaceDataAttributesMethods>::ctor(this, display_name, is_direction, s_rgb_display, precision, check_is_normalized);
         this
     }
 
@@ -264,14 +245,7 @@ impl SurfaceDataAttributes {
                 ::core::stringify!(new_2),
             )
         });
-        <Self as ISurfaceDataAttributesMethods>::ctor_2(
-            this,
-            display_names,
-            is_direction,
-            s_rgb_display,
-            check_is_normalized,
-            precision,
-        );
+        <Self as ISurfaceDataAttributesMethods>::ctor_2(this, display_names, is_direction, s_rgb_display, check_is_normalized, precision);
         this
     }
 }
@@ -279,7 +253,5 @@ impl SurfaceDataAttributes {
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISurfaceDataAttributes;
-    pub use super::ISurfaceDataAttributesMethods;
-    pub use super::SurfaceDataAttributes;
+    pub use super::{ISurfaceDataAttributes, ISurfaceDataAttributesMethods, SurfaceDataAttributes};
 }

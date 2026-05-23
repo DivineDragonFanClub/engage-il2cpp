@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-stencilstate-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/stencilstate/StencilState.md"))]
     #[repr(C)]
@@ -27,9 +29,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for StencilState {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
         const NAME: &'static str = "StencilState";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,10 +41,7 @@ mod __types {
 
     impl ::unity2::IlType for StencilState {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -60,9 +58,7 @@ mod __StencilState_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -75,64 +71,50 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_defaultValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_defaultValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_default_value(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendering::stencilstate::StencilState {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::stencilstate::StencilState = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_default_value::get_offset() as isize),
-        );
+    pub unsafe fn get_default_value(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilstate::StencilState {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilstate::StencilState =
+            ::core::mem::transmute(__lookup_get_default_value::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < u8 as :: unity2 :: IlType > :: il_type () , < u8 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilState as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                7,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<StencilState as ::unity2::ClassIdentity>::class(), ".ctor", 7, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -156,11 +138,7 @@ mod __StencilState_unity2_raw {
             crate::unity_engine::rendering::stencilop::StencilOp,
             crate::unity_engine::rendering::stencilop::StencilOp,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             enabled,
@@ -177,33 +155,34 @@ mod __StencilState_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < u8 as :: unity2 :: IlType > :: il_type () , < u8 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilState as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                11,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<StencilState as ::unity2::ClassIdentity>::class(), ".ctor", 11, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -235,11 +214,7 @@ mod __StencilState_unity2_raw {
             crate::unity_engine::rendering::stencilop::StencilOp,
             crate::unity_engine::rendering::stencilop::StencilOp,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(
             this,
             enabled,
@@ -260,9 +235,7 @@ mod __StencilState_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -275,41 +248,28 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_enabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_enabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enabled(
-        this: StencilState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_enabled(this: StencilState, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_enabled::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_enabled",
@@ -321,40 +281,27 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_enabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_enabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_enabled(
-        this: StencilState,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_enabled(this: StencilState, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StencilState, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_enabled::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_read_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -367,39 +314,27 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_readMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_readMask",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_read_mask(
-        this: StencilState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_read_mask(this: StencilState, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_read_mask::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_read_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_write_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -412,40 +347,29 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_writeMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_writeMask",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_write_mask(
-        this: StencilState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_write_mask(this: StencilState, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_write_mask::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_write_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_compare_function {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "SetCompareFunction",
@@ -457,18 +381,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "SetCompareFunction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "SetCompareFunction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_compare_function(
@@ -476,28 +397,17 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::comparefunction::CompareFunction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_compare_function::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::comparefunction::CompareFunction, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_compare_function::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pass_operation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "SetPassOperation",
@@ -509,18 +419,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "SetPassOperation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "SetPassOperation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pass_operation(
@@ -528,28 +435,17 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pass_operation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pass_operation::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fail_operation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "SetFailOperation",
@@ -561,18 +457,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "SetFailOperation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "SetFailOperation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fail_operation(
@@ -580,28 +473,17 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fail_operation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fail_operation::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_z_fail_operation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "SetZFailOperation",
@@ -613,18 +495,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "SetZFailOperation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "SetZFailOperation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_z_fail_operation(
@@ -632,24 +511,15 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_z_fail_operation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_z_fail_operation::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_compare_function_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -662,35 +532,32 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_compareFunctionFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_compareFunctionFront",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_compare_function_front(
         this: StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::comparefunction::CompareFunction {
-        let inner : extern "C" fn (StencilState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: comparefunction :: CompareFunction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_compare_function_front :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::comparefunction::CompareFunction =
+            ::core::mem::transmute(__lookup_get_compare_function_front::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_compare_function_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_compareFunctionFront",
@@ -702,18 +569,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_compareFunctionFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_compareFunctionFront",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_compare_function_front(
@@ -721,24 +585,15 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::comparefunction::CompareFunction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_compare_function_front::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::comparefunction::CompareFunction, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_compare_function_front::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pass_operation_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -751,45 +606,32 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_passOperationFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_passOperationFront",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pass_operation_front(
         this: StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        let inner: extern "C" fn(
-            StencilState,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::stencilop::StencilOp = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pass_operation_front::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilop::StencilOp =
+            ::core::mem::transmute(__lookup_get_pass_operation_front::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pass_operation_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_passOperationFront",
@@ -801,18 +643,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_passOperationFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_passOperationFront",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pass_operation_front(
@@ -820,24 +659,15 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pass_operation_front::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pass_operation_front::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fail_operation_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -850,45 +680,32 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_failOperationFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_failOperationFront",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fail_operation_front(
         this: StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        let inner: extern "C" fn(
-            StencilState,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::stencilop::StencilOp = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fail_operation_front::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilop::StencilOp =
+            ::core::mem::transmute(__lookup_get_fail_operation_front::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fail_operation_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_failOperationFront",
@@ -900,18 +717,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_failOperationFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_failOperationFront",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fail_operation_front(
@@ -919,24 +733,15 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fail_operation_front::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fail_operation_front::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_z_fail_operation_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -949,45 +754,32 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_zFailOperationFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_zFailOperationFront",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_z_fail_operation_front(
         this: StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        let inner: extern "C" fn(
-            StencilState,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::stencilop::StencilOp = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_z_fail_operation_front::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilop::StencilOp =
+            ::core::mem::transmute(__lookup_get_z_fail_operation_front::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_z_fail_operation_front {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_zFailOperationFront",
@@ -999,18 +791,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_zFailOperationFront",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_zFailOperationFront",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_z_fail_operation_front(
@@ -1018,24 +807,15 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_z_fail_operation_front::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_z_fail_operation_front::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_compare_function_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -1048,35 +828,32 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_compareFunctionBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_compareFunctionBack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_compare_function_back(
         this: StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::comparefunction::CompareFunction {
-        let inner : extern "C" fn (StencilState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: comparefunction :: CompareFunction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_compare_function_back :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::comparefunction::CompareFunction =
+            ::core::mem::transmute(__lookup_get_compare_function_back::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_compare_function_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_compareFunctionBack",
@@ -1088,18 +865,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_compareFunctionBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_compareFunctionBack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_compare_function_back(
@@ -1107,24 +881,15 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::comparefunction::CompareFunction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_compare_function_back::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::comparefunction::CompareFunction, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_compare_function_back::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pass_operation_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -1137,45 +902,32 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_passOperationBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_passOperationBack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pass_operation_back(
         this: StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        let inner: extern "C" fn(
-            StencilState,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::stencilop::StencilOp = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pass_operation_back::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilop::StencilOp =
+            ::core::mem::transmute(__lookup_get_pass_operation_back::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pass_operation_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_passOperationBack",
@@ -1187,18 +939,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_passOperationBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_passOperationBack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pass_operation_back(
@@ -1206,24 +955,15 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pass_operation_back::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pass_operation_back::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fail_operation_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -1236,45 +976,32 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_failOperationBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_failOperationBack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fail_operation_back(
         this: StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        let inner: extern "C" fn(
-            StencilState,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::stencilop::StencilOp = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fail_operation_back::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilop::StencilOp =
+            ::core::mem::transmute(__lookup_get_fail_operation_back::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fail_operation_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_failOperationBack",
@@ -1286,18 +1013,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_failOperationBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_failOperationBack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fail_operation_back(
@@ -1305,24 +1029,15 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fail_operation_back::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fail_operation_back::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_z_fail_operation_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -1335,45 +1050,32 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "get_zFailOperationBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "get_zFailOperationBack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_z_fail_operation_back(
         this: StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        let inner: extern "C" fn(
-            StencilState,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendering::stencilop::StencilOp = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_z_fail_operation_back::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::stencilop::StencilOp =
+            ::core::mem::transmute(__lookup_get_z_fail_operation_back::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_z_fail_operation_back {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
                 "set_zFailOperationBack",
@@ -1385,18 +1087,15 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "set_zFailOperationBack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "set_zFailOperationBack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_z_fail_operation_back(
@@ -1404,48 +1103,31 @@ mod __StencilState_unity2_raw {
         value: crate::unity_engine::rendering::stencilop::StencilOp,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_z_fail_operation_back::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilop::StencilOp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_z_fail_operation_back::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: stencilstate :: StencilState as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilState as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::stencilstate::StencilState as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StencilState as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals(
@@ -1453,74 +1135,42 @@ mod __StencilState_unity2_raw {
         other: crate::unity_engine::rendering::stencilstate::StencilState,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::unity_engine::rendering::stencilstate::StencilState,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StencilState, crate::unity_engine::rendering::stencilstate::StencilState, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilState as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<StencilState as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals_2(
-        this: StencilState,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            StencilState,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals_2::get_offset() as isize),
-        );
+    pub unsafe fn equals_2(this: StencilState, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(StencilState, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilState as ::unity2::ClassIdentity>::class(),
@@ -1533,30 +1183,20 @@ mod __StencilState_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilState as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilState as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: StencilState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: StencilState, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(StencilState, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1577,14 +1217,10 @@ impl StencilState {
         enabled: impl ::core::convert::Into<bool>,
         read_mask: impl ::core::convert::Into<u8>,
         write_mask: impl ::core::convert::Into<u8>,
-        compare_function: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
+        compare_function: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
         pass_operation: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
         fail_operation: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-        z_fail_operation: impl ::core::convert::Into<
-            crate::unity_engine::rendering::stencilop::StencilOp,
-        >,
+        z_fail_operation: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
     ) -> () {
         unsafe {
             __StencilState_unity2_raw::ctor(
@@ -1600,36 +1236,21 @@ impl StencilState {
             )
         }
     }
+
     #[doc = "`.ctor(bool, u8, u8, crate::unity_engine::rendering::comparefunction::CompareFunction, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::comparefunction::CompareFunction, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
     pub fn ctor_2(
         self,
         enabled: impl ::core::convert::Into<bool>,
         read_mask: impl ::core::convert::Into<u8>,
         write_mask: impl ::core::convert::Into<u8>,
-        compare_function_front: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
-        pass_operation_front: impl ::core::convert::Into<
-            crate::unity_engine::rendering::stencilop::StencilOp,
-        >,
-        fail_operation_front: impl ::core::convert::Into<
-            crate::unity_engine::rendering::stencilop::StencilOp,
-        >,
-        z_fail_operation_front: impl ::core::convert::Into<
-            crate::unity_engine::rendering::stencilop::StencilOp,
-        >,
-        compare_function_back: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
-        pass_operation_back: impl ::core::convert::Into<
-            crate::unity_engine::rendering::stencilop::StencilOp,
-        >,
-        fail_operation_back: impl ::core::convert::Into<
-            crate::unity_engine::rendering::stencilop::StencilOp,
-        >,
-        z_fail_operation_back: impl ::core::convert::Into<
-            crate::unity_engine::rendering::stencilop::StencilOp,
-        >,
+        compare_function_front: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
+        pass_operation_front: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
+        fail_operation_front: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
+        z_fail_operation_front: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
+        compare_function_back: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
+        pass_operation_back: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
+        fail_operation_back: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
+        z_fail_operation_back: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
     ) -> () {
         unsafe {
             __StencilState_unity2_raw::ctor_2(
@@ -1649,273 +1270,143 @@ impl StencilState {
             )
         }
     }
+
     #[doc = "`get_enabled()` overload"]
     pub fn get_enabled(self) -> bool {
         unsafe { __StencilState_unity2_raw::get_enabled(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_enabled(bool)` overload"]
     pub fn set_enabled(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_enabled(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __StencilState_unity2_raw::set_enabled(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_readMask()` overload"]
     pub fn get_read_mask(self) -> u8 {
         unsafe { __StencilState_unity2_raw::get_read_mask(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_writeMask()` overload"]
     pub fn get_write_mask(self) -> u8 {
         unsafe { __StencilState_unity2_raw::get_write_mask(self, ::core::option::Option::None) }
     }
+
     #[doc = "`SetCompareFunction(crate::unity_engine::rendering::comparefunction::CompareFunction)` overload"]
-    pub fn set_compare_function(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_compare_function(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_compare_function(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>) -> () {
+        unsafe { __StencilState_unity2_raw::set_compare_function(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`SetPassOperation(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_pass_operation(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_pass_operation(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_pass_operation(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_pass_operation(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`SetFailOperation(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_fail_operation(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_fail_operation(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_fail_operation(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_fail_operation(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`SetZFailOperation(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_z_fail_operation(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_z_fail_operation(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_z_fail_operation(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_z_fail_operation(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_compareFunctionFront()` overload"]
-    pub fn get_compare_function_front(
-        self,
-    ) -> crate::unity_engine::rendering::comparefunction::CompareFunction {
-        unsafe {
-            __StencilState_unity2_raw::get_compare_function_front(
-                self,
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_compare_function_front(self) -> crate::unity_engine::rendering::comparefunction::CompareFunction {
+        unsafe { __StencilState_unity2_raw::get_compare_function_front(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_compareFunctionFront(crate::unity_engine::rendering::comparefunction::CompareFunction)` overload"]
     pub fn set_compare_function_front(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
     ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_compare_function_front(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __StencilState_unity2_raw::set_compare_function_front(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_passOperationFront()` overload"]
     pub fn get_pass_operation_front(self) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        unsafe {
-            __StencilState_unity2_raw::get_pass_operation_front(self, ::core::option::Option::None)
-        }
+        unsafe { __StencilState_unity2_raw::get_pass_operation_front(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_passOperationFront(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_pass_operation_front(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_pass_operation_front(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_pass_operation_front(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_pass_operation_front(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_failOperationFront()` overload"]
     pub fn get_fail_operation_front(self) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        unsafe {
-            __StencilState_unity2_raw::get_fail_operation_front(self, ::core::option::Option::None)
-        }
+        unsafe { __StencilState_unity2_raw::get_fail_operation_front(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_failOperationFront(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_fail_operation_front(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_fail_operation_front(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_fail_operation_front(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_fail_operation_front(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_zFailOperationFront()` overload"]
-    pub fn get_z_fail_operation_front(
-        self,
-    ) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        unsafe {
-            __StencilState_unity2_raw::get_z_fail_operation_front(
-                self,
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_z_fail_operation_front(self) -> crate::unity_engine::rendering::stencilop::StencilOp {
+        unsafe { __StencilState_unity2_raw::get_z_fail_operation_front(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_zFailOperationFront(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_z_fail_operation_front(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_z_fail_operation_front(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_z_fail_operation_front(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_z_fail_operation_front(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_compareFunctionBack()` overload"]
-    pub fn get_compare_function_back(
-        self,
-    ) -> crate::unity_engine::rendering::comparefunction::CompareFunction {
-        unsafe {
-            __StencilState_unity2_raw::get_compare_function_back(self, ::core::option::Option::None)
-        }
+    pub fn get_compare_function_back(self) -> crate::unity_engine::rendering::comparefunction::CompareFunction {
+        unsafe { __StencilState_unity2_raw::get_compare_function_back(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_compareFunctionBack(crate::unity_engine::rendering::comparefunction::CompareFunction)` overload"]
     pub fn set_compare_function_back(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
     ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_compare_function_back(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __StencilState_unity2_raw::set_compare_function_back(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_passOperationBack()` overload"]
     pub fn get_pass_operation_back(self) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        unsafe {
-            __StencilState_unity2_raw::get_pass_operation_back(self, ::core::option::Option::None)
-        }
+        unsafe { __StencilState_unity2_raw::get_pass_operation_back(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_passOperationBack(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_pass_operation_back(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_pass_operation_back(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_pass_operation_back(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_pass_operation_back(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_failOperationBack()` overload"]
     pub fn get_fail_operation_back(self) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        unsafe {
-            __StencilState_unity2_raw::get_fail_operation_back(self, ::core::option::Option::None)
-        }
+        unsafe { __StencilState_unity2_raw::get_fail_operation_back(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_failOperationBack(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_fail_operation_back(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_fail_operation_back(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_fail_operation_back(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_fail_operation_back(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_zFailOperationBack()` overload"]
     pub fn get_z_fail_operation_back(self) -> crate::unity_engine::rendering::stencilop::StencilOp {
-        unsafe {
-            __StencilState_unity2_raw::get_z_fail_operation_back(self, ::core::option::Option::None)
-        }
+        unsafe { __StencilState_unity2_raw::get_z_fail_operation_back(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_zFailOperationBack(crate::unity_engine::rendering::stencilop::StencilOp)` overload"]
-    pub fn set_z_fail_operation_back(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-    ) -> () {
-        unsafe {
-            __StencilState_unity2_raw::set_z_fail_operation_back(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_z_fail_operation_back(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>) -> () {
+        unsafe { __StencilState_unity2_raw::set_z_fail_operation_back(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::unity_engine::rendering::stencilstate::StencilState)` overload"]
-    pub fn equals(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::rendering::stencilstate::StencilState>,
-    ) -> bool {
-        unsafe {
-            __StencilState_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::rendering::stencilstate::StencilState>) -> bool {
+        unsafe { __StencilState_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __StencilState_unity2_raw::equals_2(
-                self,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __StencilState_unity2_raw::equals_2(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __StencilState_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
@@ -1926,10 +1417,9 @@ impl StencilState {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::StencilState;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

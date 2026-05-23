@@ -2,13 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-internalerrorexception-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::interpreterexception::{
-        IInterpreterException, InterpreterException,
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::interpreterexception::{IInterpreterException, InterpreterException},
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/internalerrorexception/InternalErrorException.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "InternalErrorException")]
@@ -28,11 +28,8 @@ mod __InternalErrorException_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InternalErrorException as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -44,43 +41,27 @@ mod __InternalErrorException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InternalErrorException as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InternalErrorException as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: InternalErrorException,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InternalErrorException,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: InternalErrorException, message: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InternalErrorException, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, message, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
@@ -96,18 +77,15 @@ mod __InternalErrorException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InternalErrorException as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InternalErrorException as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -121,11 +99,7 @@ mod __InternalErrorException_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, format, args, __unity2_method_info)
     }
 }
@@ -135,14 +109,9 @@ pub trait IInternalErrorExceptionMethods: IInternalErrorException {
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <InternalErrorException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InternalErrorException_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InternalErrorException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InternalErrorException_unity2_raw::ctor(__receiver, ::core::convert::Into::into(message), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
@@ -152,9 +121,8 @@ pub trait IInternalErrorExceptionMethods: IInternalErrorException {
         args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
     ) -> () {
         unsafe {
-            let __receiver = <InternalErrorException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <InternalErrorException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InternalErrorException_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(format),
@@ -184,10 +152,7 @@ impl InternalErrorException {
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"]
-    pub fn new_2(
-        format: ::unity2::Il2CppString,
-        args: ::unity2::Array<crate::system::object::Object>,
-    ) -> Self {
+    pub fn new_2(format: ::unity2::Il2CppString, args: ::unity2::Array<crate::system::object::Object>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -203,14 +168,13 @@ impl InternalErrorException {
 #[cfg(feature = "moon_sharp-interpreter-internalerrorexception")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInternalErrorException;
-    pub use super::IInternalErrorExceptionMethods;
-    pub use super::InternalErrorException;
-    pub use crate::moon_sharp::interpreter::interpreterexception::IInterpreterException;
+    pub use super::{IInternalErrorException, IInternalErrorExceptionMethods, InternalErrorException};
     #[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
     pub use crate::moon_sharp::interpreter::interpreterexception::IInterpreterExceptionMethods;
-    pub use crate::moon_sharp::interpreter::interpreterexception::InterpreterException;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::interpreterexception::{IInterpreterException, InterpreterException},
+        system::object::IObject,
+    };
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-textareaattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textareaattribute/TextAreaAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "TextAreaAttribute")]
@@ -31,13 +33,8 @@ mod __TextAreaAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextAreaAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -49,32 +46,20 @@ mod __TextAreaAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextAreaAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextAreaAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TextAreaAttribute,
-        min_lines: i32,
-        max_lines: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TextAreaAttribute, min_lines: i32, max_lines: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextAreaAttribute, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, min_lines, max_lines, __unity2_method_info)
     }
 }
@@ -82,15 +67,9 @@ mod __TextAreaAttribute_unity2_raw {
 #[cfg(feature = "unity_engine-textareaattribute")]
 pub trait ITextAreaAttributeMethods: ITextAreaAttribute {
     #[doc = "`.ctor(i32, i32)` overload"]
-    fn ctor(
-        self,
-        min_lines: impl ::core::convert::Into<i32>,
-        max_lines: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor(self, min_lines: impl ::core::convert::Into<i32>, max_lines: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TextAreaAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextAreaAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextAreaAttribute_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(min_lines),
@@ -123,13 +102,10 @@ impl TextAreaAttribute {
 #[cfg(feature = "unity_engine-textareaattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITextAreaAttribute;
-    pub use super::ITextAreaAttributeMethods;
-    pub use super::TextAreaAttribute;
-    pub use crate::system::object::IObject;
+    pub use super::{ITextAreaAttribute, ITextAreaAttributeMethods, TextAreaAttribute};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
     #[cfg(feature = "unity_engine-propertyattribute")]
     pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
 }

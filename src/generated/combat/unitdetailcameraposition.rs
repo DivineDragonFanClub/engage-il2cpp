@@ -2,50 +2,25 @@
 
 #[cfg(feature = "combat-unitdetailcameraposition-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md"))]
-    #[::unity2::class(namespace = "Combat", name = "UnitDetailCameraPosition")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitDetailCameraPosition {
-        #[rename(name = "Target")]
-        pub target: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
-        #[rename(name = "Distance")]
-        pub distance: f32,
-        #[rename(name = "LookatHeightFix")]
-        pub lookat_height_fix: f32,
-        #[rename(name = "FollowHeightFix")]
-        pub follow_height_fix: f32,
-        #[rename(name = "CameraFov")]
-        pub camera_fov: f32,
-        #[rename(name = "SideSlipSize")]
-        pub side_slip_size: f32,
-        #[rename(name = "Center")]
-        pub center: crate::combat::unitdetailcameraposition::UnitDetailCameraPosition_CenterType,
-    }
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition_CenterType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct UnitDetailCameraPosition_CenterType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for UnitDetailCameraPosition_CenterType {
-        const NAMESPACE: &'static str = "Combat";
-
         const NAME: &'static str = "UnitDetailCameraPosition.CenterType";
+        const NAMESPACE: &'static str = "Combat";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -56,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for UnitDetailCameraPosition_CenterType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -84,6 +56,26 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md"))]
+    #[::unity2::class(namespace = "Combat", name = "UnitDetailCameraPosition")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitDetailCameraPosition {
+        #[rename(name = "Target")]
+        pub target: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+        #[rename(name = "Distance")]
+        pub distance: f32,
+        #[rename(name = "LookatHeightFix")]
+        pub lookat_height_fix: f32,
+        #[rename(name = "FollowHeightFix")]
+        pub follow_height_fix: f32,
+        #[rename(name = "CameraFov")]
+        pub camera_fov: f32,
+        #[rename(name = "SideSlipSize")]
+        pub side_slip_size: f32,
+        #[rename(name = "Center")]
+        pub center: crate::combat::unitdetailcameraposition::UnitDetailCameraPosition_CenterType,
+    }
 }
 
 #[cfg(feature = "combat-unitdetailcameraposition-types")]
@@ -98,9 +90,7 @@ mod __UnitDetailCameraPosition_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitDetailCameraPosition as ::unity2::ClassIdentity>::class(),
@@ -113,30 +103,20 @@ mod __UnitDetailCameraPosition_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitDetailCameraPosition as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitDetailCameraPosition as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: UnitDetailCameraPosition,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: UnitDetailCameraPosition, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitDetailCameraPosition, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -147,9 +127,7 @@ pub trait IUnitDetailCameraPositionMethods: IUnitDetailCameraPosition {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <UnitDetailCameraPosition as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UnitDetailCameraPosition as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitDetailCameraPosition_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -177,17 +155,12 @@ impl UnitDetailCameraPosition {
 #[cfg(feature = "combat-unitdetailcameraposition")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnitDetailCameraPosition;
-    pub use super::IUnitDetailCameraPositionMethods;
-    pub use super::UnitDetailCameraPosition;
-    pub use super::UnitDetailCameraPosition_CenterType;
-    pub use crate::system::object::IObject;
+    pub use super::{IUnitDetailCameraPosition, IUnitDetailCameraPositionMethods, UnitDetailCameraPosition, UnitDetailCameraPosition_CenterType};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

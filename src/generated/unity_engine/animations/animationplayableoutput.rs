@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-animations-animationplayableoutput-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animationplayableoutput/AnimationPlayableOutput.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for AnimationPlayableOutput {
-        const NAMESPACE: &'static str = "UnityEngine.Animations";
-
         const NAME: &'static str = "AnimationPlayableOutput";
+        const NAMESPACE: &'static str = "UnityEngine.Animations";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,10 +30,7 @@ mod __types {
 
     impl ::unity2::IlType for AnimationPlayableOutput {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -49,10 +47,12 @@ mod __AnimationPlayableOutput_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -64,18 +64,15 @@ mod __AnimationPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -84,17 +81,22 @@ mod __AnimationPlayableOutput_unity2_raw {
         target: crate::unity_engine::animator::Animator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: Il2CppString , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            ::unity2::Il2CppString,
+            crate::unity_engine::animator::Animator,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(graph, name, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -106,18 +108,15 @@ mod __AnimationPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -129,20 +128,14 @@ mod __AnimationPlayableOutput_unity2_raw {
             AnimationPlayableOutput,
             crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
@@ -155,33 +148,29 @@ mod __AnimationPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "get_Null",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "get_Null",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_null(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_null :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput =
+            ::core::mem::transmute(__lookup_get_null::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
@@ -194,35 +183,35 @@ mod __AnimationPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "GetHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "GetHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_handle(
         this: AnimationPlayableOutput,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
-        let inner : extern "C" fn (AnimationPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_handle :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AnimationPlayableOutput,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle =
+            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
                 "op_Implicit",
@@ -234,18 +223,15 @@ mod __AnimationPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit(
@@ -255,23 +241,17 @@ mod __AnimationPlayableOutput_unity2_raw {
         let inner: extern "C" fn(
             crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playableoutput::PlayableOutput =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_op_implicit::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::playables::playableoutput::PlayableOutput =
+            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(output, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_explicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutput :: PlayableOutput as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playableoutput::PlayableOutput as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
                 "op_Explicit",
@@ -283,36 +263,34 @@ mod __AnimationPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "op_Explicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "op_Explicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_explicit(
         output: crate::unity_engine::playables::playableoutput::PlayableOutput,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        let inner : extern "C" fn (crate :: unity_engine :: playables :: playableoutput :: PlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_explicit :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playableoutput::PlayableOutput,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput =
+            ::core::mem::transmute(__lookup_op_explicit::get_method_info().method_ptr);
         inner(output, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
                 "SetTarget",
@@ -324,18 +302,15 @@ mod __AnimationPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "SetTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "SetTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target(
@@ -343,25 +318,19 @@ mod __AnimationPlayableOutput_unity2_raw {
         value: crate::unity_engine::animator::Animator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AnimationPlayableOutput,
-            crate::unity_engine::animator::Animator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationPlayableOutput, crate::unity_engine::animator::Animator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableOutput as ::unity2::ClassIdentity>::class(),
                 "InternalSetTarget",
@@ -373,18 +342,15 @@ mod __AnimationPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "InternalSetTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "InternalSetTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_target(
@@ -396,11 +362,7 @@ mod __AnimationPlayableOutput_unity2_raw {
             *mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
             crate::unity_engine::animator::Animator,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_set_target::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_set_target::get_method_info().method_ptr);
         inner(handle, target, __unity2_method_info)
     }
 }
@@ -422,45 +384,32 @@ impl AnimationPlayableOutput {
             )
         }
     }
+
     #[doc = "`get_Null()` overload"]
-    pub fn get_null(
-    ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
+    pub fn get_null() -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
         unsafe { __AnimationPlayableOutput_unity2_raw::get_null(::core::option::Option::None) }
     }
+
     #[doc = "`op_Implicit(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` overload"]
     pub fn op_implicit(
-        output: impl ::core::convert::Into<
-            crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
-        >,
+        output: impl ::core::convert::Into<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput>,
     ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
-        unsafe {
-            __AnimationPlayableOutput_unity2_raw::op_implicit(
-                ::core::convert::Into::into(output),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimationPlayableOutput_unity2_raw::op_implicit(::core::convert::Into::into(output), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"]
     pub fn op_explicit(
-        output: impl ::core::convert::Into<
-            crate::unity_engine::playables::playableoutput::PlayableOutput,
-        >,
+        output: impl ::core::convert::Into<crate::unity_engine::playables::playableoutput::PlayableOutput>,
     ) -> crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput {
-        unsafe {
-            __AnimationPlayableOutput_unity2_raw::op_explicit(
-                ::core::convert::Into::into(output),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimationPlayableOutput_unity2_raw::op_explicit(::core::convert::Into::into(output), ::core::option::Option::None) }
     }
+
     #[doc = "`InternalSetTarget(*mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, crate::unity_engine::animator::Animator)` overload"]
     pub fn internal_set_target(
         target: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
     ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>::uninit();
             __AnimationPlayableOutput_unity2_raw::internal_set_target(
                 __out_0.as_mut_ptr(),
                 ::core::convert::Into::into(target),
@@ -474,40 +423,18 @@ impl AnimationPlayableOutput {
 #[cfg(feature = "unity_engine-animations-animationplayableoutput")]
 impl AnimationPlayableOutput {
     #[doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]
-    pub fn ctor(
-        self,
-        handle: impl ::core::convert::Into<
-            crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-        >,
-    ) -> () {
-        unsafe {
-            __AnimationPlayableOutput_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn ctor(self, handle: impl ::core::convert::Into<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>) -> () {
+        unsafe { __AnimationPlayableOutput_unity2_raw::ctor(self, ::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHandle()` overload"]
-    pub fn get_handle(
-        self,
-    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
-        unsafe {
-            __AnimationPlayableOutput_unity2_raw::get_handle(self, ::core::option::Option::None)
-        }
+    pub fn get_handle(self) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
+        unsafe { __AnimationPlayableOutput_unity2_raw::get_handle(self, ::core::option::Option::None) }
     }
+
     #[doc = "`SetTarget(crate::unity_engine::animator::Animator)` overload"]
-    pub fn set_target(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-    ) -> () {
-        unsafe {
-            __AnimationPlayableOutput_unity2_raw::set_target(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_target(self, value: impl ::core::convert::Into<crate::unity_engine::animator::Animator>) -> () {
+        unsafe { __AnimationPlayableOutput_unity2_raw::set_target(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 }
 
@@ -515,10 +442,9 @@ impl AnimationPlayableOutput {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationPlayableOutput;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,48 +2,28 @@
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-groupoperation-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{
-        AsyncOperationBase_1, IAsyncOperationBase_1,
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
     };
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.AsyncOperations",
-        name = "GroupOperation"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >)]
-    pub struct GroupOperation {
-# [rename (name = "m_InternalOnComplete")] pub m_internal_on_complete : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > ,
-# [rename (name = "m_LoadedCount")] pub m_loaded_count : i32 ,
-# [rename (name = "m_Settings")] pub m_settings : crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings ,
-# [rename (name = "debugName")] pub debug_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_MaxDisplayedLocationLength")] pub k_max_displayed_location_length : i32 ,
-# [rename (name = "m_CachedDependencyLocations")] pub m_cached_dependency_locations : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
-}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation_GroupOperationSettings.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GroupOperation_GroupOperationSettings {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GroupOperation_GroupOperationSettings {
-        const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.AsyncOperations";
-
         const NAME: &'static str = "GroupOperation.GroupOperationSettings";
+        const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.AsyncOperations";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -54,10 +34,7 @@ mod __types {
 
     impl ::unity2::IlType for GroupOperation_GroupOperationSettings {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -74,6 +51,26 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation.md"))]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.AsyncOperations", name = "GroupOperation")]
+    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >)]
+    pub struct GroupOperation {
+        #[rename(name = "m_InternalOnComplete")]
+        pub m_internal_on_complete:
+            crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>,
+        #[rename(name = "m_LoadedCount")]
+        pub m_loaded_count: i32,
+        #[rename(name = "m_Settings")]
+        pub m_settings: crate::unity_engine::resource_management::async_operations::groupoperation::GroupOperation_GroupOperationSettings,
+        #[rename(name = "debugName")]
+        pub debug_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "k_MaxDisplayedLocationLength")]
+        pub k_max_displayed_location_length: i32,
+        #[rename(name = "m_CachedDependencyLocations")]
+        pub m_cached_dependency_locations: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-groupoperation-types")]
@@ -88,9 +85,7 @@ mod __GroupOperation_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -103,36 +98,27 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: GroupOperation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GroupOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_wait_for_completion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -145,39 +131,27 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "InvokeWaitForCompletion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "InvokeWaitForCompletion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke_wait_for_completion(
-        this: GroupOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn invoke_wait_for_completion(this: GroupOperation, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GroupOperation, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_wait_for_completion::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke_wait_for_completion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_resource_management_async_operations_i_cachable_get_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -190,36 +164,35 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.ResourceManagement.AsyncOperations.ICachable.get_Key",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.ResourceManagement.AsyncOperations.ICachable.get_Key",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_resource_management_async_operations_i_cachable_get_key(
         this: GroupOperation,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey
-    {
-        let inner : extern "C" fn (GroupOperation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_resource_management_async_operations_i_cachable_get_key :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey {
+        let inner: extern "C" fn(
+            GroupOperation,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey =
+            ::core::mem::transmute(__lookup_unity_engine_resource_management_async_operations_i_cachable_get_key::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_resource_management_async_operations_i_cachable_set_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
                 "UnityEngine.ResourceManagement.AsyncOperations.ICachable.set_Key",
@@ -231,35 +204,34 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.ResourceManagement.AsyncOperations.ICachable.set_Key",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.ResourceManagement.AsyncOperations.ICachable.set_Key",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_resource_management_async_operations_i_cachable_set_key(
         this: GroupOperation,
-        value : crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey,
+        value: crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (GroupOperation , crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_resource_management_async_operations_i_cachable_set_key :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            GroupOperation,
+            crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_unity_engine_resource_management_async_operations_i_cachable_set_key::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dependent_ops {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -272,31 +244,39 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "GetDependentOps",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "GetDependentOps",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_dependent_ops (this : GroupOperation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >{
-        let inner : extern "C" fn (GroupOperation , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dependent_ops :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_dependent_ops(
+        this: GroupOperation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+    > {
+        let inner: extern "C" fn(
+            GroupOperation,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        > = ::core::mem::transmute(__lookup_get_dependent_ops::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dependencies {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
                 "GetDependencies",
@@ -308,35 +288,38 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "GetDependencies",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "GetDependencies",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_dependencies(
         this: GroupOperation,
-        deps : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        deps: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (GroupOperation , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dependencies :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            GroupOperation,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_get_dependencies::get_method_info().method_ptr);
         inner(this, deps, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_dependencies {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -349,43 +332,29 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseDependencies",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseDependencies",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_dependencies(
-        this: GroupOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn release_dependencies(this: GroupOperation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GroupOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release_dependencies::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_release_dependencies::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_download_status {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::hashset_1::HashSet_1<
-                    crate::system::object::Object,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
                 "GetDownloadStatus",
@@ -397,39 +366,38 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "GetDownloadStatus",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "GetDownloadStatus",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_download_status(
         this: GroupOperation,
-        visited: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::system::object::Object,
-        >,
+        visited: crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus
-    {
-        let inner : extern "C" fn (GroupOperation , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_download_status :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus {
+        let inner: extern "C" fn(
+            GroupOperation,
+            crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus =
+            ::core::mem::transmute(__lookup_get_download_status::get_method_info().method_ptr);
         inner(this, visited, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dependencies_are_unchanged {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
                 "DependenciesAreUnchanged",
@@ -441,35 +409,38 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "DependenciesAreUnchanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "DependenciesAreUnchanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dependencies_are_unchanged(
         this: GroupOperation,
-        deps : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        deps: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (GroupOperation , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_dependencies_are_unchanged :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            GroupOperation,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_dependencies_are_unchanged::get_method_info().method_ptr);
         inner(this, deps, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -482,41 +453,27 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "get_DebugName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "get_DebugName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_debug_name(
-        this: GroupOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GroupOperation,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_debug_name::get_offset() as isize),
-        );
+    pub unsafe fn get_debug_name(this: GroupOperation, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(GroupOperation, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -529,39 +486,27 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn execute(
-        this: GroupOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn execute(this: GroupOperation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GroupOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_complete_if_dependencies_complete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -574,39 +519,27 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "CompleteIfDependenciesComplete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "CompleteIfDependenciesComplete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn complete_if_dependencies_complete(
-        this: GroupOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn complete_if_dependencies_complete(this: GroupOperation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GroupOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_complete_if_dependencies_complete::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_complete_if_dependencies_complete::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -619,39 +552,27 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy(
-        this: GroupOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy(this: GroupOperation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GroupOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_progress {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
@@ -664,73 +585,68 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "get_Progress",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "get_Progress",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_progress(
-        this: GroupOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_progress(this: GroupOperation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GroupOperation, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_progress::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_progress::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupOperation as ::unity2::ClassIdentity>::class(),
-                "Init",
-                3,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+                > as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<GroupOperation as ::unity2::ClassIdentity>::class(), "Init", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init(
         this: GroupOperation,
-        operations : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        operations: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        >,
         release_dependencies_on_failure: bool,
         allow_failed_dependencies: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (GroupOperation , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_init :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            GroupOperation,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(
             this,
             operations,
@@ -743,52 +659,51 @@ mod __GroupOperation_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_init_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GroupOperation as ::unity2::ClassIdentity>::class(),
-                "Init",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GroupOperation as ::unity2::ClassIdentity>::class(), "Init", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init_2(
         this: GroupOperation,
-        operations : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
-        settings : crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings,
+        operations: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        >,
+        settings: crate::unity_engine::resource_management::async_operations::groupoperation::GroupOperation_GroupOperationSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (GroupOperation , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_init_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            GroupOperation,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+            crate::unity_engine::resource_management::async_operations::groupoperation::GroupOperation_GroupOperationSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_init_2::get_method_info().method_ptr);
         inner(this, operations, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_operation_completed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GroupOperation as ::unity2::ClassIdentity>::class(),
                 "OnOperationCompleted",
@@ -800,26 +715,27 @@ mod __GroupOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GroupOperation as ::unity2::ClassIdentity>::NAME,
-                    "OnOperationCompleted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GroupOperation as ::unity2::ClassIdentity>::NAME,
+                        "OnOperationCompleted",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_operation_completed(
         this: GroupOperation,
-        op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+        op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (GroupOperation , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_on_operation_completed :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            GroupOperation,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_on_operation_completed::get_method_info().method_ptr);
         inner(this, op, __unity2_method_info)
     }
 }
@@ -829,182 +745,147 @@ pub trait IGroupOperationMethods: IGroupOperation {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GroupOperation_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InvokeWaitForCompletion()` overload"]
     fn invoke_wait_for_completion(self) -> bool {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw::invoke_wait_for_completion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.ResourceManagement.AsyncOperations.ICachable.get_Key()` overload"]
     fn unity_engine_resource_management_async_operations_i_cachable_get_key(
         self,
-    ) -> crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey
-    {
+    ) -> crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw :: unity_engine_resource_management_async_operations_i_cachable_get_key (__receiver , :: core :: option :: Option :: None)
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::unity_engine_resource_management_async_operations_i_cachable_get_key(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
     #[doc = "`UnityEngine.ResourceManagement.AsyncOperations.ICachable.set_Key(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]
     fn unity_engine_resource_management_async_operations_i_cachable_set_key(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey>,
     ) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw :: unity_engine_resource_management_async_operations_i_cachable_set_key (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None)
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::unity_engine_resource_management_async_operations_i_cachable_set_key(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
         }
     }
-    #[doc = "`GetDependentOps()` overload"]    fn get_dependent_ops (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >{
+    #[doc = "`GetDependentOps()` overload"]
+    fn get_dependent_ops(
+        self,
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+    > {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GroupOperation_unity2_raw::get_dependent_ops(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]
     fn get_dependencies(
         self,
-        deps : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >,
+        deps: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw::get_dependencies(
-                __receiver,
-                ::core::convert::Into::into(deps),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::get_dependencies(__receiver, ::core::convert::Into::into(deps), ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseDependencies()` overload"]
     fn release_dependencies(self) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw::release_dependencies(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::release_dependencies(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetDownloadStatus(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)` overload"]
     fn get_download_status(
         self,
-        visited: impl ::core::convert::Into<
-            crate::system::collections::generic::hashset_1::HashSet_1<
-                crate::system::object::Object,
-            >,
-        >,
-    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus
-    {
+        visited: impl ::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>>,
+    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw::get_download_status(
-                __receiver,
-                ::core::convert::Into::into(visited),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::get_download_status(__receiver, ::core::convert::Into::into(visited), ::core::option::Option::None)
         }
     }
     #[doc = "`DependenciesAreUnchanged(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]
     fn dependencies_are_unchanged(
         self,
-        deps : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >,
+        deps: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
     ) -> bool {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw::dependencies_are_unchanged(
-                __receiver,
-                ::core::convert::Into::into(deps),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::dependencies_are_unchanged(__receiver, ::core::convert::Into::into(deps), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DebugName()` overload"]
     fn get_debug_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GroupOperation_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Execute()` overload"]
     fn execute(self) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GroupOperation_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CompleteIfDependenciesComplete()` overload"]
     fn complete_if_dependencies_complete(self) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw::complete_if_dependencies_complete(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::complete_if_dependencies_complete(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Destroy()` overload"]
     fn destroy(self) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GroupOperation_unity2_raw::destroy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Progress()` overload"]
     fn get_progress(self) -> f32 {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GroupOperation_unity2_raw::get_progress(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Init(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>, bool, bool)` overload"]
     fn init(
         self,
-        operations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >,
+        operations: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
         release_dependencies_on_failure: impl ::core::convert::Into<bool>,
         allow_failed_dependencies: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GroupOperation_unity2_raw::init(
                 __receiver,
                 ::core::convert::Into::into(operations),
@@ -1017,13 +898,17 @@ pub trait IGroupOperationMethods: IGroupOperation {
     #[doc = "`Init(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>, crate::unity_engine::resource_management::async_operations::groupoperation::GroupOperation_GroupOperationSettings)` overload"]
     fn init_2(
         self,
-        operations : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >,
-        settings : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings >,
+        operations: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
+        settings: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::async_operations::groupoperation::GroupOperation_GroupOperationSettings,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GroupOperation_unity2_raw::init_2(
                 __receiver,
                 ::core::convert::Into::into(operations),
@@ -1035,17 +920,11 @@ pub trait IGroupOperationMethods: IGroupOperation {
     #[doc = "`OnOperationCompleted(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle)` overload"]
     fn on_operation_completed(
         self,
-        op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        op: impl ::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>,
     ) -> () {
         unsafe {
-            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GroupOperation_unity2_raw::on_operation_completed(
-                __receiver,
-                ::core::convert::Into::into(op),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GroupOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GroupOperation_unity2_raw::on_operation_completed(__receiver, ::core::convert::Into::into(op), ::core::option::Option::None)
         }
     }
 }
@@ -1072,20 +951,17 @@ impl GroupOperation {
 #[cfg(feature = "unity_engine-resource_management-async_operations-groupoperation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GroupOperation;
-    pub use super::GroupOperation_GroupOperationSettings;
-    pub use super::IGroupOperation;
-    pub use super::IGroupOperationMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{GroupOperation, GroupOperation_GroupOperationSettings, IGroupOperation, IGroupOperationMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1,
+    };
 }

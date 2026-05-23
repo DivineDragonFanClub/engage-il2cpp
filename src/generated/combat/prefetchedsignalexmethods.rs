@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-prefetchedsignalexmethods-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/prefetchedsignalexmethods/PrefetchedSignalExMethods.md"))]
     #[::unity2::class(namespace = "Combat", name = "PrefetchedSignalExMethods")]
@@ -25,12 +25,9 @@ mod __PrefetchedSignalExMethods_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::prefetchedsignal::PrefetchedSignal as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::prefetchedsignal::PrefetchedSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignalExMethods as ::unity2::ClassIdentity>::class(),
                 "IsNull",
@@ -42,44 +39,29 @@ mod __PrefetchedSignalExMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignalExMethods as ::unity2::ClassIdentity>::NAME,
-                    "IsNull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignalExMethods as ::unity2::ClassIdentity>::NAME,
+                        "IsNull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_null(
-        a: crate::combat::prefetchedsignal::PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::prefetchedsignal::PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_null::get_offset() as isize),
-        );
+    pub unsafe fn is_null(a: crate::combat::prefetchedsignal::PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::prefetchedsignal::PrefetchedSignal, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_null::get_method_info().method_ptr);
         inner(a, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_not_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::prefetchedsignal::PrefetchedSignal as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::prefetchedsignal::PrefetchedSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PrefetchedSignalExMethods as ::unity2::ClassIdentity>::class(),
                 "IsNotNull",
@@ -91,32 +73,20 @@ mod __PrefetchedSignalExMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PrefetchedSignalExMethods as ::unity2::ClassIdentity>::NAME,
-                    "IsNotNull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PrefetchedSignalExMethods as ::unity2::ClassIdentity>::NAME,
+                        "IsNotNull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_not_null(
-        a: crate::combat::prefetchedsignal::PrefetchedSignal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::prefetchedsignal::PrefetchedSignal,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_not_null::get_offset() as isize),
-        );
+    pub unsafe fn is_not_null(a: crate::combat::prefetchedsignal::PrefetchedSignal, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::prefetchedsignal::PrefetchedSignal, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_not_null::get_method_info().method_ptr);
         inner(a, __unity2_method_info)
     }
 }
@@ -124,34 +94,20 @@ mod __PrefetchedSignalExMethods_unity2_raw {
 #[cfg(feature = "combat-prefetchedsignalexmethods")]
 impl PrefetchedSignalExMethods {
     #[doc = "`IsNull(crate::combat::prefetchedsignal::PrefetchedSignal)` overload"]
-    pub fn is_null(
-        a: impl ::core::convert::Into<crate::combat::prefetchedsignal::PrefetchedSignal>,
-    ) -> bool {
-        unsafe {
-            __PrefetchedSignalExMethods_unity2_raw::is_null(
-                ::core::convert::Into::into(a),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_null(a: impl ::core::convert::Into<crate::combat::prefetchedsignal::PrefetchedSignal>) -> bool {
+        unsafe { __PrefetchedSignalExMethods_unity2_raw::is_null(::core::convert::Into::into(a), ::core::option::Option::None) }
     }
+
     #[doc = "`IsNotNull(crate::combat::prefetchedsignal::PrefetchedSignal)` overload"]
-    pub fn is_not_null(
-        a: impl ::core::convert::Into<crate::combat::prefetchedsignal::PrefetchedSignal>,
-    ) -> bool {
-        unsafe {
-            __PrefetchedSignalExMethods_unity2_raw::is_not_null(
-                ::core::convert::Into::into(a),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_not_null(a: impl ::core::convert::Into<crate::combat::prefetchedsignal::PrefetchedSignal>) -> bool {
+        unsafe { __PrefetchedSignalExMethods_unity2_raw::is_not_null(::core::convert::Into::into(a), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "combat-prefetchedsignalexmethods")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPrefetchedSignalExMethods;
-    pub use super::PrefetchedSignalExMethods;
+    pub use super::{IPrefetchedSignalExMethods, PrefetchedSignalExMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

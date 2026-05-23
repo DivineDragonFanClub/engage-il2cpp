@@ -2,12 +2,76 @@
 
 #[cfg(feature = "root-akcommonusersettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkCommonUserSettings.SpatialAudioSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCommonUserSettings_SpatialAudioSettings {
+        #[rename(name = "m_MaxSoundPropagationDepth")]
+        pub m_max_sound_propagation_depth: u32,
+        #[rename(name = "m_DiffractionFlags")]
+        pub m_diffraction_flags: crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags,
+        #[rename(name = "m_MovementThreshold")]
+        pub m_movement_threshold: f32,
+        #[rename(name = "m_NumberOfPrimaryRays")]
+        pub m_number_of_primary_rays: u32,
+        #[rename(name = "m_MaxReflectionOrder")]
+        pub m_max_reflection_order: u32,
+        #[rename(name = "m_MaxPathLength")]
+        pub m_max_path_length: f32,
+        #[rename(name = "m_EnableDiffractionOnReflections")]
+        pub m_enable_diffraction_on_reflections: bool,
+        #[rename(name = "m_EnableDirectPathDiffraction")]
+        pub m_enable_direct_path_diffraction: bool,
+        #[rename(name = "m_EnableTransmission")]
+        pub m_enable_transmission: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags {
+        const NAME: &'static str = "AkCommonUserSettings.SpatialAudioSettings.DiffractionFlags";
+        const NAMESPACE: &'static str = "";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags {
+        pub fn use_built_in_param() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn use_obstruction() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn calc_emitter_virtual_position() -> Self {
+            Self { value: 8 }
+        }
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings.md"))]
     #[::unity2::class(namespace = "", name = "AkCommonUserSettings")]
@@ -34,76 +98,84 @@ mod __types {
         #[rename(name = "m_NumberOfRefillsInVoice")]
         pub m_number_of_refills_in_voice: u16,
         #[rename(name = "m_SpatialAudioSettings")]
-        pub m_spatial_audio_settings:
-            crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonUserSettings.SpatialAudioSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonUserSettings_SpatialAudioSettings {
-# [rename (name = "m_MaxSoundPropagationDepth")] pub m_max_sound_propagation_depth : u32 ,
-# [rename (name = "m_DiffractionFlags")] pub m_diffraction_flags : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags ,
-# [rename (name = "m_MovementThreshold")] pub m_movement_threshold : f32 ,
-# [rename (name = "m_NumberOfPrimaryRays")] pub m_number_of_primary_rays : u32 ,
-# [rename (name = "m_MaxReflectionOrder")] pub m_max_reflection_order : u32 ,
-# [rename (name = "m_MaxPathLength")] pub m_max_path_length : f32 ,
-# [rename (name = "m_EnableDiffractionOnReflections")] pub m_enable_diffraction_on_reflections : bool ,
-# [rename (name = "m_EnableDirectPathDiffraction")] pub m_enable_direct_path_diffraction : bool ,
-# [rename (name = "m_EnableTransmission")] pub m_enable_transmission : bool ,
-}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags {
-        const NAMESPACE: &'static str = "";
-
-        const NAME: &'static str = "AkCommonUserSettings.SpatialAudioSettings.DiffractionFlags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags {
-        pub fn use_built_in_param() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn use_obstruction() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn calc_emitter_virtual_position() -> Self {
-            Self { value: 8 }
-        }
+        pub m_spatial_audio_settings: crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings,
     }
 }
 
 #[cfg(feature = "root-akcommonusersettings-types")]
 pub use __types::*;
+
+#[cfg(feature = "root-akcommonusersettings")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkCommonUserSettings_SpatialAudioSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCommonUserSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AkCommonUserSettings_SpatialAudioSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkCommonUserSettings_SpatialAudioSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akcommonusersettings")]
+pub trait IAkCommonUserSettings_SpatialAudioSettingsMethods: IAkCommonUserSettings_SpatialAudioSettings {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AkCommonUserSettings_SpatialAudioSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkCommonUserSettings_SpatialAudioSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "root-akcommonusersettings")]
+impl<__T: IAkCommonUserSettings_SpatialAudioSettings> IAkCommonUserSettings_SpatialAudioSettingsMethods for __T {}
+
+#[cfg(feature = "root-akcommonusersettings")]
+impl AkCommonUserSettings_SpatialAudioSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkCommonUserSettings_SpatialAudioSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkCommonUserSettings_SpatialAudioSettingsMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "root-akcommonusersettings")]
 #[doc(hidden)]
@@ -114,9 +186,7 @@ mod __AkCommonUserSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_plugin_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
@@ -129,38 +199,27 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetPluginPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetPluginPath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_plugin_path(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_plugin_path(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_plugin_path::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_plugin_path::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::root::akinitsettings::AkInitSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -174,18 +233,15 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to(
@@ -193,24 +249,15 @@ mod __AkCommonUserSettings_unity2_raw {
         settings: crate::root::akinitsettings::AkInitSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkCommonUserSettings,
-            crate::root::akinitsettings::AkInitSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonUserSettings, crate::root::akinitsettings::AkInitSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::root::akmusicsettings::AkMusicSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -224,18 +271,15 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to_2(
@@ -243,25 +287,17 @@ mod __AkCommonUserSettings_unity2_raw {
         settings: crate::root::akmusicsettings::AkMusicSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkCommonUserSettings,
-            crate::root::akmusicsettings::AkMusicSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonUserSettings, crate::root::akmusicsettings::AkMusicSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to_2::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akstreammgrsettings :: AkStreamMgrSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akstreammgrsettings::AkStreamMgrSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
                 "CopyTo",
@@ -273,18 +309,15 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to_3(
@@ -292,27 +325,17 @@ mod __AkCommonUserSettings_unity2_raw {
         settings: crate::root::akstreammgrsettings::AkStreamMgrSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkCommonUserSettings,
-            crate::root::akstreammgrsettings::AkStreamMgrSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonUserSettings, crate::root::akstreammgrsettings::AkStreamMgrSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to_3::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akdevicesettings::AkDeviceSettings as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akdevicesettings::AkDeviceSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
                 "CopyTo",
@@ -324,18 +347,15 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to_4(
@@ -343,25 +363,17 @@ mod __AkCommonUserSettings_unity2_raw {
         settings: crate::root::akdevicesettings::AkDeviceSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkCommonUserSettings,
-            crate::root::akdevicesettings::AkDeviceSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonUserSettings, crate::root::akdevicesettings::AkDeviceSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to_4::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sample_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akplatforminitsettings :: AkPlatformInitSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akplatforminitsettings::AkPlatformInitSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
                 "SetSampleRate",
@@ -373,18 +385,15 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "SetSampleRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "SetSampleRate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_sample_rate(
@@ -392,25 +401,17 @@ mod __AkCommonUserSettings_unity2_raw {
         settings: crate::root::akplatforminitsettings::AkPlatformInitSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkCommonUserSettings,
-            crate::root::akplatforminitsettings::AkPlatformInitSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sample_rate::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonUserSettings, crate::root::akplatforminitsettings::AkPlatformInitSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_sample_rate::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akplatforminitsettings :: AkPlatformInitSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akplatforminitsettings::AkPlatformInitSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
                 "CopyTo",
@@ -422,18 +423,15 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to_5(
@@ -441,25 +439,17 @@ mod __AkCommonUserSettings_unity2_raw {
         settings: crate::root::akplatforminitsettings::AkPlatformInitSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkCommonUserSettings,
-            crate::root::akplatforminitsettings::AkPlatformInitSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_5::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonUserSettings, crate::root::akplatforminitsettings::AkPlatformInitSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to_5::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
                 "CopyTo",
@@ -471,18 +461,15 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to_6(
@@ -494,21 +481,16 @@ mod __AkCommonUserSettings_unity2_raw {
             AkCommonUserSettings,
             crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_6::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_copy_to_6::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_to_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akunityplatformspecificsettings :: AkUnityPlatformSpecificSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
                 "CopyTo",
@@ -520,18 +502,15 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "CopyTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_to_7(
@@ -543,20 +522,14 @@ mod __AkCommonUserSettings_unity2_raw {
             AkCommonUserSettings,
             crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to_7::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_copy_to_7::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
@@ -569,39 +542,27 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    "Validate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        "Validate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn validate(
-        this: AkCommonUserSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn validate(this: AkCommonUserSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkCommonUserSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_validate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_validate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonUserSettings as ::unity2::ClassIdentity>::class(),
@@ -614,30 +575,20 @@ mod __AkCommonUserSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonUserSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkCommonUserSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkCommonUserSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkCommonUserSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -653,156 +604,82 @@ impl AkCommonUserSettings {
 #[cfg(feature = "root-akcommonusersettings")]
 pub trait IAkCommonUserSettingsMethods: IAkCommonUserSettings {
     #[doc = "`CopyTo(crate::root::akinitsettings::AkInitSettings)` overload"]
-    fn copy_to(
-        self,
-        settings: impl ::core::convert::Into<crate::root::akinitsettings::AkInitSettings>,
-    ) -> () {
+    fn copy_to(self, settings: impl ::core::convert::Into<crate::root::akinitsettings::AkInitSettings>) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonUserSettings_unity2_raw::copy_to(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonUserSettings_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(crate::root::akmusicsettings::AkMusicSettings)` overload"]
-    fn copy_to_2(
-        self,
-        settings: impl ::core::convert::Into<crate::root::akmusicsettings::AkMusicSettings>,
-    ) -> () {
+    fn copy_to_2(self, settings: impl ::core::convert::Into<crate::root::akmusicsettings::AkMusicSettings>) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonUserSettings_unity2_raw::copy_to_2(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonUserSettings_unity2_raw::copy_to_2(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(crate::root::akstreammgrsettings::AkStreamMgrSettings)` overload"]
-    fn copy_to_3(
-        self,
-        settings: impl ::core::convert::Into<crate::root::akstreammgrsettings::AkStreamMgrSettings>,
-    ) -> () {
+    fn copy_to_3(self, settings: impl ::core::convert::Into<crate::root::akstreammgrsettings::AkStreamMgrSettings>) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonUserSettings_unity2_raw::copy_to_3(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonUserSettings_unity2_raw::copy_to_3(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(crate::root::akdevicesettings::AkDeviceSettings)` overload"]
-    fn copy_to_4(
-        self,
-        settings: impl ::core::convert::Into<crate::root::akdevicesettings::AkDeviceSettings>,
-    ) -> () {
+    fn copy_to_4(self, settings: impl ::core::convert::Into<crate::root::akdevicesettings::AkDeviceSettings>) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonUserSettings_unity2_raw::copy_to_4(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonUserSettings_unity2_raw::copy_to_4(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSampleRate(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]
-    fn set_sample_rate(
-        self,
-        settings: impl ::core::convert::Into<
-            crate::root::akplatforminitsettings::AkPlatformInitSettings,
-        >,
-    ) -> () {
+    fn set_sample_rate(self, settings: impl ::core::convert::Into<crate::root::akplatforminitsettings::AkPlatformInitSettings>) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonUserSettings_unity2_raw::set_sample_rate(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonUserSettings_unity2_raw::set_sample_rate(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]
-    fn copy_to_5(
-        self,
-        settings: impl ::core::convert::Into<
-            crate::root::akplatforminitsettings::AkPlatformInitSettings,
-        >,
-    ) -> () {
+    fn copy_to_5(self, settings: impl ::core::convert::Into<crate::root::akplatforminitsettings::AkPlatformInitSettings>) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonUserSettings_unity2_raw::copy_to_5(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonUserSettings_unity2_raw::copy_to_5(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings)` overload"]
-    fn copy_to_6(
-        self,
-        settings: impl ::core::convert::Into<
-            crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings,
-        >,
-    ) -> () {
+    fn copy_to_6(self, settings: impl ::core::convert::Into<crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings>) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonUserSettings_unity2_raw::copy_to_6(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonUserSettings_unity2_raw::copy_to_6(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`CopyTo(crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings)` overload"]
-    fn copy_to_7(
-        self,
-        settings: impl ::core::convert::Into<
-            crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings,
-        >,
-    ) -> () {
+    fn copy_to_7(self, settings: impl ::core::convert::Into<crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings>) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCommonUserSettings_unity2_raw::copy_to_7(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonUserSettings_unity2_raw::copy_to_7(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`Validate()` overload"]
     fn validate(self) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkCommonUserSettings_unity2_raw::validate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkCommonUserSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkCommonUserSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -829,113 +706,17 @@ impl AkCommonUserSettings {
 
 #[cfg(feature = "root-akcommonusersettings")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCommonUserSettings_SpatialAudioSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonUserSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkCommonUserSettings_SpatialAudioSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCommonUserSettings_SpatialAudioSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akcommonusersettings")]
-pub trait IAkCommonUserSettings_SpatialAudioSettingsMethods:
-    IAkCommonUserSettings_SpatialAudioSettings
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < AkCommonUserSettings_SpatialAudioSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkCommonUserSettings_SpatialAudioSettings_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akcommonusersettings")]
-impl<__T: IAkCommonUserSettings_SpatialAudioSettings>
-    IAkCommonUserSettings_SpatialAudioSettingsMethods for __T
-{
-}
-
-#[cfg(feature = "root-akcommonusersettings")]
-impl AkCommonUserSettings_SpatialAudioSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCommonUserSettings_SpatialAudioSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCommonUserSettings_SpatialAudioSettingsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-akcommonusersettings")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::AkCommonUserSettings;
-    pub use super::AkCommonUserSettings_SpatialAudioSettings;
-    pub use super::AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags;
-    pub use super::IAkCommonUserSettings;
-    pub use super::IAkCommonUserSettingsMethods;
-    pub use super::IAkCommonUserSettings_SpatialAudioSettings;
-    pub use super::IAkCommonUserSettings_SpatialAudioSettingsMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        AkCommonUserSettings, AkCommonUserSettings_SpatialAudioSettings, AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags,
+        IAkCommonUserSettings, IAkCommonUserSettingsMethods, IAkCommonUserSettings_SpatialAudioSettings,
+        IAkCommonUserSettings_SpatialAudioSettingsMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

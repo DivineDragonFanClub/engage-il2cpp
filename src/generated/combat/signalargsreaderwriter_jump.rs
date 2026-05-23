@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-signalargsreaderwriter_jump-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/signalargsreaderwriter_jump/SignalArgsReaderWriter_Jump.md"))]
     #[::unity2::class(namespace = "Combat", name = "SignalArgsReaderWriter_Jump")]
@@ -25,13 +25,9 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_jump_is_grounding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::class(),
                 "JumpIsGrounding",
@@ -43,44 +39,29 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpIsGrounding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpIsGrounding",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn jump_is_grounding(
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_is_grounding::get_offset() as isize),
-        );
+    pub unsafe fn jump_is_grounding(ev: crate::unity_engine::animationevent::AnimationEvent, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_jump_is_grounding::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_is_grounding_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -94,18 +75,15 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpIsGrounding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpIsGrounding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_is_grounding_2(
@@ -113,28 +91,17 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_is_grounding_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_is_grounding_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_curve_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::class(),
                 "JumpCurveType",
@@ -146,44 +113,32 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpCurveType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpCurveType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_curve_type(
         ev: crate::unity_engine::animationevent::AnimationEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::curve::Curve_Type {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::curve::Curve_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_curve_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> crate::app::curve::Curve_Type =
+            ::core::mem::transmute(__lookup_jump_curve_type::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_curve_type_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <crate::app::curve::Curve_Type as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -197,18 +152,15 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpCurveType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpCurveType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_curve_type_2(
@@ -216,28 +168,17 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         value: crate::app::curve::Curve_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            crate::app::curve::Curve_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_curve_type_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, crate::app::curve::Curve_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_curve_type_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_curve_power {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::class(),
                 "JumpCurvePower",
@@ -249,44 +190,29 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpCurvePower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpCurvePower",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn jump_curve_power(
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_curve_power::get_offset() as isize),
-        );
+    pub unsafe fn jump_curve_power(ev: crate::unity_engine::animationevent::AnimationEvent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_jump_curve_power::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_curve_power_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -300,18 +226,15 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpCurvePower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpCurvePower",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_curve_power_2(
@@ -319,28 +242,17 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         value: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_curve_power_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_curve_power_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_landing_point {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::class(),
                 "JumpLandingPoint",
@@ -352,44 +264,29 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpLandingPoint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpLandingPoint",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn jump_landing_point(
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_landing_point::get_offset() as isize),
-        );
+    pub unsafe fn jump_landing_point(ev: crate::unity_engine::animationevent::AnimationEvent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_jump_landing_point::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_landing_point_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -403,18 +300,15 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpLandingPoint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpLandingPoint",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_landing_point_2(
@@ -422,28 +316,17 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         value: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_landing_point_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_landing_point_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_landing_time_after {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::class(),
                 "JumpLandingTimeAfter",
@@ -455,44 +338,32 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpLandingTimeAfter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpLandingTimeAfter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_landing_time_after(
         ev: crate::unity_engine::animationevent::AnimationEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_landing_time_after::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_jump_landing_time_after::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_landing_time_after_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -506,18 +377,15 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
-                    "JumpLandingTimeAfter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Jump as ::unity2::ClassIdentity>::NAME,
+                        "JumpLandingTimeAfter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_landing_time_after_2(
@@ -525,15 +393,8 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
         value: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_landing_time_after_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_landing_time_after_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
 }
@@ -541,16 +402,10 @@ mod __SignalArgsReaderWriter_Jump_unity2_raw {
 #[cfg(feature = "combat-signalargsreaderwriter_jump")]
 impl SignalArgsReaderWriter_Jump {
     #[doc = "`JumpIsGrounding(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn jump_is_grounding(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> bool {
-        unsafe {
-            __SignalArgsReaderWriter_Jump_unity2_raw::jump_is_grounding(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn jump_is_grounding(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> bool {
+        unsafe { __SignalArgsReaderWriter_Jump_unity2_raw::jump_is_grounding(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`JumpIsGrounding(crate::unity_engine::animationevent::AnimationEvent, bool)` overload"]
     pub fn jump_is_grounding_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -564,17 +419,12 @@ impl SignalArgsReaderWriter_Jump {
             )
         }
     }
+
     #[doc = "`JumpCurveType(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn jump_curve_type(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> crate::app::curve::Curve_Type {
-        unsafe {
-            __SignalArgsReaderWriter_Jump_unity2_raw::jump_curve_type(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn jump_curve_type(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> crate::app::curve::Curve_Type {
+        unsafe { __SignalArgsReaderWriter_Jump_unity2_raw::jump_curve_type(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`JumpCurveType(crate::unity_engine::animationevent::AnimationEvent, crate::app::curve::Curve_Type)` overload"]
     pub fn jump_curve_type_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -588,17 +438,12 @@ impl SignalArgsReaderWriter_Jump {
             )
         }
     }
+
     #[doc = "`JumpCurvePower(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn jump_curve_power(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> i32 {
-        unsafe {
-            __SignalArgsReaderWriter_Jump_unity2_raw::jump_curve_power(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn jump_curve_power(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> i32 {
+        unsafe { __SignalArgsReaderWriter_Jump_unity2_raw::jump_curve_power(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`JumpCurvePower(crate::unity_engine::animationevent::AnimationEvent, i32)` overload"]
     pub fn jump_curve_power_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -612,17 +457,12 @@ impl SignalArgsReaderWriter_Jump {
             )
         }
     }
+
     #[doc = "`JumpLandingPoint(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn jump_landing_point(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> f32 {
-        unsafe {
-            __SignalArgsReaderWriter_Jump_unity2_raw::jump_landing_point(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn jump_landing_point(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> f32 {
+        unsafe { __SignalArgsReaderWriter_Jump_unity2_raw::jump_landing_point(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`JumpLandingPoint(crate::unity_engine::animationevent::AnimationEvent, f32)` overload"]
     pub fn jump_landing_point_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -636,17 +476,12 @@ impl SignalArgsReaderWriter_Jump {
             )
         }
     }
+
     #[doc = "`JumpLandingTimeAfter(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn jump_landing_time_after(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> f32 {
-        unsafe {
-            __SignalArgsReaderWriter_Jump_unity2_raw::jump_landing_time_after(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn jump_landing_time_after(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> f32 {
+        unsafe { __SignalArgsReaderWriter_Jump_unity2_raw::jump_landing_time_after(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`JumpLandingTimeAfter(crate::unity_engine::animationevent::AnimationEvent, f32)` overload"]
     pub fn jump_landing_time_after_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -665,8 +500,7 @@ impl SignalArgsReaderWriter_Jump {
 #[cfg(feature = "combat-signalargsreaderwriter_jump")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISignalArgsReaderWriter_Jump;
-    pub use super::SignalArgsReaderWriter_Jump;
+    pub use super::{ISignalArgsReaderWriter_Jump, SignalArgsReaderWriter_Jump};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

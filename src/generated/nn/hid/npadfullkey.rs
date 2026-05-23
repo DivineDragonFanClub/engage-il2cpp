@@ -2,10 +2,10 @@
 
 #[cfg(feature = "nn-hid-npadfullkey-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/npadfullkey/NpadFullKey.md"))]
     #[::unity2::class(namespace = "nn.hid", name = "NpadFullKey")]
@@ -25,36 +25,25 @@ mod __NpadFullKey_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::nn::hid::npadfullkeystate::NpadFullKeyState as ::unity2::IlType>::il_type(),
                 <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NpadFullKey as ::unity2::ClassIdentity>::class(),
-                "GetState",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<NpadFullKey as ::unity2::ClassIdentity>::class(), "GetState", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadFullKey as ::unity2::ClassIdentity>::NAME,
-                    "GetState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadFullKey as ::unity2::ClassIdentity>::NAME,
+                        "GetState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_state(
@@ -66,47 +55,32 @@ mod __NpadFullKey_unity2_raw {
             *mut crate::nn::hid::npadfullkeystate::NpadFullKeyState,
             crate::nn::hid::npadid::NpadId,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_state::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
         inner(p_out_value, npad_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_state_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::nn::hid::npadstate::NpadState as ::unity2::IlType>::il_type(),
                 <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NpadFullKey as ::unity2::ClassIdentity>::class(),
-                "GetState",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<NpadFullKey as ::unity2::ClassIdentity>::class(), "GetState", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadFullKey as ::unity2::ClassIdentity>::NAME,
-                    "GetState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadFullKey as ::unity2::ClassIdentity>::NAME,
+                        "GetState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_state_2(
@@ -114,25 +88,20 @@ mod __NpadFullKey_unity2_raw {
         npad_id: crate::nn::hid::npadid::NpadId,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::nn::hid::npadstate::NpadState,
-            crate::nn::hid::npadid::NpadId,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_state_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::nn::hid::npadstate::NpadState, crate::nn::hid::npadid::NpadId, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_state_2::get_method_info().method_ptr);
         inner(p_out_value, npad_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_states {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: npadfullkeystate :: NpadFullKeyState > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::nn::hid::npadfullkeystate::NpadFullKeyState> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NpadFullKey as ::unity2::ClassIdentity>::class(),
                 "GetStates",
@@ -144,18 +113,15 @@ mod __NpadFullKey_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadFullKey as ::unity2::ClassIdentity>::NAME,
-                    "GetStates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadFullKey as ::unity2::ClassIdentity>::NAME,
+                        "GetStates",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_states(
@@ -169,21 +135,19 @@ mod __NpadFullKey_unity2_raw {
             i32,
             crate::nn::hid::npadid::NpadId,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_states::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_states::get_method_info().method_ptr);
         inner(p_out_values, count, npad_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_states_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: npadstatearrayitem :: NpadStateArrayItem > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NpadFullKey as ::unity2::ClassIdentity>::class(),
                 "GetStates",
@@ -195,18 +159,15 @@ mod __NpadFullKey_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NpadFullKey as ::unity2::ClassIdentity>::NAME,
-                    "GetStates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NpadFullKey as ::unity2::ClassIdentity>::NAME,
+                        "GetStates",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_states_2(
@@ -220,11 +181,7 @@ mod __NpadFullKey_unity2_raw {
             i32,
             crate::nn::hid::npadid::NpadId,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_states_2::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_states_2::get_method_info().method_ptr);
         inner(p_out_values, count, npad_id, __unity2_method_info)
     }
 }
@@ -232,41 +189,26 @@ mod __NpadFullKey_unity2_raw {
 #[cfg(feature = "nn-hid-npadfullkey")]
 impl NpadFullKey {
     #[doc = "`GetState(*mutcrate::nn::hid::npadfullkeystate::NpadFullKeyState, crate::nn::hid::npadid::NpadId)` overload"]
-    pub fn get_state(
-        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
-    ) -> crate::nn::hid::npadfullkeystate::NpadFullKeyState {
+    pub fn get_state(npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>) -> crate::nn::hid::npadfullkeystate::NpadFullKeyState {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::nn::hid::npadfullkeystate::NpadFullKeyState,
-            >::uninit();
-            __NpadFullKey_unity2_raw::get_state(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(npad_id),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::nn::hid::npadfullkeystate::NpadFullKeyState>::uninit();
+            __NpadFullKey_unity2_raw::get_state(__out_0.as_mut_ptr(), ::core::convert::Into::into(npad_id), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetState(*mutcrate::nn::hid::npadstate::NpadState, crate::nn::hid::npadid::NpadId)` overload"]
-    pub fn get_state_2(
-        npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
-    ) -> crate::nn::hid::npadstate::NpadState {
+    pub fn get_state_2(npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>) -> crate::nn::hid::npadstate::NpadState {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::nn::hid::npadstate::NpadState>::uninit();
-            __NpadFullKey_unity2_raw::get_state_2(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(npad_id),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::nn::hid::npadstate::NpadState>::uninit();
+            __NpadFullKey_unity2_raw::get_state_2(__out_0.as_mut_ptr(), ::core::convert::Into::into(npad_id), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetStates(::unity2::Array<crate::nn::hid::npadfullkeystate::NpadFullKeyState>, i32, crate::nn::hid::npadid::NpadId)` overload"]
     pub fn get_states(
-        p_out_values: impl ::core::convert::Into<
-            ::unity2::Array<crate::nn::hid::npadfullkeystate::NpadFullKeyState>,
-        >,
+        p_out_values: impl ::core::convert::Into<::unity2::Array<crate::nn::hid::npadfullkeystate::NpadFullKeyState>>,
         count: impl ::core::convert::Into<i32>,
         npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
     ) -> i32 {
@@ -279,11 +221,10 @@ impl NpadFullKey {
             )
         }
     }
+
     #[doc = "`GetStates(::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>, i32, crate::nn::hid::npadid::NpadId)` overload"]
     pub fn get_states_2(
-        p_out_values: impl ::core::convert::Into<
-            ::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>,
-        >,
+        p_out_values: impl ::core::convert::Into<::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>>,
         count: impl ::core::convert::Into<i32>,
         npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
     ) -> i32 {
@@ -301,8 +242,7 @@ impl NpadFullKey {
 #[cfg(feature = "nn-hid-npadfullkey")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INpadFullKey;
-    pub use super::NpadFullKey;
+    pub use super::{INpadFullKey, NpadFullKey};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

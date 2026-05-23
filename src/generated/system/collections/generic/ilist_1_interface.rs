@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-generic-ilist_1_interface-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ilist_1_interface/IList_1_Interface.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "IList`1")]
@@ -41,7 +41,5 @@ impl<T0: ::unity2::ClassIdentity> IList_1_Interface<T0> {
 #[cfg(feature = "system-collections-generic-ilist_1_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIList_1_Interface;
-    pub use super::IIList_1_InterfaceMethods;
-    pub use super::IList_1_Interface;
+    pub use super::{IIList_1_Interface, IIList_1_InterfaceMethods, IList_1_Interface};
 }

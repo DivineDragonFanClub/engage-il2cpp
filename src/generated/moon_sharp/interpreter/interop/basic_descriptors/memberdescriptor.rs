@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-memberdescriptor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/basic_descriptors/memberdescriptor/MemberDescriptor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors",
-        name = "MemberDescriptor"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors", name = "MemberDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct MemberDescriptor {}
 }
@@ -28,9 +25,7 @@ mod __MemberDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_has_all_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -43,35 +38,34 @@ mod __MemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "HasAllFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "HasAllFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn has_all_flags(
-        access : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess,
-        flag : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess,
+        access: crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess,
+        flag: crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_has_all_flags :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess,
+            crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_has_all_flags::get_method_info().method_ptr);
         inner(access, flag, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_read {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -84,34 +78,32 @@ mod __MemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CanRead",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CanRead",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_read(
-        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+        desc: crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_can_read :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_can_read::get_method_info().method_ptr);
         inner(desc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_write {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -124,34 +116,32 @@ mod __MemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CanWrite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CanWrite",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_write(
-        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+        desc: crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_can_write :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_can_write::get_method_info().method_ptr);
         inner(desc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -164,34 +154,32 @@ mod __MemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CanExecute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CanExecute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_execute(
-        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+        desc: crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_can_execute :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_can_execute::get_method_info().method_ptr);
         inner(desc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_getter_callback_as_dyn_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -204,36 +192,37 @@ mod __MemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "GetGetterCallbackAsDynValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "GetGetterCallbackAsDynValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_getter_callback_as_dyn_value(
-        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+        desc: crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
         script: crate::moon_sharp::interpreter::script::Script,
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , crate :: moon_sharp :: interpreter :: script :: Script , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_getter_callback_as_dyn_value :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+            crate::moon_sharp::interpreter::script::Script,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_get_getter_callback_as_dyn_value::get_method_info().method_ptr);
         inner(desc, script, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_with_access_or_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -246,30 +235,30 @@ mod __MemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "WithAccessOrNull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "WithAccessOrNull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn with_access_or_null (desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , access : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface{
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_with_access_or_null :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn with_access_or_null(
+        desc: crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+        access: crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface {
+        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface = :: core :: mem :: transmute (__lookup_with_access_or_null :: get_method_info () . method_ptr ,) ;
         inner(desc, access, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_access {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MemberDescriptor as ::unity2::ClassIdentity>::class(),
@@ -282,27 +271,29 @@ mod __MemberDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "CheckAccess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MemberDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "CheckAccess",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_access(
-        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
-        access : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess,
+        desc: crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+        access: crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess,
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_check_access :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+            crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_check_access::get_method_info().method_ptr);
         inner(desc, access, obj, __unity2_method_info)
     }
 }
@@ -311,8 +302,8 @@ mod __MemberDescriptor_unity2_raw {
 impl MemberDescriptor {
     #[doc = "`HasAllFlags(crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess, crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess)` overload"]
     pub fn has_all_flags(
-        access : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess >,
-        flag : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess >,
+        access: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess>,
+        flag: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess>,
     ) -> bool {
         unsafe {
             __MemberDescriptor_unity2_raw::has_all_flags(
@@ -322,42 +313,39 @@ impl MemberDescriptor {
             )
         }
     }
+
     #[doc = "`CanRead(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface)` overload"]
     pub fn can_read(
-        desc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface >,
+        desc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+        >,
     ) -> bool {
-        unsafe {
-            __MemberDescriptor_unity2_raw::can_read(
-                ::core::convert::Into::into(desc),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MemberDescriptor_unity2_raw::can_read(::core::convert::Into::into(desc), ::core::option::Option::None) }
     }
+
     #[doc = "`CanWrite(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface)` overload"]
     pub fn can_write(
-        desc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface >,
+        desc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+        >,
     ) -> bool {
-        unsafe {
-            __MemberDescriptor_unity2_raw::can_write(
-                ::core::convert::Into::into(desc),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MemberDescriptor_unity2_raw::can_write(::core::convert::Into::into(desc), ::core::option::Option::None) }
     }
+
     #[doc = "`CanExecute(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface)` overload"]
     pub fn can_execute(
-        desc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface >,
+        desc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+        >,
     ) -> bool {
-        unsafe {
-            __MemberDescriptor_unity2_raw::can_execute(
-                ::core::convert::Into::into(desc),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MemberDescriptor_unity2_raw::can_execute(::core::convert::Into::into(desc), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGetterCallbackAsDynValue(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface, crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]
     pub fn get_getter_callback_as_dyn_value(
-        desc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface >,
+        desc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+        >,
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
         obj: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -370,7 +358,14 @@ impl MemberDescriptor {
             )
         }
     }
-    #[doc = "`WithAccessOrNull(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface, crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess)` overload"]    pub fn with_access_or_null (desc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface > , access : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess >) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface{
+
+    #[doc = "`WithAccessOrNull(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface, crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess)` overload"]
+    pub fn with_access_or_null(
+        desc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+        >,
+        access: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess>,
+    ) -> crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface {
         unsafe {
             __MemberDescriptor_unity2_raw::with_access_or_null(
                 ::core::convert::Into::into(desc),
@@ -379,10 +374,13 @@ impl MemberDescriptor {
             )
         }
     }
+
     #[doc = "`CheckAccess(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface, crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess, crate::system::object::Object)` overload"]
     pub fn check_access(
-        desc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface >,
-        access : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess >,
+        desc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
+        >,
+        access: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess>,
         obj: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
@@ -399,8 +397,7 @@ impl MemberDescriptor {
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-memberdescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMemberDescriptor;
-    pub use super::MemberDescriptor;
+    pub use super::{IMemberDescriptor, MemberDescriptor};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

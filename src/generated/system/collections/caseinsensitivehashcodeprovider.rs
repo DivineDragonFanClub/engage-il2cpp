@@ -2,16 +2,13 @@
 
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/caseinsensitivehashcodeprovider/CaseInsensitiveHashCodeProvider.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections",
-        name = "CaseInsensitiveHashCodeProvider"
-    )]
+    #[::unity2::class(namespace = "System.Collections", name = "CaseInsensitiveHashCodeProvider")]
     #[parent(crate::system::object::Object)]
     pub struct CaseInsensitiveHashCodeProvider {}
 }
@@ -28,9 +25,7 @@ mod __CaseInsensitiveHashCodeProvider_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::class(),
@@ -43,39 +38,27 @@ mod __CaseInsensitiveHashCodeProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CaseInsensitiveHashCodeProvider,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CaseInsensitiveHashCodeProvider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CaseInsensitiveHashCodeProvider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::class(),
@@ -88,36 +71,32 @@ mod __CaseInsensitiveHashCodeProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::NAME,
-                    "get_Default",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::NAME,
+                        "get_Default",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_default(
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider
-    {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: caseinsensitivehashcodeprovider :: CaseInsensitiveHashCodeProvider = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider =
+            ::core::mem::transmute(__lookup_get_default::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::class(),
                 "GetHashCode",
@@ -129,18 +108,15 @@ mod __CaseInsensitiveHashCodeProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CaseInsensitiveHashCodeProvider as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hash_code(
@@ -148,15 +124,8 @@ mod __CaseInsensitiveHashCodeProvider_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            CaseInsensitiveHashCodeProvider,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hash_code::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CaseInsensitiveHashCodeProvider, crate::system::object::Object, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
 }
@@ -164,12 +133,8 @@ mod __CaseInsensitiveHashCodeProvider_unity2_raw {
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
 impl CaseInsensitiveHashCodeProvider {
     #[doc = "`get_Default()` overload"]
-    pub fn get_default(
-    ) -> crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider
-    {
-        unsafe {
-            __CaseInsensitiveHashCodeProvider_unity2_raw::get_default(::core::option::Option::None)
-        }
+    pub fn get_default() -> crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider {
+        unsafe { __CaseInsensitiveHashCodeProvider_unity2_raw::get_default(::core::option::Option::None) }
     }
 }
 
@@ -179,27 +144,16 @@ pub trait ICaseInsensitiveHashCodeProviderMethods: ICaseInsensitiveHashCodeProvi
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <CaseInsensitiveHashCodeProvider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CaseInsensitiveHashCodeProvider_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <CaseInsensitiveHashCodeProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CaseInsensitiveHashCodeProvider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetHashCode(crate::system::object::Object)` overload"]
     fn get_hash_code(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> i32 {
         unsafe {
             let __receiver =
-                <CaseInsensitiveHashCodeProvider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CaseInsensitiveHashCodeProvider_unity2_raw::get_hash_code(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+                <CaseInsensitiveHashCodeProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CaseInsensitiveHashCodeProvider_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
 }
@@ -226,9 +180,7 @@ impl CaseInsensitiveHashCodeProvider {
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CaseInsensitiveHashCodeProvider;
-    pub use super::ICaseInsensitiveHashCodeProvider;
-    pub use super::ICaseInsensitiveHashCodeProviderMethods;
+    pub use super::{CaseInsensitiveHashCodeProvider, ICaseInsensitiveHashCodeProvider, ICaseInsensitiveHashCodeProviderMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

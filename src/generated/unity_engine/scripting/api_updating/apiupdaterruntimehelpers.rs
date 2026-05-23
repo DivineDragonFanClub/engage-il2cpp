@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/api_updating/apiupdaterruntimehelpers/APIUpdaterRuntimeHelpers.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine._Scripting.APIUpdating",
-        name = "APIUpdaterRuntimeHelpers"
-    )]
+    #[::unity2::class(namespace = "UnityEngine._Scripting.APIUpdating", name = "APIUpdaterRuntimeHelpers")]
     #[parent(crate::system::object::Object)]
     pub struct APIUpdaterRuntimeHelpers {}
 }
@@ -28,9 +25,7 @@ mod __APIUpdaterRuntimeHelpers_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_moved_from_attribute_data_for_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -48,18 +43,15 @@ mod __APIUpdaterRuntimeHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <APIUpdaterRuntimeHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetMovedFromAttributeDataForType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <APIUpdaterRuntimeHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetMovedFromAttributeDataForType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_moved_from_attribute_data_for_type(
@@ -75,20 +67,14 @@ mod __APIUpdaterRuntimeHelpers_unity2_raw {
             *mut ::unity2::Il2CppString,
             *mut ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_moved_from_attribute_data_for_type::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_get_moved_from_attribute_data_for_type::get_method_info().method_ptr);
         inner(source_type, assembly, nsp, klass, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_obsolete_type_redirection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -106,18 +92,15 @@ mod __APIUpdaterRuntimeHelpers_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <APIUpdaterRuntimeHelpers as ::unity2::ClassIdentity>::NAME,
-                    "GetObsoleteTypeRedirection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <APIUpdaterRuntimeHelpers as ::unity2::ClassIdentity>::NAME,
+                        "GetObsoleteTypeRedirection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_obsolete_type_redirection(
@@ -133,18 +116,8 @@ mod __APIUpdaterRuntimeHelpers_unity2_raw {
             *mut ::unity2::Il2CppString,
             *mut ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_obsolete_type_redirection::get_offset() as isize),
-        );
-        inner(
-            source_type,
-            assembly_name,
-            nsp,
-            class_name,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_get_obsolete_type_redirection::get_method_info().method_ptr);
+        inner(source_type, assembly_name, nsp, class_name, __unity2_method_info)
     }
 }
 
@@ -153,12 +126,7 @@ impl APIUpdaterRuntimeHelpers {
     #[doc = "`GetMovedFromAttributeDataForType(::unity2::SystemType, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
     pub fn get_moved_from_attribute_data_for_type(
         source_type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> (
-        bool,
-        ::unity2::Il2CppString,
-        ::unity2::Il2CppString,
-        ::unity2::Il2CppString,
-    ) {
+    ) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
@@ -172,23 +140,14 @@ impl APIUpdaterRuntimeHelpers {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`GetObsoleteTypeRedirection(::unity2::SystemType, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]
     pub fn get_obsolete_type_redirection(
         source_type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> (
-        bool,
-        ::unity2::Il2CppString,
-        ::unity2::Il2CppString,
-        ::unity2::Il2CppString,
-    ) {
+    ) -> (bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
@@ -202,12 +161,7 @@ impl APIUpdaterRuntimeHelpers {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
 }
@@ -215,8 +169,7 @@ impl APIUpdaterRuntimeHelpers {
 #[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::APIUpdaterRuntimeHelpers;
-    pub use super::IAPIUpdaterRuntimeHelpers;
+    pub use super::{APIUpdaterRuntimeHelpers, IAPIUpdaterRuntimeHelpers};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

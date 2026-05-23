@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-playables-scriptplayablebinding-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/scriptplayablebinding/ScriptPlayableBinding.md"))]
     #[::unity2::class(namespace = "UnityEngine.Playables", name = "ScriptPlayableBinding")]
@@ -25,9 +25,7 @@ mod __ScriptPlayableBinding_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -44,18 +42,15 @@ mod __ScriptPlayableBinding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPlayableBinding as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPlayableBinding as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -64,17 +59,23 @@ mod __ScriptPlayableBinding_unity2_raw {
         r#type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playablebinding::PlayableBinding {
-        let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablebinding :: PlayableBinding = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playablebinding::PlayableBinding = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(name, key, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_script_output {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPlayableBinding as ::unity2::ClassIdentity>::class(),
                 "CreateScriptOutput",
@@ -86,18 +87,15 @@ mod __ScriptPlayableBinding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPlayableBinding as ::unity2::ClassIdentity>::NAME,
-                    "CreateScriptOutput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPlayableBinding as ::unity2::ClassIdentity>::NAME,
+                        "CreateScriptOutput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_script_output(
@@ -109,13 +107,8 @@ mod __ScriptPlayableBinding_unity2_raw {
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playableoutput::PlayableOutput =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_script_output::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::playables::playableoutput::PlayableOutput =
+            ::core::mem::transmute(__lookup_create_script_output::get_method_info().method_ptr);
         inner(graph, name, __unity2_method_info)
     }
 }
@@ -137,6 +130,7 @@ impl ScriptPlayableBinding {
             )
         }
     }
+
     #[doc = "`CreateScriptOutput(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]
     pub fn create_script_output(
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
@@ -155,8 +149,7 @@ impl ScriptPlayableBinding {
 #[cfg(feature = "unity_engine-playables-scriptplayablebinding")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptPlayableBinding;
-    pub use super::ScriptPlayableBinding;
+    pub use super::{IScriptPlayableBinding, ScriptPlayableBinding};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

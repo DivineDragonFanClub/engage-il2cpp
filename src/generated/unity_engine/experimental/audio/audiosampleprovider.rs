@@ -2,31 +2,29 @@
 
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider_SampleFramesHandler.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Audio",
-        name = "AudioSampleProvider.SampleFramesHandler"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Audio", name = "AudioSampleProvider.SampleFramesHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct AudioSampleProvider_SampleFramesHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Audio",
-        name = "AudioSampleProvider"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Audio", name = "AudioSampleProvider")]
     #[parent(crate::system::object::Object)]
     pub struct AudioSampleProvider {
-# [rename (name = "sampleFramesAvailable")] pub sample_frames_available : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider_SampleFramesHandler ,
-# [rename (name = "sampleFramesOverflow")] pub sample_frames_overflow : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider_SampleFramesHandler ,
-}
+        #[rename(name = "sampleFramesAvailable")]
+        pub sample_frames_available: crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider_SampleFramesHandler,
+        #[rename(name = "sampleFramesOverflow")]
+        pub sample_frames_overflow: crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider_SampleFramesHandler,
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider-types")]
@@ -41,9 +39,7 @@ mod __AudioSampleProvider_SampleFramesHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -59,18 +55,15 @@ mod __AudioSampleProvider_SampleFramesHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AudioSampleProvider_SampleFramesHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AudioSampleProvider_SampleFramesHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -84,21 +77,18 @@ mod __AudioSampleProvider_SampleFramesHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AudioSampleProvider_SampleFramesHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -110,23 +100,20 @@ mod __AudioSampleProvider_SampleFramesHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AudioSampleProvider_SampleFramesHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AudioSampleProvider_SampleFramesHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
         this: AudioSampleProvider_SampleFramesHandler,
-        provider : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider,
+        provider: crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider,
         sample_frame_count: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -135,27 +122,19 @@ mod __AudioSampleProvider_SampleFramesHandler_unity2_raw {
             crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider,
             u32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, provider, sample_frame_count, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
-pub trait IAudioSampleProvider_SampleFramesHandlerMethods:
-    IAudioSampleProvider_SampleFramesHandler
-{
+pub trait IAudioSampleProvider_SampleFramesHandlerMethods: IAudioSampleProvider_SampleFramesHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < AudioSampleProvider_SampleFramesHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <AudioSampleProvider_SampleFramesHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __AudioSampleProvider_SampleFramesHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -167,13 +146,13 @@ pub trait IAudioSampleProvider_SampleFramesHandlerMethods:
     #[doc = "`Invoke(crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider, u32)` overload"]
     fn invoke(
         self,
-        provider: impl ::core::convert::Into<
-            crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider,
-        >,
+        provider: impl ::core::convert::Into<crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider>,
         sample_frame_count: impl ::core::convert::Into<u32>,
     ) -> () {
         unsafe {
-            let __receiver = < AudioSampleProvider_SampleFramesHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <AudioSampleProvider_SampleFramesHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __AudioSampleProvider_SampleFramesHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(provider),
@@ -185,10 +164,7 @@ pub trait IAudioSampleProvider_SampleFramesHandlerMethods:
 }
 
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
-impl<__T: IAudioSampleProvider_SampleFramesHandler> IAudioSampleProvider_SampleFramesHandlerMethods
-    for __T
-{
-}
+impl<__T: IAudioSampleProvider_SampleFramesHandler> IAudioSampleProvider_SampleFramesHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
 impl AudioSampleProvider_SampleFramesHandler {
@@ -215,11 +191,8 @@ mod __AudioSampleProvider_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_sample_frames_available {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AudioSampleProvider as ::unity2::ClassIdentity>::class(),
                 "InvokeSampleFramesAvailable",
@@ -231,18 +204,15 @@ mod __AudioSampleProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AudioSampleProvider as ::unity2::ClassIdentity>::NAME,
-                    "InvokeSampleFramesAvailable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AudioSampleProvider as ::unity2::ClassIdentity>::NAME,
+                        "InvokeSampleFramesAvailable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke_sample_frames_available(
@@ -251,22 +221,15 @@ mod __AudioSampleProvider_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(AudioSampleProvider, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_sample_frames_available::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke_sample_frames_available::get_method_info().method_ptr);
         inner(this, sample_frame_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_sample_frames_overflow {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AudioSampleProvider as ::unity2::ClassIdentity>::class(),
                 "InvokeSampleFramesOverflow",
@@ -278,18 +241,15 @@ mod __AudioSampleProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AudioSampleProvider as ::unity2::ClassIdentity>::NAME,
-                    "InvokeSampleFramesOverflow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AudioSampleProvider as ::unity2::ClassIdentity>::NAME,
+                        "InvokeSampleFramesOverflow",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke_sample_frames_overflow(
@@ -298,11 +258,7 @@ mod __AudioSampleProvider_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(AudioSampleProvider, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_sample_frames_overflow::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke_sample_frames_overflow::get_method_info().method_ptr);
         inner(this, dropped_sample_frame_count, __unity2_method_info)
     }
 }
@@ -310,14 +266,9 @@ mod __AudioSampleProvider_unity2_raw {
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
 pub trait IAudioSampleProviderMethods: IAudioSampleProvider {
     #[doc = "`InvokeSampleFramesAvailable(i32)` overload"]
-    fn invoke_sample_frames_available(
-        self,
-        sample_frame_count: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn invoke_sample_frames_available(self, sample_frame_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AudioSampleProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AudioSampleProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AudioSampleProvider_unity2_raw::invoke_sample_frames_available(
                 __receiver,
                 ::core::convert::Into::into(sample_frame_count),
@@ -326,14 +277,9 @@ pub trait IAudioSampleProviderMethods: IAudioSampleProvider {
         }
     }
     #[doc = "`InvokeSampleFramesOverflow(i32)` overload"]
-    fn invoke_sample_frames_overflow(
-        self,
-        dropped_sample_frame_count: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn invoke_sample_frames_overflow(self, dropped_sample_frame_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AudioSampleProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AudioSampleProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AudioSampleProvider_unity2_raw::invoke_sample_frames_overflow(
                 __receiver,
                 ::core::convert::Into::into(dropped_sample_frame_count),
@@ -349,19 +295,15 @@ impl<__T: IAudioSampleProvider> IAudioSampleProviderMethods for __T {}
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AudioSampleProvider;
-    pub use super::AudioSampleProvider_SampleFramesHandler;
-    pub use super::IAudioSampleProvider;
-    pub use super::IAudioSampleProviderMethods;
-    pub use super::IAudioSampleProvider_SampleFramesHandler;
-    pub use super::IAudioSampleProvider_SampleFramesHandlerMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        AudioSampleProvider, AudioSampleProvider_SampleFramesHandler, IAudioSampleProvider, IAudioSampleProviderMethods,
+        IAudioSampleProvider_SampleFramesHandler, IAudioSampleProvider_SampleFramesHandlerMethods,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

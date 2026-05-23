@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-reflection-emit-signaturehelper-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/signaturehelper/SignatureHelper.md"))]
     #[::unity2::class(namespace = "System.Reflection.Emit", name = "SignatureHelper")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-signaturehelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISignatureHelper;
-    pub use super::SignatureHelper;
+    pub use super::{ISignatureHelper, SignatureHelper};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

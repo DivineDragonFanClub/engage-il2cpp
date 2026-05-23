@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-reflection-emit-parameterbuilder-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/parameterbuilder/ParameterBuilder.md"))]
     #[::unity2::class(namespace = "System.Reflection.Emit", name = "ParameterBuilder")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "system-reflection-emit-parameterbuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IParameterBuilder;
-    pub use super::ParameterBuilder;
+    pub use super::{IParameterBuilder, ParameterBuilder};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

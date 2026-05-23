@@ -2,18 +2,17 @@
 
 #[cfg(feature = "unity_engine-rendering-listchangedeventhandler_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listchangedeventhandler_1/ListChangedEventHandler_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering",
-        name = "ListChangedEventHandler`1"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ListChangedEventHandler`1")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     #[parent(crate::system::delegate::Delegate)]
     #[parent(crate::system::object::Object)]
@@ -58,16 +57,12 @@ impl<T0: ::unity2::ClassIdentity> ListChangedEventHandler_1<T0> {
 #[cfg(feature = "unity_engine-rendering-listchangedeventhandler_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IListChangedEventHandler_1;
-    pub use super::IListChangedEventHandler_1Methods;
-    pub use super::ListChangedEventHandler_1;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{IListChangedEventHandler_1, IListChangedEventHandler_1Methods, ListChangedEventHandler_1};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

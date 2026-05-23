@@ -21,9 +21,7 @@ pub mod requiredbynativecodeattribute;
 #[cfg(feature = "unity_engine-scripting-requiredbynativecodeattribute")]
 pub use requiredbynativecodeattribute::IRequiredByNativeCodeAttributeMethods;
 #[cfg(feature = "unity_engine-scripting-requiredbynativecodeattribute-types")]
-pub use requiredbynativecodeattribute::{
-    IRequiredByNativeCodeAttribute, RequiredByNativeCodeAttribute,
-};
+pub use requiredbynativecodeattribute::{IRequiredByNativeCodeAttribute, RequiredByNativeCodeAttribute};
 #[cfg(any(feature = "unity_engine-scripting-usedbynativecodeattribute-types"))]
 pub mod usedbynativecodeattribute;
 #[cfg(feature = "unity_engine-scripting-usedbynativecodeattribute")]

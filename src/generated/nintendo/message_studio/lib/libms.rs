@@ -2,12 +2,19 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-libms-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/libms/Libms_LMSMallocPtr.md"))]
+    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms.LMSMallocPtr")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Libms_LMSMallocPtr {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/libms/Libms_LMSFreePtr.md"))]
     #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms.LMSFreePtr")]
@@ -22,15 +29,133 @@ mod __types {
         #[rename(name = "LibmsDllFileName")]
         pub libms_dll_file_name: ::unity2::Il2CppString,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/libms/Libms_LMSMallocPtr.md"))]
-    #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms.LMSMallocPtr")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Libms_LMSMallocPtr {}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-libms-types")]
 pub use __types::*;
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Libms_LMSMallocPtr_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Libms_LMSMallocPtr as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms_LMSMallocPtr as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Libms_LMSMallocPtr,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Libms_LMSMallocPtr, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Libms_LMSMallocPtr as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms_LMSMallocPtr as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: Libms_LMSMallocPtr, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(Libms_LMSMallocPtr, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, size, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+pub trait ILibms_LMSMallocPtrMethods: ILibms_LMSMallocPtr {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <Libms_LMSMallocPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Libms_LMSMallocPtr_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32)` overload"]
+    fn invoke(self, size: impl ::core::convert::Into<i32>) -> ::unity2::IntPtr {
+        unsafe {
+            let __receiver = <Libms_LMSMallocPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Libms_LMSMallocPtr_unity2_raw::invoke(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+impl<__T: ILibms_LMSMallocPtr> ILibms_LMSMallocPtrMethods for __T {}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+impl Libms_LMSMallocPtr {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Libms_LMSMallocPtr),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILibms_LMSMallocPtrMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "nintendo-message_studio-lib-libms")]
 #[doc(hidden)]
@@ -41,9 +166,7 @@ mod __Libms_LMSFreePtr_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -59,18 +182,15 @@ mod __Libms_LMSFreePtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms_LMSFreePtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms_LMSFreePtr as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -79,27 +199,16 @@ mod __Libms_LMSFreePtr_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Libms_LMSFreePtr,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Libms_LMSFreePtr, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms_LMSFreePtr as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -111,34 +220,20 @@ mod __Libms_LMSFreePtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms_LMSFreePtr as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms_LMSFreePtr as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke(
-        this: Libms_LMSFreePtr,
-        ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Libms_LMSFreePtr,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+    pub unsafe fn invoke(this: Libms_LMSFreePtr, ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Libms_LMSFreePtr, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, ptr, __unity2_method_info)
     }
 }
@@ -146,15 +241,9 @@ mod __Libms_LMSFreePtr_unity2_raw {
 #[cfg(feature = "nintendo-message_studio-lib-libms")]
 pub trait ILibms_LMSFreePtrMethods: ILibms_LMSFreePtr {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <Libms_LMSFreePtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Libms_LMSFreePtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Libms_LMSFreePtr_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -166,14 +255,8 @@ pub trait ILibms_LMSFreePtrMethods: ILibms_LMSFreePtr {
     #[doc = "`Invoke(::unity2::IntPtr)` overload"]
     fn invoke(self, ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <Libms_LMSFreePtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Libms_LMSFreePtr_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(ptr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Libms_LMSFreePtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Libms_LMSFreePtr_unity2_raw::invoke(__receiver, ::core::convert::Into::into(ptr), ::core::option::Option::None)
         }
     }
 }
@@ -206,143 +289,70 @@ mod __Libms_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Libms as ::unity2::ClassIdentity>::NAME, ".cctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_alloc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "Alloc",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "Alloc", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "Alloc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Libms as ::unity2::ClassIdentity>::NAME, "Alloc", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn alloc(
-        size: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn alloc(size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_alloc::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_alloc::get_method_info().method_ptr);
         inner(size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_free {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "Free",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "Free", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "Free",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Libms as ::unity2::ClassIdentity>::NAME, "Free", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn free(
-        ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn free(ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_free::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_free::get_method_info().method_ptr);
         inner(ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_set_mem_funcs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nintendo :: message_studio :: lib :: libms :: Libms_LMSMallocPtr as :: unity2 :: IlType > :: il_type () , < crate :: nintendo :: message_studio :: lib :: libms :: Libms_LMSFreePtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nintendo::message_studio::lib::libms::Libms_LMSMallocPtr as ::unity2::IlType>::il_type(),
+                <crate::nintendo::message_studio::lib::libms::Libms_LMSFreePtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_SetMemFuncs",
@@ -354,18 +364,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_SetMemFuncs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_SetMemFuncs",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_set_mem_funcs(
@@ -377,22 +384,15 @@ mod __Libms_unity2_raw {
             crate::nintendo::message_studio::lib::libms::Libms_LMSMallocPtr,
             crate::nintendo::message_studio::lib::libms::Libms_LMSFreePtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_set_mem_funcs::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_lms_set_mem_funcs::get_method_info().method_ptr);
         inner(p_malloc, p_free, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_init_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_InitMessage",
@@ -404,41 +404,28 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_InitMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_InitMessage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_init_message(
-        p_resource: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn lms_init_message(p_resource: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_init_message::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_init_message::get_method_info().method_ptr);
         inner(p_resource, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_close_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_CloseMessage",
@@ -450,39 +437,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_CloseMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_CloseMessage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_close_message(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn lms_close_message(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_close_message::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_close_message::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_search_message_block_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -498,18 +473,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_SearchMessageBlockByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_SearchMessageBlockByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_search_message_block_by_name(
@@ -517,24 +489,15 @@ mod __Libms_unity2_raw {
         p_block_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_search_message_block_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_search_message_block_by_name::get_method_info().method_ptr);
         inner(p_file, p_block_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_message_block_info_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -550,18 +513,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetMessageBlockInfoByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetMessageBlockInfoByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_message_block_info_by_name(
@@ -569,70 +529,42 @@ mod __Libms_unity2_raw {
         p_block_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_message_block_info_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_message_block_info_by_name::get_method_info().method_ptr);
         inner(p_file, p_block_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_text_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "LMS_GetTextNum",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "LMS_GetTextNum", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTextNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTextNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_text_num(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_text_num(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_text_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_text_num::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_text_index_by_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -648,18 +580,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTextIndexByLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTextIndexByLabel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_text_index_by_label(
@@ -667,80 +596,45 @@ mod __Libms_unity2_raw {
         label_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_text_index_by_label::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_text_index_by_label::get_method_info().method_ptr);
         inner(p_file, label_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "LMS_GetText",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "LMS_GetText", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_text(
-        p_file: ::unity2::IntPtr,
-        n_text_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_text::get_offset() as isize),
-        );
+    pub unsafe fn lms_get_text(p_file: ::unity2::IntPtr, n_text_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_text::get_method_info().method_ptr);
         inner(p_file, n_text_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_text_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetTextSize",
@@ -752,40 +646,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTextSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTextSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_text_size(
-        p_file: ::unity2::IntPtr,
-        n_text_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_text_size(p_file: ::unity2::IntPtr, n_text_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_text_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_text_size::get_method_info().method_ptr);
         inner(p_file, n_text_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_text_by_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -801,18 +682,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTextByLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTextByLabel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_text_by_label(
@@ -820,28 +698,17 @@ mod __Libms_unity2_raw {
         label_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_text_by_label::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_text_by_label::get_method_info().method_ptr);
         inner(p_file, label_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_text_style {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetTextStyle",
@@ -853,40 +720,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTextStyle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTextStyle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_text_style(
-        p_file: ::unity2::IntPtr,
-        n_text_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_text_style(p_file: ::unity2::IntPtr, n_text_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_text_style::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_text_style::get_method_info().method_ptr);
         inner(p_file, n_text_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_text_style_by_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -902,18 +756,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTextStyleByLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTextStyleByLabel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_text_style_by_label(
@@ -921,26 +772,16 @@ mod __Libms_unity2_raw {
         label_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_text_style_by_label::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_text_style_by_label::get_method_info().method_ptr);
         inner(p_file, label_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attribute_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetAttributeSize",
@@ -952,43 +793,29 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttributeSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttributeSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_attribute_size(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
+    pub unsafe fn lms_get_attribute_size(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_attribute_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_attribute_size::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetAttribute",
@@ -1000,47 +827,29 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttribute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_attribute(
-        p_file: ::unity2::IntPtr,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_attribute::get_offset() as isize),
-        );
+    pub unsafe fn lms_get_attribute(p_file: ::unity2::IntPtr, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_attribute::get_method_info().method_ptr);
         inner(p_file, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attribute_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetAttributeText",
@@ -1052,47 +861,29 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttributeText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttributeText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_attribute_text(
-        p_file: ::unity2::IntPtr,
-        offset: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            u32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_attribute_text::get_offset() as isize),
-        );
+    pub unsafe fn lms_get_attribute_text(p_file: ::unity2::IntPtr, offset: u32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::IntPtr, u32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_attribute_text::get_method_info().method_ptr);
         inner(p_file, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_filtered_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetAttrFilteredOffset",
@@ -1104,42 +895,28 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrFilteredOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrFilteredOffset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_attr_filtered_offset(
-        p_file: ::unity2::IntPtr,
-        n_attr_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_attr_filtered_offset(p_file: ::unity2::IntPtr, n_attr_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_attr_filtered_offset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_attr_filtered_offset::get_method_info().method_ptr);
         inner(p_file, n_attr_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_init_project {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_InitProject",
@@ -1151,41 +928,28 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_InitProject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_InitProject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_init_project(
-        p_resource: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn lms_init_project(p_resource: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_init_project::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_init_project::get_method_info().method_ptr);
         inner(p_resource, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_close_project {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_CloseProject",
@@ -1197,39 +961,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_CloseProject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_CloseProject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_close_project(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn lms_close_project(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_close_project::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_close_project::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_search_project_block_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1245,18 +997,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_SearchProjectBlockByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_SearchProjectBlockByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_search_project_block_by_name(
@@ -1264,24 +1013,15 @@ mod __Libms_unity2_raw {
         p_block_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_search_project_block_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_search_project_block_by_name::get_method_info().method_ptr);
         inner(p_file, p_block_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_color_index_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1297,18 +1037,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetColorIndexByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetColorIndexByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_color_index_by_name(
@@ -1316,48 +1053,34 @@ mod __Libms_unity2_raw {
         p_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_color_index_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_color_index_by_name::get_method_info().method_ptr);
         inner(p_file, p_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nintendo :: message_studio :: lib :: lmscolor :: LMSColor as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "LMS_GetColor",
-                3,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::nintendo::message_studio::lib::lmscolor::LMSColor as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "LMS_GetColor", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_color(
@@ -1371,21 +1094,19 @@ mod __Libms_unity2_raw {
             i32,
             *mut crate::nintendo::message_studio::lib::lmscolor::LMSColor,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_color::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_lms_get_color::get_method_info().method_ptr);
         inner(p_file, n_color_index, p_color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_color_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: nintendo :: message_studio :: lib :: lmscolor :: LMSColor as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::nintendo::message_studio::lib::lmscolor::LMSColor as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetColorByName",
@@ -1397,18 +1118,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetColorByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetColorByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_color_by_name(
@@ -1422,22 +1140,15 @@ mod __Libms_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::nintendo::message_studio::lib::lmscolor::LMSColor,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_color_by_name::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_lms_get_color_by_name::get_method_info().method_ptr);
         inner(p_file, p_name, p_color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_color_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetColorNum",
@@ -1449,41 +1160,28 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetColorNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetColorNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_color_num(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_color_num(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_color_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_color_num::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_contents_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetContentsNum",
@@ -1495,43 +1193,29 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetContentsNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetContentsNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_contents_num(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_contents_num(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_contents_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_contents_num::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_content_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetContentPath",
@@ -1543,18 +1227,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetContentPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetContentPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_content_path(
@@ -1562,24 +1243,15 @@ mod __Libms_unity2_raw {
         n_content_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_content_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_content_path::get_method_info().method_ptr);
         inner(p_file, n_content_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_info_index_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1595,18 +1267,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrInfoIndexByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrInfoIndexByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_attr_info_index_by_name(
@@ -1614,28 +1283,17 @@ mod __Libms_unity2_raw {
         p_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_attr_info_index_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_attr_info_index_by_name::get_method_info().method_ptr);
         inner(p_file, p_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetAttrType",
@@ -1647,18 +1305,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_attr_type(
@@ -1666,29 +1321,17 @@ mod __Libms_unity2_raw {
         n_attr_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::nintendo::message_studio::lib::libmstype::LibmsType {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::nintendo::message_studio::lib::libmstype::LibmsType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_attr_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> crate::nintendo::message_studio::lib::libmstype::LibmsType =
+            ::core::mem::transmute(__lookup_lms_get_attr_type::get_method_info().method_ptr);
         inner(p_file, n_attr_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetAttrOffset",
@@ -1700,40 +1343,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrOffset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_attr_offset(
-        p_file: ::unity2::IntPtr,
-        n_attr_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_attr_offset(p_file: ::unity2::IntPtr, n_attr_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_attr_offset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_attr_offset::get_method_info().method_ptr);
         inner(p_file, n_attr_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_type_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1749,18 +1379,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrTypeByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrTypeByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_attr_type_by_name(
@@ -1772,21 +1399,15 @@ mod __Libms_unity2_raw {
             ::unity2::IntPtr,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        )
-            -> crate::nintendo::message_studio::lib::libmstype::LibmsType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_attr_type_by_name::get_offset() as isize),
-        );
+        ) -> crate::nintendo::message_studio::lib::libmstype::LibmsType =
+            ::core::mem::transmute(__lookup_lms_get_attr_type_by_name::get_method_info().method_ptr);
         inner(p_file, p_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_offset_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1802,18 +1423,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrOffsetByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrOffsetByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_attr_offset_by_name(
@@ -1821,24 +1439,15 @@ mod __Libms_unity2_raw {
         p_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_attr_offset_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_attr_offset_by_name::get_method_info().method_ptr);
         inner(p_file, p_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_list_item_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1855,18 +1464,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrListItemName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrListItemName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_attr_list_item_name(
@@ -1875,25 +1481,15 @@ mod __Libms_unity2_raw {
         n_item_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_attr_list_item_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, i32, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_attr_list_item_name::get_method_info().method_ptr);
         inner(p_file, n_attr_index, n_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_list_item_name_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1910,18 +1506,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrListItemNameByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrListItemNameByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_attr_list_item_name_by_name(
@@ -1930,75 +1523,44 @@ mod __Libms_unity2_raw {
         n_item_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_attr_list_item_name_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_attr_list_item_name_by_name::get_method_info().method_ptr);
         inner(p_file, p_attr_name, n_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "LMS_GetAttrNum",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "LMS_GetAttrNum", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_attr_num(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_attr_num(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_attr_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_attr_num::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_attr_list_item_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetAttrListItemNum",
@@ -2010,44 +1572,29 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetAttrListItemNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetAttrListItemNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_attr_list_item_num(
-        p_file: ::unity2::IntPtr,
-        n_attr_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_attr_list_item_num(p_file: ::unity2::IntPtr, n_attr_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_attr_list_item_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_attr_list_item_num::get_method_info().method_ptr);
         inner(p_file, n_attr_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_group_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetTagGroupName",
@@ -2059,18 +1606,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagGroupName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagGroupName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_tag_group_name(
@@ -2078,52 +1622,34 @@ mod __Libms_unity2_raw {
         n_group_id: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_tag_group_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, u16, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_tag_group_name::get_method_info().method_ptr);
         inner(p_file, n_group_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "LMS_GetTagName",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "LMS_GetTagName", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_tag_name(
@@ -2132,25 +1658,15 @@ mod __Libms_unity2_raw {
         n_tag_id: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            u16,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_tag_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, u16, u16, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_tag_name::get_method_info().method_ptr);
         inner(p_file, n_group_id, n_tag_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_param_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
@@ -2168,18 +1684,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagParamName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagParamName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_tag_param_name(
@@ -2189,32 +1702,15 @@ mod __Libms_unity2_raw {
         n_param_index: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            u16,
-            u16,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_tag_param_name::get_offset() as isize),
-        );
-        inner(
-            p_file,
-            n_group_id,
-            n_tag_id,
-            n_param_index,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(::unity2::IntPtr, u16, u16, u16, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_tag_param_name::get_method_info().method_ptr);
+        inner(p_file, n_group_id, n_tag_id, n_param_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_param_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
@@ -2232,18 +1728,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagParamType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagParamType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_tag_param_type(
@@ -2259,27 +1752,15 @@ mod __Libms_unity2_raw {
             u16,
             u16,
             ::unity2::OptionalMethod,
-        )
-            -> crate::nintendo::message_studio::lib::libmstype::LibmsType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_tag_param_type::get_offset() as isize),
-        );
-        inner(
-            p_file,
-            n_group_id,
-            n_tag_id,
-            n_param_index,
-            __unity2_method_info,
-        )
+        ) -> crate::nintendo::message_studio::lib::libmstype::LibmsType =
+            ::core::mem::transmute(__lookup_lms_get_tag_param_type::get_method_info().method_ptr);
+        inner(p_file, n_group_id, n_tag_id, n_param_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_list_item_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
@@ -2298,18 +1779,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagListItemName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagListItemName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_tag_list_item_name(
@@ -2320,36 +1798,16 @@ mod __Libms_unity2_raw {
         n_item_index: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            u16,
-            u16,
-            u16,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_tag_list_item_name::get_offset() as isize),
-        );
-        inner(
-            p_file,
-            n_group_id,
-            n_tag_id,
-            n_param_index,
-            n_item_index,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(::unity2::IntPtr, u16, u16, u16, u16, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_tag_list_item_name::get_method_info().method_ptr);
+        inner(p_file, n_group_id, n_tag_id, n_param_index, n_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_group_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetTagGroupNum",
@@ -2361,88 +1819,55 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagGroupNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagGroupNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_tag_group_num(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_tag_group_num(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_tag_group_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_tag_group_num::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "LMS_GetTagNum",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "LMS_GetTagNum", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_tag_num(
-        p_file: ::unity2::IntPtr,
-        n_group_id: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_tag_num(p_file: ::unity2::IntPtr, n_group_id: u16, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, u16, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_tag_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_tag_num::get_method_info().method_ptr);
         inner(p_file, n_group_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_param_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
@@ -2459,18 +1884,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagParamNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagParamNum",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_tag_param_num(
@@ -2480,20 +1902,14 @@ mod __Libms_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, u16, u16, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_tag_param_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_tag_param_num::get_method_info().method_ptr);
         inner(p_file, n_group_id, n_tag_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_tag_list_item_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
@@ -2511,18 +1927,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetTagListItemNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetTagListItemNum",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_tag_list_item_num(
@@ -2533,26 +1946,14 @@ mod __Libms_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, u16, u16, u16, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_tag_list_item_num::get_offset() as isize),
-            );
-        inner(
-            p_file,
-            n_group_id,
-            n_tag_id,
-            n_param_index,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_lms_get_tag_list_item_num::get_method_info().method_ptr);
+        inner(p_file, n_group_id, n_tag_id, n_param_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_style_index_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2568,18 +1969,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetStyleIndexByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetStyleIndexByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_style_index_by_name(
@@ -2587,28 +1985,17 @@ mod __Libms_unity2_raw {
         p_style_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_style_index_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_style_index_by_name::get_method_info().method_ptr);
         inner(p_file, p_style_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_region_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetRegionWidth",
@@ -2620,40 +2007,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetRegionWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetRegionWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_region_width(
-        p_file: ::unity2::IntPtr,
-        n_style_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_region_width(p_file: ::unity2::IntPtr, n_style_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_region_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_region_width::get_method_info().method_ptr);
         inner(p_file, n_style_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_region_width_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2669,18 +2043,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetRegionWidthByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetRegionWidthByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_region_width_by_name(
@@ -2688,73 +2059,43 @@ mod __Libms_unity2_raw {
         p_style_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_region_width_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_region_width_by_name::get_method_info().method_ptr);
         inner(p_file, p_style_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_line_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "LMS_GetLineNum",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "LMS_GetLineNum", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetLineNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetLineNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_line_num(
-        p_file: ::unity2::IntPtr,
-        n_style_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_line_num(p_file: ::unity2::IntPtr, n_style_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_line_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_line_num::get_method_info().method_ptr);
         inner(p_file, n_style_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_line_num_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2770,18 +2111,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetLineNumByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetLineNumByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_line_num_by_name(
@@ -2789,28 +2127,17 @@ mod __Libms_unity2_raw {
         p_style_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_line_num_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_line_num_by_name::get_method_info().method_ptr);
         inner(p_file, p_style_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_font_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetFontIndex",
@@ -2822,40 +2149,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetFontIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetFontIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_font_index(
-        p_file: ::unity2::IntPtr,
-        n_style_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_font_index(p_file: ::unity2::IntPtr, n_style_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_font_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_font_index::get_method_info().method_ptr);
         inner(p_file, n_style_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_font_index_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2871,18 +2185,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetFontIndexByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetFontIndexByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_font_index_by_name(
@@ -2890,28 +2201,17 @@ mod __Libms_unity2_raw {
         p_style_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_font_index_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_font_index_by_name::get_method_info().method_ptr);
         inner(p_file, p_style_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_base_color_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetBaseColorIndex",
@@ -2923,40 +2223,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetBaseColorIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetBaseColorIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_base_color_index(
-        p_file: ::unity2::IntPtr,
-        n_style_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_base_color_index(p_file: ::unity2::IntPtr, n_style_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_base_color_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_base_color_index::get_method_info().method_ptr);
         inner(p_file, n_style_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_base_color_index_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2972,18 +2259,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetBaseColorIndexByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetBaseColorIndexByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_base_color_index_by_name(
@@ -2991,26 +2275,16 @@ mod __Libms_unity2_raw {
         p_style_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_base_color_index_by_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_base_color_index_by_name::get_method_info().method_ptr);
         inner(p_file, p_style_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_style_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetStyleNum",
@@ -3022,41 +2296,28 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetStyleNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetStyleNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_style_num(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_style_num(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_style_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_style_num::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_init_flowchart {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_InitFlowchart",
@@ -3068,41 +2329,28 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_InitFlowchart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_InitFlowchart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_init_flowchart(
-        p_resource: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn lms_init_flowchart(p_resource: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_init_flowchart::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_init_flowchart::get_method_info().method_ptr);
         inner(p_resource, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_close_flowchart {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_CloseFlowchart",
@@ -3114,85 +2362,54 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_CloseFlowchart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_CloseFlowchart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_close_flowchart(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn lms_close_flowchart(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_close_flowchart::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_close_flowchart::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_node_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms as ::unity2::ClassIdentity>::class(),
-                "LMS_GetNodeNum",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Libms as ::unity2::ClassIdentity>::class(), "LMS_GetNodeNum", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetNodeNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetNodeNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_node_num(
-        p_file: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn lms_get_node_num(p_file: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lms_get_node_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lms_get_node_num::get_method_info().method_ptr);
         inner(p_file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_entry_node_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -3208,18 +2425,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetEntryNodeIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetEntryNodeIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_entry_node_index(
@@ -3227,28 +2441,17 @@ mod __Libms_unity2_raw {
         p_label: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_entry_node_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_entry_node_index::get_method_info().method_ptr);
         inner(p_file, p_label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_node_data_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetNodeDataPtr",
@@ -3260,43 +2463,27 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetNodeDataPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetNodeDataPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_node_data_ptr(
-        p_file: ::unity2::IntPtr,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_node_data_ptr::get_offset() as isize),
-        );
+    pub unsafe fn lms_get_node_data_ptr(p_file: ::unity2::IntPtr, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_node_data_ptr::get_method_info().method_ptr);
         inner(p_file, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_flow_node_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -3312,47 +2499,29 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetFlowNodeIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetFlowNodeIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_flow_node_index(
-        p_file: ::unity2::IntPtr,
-        p_node: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_flow_node_index::get_offset() as isize),
-        );
+    pub unsafe fn lms_get_flow_node_index(p_file: ::unity2::IntPtr, p_node: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_lms_get_flow_node_index::get_method_info().method_ptr);
         inner(p_file, p_node, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_case_indexes_from_branch_node {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetCaseIndexesFromBranchNode",
@@ -3364,18 +2533,15 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetCaseIndexesFromBranchNode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetCaseIndexesFromBranchNode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lms_get_case_indexes_from_branch_node(
@@ -3383,28 +2549,17 @@ mod __Libms_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_case_indexes_from_branch_node::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_case_indexes_from_branch_node::get_method_info().method_ptr);
         inner(p_file, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lms_get_flow_param_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Libms as ::unity2::ClassIdentity>::class(),
                 "LMS_GetFlowParamText",
@@ -3416,34 +2571,20 @@ mod __Libms_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms as ::unity2::ClassIdentity>::NAME,
-                    "LMS_GetFlowParamText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Libms as ::unity2::ClassIdentity>::NAME,
+                        "LMS_GetFlowParamText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lms_get_flow_param_text(
-        p_file: ::unity2::IntPtr,
-        offset: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lms_get_flow_param_text::get_offset() as isize),
-        );
+    pub unsafe fn lms_get_flow_param_text(p_file: ::unity2::IntPtr, offset: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_lms_get_flow_param_text::get_method_info().method_ptr);
         inner(p_file, offset, __unity2_method_info)
     }
 }
@@ -3454,32 +2595,21 @@ impl Libms {
     pub fn cctor() -> () {
         unsafe { __Libms_unity2_raw::cctor(::core::option::Option::None) }
     }
+
     #[doc = "`Alloc(i32)` overload"]
     pub fn alloc(size: impl ::core::convert::Into<i32>) -> ::unity2::IntPtr {
-        unsafe {
-            __Libms_unity2_raw::alloc(
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::alloc(::core::convert::Into::into(size), ::core::option::Option::None) }
     }
+
     #[doc = "`Free(::unity2::IntPtr)` overload"]
     pub fn free(ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __Libms_unity2_raw::free(
-                ::core::convert::Into::into(ptr),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::free(::core::convert::Into::into(ptr), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_SetMemFuncs(crate::nintendo::message_studio::lib::libms::Libms_LMSMallocPtr, crate::nintendo::message_studio::lib::libms::Libms_LMSFreePtr)` overload"]
     pub fn lms_set_mem_funcs(
-        p_malloc: impl ::core::convert::Into<
-            crate::nintendo::message_studio::lib::libms::Libms_LMSMallocPtr,
-        >,
-        p_free: impl ::core::convert::Into<
-            crate::nintendo::message_studio::lib::libms::Libms_LMSFreePtr,
-        >,
+        p_malloc: impl ::core::convert::Into<crate::nintendo::message_studio::lib::libms::Libms_LMSMallocPtr>,
+        p_free: impl ::core::convert::Into<crate::nintendo::message_studio::lib::libms::Libms_LMSFreePtr>,
     ) -> () {
         unsafe {
             __Libms_unity2_raw::lms_set_mem_funcs(
@@ -3489,26 +2619,17 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_InitMessage(::unity2::IntPtr)` overload"]
-    pub fn lms_init_message(
-        p_resource: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __Libms_unity2_raw::lms_init_message(
-                ::core::convert::Into::into(p_resource),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn lms_init_message(p_resource: impl ::core::convert::Into<::unity2::IntPtr>) -> ::unity2::IntPtr {
+        unsafe { __Libms_unity2_raw::lms_init_message(::core::convert::Into::into(p_resource), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_CloseMessage(::unity2::IntPtr)` overload"]
     pub fn lms_close_message(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __Libms_unity2_raw::lms_close_message(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_close_message(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_SearchMessageBlockByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_search_message_block_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3522,6 +2643,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetMessageBlockInfoByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_message_block_info_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3535,15 +2657,12 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTextNum(::unity2::IntPtr)` overload"]
     pub fn lms_get_text_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __Libms_unity2_raw::lms_get_text_num(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_get_text_num(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_GetTextIndexByLabel(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_text_index_by_label(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3557,11 +2676,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetText(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_text(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_text_index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::IntPtr {
+    pub fn lms_get_text(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_text_index: impl ::core::convert::Into<i32>) -> ::unity2::IntPtr {
         unsafe {
             __Libms_unity2_raw::lms_get_text(
                 ::core::convert::Into::into(p_file),
@@ -3570,11 +2687,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTextSize(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_text_size(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_text_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_text_size(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_text_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_text_size(
                 ::core::convert::Into::into(p_file),
@@ -3583,6 +2698,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTextByLabel(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_text_by_label(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3596,11 +2712,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTextStyle(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_text_style(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_text_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_text_style(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_text_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_text_style(
                 ::core::convert::Into::into(p_file),
@@ -3609,6 +2723,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTextStyleByLabel(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_text_style_by_label(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3622,20 +2737,14 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttributeSize(::unity2::IntPtr)` overload"]
     pub fn lms_get_attribute_size(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> u32 {
-        unsafe {
-            __Libms_unity2_raw::lms_get_attribute_size(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_get_attribute_size(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_GetAttribute(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_attribute(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::IntPtr {
+    pub fn lms_get_attribute(p_file: impl ::core::convert::Into<::unity2::IntPtr>, index: impl ::core::convert::Into<i32>) -> ::unity2::IntPtr {
         unsafe {
             __Libms_unity2_raw::lms_get_attribute(
                 ::core::convert::Into::into(p_file),
@@ -3644,11 +2753,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttributeText(::unity2::IntPtr, u32)` overload"]
-    pub fn lms_get_attribute_text(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        offset: impl ::core::convert::Into<u32>,
-    ) -> ::unity2::IntPtr {
+    pub fn lms_get_attribute_text(p_file: impl ::core::convert::Into<::unity2::IntPtr>, offset: impl ::core::convert::Into<u32>) -> ::unity2::IntPtr {
         unsafe {
             __Libms_unity2_raw::lms_get_attribute_text(
                 ::core::convert::Into::into(p_file),
@@ -3657,11 +2764,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrFilteredOffset(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_attr_filtered_offset(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_attr_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_attr_filtered_offset(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_attr_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_attr_filtered_offset(
                 ::core::convert::Into::into(p_file),
@@ -3670,26 +2775,17 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_InitProject(::unity2::IntPtr)` overload"]
-    pub fn lms_init_project(
-        p_resource: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __Libms_unity2_raw::lms_init_project(
-                ::core::convert::Into::into(p_resource),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn lms_init_project(p_resource: impl ::core::convert::Into<::unity2::IntPtr>) -> ::unity2::IntPtr {
+        unsafe { __Libms_unity2_raw::lms_init_project(::core::convert::Into::into(p_resource), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_CloseProject(::unity2::IntPtr)` overload"]
     pub fn lms_close_project(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __Libms_unity2_raw::lms_close_project(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_close_project(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_SearchProjectBlockByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_search_project_block_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3703,6 +2799,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetColorIndexByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_color_index_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3716,18 +2813,14 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetColor(::unity2::IntPtr, i32, *mutcrate::nintendo::message_studio::lib::lmscolor::LMSColor)` overload"]
     pub fn lms_get_color(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
         n_color_index: impl ::core::convert::Into<i32>,
-    ) -> (
-        i32,
-        crate::nintendo::message_studio::lib::lmscolor::LMSColor,
-    ) {
+    ) -> (i32, crate::nintendo::message_studio::lib::lmscolor::LMSColor) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::nintendo::message_studio::lib::lmscolor::LMSColor,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::nintendo::message_studio::lib::lmscolor::LMSColor>::uninit();
             let __ret = {
                 __Libms_unity2_raw::lms_get_color(
                     ::core::convert::Into::into(p_file),
@@ -3739,18 +2832,14 @@ impl Libms {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`LMS_GetColorByName(::unity2::IntPtr, ::unity2::Il2CppString, *mutcrate::nintendo::message_studio::lib::lmscolor::LMSColor)` overload"]
     pub fn lms_get_color_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
         p_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (
-        i32,
-        crate::nintendo::message_studio::lib::lmscolor::LMSColor,
-    ) {
+    ) -> (i32, crate::nintendo::message_studio::lib::lmscolor::LMSColor) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::nintendo::message_studio::lib::lmscolor::LMSColor,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::nintendo::message_studio::lib::lmscolor::LMSColor>::uninit();
             let __ret = {
                 __Libms_unity2_raw::lms_get_color_by_name(
                     ::core::convert::Into::into(p_file),
@@ -3762,24 +2851,17 @@ impl Libms {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`LMS_GetColorNum(::unity2::IntPtr)` overload"]
     pub fn lms_get_color_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __Libms_unity2_raw::lms_get_color_num(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_get_color_num(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_GetContentsNum(::unity2::IntPtr)` overload"]
     pub fn lms_get_contents_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __Libms_unity2_raw::lms_get_contents_num(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_get_contents_num(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_GetContentPath(::unity2::IntPtr, i32)` overload"]
     pub fn lms_get_content_path(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3793,6 +2875,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrInfoIndexByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_attr_info_index_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3806,6 +2889,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrType(::unity2::IntPtr, i32)` overload"]
     pub fn lms_get_attr_type(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3819,11 +2903,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrOffset(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_attr_offset(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_attr_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_attr_offset(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_attr_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_attr_offset(
                 ::core::convert::Into::into(p_file),
@@ -3832,6 +2914,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrTypeByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_attr_type_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3845,6 +2928,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrOffsetByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_attr_offset_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3858,6 +2942,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrListItemName(::unity2::IntPtr, i32, i32)` overload"]
     pub fn lms_get_attr_list_item_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3873,6 +2958,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrListItemNameByName(::unity2::IntPtr, ::unity2::Il2CppString, i32)` overload"]
     pub fn lms_get_attr_list_item_name_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3888,20 +2974,14 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetAttrNum(::unity2::IntPtr)` overload"]
     pub fn lms_get_attr_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __Libms_unity2_raw::lms_get_attr_num(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_get_attr_num(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_GetAttrListItemNum(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_attr_list_item_num(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_attr_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_attr_list_item_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_attr_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_attr_list_item_num(
                 ::core::convert::Into::into(p_file),
@@ -3910,6 +2990,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTagGroupName(::unity2::IntPtr, u16)` overload"]
     pub fn lms_get_tag_group_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3923,6 +3004,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTagName(::unity2::IntPtr, u16, u16)` overload"]
     pub fn lms_get_tag_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3938,6 +3020,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTagParamName(::unity2::IntPtr, u16, u16, u16)` overload"]
     pub fn lms_get_tag_param_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3955,6 +3038,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTagParamType(::unity2::IntPtr, u16, u16, u16)` overload"]
     pub fn lms_get_tag_param_type(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3972,6 +3056,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTagListItemName(::unity2::IntPtr, u16, u16, u16, u16)` overload"]
     pub fn lms_get_tag_list_item_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -3991,20 +3076,14 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTagGroupNum(::unity2::IntPtr)` overload"]
     pub fn lms_get_tag_group_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __Libms_unity2_raw::lms_get_tag_group_num(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_get_tag_group_num(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_GetTagNum(::unity2::IntPtr, u16)` overload"]
-    pub fn lms_get_tag_num(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_group_id: impl ::core::convert::Into<u16>,
-    ) -> i32 {
+    pub fn lms_get_tag_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_group_id: impl ::core::convert::Into<u16>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_tag_num(
                 ::core::convert::Into::into(p_file),
@@ -4013,6 +3092,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTagParamNum(::unity2::IntPtr, u16, u16)` overload"]
     pub fn lms_get_tag_param_num(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4028,6 +3108,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetTagListItemNum(::unity2::IntPtr, u16, u16, u16)` overload"]
     pub fn lms_get_tag_list_item_num(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4045,6 +3126,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetStyleIndexByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_style_index_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4058,11 +3140,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetRegionWidth(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_region_width(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_style_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_region_width(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_style_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_region_width(
                 ::core::convert::Into::into(p_file),
@@ -4071,6 +3151,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetRegionWidthByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_region_width_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4084,11 +3165,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetLineNum(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_line_num(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_style_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_line_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_style_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_line_num(
                 ::core::convert::Into::into(p_file),
@@ -4097,6 +3176,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetLineNumByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_line_num_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4110,11 +3190,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetFontIndex(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_font_index(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_style_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_font_index(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_style_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_font_index(
                 ::core::convert::Into::into(p_file),
@@ -4123,6 +3201,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetFontIndexByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_font_index_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4136,11 +3215,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetBaseColorIndex(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_base_color_index(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        n_style_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn lms_get_base_color_index(p_file: impl ::core::convert::Into<::unity2::IntPtr>, n_style_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Libms_unity2_raw::lms_get_base_color_index(
                 ::core::convert::Into::into(p_file),
@@ -4149,6 +3226,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetBaseColorIndexByName(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_base_color_index_by_name(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4162,44 +3240,27 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetStyleNum(::unity2::IntPtr)` overload"]
     pub fn lms_get_style_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __Libms_unity2_raw::lms_get_style_num(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_get_style_num(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_InitFlowchart(::unity2::IntPtr)` overload"]
-    pub fn lms_init_flowchart(
-        p_resource: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __Libms_unity2_raw::lms_init_flowchart(
-                ::core::convert::Into::into(p_resource),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn lms_init_flowchart(p_resource: impl ::core::convert::Into<::unity2::IntPtr>) -> ::unity2::IntPtr {
+        unsafe { __Libms_unity2_raw::lms_init_flowchart(::core::convert::Into::into(p_resource), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_CloseFlowchart(::unity2::IntPtr)` overload"]
     pub fn lms_close_flowchart(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __Libms_unity2_raw::lms_close_flowchart(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_close_flowchart(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_GetNodeNum(::unity2::IntPtr)` overload"]
     pub fn lms_get_node_num(p_file: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __Libms_unity2_raw::lms_get_node_num(
-                ::core::convert::Into::into(p_file),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Libms_unity2_raw::lms_get_node_num(::core::convert::Into::into(p_file), ::core::option::Option::None) }
     }
+
     #[doc = "`LMS_GetEntryNodeIndex(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn lms_get_entry_node_index(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4213,11 +3274,9 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetNodeDataPtr(::unity2::IntPtr, i32)` overload"]
-    pub fn lms_get_node_data_ptr(
-        p_file: impl ::core::convert::Into<::unity2::IntPtr>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::IntPtr {
+    pub fn lms_get_node_data_ptr(p_file: impl ::core::convert::Into<::unity2::IntPtr>, index: impl ::core::convert::Into<i32>) -> ::unity2::IntPtr {
         unsafe {
             __Libms_unity2_raw::lms_get_node_data_ptr(
                 ::core::convert::Into::into(p_file),
@@ -4226,6 +3285,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetFlowNodeIndex(::unity2::IntPtr, ::unity2::IntPtr)` overload"]
     pub fn lms_get_flow_node_index(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4239,6 +3299,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetCaseIndexesFromBranchNode(::unity2::IntPtr, i32)` overload"]
     pub fn lms_get_case_indexes_from_branch_node(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4252,6 +3313,7 @@ impl Libms {
             )
         }
     }
+
     #[doc = "`LMS_GetFlowParamText(::unity2::IntPtr, i32)` overload"]
     pub fn lms_get_flow_param_text(
         p_file: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -4269,187 +3331,16 @@ impl Libms {
 
 #[cfg(feature = "nintendo-message_studio-lib-libms")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Libms_LMSMallocPtr_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms_LMSMallocPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms_LMSMallocPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Libms_LMSMallocPtr,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Libms_LMSMallocPtr,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Libms_LMSMallocPtr as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Libms_LMSMallocPtr as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: Libms_LMSMallocPtr,
-        size: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            Libms_LMSMallocPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, size, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "nintendo-message_studio-lib-libms")]
-pub trait ILibms_LMSMallocPtrMethods: ILibms_LMSMallocPtr {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Libms_LMSMallocPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Libms_LMSMallocPtr_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32)` overload"]
-    fn invoke(self, size: impl ::core::convert::Into<i32>) -> ::unity2::IntPtr {
-        unsafe {
-            let __receiver = <Libms_LMSMallocPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Libms_LMSMallocPtr_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "nintendo-message_studio-lib-libms")]
-impl<__T: ILibms_LMSMallocPtr> ILibms_LMSMallocPtrMethods for __T {}
-
-#[cfg(feature = "nintendo-message_studio-lib-libms")]
-impl Libms_LMSMallocPtr {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Libms_LMSMallocPtr),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILibms_LMSMallocPtrMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "nintendo-message_studio-lib-libms")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::ILibms;
-    pub use super::ILibms_LMSFreePtr;
-    pub use super::ILibms_LMSFreePtrMethods;
-    pub use super::ILibms_LMSMallocPtr;
-    pub use super::ILibms_LMSMallocPtrMethods;
-    pub use super::Libms;
-    pub use super::Libms_LMSFreePtr;
-    pub use super::Libms_LMSMallocPtr;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        ILibms, ILibms_LMSFreePtr, ILibms_LMSFreePtrMethods, ILibms_LMSMallocPtr, ILibms_LMSMallocPtrMethods, Libms, Libms_LMSFreePtr,
+        Libms_LMSMallocPtr,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

@@ -2,15 +2,17 @@
 
 #[cfg(feature = "root-gamemessageclosed-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use crate::unity_engine::statemachinebehaviour::{
-        IStateMachineBehaviour, StateMachineBehaviour,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+            statemachinebehaviour::{IStateMachineBehaviour, StateMachineBehaviour},
+        },
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gamemessageclosed/GameMessageClosed.md"))]
     #[::unity2::class(namespace = "", name = "GameMessageClosed")]
@@ -30,10 +32,12 @@ mod __GameMessageClosed_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_state_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animatorstateinfo::AnimatorStateInfo as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameMessageClosed as ::unity2::ClassIdentity>::class(),
                 "OnStateEnter",
@@ -45,18 +49,15 @@ mod __GameMessageClosed_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameMessageClosed as ::unity2::ClassIdentity>::NAME,
-                    "OnStateEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameMessageClosed as ::unity2::ClassIdentity>::NAME,
+                        "OnStateEnter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_state_enter(
@@ -72,27 +73,19 @@ mod __GameMessageClosed_unity2_raw {
             crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_state_enter::get_offset() as isize),
-        );
-        inner(
-            this,
-            animator,
-            state_info,
-            layer_index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_on_state_enter::get_method_info().method_ptr);
+        inner(this, animator, state_info, layer_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_state_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animator :: Animator as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animatorstateinfo::AnimatorStateInfo as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameMessageClosed as ::unity2::ClassIdentity>::class(),
                 "OnStateExit",
@@ -104,18 +97,15 @@ mod __GameMessageClosed_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameMessageClosed as ::unity2::ClassIdentity>::NAME,
-                    "OnStateExit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameMessageClosed as ::unity2::ClassIdentity>::NAME,
+                        "OnStateExit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_state_exit(
@@ -131,26 +121,14 @@ mod __GameMessageClosed_unity2_raw {
             crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_state_exit::get_offset() as isize),
-        );
-        inner(
-            this,
-            animator,
-            state_info,
-            layer_index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_on_state_exit::get_method_info().method_ptr);
+        inner(this, animator, state_info, layer_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GameMessageClosed as ::unity2::ClassIdentity>::class(),
@@ -163,30 +141,20 @@ mod __GameMessageClosed_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameMessageClosed as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameMessageClosed as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GameMessageClosed,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GameMessageClosed, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GameMessageClosed, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -197,15 +165,11 @@ pub trait IGameMessageClosedMethods: IGameMessageClosed {
     fn on_state_enter(
         self,
         animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        state_info: impl ::core::convert::Into<
-            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-        >,
+        state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
         layer_index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <GameMessageClosed as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameMessageClosed as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameMessageClosed_unity2_raw::on_state_enter(
                 __receiver,
                 ::core::convert::Into::into(animator),
@@ -219,15 +183,11 @@ pub trait IGameMessageClosedMethods: IGameMessageClosed {
     fn on_state_exit(
         self,
         animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        state_info: impl ::core::convert::Into<
-            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
-        >,
+        state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
         layer_index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <GameMessageClosed as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameMessageClosed as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameMessageClosed_unity2_raw::on_state_exit(
                 __receiver,
                 ::core::convert::Into::into(animator),
@@ -240,9 +200,7 @@ pub trait IGameMessageClosedMethods: IGameMessageClosed {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GameMessageClosed as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GameMessageClosed as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GameMessageClosed_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -270,19 +228,17 @@ impl GameMessageClosed {
 #[cfg(feature = "root-gamemessageclosed")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameMessageClosed;
-    pub use super::IGameMessageClosed;
-    pub use super::IGameMessageClosedMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{GameMessageClosed, IGameMessageClosed, IGameMessageClosedMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviour;
     #[cfg(feature = "unity_engine-statemachinebehaviour")]
     pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviourMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject, statemachinebehaviour::IStateMachineBehaviour},
+    };
 }

@@ -2,29 +2,33 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjectspass-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::universal::scriptablerenderpass::{
-        IScriptableRenderPass, ScriptableRenderPass,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjectspass/RenderObjectsPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "RenderObjectsPass"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "RenderObjectsPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct RenderObjectsPass {
-# [rename (name = "renderQueueType")] pub render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType ,
-# [rename (name = "m_FilteringSettings")] pub m_filtering_settings : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings ,
-# [rename (name = "m_CameraSettings")] pub m_camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings ,
-# [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
-# [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_ShaderTagIdList")] pub m_shader_tag_id_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > ,
-# [rename (name = "m_RenderStateBlock")] pub m_render_state_block : crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock ,
-}
+        #[rename(name = "renderQueueType")]
+        pub render_queue_type: crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
+        #[rename(name = "m_FilteringSettings")]
+        pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[rename(name = "m_CameraSettings")]
+        pub m_camera_settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
+        #[rename(name = "m_ProfilerTag")]
+        pub m_profiler_tag: ::unity2::Il2CppString,
+        #[rename(name = "m_ProfilingSampler")]
+        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[rename(name = "m_ShaderTagIdList")]
+        pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        #[rename(name = "m_RenderStateBlock")]
+        pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjectspass-types")]
@@ -39,9 +43,7 @@ mod __RenderObjectsPass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_override_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
@@ -54,43 +56,31 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    "get_overrideMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        "get_overrideMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_override_material(
         this: RenderObjectsPass,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            RenderObjectsPass,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_override_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RenderObjectsPass, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_get_override_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_override_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
                 "set_overrideMaterial",
@@ -102,18 +92,15 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    "set_overrideMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        "set_overrideMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_override_material(
@@ -121,24 +108,15 @@ mod __RenderObjectsPass_unity2_raw {
         value: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RenderObjectsPass,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_override_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RenderObjectsPass, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_override_material::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_override_material_pass_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
@@ -151,41 +129,28 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    "get_overrideMaterialPassIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        "get_overrideMaterialPassIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_override_material_pass_index(
-        this: RenderObjectsPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_override_material_pass_index(this: RenderObjectsPass, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(RenderObjectsPass, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_override_material_pass_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_override_material_pass_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_override_material_pass_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
                 "set_overrideMaterialPassIndex",
@@ -197,41 +162,31 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    "set_overrideMaterialPassIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        "set_overrideMaterialPassIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_override_material_pass_index(
-        this: RenderObjectsPass,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_override_material_pass_index(this: RenderObjectsPass, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RenderObjectsPass, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_override_material_pass_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_override_material_pass_index::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_detph_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
                 "SetDetphState",
@@ -243,18 +198,15 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    "SetDetphState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        "SetDetphState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_detph_state(
@@ -268,21 +220,21 @@ mod __RenderObjectsPass_unity2_raw {
             bool,
             crate::unity_engine::rendering::comparefunction::CompareFunction,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_detph_state::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_detph_state::get_method_info().method_ptr);
         inner(this, write_enabled, function, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_stencil_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
                 "SetStencilState",
@@ -294,18 +246,15 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    "SetStencilState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        "SetStencilState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_stencil_state(
@@ -325,28 +274,14 @@ mod __RenderObjectsPass_unity2_raw {
             crate::unity_engine::rendering::stencilop::StencilOp,
             crate::unity_engine::rendering::stencilop::StencilOp,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_stencil_state::get_offset() as isize),
-        );
-        inner(
-            this,
-            reference,
-            compare_function,
-            pass_op,
-            fail_op,
-            z_fail_op,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_stencil_state::get_method_info().method_ptr);
+        inner(this, reference, compare_function, pass_op, fail_op, z_fail_op, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
@@ -359,31 +294,37 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: RenderObjectsPass,
         profiler_tag: ::unity2::Il2CppString,
-        render_pass_event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent,
+        render_pass_event: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
         shader_tags: ::unity2::Array<::unity2::Il2CppString>,
-        render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType,
+        render_queue_type: crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
         layer_mask: i32,
-        camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings,
+        camera_settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (RenderObjectsPass , :: unity2 :: Il2CppString , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , :: unity2 :: Array < :: unity2 :: Il2CppString > , crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType , i32 , crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            RenderObjectsPass,
+            ::unity2::Il2CppString,
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+            ::unity2::Array<::unity2::Il2CppString>,
+            crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
+            i32,
+            crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             profiler_tag,
@@ -399,9 +340,7 @@ mod __RenderObjectsPass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: urpprofileid :: URPProfileId as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
@@ -414,31 +353,37 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
         this: RenderObjectsPass,
         profile_id: crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
-        render_pass_event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent,
+        render_pass_event: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
         shader_tags: ::unity2::Array<::unity2::Il2CppString>,
-        render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType,
+        render_queue_type: crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
         layer_mask: i32,
-        camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings,
+        camera_settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (RenderObjectsPass , crate :: unity_engine :: rendering :: universal :: urpprofileid :: URPProfileId , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , :: unity2 :: Array < :: unity2 :: Il2CppString > , crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType , i32 , crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            RenderObjectsPass,
+            crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
+            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+            ::unity2::Array<::unity2::Il2CppString>,
+            crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
+            i32,
+            crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(
             this,
             profile_id,
@@ -454,10 +399,11 @@ mod __RenderObjectsPass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderObjectsPass as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -469,24 +415,21 @@ mod __RenderObjectsPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderObjectsPass as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
         this: RenderObjectsPass,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -494,11 +437,7 @@ mod __RenderObjectsPass_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
 }
@@ -508,49 +447,28 @@ pub trait IRenderObjectsPassMethods: IRenderObjectsPass {
     #[doc = "`get_overrideMaterial()` overload"]
     fn get_override_material(self) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RenderObjectsPass_unity2_raw::get_override_material(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RenderObjectsPass_unity2_raw::get_override_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_overrideMaterial(crate::unity_engine::material::Material)` overload"]
-    fn set_override_material(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    fn set_override_material(self, value: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RenderObjectsPass_unity2_raw::set_override_material(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RenderObjectsPass_unity2_raw::set_override_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_overrideMaterialPassIndex()` overload"]
     fn get_override_material_pass_index(self) -> i32 {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RenderObjectsPass_unity2_raw::get_override_material_pass_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RenderObjectsPass_unity2_raw::get_override_material_pass_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_overrideMaterialPassIndex(i32)` overload"]
     fn set_override_material_pass_index(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RenderObjectsPass_unity2_raw::set_override_material_pass_index(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -562,14 +480,10 @@ pub trait IRenderObjectsPassMethods: IRenderObjectsPass {
     fn set_detph_state(
         self,
         write_enabled: impl ::core::convert::Into<bool>,
-        function: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
+        function: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
     ) -> () {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RenderObjectsPass_unity2_raw::set_detph_state(
                 __receiver,
                 ::core::convert::Into::into(write_enabled),
@@ -582,17 +496,13 @@ pub trait IRenderObjectsPassMethods: IRenderObjectsPass {
     fn set_stencil_state(
         self,
         reference: impl ::core::convert::Into<i32>,
-        compare_function: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
+        compare_function: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
         pass_op: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
         fail_op: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
         z_fail_op: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
     ) -> () {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RenderObjectsPass_unity2_raw::set_stencil_state(
                 __receiver,
                 ::core::convert::Into::into(reference),
@@ -608,18 +518,16 @@ pub trait IRenderObjectsPassMethods: IRenderObjectsPass {
     fn ctor(
         self,
         profiler_tag: impl ::core::convert::Into<::unity2::Il2CppString>,
-        render_pass_event: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        >,
+        render_pass_event: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
         shader_tags: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        render_queue_type : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType >,
+        render_queue_type: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType>,
         layer_mask: impl ::core::convert::Into<i32>,
-        camera_settings : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings >,
+        camera_settings: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RenderObjectsPass_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(profiler_tag),
@@ -635,21 +543,17 @@ pub trait IRenderObjectsPassMethods: IRenderObjectsPass {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::urpprofileid::URPProfileId, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, ::unity2::Array<::unity2::Il2CppString>, crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType, i32, crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings)` overload"]
     fn ctor_2(
         self,
-        profile_id: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
-        >,
-        render_pass_event: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        >,
+        profile_id: impl ::core::convert::Into<crate::unity_engine::rendering::universal::urpprofileid::URPProfileId>,
+        render_pass_event: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
         shader_tags: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        render_queue_type : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType >,
+        render_queue_type: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType>,
         layer_mask: impl ::core::convert::Into<i32>,
-        camera_settings : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings >,
+        camera_settings: impl ::core::convert::Into<
+            crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RenderObjectsPass_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(profile_id),
@@ -665,17 +569,11 @@ pub trait IRenderObjectsPassMethods: IRenderObjectsPass {
     #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn execute(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <RenderObjectsPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __RenderObjectsPass_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -695,11 +593,11 @@ impl RenderObjectsPass {
     #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, ::unity2::Array<::unity2::Il2CppString>, crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType, i32, crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings)` — overload selector"]
     pub fn new(
         profiler_tag: ::unity2::Il2CppString,
-        render_pass_event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent,
+        render_pass_event: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
         shader_tags: ::unity2::Array<::unity2::Il2CppString>,
-        render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType,
+        render_queue_type: crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
         layer_mask: i32,
-        camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings,
+        camera_settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -723,11 +621,11 @@ impl RenderObjectsPass {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::urpprofileid::URPProfileId, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, ::unity2::Array<::unity2::Il2CppString>, crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType, i32, crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings)` — overload selector"]
     pub fn new_2(
         profile_id: crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
-        render_pass_event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent,
+        render_pass_event: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
         shader_tags: ::unity2::Array<::unity2::Il2CppString>,
-        render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType,
+        render_queue_type: crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
         layer_mask: i32,
-        camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings,
+        camera_settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -752,13 +650,10 @@ impl RenderObjectsPass {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjectspass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRenderObjectsPass;
-    pub use super::IRenderObjectsPassMethods;
-    pub use super::RenderObjectsPass;
-    pub use crate::system::object::IObject;
+    pub use super::{IRenderObjectsPass, IRenderObjectsPassMethods, RenderObjectsPass};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
+    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
 }

@@ -2,12 +2,16 @@
 
 #[cfg(feature = "system-reflection-monoassembly-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::reflection::assembly::{Assembly, IAssembly};
-    use crate::system::reflection::runtimeassembly::{IRuntimeAssembly, RuntimeAssembly};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        reflection::{
+            assembly::{Assembly, IAssembly},
+            runtimeassembly::{IRuntimeAssembly, RuntimeAssembly},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoassembly/MonoAssembly.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "MonoAssembly")]
@@ -27,9 +31,7 @@ mod __MonoAssembly_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -46,18 +48,15 @@ mod __MonoAssembly_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoAssembly as ::unity2::ClassIdentity>::NAME,
-                    "GetType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoAssembly as ::unity2::ClassIdentity>::NAME,
+                        "GetType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_type(
@@ -67,34 +66,16 @@ mod __MonoAssembly_unity2_raw {
         ignore_case: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            MonoAssembly,
-            ::unity2::Il2CppString,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_type::get_offset() as isize),
-        );
-        inner(
-            this,
-            name,
-            throw_on_error,
-            ignore_case,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(MonoAssembly, ::unity2::Il2CppString, bool, bool, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
+        inner(this, name, throw_on_error, ignore_case, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoAssembly as ::unity2::ClassIdentity>::class(),
                 "GetModule",
@@ -106,18 +87,15 @@ mod __MonoAssembly_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoAssembly as ::unity2::ClassIdentity>::NAME,
-                    "GetModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoAssembly as ::unity2::ClassIdentity>::NAME,
+                        "GetModule",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_module(
@@ -125,26 +103,16 @@ mod __MonoAssembly_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::module::Module {
-        let inner: extern "C" fn(
-            MonoAssembly,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::module::Module = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_module::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MonoAssembly, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::system::reflection::module::Module =
+            ::core::mem::transmute(__lookup_get_module::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_modules {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoAssembly as ::unity2::ClassIdentity>::class(),
                 "GetModules",
@@ -156,18 +124,15 @@ mod __MonoAssembly_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoAssembly as ::unity2::ClassIdentity>::NAME,
-                    "GetModules",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoAssembly as ::unity2::ClassIdentity>::NAME,
+                        "GetModules",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_modules(
@@ -175,58 +140,34 @@ mod __MonoAssembly_unity2_raw {
         get_resource_modules: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::system::reflection::module::Module> {
-        let inner: extern "C" fn(
-            MonoAssembly,
-            bool,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::system::reflection::module::Module> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_modules::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MonoAssembly, bool, ::unity2::OptionalMethod) -> ::unity2::Array<crate::system::reflection::module::Module> =
+            ::core::mem::transmute(__lookup_get_modules::get_method_info().method_ptr);
         inner(this, get_resource_modules, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MonoAssembly as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MonoAssembly as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoAssembly as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoAssembly as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MonoAssembly, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MonoAssembly, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MonoAssembly, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -241,9 +182,7 @@ pub trait IMonoAssemblyMethods: IMonoAssembly {
         ignore_case: impl ::core::convert::Into<bool>,
     ) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <MonoAssembly as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoAssembly as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoAssembly_unity2_raw::get_type(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -254,30 +193,16 @@ pub trait IMonoAssemblyMethods: IMonoAssembly {
         }
     }
     #[doc = "`GetModule(::unity2::Il2CppString)` overload"]
-    fn get_module(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::system::reflection::module::Module {
+    fn get_module(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::system::reflection::module::Module {
         unsafe {
-            let __receiver = <MonoAssembly as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MonoAssembly_unity2_raw::get_module(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MonoAssembly as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MonoAssembly_unity2_raw::get_module(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`GetModules(bool)` overload"]
-    fn get_modules(
-        self,
-        get_resource_modules: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Array<crate::system::reflection::module::Module> {
+    fn get_modules(self, get_resource_modules: impl ::core::convert::Into<bool>) -> ::unity2::Array<crate::system::reflection::module::Module> {
         unsafe {
-            let __receiver = <MonoAssembly as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoAssembly as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoAssembly_unity2_raw::get_modules(
                 __receiver,
                 ::core::convert::Into::into(get_resource_modules),
@@ -288,9 +213,7 @@ pub trait IMonoAssemblyMethods: IMonoAssembly {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MonoAssembly as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MonoAssembly as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MonoAssembly_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -303,13 +226,8 @@ impl<__T: IMonoAssembly> IMonoAssemblyMethods for __T {}
 impl MonoAssembly {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MonoAssembly),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MonoAssembly), ::core::stringify!(new),));
         <Self as IMonoAssemblyMethods>::ctor(this);
         this
     }
@@ -318,16 +236,15 @@ impl MonoAssembly {
 #[cfg(feature = "system-reflection-monoassembly")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMonoAssembly;
-    pub use super::IMonoAssemblyMethods;
-    pub use super::MonoAssembly;
-    pub use crate::system::object::IObject;
+    pub use super::{IMonoAssembly, IMonoAssemblyMethods, MonoAssembly};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::reflection::assembly::IAssembly;
     #[cfg(feature = "system-reflection-assembly")]
     pub use crate::system::reflection::assembly::IAssemblyMethods;
-    pub use crate::system::reflection::runtimeassembly::IRuntimeAssembly;
     #[cfg(feature = "system-reflection-runtimeassembly")]
     pub use crate::system::reflection::runtimeassembly::IRuntimeAssemblyMethods;
+    pub use crate::system::{
+        object::IObject,
+        reflection::{assembly::IAssembly, runtimeassembly::IRuntimeAssembly},
+    };
 }

@@ -4,21 +4,15 @@
 pub mod arraylist;
 #[cfg(feature = "system-collections-arraylist-types")]
 pub use arraylist::{
-    ArrayList, ArrayList_ArrayListDebugView, ArrayList_ArrayListEnumeratorSimple,
-    ArrayList_ReadOnlyArrayList, IArrayList, IArrayList_ArrayListDebugView,
-    IArrayList_ArrayListEnumeratorSimple, IArrayList_ReadOnlyArrayList,
+    ArrayList, ArrayList_ArrayListDebugView, ArrayList_ArrayListEnumeratorSimple, ArrayList_ReadOnlyArrayList, IArrayList,
+    IArrayList_ArrayListDebugView, IArrayList_ArrayListEnumeratorSimple, IArrayList_ReadOnlyArrayList,
 };
 #[cfg(feature = "system-collections-arraylist")]
-pub use arraylist::{
-    IArrayListMethods, IArrayList_ArrayListEnumeratorSimpleMethods,
-    IArrayList_ReadOnlyArrayListMethods,
-};
+pub use arraylist::{IArrayListMethods, IArrayList_ArrayListEnumeratorSimpleMethods, IArrayList_ReadOnlyArrayListMethods};
 #[cfg(any(feature = "system-collections-bitarray-types"))]
 pub mod bitarray;
 #[cfg(feature = "system-collections-bitarray-types")]
-pub use bitarray::{
-    BitArray, BitArray_BitArrayEnumeratorSimple, IBitArray, IBitArray_BitArrayEnumeratorSimple,
-};
+pub use bitarray::{BitArray, BitArray_BitArrayEnumeratorSimple, IBitArray, IBitArray_BitArrayEnumeratorSimple};
 #[cfg(feature = "system-collections-bitarray")]
 pub use bitarray::{IBitArrayMethods, IBitArray_BitArrayEnumeratorSimpleMethods};
 #[cfg(any(feature = "system-collections-caseinsensitivecomparer-types"))]
@@ -32,9 +26,7 @@ pub mod caseinsensitivehashcodeprovider;
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
 pub use caseinsensitivehashcodeprovider::ICaseInsensitiveHashCodeProviderMethods;
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider-types")]
-pub use caseinsensitivehashcodeprovider::{
-    CaseInsensitiveHashCodeProvider, ICaseInsensitiveHashCodeProvider,
-};
+pub use caseinsensitivehashcodeprovider::{CaseInsensitiveHashCodeProvider, ICaseInsensitiveHashCodeProvider};
 #[cfg(any(feature = "system-collections-collectionbase-types"))]
 pub mod collectionbase;
 #[cfg(feature = "system-collections-collectionbase")]
@@ -67,13 +59,11 @@ pub use dictionaryentry::DictionaryEntry;
 pub mod emptyreadonlydictionaryinternal;
 #[cfg(feature = "system-collections-emptyreadonlydictionaryinternal-types")]
 pub use emptyreadonlydictionaryinternal::{
-    EmptyReadOnlyDictionaryInternal, EmptyReadOnlyDictionaryInternal_NodeEnumerator,
-    IEmptyReadOnlyDictionaryInternal, IEmptyReadOnlyDictionaryInternal_NodeEnumerator,
+    EmptyReadOnlyDictionaryInternal, EmptyReadOnlyDictionaryInternal_NodeEnumerator, IEmptyReadOnlyDictionaryInternal,
+    IEmptyReadOnlyDictionaryInternal_NodeEnumerator,
 };
 #[cfg(feature = "system-collections-emptyreadonlydictionaryinternal")]
-pub use emptyreadonlydictionaryinternal::{
-    IEmptyReadOnlyDictionaryInternalMethods, IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods,
-};
+pub use emptyreadonlydictionaryinternal::{IEmptyReadOnlyDictionaryInternalMethods, IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods};
 #[cfg(any(
     feature = "system-collections-generic-arraybuilder_1-types",
     feature = "system-collections-generic-arraysorthelper_1-types",
@@ -144,15 +134,14 @@ pub use hashhelpers::{HashHelpers, IHashHelpers};
 pub mod hashtable;
 #[cfg(feature = "system-collections-hashtable-types")]
 pub use hashtable::{
-    Hashtable, Hashtable_HashtableDebugView, Hashtable_HashtableEnumerator,
-    Hashtable_KeyCollection, Hashtable_SyncHashtable, Hashtable_ValueCollection, Hashtable_bucket,
-    IHashtable, IHashtable_HashtableDebugView, IHashtable_HashtableEnumerator,
-    IHashtable_KeyCollection, IHashtable_SyncHashtable, IHashtable_ValueCollection,
+    Hashtable, Hashtable_HashtableDebugView, Hashtable_HashtableEnumerator, Hashtable_KeyCollection, Hashtable_SyncHashtable,
+    Hashtable_ValueCollection, Hashtable_bucket, IHashtable, IHashtable_HashtableDebugView, IHashtable_HashtableEnumerator, IHashtable_KeyCollection,
+    IHashtable_SyncHashtable, IHashtable_ValueCollection,
 };
 #[cfg(feature = "system-collections-hashtable")]
 pub use hashtable::{
-    IHashtableMethods, IHashtable_HashtableEnumeratorMethods, IHashtable_KeyCollectionMethods,
-    IHashtable_SyncHashtableMethods, IHashtable_ValueCollectionMethods,
+    IHashtableMethods, IHashtable_HashtableEnumeratorMethods, IHashtable_KeyCollectionMethods, IHashtable_SyncHashtableMethods,
+    IHashtable_ValueCollectionMethods,
 };
 #[cfg(any(feature = "system-collections-icollection-types"))]
 pub mod icollection;
@@ -224,19 +213,15 @@ pub use istructuralequatable::{IIStructuralEquatable, IStructuralEquatable};
 pub mod listdictionaryinternal;
 #[cfg(feature = "system-collections-listdictionaryinternal-types")]
 pub use listdictionaryinternal::{
-    IListDictionaryInternal, IListDictionaryInternal_DictionaryNode,
-    IListDictionaryInternal_NodeEnumerator, IListDictionaryInternal_NodeKeyValueCollection,
-    IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator, ListDictionaryInternal,
-    ListDictionaryInternal_DictionaryNode, ListDictionaryInternal_NodeEnumerator,
-    ListDictionaryInternal_NodeKeyValueCollection,
+    IListDictionaryInternal, IListDictionaryInternal_DictionaryNode, IListDictionaryInternal_NodeEnumerator,
+    IListDictionaryInternal_NodeKeyValueCollection, IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator, ListDictionaryInternal,
+    ListDictionaryInternal_DictionaryNode, ListDictionaryInternal_NodeEnumerator, ListDictionaryInternal_NodeKeyValueCollection,
     ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator,
 };
 #[cfg(feature = "system-collections-listdictionaryinternal")]
 pub use listdictionaryinternal::{
-    IListDictionaryInternalMethods, IListDictionaryInternal_DictionaryNodeMethods,
-    IListDictionaryInternal_NodeEnumeratorMethods,
-    IListDictionaryInternal_NodeKeyValueCollectionMethods,
-    IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,
+    IListDictionaryInternalMethods, IListDictionaryInternal_DictionaryNodeMethods, IListDictionaryInternal_NodeEnumeratorMethods,
+    IListDictionaryInternal_NodeKeyValueCollectionMethods, IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,
 };
 #[cfg(any(feature = "system-collections-lowlevelcomparer-types"))]
 pub mod lowlevelcomparer;
@@ -252,10 +237,7 @@ pub mod object_model;
 #[cfg(any(feature = "system-collections-queue-types"))]
 pub mod queue;
 #[cfg(feature = "system-collections-queue-types")]
-pub use queue::{
-    IQueue, IQueue_QueueDebugView, IQueue_QueueEnumerator, Queue, Queue_QueueDebugView,
-    Queue_QueueEnumerator,
-};
+pub use queue::{IQueue, IQueue_QueueDebugView, IQueue_QueueEnumerator, Queue, Queue_QueueDebugView, Queue_QueueEnumerator};
 #[cfg(feature = "system-collections-queue")]
 pub use queue::{IQueueMethods, IQueue_QueueEnumeratorMethods};
 #[cfg(any(feature = "system-collections-readonlycollectionbase-types"))]
@@ -268,15 +250,14 @@ pub use readonlycollectionbase::{IReadOnlyCollectionBase, ReadOnlyCollectionBase
 pub mod sortedlist;
 #[cfg(feature = "system-collections-sortedlist-types")]
 pub use sortedlist::{
-    ISortedList, ISortedList_KeyList, ISortedList_SortedListDebugView,
-    ISortedList_SortedListEnumerator, ISortedList_SyncSortedList, ISortedList_ValueList,
-    SortedList, SortedList_KeyList, SortedList_SortedListDebugView,
-    SortedList_SortedListEnumerator, SortedList_SyncSortedList, SortedList_ValueList,
+    ISortedList, ISortedList_KeyList, ISortedList_SortedListDebugView, ISortedList_SortedListEnumerator, ISortedList_SyncSortedList,
+    ISortedList_ValueList, SortedList, SortedList_KeyList, SortedList_SortedListDebugView, SortedList_SortedListEnumerator,
+    SortedList_SyncSortedList, SortedList_ValueList,
 };
 #[cfg(feature = "system-collections-sortedlist")]
 pub use sortedlist::{
-    ISortedListMethods, ISortedList_KeyListMethods, ISortedList_SortedListEnumeratorMethods,
-    ISortedList_SyncSortedListMethods, ISortedList_ValueListMethods,
+    ISortedListMethods, ISortedList_KeyListMethods, ISortedList_SortedListEnumeratorMethods, ISortedList_SyncSortedListMethods,
+    ISortedList_ValueListMethods,
 };
 #[cfg(any(
     feature = "system-collections-specialized-casesensitivestringdictionary-types",
@@ -293,9 +274,6 @@ pub mod specialized;
 #[cfg(any(feature = "system-collections-stack-types"))]
 pub mod stack;
 #[cfg(feature = "system-collections-stack-types")]
-pub use stack::{
-    IStack, IStack_StackDebugView, IStack_StackEnumerator, Stack, Stack_StackDebugView,
-    Stack_StackEnumerator,
-};
+pub use stack::{IStack, IStack_StackDebugView, IStack_StackEnumerator, Stack, Stack_StackDebugView, Stack_StackEnumerator};
 #[cfg(feature = "system-collections-stack")]
 pub use stack::{IStackMethods, IStack_StackEnumeratorMethods};

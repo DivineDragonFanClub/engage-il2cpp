@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-generic-iequalitycomparer_1_interface-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/iequalitycomparer_1_interface/IEqualityComparer_1_Interface.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "IEqualityComparer`1")]
@@ -29,7 +29,5 @@ impl<T0: ::unity2::ClassIdentity> IEqualityComparer_1_Interface<T0> {
 #[cfg(feature = "system-collections-generic-iequalitycomparer_1_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IEqualityComparer_1_Interface;
-    pub use super::IIEqualityComparer_1_Interface;
-    pub use super::IIEqualityComparer_1_InterfaceMethods;
+    pub use super::{IEqualityComparer_1_Interface, IIEqualityComparer_1_Interface, IIEqualityComparer_1_InterfaceMethods};
 }

@@ -2,10 +2,19 @@
 
 #[cfg(feature = "unity_engine-ui-stencilmaterial-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial")]
+    #[parent(crate::system::object::Object)]
+    pub struct StencilMaterial {
+        #[static_field]
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::stencilmaterial::StencilMaterial_MatEntry>,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial_MatEntry.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial.MatEntry")]
@@ -32,21 +41,331 @@ mod __types {
         #[rename(name = "colorMask")]
         pub color_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial")]
-    #[parent(crate::system::object::Object)]
-    pub struct StencilMaterial {
-        #[static_field]
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::stencilmaterial::StencilMaterial_MatEntry,
-        >,
-    }
 }
 
 #[cfg(feature = "unity_engine-ui-stencilmaterial-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-ui-stencilmaterial")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __StencilMaterial_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<StencilMaterial as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilMaterial as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        base_mat: crate::unity_engine::material::Material,
+        stencil_id: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(crate::unity_engine::material::Material, i32, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(base_mat, stencil_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::colorwritemask::ColorWriteMask as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<StencilMaterial as ::unity2::ClassIdentity>::class(), "Add", 5, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilMaterial as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_2(
+        base_mat: crate::unity_engine::material::Material,
+        stencil_id: i32,
+        operation: crate::unity_engine::rendering::stencilop::StencilOp,
+        compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
+        color_write_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            crate::unity_engine::material::Material,
+            i32,
+            crate::unity_engine::rendering::stencilop::StencilOp,
+            crate::unity_engine::rendering::comparefunction::CompareFunction,
+            crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
+        inner(base_mat, stencil_id, operation, compare_function, color_write_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::stencilop::StencilOp as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::comparefunction::CompareFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::colorwritemask::ColorWriteMask as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<StencilMaterial as ::unity2::ClassIdentity>::class(), "Add", 7, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilMaterial as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_3(
+        base_mat: crate::unity_engine::material::Material,
+        stencil_id: i32,
+        operation: crate::unity_engine::rendering::stencilop::StencilOp,
+        compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
+        color_write_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
+        read_mask: i32,
+        write_mask: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(
+            crate::unity_engine::material::Material,
+            i32,
+            crate::unity_engine::rendering::stencilop::StencilOp,
+            crate::unity_engine::rendering::comparefunction::CompareFunction,
+            crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_add_3::get_method_info().method_ptr);
+        inner(
+            base_mat,
+            stencil_id,
+            operation,
+            compare_function,
+            color_write_mask,
+            read_mask,
+            write_mask,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StencilMaterial as ::unity2::ClassIdentity>::class(),
+                "Remove",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilMaterial as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove(custom_mat: crate::unity_engine::material::Material, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
+        inner(custom_mat, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StencilMaterial as ::unity2::ClassIdentity>::class(),
+                "ClearAll",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilMaterial as ::unity2::ClassIdentity>::NAME,
+                        "ClearAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear_all(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear_all::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StencilMaterial as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilMaterial as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-stencilmaterial")]
+impl StencilMaterial {
+    #[doc = "`Add(crate::unity_engine::material::Material, i32)` overload"]
+    pub fn add(
+        base_mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        stencil_id: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            __StencilMaterial_unity2_raw::add(
+                ::core::convert::Into::into(base_mat),
+                ::core::convert::Into::into(stencil_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Add(crate::unity_engine::material::Material, i32, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::comparefunction::CompareFunction, crate::unity_engine::rendering::colorwritemask::ColorWriteMask)` overload"]
+    pub fn add_2(
+        base_mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        stencil_id: impl ::core::convert::Into<i32>,
+        operation: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
+        compare_function: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
+        color_write_mask: impl ::core::convert::Into<crate::unity_engine::rendering::colorwritemask::ColorWriteMask>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            __StencilMaterial_unity2_raw::add_2(
+                ::core::convert::Into::into(base_mat),
+                ::core::convert::Into::into(stencil_id),
+                ::core::convert::Into::into(operation),
+                ::core::convert::Into::into(compare_function),
+                ::core::convert::Into::into(color_write_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Add(crate::unity_engine::material::Material, i32, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::comparefunction::CompareFunction, crate::unity_engine::rendering::colorwritemask::ColorWriteMask, i32, i32)` overload"]
+    pub fn add_3(
+        base_mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        stencil_id: impl ::core::convert::Into<i32>,
+        operation: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
+        compare_function: impl ::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>,
+        color_write_mask: impl ::core::convert::Into<crate::unity_engine::rendering::colorwritemask::ColorWriteMask>,
+        read_mask: impl ::core::convert::Into<i32>,
+        write_mask: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            __StencilMaterial_unity2_raw::add_3(
+                ::core::convert::Into::into(base_mat),
+                ::core::convert::Into::into(stencil_id),
+                ::core::convert::Into::into(operation),
+                ::core::convert::Into::into(compare_function),
+                ::core::convert::Into::into(color_write_mask),
+                ::core::convert::Into::into(read_mask),
+                ::core::convert::Into::into(write_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Remove(crate::unity_engine::material::Material)` overload"]
+    pub fn remove(custom_mat: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
+        unsafe { __StencilMaterial_unity2_raw::remove(::core::convert::Into::into(custom_mat), ::core::option::Option::None) }
+    }
+
+    #[doc = "`ClearAll()` overload"]
+    pub fn clear_all() -> () {
+        unsafe { __StencilMaterial_unity2_raw::clear_all(::core::option::Option::None) }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __StencilMaterial_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-ui-stencilmaterial")]
 #[doc(hidden)]
@@ -57,9 +376,7 @@ mod __StencilMaterial_MatEntry_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StencilMaterial_MatEntry as ::unity2::ClassIdentity>::class(),
@@ -72,30 +389,20 @@ mod __StencilMaterial_MatEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilMaterial_MatEntry as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StencilMaterial_MatEntry as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: StencilMaterial_MatEntry,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: StencilMaterial_MatEntry, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StencilMaterial_MatEntry, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -106,9 +413,7 @@ pub trait IStencilMaterial_MatEntryMethods: IStencilMaterial_MatEntry {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <StencilMaterial_MatEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StencilMaterial_MatEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StencilMaterial_MatEntry_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -135,417 +440,8 @@ impl StencilMaterial_MatEntry {
 
 #[cfg(feature = "unity_engine-ui-stencilmaterial")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __StencilMaterial_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilMaterial as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilMaterial as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add(
-        base_mat: crate::unity_engine::material::Material,
-        stencil_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
-        inner(base_mat, stencil_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: colorwritemask :: ColorWriteMask as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilMaterial as ::unity2::ClassIdentity>::class(),
-                "Add",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilMaterial as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_2(
-        base_mat: crate::unity_engine::material::Material,
-        stencil_id: i32,
-        operation: crate::unity_engine::rendering::stencilop::StencilOp,
-        compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
-        color_write_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            i32,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-            crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_2::get_offset() as isize),
-        );
-        inner(
-            base_mat,
-            stencil_id,
-            operation,
-            compare_function,
-            color_write_mask,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: stencilop :: StencilOp as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: colorwritemask :: ColorWriteMask as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilMaterial as ::unity2::ClassIdentity>::class(),
-                "Add",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilMaterial as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_3(
-        base_mat: crate::unity_engine::material::Material,
-        stencil_id: i32,
-        operation: crate::unity_engine::rendering::stencilop::StencilOp,
-        compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
-        color_write_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
-        read_mask: i32,
-        write_mask: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            i32,
-            crate::unity_engine::rendering::stencilop::StencilOp,
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-            crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_3::get_offset() as isize),
-        );
-        inner(
-            base_mat,
-            stencil_id,
-            operation,
-            compare_function,
-            color_write_mask,
-            read_mask,
-            write_mask,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilMaterial as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilMaterial as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove(
-        custom_mat: crate::unity_engine::material::Material,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
-        inner(custom_mat, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilMaterial as ::unity2::ClassIdentity>::class(),
-                "ClearAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilMaterial as ::unity2::ClassIdentity>::NAME,
-                    "ClearAll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear_all(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_all::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StencilMaterial as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StencilMaterial as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-stencilmaterial")]
-impl StencilMaterial {
-    #[doc = "`Add(crate::unity_engine::material::Material, i32)` overload"]
-    pub fn add(
-        base_mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-        stencil_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::material::Material {
-        unsafe {
-            __StencilMaterial_unity2_raw::add(
-                ::core::convert::Into::into(base_mat),
-                ::core::convert::Into::into(stencil_id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::unity_engine::material::Material, i32, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::comparefunction::CompareFunction, crate::unity_engine::rendering::colorwritemask::ColorWriteMask)` overload"]
-    pub fn add_2(
-        base_mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-        stencil_id: impl ::core::convert::Into<i32>,
-        operation: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-        compare_function: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
-        color_write_mask: impl ::core::convert::Into<
-            crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
-        >,
-    ) -> crate::unity_engine::material::Material {
-        unsafe {
-            __StencilMaterial_unity2_raw::add_2(
-                ::core::convert::Into::into(base_mat),
-                ::core::convert::Into::into(stencil_id),
-                ::core::convert::Into::into(operation),
-                ::core::convert::Into::into(compare_function),
-                ::core::convert::Into::into(color_write_mask),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::unity_engine::material::Material, i32, crate::unity_engine::rendering::stencilop::StencilOp, crate::unity_engine::rendering::comparefunction::CompareFunction, crate::unity_engine::rendering::colorwritemask::ColorWriteMask, i32, i32)` overload"]
-    pub fn add_3(
-        base_mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-        stencil_id: impl ::core::convert::Into<i32>,
-        operation: impl ::core::convert::Into<crate::unity_engine::rendering::stencilop::StencilOp>,
-        compare_function: impl ::core::convert::Into<
-            crate::unity_engine::rendering::comparefunction::CompareFunction,
-        >,
-        color_write_mask: impl ::core::convert::Into<
-            crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
-        >,
-        read_mask: impl ::core::convert::Into<i32>,
-        write_mask: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::material::Material {
-        unsafe {
-            __StencilMaterial_unity2_raw::add_3(
-                ::core::convert::Into::into(base_mat),
-                ::core::convert::Into::into(stencil_id),
-                ::core::convert::Into::into(operation),
-                ::core::convert::Into::into(compare_function),
-                ::core::convert::Into::into(color_write_mask),
-                ::core::convert::Into::into(read_mask),
-                ::core::convert::Into::into(write_mask),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Remove(crate::unity_engine::material::Material)` overload"]
-    pub fn remove(
-        custom_mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
-        unsafe {
-            __StencilMaterial_unity2_raw::remove(
-                ::core::convert::Into::into(custom_mat),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ClearAll()` overload"]
-    pub fn clear_all() -> () {
-        unsafe { __StencilMaterial_unity2_raw::clear_all(::core::option::Option::None) }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __StencilMaterial_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-stencilmaterial")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IStencilMaterial;
-    pub use super::IStencilMaterial_MatEntry;
-    pub use super::IStencilMaterial_MatEntryMethods;
-    pub use super::StencilMaterial;
-    pub use super::StencilMaterial_MatEntry;
+    pub use super::{IStencilMaterial, IStencilMaterial_MatEntry, IStencilMaterial_MatEntryMethods, StencilMaterial, StencilMaterial_MatEntry};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-structscriptabledata_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/structscriptabledata_1/StructScriptableData_1.md"))]
     #[::unity2::class(namespace = "", name = "StructScriptableData`1")]
@@ -13,17 +13,13 @@ mod __types {
     pub struct StructScriptableData_1<T0: ::unity2::ClassIdentity> {
         #[static_field]
         #[rename(name = "s_KeyToIndex")]
-        pub s_key_to_index: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            i32,
-        >,
+        pub s_key_to_index: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, i32>,
         #[static_field]
         #[rename(name = "s_DataList")]
         pub s_data_list: crate::system::collections::generic::list_1::List_1<T0>,
         #[static_field]
         #[rename(name = "s_PublicNames")]
-        pub s_public_names:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub s_public_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }
 }
 
@@ -109,9 +105,7 @@ impl<T0: ::unity2::ClassIdentity> StructScriptableData_1<T0> {
 #[cfg(feature = "root-structscriptabledata_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStructScriptableData_1;
-    pub use super::IStructScriptableData_1Methods;
-    pub use super::StructScriptableData_1;
+    pub use super::{IStructScriptableData_1, IStructScriptableData_1Methods, StructScriptableData_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

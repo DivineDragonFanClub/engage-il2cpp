@@ -2,19 +2,16 @@
 
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::collections::generic::equalitycomparer_1::{
-        EqualityComparer_1, IEqualityComparer_1,
+    use super::*;
+    use crate::system::{
+        collections::generic::equalitycomparer_1::{EqualityComparer_1, IEqualityComparer_1},
+        object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/nonrandomizedstringequalitycomparer/NonRandomizedStringEqualityComparer.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Generic",
-        name = "NonRandomizedStringEqualityComparer"
-    )]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "NonRandomizedStringEqualityComparer")]
     # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < :: unity2 :: Il2CppString >)]
     pub struct NonRandomizedStringEqualityComparer {}
 }
@@ -31,9 +28,7 @@ mod __NonRandomizedStringEqualityComparer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -49,18 +44,15 @@ mod __NonRandomizedStringEqualityComparer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NonRandomizedStringEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NonRandomizedStringEqualityComparer as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals(
@@ -74,22 +66,15 @@ mod __NonRandomizedStringEqualityComparer_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, x, y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NonRandomizedStringEqualityComparer as ::unity2::ClassIdentity>::class(),
                 "GetHashCode",
@@ -101,18 +86,15 @@ mod __NonRandomizedStringEqualityComparer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NonRandomizedStringEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NonRandomizedStringEqualityComparer as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hash_code(
@@ -120,24 +102,15 @@ mod __NonRandomizedStringEqualityComparer_unity2_raw {
         obj: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            NonRandomizedStringEqualityComparer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hash_code::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NonRandomizedStringEqualityComparer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NonRandomizedStringEqualityComparer as ::unity2::ClassIdentity>::class(),
@@ -150,51 +123,32 @@ mod __NonRandomizedStringEqualityComparer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NonRandomizedStringEqualityComparer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NonRandomizedStringEqualityComparer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: NonRandomizedStringEqualityComparer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NonRandomizedStringEqualityComparer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: NonRandomizedStringEqualityComparer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NonRandomizedStringEqualityComparer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
-pub trait INonRandomizedStringEqualityComparerMethods:
-    INonRandomizedStringEqualityComparer
-{
+pub trait INonRandomizedStringEqualityComparerMethods: INonRandomizedStringEqualityComparer {
     #[doc = "`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn equals(
-        self,
-        x: impl ::core::convert::Into<::unity2::Il2CppString>,
-        y: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn equals(self, x: impl ::core::convert::Into<::unity2::Il2CppString>, y: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver =
-                <NonRandomizedStringEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <NonRandomizedStringEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __NonRandomizedStringEqualityComparer_unity2_raw::equals(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -206,10 +160,9 @@ pub trait INonRandomizedStringEqualityComparerMethods:
     #[doc = "`GetHashCode(::unity2::Il2CppString)` overload"]
     fn get_hash_code(self, obj: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
         unsafe {
-            let __receiver =
-                <NonRandomizedStringEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <NonRandomizedStringEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __NonRandomizedStringEqualityComparer_unity2_raw::get_hash_code(
                 __receiver,
                 ::core::convert::Into::into(obj),
@@ -220,23 +173,16 @@ pub trait INonRandomizedStringEqualityComparerMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <NonRandomizedStringEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NonRandomizedStringEqualityComparer_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <NonRandomizedStringEqualityComparer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NonRandomizedStringEqualityComparer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
-impl<__T: INonRandomizedStringEqualityComparer> INonRandomizedStringEqualityComparerMethods
-    for __T
-{
-}
+impl<__T: INonRandomizedStringEqualityComparer> INonRandomizedStringEqualityComparerMethods for __T {}
 
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
 impl NonRandomizedStringEqualityComparer {
@@ -257,13 +203,10 @@ impl NonRandomizedStringEqualityComparer {
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INonRandomizedStringEqualityComparer;
-    pub use super::INonRandomizedStringEqualityComparerMethods;
-    pub use super::NonRandomizedStringEqualityComparer;
-    pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1;
+    pub use super::{INonRandomizedStringEqualityComparer, INonRandomizedStringEqualityComparerMethods, NonRandomizedStringEqualityComparer};
     #[cfg(feature = "system-collections-generic-equalitycomparer_1")]
     pub use crate::system::collections::generic::equalitycomparer_1::IEqualityComparer_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{collections::generic::equalitycomparer_1::IEqualityComparer_1, object::IObject};
 }

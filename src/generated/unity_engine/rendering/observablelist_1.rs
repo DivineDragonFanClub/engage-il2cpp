@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-observablelist_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/observablelist_1/ObservableList_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ObservableList`1")]
@@ -14,15 +14,9 @@ mod __types {
         #[rename(name = "m_List")]
         pub m_list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<T0>,
         #[rename(name = "ItemAdded")]
-        pub item_added:
-            crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<
-                T0,
-            >,
+        pub item_added: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>,
         #[rename(name = "ItemRemoved")]
-        pub item_removed:
-            crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<
-                T0,
-            >,
+        pub item_removed: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>,
     }
 }
 
@@ -34,39 +28,19 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity> ObservableList_1<T0> {
     #[doc = "`add_ItemAdded(crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>)` overload"]
     #[method(name = "add_ItemAdded", args = 1)]
-    pub fn add_item_added(
-        self,
-        value: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<
-            T0,
-        >,
-    ) -> ();
+    pub fn add_item_added(self, value: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>) -> ();
 
     #[doc = "`remove_ItemAdded(crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>)` overload"]
     #[method(name = "remove_ItemAdded", args = 1)]
-    pub fn remove_item_added(
-        self,
-        value: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<
-            T0,
-        >,
-    ) -> ();
+    pub fn remove_item_added(self, value: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>) -> ();
 
     #[doc = "`add_ItemRemoved(crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>)` overload"]
     #[method(name = "add_ItemRemoved", args = 1)]
-    pub fn add_item_removed(
-        self,
-        value: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<
-            T0,
-        >,
-    ) -> ();
+    pub fn add_item_removed(self, value: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>) -> ();
 
     #[doc = "`remove_ItemRemoved(crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>)` overload"]
     #[method(name = "remove_ItemRemoved", args = 1)]
-    pub fn remove_item_removed(
-        self,
-        value: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<
-            T0,
-        >,
-    ) -> ();
+    pub fn remove_item_removed(self, value: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>) -> ();
 
     #[doc = "`get_Item(i32)` overload"]
     #[method(name = "get_Item", args = 1)]
@@ -94,19 +68,11 @@ impl<T0: ::unity2::ClassIdentity> ObservableList_1<T0> {
 
     #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor_3(
-        self,
-        collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
-    ) -> ();
+    pub fn ctor_3(self, collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>) -> ();
 
     #[doc = "`OnEvent(crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>, i32, T0)` overload"]
     #[method(name = "OnEvent", args = 3)]
-    pub fn on_event(
-        self,
-        e: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>,
-        index: i32,
-        item: T0,
-    ) -> ();
+    pub fn on_event(self, e: crate::unity_engine::rendering::listchangedeventhandler_1::ListChangedEventHandler_1<T0>, index: i32, item: T0) -> ();
 
     #[doc = "`Contains(T0)` overload"]
     #[method(name = "Contains", args = 1)]
@@ -150,15 +116,11 @@ impl<T0: ::unity2::ClassIdentity> ObservableList_1<T0> {
 
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
 
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
     #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 }
 
 #[cfg(feature = "unity_engine-rendering-observablelist_1")]
@@ -190,9 +152,7 @@ impl<T0: ::unity2::ClassIdentity> ObservableList_1<T0> {
     }
 
     #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` — overload selector"]
-    pub fn new_3(
-        collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
-    ) -> Self {
+    pub fn new_3(collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -208,9 +168,7 @@ impl<T0: ::unity2::ClassIdentity> ObservableList_1<T0> {
 #[cfg(feature = "unity_engine-rendering-observablelist_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IObservableList_1;
-    pub use super::IObservableList_1Methods;
-    pub use super::ObservableList_1;
+    pub use super::{IObservableList_1, IObservableList_1Methods, ObservableList_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

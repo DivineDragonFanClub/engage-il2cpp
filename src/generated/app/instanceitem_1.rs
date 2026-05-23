@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-instanceitem_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::menuitem::{IMenuItem, MenuItem};
-    use crate::app::paramitem::{IParamItem, ParamItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            menuitem::{IMenuItem, MenuItem},
+            paramitem::{IParamItem, ParamItem},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/instanceitem_1/InstanceItem_1.md"))]
     #[::unity2::class(namespace = "App", name = "InstanceItem`1")]
@@ -54,16 +58,15 @@ impl<T0: ::unity2::ClassIdentity> InstanceItem_1<T0> {
 #[cfg(feature = "app-instanceitem_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInstanceItem_1;
-    pub use super::IInstanceItem_1Methods;
-    pub use super::InstanceItem_1;
-    pub use crate::app::menuitem::IMenuItem;
+    pub use super::{IInstanceItem_1, IInstanceItem_1Methods, InstanceItem_1};
     #[cfg(feature = "app-menuitem")]
     pub use crate::app::menuitem::IMenuItemMethods;
-    pub use crate::app::paramitem::IParamItem;
     #[cfg(feature = "app-paramitem")]
     pub use crate::app::paramitem::IParamItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{menuitem::IMenuItem, paramitem::IParamItem},
+        system::object::IObject,
+    };
 }

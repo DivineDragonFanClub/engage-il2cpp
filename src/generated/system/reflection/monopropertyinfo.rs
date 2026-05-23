@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-reflection-monopropertyinfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/monopropertyinfo/MonoPropertyInfo.md"))]
     #[repr(C)]
@@ -21,9 +23,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for MonoPropertyInfo {
-        const NAMESPACE: &'static str = "System.Reflection";
-
         const NAME: &'static str = "MonoPropertyInfo";
+        const NAMESPACE: &'static str = "System.Reflection";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -34,10 +35,7 @@ mod __types {
 
     impl ::unity2::IlType for MonoPropertyInfo {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -54,10 +52,12 @@ mod __MonoPropertyInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: monoproperty :: MonoProperty as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: monopropertyinfo :: MonoPropertyInfo as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: pinfo :: PInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::monoproperty::MonoProperty as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::monopropertyinfo::MonoPropertyInfo as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::pinfo::PInfo as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoPropertyInfo as ::unity2::ClassIdentity>::class(),
                 "get_property_info",
@@ -69,18 +69,15 @@ mod __MonoPropertyInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoPropertyInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_property_info",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoPropertyInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_property_info",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_info(
@@ -94,21 +91,18 @@ mod __MonoPropertyInfo_unity2_raw {
             *mut crate::system::reflection::monopropertyinfo::MonoPropertyInfo,
             crate::system::reflection::pinfo::PInfo,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_info::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_property_info::get_method_info().method_ptr);
         inner(prop, info, req_info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_type_modifiers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: monoproperty :: MonoProperty as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::monoproperty::MonoProperty as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoPropertyInfo as ::unity2::ClassIdentity>::class(),
                 "GetTypeModifiers",
@@ -120,18 +114,15 @@ mod __MonoPropertyInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoPropertyInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetTypeModifiers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoPropertyInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetTypeModifiers",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_type_modifiers(
@@ -143,21 +134,16 @@ mod __MonoPropertyInfo_unity2_raw {
             crate::system::reflection::monoproperty::MonoProperty,
             bool,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_type_modifiers::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(__lookup_get_type_modifiers::get_method_info().method_ptr);
         inner(prop, optional, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: monoproperty :: MonoProperty as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::monoproperty::MonoProperty as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoPropertyInfo as ::unity2::ClassIdentity>::class(),
                 "get_default_value",
@@ -169,32 +155,23 @@ mod __MonoPropertyInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoPropertyInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_default_value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoPropertyInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_default_value",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_default_value(
         prop: crate::system::reflection::monoproperty::MonoProperty,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            crate::system::reflection::monoproperty::MonoProperty,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_default_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::reflection::monoproperty::MonoProperty, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_default_value::get_method_info().method_ptr);
         inner(prop, __unity2_method_info)
     }
 }
@@ -207,9 +184,7 @@ impl MonoPropertyInfo {
         req_info: impl ::core::convert::Into<crate::system::reflection::pinfo::PInfo>,
     ) -> crate::system::reflection::monopropertyinfo::MonoPropertyInfo {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::reflection::monopropertyinfo::MonoPropertyInfo,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::reflection::monopropertyinfo::MonoPropertyInfo>::uninit();
             __MonoPropertyInfo_unity2_raw::get_property_info(
                 ::core::convert::Into::into(prop),
                 __out_0.as_mut_ptr(),
@@ -219,6 +194,7 @@ impl MonoPropertyInfo {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetTypeModifiers(crate::system::reflection::monoproperty::MonoProperty, bool)` overload"]
     pub fn get_type_modifiers(
         prop: impl ::core::convert::Into<crate::system::reflection::monoproperty::MonoProperty>,
@@ -232,16 +208,12 @@ impl MonoPropertyInfo {
             )
         }
     }
+
     #[doc = "`get_default_value(crate::system::reflection::monoproperty::MonoProperty)` overload"]
     pub fn get_default_value(
         prop: impl ::core::convert::Into<crate::system::reflection::monoproperty::MonoProperty>,
     ) -> crate::system::object::Object {
-        unsafe {
-            __MonoPropertyInfo_unity2_raw::get_default_value(
-                ::core::convert::Into::into(prop),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MonoPropertyInfo_unity2_raw::get_default_value(::core::convert::Into::into(prop), ::core::option::Option::None) }
     }
 }
 
@@ -249,10 +221,9 @@ impl MonoPropertyInfo {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MonoPropertyInfo;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

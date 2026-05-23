@@ -2,26 +2,35 @@
 
 #[cfg(feature = "unity_engine-networking-player_connection-playerconnection-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/player_connection/playerconnection/PlayerConnection.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Networking.PlayerConnection",
-        name = "PlayerConnection"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Networking.PlayerConnection", name = "PlayerConnection")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct PlayerConnection {
-# [static_field] # [rename (name = "connectionNative")] pub connection_native : crate :: unity_engine :: iplayereditorconnectionnative :: IPlayerEditorConnectionNative ,
-# [rename (name = "m_PlayerEditorConnectionEvents")] pub m_player_editor_connection_events : crate :: unity_engine :: networking :: player_connection :: playereditorconnectionevents :: PlayerEditorConnectionEvents ,
-# [rename (name = "m_connectedPlayers")] pub m_connected_players : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
-# [rename (name = "m_IsInitilized")] pub m_is_initilized : bool ,
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: unity_engine :: networking :: player_connection :: playerconnection :: PlayerConnection ,
-}
+        #[static_field]
+        #[rename(name = "connectionNative")]
+        pub connection_native: crate::unity_engine::iplayereditorconnectionnative::IPlayerEditorConnectionNative,
+        #[rename(name = "m_PlayerEditorConnectionEvents")]
+        pub m_player_editor_connection_events:
+            crate::unity_engine::networking::player_connection::playereditorconnectionevents::PlayerEditorConnectionEvents,
+        #[rename(name = "m_connectedPlayers")]
+        pub m_connected_players: crate::system::collections::generic::list_1::List_1<i32>,
+        #[rename(name = "m_IsInitilized")]
+        pub m_is_initilized: bool,
+        #[static_field]
+        #[rename(name = "s_Instance")]
+        pub s_instance: crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection,
+    }
 }
 
 #[cfg(feature = "unity_engine-networking-player_connection-playerconnection-types")]
@@ -36,9 +45,7 @@ mod __PlayerConnection_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
@@ -51,34 +58,29 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "get_instance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "get_instance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_instance(
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection
-    {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: player_connection :: playerconnection :: PlayerConnection = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_instance :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection =
+            ::core::mem::transmute(__lookup_get_instance::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_connected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
@@ -91,39 +93,27 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "get_isConnected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "get_isConnected",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_connected(
-        this: PlayerConnection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_connected(this: PlayerConnection, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PlayerConnection, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_connected::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_connected::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
@@ -136,34 +126,29 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "CreateInstance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "CreateInstance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_instance(
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection
-    {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: player_connection :: playerconnection :: PlayerConnection = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_instance :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection =
+            ::core::mem::transmute(__lookup_create_instance::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
@@ -176,39 +161,27 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: PlayerConnection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: PlayerConnection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayerConnection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_connection_native_api {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
@@ -221,38 +194,35 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "GetConnectionNativeApi",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "GetConnectionNativeApi",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_connection_native_api(
         this: PlayerConnection,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::iplayereditorconnectionnative::IPlayerEditorConnectionNative {
-        let inner : extern "C" fn (PlayerConnection , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: iplayereditorconnectionnative :: IPlayerEditorConnectionNative = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_connection_native_api :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            PlayerConnection,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::iplayereditorconnectionnative::IPlayerEditorConnectionNative =
+            ::core::mem::transmute(__lookup_get_connection_native_api::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_connection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<
-                    i32,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<i32> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
                 "RegisterConnection",
@@ -264,18 +234,15 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "RegisterConnection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "RegisterConnection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_connection(
@@ -283,28 +250,17 @@ mod __PlayerConnection_unity2_raw {
         callback: crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayerConnection,
-            crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_connection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayerConnection, crate::unity_engine::events::unityaction_1::UnityAction_1<i32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_connection::get_method_info().method_ptr);
         inner(this, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_disconnection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<
-                    i32,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<i32> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
                 "RegisterDisconnection",
@@ -316,18 +272,15 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "RegisterDisconnection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "RegisterDisconnection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_disconnection(
@@ -335,28 +288,17 @@ mod __PlayerConnection_unity2_raw {
         callback: crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayerConnection,
-            crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_disconnection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayerConnection, crate::unity_engine::events::unityaction_1::UnityAction_1<i32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_disconnection::get_method_info().method_ptr);
         inner(this, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unregister_connection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<
-                    i32,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<i32> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
                 "UnregisterConnection",
@@ -368,18 +310,15 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "UnregisterConnection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "UnregisterConnection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unregister_connection(
@@ -387,28 +326,17 @@ mod __PlayerConnection_unity2_raw {
         callback: crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayerConnection,
-            crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unregister_connection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayerConnection, crate::unity_engine::events::unityaction_1::UnityAction_1<i32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unregister_connection::get_method_info().method_ptr);
         inner(this, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unregister_disconnection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<
-                    i32,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::events::unityaction_1::UnityAction_1<i32> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
                 "UnregisterDisconnection",
@@ -420,18 +348,15 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "UnregisterDisconnection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "UnregisterDisconnection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unregister_disconnection(
@@ -439,24 +364,15 @@ mod __PlayerConnection_unity2_raw {
         callback: crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlayerConnection,
-            crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unregister_disconnection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayerConnection, crate::unity_engine::events::unityaction_1::UnityAction_1<i32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unregister_disconnection::get_method_info().method_ptr);
         inner(this, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disconnect_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
@@ -469,39 +385,27 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "DisconnectAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "DisconnectAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disconnect_all(
-        this: PlayerConnection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disconnect_all(this: PlayerConnection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayerConnection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disconnect_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disconnect_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_message_callback_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
@@ -519,18 +423,15 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "MessageCallbackInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "MessageCallbackInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn message_callback_internal(
@@ -540,28 +441,16 @@ mod __PlayerConnection_unity2_raw {
         message_id: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            u64,
-            u64,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_message_callback_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, u64, u64, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_message_callback_internal::get_method_info().method_ptr);
         inner(data, size, guid, message_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_connected_callback_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
                 "ConnectedCallbackInternal",
@@ -573,40 +462,28 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "ConnectedCallbackInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "ConnectedCallbackInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn connected_callback_internal(
-        player_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_connected_callback_internal::get_offset() as isize),
-        );
+    pub unsafe fn connected_callback_internal(player_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_connected_callback_internal::get_method_info().method_ptr);
         inner(player_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disconnected_callback {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
                 "DisconnectedCallback",
@@ -618,38 +495,27 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    "DisconnectedCallback",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        "DisconnectedCallback",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disconnected_callback(
-        player_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_disconnected_callback::get_offset() as isize),
-        );
+    pub unsafe fn disconnected_callback(player_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disconnected_callback::get_method_info().method_ptr);
         inner(player_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayerConnection as ::unity2::ClassIdentity>::class(),
@@ -662,30 +528,20 @@ mod __PlayerConnection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayerConnection as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayerConnection as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PlayerConnection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PlayerConnection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayerConnection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -693,17 +549,15 @@ mod __PlayerConnection_unity2_raw {
 #[cfg(feature = "unity_engine-networking-player_connection-playerconnection")]
 impl PlayerConnection {
     #[doc = "`get_instance()` overload"]
-    pub fn get_instance(
-    ) -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection
-    {
+    pub fn get_instance() -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection {
         unsafe { __PlayerConnection_unity2_raw::get_instance(::core::option::Option::None) }
     }
+
     #[doc = "`CreateInstance()` overload"]
-    pub fn create_instance(
-    ) -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection
-    {
+    pub fn create_instance() -> crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection {
         unsafe { __PlayerConnection_unity2_raw::create_instance(::core::option::Option::None) }
     }
+
     #[doc = "`MessageCallbackInternal(::unity2::IntPtr, u64, u64, ::unity2::Il2CppString)` overload"]
     pub fn message_callback_internal(
         data: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -721,23 +575,15 @@ impl PlayerConnection {
             )
         }
     }
+
     #[doc = "`ConnectedCallbackInternal(i32)` overload"]
     pub fn connected_callback_internal(player_id: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __PlayerConnection_unity2_raw::connected_callback_internal(
-                ::core::convert::Into::into(player_id),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayerConnection_unity2_raw::connected_callback_internal(::core::convert::Into::into(player_id), ::core::option::Option::None) }
     }
+
     #[doc = "`DisconnectedCallback(i32)` overload"]
     pub fn disconnected_callback(player_id: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __PlayerConnection_unity2_raw::disconnected_callback(
-                ::core::convert::Into::into(player_id),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayerConnection_unity2_raw::disconnected_callback(::core::convert::Into::into(player_id), ::core::option::Option::None) }
     }
 }
 
@@ -746,125 +592,63 @@ pub trait IPlayerConnectionMethods: IPlayerConnection {
     #[doc = "`get_isConnected()` overload"]
     fn get_is_connected(self) -> bool {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayerConnection_unity2_raw::get_is_connected(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayerConnection_unity2_raw::get_is_connected(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayerConnection_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetConnectionNativeApi()` overload"]
-    fn get_connection_native_api(
-        self,
-    ) -> crate::unity_engine::iplayereditorconnectionnative::IPlayerEditorConnectionNative {
+    fn get_connection_native_api(self) -> crate::unity_engine::iplayereditorconnectionnative::IPlayerEditorConnectionNative {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayerConnection_unity2_raw::get_connection_native_api(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayerConnection_unity2_raw::get_connection_native_api(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RegisterConnection(crate::unity_engine::events::unityaction_1::UnityAction_1<i32>)` overload"]
-    fn register_connection(
-        self,
-        callback: impl ::core::convert::Into<
-            crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
-        >,
-    ) -> () {
+    fn register_connection(self, callback: impl ::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<i32>>) -> () {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayerConnection_unity2_raw::register_connection(
-                __receiver,
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayerConnection_unity2_raw::register_connection(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)
         }
     }
     #[doc = "`RegisterDisconnection(crate::unity_engine::events::unityaction_1::UnityAction_1<i32>)` overload"]
-    fn register_disconnection(
-        self,
-        callback: impl ::core::convert::Into<
-            crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
-        >,
-    ) -> () {
+    fn register_disconnection(self, callback: impl ::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<i32>>) -> () {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayerConnection_unity2_raw::register_disconnection(
-                __receiver,
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayerConnection_unity2_raw::register_disconnection(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)
         }
     }
     #[doc = "`UnregisterConnection(crate::unity_engine::events::unityaction_1::UnityAction_1<i32>)` overload"]
-    fn unregister_connection(
-        self,
-        callback: impl ::core::convert::Into<
-            crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
-        >,
-    ) -> () {
+    fn unregister_connection(self, callback: impl ::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<i32>>) -> () {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayerConnection_unity2_raw::unregister_connection(
-                __receiver,
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayerConnection_unity2_raw::unregister_connection(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)
         }
     }
     #[doc = "`UnregisterDisconnection(crate::unity_engine::events::unityaction_1::UnityAction_1<i32>)` overload"]
-    fn unregister_disconnection(
-        self,
-        callback: impl ::core::convert::Into<
-            crate::unity_engine::events::unityaction_1::UnityAction_1<i32>,
-        >,
-    ) -> () {
+    fn unregister_disconnection(self, callback: impl ::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<i32>>) -> () {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlayerConnection_unity2_raw::unregister_disconnection(
-                __receiver,
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlayerConnection_unity2_raw::unregister_disconnection(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)
         }
     }
     #[doc = "`DisconnectAll()` overload"]
     fn disconnect_all(self) -> () {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayerConnection_unity2_raw::disconnect_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayerConnection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayerConnection_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -892,16 +676,15 @@ impl PlayerConnection {
 #[cfg(feature = "unity_engine-networking-player_connection-playerconnection")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPlayerConnection;
-    pub use super::IPlayerConnectionMethods;
-    pub use super::PlayerConnection;
-    pub use crate::system::object::IObject;
+    pub use super::{IPlayerConnection, IPlayerConnectionMethods, PlayerConnection};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

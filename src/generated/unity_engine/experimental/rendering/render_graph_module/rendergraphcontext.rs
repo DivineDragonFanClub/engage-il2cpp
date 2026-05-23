@@ -2,28 +2,28 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphcontext/RenderGraphContext.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraphContext"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphContext")]
     #[parent(crate::system::object::Object)]
     pub struct RenderGraphContext {
-# [rename (name = "renderContext")] pub render_context : crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext ,
-# [rename (name = "cmd")] pub cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer ,
-# [rename (name = "renderGraphPool")] pub render_graph_pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphobjectpool :: RenderGraphObjectPool ,
-# [rename (name = "defaultResources")] pub default_resources : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdefaultresources :: RenderGraphDefaultResources ,
-}
+        #[rename(name = "renderContext")]
+        pub render_context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        #[rename(name = "cmd")]
+        pub cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        #[rename(name = "renderGraphPool")]
+        pub render_graph_pool: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool,
+        #[rename(name = "defaultResources")]
+        pub default_resources:
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdefaultresources::RenderGraphDefaultResources,
+    }
 }
 
-#[cfg(
-    feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext-types"
-)]
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]
@@ -35,9 +35,7 @@ mod __RenderGraphContext_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderGraphContext as ::unity2::ClassIdentity>::class(),
@@ -50,30 +48,20 @@ mod __RenderGraphContext_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderGraphContext as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderGraphContext as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RenderGraphContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RenderGraphContext, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RenderGraphContext, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -83,9 +71,7 @@ pub trait IRenderGraphContextMethods: IRenderGraphContext {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RenderGraphContext as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RenderGraphContext as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RenderGraphContext_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -113,9 +99,7 @@ impl RenderGraphContext {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRenderGraphContext;
-    pub use super::IRenderGraphContextMethods;
-    pub use super::RenderGraphContext;
+    pub use super::{IRenderGraphContext, IRenderGraphContextMethods, RenderGraphContext};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

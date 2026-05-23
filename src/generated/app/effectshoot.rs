@@ -2,16 +2,27 @@
 
 #[cfg(feature = "app-effectshoot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectshoot/EffectShoot_Callback.md"))]
+    #[::unity2::class(namespace = "App", name = "EffectShoot.Callback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EffectShoot_Callback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectshoot/EffectShoot.md"))]
     #[::unity2::class(namespace = "App", name = "EffectShoot")]
@@ -38,394 +49,12 @@ mod __types {
         #[rename(name = "m_Callback")]
         pub m_callback: crate::app::effectshoot::EffectShoot_Callback,
         #[rename(name = "m_ParticleSystems")]
-        pub m_particle_systems:
-            ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem>,
+        pub m_particle_systems: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectshoot/EffectShoot_Callback.md"))]
-    #[::unity2::class(namespace = "App", name = "EffectShoot.Callback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct EffectShoot_Callback {}
 }
 
 #[cfg(feature = "app-effectshoot-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-effectshoot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EffectShoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectShoot as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EffectShoot as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(this: EffectShoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectShoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_shoot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectShoot as ::unity2::ClassIdentity>::class(),
-                "Shoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EffectShoot as ::unity2::ClassIdentity>::NAME,
-                    "Shoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn shoot(this: EffectShoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectShoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_shoot::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_shoot_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <crate::app::effectshoot::EffectShoot_Callback as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectShoot as ::unity2::ClassIdentity>::class(),
-                "Shoot",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EffectShoot as ::unity2::ClassIdentity>::NAME,
-                    "Shoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn shoot_2(
-        this: EffectShoot,
-        start: crate::unity_engine::vector3::Vector3,
-        goal: crate::unity_engine::vector3::Vector3,
-        time: f32,
-        callback: crate::app::effectshoot::EffectShoot_Callback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EffectShoot,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            crate::app::effectshoot::EffectShoot_Callback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_shoot_2::get_offset() as isize),
-        );
-        inner(this, start, goal, time, callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_loop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectShoot as ::unity2::ClassIdentity>::class(),
-                "SetLoop",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EffectShoot as ::unity2::ClassIdentity>::NAME,
-                    "SetLoop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_loop(
-        this: EffectShoot,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(EffectShoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_loop::get_offset() as isize),
-            );
-        inner(this, enable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectShoot as ::unity2::ClassIdentity>::class(),
-                "Stop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EffectShoot as ::unity2::ClassIdentity>::NAME,
-                    "Stop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn stop(this: EffectShoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectShoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EffectShoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EffectShoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: EffectShoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EffectShoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-effectshoot")]
-pub trait IEffectShootMethods: IEffectShoot {
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EffectShoot_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Shoot()` overload"]
-    fn shoot(self) -> () {
-        unsafe {
-            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EffectShoot_unity2_raw::shoot(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Shoot(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, crate::app::effectshoot::EffectShoot_Callback)` overload"]
-    fn shoot_2(
-        self,
-        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        time: impl ::core::convert::Into<f32>,
-        callback: impl ::core::convert::Into<crate::app::effectshoot::EffectShoot_Callback>,
-    ) -> () {
-        unsafe {
-            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EffectShoot_unity2_raw::shoot_2(
-                __receiver,
-                ::core::convert::Into::into(start),
-                ::core::convert::Into::into(goal),
-                ::core::convert::Into::into(time),
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetLoop(bool)` overload"]
-    fn set_loop(self, enable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EffectShoot_unity2_raw::set_loop(
-                __receiver,
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Stop()` overload"]
-    fn stop(self) -> () {
-        unsafe {
-            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EffectShoot_unity2_raw::stop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EffectShoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-effectshoot")]
-impl<__T: IEffectShoot> IEffectShootMethods for __T {}
-
-#[cfg(feature = "app-effectshoot")]
-impl EffectShoot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EffectShoot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEffectShootMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-effectshoot")]
 #[doc(hidden)]
@@ -436,9 +65,7 @@ mod __EffectShoot_Callback_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -454,18 +81,15 @@ mod __EffectShoot_Callback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EffectShoot_Callback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EffectShoot_Callback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -474,27 +98,16 @@ mod __EffectShoot_Callback_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EffectShoot_Callback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EffectShoot_Callback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::effectshoot::EffectShoot as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::effectshoot::EffectShoot as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EffectShoot_Callback as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -506,18 +119,15 @@ mod __EffectShoot_Callback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EffectShoot_Callback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EffectShoot_Callback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -525,15 +135,8 @@ mod __EffectShoot_Callback_unity2_raw {
         shoot: crate::app::effectshoot::EffectShoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EffectShoot_Callback,
-            crate::app::effectshoot::EffectShoot,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EffectShoot_Callback, crate::app::effectshoot::EffectShoot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, shoot, __unity2_method_info)
     }
 }
@@ -541,15 +144,10 @@ mod __EffectShoot_Callback_unity2_raw {
 #[cfg(feature = "app-effectshoot")]
 pub trait IEffectShoot_CallbackMethods: IEffectShoot_Callback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <EffectShoot_Callback as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <EffectShoot_Callback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EffectShoot_Callback_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -561,14 +159,9 @@ pub trait IEffectShoot_CallbackMethods: IEffectShoot_Callback {
     #[doc = "`Invoke(crate::app::effectshoot::EffectShoot)` overload"]
     fn invoke(self, shoot: impl ::core::convert::Into<crate::app::effectshoot::EffectShoot>) -> () {
         unsafe {
-            let __receiver = <EffectShoot_Callback as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EffectShoot_Callback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(shoot),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <EffectShoot_Callback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EffectShoot_Callback_unity2_raw::invoke(__receiver, ::core::convert::Into::into(shoot), ::core::option::Option::None)
         }
     }
 }
@@ -594,32 +187,280 @@ impl EffectShoot_Callback {
 
 #[cfg(feature = "app-effectshoot")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EffectShoot_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<EffectShoot as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EffectShoot as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update(this: EffectShoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EffectShoot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_shoot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<EffectShoot as ::unity2::ClassIdentity>::class(), "Shoot", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EffectShoot as ::unity2::ClassIdentity>::NAME,
+                        "Shoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn shoot(this: EffectShoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EffectShoot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_shoot::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_shoot_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::app::effectshoot::EffectShoot_Callback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<EffectShoot as ::unity2::ClassIdentity>::class(), "Shoot", 4, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EffectShoot as ::unity2::ClassIdentity>::NAME,
+                        "Shoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn shoot_2(
+        this: EffectShoot,
+        start: crate::unity_engine::vector3::Vector3,
+        goal: crate::unity_engine::vector3::Vector3,
+        time: f32,
+        callback: crate::app::effectshoot::EffectShoot_Callback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EffectShoot,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            crate::app::effectshoot::EffectShoot_Callback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_shoot_2::get_method_info().method_ptr);
+        inner(this, start, goal, time, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_loop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EffectShoot as ::unity2::ClassIdentity>::class(), "SetLoop", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EffectShoot as ::unity2::ClassIdentity>::NAME,
+                        "SetLoop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_loop(this: EffectShoot, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EffectShoot, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_loop::get_method_info().method_ptr);
+        inner(this, enable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<EffectShoot as ::unity2::ClassIdentity>::class(), "Stop", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EffectShoot as ::unity2::ClassIdentity>::NAME,
+                        "Stop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn stop(this: EffectShoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EffectShoot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<EffectShoot as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EffectShoot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: EffectShoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EffectShoot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-effectshoot")]
+pub trait IEffectShootMethods: IEffectShoot {
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EffectShoot_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Shoot()` overload"]
+    fn shoot(self) -> () {
+        unsafe {
+            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EffectShoot_unity2_raw::shoot(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Shoot(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, crate::app::effectshoot::EffectShoot_Callback)` overload"]
+    fn shoot_2(
+        self,
+        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        time: impl ::core::convert::Into<f32>,
+        callback: impl ::core::convert::Into<crate::app::effectshoot::EffectShoot_Callback>,
+    ) -> () {
+        unsafe {
+            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EffectShoot_unity2_raw::shoot_2(
+                __receiver,
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(time),
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetLoop(bool)` overload"]
+    fn set_loop(self, enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EffectShoot_unity2_raw::set_loop(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Stop()` overload"]
+    fn stop(self) -> () {
+        unsafe {
+            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EffectShoot_unity2_raw::stop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <EffectShoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EffectShoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-effectshoot")]
+impl<__T: IEffectShoot> IEffectShootMethods for __T {}
+
+#[cfg(feature = "app-effectshoot")]
+impl EffectShoot {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(EffectShoot), ::core::stringify!(new),));
+        <Self as IEffectShootMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-effectshoot")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::EffectShoot;
-    pub use super::EffectShoot_Callback;
-    pub use super::IEffectShoot;
-    pub use super::IEffectShootMethods;
-    pub use super::IEffectShoot_Callback;
-    pub use super::IEffectShoot_CallbackMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{EffectShoot, EffectShoot_Callback, IEffectShoot, IEffectShootMethods, IEffectShoot_Callback, IEffectShoot_CallbackMethods};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

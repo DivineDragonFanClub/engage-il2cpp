@@ -2,23 +2,18 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/legacyresourceslocator/LegacyResourcesLocator.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.ResourceLocators",
-        name = "LegacyResourcesLocator"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.ResourceLocators", name = "LegacyResourcesLocator")]
     #[parent(crate::system::object::Object)]
     pub struct LegacyResourcesLocator {}
 }
 
-#[cfg(
-    feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types"
-)]
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator")]
@@ -30,10 +25,14 @@ mod __LegacyResourcesLocator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_locate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LegacyResourcesLocator as ::unity2::ClassIdentity>::class(),
                 "Locate",
@@ -45,37 +44,42 @@ mod __LegacyResourcesLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LegacyResourcesLocator as ::unity2::ClassIdentity>::NAME,
-                    "Locate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LegacyResourcesLocator as ::unity2::ClassIdentity>::NAME,
+                        "Locate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn locate(
         this: LegacyResourcesLocator,
         key: crate::system::object::Object,
         r#type: ::unity2::SystemType,
-        locations : * mut crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        locations: *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (LegacyResourcesLocator , crate :: system :: object :: Object , :: unity2 :: SystemType , * mut crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_locate :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            LegacyResourcesLocator,
+            crate::system::object::Object,
+            ::unity2::SystemType,
+            *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_locate::get_method_info().method_ptr);
         inner(this, key, r#type, locations, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_keys {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LegacyResourcesLocator as ::unity2::ClassIdentity>::class(),
@@ -88,36 +92,33 @@ mod __LegacyResourcesLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LegacyResourcesLocator as ::unity2::ClassIdentity>::NAME,
-                    "get_Keys",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LegacyResourcesLocator as ::unity2::ClassIdentity>::NAME,
+                        "get_Keys",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_keys(
         this: LegacyResourcesLocator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::system::object::Object,
-    > {
-        let inner : extern "C" fn (LegacyResourcesLocator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: object :: Object > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_keys :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> {
+        let inner: extern "C" fn(
+            LegacyResourcesLocator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> =
+            ::core::mem::transmute(__lookup_get_keys::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_locator_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LegacyResourcesLocator as ::unity2::ClassIdentity>::class(),
@@ -130,41 +131,27 @@ mod __LegacyResourcesLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LegacyResourcesLocator as ::unity2::ClassIdentity>::NAME,
-                    "get_LocatorId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LegacyResourcesLocator as ::unity2::ClassIdentity>::NAME,
+                        "get_LocatorId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_locator_id(
-        this: LegacyResourcesLocator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            LegacyResourcesLocator,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_locator_id::get_offset() as isize),
-        );
+    pub unsafe fn get_locator_id(this: LegacyResourcesLocator, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(LegacyResourcesLocator, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_locator_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LegacyResourcesLocator as ::unity2::ClassIdentity>::class(),
@@ -177,42 +164,45 @@ mod __LegacyResourcesLocator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LegacyResourcesLocator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LegacyResourcesLocator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: LegacyResourcesLocator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: LegacyResourcesLocator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LegacyResourcesLocator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator")]
 pub trait ILegacyResourcesLocatorMethods: ILegacyResourcesLocator {
-    #[doc = "`Locate(crate::system::object::Object, ::unity2::SystemType, *mutcrate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]    fn locate (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> (bool , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >){
+    #[doc = "`Locate(crate::system::object::Object, ::unity2::SystemType, *mutcrate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]
+    fn locate(
+        self,
+        key: impl ::core::convert::Into<crate::system::object::Object>,
+        r#type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> (
+        bool,
+        crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
+    ) {
         unsafe {
-            let __receiver = <LegacyResourcesLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > :: uninit () ;
+            let __receiver =
+                <LegacyResourcesLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+                >,
+            >::uninit();
             let __ret = {
                 __LegacyResourcesLocator_unity2_raw::locate(
                     __receiver,
@@ -226,36 +216,26 @@ pub trait ILegacyResourcesLocatorMethods: ILegacyResourcesLocator {
         }
     }
     #[doc = "`get_Keys()` overload"]
-    fn get_keys(
-        self,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-        crate::system::object::Object,
-    > {
+    fn get_keys(self) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> {
         unsafe {
-            let __receiver = <LegacyResourcesLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <LegacyResourcesLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LegacyResourcesLocator_unity2_raw::get_keys(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_LocatorId()` overload"]
     fn get_locator_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <LegacyResourcesLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LegacyResourcesLocator_unity2_raw::get_locator_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <LegacyResourcesLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LegacyResourcesLocator_unity2_raw::get_locator_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <LegacyResourcesLocator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <LegacyResourcesLocator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LegacyResourcesLocator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -283,9 +263,7 @@ impl LegacyResourcesLocator {
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILegacyResourcesLocator;
-    pub use super::ILegacyResourcesLocatorMethods;
-    pub use super::LegacyResourcesLocator;
+    pub use super::{ILegacyResourcesLocator, ILegacyResourcesLocatorMethods, LegacyResourcesLocator};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

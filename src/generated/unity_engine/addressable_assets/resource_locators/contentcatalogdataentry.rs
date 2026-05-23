@@ -2,23 +2,18 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdataentry/ContentCatalogDataEntry.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.ResourceLocators",
-        name = "ContentCatalogDataEntry"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.ResourceLocators", name = "ContentCatalogDataEntry")]
     #[parent(crate::system::object::Object)]
     pub struct ContentCatalogDataEntry {}
 }
 
-#[cfg(
-    feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types"
-)]
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry")]
@@ -30,9 +25,7 @@ mod __ContentCatalogDataEntry_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_internal_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
@@ -45,43 +38,28 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "get_InternalId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_InternalId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_internal_id(
-        this: ContentCatalogDataEntry,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ContentCatalogDataEntry,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_internal_id::get_offset() as isize),
-        );
+    pub unsafe fn get_internal_id(this: ContentCatalogDataEntry, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ContentCatalogDataEntry, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_internal_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_internal_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
                 "set_InternalId",
@@ -93,18 +71,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "set_InternalId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "set_InternalId",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_internal_id(
@@ -112,24 +87,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ContentCatalogDataEntry,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_internal_id::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ContentCatalogDataEntry, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_internal_id::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_provider {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
@@ -142,43 +108,28 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "get_Provider",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_Provider",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_provider(
-        this: ContentCatalogDataEntry,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ContentCatalogDataEntry,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_provider::get_offset() as isize),
-        );
+    pub unsafe fn get_provider(this: ContentCatalogDataEntry, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ContentCatalogDataEntry, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_provider::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_provider {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
                 "set_Provider",
@@ -190,43 +141,27 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "set_Provider",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "set_Provider",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_provider(
-        this: ContentCatalogDataEntry,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ContentCatalogDataEntry,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_provider::get_offset() as isize),
-        );
+    pub unsafe fn set_provider(this: ContentCatalogDataEntry, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ContentCatalogDataEntry, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_provider::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_keys {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
@@ -239,18 +174,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "get_Keys",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_Keys",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_keys(
@@ -260,26 +192,17 @@ mod __ContentCatalogDataEntry_unity2_raw {
         let inner: extern "C" fn(
             ContentCatalogDataEntry,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::system::object::Object,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_keys::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object> =
+            ::core::mem::transmute(__lookup_get_keys::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_keys {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::system::object::Object,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::list_1::List_1<crate::system::object::Object> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
                 "set_Keys",
@@ -291,18 +214,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "set_Keys",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "set_Keys",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_keys(
@@ -314,20 +234,14 @@ mod __ContentCatalogDataEntry_unity2_raw {
             ContentCatalogDataEntry,
             crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_keys::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_keys::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dependencies {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
@@ -340,18 +254,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "get_Dependencies",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_Dependencies",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_dependencies(
@@ -361,26 +272,17 @@ mod __ContentCatalogDataEntry_unity2_raw {
         let inner: extern "C" fn(
             ContentCatalogDataEntry,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::system::object::Object,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dependencies::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object> =
+            ::core::mem::transmute(__lookup_get_dependencies::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dependencies {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::system::object::Object,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::list_1::List_1<crate::system::object::Object> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
                 "set_Dependencies",
@@ -392,18 +294,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "set_Dependencies",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "set_Dependencies",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_dependencies(
@@ -415,20 +314,14 @@ mod __ContentCatalogDataEntry_unity2_raw {
             ContentCatalogDataEntry,
             crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_dependencies::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_dependencies::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
@@ -441,43 +334,28 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_Data",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_data(
-        this: ContentCatalogDataEntry,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ContentCatalogDataEntry,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
+    pub unsafe fn get_data(this: ContentCatalogDataEntry, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ContentCatalogDataEntry, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
                 "set_Data",
@@ -489,18 +367,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "set_Data",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "set_Data",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_data(
@@ -508,24 +383,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         value: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ContentCatalogDataEntry,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ContentCatalogDataEntry, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_resource_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
@@ -538,43 +404,28 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "get_ResourceType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_ResourceType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_resource_type(
-        this: ContentCatalogDataEntry,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ContentCatalogDataEntry,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_resource_type::get_offset() as isize),
-        );
+    pub unsafe fn get_resource_type(this: ContentCatalogDataEntry, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(ContentCatalogDataEntry, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_resource_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_resource_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentCatalogDataEntry as ::unity2::ClassIdentity>::class(),
                 "set_ResourceType",
@@ -586,18 +437,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    "set_ResourceType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        "set_ResourceType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_resource_type(
@@ -605,34 +453,21 @@ mod __ContentCatalogDataEntry_unity2_raw {
         value: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ContentCatalogDataEntry,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_resource_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ContentCatalogDataEntry, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_resource_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                    crate::system::object::Object,
-                > as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                    crate::system::object::Object,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> as ::unity2::IlType>::il_type(),
                 <::unity2::IlInstance as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -646,18 +481,15 @@ mod __ContentCatalogDataEntry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentCatalogDataEntry as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -665,12 +497,8 @@ mod __ContentCatalogDataEntry_unity2_raw {
         r#type: ::unity2::SystemType,
         internal_id: ::unity2::Il2CppString,
         provider: ::unity2::Il2CppString,
-        keys: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::system::object::Object,
-        >,
-        dependencies: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::system::object::Object,
-        >,
+        keys: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>,
+        dependencies: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>,
         extra_data: ::unity2::IlInstance,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -679,29 +507,12 @@ mod __ContentCatalogDataEntry_unity2_raw {
             ::unity2::SystemType,
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::system::object::Object,
-            >,
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::system::object::Object,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>,
             ::unity2::IlInstance,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            r#type,
-            internal_id,
-            provider,
-            keys,
-            dependencies,
-            extra_data,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, r#type, internal_id, provider, keys, dependencies, extra_data, __unity2_method_info)
     }
 }
 
@@ -711,128 +522,74 @@ pub trait IContentCatalogDataEntryMethods: IContentCatalogDataEntry {
     fn get_internal_id(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::get_internal_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::get_internal_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_InternalId(::unity2::Il2CppString)` overload"]
     fn set_internal_id(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::set_internal_id(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::set_internal_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Provider()` overload"]
     fn get_provider(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::get_provider(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::get_provider(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Provider(::unity2::Il2CppString)` overload"]
     fn set_provider(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::set_provider(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::set_provider(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Keys()` overload"]
-    fn get_keys(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object> {
+    fn get_keys(self) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object> {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContentCatalogDataEntry_unity2_raw::get_keys(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Keys(crate::system::collections::generic::list_1::List_1<crate::system::object::Object>)` overload"]
-    fn set_keys(
-        self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
-        >,
-    ) -> () {
+    fn set_keys(self, value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::system::object::Object>>) -> () {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::set_keys(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::set_keys(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Dependencies()` overload"]
-    fn get_dependencies(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object> {
+    fn get_dependencies(self) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object> {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::get_dependencies(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::get_dependencies(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Dependencies(crate::system::collections::generic::list_1::List_1<crate::system::object::Object>)` overload"]
     fn set_dependencies(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::system::object::Object>>,
     ) -> () {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::set_dependencies(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::set_dependencies(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Data()` overload"]
     fn get_data(self) -> crate::system::object::Object {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContentCatalogDataEntry_unity2_raw::get_data(__receiver, ::core::option::Option::None)
         }
     }
@@ -840,41 +597,24 @@ pub trait IContentCatalogDataEntryMethods: IContentCatalogDataEntry {
     fn set_data(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::set_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ResourceType()` overload"]
     fn get_resource_type(self) -> ::unity2::SystemType {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::get_resource_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::get_resource_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ResourceType(::unity2::SystemType)` overload"]
     fn set_resource_type(self, value: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ContentCatalogDataEntry_unity2_raw::set_resource_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentCatalogDataEntry_unity2_raw::set_resource_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>, ::unity2::IlInstance)` overload"]
@@ -883,23 +623,13 @@ pub trait IContentCatalogDataEntryMethods: IContentCatalogDataEntry {
         r#type: impl ::core::convert::Into<::unity2::SystemType>,
         internal_id: impl ::core::convert::Into<::unity2::Il2CppString>,
         provider: impl ::core::convert::Into<::unity2::Il2CppString>,
-        keys: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::system::object::Object,
-            >,
-        >,
-        dependencies: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::system::object::Object,
-            >,
-        >,
+        keys: impl ::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>>,
+        dependencies: impl ::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>>,
         extra_data: impl ::core::convert::Into<::unity2::IlInstance>,
     ) -> () {
         unsafe {
             let __receiver =
-                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ContentCatalogDataEntry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContentCatalogDataEntry_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -924,12 +654,8 @@ impl ContentCatalogDataEntry {
         r#type: ::unity2::SystemType,
         internal_id: ::unity2::Il2CppString,
         provider: ::unity2::Il2CppString,
-        keys: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::system::object::Object,
-        >,
-        dependencies: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-            crate::system::object::Object,
-        >,
+        keys: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>,
+        dependencies: crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>,
         extra_data: ::unity2::IlInstance,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
@@ -939,15 +665,7 @@ impl ContentCatalogDataEntry {
                 ::core::stringify!(new),
             )
         });
-        <Self as IContentCatalogDataEntryMethods>::ctor(
-            this,
-            r#type,
-            internal_id,
-            provider,
-            keys,
-            dependencies,
-            extra_data,
-        );
+        <Self as IContentCatalogDataEntryMethods>::ctor(this, r#type, internal_id, provider, keys, dependencies, extra_data);
         this
     }
 }
@@ -955,9 +673,7 @@ impl ContentCatalogDataEntry {
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ContentCatalogDataEntry;
-    pub use super::IContentCatalogDataEntry;
-    pub use super::IContentCatalogDataEntryMethods;
+    pub use super::{ContentCatalogDataEntry, IContentCatalogDataEntry, IContentCatalogDataEntryMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

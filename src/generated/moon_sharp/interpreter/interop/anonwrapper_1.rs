@@ -2,11 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::interop::anonwrapper::{AnonWrapper, IAnonWrapper};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::interop::anonwrapper::{AnonWrapper, IAnonWrapper},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/anonwrapper_1/AnonWrapper_1.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "AnonWrapper`1")]
@@ -42,13 +44,8 @@ impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
 impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AnonWrapper_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AnonWrapper_1), ::core::stringify!(new),));
         <Self as IAnonWrapper_1Methods<T0>>::ctor(this);
         this
     }
@@ -70,13 +67,10 @@ impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnonWrapper_1;
-    pub use super::IAnonWrapper_1;
-    pub use super::IAnonWrapper_1Methods;
-    pub use crate::moon_sharp::interpreter::interop::anonwrapper::IAnonWrapper;
+    pub use super::{AnonWrapper_1, IAnonWrapper_1, IAnonWrapper_1Methods};
     #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper")]
     pub use crate::moon_sharp::interpreter::interop::anonwrapper::IAnonWrapperMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{moon_sharp::interpreter::interop::anonwrapper::IAnonWrapper, system::object::IObject};
 }

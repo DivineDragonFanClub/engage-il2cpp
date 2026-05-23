@@ -2,14 +2,20 @@
 
 #[cfg(feature = "app-mapsequencecommandskill-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecommandskill/MapSequenceCommandSkill.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceCommandSkill")]
@@ -25,21 +31,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Action.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapSequenceCommandSkill_Action {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Action {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapSequenceCommandSkill.Action";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -50,10 +49,7 @@ mod __types {
 
     impl ::unity2::IlType for MapSequenceCommandSkill_Action {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -69,21 +65,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapSequenceCommandSkill_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapSequenceCommandSkill.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -94,10 +83,7 @@ mod __types {
 
     impl ::unity2::IlType for MapSequenceCommandSkill_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -124,10 +110,11 @@ mod __MapSequenceCommandSkill_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapskill :: MapSkill_Results as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::mapskill::MapSkill_Results as ::unity2::IlType>::il_type(),
+                <crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -139,18 +126,15 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -164,20 +148,14 @@ mod __MapSequenceCommandSkill_unity2_raw {
             *mut crate::app::mapskill::MapSkill_Results,
             crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, results, action, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
@@ -190,41 +168,28 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: MapSequenceCommandSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: MapSequenceCommandSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceCommandSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_skip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitsignal::UnitSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitsignal::UnitSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
                 "WaitSkip",
@@ -236,18 +201,15 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "WaitSkip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "WaitSkip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn wait_skip(
@@ -255,24 +217,15 @@ mod __MapSequenceCommandSkill_unity2_raw {
         signal: crate::app::unitsignal::UnitSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceCommandSkill,
-            crate::app::unitsignal::UnitSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_wait_skip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapSequenceCommandSkill, crate::app::unitsignal::UnitSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_wait_skip::get_method_info().method_ptr);
         inner(this, signal, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_begin_signal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
@@ -285,39 +238,27 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "BeginSignal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "BeginSignal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn begin_signal(
-        this: MapSequenceCommandSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn begin_signal(this: MapSequenceCommandSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceCommandSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_begin_signal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_begin_signal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_signal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
@@ -330,39 +271,27 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "EndSignal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "EndSignal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn end_signal(
-        this: MapSequenceCommandSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn end_signal(this: MapSequenceCommandSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceCommandSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_signal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_end_signal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_impact {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
@@ -375,39 +304,27 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "Impact",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "Impact",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn impact(
-        this: MapSequenceCommandSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn impact(this: MapSequenceCommandSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceCommandSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_impact::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_impact::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
@@ -420,41 +337,28 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "Commit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit(
-        this: MapSequenceCommandSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn commit(this: MapSequenceCommandSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceCommandSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_commit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapskill::MapSkill_Results as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapskill::MapSkill_Results as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
                 "Commit",
@@ -466,41 +370,27 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "Commit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit_2(
-        results: crate::app::mapskill::MapSkill_Results,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::mapskill::MapSkill_Results,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_commit_2::get_offset() as isize),
-        );
+    pub unsafe fn commit_2(results: crate::app::mapskill::MapSkill_Results, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::mapskill::MapSkill_Results, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit_2::get_method_info().method_ptr);
         inner(results, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_force_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
@@ -516,18 +406,15 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "RemoveForceSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "RemoveForceSkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_force_skill(
@@ -535,24 +422,15 @@ mod __MapSequenceCommandSkill_unity2_raw {
         skill: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::force::Force_Type,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_force_skill::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::force::Force_Type, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_force_skill::get_method_info().method_ptr);
         inner(force, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_give_skills {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -569,18 +447,15 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "AddGiveSkills",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "AddGiveSkills",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_give_skills(
@@ -589,26 +464,22 @@ mod __MapSequenceCommandSkill_unity2_raw {
         skill: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_give_skills::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_give_skills::get_method_info().method_ptr);
         inner(unit, target, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -620,18 +491,15 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -649,28 +517,19 @@ mod __MapSequenceCommandSkill_unity2_raw {
             crate::app::skilldata::SkillData,
             crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            current,
-            reverse,
-            skill,
-            action,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, current, reverse, skill, action, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapskill :: MapSkill_Results as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::mapskill::MapSkill_Results as ::unity2::IlType>::il_type(),
+                <crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -682,18 +541,15 @@ mod __MapSequenceCommandSkill_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceCommandSkill as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_2(
@@ -707,11 +563,7 @@ mod __MapSequenceCommandSkill_unity2_raw {
             crate::app::mapskill::MapSkill_Results,
             crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_create_bind_2::get_method_info().method_ptr);
         inner(super_, results, action, __unity2_method_info)
     }
 }
@@ -719,16 +571,10 @@ mod __MapSequenceCommandSkill_unity2_raw {
 #[cfg(feature = "app-mapsequencecommandskill")]
 impl MapSequenceCommandSkill {
     #[doc = "`Commit(crate::app::mapskill::MapSkill_Results)` overload"]
-    pub fn commit_2(
-        results: impl ::core::convert::Into<crate::app::mapskill::MapSkill_Results>,
-    ) -> () {
-        unsafe {
-            __MapSequenceCommandSkill_unity2_raw::commit_2(
-                ::core::convert::Into::into(results),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn commit_2(results: impl ::core::convert::Into<crate::app::mapskill::MapSkill_Results>) -> () {
+        unsafe { __MapSequenceCommandSkill_unity2_raw::commit_2(::core::convert::Into::into(results), ::core::option::Option::None) }
     }
+
     #[doc = "`RemoveForceSkill(crate::app::force::Force_Type, crate::app::skilldata::SkillData)` overload"]
     pub fn remove_force_skill(
         force: impl ::core::convert::Into<crate::app::force::Force_Type>,
@@ -742,6 +588,7 @@ impl MapSequenceCommandSkill {
             )
         }
     }
+
     #[doc = "`AddGiveSkills(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
     pub fn add_give_skills(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -757,15 +604,14 @@ impl MapSequenceCommandSkill {
             )
         }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         current: impl ::core::convert::Into<crate::app::unit::Unit>,
         reverse: impl ::core::convert::Into<crate::app::unit::Unit>,
         skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        action: impl ::core::convert::Into<
-            crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
-        >,
+        action: impl ::core::convert::Into<crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action>,
     ) -> bool {
         unsafe {
             __MapSequenceCommandSkill_unity2_raw::create_bind(
@@ -778,13 +624,12 @@ impl MapSequenceCommandSkill {
             )
         }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"]
     pub fn create_bind_2(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         results: impl ::core::convert::Into<crate::app::mapskill::MapSkill_Results>,
-        action: impl ::core::convert::Into<
-            crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
-        >,
+        action: impl ::core::convert::Into<crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action>,
     ) -> bool {
         unsafe {
             __MapSequenceCommandSkill_unity2_raw::create_bind_2(
@@ -802,17 +647,12 @@ pub trait IMapSequenceCommandSkillMethods: IMapSequenceCommandSkill {
     #[doc = "`.ctor(*mutcrate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` overload"]
     fn ctor(
         self,
-        action: impl ::core::convert::Into<
-            crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
-        >,
+        action: impl ::core::convert::Into<crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action>,
     ) -> crate::app::mapskill::MapSkill_Results {
         unsafe {
             let __receiver =
-                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::app::mapskill::MapSkill_Results>::uninit();
+                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::mapskill::MapSkill_Results>::uninit();
             __MapSequenceCommandSkill_unity2_raw::ctor(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -826,62 +666,39 @@ pub trait IMapSequenceCommandSkillMethods: IMapSequenceCommandSkill {
     fn start(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceCommandSkill_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`WaitSkip(crate::app::unitsignal::UnitSignal)` overload"]
-    fn wait_skip(
-        self,
-        signal: impl ::core::convert::Into<crate::app::unitsignal::UnitSignal>,
-    ) -> () {
+    fn wait_skip(self, signal: impl ::core::convert::Into<crate::app::unitsignal::UnitSignal>) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceCommandSkill_unity2_raw::wait_skip(
-                __receiver,
-                ::core::convert::Into::into(signal),
-                ::core::option::Option::None,
-            )
+                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceCommandSkill_unity2_raw::wait_skip(__receiver, ::core::convert::Into::into(signal), ::core::option::Option::None)
         }
     }
     #[doc = "`BeginSignal()` overload"]
     fn begin_signal(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceCommandSkill_unity2_raw::begin_signal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceCommandSkill_unity2_raw::begin_signal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EndSignal()` overload"]
     fn end_signal(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceCommandSkill_unity2_raw::end_signal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceCommandSkill_unity2_raw::end_signal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Impact()` overload"]
     fn impact(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceCommandSkill_unity2_raw::impact(__receiver, ::core::option::Option::None)
         }
     }
@@ -889,9 +706,7 @@ pub trait IMapSequenceCommandSkillMethods: IMapSequenceCommandSkill {
     fn commit(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapSequenceCommandSkill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceCommandSkill_unity2_raw::commit(__receiver, ::core::option::Option::None)
         }
     }
@@ -922,24 +737,22 @@ impl MapSequenceCommandSkill {
 #[cfg(feature = "app-mapsequencecommandskill")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapSequenceCommandSkill;
-    pub use super::IMapSequenceCommandSkillMethods;
-    pub use super::MapSequenceCommandSkill;
-    pub use super::MapSequenceCommandSkill_Action;
-    pub use super::MapSequenceCommandSkill_Label;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        IMapSequenceCommandSkill, IMapSequenceCommandSkillMethods, MapSequenceCommandSkill, MapSequenceCommandSkill_Action,
+        MapSequenceCommandSkill_Label,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-ui-ivertexmodifier-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ivertexmodifier/IVertexModifier.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "IVertexModifier")]
@@ -23,13 +23,10 @@ mod __IVertexModifier_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_modify_vertices {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::uivertex::UIVertex,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uivertex::UIVertex,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IVertexModifier as ::unity2::ClassIdentity>::class(),
                 "ModifyVertices",
@@ -41,38 +38,27 @@ mod __IVertexModifier_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IVertexModifier as ::unity2::ClassIdentity>::NAME,
-                    "ModifyVertices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IVertexModifier as ::unity2::ClassIdentity>::NAME,
+                        "ModifyVertices",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn modify_vertices(
         this: IVertexModifier,
-        verts: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uivertex::UIVertex,
-        >,
+        verts: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             IVertexModifier,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uivertex::UIVertex,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_modify_vertices::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_modify_vertices::get_method_info().method_ptr);
         inner(this, verts, __unity2_method_info)
     }
 }
@@ -82,21 +68,11 @@ pub trait IIVertexModifierMethods: IIVertexModifier {
     #[doc = "`ModifyVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]
     fn modify_vertices(
         self,
-        verts: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uivertex::UIVertex,
-            >,
-        >,
+        verts: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>>,
     ) -> () {
         unsafe {
-            let __receiver = <IVertexModifier as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IVertexModifier_unity2_raw::modify_vertices(
-                __receiver,
-                ::core::convert::Into::into(verts),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IVertexModifier as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IVertexModifier_unity2_raw::modify_vertices(__receiver, ::core::convert::Into::into(verts), ::core::option::Option::None)
         }
     }
 }
@@ -107,7 +83,5 @@ impl<__T: IIVertexModifier> IIVertexModifierMethods for __T {}
 #[cfg(feature = "unity_engine-ui-ivertexmodifier")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIVertexModifier;
-    pub use super::IIVertexModifierMethods;
-    pub use super::IVertexModifier;
+    pub use super::{IIVertexModifier, IIVertexModifierMethods, IVertexModifier};
 }

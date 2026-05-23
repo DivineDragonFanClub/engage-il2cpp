@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-clrtoscriptconversions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/clrtoscriptconversions/ClrToScriptConversions.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.Converters",
-        name = "ClrToScriptConversions"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.Converters", name = "ClrToScriptConversions")]
     #[parent(crate::system::object::Object)]
     pub struct ClrToScriptConversions {}
 }
@@ -28,9 +25,7 @@ mod __ClrToScriptConversions_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_try_object_to_trivial_dyn_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -46,18 +41,15 @@ mod __ClrToScriptConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClrToScriptConversions as ::unity2::ClassIdentity>::NAME,
-                    "TryObjectToTrivialDynValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClrToScriptConversions as ::unity2::ClassIdentity>::NAME,
+                        "TryObjectToTrivialDynValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_object_to_trivial_dyn_value(
@@ -69,20 +61,15 @@ mod __ClrToScriptConversions_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_object_to_trivial_dyn_value::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_try_object_to_trivial_dyn_value::get_method_info().method_ptr);
         inner(script, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_object_to_simple_dyn_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -98,18 +85,15 @@ mod __ClrToScriptConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClrToScriptConversions as ::unity2::ClassIdentity>::NAME,
-                    "TryObjectToSimpleDynValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClrToScriptConversions as ::unity2::ClassIdentity>::NAME,
+                        "TryObjectToSimpleDynValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_object_to_simple_dyn_value(
@@ -121,20 +105,15 @@ mod __ClrToScriptConversions_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_object_to_simple_dyn_value::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_try_object_to_simple_dyn_value::get_method_info().method_ptr);
         inner(script, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_object_to_dyn_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -150,18 +129,15 @@ mod __ClrToScriptConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClrToScriptConversions as ::unity2::ClassIdentity>::NAME,
-                    "ObjectToDynValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClrToScriptConversions as ::unity2::ClassIdentity>::NAME,
+                        "ObjectToDynValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn object_to_dyn_value(
@@ -173,20 +149,14 @@ mod __ClrToScriptConversions_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_object_to_dyn_value::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_object_to_dyn_value::get_method_info().method_ptr);
         inner(script, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enumeration_to_dyn_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -202,18 +172,15 @@ mod __ClrToScriptConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClrToScriptConversions as ::unity2::ClassIdentity>::NAME,
-                    "EnumerationToDynValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClrToScriptConversions as ::unity2::ClassIdentity>::NAME,
+                        "EnumerationToDynValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enumeration_to_dyn_value(
@@ -225,11 +192,8 @@ mod __ClrToScriptConversions_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enumeration_to_dyn_value::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_enumeration_to_dyn_value::get_method_info().method_ptr);
         inner(script, obj, __unity2_method_info)
     }
 }
@@ -249,6 +213,7 @@ impl ClrToScriptConversions {
             )
         }
     }
+
     #[doc = "`TryObjectToSimpleDynValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]
     pub fn try_object_to_simple_dyn_value(
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
@@ -262,6 +227,7 @@ impl ClrToScriptConversions {
             )
         }
     }
+
     #[doc = "`ObjectToDynValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]
     pub fn object_to_dyn_value(
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
@@ -275,6 +241,7 @@ impl ClrToScriptConversions {
             )
         }
     }
+
     #[doc = "`EnumerationToDynValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]
     pub fn enumeration_to_dyn_value(
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
@@ -293,8 +260,7 @@ impl ClrToScriptConversions {
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-clrtoscriptconversions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ClrToScriptConversions;
-    pub use super::IClrToScriptConversions;
+    pub use super::{ClrToScriptConversions, IClrToScriptConversions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

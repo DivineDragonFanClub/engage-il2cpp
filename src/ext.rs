@@ -29,11 +29,7 @@ mod list_1_ext {
 
         fn iter(self) -> List_1Iter<T> {
             let len = self.get_count();
-            List_1Iter {
-                list: self,
-                index: 0,
-                len,
-            }
+            List_1Iter { list: self, index: 0, len }
         }
 
         fn count(self) -> i32 {
@@ -49,6 +45,7 @@ mod list_1_ext {
 
     impl<T: Copy + ::unity2::ClassIdentity> Iterator for List_1Iter<T> {
         type Item = T;
+
         fn next(&mut self) -> Option<T> {
             if self.index < self.len {
                 let v = self.list.get_item(self.index);
@@ -58,6 +55,7 @@ mod list_1_ext {
                 None
             }
         }
+
         fn size_hint(&self) -> (usize, Option<usize>) {
             let r = (self.len - self.index) as usize;
             (r, Some(r))
@@ -71,49 +69,35 @@ pub use list_1_ext::*;
 
 #[cfg(feature = "system-collections-generic-dictionary_2")]
 mod dictionary_2_ext {
-    use crate::system::collections::generic::dictionary_2::{
-        Dictionary_2, IDictionary_2Methods, IDictionary_2_KeyCollectionMethods,
-        IDictionary_2_ValueCollectionMethods,
-    };
     use ::unity2::Array;
 
-    pub trait Dictionary_2Ext<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity>
-    {
+    use crate::system::collections::generic::dictionary_2::{
+        Dictionary_2, IDictionary_2Methods, IDictionary_2_KeyCollectionMethods, IDictionary_2_ValueCollectionMethods,
+    };
+
+    pub trait Dictionary_2Ext<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> {
         fn iter(self) -> Dictionary_2Iter<K, V>;
     }
 
-    impl<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> Dictionary_2Ext<K, V>
-        for Dictionary_2<K, V>
-    {
+    impl<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> Dictionary_2Ext<K, V> for Dictionary_2<K, V> {
         fn iter(self) -> Dictionary_2Iter<K, V> {
             let len = self.get_count();
             let keys = Array::<K>::of_len(len as usize).expect("Dictionary_2Iter: keys alloc");
-            let values =
-                Array::<V>::of_len(len as usize).expect("Dictionary_2Iter: values alloc");
+            let values = Array::<V>::of_len(len as usize).expect("Dictionary_2Iter: values alloc");
             self.get_keys().copy_to(keys, 0);
             self.get_values().copy_to(values, 0);
-            Dictionary_2Iter {
-                keys,
-                values,
-                index: 0,
-                len,
-            }
+            Dictionary_2Iter { keys, values, index: 0, len }
         }
     }
 
-    pub struct Dictionary_2Iter<
-        K: Copy + ::unity2::ClassIdentity,
-        V: Copy + ::unity2::ClassIdentity,
-    > {
+    pub struct Dictionary_2Iter<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> {
         keys: Array<K>,
         values: Array<V>,
         index: i32,
         len: i32,
     }
 
-    impl<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> Iterator
-        for Dictionary_2Iter<K, V>
-    {
+    impl<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> Iterator for Dictionary_2Iter<K, V> {
         type Item = (K, V);
 
         fn next(&mut self) -> Option<(K, V)> {
@@ -132,10 +116,7 @@ mod dictionary_2_ext {
         }
     }
 
-    impl<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> ExactSizeIterator
-        for Dictionary_2Iter<K, V>
-    {
-    }
+    impl<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> ExactSizeIterator for Dictionary_2Iter<K, V> {}
 }
 #[cfg(feature = "system-collections-generic-dictionary_2")]
 pub use dictionary_2_ext::*;
@@ -147,11 +128,16 @@ pub use dictionary_2_ext::*;
     feature = "system-collections-generic-list_1",
 ))]
 mod game_variable_manager {
-    use crate::app::gameuserdata::{GameUserData, IGameUserDataMethods};
-    use crate::app::gamevariable::{GameVariable, IGameVariableMethods};
-    use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    use crate::system::collections::generic::list_1::List_1;
     use unity2::Il2CppString;
+
+    use crate::{
+        app::{
+            gameuserdata::{GameUserData, IGameUserDataMethods},
+            gamevariable::{GameVariable, IGameVariableMethods},
+            singletonclass_1::ISingletonClass_1Methods,
+        },
+        system::collections::generic::list_1::List_1,
+    };
 
     pub struct GameVariableManager;
 
@@ -266,8 +252,7 @@ mod mess_ext {
         }
     }
 }
-#[cfg(feature = "app-mess")]
-pub use mess_ext::*;
+#[cfg(feature = "app-mess")] pub use mess_ext::*;
 
 #[cfg(feature = "app-titlebar")]
 mod title_bar_ext {
@@ -276,11 +261,7 @@ mod title_bar_ext {
     pub struct TitleBar;
 
     impl TitleBar {
-        pub fn open_header(
-            title: impl Into<Il2CppString>,
-            title_help: impl Into<Il2CppString>,
-            key_help_id: impl Into<Il2CppString>,
-        ) -> bool {
+        pub fn open_header(title: impl Into<Il2CppString>, title_help: impl Into<Il2CppString>, key_help_id: impl Into<Il2CppString>) -> bool {
             use crate::app::titlebar::{ITitleBarMethods, TitleBar as TB};
             TB::get_instance().open_header(title.into(), title_help.into(), key_help_id.into())
         }
@@ -299,24 +280,9 @@ mod vibrate_ext {
     pub const FREQ_LOW: f32 = 160.0;
     pub const FREQ_HIGH: f32 = 300.0;
 
-    pub fn vibrate(
-        time: f32,
-        amplitude_magnitude: f32,
-        amp_low: f32,
-        amp_high: f32,
-        freq_low: f32,
-        freq_high: f32,
-    ) {
-        use crate::app::pad::Pad;
-        use crate::app::vibrationmanager::IVibrationManagerMethods;
-        Pad::vibration().one_shot_2(
-            time,
-            amplitude_magnitude,
-            amp_low,
-            amp_high,
-            freq_low,
-            freq_high,
-        );
+    pub fn vibrate(time: f32, amplitude_magnitude: f32, amp_low: f32, amp_high: f32, freq_low: f32, freq_high: f32) {
+        use crate::app::{pad::Pad, vibrationmanager::IVibrationManagerMethods};
+        Pad::vibration().one_shot_2(time, amplitude_magnitude, amp_low, amp_high, freq_low, freq_high);
     }
 }
 #[cfg(all(feature = "app-pad", feature = "app-vibrationmanager"))]
@@ -324,51 +290,35 @@ pub use vibrate_ext::*;
 
 #[cfg(all(feature = "app-procvoidmethod", feature = "system-object"))]
 mod proc_void_method_ext {
-    use crate::app::procvoidmethod::ProcVoidMethod;
-    use crate::system::object::Object;
     use unity2::{FromIlInstance, IlInstance, IntPtr, MethodInfo, OptionalMethod};
 
+    use crate::{app::procvoidmethod::ProcVoidMethod, system::object::Object};
+
     pub trait ProcVoidMethodExt: Sized {
-        fn from_fn<T: crate::app::procinst::IProcInst>(
-            target: IlInstance,
-            callback: extern "C" fn(T, OptionalMethod),
-        ) -> Option<Self>;
+        fn from_fn<T: crate::app::procinst::IProcInst>(target: IlInstance, callback: extern "C" fn(T, OptionalMethod)) -> Option<Self>;
         fn from_raw_parts(target: IlInstance, method_info: &'static MethodInfo) -> Option<Self>;
     }
 
     impl ProcVoidMethodExt for ProcVoidMethod {
-        fn from_fn<T: crate::app::procinst::IProcInst>(
-            target: IlInstance,
-            callback: extern "C" fn(T, OptionalMethod),
-        ) -> Option<Self> {
+        fn from_fn<T: crate::app::procinst::IProcInst>(target: IlInstance, callback: extern "C" fn(T, OptionalMethod)) -> Option<Self> {
             let intptr = super::method_info_intptr(callback as *mut u8, 0);
-            Some(ProcVoidMethod::new(
-                <Object as FromIlInstance>::from_il_instance(target),
-                intptr,
-            ))
+            Some(ProcVoidMethod::new(<Object as FromIlInstance>::from_il_instance(target), intptr))
         }
 
         fn from_raw_parts(target: IlInstance, method_info: &'static MethodInfo) -> Option<Self> {
             let intptr = IntPtr(method_info as *const MethodInfo as *mut ());
-            Some(ProcVoidMethod::new(
-                <Object as FromIlInstance>::from_il_instance(target),
-                intptr,
-            ))
+            Some(ProcVoidMethod::new(<Object as FromIlInstance>::from_il_instance(target), intptr))
         }
     }
 }
 #[cfg(all(feature = "app-procvoidmethod", feature = "system-object"))]
 pub use proc_void_method_ext::*;
 
-#[cfg(all(
-    feature = "app-procvoidfunction",
-    feature = "app-procinst",
-    feature = "system-object",
-))]
+#[cfg(all(feature = "app-procvoidfunction", feature = "app-procinst", feature = "system-object",))]
 mod proc_void_function_ext {
-    use crate::app::procvoidfunction::ProcVoidFunction;
-    use crate::system::object::Object;
     use unity2::{FromIlInstance, IlInstance, OptionalMethod};
+
+    use crate::{app::procvoidfunction::ProcVoidFunction, system::object::Object};
 
     pub trait ProcVoidFunctionExt: Sized {
         fn from_fn<T: crate::app::procinst::IProcInst, U: crate::app::procinst::IProcInst>(
@@ -383,43 +333,27 @@ mod proc_void_function_ext {
             callback: extern "C" fn(T, U, OptionalMethod),
         ) -> Option<Self> {
             let intptr = super::method_info_intptr(callback as *mut u8, 2);
-            Some(ProcVoidFunction::new(
-                <Object as FromIlInstance>::from_il_instance(target),
-                intptr,
-            ))
+            Some(ProcVoidFunction::new(<Object as FromIlInstance>::from_il_instance(target), intptr))
         }
     }
 }
-#[cfg(all(
-    feature = "app-procvoidfunction",
-    feature = "app-procinst",
-    feature = "system-object",
-))]
+#[cfg(all(feature = "app-procvoidfunction", feature = "app-procinst", feature = "system-object",))]
 pub use proc_void_function_ext::*;
 
 #[cfg(all(feature = "app-procboolmethod", feature = "system-object"))]
 mod proc_bool_method_ext {
-    use crate::app::procboolmethod::ProcBoolMethod;
-    use crate::system::object::Object;
     use unity2::{FromIlInstance, IlInstance, OptionalMethod};
 
+    use crate::{app::procboolmethod::ProcBoolMethod, system::object::Object};
+
     pub trait ProcBoolMethodExt: Sized {
-        fn from_fn<T: crate::app::procinst::IProcInst>(
-            target: IlInstance,
-            callback: extern "C" fn(T, OptionalMethod) -> bool,
-        ) -> Option<Self>;
+        fn from_fn<T: crate::app::procinst::IProcInst>(target: IlInstance, callback: extern "C" fn(T, OptionalMethod) -> bool) -> Option<Self>;
     }
 
     impl ProcBoolMethodExt for ProcBoolMethod {
-        fn from_fn<T: crate::app::procinst::IProcInst>(
-            target: IlInstance,
-            callback: extern "C" fn(T, OptionalMethod) -> bool,
-        ) -> Option<Self> {
+        fn from_fn<T: crate::app::procinst::IProcInst>(target: IlInstance, callback: extern "C" fn(T, OptionalMethod) -> bool) -> Option<Self> {
             let intptr = super::method_info_intptr(callback as *mut u8, 0);
-            Some(ProcBoolMethod::new(
-                <Object as FromIlInstance>::from_il_instance(target),
-                intptr,
-            ))
+            Some(ProcBoolMethod::new(<Object as FromIlInstance>::from_il_instance(target), intptr))
         }
     }
 }
@@ -433,10 +367,7 @@ pub use proc_bool_method_ext::*;
     feature = "app-procdesc",
 ))]
 mod proc_ext {
-    use crate::app::proc::Proc;
-    use crate::app::procdesc::ProcDesc;
-    use crate::app::procvoidfunction::ProcVoidFunction;
-    use crate::app::procvoidmethod::ProcVoidMethod;
+    use crate::app::{proc::Proc, procdesc::ProcDesc, procvoidfunction::ProcVoidFunction, procvoidmethod::ProcVoidMethod};
 
     pub trait ProcExt {
         fn call_method(method: ProcVoidMethod) -> ProcDesc;
@@ -463,8 +394,9 @@ pub use proc_ext::*;
 
 #[cfg(feature = "app-procdesc")]
 mod proc_desc_patch {
-    use crate::app::procdesc::ProcDesc;
     use unity2::Array;
+
+    use crate::app::procdesc::ProcDesc;
 
     pub struct ProcDescPatch {
         original: Vec<ProcDesc>,
@@ -479,11 +411,7 @@ mod proc_desc_patch {
             }
         }
 
-        pub fn insert(
-            mut self,
-            position: usize,
-            descs: impl IntoIterator<Item = ProcDesc>,
-        ) -> Self {
+        pub fn insert(mut self, position: usize, descs: impl IntoIterator<Item = ProcDesc>) -> Self {
             self.patches.push((position, descs.into_iter().collect()));
             self
         }
@@ -493,8 +421,7 @@ mod proc_desc_patch {
             for (pos, descs) in self.patches {
                 self.original.splice(pos..pos, descs);
             }
-            Array::<ProcDesc>::from_slice(&self.original)
-                .expect("ProcDescPatch::finish: ProcDesc array allocation failed")
+            Array::<ProcDesc>::from_slice(&self.original).expect("ProcDescPatch::finish: ProcDesc array allocation failed")
         }
     }
 }
@@ -516,18 +443,18 @@ mod basic_menu_result {
     }
 
     impl BasicMenuResult {
-        const CLOSE_THIS: i32 = 1 << 0;
-        const CLOSE_PARENT: i32 = 1 << 1;
         const CLOSE_ALL: i32 = 1 << 2;
-        const DELETE_THIS: i32 = 1 << 3;
-        const DELETE_PARENT: i32 = 1 << 4;
+        const CLOSE_PARENT: i32 = 1 << 1;
+        const CLOSE_THIS: i32 = 1 << 0;
         const DELETE_ALL: i32 = 1 << 5;
+        const DELETE_PARENT: i32 = 1 << 4;
+        const DELETE_THIS: i32 = 1 << 3;
+        const DO_NOTHING: i32 = 1 << 13;
+        const SE_CANCEL: i32 = 1 << 9;
+        const SE_CURSOR: i32 = 1 << 12;
         const SE_DECIDE: i32 = 1 << 7;
         const SE_DECIDE2: i32 = 1 << 8;
-        const SE_CANCEL: i32 = 1 << 9;
         const SE_MISS: i32 = 1 << 11;
-        const SE_CURSOR: i32 = 1 << 12;
-        const DO_NOTHING: i32 = 1 << 13;
 
         #[inline]
         pub const fn new() -> Self {
@@ -551,21 +478,27 @@ mod basic_menu_result {
         pub const fn close_this(self) -> bool {
             self.0.value & Self::CLOSE_THIS != 0
         }
+
         pub const fn close_parent(self) -> bool {
             self.0.value & Self::CLOSE_PARENT != 0
         }
+
         pub const fn close_all(self) -> bool {
             self.0.value & Self::CLOSE_ALL != 0
         }
+
         pub const fn delete_this(self) -> bool {
             self.0.value & Self::DELETE_THIS != 0
         }
+
         pub const fn delete_parent(self) -> bool {
             self.0.value & Self::DELETE_PARENT != 0
         }
+
         pub const fn delete_all(self) -> bool {
             self.0.value & Self::DELETE_ALL != 0
         }
+
         pub const fn do_nothing(self) -> bool {
             self.0.value & Self::DO_NOTHING != 0
         }
@@ -573,36 +506,47 @@ mod basic_menu_result {
         pub fn with_close_this(self, v: bool) -> Self {
             self.set(Self::CLOSE_THIS, v)
         }
+
         pub fn with_close_parent(self, v: bool) -> Self {
             self.set(Self::CLOSE_PARENT, v)
         }
+
         pub fn with_close_all(self, v: bool) -> Self {
             self.set(Self::CLOSE_ALL, v)
         }
+
         pub fn with_delete_this(self, v: bool) -> Self {
             self.set(Self::DELETE_THIS, v)
         }
+
         pub fn with_delete_parent(self, v: bool) -> Self {
             self.set(Self::DELETE_PARENT, v)
         }
+
         pub fn with_delete_all(self, v: bool) -> Self {
             self.set(Self::DELETE_ALL, v)
         }
+
         pub fn with_se_decide(self, v: bool) -> Self {
             self.set(Self::SE_DECIDE, v)
         }
+
         pub fn with_se_decide2(self, v: bool) -> Self {
             self.set(Self::SE_DECIDE2, v)
         }
+
         pub fn with_se_cancel(self, v: bool) -> Self {
             self.set(Self::SE_CANCEL, v)
         }
+
         pub fn with_se_miss(self, v: bool) -> Self {
             self.set(Self::SE_MISS, v)
         }
+
         pub fn with_se_cursor(self, v: bool) -> Self {
             self.set(Self::SE_CURSOR, v)
         }
+
         pub fn with_do_nothing(self, v: bool) -> Self {
             self.set(Self::DO_NOTHING, v)
         }
@@ -610,29 +554,36 @@ mod basic_menu_result {
         pub fn se_cursor() -> Self {
             Self::new().with_se_cursor(true)
         }
+
         pub fn se_decide() -> Self {
             Self::new().with_se_decide(true)
         }
+
         pub fn close_decide() -> Self {
             Self::new().with_close_this(true).with_se_decide(true)
         }
+
         pub fn se_miss() -> Self {
             Self::new().with_se_miss(true)
         }
+
         pub fn close_parent_decide() -> Self {
             Self::new().with_close_parent(true).with_se_decide(true)
         }
+
         pub fn delete_decide() -> Self {
             Self::new().with_delete_this(true).with_se_decide(true)
         }
+
         pub fn close_cancel() -> Self {
             Self::new().with_se_cancel(true).with_close_this(true)
         }
     }
 
     impl ::unity2::ClassIdentity for BasicMenuResult {
-        const NAMESPACE: &'static str = <BasicMenu_Result as ::unity2::ClassIdentity>::NAMESPACE;
         const NAME: &'static str = <BasicMenu_Result as ::unity2::ClassIdentity>::NAME;
+        const NAMESPACE: &'static str = <BasicMenu_Result as ::unity2::ClassIdentity>::NAMESPACE;
+
         fn class() -> ::unity2::Class {
             <BasicMenu_Result as ::unity2::ClassIdentity>::class()
         }
@@ -649,32 +600,21 @@ pub use basic_menu_result::*;
 
 #[cfg(all(feature = "app-basicmenuitem", feature = "app-basicmenu"))]
 mod basic_menu_item_ext {
-    use super::BasicMenuResult;
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItemMethods};
     use unity2::{Cast, Il2CppString, OptionalMethod};
 
+    use super::BasicMenuResult;
     pub use crate::app::basicmenuitem::BasicMenuItem_Attribute as BasicMenuItemAttribute;
+    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItemMethods};
 
     pub trait BasicMenuItemMethods {
         extern "C" fn get_name(this: BasicMenuItem, method_info: OptionalMethod) -> Il2CppString;
-        extern "C" fn a_call(
-            _this: BasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
+        extern "C" fn a_call(_this: BasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
             BasicMenuResult::new()
         }
-        extern "C" fn b_call(
-            _this: BasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
-            BasicMenuResult::new()
-                .with_close_this(true)
-                .with_se_cancel(true)
+        extern "C" fn b_call(_this: BasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
+            BasicMenuResult::new().with_close_this(true).with_se_cancel(true)
         }
-        extern "C" fn build_attribute(
-            _this: BasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuItemAttribute {
+        extern "C" fn build_attribute(_this: BasicMenuItem, _method_info: OptionalMethod) -> BasicMenuItemAttribute {
             BasicMenuItemAttribute::enable()
         }
     }
@@ -687,8 +627,7 @@ mod basic_menu_item_ext {
 
     impl BasicMenuItemExt for BasicMenuItem {
         fn new_default() -> Self {
-            let item = <Self as ::unity2::FromIlInstance>::instantiate()
-                .expect("BasicMenuItem::new_default allocation failed");
+            let item = <Self as ::unity2::FromIlInstance>::instantiate().expect("BasicMenuItem::new_default allocation failed");
             <Self as IBasicMenuItemMethods>::ctor(item);
             item
         }
@@ -699,26 +638,20 @@ mod basic_menu_item_ext {
             class.override_virtual_method("GetName", ::unity2::method_info!(M::get_name, 0));
             class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
             class.override_virtual_method("BCall", ::unity2::method_info!(M::b_call, 0));
-            class.override_virtual_method(
-                "BuildAttribute",
-                ::unity2::method_info!(M::build_attribute, 0),
-            );
+            class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
             item
         }
 
         fn new_impl_from_template<M: BasicMenuItemMethods>(template: BasicMenuItem) -> Self {
             use ::unity2::FromIlInstance;
             let cloned_class = template.get_class().clone_for_override();
-            let item = <Self as FromIlInstance>::instantiate_with_class(cloned_class)
-                .expect("BasicMenuItem::new_impl_from_template allocation failed");
+            let item =
+                <Self as FromIlInstance>::instantiate_with_class(cloned_class).expect("BasicMenuItem::new_impl_from_template allocation failed");
             <Self as IBasicMenuItemMethods>::ctor(item);
             cloned_class.override_virtual_method("GetName", ::unity2::method_info!(M::get_name, 0));
             cloned_class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
             cloned_class.override_virtual_method("BCall", ::unity2::method_info!(M::b_call, 0));
-            cloned_class.override_virtual_method(
-                "BuildAttribute",
-                ::unity2::method_info!(M::build_attribute, 0),
-            );
+            cloned_class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
             item
         }
     }
@@ -734,12 +667,17 @@ pub use basic_menu_item_ext::*;
     feature = "system-collections-generic-list_1",
 ))]
 mod basic_menu_ext {
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu, IBasicMenuMethods};
-    use crate::app::basicmenucontent::BasicMenuContent;
-    use crate::app::basicmenuitem::BasicMenuItem;
-    use crate::app::procdesc::ProcDesc;
-    use crate::system::collections::generic::list_1::{IList_1Methods, List_1};
     use unity2::Array;
+
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu, IBasicMenuMethods},
+            basicmenucontent::BasicMenuContent,
+            basicmenuitem::BasicMenuItem,
+            procdesc::ProcDesc,
+        },
+        system::collections::generic::list_1::{IList_1Methods, List_1},
+    };
 
     pub trait BasicMenuExt: Sized {
         fn add_item(self, item: impl Into<BasicMenuItem>);
@@ -756,8 +694,7 @@ mod basic_menu_ext {
         let entry = class
             .get_virtual_method(method_name)
             .unwrap_or_else(|| panic!("BasicMenu vtable missing `{}`", method_name));
-        let f: extern "C" fn(BasicMenu, &'static ::unity2::MethodInfo) =
-            unsafe { ::core::mem::transmute(entry.method_ptr) };
+        let f: extern "C" fn(BasicMenu, &'static ::unity2::MethodInfo) = unsafe { ::core::mem::transmute(entry.method_ptr) };
         f(this, entry.method_info)
     }
 
@@ -765,30 +702,34 @@ mod basic_menu_ext {
         fn add_item(self, item: impl Into<BasicMenuItem>) {
             self.m_full_menu_item_list().add(item.into());
         }
+
         fn close_anime_all(self) {
             basic_menu_virtual_call_0(self, "CloseAnimeAll");
         }
+
         fn close_anime(self) {
             basic_menu_virtual_call_0(self, "CloseAnime");
         }
+
         fn open_anime_all(self) {
             basic_menu_virtual_call_0(self, "OpenAnimeAll");
         }
+
         fn open_anime(self) {
             basic_menu_virtual_call_0(self, "OpenAnime");
         }
+
         fn create_default_desc(self) -> Array<ProcDesc> {
             let class = ::unity2::object_get_class(self);
             let entry = class
                 .get_virtual_method("CreateDefaultDesc")
                 .expect("BasicMenu vtable missing `CreateDefaultDesc`");
-            let f: extern "C" fn(BasicMenu, &'static ::unity2::MethodInfo) -> Array<ProcDesc> =
-                unsafe { ::core::mem::transmute(entry.method_ptr) };
+            let f: extern "C" fn(BasicMenu, &'static ::unity2::MethodInfo) -> Array<ProcDesc> = unsafe { ::core::mem::transmute(entry.method_ptr) };
             f(self, entry.method_info)
         }
+
         fn build(menu_item_list: List_1<BasicMenuItem>, menu_content: BasicMenuContent) -> Self {
-            let menu = <Self as ::unity2::FromIlInstance>::instantiate()
-                .expect("BasicMenu::build allocation failed");
+            let menu = <Self as ::unity2::FromIlInstance>::instantiate().expect("BasicMenu::build allocation failed");
             <Self as IBasicMenuMethods>::ctor(menu, menu_item_list, menu_content);
             menu
         }
@@ -803,16 +744,17 @@ mod basic_menu_ext {
 ))]
 pub use basic_menu_ext::*;
 
-#[cfg(all(
-    feature = "app-soundmanager",
-    feature = "app-soundsystem",
-    feature = "system-collections-generic-list_1",
-))]
+#[cfg(all(feature = "app-soundmanager", feature = "app-soundsystem", feature = "system-collections-generic-list_1",))]
 mod sound_manager_ext {
-    use crate::app::soundmanager::{ISoundManager, SoundManager};
-    use crate::app::soundsystem::SoundSystem_SoundHandle;
-    use crate::system::collections::generic::list_1::IList_1Methods;
     use unity2::{Cast, Il2CppString, MethodInfo};
+
+    use crate::{
+        app::{
+            soundmanager::{ISoundManager, SoundManager},
+            soundsystem::SoundSystem_SoundHandle,
+        },
+        system::collections::generic::list_1::IList_1Methods,
+    };
 
     pub trait SoundManagerExt: Sized {
         fn is_event_playing_with_prefix(self, prefix: impl AsRef<str>) -> bool;
@@ -823,8 +765,7 @@ mod sound_manager_ext {
         let entry = class
             .get_virtual_method("GetEventName")
             .expect("SoundSystem.SoundHandle vtable missing `GetEventName`");
-        let f: extern "C" fn(SoundSystem_SoundHandle, &'static MethodInfo) -> Il2CppString =
-            unsafe { ::core::mem::transmute(entry.method_ptr) };
+        let f: extern "C" fn(SoundSystem_SoundHandle, &'static MethodInfo) -> Il2CppString = unsafe { ::core::mem::transmute(entry.method_ptr) };
         f(handle, entry.method_info)
     }
 
@@ -835,26 +776,22 @@ mod sound_manager_ext {
             let count = list.get_count();
             (0..count).any(|i| {
                 let handle = list.get_item(i);
-                !handle.is_null()
-                    && sound_handle_event_name(handle)
-                        .to_string()
-                        .starts_with(prefix)
+                !handle.is_null() && sound_handle_event_name(handle).to_string().starts_with(prefix)
             })
         }
     }
 }
-#[cfg(all(
-    feature = "app-soundmanager",
-    feature = "app-soundsystem",
-    feature = "system-collections-generic-list_1",
-))]
+#[cfg(all(feature = "app-soundmanager", feature = "app-soundsystem", feature = "system-collections-generic-list_1",))]
 pub use sound_manager_ext::*;
 
 #[cfg(all(feature = "app-force", feature = "app-unit"))]
 mod force_ext {
-    use crate::app::force::{Force, IForceMethods};
-    use crate::app::unit::{IUnitMethods, Unit};
     use unity2::Cast;
+
+    use crate::app::{
+        force::{Force, IForceMethods},
+        unit::{IUnitMethods, Unit},
+    };
 
     pub trait ForceExt: Sized {
         fn iter(self) -> ForceIter;
@@ -862,9 +799,7 @@ mod force_ext {
 
     impl ForceExt for Force {
         fn iter(self) -> ForceIter {
-            ForceIter {
-                current: self.get_first(),
-            }
+            ForceIter { current: self.get_first() }
         }
     }
 
@@ -874,6 +809,7 @@ mod force_ext {
 
     impl Iterator for ForceIter {
         type Item = Unit;
+
         fn next(&mut self) -> Option<Unit> {
             if self.current.is_null() {
                 return None;
@@ -887,47 +823,31 @@ mod force_ext {
 #[cfg(all(feature = "app-force", feature = "app-unit"))]
 pub use force_ext::*;
 
-#[cfg(all(
-    feature = "root-configbasicmenuitem",
-    feature = "app-basicmenuitem",
-    feature = "app-basicmenu",
-))]
+#[cfg(all(feature = "root-configbasicmenuitem", feature = "app-basicmenuitem", feature = "app-basicmenu",))]
 mod config_basic_menu_item_ext {
+    use unity2::{Cast, Il2CppString, OptionalMethod};
+
     use super::{BasicMenuItemAttribute, BasicMenuResult};
     use crate::root::configbasicmenuitem::{
-        ConfigBasicMenuItem, ConfigBasicMenuItem_ConfigMethodKind, IConfigBasicMenuItem,
-        IConfigBasicMenuItemMethods,
+        ConfigBasicMenuItem, ConfigBasicMenuItem_ConfigMethodKind, IConfigBasicMenuItem, IConfigBasicMenuItemMethods,
     };
-    use unity2::{Cast, Il2CppString, OptionalMethod};
 
     pub trait ConfigBasicMenuItemSwitchMethods {
         fn init_content(_this: ConfigBasicMenuItem) {}
-        extern "C" fn custom_call(
-            this: ConfigBasicMenuItem,
-            method_info: OptionalMethod,
-        ) -> BasicMenuResult;
+        extern "C" fn custom_call(this: ConfigBasicMenuItem, method_info: OptionalMethod) -> BasicMenuResult;
         extern "C" fn set_command_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
         extern "C" fn set_help_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
-        extern "C" fn a_call(
-            _this: ConfigBasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
+        extern "C" fn a_call(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
             BasicMenuResult::new()
         }
-        extern "C" fn build_attribute(
-            _this: ConfigBasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuItemAttribute {
+        extern "C" fn build_attribute(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuItemAttribute {
             BasicMenuItemAttribute::enable()
         }
     }
 
     pub trait ConfigBasicMenuItemCommandMethods {
         fn init_content(_this: ConfigBasicMenuItem) {}
-        extern "C" fn custom_call(
-            this: ConfigBasicMenuItem,
-            method_info: OptionalMethod,
-        ) -> BasicMenuResult;
+        extern "C" fn custom_call(this: ConfigBasicMenuItem, method_info: OptionalMethod) -> BasicMenuResult;
         extern "C" fn set_command_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
         extern "C" fn set_help_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
         extern "C" fn on_select(this: ConfigBasicMenuItem, _method_info: OptionalMethod) {
@@ -940,46 +860,29 @@ mod config_basic_menu_item_ext {
             this.set_m_is_arrow(false);
             <ConfigBasicMenuItem as IConfigBasicMenuItemMethods>::on_deselect(this);
         }
-        extern "C" fn a_call(
-            _this: ConfigBasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
+        extern "C" fn a_call(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
             BasicMenuResult::new()
         }
-        extern "C" fn build_attribute(
-            _this: ConfigBasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuItemAttribute {
+        extern "C" fn build_attribute(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuItemAttribute {
             BasicMenuItemAttribute::enable()
         }
     }
 
     pub trait ConfigBasicMenuItemGaugeMethods {
         fn init_content(_this: ConfigBasicMenuItem) {}
-        extern "C" fn custom_call(
-            this: ConfigBasicMenuItem,
-            method_info: OptionalMethod,
-        ) -> BasicMenuResult;
+        extern "C" fn custom_call(this: ConfigBasicMenuItem, method_info: OptionalMethod) -> BasicMenuResult;
         extern "C" fn set_help_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
-        extern "C" fn a_call(
-            _this: ConfigBasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
+        extern "C" fn a_call(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
             BasicMenuResult::new()
         }
-        extern "C" fn build_attribute(
-            _this: ConfigBasicMenuItem,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuItemAttribute {
+        extern "C" fn build_attribute(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuItemAttribute {
             BasicMenuItemAttribute::enable()
         }
     }
 
     pub trait ConfigBasicMenuItemExt: Sized {
         fn new_switch<M: ConfigBasicMenuItemSwitchMethods>(title: impl Into<Il2CppString>) -> Self;
-        fn new_command<M: ConfigBasicMenuItemCommandMethods>(
-            title: impl Into<Il2CppString>,
-        ) -> Self;
+        fn new_command<M: ConfigBasicMenuItemCommandMethods>(title: impl Into<Il2CppString>) -> Self;
         fn new_gauge<M: ConfigBasicMenuItemGaugeMethods>(title: impl Into<Il2CppString>) -> Self;
         fn change_key_value_b(value: bool) -> bool;
     }
@@ -993,10 +896,7 @@ mod config_basic_menu_item_ext {
             let class = item.override_class();
             class.override_virtual_method("CustomCall", ::unity2::method_info!(M::custom_call, 0));
             class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
-            class.override_virtual_method(
-                "BuildAttribute",
-                ::unity2::method_info!(M::build_attribute, 0),
-            );
+            class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
 
             item.set_title_text(title.into());
             M::set_command_text(item, None);
@@ -1013,10 +913,7 @@ mod config_basic_menu_item_ext {
             let class = item.override_class();
             class.override_virtual_method("CustomCall", ::unity2::method_info!(M::custom_call, 0));
             class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
-            class.override_virtual_method(
-                "BuildAttribute",
-                ::unity2::method_info!(M::build_attribute, 0),
-            );
+            class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
 
             item.set_title_text(title.into());
             M::set_help_text(item, None);
@@ -1024,9 +921,7 @@ mod config_basic_menu_item_ext {
             item
         }
 
-        fn new_command<M: ConfigBasicMenuItemCommandMethods>(
-            title: impl Into<Il2CppString>,
-        ) -> Self {
+        fn new_command<M: ConfigBasicMenuItemCommandMethods>(title: impl Into<Il2CppString>) -> Self {
             let item = ConfigBasicMenuItem::new();
             M::init_content(item);
 
@@ -1038,10 +933,7 @@ mod config_basic_menu_item_ext {
             class.override_virtual_method("OnSelect", ::unity2::method_info!(M::on_select, 0));
             class.override_virtual_method("OnDeselect", ::unity2::method_info!(M::on_deselect, 0));
             class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
-            class.override_virtual_method(
-                "BuildAttribute",
-                ::unity2::method_info!(M::build_attribute, 0),
-            );
+            class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
 
             item.set_title_text(title.into());
             M::set_command_text(item, None);
@@ -1055,29 +947,21 @@ mod config_basic_menu_item_ext {
         }
     }
 }
-#[cfg(all(
-    feature = "root-configbasicmenuitem",
-    feature = "app-basicmenuitem",
-    feature = "app-basicmenu",
-))]
+#[cfg(all(feature = "root-configbasicmenuitem", feature = "app-basicmenuitem", feature = "app-basicmenu",))]
 pub use config_basic_menu_item_ext::*;
 
 #[cfg(feature = "app-procinst")]
 mod restore_parent_on_dispose_ext {
     use unity2::{Cast, OptionalMethod};
 
-    pub extern "C" fn restore_parent_on_dispose(
-        this: crate::app::procinst::ProcInst,
-        _method_info: OptionalMethod,
-    ) {
+    pub extern "C" fn restore_parent_on_dispose(this: crate::app::procinst::ProcInst, _method_info: OptionalMethod) {
         use crate::app::procinst::IProcInstMethods;
         let parent = this.get_super();
         if parent.is_null() {
             return;
         }
         if let Some(slot) = parent.get_class().raw().get_virtual_method("OpenAnimeAll") {
-            let f: extern "C" fn(crate::app::procinst::ProcInst, &'static ::unity2::MethodInfo) =
-                unsafe { ::core::mem::transmute(slot.method_ptr) };
+            let f: extern "C" fn(crate::app::procinst::ProcInst, &'static ::unity2::MethodInfo) = unsafe { ::core::mem::transmute(slot.method_ptr) };
             f(parent, slot.method_info);
         }
     }
@@ -1096,13 +980,20 @@ pub use restore_parent_on_dispose_ext::*;
     feature = "system-action",
 ))]
 mod basic_menu_confirm_ext {
-    use crate::app::basicdialog::{BasicDialog, IBasicDialogMethods};
-    use crate::app::basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNoMethods};
-    use crate::app::basicmenuitem::BasicMenuItem;
-    use crate::app::yesmenuitem::{IYesMenuItemMethods, YesMenuItem};
-    use crate::system::action::Action;
-    use crate::system::collections::generic::list_1::{IList_1Methods, List_1};
     use unity2::Il2CppString;
+
+    use crate::{
+        app::{
+            basicdialog::{BasicDialog, IBasicDialogMethods},
+            basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNoMethods},
+            basicmenuitem::BasicMenuItem,
+            yesmenuitem::{IYesMenuItemMethods, YesMenuItem},
+        },
+        system::{
+            action::Action,
+            collections::generic::list_1::{IList_1Methods, List_1},
+        },
+    };
 
     pub fn basic_menu_confirm(
         proc: impl Into<crate::app::procinst::ProcInst>,
@@ -1112,13 +1003,11 @@ mod basic_menu_confirm_ext {
         handler: Action,
     ) -> BasicDialog {
         use crate::app::basicdialogitem::IBasicDialogItem;
-        let yes_item = <YesMenuItem as ::unity2::FromIlInstance>::instantiate()
-            .expect("YesMenuItem allocation failed");
+        let yes_item = <YesMenuItem as ::unity2::FromIlInstance>::instantiate().expect("YesMenuItem allocation failed");
         <YesMenuItem as IYesMenuItemMethods>::ctor(yes_item, handler);
         yes_item.set_m_text(yes_text.into());
 
-        let no_item = <BasicDialogItemNo as ::unity2::FromIlInstance>::instantiate()
-            .expect("BasicDialogItemNo allocation failed");
+        let no_item = <BasicDialogItemNo as ::unity2::FromIlInstance>::instantiate().expect("BasicDialogItemNo allocation failed");
         <BasicDialogItemNo as IBasicDialogItemNoMethods>::ctor_2(no_item, no_text.into());
 
         let items = List_1::<BasicMenuItem>::new();
@@ -1150,40 +1039,27 @@ pub use basic_menu_confirm_ext::*;
     feature = "app-basicmenu",
 ))]
 mod yes_no_dialog_ext {
-    use super::BasicMenuResult;
-    use crate::app::basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNoMethods};
-    use crate::app::basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYesMethods};
-    use crate::app::yesnodialog::YesNoDialog;
     use unity2::{Cast, Il2CppString, OptionalMethod};
 
+    use super::BasicMenuResult;
+    use crate::app::{
+        basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNoMethods},
+        basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYesMethods},
+        yesnodialog::YesNoDialog,
+    };
+
     pub trait TwoChoiceDialogMethods {
-        extern "C" fn on_first_choice(
-            _this: BasicDialogItemYes,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
+        extern "C" fn on_first_choice(_this: BasicDialogItemYes, _method_info: OptionalMethod) -> BasicMenuResult {
             BasicMenuResult::new().with_close_this(true)
         }
-        extern "C" fn on_second_choice(
-            _this: BasicDialogItemNo,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
+        extern "C" fn on_second_choice(_this: BasicDialogItemNo, _method_info: OptionalMethod) -> BasicMenuResult {
             BasicMenuResult::new().with_close_this(true)
         }
-        extern "C" fn bcall_first(
-            _this: BasicDialogItemYes,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
-            BasicMenuResult::new()
-                .with_close_this(true)
-                .with_se_cancel(true)
+        extern "C" fn bcall_first(_this: BasicDialogItemYes, _method_info: OptionalMethod) -> BasicMenuResult {
+            BasicMenuResult::new().with_close_this(true).with_se_cancel(true)
         }
-        extern "C" fn bcall_second(
-            _this: BasicDialogItemNo,
-            _method_info: OptionalMethod,
-        ) -> BasicMenuResult {
-            BasicMenuResult::new()
-                .with_close_this(true)
-                .with_se_cancel(true)
+        extern "C" fn bcall_second(_this: BasicDialogItemNo, _method_info: OptionalMethod) -> BasicMenuResult {
+            BasicMenuResult::new().with_close_this(true).with_se_cancel(true)
         }
     }
 
@@ -1203,11 +1079,9 @@ mod yes_no_dialog_ext {
             first_text: impl Into<Il2CppString>,
             second_text: impl Into<Il2CppString>,
         ) {
-            let yes = <BasicDialogItemYes as ::unity2::FromIlInstance>::instantiate()
-                .expect("BasicDialogItemYes allocation failed");
+            let yes = <BasicDialogItemYes as ::unity2::FromIlInstance>::instantiate().expect("BasicDialogItemYes allocation failed");
             <BasicDialogItemYes as IBasicDialogItemYesMethods>::ctor_2(yes, first_text.into());
-            let no = <BasicDialogItemNo as ::unity2::FromIlInstance>::instantiate()
-                .expect("BasicDialogItemNo allocation failed");
+            let no = <BasicDialogItemNo as ::unity2::FromIlInstance>::instantiate().expect("BasicDialogItemNo allocation failed");
             <BasicDialogItemNo as IBasicDialogItemNoMethods>::ctor_2(no, second_text.into());
 
             let yes_class = yes.override_class();
@@ -1252,8 +1126,7 @@ mod file_handle_ext {
             let method = class
                 .get_method_from_name("Unload", 0)
                 .expect("FileHandle::Unload missing from runtime class");
-            let unload: extern "C" fn(Self, &MethodInfo) =
-                unsafe { ::core::mem::transmute(method.method_ptr) };
+            let unload: extern "C" fn(Self, &MethodInfo) = unsafe { ::core::mem::transmute(method.method_ptr) };
             unload(self, method);
         }
     }
@@ -1268,11 +1141,12 @@ pub use file_handle_ext::*;
     feature = "app-unit",
 ))]
 mod dyn_value_args_ext {
-    use crate::app::itemdata::ItemData;
-    use crate::app::scriptutil::ScriptUtil;
-    use crate::app::unit::Unit;
-    use crate::moon_sharp::interpreter::dynvalue::DynValue;
     use unity2::{Array, FromIlInstance, Il2CppString, IlInstance};
+
+    use crate::{
+        app::{itemdata::ItemData, scriptutil::ScriptUtil, unit::Unit},
+        moon_sharp::interpreter::dynvalue::DynValue,
+    };
 
     pub trait DynValueArgs {
         fn try_get_i32(self, index: i32) -> i32;
@@ -1285,16 +1159,15 @@ mod dyn_value_args_ext {
         fn try_get_i32(self, index: i32) -> i32 {
             ScriptUtil::try_get_int(self, index, i32::MAX)
         }
+
         fn try_get_string(self, index: i32) -> Il2CppString {
-            ScriptUtil::try_get_string(
-                self,
-                index,
-                Il2CppString::from_il_instance(IlInstance::null()),
-            )
+            ScriptUtil::try_get_string(self, index, Il2CppString::from_il_instance(IlInstance::null()))
         }
+
         fn try_get_unit(self, index: i32) -> Unit {
             ScriptUtil::try_get_unit(self, index, true)
         }
+
         fn try_get_item(self, index: i32) -> ItemData {
             ScriptUtil::try_get_item(self, index, true)
         }
@@ -1308,17 +1181,13 @@ mod dyn_value_args_ext {
 ))]
 pub use dyn_value_args_ext::*;
 
-#[cfg(all(
-    feature = "app-eventscript",
-    feature = "moon_sharp-interpreter-dynvalue"
-))]
+#[cfg(all(feature = "app-eventscript", feature = "moon_sharp-interpreter-dynvalue"))]
 mod event_script_ext {
-    use crate::app::eventscript::{
-        EventScript, EventScript_ActionArgs, EventScript_FunctionArgs, IEventScriptMethods,
-    };
-    use crate::moon_sharp::interpreter::dynvalue::DynValue;
-    use unity2::{
-        Array, Class, FromIlInstance, Il2CppString, IlInstance, IntPtr, MethodInfo, OptionalMethod,
+    use unity2::{Array, Class, FromIlInstance, Il2CppString, IlInstance, IntPtr, MethodInfo, OptionalMethod};
+
+    use crate::{
+        app::eventscript::{EventScript, EventScript_ActionArgs, EventScript_FunctionArgs, IEventScriptMethods},
+        moon_sharp::interpreter::dynvalue::DynValue,
     };
 
     #[::unity2::class(namespace = "App", name = "EventScript.ActionArgs")]
@@ -1342,8 +1211,7 @@ mod event_script_ext {
     }
 
     fn clone_invoke_method_info(method_ptr: *mut u8) -> &'static MethodInfo {
-        use std::collections::HashMap;
-        use std::sync::Mutex;
+        use std::{collections::HashMap, sync::Mutex};
 
         static CACHE: Mutex<Option<HashMap<usize, &'static MethodInfo>>> = Mutex::new(None);
 
@@ -1366,8 +1234,7 @@ mod event_script_ext {
 
     fn make_action_args(callback: *mut u8) -> EventScript_ActionArgs {
         let mi = clone_invoke_method_info(callback);
-        let instance = <EventScriptActionArgsExt as FromIlInstance>::instantiate()
-            .expect("EventScript.ActionArgs allocation failed");
+        let instance = <EventScriptActionArgsExt as FromIlInstance>::instantiate().expect("EventScript.ActionArgs allocation failed");
         instance.set_method_ptr(IntPtr(callback as *mut ()));
         instance.set_m_target(IlInstance::null());
         instance.set_method(IntPtr(mi as *const MethodInfo as *mut ()));
@@ -1376,8 +1243,7 @@ mod event_script_ext {
 
     fn make_function_args(callback: *mut u8) -> EventScript_FunctionArgs {
         let mi = clone_invoke_method_info(callback);
-        let instance = <EventScriptFunctionArgsExt as FromIlInstance>::instantiate()
-            .expect("EventScript.FunctionArgs allocation failed");
+        let instance = <EventScriptFunctionArgsExt as FromIlInstance>::instantiate().expect("EventScript.FunctionArgs allocation failed");
         instance.set_method_ptr(IntPtr(callback as *mut ()));
         instance.set_m_target(IlInstance::null());
         instance.set_method(IntPtr(mi as *const MethodInfo as *mut ()));
@@ -1385,52 +1251,30 @@ mod event_script_ext {
     }
 
     pub trait EventScriptExt {
-        fn register_action(
-            self,
-            name: impl Into<Il2CppString>,
-            callback: extern "C" fn(Array<DynValue>, OptionalMethod),
-        );
-        fn register_function(
-            self,
-            name: impl Into<Il2CppString>,
-            callback: extern "C" fn(Array<DynValue>, OptionalMethod) -> DynValue,
-        );
+        fn register_action(self, name: impl Into<Il2CppString>, callback: extern "C" fn(Array<DynValue>, OptionalMethod));
+        fn register_function(self, name: impl Into<Il2CppString>, callback: extern "C" fn(Array<DynValue>, OptionalMethod) -> DynValue);
     }
 
     impl EventScriptExt for EventScript {
-        fn register_action(
-            self,
-            name: impl Into<Il2CppString>,
-            callback: extern "C" fn(Array<DynValue>, OptionalMethod),
-        ) {
+        fn register_action(self, name: impl Into<Il2CppString>, callback: extern "C" fn(Array<DynValue>, OptionalMethod)) {
             let args = make_action_args(callback as *mut u8);
             self.regist_action(args, name.into());
         }
 
-        fn register_function(
-            self,
-            name: impl Into<Il2CppString>,
-            callback: extern "C" fn(Array<DynValue>, OptionalMethod) -> DynValue,
-        ) {
+        fn register_function(self, name: impl Into<Il2CppString>, callback: extern "C" fn(Array<DynValue>, OptionalMethod) -> DynValue) {
             let args = make_function_args(callback as *mut u8);
             self.regist_function(args, name.into());
         }
     }
 }
-#[cfg(all(
-    feature = "app-eventscript",
-    feature = "moon_sharp-interpreter-dynvalue"
-))]
+#[cfg(all(feature = "app-eventscript", feature = "moon_sharp-interpreter-dynvalue"))]
 pub use event_script_ext::*;
 
-#[cfg(all(
-    feature = "unity_engine-assetbundle",
-    feature = "unity_engine-assetbundlecreaterequest",
-))]
+#[cfg(all(feature = "unity_engine-assetbundle", feature = "unity_engine-assetbundlecreaterequest",))]
 mod asset_bundle_ext {
-    use crate::unity_engine::assetbundle::AssetBundle;
-    use crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest;
     use unity2::{Array, OptionalMethod};
+
+    use crate::unity_engine::{assetbundle::AssetBundle, assetbundlecreaterequest::AssetBundleCreateRequest};
 
     #[skyline::from_offset(0x491ff0)]
     unsafe fn engage_method_from_full_name(name: *const u8) -> *const u8;
@@ -1441,20 +1285,14 @@ mod asset_bundle_ext {
     }
 
     pub trait AssetBundleExt {
-        fn load_from_memory_async_internal(binary: Array<u8>, crc: u32)
-            -> AssetBundleCreateRequest;
+        fn load_from_memory_async_internal(binary: Array<u8>, crc: u32) -> AssetBundleCreateRequest;
     }
 
     impl AssetBundleExt for AssetBundle {
-        fn load_from_memory_async_internal(
-            binary: Array<u8>,
-            crc: u32,
-        ) -> AssetBundleCreateRequest {
+        fn load_from_memory_async_internal(binary: Array<u8>, crc: u32) -> AssetBundleCreateRequest {
             static METHOD_PTR: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
             let ptr = *METHOD_PTR.get_or_init(|| {
-                let p = lookup_method_by_signature(
-                    "UnityEngine.AssetBundle::LoadFromMemoryAsync_Internal(System.Byte[],System.UInt32)",
-                );
+                let p = lookup_method_by_signature("UnityEngine.AssetBundle::LoadFromMemoryAsync_Internal(System.Byte[],System.UInt32)");
                 assert!(
                     !p.is_null(),
                     "UnityEngine.AssetBundle.LoadFromMemoryAsync_Internal not found via runtime full-signature lookup"
@@ -1468,8 +1306,5 @@ mod asset_bundle_ext {
         }
     }
 }
-#[cfg(all(
-    feature = "unity_engine-assetbundle",
-    feature = "unity_engine-assetbundlecreaterequest",
-))]
+#[cfg(all(feature = "unity_engine-assetbundle", feature = "unity_engine-assetbundlecreaterequest",))]
 pub use asset_bundle_ext::*;

@@ -2,63 +2,37 @@
 
 #[cfg(feature = "unity_engine-ui-graphicraycaster-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::baseraycaster::{BaseRaycaster, IBaseRaycaster};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "GraphicRaycaster")]
-    #[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
-    pub struct GraphicRaycaster {
-        #[static_field]
-        #[rename(name = "kNoEventMaskSet")]
-        pub k_no_event_mask_set: i32,
-        #[rename(name = "m_IgnoreReversedGraphics")]
-        pub m_ignore_reversed_graphics: bool,
-        #[rename(name = "m_BlockingObjects")]
-        pub m_blocking_objects:
-            crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects,
-        #[rename(name = "m_BlockingMask")]
-        pub m_blocking_mask: crate::unity_engine::layermask::LayerMask,
-        #[rename(name = "m_Canvas")]
-        pub m_canvas: crate::unity_engine::canvas::Canvas,
-        #[rename(name = "m_RaycastResults")]
-        pub m_raycast_results: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::graphic::Graphic,
-        >,
-        #[static_field]
-        #[rename(name = "s_SortedGraphics")]
-        pub s_sorted_graphics: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::graphic::Graphic,
-        >,
-    }
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::{
+                baseraycaster::{BaseRaycaster, IBaseRaycaster},
+                uibehaviour::{IUIBehaviour, UIBehaviour},
+            },
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster_BlockingObjects.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GraphicRaycaster_BlockingObjects {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GraphicRaycaster_BlockingObjects {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
         const NAME: &'static str = "GraphicRaycaster.BlockingObjects";
+        const NAMESPACE: &'static str = "UnityEngine.UI";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -69,10 +43,7 @@ mod __types {
 
     impl ::unity2::IlType for GraphicRaycaster_BlockingObjects {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -93,6 +64,28 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "GraphicRaycaster")]
+    #[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
+    pub struct GraphicRaycaster {
+        #[static_field]
+        #[rename(name = "kNoEventMaskSet")]
+        pub k_no_event_mask_set: i32,
+        #[rename(name = "m_IgnoreReversedGraphics")]
+        pub m_ignore_reversed_graphics: bool,
+        #[rename(name = "m_BlockingObjects")]
+        pub m_blocking_objects: crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects,
+        #[rename(name = "m_BlockingMask")]
+        pub m_blocking_mask: crate::unity_engine::layermask::LayerMask,
+        #[rename(name = "m_Canvas")]
+        pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[rename(name = "m_RaycastResults")]
+        pub m_raycast_results: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>,
+        #[static_field]
+        #[rename(name = "s_SortedGraphics")]
+        pub s_sorted_graphics: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>,
+    }
 }
 
 #[cfg(feature = "unity_engine-ui-graphicraycaster-types")]
@@ -107,9 +100,7 @@ mod __GraphicRaycaster_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_sort_order_priority {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -122,39 +113,27 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "get_sortOrderPriority",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "get_sortOrderPriority",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sort_order_priority(
-        this: GraphicRaycaster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_sort_order_priority(this: GraphicRaycaster, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sort_order_priority::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sort_order_priority::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_order_priority {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -167,39 +146,27 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "get_renderOrderPriority",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "get_renderOrderPriority",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_render_order_priority(
-        this: GraphicRaycaster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_render_order_priority(this: GraphicRaycaster, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_render_order_priority::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_render_order_priority::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ignore_reversed_graphics {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -212,41 +179,28 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "get_ignoreReversedGraphics",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "get_ignoreReversedGraphics",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ignore_reversed_graphics(
-        this: GraphicRaycaster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_ignore_reversed_graphics(this: GraphicRaycaster, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ignore_reversed_graphics::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_ignore_reversed_graphics::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ignore_reversed_graphics {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
                 "set_ignoreReversedGraphics",
@@ -258,40 +212,27 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "set_ignoreReversedGraphics",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "set_ignoreReversedGraphics",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_ignore_reversed_graphics(
-        this: GraphicRaycaster,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_ignore_reversed_graphics(this: GraphicRaycaster, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GraphicRaycaster, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_ignore_reversed_graphics::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_ignore_reversed_graphics::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_blocking_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -304,35 +245,35 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "get_blockingObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "get_blockingObjects",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_blocking_objects(
         this: GraphicRaycaster,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects {
-        let inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: graphicraycaster :: GraphicRaycaster_BlockingObjects = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_blocking_objects :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            GraphicRaycaster,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects =
+            ::core::mem::transmute(__lookup_get_blocking_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_blocking_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: graphicraycaster :: GraphicRaycaster_BlockingObjects as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
                 "set_blockingObjects",
@@ -344,18 +285,15 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "set_blockingObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "set_blockingObjects",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_blocking_objects(
@@ -367,20 +305,14 @@ mod __GraphicRaycaster_unity2_raw {
             GraphicRaycaster,
             crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_blocking_objects::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_blocking_objects::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_blocking_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -393,43 +325,31 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "get_blockingMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "get_blockingMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_blocking_mask(
         this: GraphicRaycaster,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::layermask::LayerMask {
-        let inner: extern "C" fn(
-            GraphicRaycaster,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::layermask::LayerMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_blocking_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod) -> crate::unity_engine::layermask::LayerMask =
+            ::core::mem::transmute(__lookup_get_blocking_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_blocking_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
                 "set_blockingMask",
@@ -441,18 +361,15 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "set_blockingMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "set_blockingMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_blocking_mask(
@@ -460,24 +377,15 @@ mod __GraphicRaycaster_unity2_raw {
         value: crate::unity_engine::layermask::LayerMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GraphicRaycaster,
-            crate::unity_engine::layermask::LayerMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_blocking_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GraphicRaycaster, crate::unity_engine::layermask::LayerMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_blocking_mask::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -490,39 +398,27 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GraphicRaycaster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GraphicRaycaster, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_canvas {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -535,41 +431,27 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "get_canvas",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "get_canvas",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_canvas(
-        this: GraphicRaycaster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::canvas::Canvas {
-        let inner: extern "C" fn(
-            GraphicRaycaster,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::canvas::Canvas = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_canvas::get_offset() as isize),
-        );
+    pub unsafe fn get_canvas(this: GraphicRaycaster, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::canvas::Canvas {
+        let inner: extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod) -> crate::unity_engine::canvas::Canvas =
+            ::core::mem::transmute(__lookup_get_canvas::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raycast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -582,49 +464,36 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "Raycast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "Raycast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast(
         this: GraphicRaycaster,
         event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        result_append_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::event_systems::raycastresult::RaycastResult,
-        >,
+        result_append_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             GraphicRaycaster,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::event_systems::raycastresult::RaycastResult,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_raycast::get_method_info().method_ptr);
         inner(this, event_data, result_append_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -637,52 +506,28 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "get_eventCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "get_eventCamera",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_event_camera(
-        this: GraphicRaycaster,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::camera::Camera {
-        let inner: extern "C" fn(
-            GraphicRaycaster,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event_camera::get_offset() as isize),
-        );
+    pub unsafe fn get_event_camera(this: GraphicRaycaster, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera =
+            ::core::mem::transmute(__lookup_get_event_camera::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raycast_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::canvas::Canvas as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                    crate::unity_engine::ui::graphic::Graphic,
-                > as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::ui::graphic::Graphic,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: canvas :: Canvas as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: ui :: graphic :: Graphic > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: graphic :: Graphic > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
                 "Raycast",
@@ -694,64 +539,40 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    "Raycast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        "Raycast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast_2(
         canvas: crate::unity_engine::canvas::Canvas,
         event_camera: crate::unity_engine::camera::Camera,
         pointer_position: crate::unity_engine::vector2::Vector2,
-        found_graphics: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-            crate::unity_engine::ui::graphic::Graphic,
-        >,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::graphic::Graphic,
-        >,
+        found_graphics: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic>,
+        results: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::unity_engine::canvas::Canvas,
             crate::unity_engine::camera::Camera,
             crate::unity_engine::vector2::Vector2,
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::ui::graphic::Graphic,
-            >,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::ui::graphic::Graphic,
-            >,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic>,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast_2::get_offset() as isize),
-        );
-        inner(
-            canvas,
-            event_camera,
-            pointer_position,
-            found_graphics,
-            results,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_raycast_2::get_method_info().method_ptr);
+        inner(canvas, event_camera, pointer_position, found_graphics, results, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GraphicRaycaster as ::unity2::ClassIdentity>::class(),
@@ -764,26 +585,19 @@ mod __GraphicRaycaster_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GraphicRaycaster as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -796,15 +610,9 @@ impl GraphicRaycaster {
         event_camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
         pointer_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
         found_graphics: impl ::core::convert::Into<
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::ui::graphic::Graphic,
-            >,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic>,
         >,
-        results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::ui::graphic::Graphic,
-            >,
-        >,
+        results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>>,
     ) -> () {
         unsafe {
             __GraphicRaycaster_unity2_raw::raycast_2(
@@ -817,6 +625,7 @@ impl GraphicRaycaster {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __GraphicRaycaster_unity2_raw::cctor(::core::option::Option::None) }
@@ -828,146 +637,86 @@ pub trait IGraphicRaycasterMethods: IGraphicRaycaster {
     #[doc = "`get_sortOrderPriority()` overload"]
     fn get_sort_order_priority(self) -> i32 {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::get_sort_order_priority(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::get_sort_order_priority(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_renderOrderPriority()` overload"]
     fn get_render_order_priority(self) -> i32 {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::get_render_order_priority(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::get_render_order_priority(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ignoreReversedGraphics()` overload"]
     fn get_ignore_reversed_graphics(self) -> bool {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::get_ignore_reversed_graphics(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::get_ignore_reversed_graphics(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ignoreReversedGraphics(bool)` overload"]
     fn set_ignore_reversed_graphics(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::set_ignore_reversed_graphics(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::set_ignore_reversed_graphics(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_blockingObjects()` overload"]
-    fn get_blocking_objects(
-        self,
-    ) -> crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects {
+    fn get_blocking_objects(self) -> crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::get_blocking_objects(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::get_blocking_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_blockingObjects(crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects)` overload"]
     fn set_blocking_objects(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects>,
     ) -> () {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::set_blocking_objects(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::set_blocking_objects(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_blockingMask()` overload"]
     fn get_blocking_mask(self) -> crate::unity_engine::layermask::LayerMask {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::get_blocking_mask(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::get_blocking_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_blockingMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    fn set_blocking_mask(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
-    ) -> () {
+    fn set_blocking_mask(self, value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>) -> () {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::set_blocking_mask(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::set_blocking_mask(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GraphicRaycaster_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_canvas()` overload"]
     fn get_canvas(self) -> crate::unity_engine::canvas::Canvas {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GraphicRaycaster_unity2_raw::get_canvas(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]
     fn raycast(
         self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
         result_append_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::event_systems::raycastresult::RaycastResult,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GraphicRaycaster_unity2_raw::raycast(
                 __receiver,
                 ::core::convert::Into::into(event_data),
@@ -979,13 +728,8 @@ pub trait IGraphicRaycasterMethods: IGraphicRaycaster {
     #[doc = "`get_eventCamera()` overload"]
     fn get_event_camera(self) -> crate::unity_engine::camera::Camera {
         unsafe {
-            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GraphicRaycaster_unity2_raw::get_event_camera(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GraphicRaycaster as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GraphicRaycaster_unity2_raw::get_event_camera(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1012,35 +756,33 @@ impl GraphicRaycaster {
 #[cfg(feature = "unity_engine-ui-graphicraycaster")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GraphicRaycaster;
-    pub use super::GraphicRaycaster_BlockingObjects;
-    pub use super::IGraphicRaycaster;
-    pub use super::IGraphicRaycasterMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{GraphicRaycaster, GraphicRaycaster_BlockingObjects, IGraphicRaycaster, IGraphicRaycasterMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::baseraycaster::IBaseRaycaster;
     #[cfg(feature = "unity_engine-event_systems-baseraycaster")]
     pub use crate::unity_engine::event_systems::baseraycaster::IBaseRaycasterMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::{baseraycaster::IBaseRaycaster, uibehaviour::IUIBehaviour},
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+        },
+    };
 }

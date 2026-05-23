@@ -2,11 +2,13 @@
 
 #[cfg(feature = "tm_pro-materialreference-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/materialreference/MaterialReference.md"))]
     #[repr(C)]
@@ -24,9 +26,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for MaterialReference {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "MaterialReference";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,10 +38,7 @@ mod __types {
 
     impl ::unity2::IlType for MaterialReference {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -57,9 +55,7 @@ mod __MaterialReference_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
@@ -78,18 +74,15 @@ mod __MaterialReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialReference as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialReference as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -109,29 +102,18 @@ mod __MaterialReference_unity2_raw {
             crate::unity_engine::material::Material,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            index,
-            font_asset,
-            sprite_asset,
-            material,
-            padding,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, index, font_asset, sprite_asset, material, padding, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_contains {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: tm_pro :: materialreference :: MaterialReference > as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::tm_pro::materialreference::MaterialReference> as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialReference as ::unity2::ClassIdentity>::class(),
                 "Contains",
@@ -143,18 +125,15 @@ mod __MaterialReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialReference as ::unity2::ClassIdentity>::NAME,
-                    "Contains",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialReference as ::unity2::ClassIdentity>::NAME,
+                        "Contains",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn contains(
@@ -166,21 +145,20 @@ mod __MaterialReference_unity2_raw {
             ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
             crate::tm_pro::tmp_fontasset::TMP_FontAsset,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_contains::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_contains::get_method_info().method_ptr);
         inner(material_references, font_asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_material_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: materialreference :: MaterialReference > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::tm_pro::materialreference::MaterialReference> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialReference as ::unity2::ClassIdentity>::class(),
                 "AddMaterialReference",
@@ -192,27 +170,22 @@ mod __MaterialReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialReference as ::unity2::ClassIdentity>::NAME,
-                    "AddMaterialReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialReference as ::unity2::ClassIdentity>::NAME,
+                        "AddMaterialReference",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_material_reference(
         material: crate::unity_engine::material::Material,
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        material_references: *mut ::unity2::Array<
-            crate::tm_pro::materialreference::MaterialReference,
-        >,
-        material_reference_index_lookup : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 >,
+        material_references: *mut ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
+        material_reference_index_lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -221,11 +194,7 @@ mod __MaterialReference_unity2_raw {
             *mut ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
             crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_material_reference::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_add_material_reference::get_method_info().method_ptr);
         inner(
             material,
             font_asset,
@@ -238,10 +207,13 @@ mod __MaterialReference_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_add_material_reference_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: materialreference :: MaterialReference > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::tm_pro::materialreference::MaterialReference> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialReference as ::unity2::ClassIdentity>::class(),
                 "AddMaterialReference",
@@ -253,27 +225,22 @@ mod __MaterialReference_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialReference as ::unity2::ClassIdentity>::NAME,
-                    "AddMaterialReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialReference as ::unity2::ClassIdentity>::NAME,
+                        "AddMaterialReference",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_material_reference_2(
         material: crate::unity_engine::material::Material,
         sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-        material_references: *mut ::unity2::Array<
-            crate::tm_pro::materialreference::MaterialReference,
-        >,
-        material_reference_index_lookup : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 >,
+        material_references: *mut ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
+        material_reference_index_lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(
@@ -282,11 +249,7 @@ mod __MaterialReference_unity2_raw {
             *mut ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
             crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_material_reference_2::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_add_material_reference_2::get_method_info().method_ptr);
         inner(
             material,
             sprite_asset,
@@ -301,9 +264,7 @@ mod __MaterialReference_unity2_raw {
 impl MaterialReference {
     #[doc = "`Contains(::unity2::Array<crate::tm_pro::materialreference::MaterialReference>, crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
     pub fn contains(
-        material_references: impl ::core::convert::Into<
-            ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
-        >,
+        material_references: impl ::core::convert::Into<::unity2::Array<crate::tm_pro::materialreference::MaterialReference>>,
         font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
     ) -> bool {
         unsafe {
@@ -314,21 +275,15 @@ impl MaterialReference {
             )
         }
     }
+
     #[doc = "`AddMaterialReference(crate::unity_engine::material::Material, crate::tm_pro::tmp_fontasset::TMP_FontAsset, *mut::unity2::Array<crate::tm_pro::materialreference::MaterialReference>, crate::system::collections::generic::dictionary_2::Dictionary_2<i32,i32>)` overload"]
     pub fn add_material_reference(
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
         font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
-        material_reference_index_lookup: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
-        >,
-    ) -> (
-        i32,
-        ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
-    ) {
+        material_reference_index_lookup: impl ::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>>,
+    ) -> (i32, ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<crate::tm_pro::materialreference::MaterialReference>>::uninit();
             let __ret = {
                 __MaterialReference_unity2_raw::add_material_reference(
                     ::core::convert::Into::into(material),
@@ -341,21 +296,15 @@ impl MaterialReference {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`AddMaterialReference(crate::unity_engine::material::Material, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, *mut::unity2::Array<crate::tm_pro::materialreference::MaterialReference>, crate::system::collections::generic::dictionary_2::Dictionary_2<i32,i32>)` overload"]
     pub fn add_material_reference_2(
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
         sprite_asset: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
-        material_reference_index_lookup: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
-        >,
-    ) -> (
-        i32,
-        ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
-    ) {
+        material_reference_index_lookup: impl ::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>>,
+    ) -> (i32, ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<crate::tm_pro::materialreference::MaterialReference>>::uninit();
             let __ret = {
                 __MaterialReference_unity2_raw::add_material_reference_2(
                     ::core::convert::Into::into(material),
@@ -399,10 +348,9 @@ impl MaterialReference {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MaterialReference;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

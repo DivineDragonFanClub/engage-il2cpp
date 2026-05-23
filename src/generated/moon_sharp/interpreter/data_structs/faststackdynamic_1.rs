@@ -2,17 +2,16 @@
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-faststackdynamic_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::collections::generic::list_1::{IList_1, List_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        collections::generic::list_1::{IList_1, List_1},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/faststackdynamic_1/FastStackDynamic_1.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.DataStructs",
-        name = "FastStackDynamic`1"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.DataStructs", name = "FastStackDynamic`1")]
     # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < T0 >)]
     #[parent(crate::system::object::Object)]
     pub struct FastStackDynamic_1<T0: ::unity2::ClassIdentity> {}
@@ -80,13 +79,10 @@ impl<T0: ::unity2::ClassIdentity> FastStackDynamic_1<T0> {
 #[cfg(feature = "moon_sharp-interpreter-data_structs-faststackdynamic_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FastStackDynamic_1;
-    pub use super::IFastStackDynamic_1;
-    pub use super::IFastStackDynamic_1Methods;
-    pub use crate::system::collections::generic::list_1::IList_1;
+    pub use super::{FastStackDynamic_1, IFastStackDynamic_1, IFastStackDynamic_1Methods};
     #[cfg(feature = "system-collections-generic-list_1")]
     pub use crate::system::collections::generic::list_1::IList_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{collections::generic::list_1::IList_1, object::IObject};
 }

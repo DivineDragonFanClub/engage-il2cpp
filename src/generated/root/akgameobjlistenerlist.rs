@@ -2,13 +2,13 @@
 
 #[cfg(feature = "root-akgameobjlistenerlist-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::root::akaudiolistener::{
-        AkAudioListener_BaseListenerList, IAkAudioListener_BaseListenerList,
+    use super::*;
+    use crate::{
+        root::akaudiolistener::{AkAudioListener_BaseListenerList, IAkAudioListener_BaseListenerList},
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akgameobjlistenerlist/AkGameObjListenerList.md"))]
     #[::unity2::class(namespace = "", name = "AkGameObjListenerList")]
@@ -17,9 +17,7 @@ mod __types {
         #[rename(name = "akGameObj")]
         pub ak_game_obj: crate::root::akgameobj::AkGameObj,
         #[rename(name = "initialListenerList")]
-        pub initial_listener_list: crate::system::collections::generic::list_1::List_1<
-            crate::root::akaudiolistener::AkAudioListener,
-        >,
+        pub initial_listener_list: crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>,
         #[rename(name = "useDefaultListeners")]
         pub use_default_listeners_field: bool,
     }
@@ -37,11 +35,8 @@ mod __AkGameObjListenerList_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_use_default_listeners {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjListenerList as ::unity2::ClassIdentity>::class(),
                 "SetUseDefaultListeners",
@@ -53,42 +48,28 @@ mod __AkGameObjListenerList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
-                    "SetUseDefaultListeners",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
+                        "SetUseDefaultListeners",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_use_default_listeners(
-        this: AkGameObjListenerList,
-        use_default: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_use_default_listeners(this: AkGameObjListenerList, use_default: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkGameObjListenerList, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_use_default_listeners::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_use_default_listeners::get_method_info().method_ptr);
         inner(this, use_default, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akgameobj::AkGameObj as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akgameobj::AkGameObj as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjListenerList as ::unity2::ClassIdentity>::class(),
                 "Init",
@@ -100,18 +81,15 @@ mod __AkGameObjListenerList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init(
@@ -119,24 +97,15 @@ mod __AkGameObjListenerList_unity2_raw {
         ak_game_obj: crate::root::akgameobj::AkGameObj,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkGameObjListenerList,
-            crate::root::akgameobj::AkGameObj,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkGameObjListenerList, crate::root::akgameobj::AkGameObj, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, ak_game_obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::root::akaudiolistener::AkAudioListener as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -150,18 +119,15 @@ mod __AkGameObjListenerList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
@@ -169,24 +135,15 @@ mod __AkGameObjListenerList_unity2_raw {
         listener: crate::root::akaudiolistener::AkAudioListener,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            AkGameObjListenerList,
-            crate::root::akaudiolistener::AkAudioListener,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkGameObjListenerList, crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, listener, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::root::akaudiolistener::AkAudioListener as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -200,18 +157,15 @@ mod __AkGameObjListenerList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove(
@@ -219,24 +173,15 @@ mod __AkGameObjListenerList_unity2_raw {
         listener: crate::root::akaudiolistener::AkAudioListener,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            AkGameObjListenerList,
-            crate::root::akaudiolistener::AkAudioListener,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkGameObjListenerList, crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
         inner(this, listener, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjListenerList as ::unity2::ClassIdentity>::class(),
@@ -249,30 +194,20 @@ mod __AkGameObjListenerList_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjListenerList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkGameObjListenerList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkGameObjListenerList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkGameObjListenerList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -282,9 +217,8 @@ pub trait IAkGameObjListenerListMethods: IAkGameObjListenerList {
     #[doc = "`SetUseDefaultListeners(bool)` overload"]
     fn set_use_default_listeners(self, use_default: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjListenerList_unity2_raw::set_use_default_listeners(
                 __receiver,
                 ::core::convert::Into::into(use_default),
@@ -293,59 +227,34 @@ pub trait IAkGameObjListenerListMethods: IAkGameObjListenerList {
         }
     }
     #[doc = "`Init(crate::root::akgameobj::AkGameObj)` overload"]
-    fn init(
-        self,
-        ak_game_obj: impl ::core::convert::Into<crate::root::akgameobj::AkGameObj>,
-    ) -> () {
+    fn init(self, ak_game_obj: impl ::core::convert::Into<crate::root::akgameobj::AkGameObj>) -> () {
         unsafe {
-            let __receiver = <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkGameObjListenerList_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(ak_game_obj),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkGameObjListenerList_unity2_raw::init(__receiver, ::core::convert::Into::into(ak_game_obj), ::core::option::Option::None)
         }
     }
     #[doc = "`Add(crate::root::akaudiolistener::AkAudioListener)` overload"]
-    fn add(
-        self,
-        listener: impl ::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>,
-    ) -> bool {
+    fn add(self, listener: impl ::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>) -> bool {
         unsafe {
-            let __receiver = <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkGameObjListenerList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(listener),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkGameObjListenerList_unity2_raw::add(__receiver, ::core::convert::Into::into(listener), ::core::option::Option::None)
         }
     }
     #[doc = "`Remove(crate::root::akaudiolistener::AkAudioListener)` overload"]
-    fn remove(
-        self,
-        listener: impl ::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>,
-    ) -> bool {
+    fn remove(self, listener: impl ::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>) -> bool {
         unsafe {
-            let __receiver = <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkGameObjListenerList_unity2_raw::remove(
-                __receiver,
-                ::core::convert::Into::into(listener),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkGameObjListenerList_unity2_raw::remove(__receiver, ::core::convert::Into::into(listener), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkGameObjListenerList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjListenerList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -373,13 +282,10 @@ impl AkGameObjListenerList {
 #[cfg(feature = "root-akgameobjlistenerlist")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkGameObjListenerList;
-    pub use super::IAkGameObjListenerList;
-    pub use super::IAkGameObjListenerListMethods;
-    pub use crate::root::akaudiolistener::IAkAudioListener_BaseListenerList;
+    pub use super::{AkGameObjListenerList, IAkGameObjListenerList, IAkGameObjListenerListMethods};
     #[cfg(feature = "root-akaudiolistener")]
     pub use crate::root::akaudiolistener::IAkAudioListener_BaseListenerListMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{root::akaudiolistener::IAkAudioListener_BaseListenerList, system::object::IObject};
 }

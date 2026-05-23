@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-structlist_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::collections::generic::list_1::{IList_1, List_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        collections::generic::list_1::{IList_1, List_1},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structlist_1/StructList_1.md"))]
     #[::unity2::class(namespace = "App", name = "StructList`1")]
@@ -46,13 +48,8 @@ impl<T0: ::unity2::ClassIdentity> StructList_1<T0> {
 impl<T0: ::unity2::ClassIdentity> StructList_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StructList_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(StructList_1), ::core::stringify!(new),));
         <Self as IStructList_1Methods<T0>>::ctor(this);
         this
     }
@@ -61,13 +58,10 @@ impl<T0: ::unity2::ClassIdentity> StructList_1<T0> {
 #[cfg(feature = "app-structlist_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStructList_1;
-    pub use super::IStructList_1Methods;
-    pub use super::StructList_1;
-    pub use crate::system::collections::generic::list_1::IList_1;
+    pub use super::{IStructList_1, IStructList_1Methods, StructList_1};
     #[cfg(feature = "system-collections-generic-list_1")]
     pub use crate::system::collections::generic::list_1::IList_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{collections::generic::list_1::IList_1, object::IObject};
 }

@@ -2,21 +2,38 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::rendering::universal::scriptablerendererdata::{
-        IScriptableRendererData, ScriptableRendererData,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            rendering::universal::scriptablerendererdata::{IScriptableRendererData, ScriptableRendererData},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
     };
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "StatusModelRendererData")]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]
+    pub struct StatusModelRendererData {
+        #[rename(name = "postProcessData")]
+        pub post_process_data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+        #[rename(name = "shaders")]
+        pub shaders: crate::unity_engine::rendering::universal::custom::statusmodelrendererdata::StatusModelRendererData_ShaderResources,
+        #[rename(name = "m_OpaqueLayerMask")]
+        pub m_opaque_layer_mask: crate::unity_engine::layermask::LayerMask,
+        #[rename(name = "m_TransparentLayerMask")]
+        pub m_transparent_layer_mask: crate::unity_engine::layermask::LayerMask,
+        #[rename(name = "m_DefaultStencilState")]
+        pub m_default_stencil_state: crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
+        #[rename(name = "m_ShadowTransparentReceive")]
+        pub m_shadow_transparent_receive: bool,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData_ShaderResources.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom",
-        name = "StatusModelRendererData.ShaderResources"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "StatusModelRendererData.ShaderResources")]
     #[parent(crate::system::object::Object)]
     pub struct StatusModelRendererData_ShaderResources {
         #[rename(name = "blitPS")]
@@ -30,119 +47,10 @@ mod __types {
         #[rename(name = "samplingPS")]
         pub sampling_ps: crate::unity_engine::shader::Shader,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom",
-        name = "StatusModelRendererData"
-    )]
-    #[parent(
-        crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData
-    )]
-    pub struct StatusModelRendererData {
-# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: custom :: statusmodelrendererdata :: StatusModelRendererData_ShaderResources ,
-# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
-# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
-}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __StatusModelRendererData_ShaderResources_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StatusModelRendererData_ShaderResources as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData_ShaderResources as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: StatusModelRendererData_ShaderResources,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            StatusModelRendererData_ShaderResources,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-pub trait IStatusModelRendererData_ShaderResourcesMethods:
-    IStatusModelRendererData_ShaderResources
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < StatusModelRendererData_ShaderResources as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __StatusModelRendererData_ShaderResources_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-impl<__T: IStatusModelRendererData_ShaderResources> IStatusModelRendererData_ShaderResourcesMethods
-    for __T
-{
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-impl StatusModelRendererData_ShaderResources {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StatusModelRendererData_ShaderResources),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStatusModelRendererData_ShaderResourcesMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
 #[doc(hidden)]
@@ -153,9 +61,7 @@ mod __StatusModelRendererData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
@@ -168,34 +74,33 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
         this: StatusModelRendererData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
-        let inner : extern "C" fn (StatusModelRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            StatusModelRendererData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_opaque_layer_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
@@ -208,43 +113,31 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "get_opaqueLayerMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "get_opaqueLayerMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_opaque_layer_mask(
         this: StatusModelRendererData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::layermask::LayerMask {
-        let inner: extern "C" fn(
-            StatusModelRendererData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::layermask::LayerMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_opaque_layer_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StatusModelRendererData, ::unity2::OptionalMethod) -> crate::unity_engine::layermask::LayerMask =
+            ::core::mem::transmute(__lookup_get_opaque_layer_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_opaque_layer_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
                 "set_opaqueLayerMask",
@@ -256,18 +149,15 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "set_opaqueLayerMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "set_opaqueLayerMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_opaque_layer_mask(
@@ -275,24 +165,15 @@ mod __StatusModelRendererData_unity2_raw {
         value: crate::unity_engine::layermask::LayerMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StatusModelRendererData,
-            crate::unity_engine::layermask::LayerMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_opaque_layer_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StatusModelRendererData, crate::unity_engine::layermask::LayerMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_opaque_layer_mask::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_transparent_layer_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
@@ -305,43 +186,31 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "get_transparentLayerMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "get_transparentLayerMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_transparent_layer_mask(
         this: StatusModelRendererData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::layermask::LayerMask {
-        let inner: extern "C" fn(
-            StatusModelRendererData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::layermask::LayerMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_transparent_layer_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StatusModelRendererData, ::unity2::OptionalMethod) -> crate::unity_engine::layermask::LayerMask =
+            ::core::mem::transmute(__lookup_get_transparent_layer_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_transparent_layer_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
                 "set_transparentLayerMask",
@@ -353,18 +222,15 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "set_transparentLayerMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "set_transparentLayerMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_transparent_layer_mask(
@@ -372,24 +238,15 @@ mod __StatusModelRendererData_unity2_raw {
         value: crate::unity_engine::layermask::LayerMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StatusModelRendererData,
-            crate::unity_engine::layermask::LayerMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_transparent_layer_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StatusModelRendererData, crate::unity_engine::layermask::LayerMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_transparent_layer_mask::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_stencil_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
@@ -402,35 +259,35 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "get_defaultStencilState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "get_defaultStencilState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_default_stencil_state(
         this: StatusModelRendererData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData {
-        let inner : extern "C" fn (StatusModelRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_stencil_state :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            StatusModelRendererData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData =
+            ::core::mem::transmute(__lookup_get_default_stencil_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_default_stencil_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
                 "set_defaultStencilState",
@@ -442,18 +299,15 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "set_defaultStencilState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "set_defaultStencilState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_default_stencil_state(
@@ -465,20 +319,14 @@ mod __StatusModelRendererData_unity2_raw {
             StatusModelRendererData,
             crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_default_stencil_state::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_default_stencil_state::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_transparent_receive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
@@ -491,41 +339,28 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "get_shadowTransparentReceive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "get_shadowTransparentReceive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_shadow_transparent_receive(
-        this: StatusModelRendererData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_shadow_transparent_receive(this: StatusModelRendererData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StatusModelRendererData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_shadow_transparent_receive::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_shadow_transparent_receive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shadow_transparent_receive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
                 "set_shadowTransparentReceive",
@@ -537,40 +372,27 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "set_shadowTransparentReceive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "set_shadowTransparentReceive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_shadow_transparent_receive(
-        this: StatusModelRendererData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_shadow_transparent_receive(this: StatusModelRendererData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StatusModelRendererData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_shadow_transparent_receive::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_shadow_transparent_receive::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
@@ -583,39 +405,27 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: StatusModelRendererData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: StatusModelRendererData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StatusModelRendererData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StatusModelRendererData as ::unity2::ClassIdentity>::class(),
@@ -628,30 +438,20 @@ mod __StatusModelRendererData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: StatusModelRendererData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: StatusModelRendererData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StatusModelRendererData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -659,14 +459,10 @@ mod __StatusModelRendererData_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
 pub trait IStatusModelRendererDataMethods: IStatusModelRendererData {
     #[doc = "`Create()` overload"]
-    fn create(
-        self,
-    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
+    fn create(self) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StatusModelRendererData_unity2_raw::create(__receiver, ::core::option::Option::None)
         }
     }
@@ -674,55 +470,31 @@ pub trait IStatusModelRendererDataMethods: IStatusModelRendererData {
     fn get_opaque_layer_mask(self) -> crate::unity_engine::layermask::LayerMask {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StatusModelRendererData_unity2_raw::get_opaque_layer_mask(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StatusModelRendererData_unity2_raw::get_opaque_layer_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    fn set_opaque_layer_mask(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
-    ) -> () {
+    fn set_opaque_layer_mask(self, value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>) -> () {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StatusModelRendererData_unity2_raw::set_opaque_layer_mask(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StatusModelRendererData_unity2_raw::set_opaque_layer_mask(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_transparentLayerMask()` overload"]
     fn get_transparent_layer_mask(self) -> crate::unity_engine::layermask::LayerMask {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StatusModelRendererData_unity2_raw::get_transparent_layer_mask(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StatusModelRendererData_unity2_raw::get_transparent_layer_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    fn set_transparent_layer_mask(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
-    ) -> () {
+    fn set_transparent_layer_mask(self, value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>) -> () {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StatusModelRendererData_unity2_raw::set_transparent_layer_mask(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -731,32 +503,21 @@ pub trait IStatusModelRendererDataMethods: IStatusModelRendererData {
         }
     }
     #[doc = "`get_defaultStencilState()` overload"]
-    fn get_default_stencil_state(
-        self,
-    ) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData {
+    fn get_default_stencil_state(self) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StatusModelRendererData_unity2_raw::get_default_stencil_state(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StatusModelRendererData_unity2_raw::get_default_stencil_state(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_defaultStencilState(crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData)` overload"]
     fn set_default_stencil_state(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData>,
     ) -> () {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StatusModelRendererData_unity2_raw::set_default_stencil_state(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -768,22 +529,15 @@ pub trait IStatusModelRendererDataMethods: IStatusModelRendererData {
     fn get_shadow_transparent_receive(self) -> bool {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StatusModelRendererData_unity2_raw::get_shadow_transparent_receive(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StatusModelRendererData_unity2_raw::get_shadow_transparent_receive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_shadowTransparentReceive(bool)` overload"]
     fn set_shadow_transparent_receive(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StatusModelRendererData_unity2_raw::set_shadow_transparent_receive(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -795,22 +549,15 @@ pub trait IStatusModelRendererDataMethods: IStatusModelRendererData {
     fn on_enable(self) -> () {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __StatusModelRendererData_unity2_raw::on_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StatusModelRendererData_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <StatusModelRendererData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StatusModelRendererData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -837,23 +584,95 @@ impl StatusModelRendererData {
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __StatusModelRendererData_ShaderResources_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StatusModelRendererData_ShaderResources as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData_ShaderResources as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: StatusModelRendererData_ShaderResources, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(StatusModelRendererData_ShaderResources, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+pub trait IStatusModelRendererData_ShaderResourcesMethods: IStatusModelRendererData_ShaderResources {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <StatusModelRendererData_ShaderResources as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StatusModelRendererData_ShaderResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+impl<__T: IStatusModelRendererData_ShaderResources> IStatusModelRendererData_ShaderResourcesMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+impl StatusModelRendererData_ShaderResources {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StatusModelRendererData_ShaderResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStatusModelRendererData_ShaderResourcesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IStatusModelRendererData;
-    pub use super::IStatusModelRendererDataMethods;
-    pub use super::IStatusModelRendererData_ShaderResources;
-    pub use super::IStatusModelRendererData_ShaderResourcesMethods;
-    pub use super::StatusModelRendererData;
-    pub use super::StatusModelRendererData_ShaderResources;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IStatusModelRendererData, IStatusModelRendererDataMethods, IStatusModelRendererData_ShaderResources,
+        IStatusModelRendererData_ShaderResourcesMethods, StatusModelRendererData, StatusModelRendererData_ShaderResources,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererData;
     #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
     pub use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererDataMethods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            object_2::IObject_2, rendering::universal::scriptablerendererdata::IScriptableRendererData, scriptableobject::IScriptableObject,
+        },
+    };
 }

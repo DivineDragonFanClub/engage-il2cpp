@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-resourcetexture2d-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::resourcehandle_2::{IResourceHandle_2, ResourceHandle_2};
-    use crate::app::tresourcehandle_1::{ITResourceHandle_1, TResourceHandle_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            resourcehandle_2::{IResourceHandle_2, ResourceHandle_2},
+            tresourcehandle_1::{ITResourceHandle_1, TResourceHandle_1},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourcetexture2d/ResourceTexture2D.md"))]
     #[::unity2::class(namespace = "App", name = "ResourceTexture2D")]
@@ -27,9 +31,7 @@ mod __ResourceTexture2D_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ResourceTexture2D as ::unity2::ClassIdentity>::class(),
@@ -42,30 +44,20 @@ mod __ResourceTexture2D_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceTexture2D as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceTexture2D as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ResourceTexture2D,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ResourceTexture2D, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ResourceTexture2D, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -75,9 +67,7 @@ pub trait IResourceTexture2DMethods: IResourceTexture2D {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ResourceTexture2D as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ResourceTexture2D as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ResourceTexture2D_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -105,16 +95,15 @@ impl ResourceTexture2D {
 #[cfg(feature = "app-resourcetexture2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IResourceTexture2D;
-    pub use super::IResourceTexture2DMethods;
-    pub use super::ResourceTexture2D;
-    pub use crate::app::resourcehandle_2::IResourceHandle_2;
+    pub use super::{IResourceTexture2D, IResourceTexture2DMethods, ResourceTexture2D};
     #[cfg(feature = "app-resourcehandle_2")]
     pub use crate::app::resourcehandle_2::IResourceHandle_2Methods;
-    pub use crate::app::tresourcehandle_1::ITResourceHandle_1;
     #[cfg(feature = "app-tresourcehandle_1")]
     pub use crate::app::tresourcehandle_1::ITResourceHandle_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{resourcehandle_2::IResourceHandle_2, tresourcehandle_1::ITResourceHandle_1},
+        system::object::IObject,
+    };
 }

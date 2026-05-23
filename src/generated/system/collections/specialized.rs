@@ -5,9 +5,7 @@ pub mod casesensitivestringdictionary;
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
 pub use casesensitivestringdictionary::ICaseSensitiveStringDictionaryMethods;
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary-types")]
-pub use casesensitivestringdictionary::{
-    CaseSensitiveStringDictionary, ICaseSensitiveStringDictionary,
-};
+pub use casesensitivestringdictionary::{CaseSensitiveStringDictionary, ICaseSensitiveStringDictionary};
 #[cfg(any(feature = "system-collections-specialized-compatiblecomparer_2-types"))]
 pub mod compatiblecomparer_2;
 #[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
@@ -24,31 +22,25 @@ pub use hybriddictionary::{HybridDictionary, IHybridDictionary};
 pub mod listdictionary;
 #[cfg(feature = "system-collections-specialized-listdictionary-types")]
 pub use listdictionary::{
-    IListDictionary, IListDictionary_DictionaryNode, IListDictionary_NodeEnumerator,
-    IListDictionary_NodeKeyValueCollection,
-    IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator, ListDictionary,
-    ListDictionary_DictionaryNode, ListDictionary_NodeEnumerator,
-    ListDictionary_NodeKeyValueCollection,
-    ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
+    IListDictionary, IListDictionary_DictionaryNode, IListDictionary_NodeEnumerator, IListDictionary_NodeKeyValueCollection,
+    IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator, ListDictionary, ListDictionary_DictionaryNode, ListDictionary_NodeEnumerator,
+    ListDictionary_NodeKeyValueCollection, ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,
 };
 #[cfg(feature = "system-collections-specialized-listdictionary")]
 pub use listdictionary::{
-    IListDictionaryMethods, IListDictionary_DictionaryNodeMethods,
-    IListDictionary_NodeEnumeratorMethods, IListDictionary_NodeKeyValueCollectionMethods,
-    IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,
+    IListDictionaryMethods, IListDictionary_DictionaryNodeMethods, IListDictionary_NodeEnumeratorMethods,
+    IListDictionary_NodeKeyValueCollectionMethods, IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,
 };
 #[cfg(any(feature = "system-collections-specialized-nameobjectcollectionbase-types"))]
 pub mod nameobjectcollectionbase;
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase-types")]
 pub use nameobjectcollectionbase::{
-    INameObjectCollectionBase, INameObjectCollectionBase_NameObjectEntry,
-    INameObjectCollectionBase_NameObjectKeysEnumerator, NameObjectCollectionBase,
-    NameObjectCollectionBase_NameObjectEntry, NameObjectCollectionBase_NameObjectKeysEnumerator,
+    INameObjectCollectionBase, INameObjectCollectionBase_NameObjectEntry, INameObjectCollectionBase_NameObjectKeysEnumerator,
+    NameObjectCollectionBase, NameObjectCollectionBase_NameObjectEntry, NameObjectCollectionBase_NameObjectKeysEnumerator,
 };
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
 pub use nameobjectcollectionbase::{
-    INameObjectCollectionBaseMethods, INameObjectCollectionBase_NameObjectEntryMethods,
-    INameObjectCollectionBase_NameObjectKeysEnumeratorMethods,
+    INameObjectCollectionBaseMethods, INameObjectCollectionBase_NameObjectEntryMethods, INameObjectCollectionBase_NameObjectKeysEnumeratorMethods,
 };
 #[cfg(any(feature = "system-collections-specialized-namevaluecollection-types"))]
 pub mod namevaluecollection;
@@ -60,15 +52,12 @@ pub use namevaluecollection::{INameValueCollection, NameValueCollection};
 pub mod ordereddictionary;
 #[cfg(feature = "system-collections-specialized-ordereddictionary-types")]
 pub use ordereddictionary::{
-    IOrderedDictionary, IOrderedDictionary_OrderedDictionaryEnumerator,
-    IOrderedDictionary_OrderedDictionaryKeyValueCollection, OrderedDictionary,
-    OrderedDictionary_OrderedDictionaryEnumerator,
-    OrderedDictionary_OrderedDictionaryKeyValueCollection,
+    IOrderedDictionary, IOrderedDictionary_OrderedDictionaryEnumerator, IOrderedDictionary_OrderedDictionaryKeyValueCollection, OrderedDictionary,
+    OrderedDictionary_OrderedDictionaryEnumerator, OrderedDictionary_OrderedDictionaryKeyValueCollection,
 };
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
 pub use ordereddictionary::{
-    IOrderedDictionaryMethods, IOrderedDictionary_OrderedDictionaryEnumeratorMethods,
-    IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods,
+    IOrderedDictionaryMethods, IOrderedDictionary_OrderedDictionaryEnumeratorMethods, IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods,
 };
 #[cfg(any(feature = "system-collections-specialized-stringcollection-types"))]
 pub mod stringcollection;

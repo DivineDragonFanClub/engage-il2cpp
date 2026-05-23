@@ -2,25 +2,21 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-platformmappingservice-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/platformmappingservice/PlatformMappingService.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets",
-        name = "PlatformMappingService"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "PlatformMappingService")]
     #[parent(crate::system::object::Object)]
     pub struct PlatformMappingService {
         #[static_field]
         #[rename(name = "s_RuntimeTargetMapping")]
-        pub s_runtime_target_mapping:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::unity_engine::runtimeplatform::RuntimePlatform,
-                crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform,
-            >,
+        pub s_runtime_target_mapping: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::unity_engine::runtimeplatform::RuntimePlatform,
+            crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform,
+        >,
     }
 }
 
@@ -36,10 +32,9 @@ mod __PlatformMappingService_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_addressables_platform_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: runtimeplatform :: RuntimePlatform as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::runtimeplatform::RuntimePlatform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformMappingService as ::unity2::ClassIdentity>::class(),
                 "GetAddressablesPlatformInternal",
@@ -51,35 +46,35 @@ mod __PlatformMappingService_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
-                    "GetAddressablesPlatformInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
+                        "GetAddressablesPlatformInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_addressables_platform_internal(
         platform: crate::unity_engine::runtimeplatform::RuntimePlatform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform {
-        let inner : extern "C" fn (crate :: unity_engine :: runtimeplatform :: RuntimePlatform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: addressable_assets :: addressablesplatform :: AddressablesPlatform = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_addressables_platform_internal :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::runtimeplatform::RuntimePlatform,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform =
+            ::core::mem::transmute(__lookup_get_addressables_platform_internal::get_method_info().method_ptr);
         inner(platform, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_addressables_platform_path_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: runtimeplatform :: RuntimePlatform as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::runtimeplatform::RuntimePlatform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformMappingService as ::unity2::ClassIdentity>::class(),
                 "GetAddressablesPlatformPathInternal",
@@ -91,41 +86,30 @@ mod __PlatformMappingService_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
-                    "GetAddressablesPlatformPathInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
+                        "GetAddressablesPlatformPathInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_addressables_platform_path_internal(
         platform: crate::unity_engine::runtimeplatform::RuntimePlatform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::unity_engine::runtimeplatform::RuntimePlatform,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_addressables_platform_path_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::runtimeplatform::RuntimePlatform, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_addressables_platform_path_internal::get_method_info().method_ptr);
         inner(platform, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_platform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformMappingService as ::unity2::ClassIdentity>::class(),
@@ -138,33 +122,29 @@ mod __PlatformMappingService_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
-                    "GetPlatform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
+                        "GetPlatform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_platform(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: addressable_assets :: addressablesplatform :: AddressablesPlatform = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_platform :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform =
+            ::core::mem::transmute(__lookup_get_platform::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_platform_path_sub_folder {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformMappingService as ::unity2::ClassIdentity>::class(),
@@ -177,38 +157,27 @@ mod __PlatformMappingService_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
-                    "GetPlatformPathSubFolder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
+                        "GetPlatformPathSubFolder",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_platform_path_sub_folder(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_platform_path_sub_folder(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_platform_path_sub_folder::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_platform_path_sub_folder::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformMappingService as ::unity2::ClassIdentity>::class(),
@@ -221,39 +190,27 @@ mod __PlatformMappingService_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PlatformMappingService,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PlatformMappingService, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlatformMappingService, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformMappingService as ::unity2::ClassIdentity>::class(),
@@ -266,26 +223,19 @@ mod __PlatformMappingService_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformMappingService as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -303,6 +253,7 @@ impl PlatformMappingService {
             )
         }
     }
+
     #[doc = "`GetAddressablesPlatformPathInternal(crate::unity_engine::runtimeplatform::RuntimePlatform)` overload"]
     pub fn get_addressables_platform_path_internal(
         platform: impl ::core::convert::Into<crate::unity_engine::runtimeplatform::RuntimePlatform>,
@@ -314,19 +265,17 @@ impl PlatformMappingService {
             )
         }
     }
+
     #[doc = "`GetPlatform()` overload"]
-    pub fn get_platform(
-    ) -> crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform {
+    pub fn get_platform() -> crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform {
         unsafe { __PlatformMappingService_unity2_raw::get_platform(::core::option::Option::None) }
     }
+
     #[doc = "`GetPlatformPathSubFolder()` overload"]
     pub fn get_platform_path_sub_folder() -> ::unity2::Il2CppString {
-        unsafe {
-            __PlatformMappingService_unity2_raw::get_platform_path_sub_folder(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlatformMappingService_unity2_raw::get_platform_path_sub_folder(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __PlatformMappingService_unity2_raw::cctor(::core::option::Option::None) }
@@ -338,9 +287,8 @@ pub trait IPlatformMappingServiceMethods: IPlatformMappingService {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PlatformMappingService as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PlatformMappingService as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlatformMappingService_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -368,9 +316,7 @@ impl PlatformMappingService {
 #[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPlatformMappingService;
-    pub use super::IPlatformMappingServiceMethods;
-    pub use super::PlatformMappingService;
+    pub use super::{IPlatformMappingService, IPlatformMappingServiceMethods, PlatformMappingService};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,13 +2,17 @@
 
 #[cfg(feature = "unity_engine-meshrenderer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::renderer::{IRenderer, Renderer};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+            renderer::{IRenderer, Renderer},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/meshrenderer/MeshRenderer.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "MeshRenderer")]
@@ -28,9 +32,7 @@ mod __MeshRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_dont_strip_mesh_renderer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -43,39 +45,27 @@ mod __MeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "DontStripMeshRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "DontStripMeshRenderer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dont_strip_mesh_renderer(
-        this: MeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dont_strip_mesh_renderer(this: MeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MeshRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dont_strip_mesh_renderer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dont_strip_mesh_renderer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_additional_vertex_streams {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -88,43 +78,31 @@ mod __MeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_additionalVertexStreams",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_additionalVertexStreams",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_additional_vertex_streams(
         this: MeshRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(
-            MeshRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_additional_vertex_streams::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MeshRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(__lookup_get_additional_vertex_streams::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_additional_vertex_streams {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_additionalVertexStreams",
@@ -136,18 +114,15 @@ mod __MeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_additionalVertexStreams",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_additionalVertexStreams",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_additional_vertex_streams(
@@ -155,24 +130,15 @@ mod __MeshRenderer_unity2_raw {
         value: crate::unity_engine::mesh::Mesh,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MeshRenderer,
-            crate::unity_engine::mesh::Mesh,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_additional_vertex_streams::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MeshRenderer, crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_additional_vertex_streams::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enlighten_vertex_stream {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -185,43 +151,28 @@ mod __MeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_enlightenVertexStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_enlightenVertexStream",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enlighten_vertex_stream(
-        this: MeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(
-            MeshRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enlighten_vertex_stream::get_offset() as isize),
-        );
+    pub unsafe fn get_enlighten_vertex_stream(this: MeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(MeshRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(__lookup_get_enlighten_vertex_stream::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enlighten_vertex_stream {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_enlightenVertexStream",
@@ -233,18 +184,15 @@ mod __MeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_enlightenVertexStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_enlightenVertexStream",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_enlighten_vertex_stream(
@@ -252,24 +200,15 @@ mod __MeshRenderer_unity2_raw {
         value: crate::unity_engine::mesh::Mesh,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MeshRenderer,
-            crate::unity_engine::mesh::Mesh,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_enlighten_vertex_stream::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MeshRenderer, crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_enlighten_vertex_stream::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sub_mesh_start_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -282,72 +221,46 @@ mod __MeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_subMeshStartIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_subMeshStartIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sub_mesh_start_index(
-        this: MeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_sub_mesh_start_index(this: MeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MeshRenderer, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sub_mesh_start_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sub_mesh_start_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshRenderer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshRenderer as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MeshRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MeshRenderer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -357,89 +270,49 @@ pub trait IMeshRendererMethods: IMeshRenderer {
     #[doc = "`DontStripMeshRenderer()` overload"]
     fn dont_strip_mesh_renderer(self) -> () {
         unsafe {
-            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshRenderer_unity2_raw::dont_strip_mesh_renderer(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshRenderer_unity2_raw::dont_strip_mesh_renderer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_additionalVertexStreams()` overload"]
     fn get_additional_vertex_streams(self) -> crate::unity_engine::mesh::Mesh {
         unsafe {
-            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshRenderer_unity2_raw::get_additional_vertex_streams(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshRenderer_unity2_raw::get_additional_vertex_streams(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_additionalVertexStreams(crate::unity_engine::mesh::Mesh)` overload"]
-    fn set_additional_vertex_streams(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-    ) -> () {
+    fn set_additional_vertex_streams(self, value: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
         unsafe {
-            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshRenderer_unity2_raw::set_additional_vertex_streams(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshRenderer_unity2_raw::set_additional_vertex_streams(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_enlightenVertexStream()` overload"]
     fn get_enlighten_vertex_stream(self) -> crate::unity_engine::mesh::Mesh {
         unsafe {
-            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshRenderer_unity2_raw::get_enlighten_vertex_stream(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshRenderer_unity2_raw::get_enlighten_vertex_stream(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_enlightenVertexStream(crate::unity_engine::mesh::Mesh)` overload"]
-    fn set_enlighten_vertex_stream(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-    ) -> () {
+    fn set_enlighten_vertex_stream(self, value: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
         unsafe {
-            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshRenderer_unity2_raw::set_enlighten_vertex_stream(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshRenderer_unity2_raw::set_enlighten_vertex_stream(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_subMeshStartIndex()` overload"]
     fn get_sub_mesh_start_index(self) -> i32 {
         unsafe {
-            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshRenderer_unity2_raw::get_sub_mesh_start_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshRenderer_unity2_raw::get_sub_mesh_start_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MeshRenderer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -452,13 +325,8 @@ impl<__T: IMeshRenderer> IMeshRendererMethods for __T {}
 impl MeshRenderer {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MeshRenderer),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MeshRenderer), ::core::stringify!(new),));
         <Self as IMeshRendererMethods>::ctor(this);
         this
     }
@@ -467,19 +335,17 @@ impl MeshRenderer {
 #[cfg(feature = "unity_engine-meshrenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMeshRenderer;
-    pub use super::IMeshRendererMethods;
-    pub use super::MeshRenderer;
-    pub use crate::system::object::IObject;
+    pub use super::{IMeshRenderer, IMeshRendererMethods, MeshRenderer};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::renderer::IRenderer;
     #[cfg(feature = "unity_engine-renderer")]
     pub use crate::unity_engine::renderer::IRendererMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{component::IComponent, object_2::IObject_2, renderer::IRenderer},
+    };
 }

@@ -2,25 +2,32 @@
 
 #[cfg(feature = "app-refineshoprefinetargetevolvemenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::refineshoprefinetargetbasemenuitem::{
-        IRefineShopRefineTargetBaseMenuItem, RefineShopRefineTargetBaseMenuItem,
+    use super::*;
+    use crate::{
+        app::{
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            refineshoprefinetargetbasemenuitem::{IRefineShopRefineTargetBaseMenuItem, RefineShopRefineTargetBaseMenuItem},
+        },
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetevolvemenuitem/RefineShopRefineTargetEvolveMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RefineShopRefineTargetEvolveMenuItem")]
     #[parent(crate::app::refineshoprefinetargetbasemenuitem::RefineShopRefineTargetBaseMenuItem)]
     pub struct RefineShopRefineTargetEvolveMenuItem {
-# [rename (name = "m_EvolvedUnitItem")] pub m_evolved_unit_item : crate :: app :: unititem :: UnitItem ,
-# [rename (name = "m_EvolveIndex")] pub m_evolve_index : i32 ,
-# [rename (name = "m_EvolveData")] pub m_evolve_data : crate :: app :: itemevolvedata :: ItemEvolveData ,
-# [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler ,
-# [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToEvolveEventHandler ,
-}
+        #[rename(name = "m_EvolvedUnitItem")]
+        pub m_evolved_unit_item: crate::app::unititem::UnitItem,
+        #[rename(name = "m_EvolveIndex")]
+        pub m_evolve_index: i32,
+        #[rename(name = "m_EvolveData")]
+        pub m_evolve_data: crate::app::itemevolvedata::ItemEvolveData,
+        #[rename(name = "m_SelectEventHandler")]
+        pub m_select_event_handler: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler,
+    }
 }
 
 #[cfg(feature = "app-refineshoprefinetargetevolvemenuitem-types")]
@@ -35,9 +42,7 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_target_unit_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::class(),
@@ -50,43 +55,31 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_m_TargetUnitItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_m_TargetUnitItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_m_target_unit_item(
         this: RefineShopRefineTargetEvolveMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(
-            RefineShopRefineTargetEvolveMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_target_unit_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(__lookup_get_m_target_unit_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_target_unit_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::class(),
                 "set_m_TargetUnitItem",
@@ -98,18 +91,15 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "set_m_TargetUnitItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_m_TargetUnitItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_m_target_unit_item(
@@ -117,25 +107,22 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
         value: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RefineShopRefineTargetEvolveMenuItem,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_target_unit_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineShopRefineTargetEvolveMenuItem, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_target_unit_item::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: itemevolvedata :: ItemEvolveData as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToEvolveEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::itemevolvedata::ItemEvolveData as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -147,18 +134,15 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -166,11 +150,19 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
         unit_item: crate::app::unititem::UnitItem,
         evolve_index: i32,
         evolve_data: crate::app::itemevolvedata::ItemEvolveData,
-        select_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToEvolveEventHandler,
+        select_event_handler: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler,
+        decide_event_handler: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (RefineShopRefineTargetEvolveMenuItem , crate :: app :: unititem :: UnitItem , i32 , crate :: app :: itemevolvedata :: ItemEvolveData , crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler , crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToEvolveEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            RefineShopRefineTargetEvolveMenuItem,
+            crate::app::unititem::UnitItem,
+            i32,
+            crate::app::itemevolvedata::ItemEvolveData,
+            crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler,
+            crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             unit_item,
@@ -185,9 +177,7 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::class(),
@@ -200,41 +190,27 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: RefineShopRefineTargetEvolveMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopRefineTargetEvolveMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select::get_offset() as isize),
-        );
+    pub unsafe fn on_select(this: RefineShopRefineTargetEvolveMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::class(),
@@ -247,57 +223,44 @@ mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineShopRefineTargetEvolveMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: RefineShopRefineTargetEvolveMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefineShopRefineTargetEvolveMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refineshoprefinetargetevolvemenuitem")]
-pub trait IRefineShopRefineTargetEvolveMenuItemMethods:
-    IRefineShopRefineTargetEvolveMenuItem
-{
+pub trait IRefineShopRefineTargetEvolveMenuItemMethods: IRefineShopRefineTargetEvolveMenuItem {
     #[doc = "`get_m_TargetUnitItem()` overload"]
     fn get_m_target_unit_item(self) -> crate::app::unititem::UnitItem {
         unsafe {
-            let __receiver = < RefineShopRefineTargetEvolveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopRefineTargetEvolveMenuItem_unity2_raw::get_m_target_unit_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineShopRefineTargetEvolveMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopRefineTargetEvolveMenuItem_unity2_raw::get_m_target_unit_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_TargetUnitItem(crate::app::unititem::UnitItem)` overload"]
-    fn set_m_target_unit_item(
-        self,
-        value: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> () {
+    fn set_m_target_unit_item(self, value: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
         unsafe {
-            let __receiver = < RefineShopRefineTargetEvolveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineShopRefineTargetEvolveMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineShopRefineTargetEvolveMenuItem_unity2_raw::set_m_target_unit_item(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -311,13 +274,13 @@ pub trait IRefineShopRefineTargetEvolveMenuItemMethods:
         unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
         evolve_index: impl ::core::convert::Into<i32>,
         evolve_data: impl ::core::convert::Into<crate::app::itemevolvedata::ItemEvolveData>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler,
-        >,
-        decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToEvolveEventHandler >,
+        select_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = < RefineShopRefineTargetEvolveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineShopRefineTargetEvolveMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineShopRefineTargetEvolveMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(unit_item),
@@ -332,30 +295,25 @@ pub trait IRefineShopRefineTargetEvolveMenuItemMethods:
     #[doc = "`OnSelect()` overload"]
     fn on_select(self) -> () {
         unsafe {
-            let __receiver = < RefineShopRefineTargetEvolveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopRefineTargetEvolveMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineShopRefineTargetEvolveMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopRefineTargetEvolveMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < RefineShopRefineTargetEvolveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopRefineTargetEvolveMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineShopRefineTargetEvolveMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineShopRefineTargetEvolveMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-refineshoprefinetargetevolvemenuitem")]
-impl<__T: IRefineShopRefineTargetEvolveMenuItem> IRefineShopRefineTargetEvolveMenuItemMethods
-    for __T
-{
-}
+impl<__T: IRefineShopRefineTargetEvolveMenuItem> IRefineShopRefineTargetEvolveMenuItemMethods for __T {}
 
 #[cfg(feature = "app-refineshoprefinetargetevolvemenuitem")]
 impl RefineShopRefineTargetEvolveMenuItem {
@@ -364,8 +322,8 @@ impl RefineShopRefineTargetEvolveMenuItem {
         unit_item: crate::app::unititem::UnitItem,
         evolve_index: i32,
         evolve_data: crate::app::itemevolvedata::ItemEvolveData,
-        select_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToEvolveEventHandler,
+        select_event_handler: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler,
+        decide_event_handler: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -389,16 +347,15 @@ impl RefineShopRefineTargetEvolveMenuItem {
 #[cfg(feature = "app-refineshoprefinetargetevolvemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefineShopRefineTargetEvolveMenuItem;
-    pub use super::IRefineShopRefineTargetEvolveMenuItemMethods;
-    pub use super::RefineShopRefineTargetEvolveMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{IRefineShopRefineTargetEvolveMenuItem, IRefineShopRefineTargetEvolveMenuItemMethods, RefineShopRefineTargetEvolveMenuItem};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::refineshoprefinetargetbasemenuitem::IRefineShopRefineTargetBaseMenuItem;
     #[cfg(feature = "app-refineshoprefinetargetbasemenuitem")]
     pub use crate::app::refineshoprefinetargetbasemenuitem::IRefineShopRefineTargetBaseMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenuitem::IBasicMenuItem, refineshoprefinetargetbasemenuitem::IRefineShopRefineTargetBaseMenuItem},
+        system::object::IObject,
+    };
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-reflection-customattributeextensions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/customattributeextensions/CustomAttributeExtensions.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "CustomAttributeExtensions")]
@@ -25,109 +25,79 @@ mod __CustomAttributeExtensions_unity2_raw {
 
 #[cfg(feature = "system-reflection-customattributeextensions")]
 impl CustomAttributeExtensions {
-    pub fn get_custom_attribute<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+    pub fn get_custom_attribute<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         element: impl ::core::convert::Into<crate::system::reflection::assembly::Assembly>,
     ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <CustomAttributeExtensions as ::unity2::ClassIdentity>::class(),
-                "GetCustomAttribute",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<CustomAttributeExtensions as ::unity2::ClassIdentity>::class(), "GetCustomAttribute", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <CustomAttributeExtensions as ::unity2::ClassIdentity>::NAME,
-                "GetCustomAttribute",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomAttributeExtensions as ::unity2::ClassIdentity>::NAME,
+                    "GetCustomAttribute",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(crate::system::reflection::assembly::Assembly, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::convert::Into::into(element), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+
+    pub fn get_custom_attributes<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        element: impl ::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<M0> {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<CustomAttributeExtensions as ::unity2::ClassIdentity>::class(), "GetCustomAttributes", 1)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CustomAttributeExtensions as ::unity2::ClassIdentity>::NAME,
+                    "GetCustomAttributes",
+                    e
                 )
-            })
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
             let __f: extern "C" fn(
-                crate::system::reflection::assembly::Assembly,
+                crate::system::reflection::memberinfo::MemberInfo,
                 ::unity2::OptionalMethod,
-            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<M0> = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(element),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn get_custom_attributes<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        element: impl ::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<M0> {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <CustomAttributeExtensions as ::unity2::ClassIdentity>::class(),
-                "GetCustomAttributes",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <CustomAttributeExtensions as ::unity2::ClassIdentity>::NAME,
-                "GetCustomAttributes",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f : extern "C" fn (crate :: system :: reflection :: memberinfo :: MemberInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ;
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(element),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(element), ::core::option::Option::Some(__mi_opaque))
         }
     }
 }
@@ -135,8 +105,7 @@ impl CustomAttributeExtensions {
 #[cfg(feature = "system-reflection-customattributeextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomAttributeExtensions;
-    pub use super::ICustomAttributeExtensions;
+    pub use super::{CustomAttributeExtensions, ICustomAttributeExtensions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

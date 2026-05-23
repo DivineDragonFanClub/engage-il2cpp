@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-singletonscriptableobject_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonscriptableobject_1/SingletonScriptableObject_1.md"))]
     #[::unity2::class(namespace = "App", name = "SingletonScriptableObject`1")]
@@ -67,16 +71,15 @@ impl<T0: ::unity2::ClassIdentity> SingletonScriptableObject_1<T0> {
 #[cfg(feature = "app-singletonscriptableobject_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISingletonScriptableObject_1;
-    pub use super::ISingletonScriptableObject_1Methods;
-    pub use super::SingletonScriptableObject_1;
-    pub use crate::system::object::IObject;
+    pub use super::{ISingletonScriptableObject_1, ISingletonScriptableObject_1Methods, SingletonScriptableObject_1};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

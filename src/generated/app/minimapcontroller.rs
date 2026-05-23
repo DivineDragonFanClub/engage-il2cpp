@@ -2,348 +2,33 @@
 
 #[cfg(feature = "app-minimapcontroller-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_Alignment {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_Alignment {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.Alignment";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_Alignment {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_Alignment {
-        pub fn left_up() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn left_center() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left_bottom() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn center_up() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn center() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn center_bottom() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn right_up() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn right_center() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn right_bottom() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md"))]
-    #[::unity2::class(namespace = "App", name = "MiniMapController.TImage`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct MiniMapController_TImage_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "image")]
-        pub image: T0,
-        #[rename(name = "gameObject")]
-        pub game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "transform")]
-        pub transform: crate::unity_engine::recttransform::RectTransform,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController.md"))]
-    #[::unity2::class(namespace = "App", name = "MiniMapController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MiniMapController {
-# [rename (name = "m_GridSize")] pub m_grid_size : f32 ,
-# [rename (name = "m_OutLineSize")] pub m_out_line_size : f32 ,
-# [rename (name = "m_ViewPort")] pub m_view_port : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_Scroll")] pub m_scroll : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_TerrainRoot")] pub m_terrain_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_SightRoot")] pub m_sight_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_PanelDeployRoot")] pub m_panel_deploy_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_PanelDangerRoot")] pub m_panel_danger_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_PanelDangerAllRoot")] pub m_panel_danger_all_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_FrameForPanelDangerAllRoot")] pub m_frame_for_panel_danger_all_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_PanelRouteRoot")] pub m_panel_route_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_UnitSymbolRoot")] pub m_unit_symbol_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_UnitIconRoot")] pub m_unit_icon_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_ColorPlayer")] pub m_color_player : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_ColorEnemy")] pub m_color_enemy : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_ColorAlly")] pub m_color_ally : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_ColorEnemy2")] pub m_color_enemy2 : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_EventSymbolRoot")] pub m_event_symbol_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_CursorRoot")] pub m_cursor_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_Scale")] pub m_scale : f32 ,
-# [rename (name = "m_PanelDeployScale")] pub m_panel_deploy_scale : f32 ,
-# [rename (name = "m_LargeModePosition")] pub m_large_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [rename (name = "m_LargeModeSize")] pub m_large_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [rename (name = "m_LargeModeScale")] pub m_large_mode_scale : f32 ,
-# [rename (name = "m_LargeModeAlignment")] pub m_large_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
-# [rename (name = "m_LargeModeScaleOld")] pub m_large_mode_scale_old : f32 ,
-# [rename (name = "m_SmallModePosition")] pub m_small_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [rename (name = "m_SmallModeSize")] pub m_small_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [rename (name = "m_SmallModeScale")] pub m_small_mode_scale : f32 ,
-# [rename (name = "m_SmallModeAlignment")] pub m_small_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
-# [rename (name = "m_MenuModePosition")] pub m_menu_mode_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [rename (name = "m_MenuModeSize")] pub m_menu_mode_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [rename (name = "m_MenuModeScale")] pub m_menu_mode_scale : f32 ,
-# [rename (name = "m_MenuModeAlignment")] pub m_menu_mode_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
-# [rename (name = "m_DisplayPosSize")] pub m_display_pos_size : crate :: app :: minimapcontroller :: MiniMapController_DisplayPosSize ,
-# [rename (name = "m_InterpolateZoom")] pub m_interpolate_zoom : bool ,
-# [rename (name = "m_MiniMapAlphaChangeTime")] pub m_mini_map_alpha_change_time : f32 ,
-# [rename (name = "m_MiniMapAlphaMax")] pub m_mini_map_alpha_max : f32 ,
-# [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [rename (name = "m_InterpolateTime")] pub m_interpolate_time : f32 ,
-# [rename (name = "m_OldScale")] pub m_old_scale : f32 ,
-# [rename (name = "m_UnitSymbolList")] pub m_unit_symbol_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: unity_engine :: ui :: image :: Image > > ,
-# [rename (name = "m_EventSymbolList")] pub m_event_symbol_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: unity_engine :: ui :: image :: Image > > ,
-# [rename (name = "m_UnitIconList")] pub m_unit_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: minimapcontroller :: MiniMapController_TImage_1 < crate :: app :: uniticon :: UnitIcon > > ,
-# [rename (name = "m_ZoomScaleMax")] pub m_zoom_scale_max : f32 ,
-# [rename (name = "m_ZoomScaleMin")] pub m_zoom_scale_min : f32 ,
-# [rename (name = "m_TargetPosition")] pub m_target_position : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [rename (name = "m_Alignment")] pub m_alignment : crate :: app :: minimapcontroller :: MiniMapController_Alignment ,
-# [static_field] # [rename (name = "IconNames")] pub icon_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [rename (name = "m_Mode")] pub m_mode : crate :: app :: minimapcontroller :: MiniMapController_Mode ,
-# [rename (name = "m_ModeDirty")] pub m_mode_dirty : bool ,
-# [rename (name = "m_ModeChangeDelay")] pub m_mode_change_delay : i32 ,
-# [rename (name = "m_CanvasGroup")] pub m_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
-# [rename (name = "m_MiniMapAlpha")] pub m_mini_map_alpha : f32 ,
-# [rename (name = "m_MinimapType")] pub m_minimap_type : crate :: app :: gameconfig :: GameConfig_MinimapType ,
-# [rename (name = "m_TerrainHashCode")] pub m_terrain_hash_code : i32 ,
-# [rename (name = "m_AlphaFadeMode")] pub m_alpha_fade_mode : crate :: app :: minimapcontroller :: MiniMapController_FadeMode ,
-# [rename (name = "m_minimaplRT")] pub m_minimapl_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_scrollRT")] pub m_scroll_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_terrainRT")] pub m_terrain_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_sightRT")] pub m_sight_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_panelDeployRT")] pub m_panel_deploy_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_panelDangerRT")] pub m_panel_danger_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_panelDangerAllRT")] pub m_panel_danger_all_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_frameForDangerAllRT")] pub m_frame_for_danger_all_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_panelRouteRT")] pub m_panel_route_rt : crate :: unity_engine :: recttransform :: RectTransform ,
-# [rename (name = "m_cursor")] pub m_cursor : crate :: app :: minimapcursor :: MiniMapCursor ,
-# [rename (name = "m_deployRenderer")] pub m_deploy_renderer : crate :: app :: minimappaneldeployrenderer :: MiniMapPanelDeployRenderer ,
-# [rename (name = "m_dangerRenderer")] pub m_danger_renderer : crate :: app :: minimappaneldangerrenderer :: MiniMapPanelDangerRenderer ,
-# [rename (name = "m_dangerAllRenderer")] pub m_danger_all_renderer : crate :: app :: minimappaneldangerallrenderer :: MiniMapPanelDangerAllRenderer ,
-# [rename (name = "m_frameForDangerAllRenderer")] pub m_frame_for_danger_all_renderer : crate :: app :: minimappanelframefordangerallrenderer :: MiniMapPanelFrameForDangerAllRenderer ,
-# [rename (name = "m_routeRenderer")] pub m_route_renderer : crate :: app :: minimappanelrouterenderer :: MiniMapPanelRouteRenderer ,
-# [rename (name = "m_terrainRenderer")] pub m_terrain_renderer : crate :: app :: minimapterrainrenderer :: MiniMapTerrainRenderer ,
-# [rename (name = "m_sightRenderer")] pub m_sight_renderer : crate :: app :: minimapsightrenderer :: MiniMapSightRenderer ,
-}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_Mode {
-        pub fn hide() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn show() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn menu() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_DisplayPosSize {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.DisplayPosSize";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_DisplayPosSize {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_DisplayPosSize {
-        pub fn small() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn large() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn menu() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn none() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_FadeMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_FadeMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_FadeMode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.FadeMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_FadeMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_FadeMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fade_in() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn fade_out() -> Self {
-            Self { value: 2 }
-        }
-    }
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_IconIndex.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MiniMapController_IconIndex {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MiniMapController_IconIndex {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MiniMapController.IconIndex";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -354,10 +39,7 @@ mod __types {
 
     impl ::unity2::IlType for MiniMapController_IconIndex {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -426,10 +108,1351 @@ mod __types {
             Self { value: 15 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController.md"))]
+    #[::unity2::class(namespace = "App", name = "MiniMapController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MiniMapController {
+        #[rename(name = "m_GridSize")]
+        pub m_grid_size: f32,
+        #[rename(name = "m_OutLineSize")]
+        pub m_out_line_size: f32,
+        #[rename(name = "m_ViewPort")]
+        pub m_view_port: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Scroll")]
+        pub m_scroll: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TerrainRoot")]
+        pub m_terrain_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_SightRoot")]
+        pub m_sight_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PanelDeployRoot")]
+        pub m_panel_deploy_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PanelDangerRoot")]
+        pub m_panel_danger_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PanelDangerAllRoot")]
+        pub m_panel_danger_all_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_FrameForPanelDangerAllRoot")]
+        pub m_frame_for_panel_danger_all_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PanelRouteRoot")]
+        pub m_panel_route_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitSymbolRoot")]
+        pub m_unit_symbol_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitIconRoot")]
+        pub m_unit_icon_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_ColorPlayer")]
+        pub m_color_player: crate::unity_engine::color::Color,
+        #[rename(name = "m_ColorEnemy")]
+        pub m_color_enemy: crate::unity_engine::color::Color,
+        #[rename(name = "m_ColorAlly")]
+        pub m_color_ally: crate::unity_engine::color::Color,
+        #[rename(name = "m_ColorEnemy2")]
+        pub m_color_enemy2: crate::unity_engine::color::Color,
+        #[rename(name = "m_EventSymbolRoot")]
+        pub m_event_symbol_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CursorRoot")]
+        pub m_cursor_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Scale")]
+        pub m_scale: f32,
+        #[rename(name = "m_PanelDeployScale")]
+        pub m_panel_deploy_scale: f32,
+        #[rename(name = "m_LargeModePosition")]
+        pub m_large_mode_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_LargeModeSize")]
+        pub m_large_mode_size: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_LargeModeScale")]
+        pub m_large_mode_scale: f32,
+        #[rename(name = "m_LargeModeAlignment")]
+        pub m_large_mode_alignment: crate::app::minimapcontroller::MiniMapController_Alignment,
+        #[rename(name = "m_LargeModeScaleOld")]
+        pub m_large_mode_scale_old: f32,
+        #[rename(name = "m_SmallModePosition")]
+        pub m_small_mode_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_SmallModeSize")]
+        pub m_small_mode_size: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_SmallModeScale")]
+        pub m_small_mode_scale: f32,
+        #[rename(name = "m_SmallModeAlignment")]
+        pub m_small_mode_alignment: crate::app::minimapcontroller::MiniMapController_Alignment,
+        #[rename(name = "m_MenuModePosition")]
+        pub m_menu_mode_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_MenuModeSize")]
+        pub m_menu_mode_size: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_MenuModeScale")]
+        pub m_menu_mode_scale: f32,
+        #[rename(name = "m_MenuModeAlignment")]
+        pub m_menu_mode_alignment: crate::app::minimapcontroller::MiniMapController_Alignment,
+        #[rename(name = "m_DisplayPosSize")]
+        pub m_display_pos_size: crate::app::minimapcontroller::MiniMapController_DisplayPosSize,
+        #[rename(name = "m_InterpolateZoom")]
+        pub m_interpolate_zoom: bool,
+        #[rename(name = "m_MiniMapAlphaChangeTime")]
+        pub m_mini_map_alpha_change_time: f32,
+        #[rename(name = "m_MiniMapAlphaMax")]
+        pub m_mini_map_alpha_max: f32,
+        #[rename(name = "m_SpriteAtlas")]
+        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[rename(name = "m_InterpolateTime")]
+        pub m_interpolate_time: f32,
+        #[rename(name = "m_OldScale")]
+        pub m_old_scale: f32,
+        #[rename(name = "m_UnitSymbolList")]
+        pub m_unit_symbol_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::minimapcontroller::MiniMapController_TImage_1<crate::unity_engine::ui::image::Image>,
+        >,
+        #[rename(name = "m_EventSymbolList")]
+        pub m_event_symbol_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::minimapcontroller::MiniMapController_TImage_1<crate::unity_engine::ui::image::Image>,
+        >,
+        #[rename(name = "m_UnitIconList")]
+        pub m_unit_icon_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::minimapcontroller::MiniMapController_TImage_1<crate::app::uniticon::UnitIcon>,
+        >,
+        #[rename(name = "m_ZoomScaleMax")]
+        pub m_zoom_scale_max: f32,
+        #[rename(name = "m_ZoomScaleMin")]
+        pub m_zoom_scale_min: f32,
+        #[rename(name = "m_TargetPosition")]
+        pub m_target_position: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[rename(name = "m_Offset")]
+        pub m_offset: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_Alignment")]
+        pub m_alignment: crate::app::minimapcontroller::MiniMapController_Alignment,
+        #[static_field]
+        #[rename(name = "IconNames")]
+        pub icon_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_Sprites")]
+        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::minimapcontroller::MiniMapController_Mode,
+        #[rename(name = "m_ModeDirty")]
+        pub m_mode_dirty: bool,
+        #[rename(name = "m_ModeChangeDelay")]
+        pub m_mode_change_delay: i32,
+        #[rename(name = "m_CanvasGroup")]
+        pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[rename(name = "m_MiniMapAlpha")]
+        pub m_mini_map_alpha: f32,
+        #[rename(name = "m_MinimapType")]
+        pub m_minimap_type: crate::app::gameconfig::GameConfig_MinimapType,
+        #[rename(name = "m_TerrainHashCode")]
+        pub m_terrain_hash_code: i32,
+        #[rename(name = "m_AlphaFadeMode")]
+        pub m_alpha_fade_mode: crate::app::minimapcontroller::MiniMapController_FadeMode,
+        #[rename(name = "m_minimaplRT")]
+        pub m_minimapl_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_scrollRT")]
+        pub m_scroll_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_terrainRT")]
+        pub m_terrain_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_sightRT")]
+        pub m_sight_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_panelDeployRT")]
+        pub m_panel_deploy_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_panelDangerRT")]
+        pub m_panel_danger_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_panelDangerAllRT")]
+        pub m_panel_danger_all_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_frameForDangerAllRT")]
+        pub m_frame_for_danger_all_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_panelRouteRT")]
+        pub m_panel_route_rt: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_cursor")]
+        pub m_cursor: crate::app::minimapcursor::MiniMapCursor,
+        #[rename(name = "m_deployRenderer")]
+        pub m_deploy_renderer: crate::app::minimappaneldeployrenderer::MiniMapPanelDeployRenderer,
+        #[rename(name = "m_dangerRenderer")]
+        pub m_danger_renderer: crate::app::minimappaneldangerrenderer::MiniMapPanelDangerRenderer,
+        #[rename(name = "m_dangerAllRenderer")]
+        pub m_danger_all_renderer: crate::app::minimappaneldangerallrenderer::MiniMapPanelDangerAllRenderer,
+        #[rename(name = "m_frameForDangerAllRenderer")]
+        pub m_frame_for_danger_all_renderer: crate::app::minimappanelframefordangerallrenderer::MiniMapPanelFrameForDangerAllRenderer,
+        #[rename(name = "m_routeRenderer")]
+        pub m_route_renderer: crate::app::minimappanelrouterenderer::MiniMapPanelRouteRenderer,
+        #[rename(name = "m_terrainRenderer")]
+        pub m_terrain_renderer: crate::app::minimapterrainrenderer::MiniMapTerrainRenderer,
+        #[rename(name = "m_sightRenderer")]
+        pub m_sight_renderer: crate::app::minimapsightrenderer::MiniMapSightRenderer,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MiniMapController_Alignment {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_Alignment {
+        const NAME: &'static str = "MiniMapController.Alignment";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_Alignment {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MiniMapController_Alignment {
+        pub fn left_up() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn left_center() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left_bottom() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn center_up() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn center() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn center_bottom() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn right_up() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn right_center() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn right_bottom() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md"))]
+    #[::unity2::class(namespace = "App", name = "MiniMapController.TImage`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct MiniMapController_TImage_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "image")]
+        pub image: T0,
+        #[rename(name = "gameObject")]
+        pub game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "transform")]
+        pub transform: crate::unity_engine::recttransform::RectTransform,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Mode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MiniMapController_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_Mode {
+        const NAME: &'static str = "MiniMapController.Mode";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MiniMapController_Mode {
+        pub fn hide() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn show() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn menu() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_FadeMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MiniMapController_FadeMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_FadeMode {
+        const NAME: &'static str = "MiniMapController.FadeMode";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_FadeMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MiniMapController_FadeMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fade_in() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn fade_out() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MiniMapController_DisplayPosSize {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
+        const NAME: &'static str = "MiniMapController.DisplayPosSize";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_DisplayPosSize {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MiniMapController_DisplayPosSize {
+        pub fn small() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn large() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn menu() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn none() -> Self {
+            Self { value: 3 }
+        }
+    }
 }
 
 #[cfg(feature = "app-minimapcontroller-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-minimapcontroller")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MiniMapController_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "TryGetComponent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "TryGetComponent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_get_component(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_get_component::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_late_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "LateUpdate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "LateUpdate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn late_update(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_core {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "UpdateCore",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCore",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_core(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_core::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_terrain {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "UpdateTerrain",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTerrain",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_terrain(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_terrain::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_symbol_and_icon_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "UpdateSymbolAndIconList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateSymbolAndIconList",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_symbol_and_icon_list(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_symbol_and_icon_list::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_unit_icons {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "UpdateUnitIcons",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateUnitIcons",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_unit_icons(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_unit_icons::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_event_symbols {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "UpdateEventSymbols",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateEventSymbols",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_event_symbols(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_event_symbols::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn initialize(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "UpdateAlpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateAlpha",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_alpha(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_update_alpha::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_display_mode_by_game_config {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "ChangeDisplayModeByGameConfig",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "ChangeDisplayModeByGameConfig",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn change_display_mode_by_game_config(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_display_mode_by_game_config::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_map_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "GetMapImage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "GetMapImage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_map_image(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapimage::MapImage {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> crate::app::mapimage::MapImage =
+            ::core::mem::transmute(__lookup_get_map_image::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "ChangeMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "ChangeMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn change_mode(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_mode::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_display_pos_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::minimapcontroller::MiniMapController_DisplayPosSize as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "ChangeDisplayPosSize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "ChangeDisplayPosSize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn change_display_pos_size(
+        this: MiniMapController,
+        display_pos_size: crate::app::minimapcontroller::MiniMapController_DisplayPosSize,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MiniMapController, crate::app::minimapcontroller::MiniMapController_DisplayPosSize, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_display_pos_size::get_method_info().method_ptr);
+        inner(this, display_pos_size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_mode_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::minimapcontroller::MiniMapController_Mode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "ChangeMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "ChangeMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn change_mode_2(
+        this: MiniMapController,
+        mode: crate::app::minimapcontroller::MiniMapController_Mode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MiniMapController, crate::app::minimapcontroller::MiniMapController_Mode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_mode_2::get_method_info().method_ptr);
+        inner(this, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dirty {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "SetDirty",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "SetDirty",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_dirty(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_dirty::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_offset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::minimapcontroller::MiniMapController_Alignment as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "CalcOffset",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "CalcOffset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_offset(
+        this: MiniMapController,
+        alignment: crate::app::minimapcontroller::MiniMapController_Alignment,
+        scale: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MiniMapController, crate::app::minimapcontroller::MiniMapController_Alignment, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_offset::get_method_info().method_ptr);
+        inner(this, alignment, scale, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_zoom {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                "Zoom",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        "Zoom",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn zoom(this: MiniMapController, zoom: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_zoom::get_method_info().method_ptr);
+        inner(this, zoom, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MiniMapController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MiniMapController as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapController as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-minimapcontroller")]
+impl MiniMapController {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __MiniMapController_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-minimapcontroller")]
+pub trait IMiniMapControllerMethods: IMiniMapController {
+    #[doc = "`TryGetComponent()` overload"]
+    fn try_get_component(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::try_get_component(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LateUpdate()` overload"]
+    fn late_update(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::late_update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateCore()` overload"]
+    fn update_core(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::update_core(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateTerrain()` overload"]
+    fn update_terrain(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::update_terrain(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateSymbolAndIconList()` overload"]
+    fn update_symbol_and_icon_list(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::update_symbol_and_icon_list(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateUnitIcons()` overload"]
+    fn update_unit_icons(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::update_unit_icons(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateEventSymbols()` overload"]
+    fn update_event_symbols(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::update_event_symbols(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Initialize()` overload"]
+    fn initialize(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::initialize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateAlpha()` overload"]
+    fn update_alpha(self) -> bool {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::update_alpha(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ChangeDisplayModeByGameConfig()` overload"]
+    fn change_display_mode_by_game_config(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::change_display_mode_by_game_config(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetMapImage()` overload"]
+    fn get_map_image(self) -> crate::app::mapimage::MapImage {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::get_map_image(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ChangeMode()` overload"]
+    fn change_mode(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::change_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ChangeDisplayPosSize(crate::app::minimapcontroller::MiniMapController_DisplayPosSize)` overload"]
+    fn change_display_pos_size(
+        self,
+        display_pos_size: impl ::core::convert::Into<crate::app::minimapcontroller::MiniMapController_DisplayPosSize>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::change_display_pos_size(
+                __receiver,
+                ::core::convert::Into::into(display_pos_size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeMode(crate::app::minimapcontroller::MiniMapController_Mode)` overload"]
+    fn change_mode_2(self, mode: impl ::core::convert::Into<crate::app::minimapcontroller::MiniMapController_Mode>) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::change_mode_2(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetDirty()` overload"]
+    fn set_dirty(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::set_dirty(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcOffset(crate::app::minimapcontroller::MiniMapController_Alignment, f32)` overload"]
+    fn calc_offset(
+        self,
+        alignment: impl ::core::convert::Into<crate::app::minimapcontroller::MiniMapController_Alignment>,
+        scale: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::calc_offset(
+                __receiver,
+                ::core::convert::Into::into(alignment),
+                ::core::convert::Into::into(scale),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Zoom(f32)` overload"]
+    fn zoom(self, zoom: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::zoom(__receiver, ::core::convert::Into::into(zoom), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MiniMapController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-minimapcontroller")]
+impl<__T: IMiniMapController> IMiniMapControllerMethods for __T {}
+
+#[cfg(feature = "app-minimapcontroller")]
+impl MiniMapController {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MiniMapController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMiniMapControllerMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-minimapcontroller")]
 #[::unity2::methods]
@@ -457,1368 +1480,28 @@ impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
 
 #[cfg(feature = "app-minimapcontroller")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MiniMapController_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_component {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "TryGetComponent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "TryGetComponent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_get_component(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_get_component::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_late_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "LateUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "LateUpdate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn late_update(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_late_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_core {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "UpdateCore",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCore",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_core(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_core::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_terrain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "UpdateTerrain",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTerrain",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_terrain(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_terrain::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_symbol_and_icon_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "UpdateSymbolAndIconList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateSymbolAndIconList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_symbol_and_icon_list(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_symbol_and_icon_list::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_unit_icons {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "UpdateUnitIcons",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateUnitIcons",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_unit_icons(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_unit_icons::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_event_symbols {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "UpdateEventSymbols",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateEventSymbols",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_event_symbols(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_event_symbols::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn initialize(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "UpdateAlpha",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateAlpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_alpha(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_alpha::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_display_mode_by_game_config {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "ChangeDisplayModeByGameConfig",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "ChangeDisplayModeByGameConfig",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn change_display_mode_by_game_config(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change_display_mode_by_game_config::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "GetMapImage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "GetMapImage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_map_image(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapimage::MapImage {
-        let inner: extern "C" fn(
-            MiniMapController,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapimage::MapImage = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_map_image::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "ChangeMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "ChangeMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn change_mode(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change_mode::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_display_pos_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: minimapcontroller :: MiniMapController_DisplayPosSize as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "ChangeDisplayPosSize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "ChangeDisplayPosSize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn change_display_pos_size(
-        this: MiniMapController,
-        display_pos_size: crate::app::minimapcontroller::MiniMapController_DisplayPosSize,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MiniMapController,
-            crate::app::minimapcontroller::MiniMapController_DisplayPosSize,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_display_pos_size::get_offset() as isize),
-        );
-        inner(this, display_pos_size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_mode_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: minimapcontroller :: MiniMapController_Mode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "ChangeMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "ChangeMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn change_mode_2(
-        this: MiniMapController,
-        mode: crate::app::minimapcontroller::MiniMapController_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MiniMapController,
-            crate::app::minimapcontroller::MiniMapController_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_mode_2::get_offset() as isize),
-        );
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dirty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "SetDirty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "SetDirty",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_dirty(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_dirty::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_offset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: minimapcontroller :: MiniMapController_Alignment as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "CalcOffset",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "CalcOffset",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_offset(
-        this: MiniMapController,
-        alignment: crate::app::minimapcontroller::MiniMapController_Alignment,
-        scale: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MiniMapController,
-            crate::app::minimapcontroller::MiniMapController_Alignment,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_offset::get_offset() as isize),
-        );
-        inner(this, alignment, scale, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hide(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_zoom {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                "Zoom",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    "Zoom",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn zoom(
-        this: MiniMapController,
-        zoom: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_zoom::get_offset() as isize),
-            );
-        inner(this, zoom, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MiniMapController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MiniMapController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MiniMapController as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapController as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-minimapcontroller")]
-impl MiniMapController {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MiniMapController_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-minimapcontroller")]
-pub trait IMiniMapControllerMethods: IMiniMapController {
-    #[doc = "`TryGetComponent()` overload"]
-    fn try_get_component(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::try_get_component(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LateUpdate()` overload"]
-    fn late_update(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::late_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateCore()` overload"]
-    fn update_core(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::update_core(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTerrain()` overload"]
-    fn update_terrain(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::update_terrain(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateSymbolAndIconList()` overload"]
-    fn update_symbol_and_icon_list(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::update_symbol_and_icon_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateUnitIcons()` overload"]
-    fn update_unit_icons(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::update_unit_icons(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateEventSymbols()` overload"]
-    fn update_event_symbols(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::update_event_symbols(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Initialize()` overload"]
-    fn initialize(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::initialize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateAlpha()` overload"]
-    fn update_alpha(self) -> bool {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::update_alpha(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ChangeDisplayModeByGameConfig()` overload"]
-    fn change_display_mode_by_game_config(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::change_display_mode_by_game_config(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetMapImage()` overload"]
-    fn get_map_image(self) -> crate::app::mapimage::MapImage {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::get_map_image(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ChangeMode()` overload"]
-    fn change_mode(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::change_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ChangeDisplayPosSize(crate::app::minimapcontroller::MiniMapController_DisplayPosSize)` overload"]
-    fn change_display_pos_size(
-        self,
-        display_pos_size: impl ::core::convert::Into<
-            crate::app::minimapcontroller::MiniMapController_DisplayPosSize,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::change_display_pos_size(
-                __receiver,
-                ::core::convert::Into::into(display_pos_size),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ChangeMode(crate::app::minimapcontroller::MiniMapController_Mode)` overload"]
-    fn change_mode_2(
-        self,
-        mode: impl ::core::convert::Into<crate::app::minimapcontroller::MiniMapController_Mode>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::change_mode_2(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetDirty()` overload"]
-    fn set_dirty(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::set_dirty(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcOffset(crate::app::minimapcontroller::MiniMapController_Alignment, f32)` overload"]
-    fn calc_offset(
-        self,
-        alignment: impl ::core::convert::Into<
-            crate::app::minimapcontroller::MiniMapController_Alignment,
-        >,
-        scale: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::calc_offset(
-                __receiver,
-                ::core::convert::Into::into(alignment),
-                ::core::convert::Into::into(scale),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Zoom(f32)` overload"]
-    fn zoom(self, zoom: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::zoom(
-                __receiver,
-                ::core::convert::Into::into(zoom),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MiniMapController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MiniMapController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-minimapcontroller")]
-impl<__T: IMiniMapController> IMiniMapControllerMethods for __T {}
-
-#[cfg(feature = "app-minimapcontroller")]
-impl MiniMapController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MiniMapController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMiniMapControllerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-minimapcontroller")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IMiniMapController;
-    pub use super::IMiniMapControllerMethods;
-    pub use super::IMiniMapController_TImage_1;
-    pub use super::IMiniMapController_TImage_1Methods;
-    pub use super::MiniMapController;
-    pub use super::MiniMapController_Alignment;
-    pub use super::MiniMapController_DisplayPosSize;
-    pub use super::MiniMapController_FadeMode;
-    pub use super::MiniMapController_IconIndex;
-    pub use super::MiniMapController_Mode;
-    pub use super::MiniMapController_TImage_1;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IMiniMapController, IMiniMapControllerMethods, IMiniMapController_TImage_1, IMiniMapController_TImage_1Methods, MiniMapController,
+        MiniMapController_Alignment, MiniMapController_DisplayPosSize, MiniMapController_FadeMode, MiniMapController_IconIndex,
+        MiniMapController_Mode, MiniMapController_TImage_1,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

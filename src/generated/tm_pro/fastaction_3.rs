@@ -2,29 +2,21 @@
 
 #[cfg(feature = "tm_pro-fastaction_3-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/fastaction_3/FastAction_3.md"))]
     #[::unity2::class(namespace = "TMPro", name = "FastAction`3")]
     #[parent(crate::system::object::Object)]
-    pub struct FastAction_3<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-        T2: ::unity2::ClassIdentity,
-    > {
+    pub struct FastAction_3<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity> {
         #[rename(name = "delegates")]
-        pub delegates: crate::system::collections::generic::linkedlist_1::LinkedList_1<
-            crate::system::action_3::Action_3<T0, T1, T2>,
-        >,
+        pub delegates: crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::system::action_3::Action_3<T0, T1, T2>>,
         #[rename(name = "lookup")]
         pub lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::system::action_3::Action_3<T0, T1, T2>,
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::system::action_3::Action_3<T0, T1, T2>,
-            >,
+            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action_3::Action_3<T0, T1, T2>>,
         >,
     }
 }
@@ -34,9 +26,7 @@ pub use __types::*;
 
 #[cfg(feature = "tm_pro-fastaction_3")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity>
-    FastAction_3<T0, T1, T2>
-{
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity> FastAction_3<T0, T1, T2> {
     #[doc = "`Add(crate::system::action_3::Action_3<T0,T1,T2>)` overload"]
     #[method(name = "Add", args = 1)]
     pub fn add(self, rhs: crate::system::action_3::Action_3<T0, T1, T2>) -> ();
@@ -55,18 +45,11 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
 }
 
 #[cfg(feature = "tm_pro-fastaction_3")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity>
-    FastAction_3<T0, T1, T2>
-{
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity> FastAction_3<T0, T1, T2> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FastAction_3),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FastAction_3), ::core::stringify!(new),));
         <Self as IFastAction_3Methods<T0, T1, T2>>::ctor(this);
         this
     }
@@ -75,9 +58,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
 #[cfg(feature = "tm_pro-fastaction_3")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FastAction_3;
-    pub use super::IFastAction_3;
-    pub use super::IFastAction_3Methods;
+    pub use super::{FastAction_3, IFastAction_3, IFastAction_3Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

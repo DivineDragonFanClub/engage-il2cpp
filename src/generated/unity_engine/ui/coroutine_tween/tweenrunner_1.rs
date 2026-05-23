@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-tweenrunner_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/tweenrunner_1/TweenRunner_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI.CoroutineTween", name = "TweenRunner`1")]
@@ -30,8 +30,7 @@ impl<T0: ::unity2::ClassIdentity> TweenRunner_1<T0> {
 
     #[doc = "`Init(crate::unity_engine::monobehaviour::MonoBehaviour)` overload"]
     #[method(name = "Init", args = 1)]
-    pub fn init(self, coroutine_container: crate::unity_engine::monobehaviour::MonoBehaviour)
-        -> ();
+    pub fn init(self, coroutine_container: crate::unity_engine::monobehaviour::MonoBehaviour) -> ();
 
     #[doc = "`StartTween(T0)` overload"]
     #[method(name = "StartTween", args = 1)]
@@ -50,13 +49,8 @@ impl<T0: ::unity2::ClassIdentity> TweenRunner_1<T0> {
 impl<T0: ::unity2::ClassIdentity> TweenRunner_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TweenRunner_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TweenRunner_1), ::core::stringify!(new),));
         <Self as ITweenRunner_1Methods<T0>>::ctor(this);
         this
     }
@@ -65,9 +59,7 @@ impl<T0: ::unity2::ClassIdentity> TweenRunner_1<T0> {
 #[cfg(feature = "unity_engine-ui-coroutine_tween-tweenrunner_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITweenRunner_1;
-    pub use super::ITweenRunner_1Methods;
-    pub use super::TweenRunner_1;
+    pub use super::{ITweenRunner_1, ITweenRunner_1Methods, TweenRunner_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

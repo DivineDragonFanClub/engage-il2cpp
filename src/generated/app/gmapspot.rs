@@ -2,106 +2,25 @@
 
 #[cfg(feature = "app-gmapspot-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspot/GmapSpot.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSpot")]
-    #[parent(crate::system::object::Object)]
-    pub struct GmapSpot {
-        #[rename(name = "m_GlobalFlagName")]
-        pub m_global_flag_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Chapters")]
-        pub m_chapters: crate::system::collections::generic::list_1::List_1<
-            crate::app::chapterdata::ChapterData,
-        >,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Controller")]
-        pub m_controller: crate::app::gmapspotcontroller::GmapSpotController,
-        #[rename(name = "m_MapObject")]
-        pub m_map_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_NextSpots")]
-        pub m_next_spots: ::unity2::Array<crate::app::gmapspot::GmapSpot>,
-        #[rename(name = "m_MobUnit")]
-        pub m_mob_unit: crate::app::gmapmobunit::GmapMobUnit,
-        #[rename(name = "m_EncountIcon")]
-        pub m_encount_icon: crate::root::encounticon::EncountIcon,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_Direction.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSpot_Direction {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSpot_Direction {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSpot.Direction";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSpot_Direction {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSpot_Direction {
-        pub fn up() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn down() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 3 }
-        }
-    }
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_EncountType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GmapSpot_EncountType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GmapSpot_EncountType {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "GmapSpot.EncountType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -112,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for GmapSpot_EncountType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -147,21 +63,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_State.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GmapSpot_State {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GmapSpot_State {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "GmapSpot.State";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -172,10 +81,7 @@ mod __types {
 
     impl ::unity2::IlType for GmapSpot_State {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -217,23 +123,80 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_Direction.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct GmapSpot_Direction {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSpot_Direction {
+        const NAME: &'static str = "GmapSpot.Direction";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSpot_Direction {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl GmapSpot_Direction {
+        pub fn up() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn down() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspot/GmapSpot.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSpot")]
+    #[parent(crate::system::object::Object)]
+    pub struct GmapSpot {
+        #[rename(name = "m_GlobalFlagName")]
+        pub m_global_flag_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Chapters")]
+        pub m_chapters: crate::system::collections::generic::list_1::List_1<crate::app::chapterdata::ChapterData>,
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Controller")]
+        pub m_controller: crate::app::gmapspotcontroller::GmapSpotController,
+        #[rename(name = "m_MapObject")]
+        pub m_map_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_NextSpots")]
+        pub m_next_spots: ::unity2::Array<crate::app::gmapspot::GmapSpot>,
+        #[rename(name = "m_MobUnit")]
+        pub m_mob_unit: crate::app::gmapmobunit::GmapMobUnit,
+        #[rename(name = "m_EncountIcon")]
+        pub m_encount_icon: crate::root::encounticon::EncountIcon,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_EncountPersonType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GmapSpot_EncountPersonType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GmapSpot_EncountPersonType {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "GmapSpot.EncountPersonType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -244,10 +207,7 @@ mod __types {
 
     impl ::unity2::IlType for GmapSpot_EncountPersonType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -294,9 +254,7 @@ mod __GmapSpot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_spot_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -309,43 +267,28 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "get_SpotMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "get_SpotMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_spot_mob(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::encountmob::EncountMob {
-        let inner: extern "C" fn(
-            GmapSpot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::encountmob::EncountMob = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_spot_mob::get_offset() as isize),
-        );
+    pub unsafe fn get_spot_mob(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::encountmob::EncountMob {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> crate::app::encountmob::EncountMob =
+            ::core::mem::transmute(__lookup_get_spot_mob::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_spot_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::encountmob::EncountMob as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::encountmob::EncountMob as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "set_SpotMob",
@@ -357,43 +300,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "set_SpotMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "set_SpotMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_spot_mob(
-        this: GmapSpot,
-        value: crate::app::encountmob::EncountMob,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::app::encountmob::EncountMob,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_spot_mob::get_offset() as isize),
-        );
+    pub unsafe fn set_spot_mob(this: GmapSpot, value: crate::app::encountmob::EncountMob, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, crate::app::encountmob::EncountMob, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_spot_mob::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reserve_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -406,41 +333,28 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "get_ReserveDispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "get_ReserveDispos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reserve_dispos(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_reserve_dispos(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_reserve_dispos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_reserve_dispos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_reserve_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "set_ReserveDispos",
@@ -452,40 +366,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "set_ReserveDispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "set_ReserveDispos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_reserve_dispos(
-        this: GmapSpot,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_reserve_dispos(this: GmapSpot, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapSpot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_reserve_dispos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_reserve_dispos::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reserve_delete_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -498,41 +399,28 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "get_ReserveDeleteMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "get_ReserveDeleteMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reserve_delete_mob(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_reserve_delete_mob(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_reserve_delete_mob::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_reserve_delete_mob::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_reserve_delete_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "set_ReserveDeleteMob",
@@ -544,90 +432,54 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "set_ReserveDeleteMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "set_ReserveDeleteMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_reserve_delete_mob(
-        this: GmapSpot,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_reserve_delete_mob(this: GmapSpot, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapSpot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_reserve_delete_mob::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_reserve_delete_mob::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GmapSpot,
-        chapter: crate::app::chapterdata::ChapterData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::app::chapterdata::ChapterData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: GmapSpot, chapter: crate::app::chapterdata::ChapterData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, crate::app::chapterdata::ChapterData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, chapter, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_spot_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -640,43 +492,28 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "get_SpotState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "get_SpotState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_spot_state(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gmapspot::GmapSpot_State {
-        let inner: extern "C" fn(
-            GmapSpot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gmapspot::GmapSpot_State = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_spot_state::get_offset() as isize),
-        );
+    pub unsafe fn get_spot_state(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::gmapspot::GmapSpot_State {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> crate::app::gmapspot::GmapSpot_State =
+            ::core::mem::transmute(__lookup_get_spot_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_spot_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmapspot::GmapSpot_State as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gmapspot::GmapSpot_State as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "set_SpotState",
@@ -688,43 +525,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "set_SpotState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "set_SpotState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_spot_state(
-        this: GmapSpot,
-        value: crate::app::gmapspot::GmapSpot_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::app::gmapspot::GmapSpot_State,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_spot_state::get_offset() as isize),
-        );
+    pub unsafe fn set_spot_state(this: GmapSpot, value: crate::app::gmapspot::GmapSpot_State, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, crate::app::gmapspot::GmapSpot_State, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_spot_state::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_spot_controller {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -737,38 +558,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "SetupSpotController",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "SetupSpotController",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_spot_controller(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_spot_controller::get_offset() as isize),
-        );
+    pub unsafe fn setup_spot_controller(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_spot_controller::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_map_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -782,18 +592,15 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "SetupMapObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "SetupMapObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_map_object(
@@ -801,24 +608,15 @@ mod __GmapSpot_unity2_raw {
         map_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_map_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapSpot, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_map_object::get_method_info().method_ptr);
         inner(this, map_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_next_spot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -834,18 +632,15 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "SetNextSpot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "SetNextSpot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_next_spot(
@@ -854,27 +649,16 @@ mod __GmapSpot_unity2_raw {
         next_spot_id: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_next_spot::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapSpot, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set_next_spot::get_method_info().method_ptr);
         inner(this, next_spot_pos, next_spot_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_next_spot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmapspot::GmapSpot_Direction as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gmapspot::GmapSpot_Direction as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "CheckNextSpot",
@@ -886,18 +670,15 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "CheckNextSpot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "CheckNextSpot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_next_spot(
@@ -905,24 +686,15 @@ mod __GmapSpot_unity2_raw {
         dir: crate::app::gmapspot::GmapSpot_Direction,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::gmapspot::GmapSpot {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::app::gmapspot::GmapSpot_Direction,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gmapspot::GmapSpot = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_next_spot::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapSpot, crate::app::gmapspot::GmapSpot_Direction, ::unity2::OptionalMethod) -> crate::app::gmapspot::GmapSpot =
+            ::core::mem::transmute(__lookup_check_next_spot::get_method_info().method_ptr);
         inner(this, dir, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exists_encount_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -935,39 +707,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "ExistsEncountMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "ExistsEncountMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exists_encount_mob(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn exists_encount_mob(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exists_encount_mob::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exists_encount_mob::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exists_training {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -980,91 +740,55 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "ExistsTraining",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "ExistsTraining",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exists_training(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn exists_training(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exists_training::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exists_training::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_chapter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "AddChapter",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "AddChapter", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "AddChapter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "AddChapter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_chapter(
-        this: GmapSpot,
-        chapter: crate::app::chapterdata::ChapterData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::app::chapterdata::ChapterData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_chapter::get_offset() as isize),
-        );
+    pub unsafe fn add_chapter(this: GmapSpot, chapter: crate::app::chapterdata::ChapterData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, crate::app::chapterdata::ChapterData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_chapter::get_method_info().method_ptr);
         inner(this, chapter, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_root_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "TryGetRootName",
@@ -1076,18 +800,15 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "TryGetRootName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "TryGetRootName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_root_name(
@@ -1095,24 +816,15 @@ mod __GmapSpot_unity2_raw {
         next_spot: crate::app::gmapspot::GmapSpot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::app::gmapspot::GmapSpot,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_root_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapSpot, crate::app::gmapspot::GmapSpot, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_try_get_root_name::get_method_info().method_ptr);
         inner(this, next_spot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1125,41 +837,28 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "CheckChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "CheckChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_change(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn check_change(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_change::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_access {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "CheckAccess",
@@ -1171,43 +870,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "CheckAccess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "CheckAccess",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_access(
-        this: GmapSpot,
-        pos: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_access::get_offset() as isize),
-        );
+    pub unsafe fn check_access(this: GmapSpot, pos: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(GmapSpot, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_check_access::get_method_info().method_ptr);
         inner(this, pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1220,65 +903,42 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "get_Position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "get_Position",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            GmapSpot,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_position::get_offset() as isize),
-        );
+    pub unsafe fn get_position(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_next_spots {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "NextSpots",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "NextSpots", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "NextSpots",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "NextSpots",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn next_spots(
@@ -1288,24 +948,16 @@ mod __GmapSpot_unity2_raw {
         let inner: extern "C" fn(
             GmapSpot,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::gmapspot::GmapSpot,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_next_spots::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot> =
+            ::core::mem::transmute(__lookup_next_spots::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_direction_to_spot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "GetDirectionToSpot",
@@ -1317,18 +969,15 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetDirectionToSpot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetDirectionToSpot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_direction_to_spot(
@@ -1336,106 +985,69 @@ mod __GmapSpot_unity2_raw {
         spot: crate::app::gmapspot::GmapSpot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::gmapspot::GmapSpot_Direction {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::app::gmapspot::GmapSpot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gmapspot::GmapSpot_Direction = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_direction_to_spot::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapSpot, crate::app::gmapspot::GmapSpot, ::unity2::OptionalMethod) -> crate::app::gmapspot::GmapSpot_Direction =
+            ::core::mem::transmute(__lookup_get_direction_to_spot::get_method_info().method_ptr);
         inner(this, spot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fix_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "FixChange",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "FixChange", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "FixChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "FixChange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn fix_change(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fix_change::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fix_change::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "SetEnable",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "SetEnable", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "SetEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "SetEnable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_enable(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_enable::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_appear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1448,39 +1060,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "StartAppear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "StartAppear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start_appear(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn start_appear(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_appear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start_appear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fix_change_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1493,39 +1093,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "FixChangeTick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "FixChangeTick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn fix_change_tick(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn fix_change_tick(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fix_change_tick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_fix_change_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1538,40 +1126,28 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_visible(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_visible::get_offset() as isize),
-        );
+    pub unsafe fn update_visible(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_map_object_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "SetMapObjectEnable",
@@ -1583,40 +1159,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "SetMapObjectEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "SetMapObjectEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_map_object_enable(
-        this: GmapSpot,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_map_object_enable(this: GmapSpot, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapSpot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_map_object_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_map_object_enable::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_spot_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1629,41 +1192,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "get_SpotObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "get_SpotObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_spot_object(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            GmapSpot,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_spot_object::get_offset() as isize),
-        );
+    pub unsafe fn get_spot_object(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_spot_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_spot_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1677,18 +1226,15 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "set_SpotObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "set_SpotObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_spot_object(
@@ -1696,24 +1242,15 @@ mod __GmapSpot_unity2_raw {
         value: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GmapSpot,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_spot_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapSpot, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_spot_object::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_chapter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1726,41 +1263,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "get_Chapter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "get_Chapter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_chapter(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::chapterdata::ChapterData {
-        let inner: extern "C" fn(
-            GmapSpot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::chapterdata::ChapterData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_chapter::get_offset() as isize),
-        );
+    pub unsafe fn get_chapter(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::chapterdata::ChapterData {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> crate::app::chapterdata::ChapterData =
+            ::core::mem::transmute(__lookup_get_chapter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_gmap_spot_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1773,89 +1296,54 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "get_GmapSpotID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "get_GmapSpotID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_gmap_spot_id(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_gmap_spot_id(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_gmap_spot_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_gmap_spot_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_equal_cid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "IsEqualCID",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "IsEqualCID", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "IsEqualCID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "IsEqualCID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_equal_cid(
-        this: GmapSpot,
-        cid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GmapSpot,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_equal_cid::get_offset() as isize),
-        );
+    pub unsafe fn is_equal_cid(this: GmapSpot, cid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(GmapSpot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_equal_cid::get_method_info().method_ptr);
         inner(this, cid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_completed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1868,39 +1356,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "IsCompleted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "IsCompleted",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_completed(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_completed(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_completed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_completed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_completed_open_cond_spot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -1913,128 +1389,80 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "IsCompletedOpenCondSpot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "IsCompletedOpenCondSpot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_completed_open_cond_spot(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_completed_open_cond_spot(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_completed_open_cond_spot::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_completed_open_cond_spot::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "Dispos",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "Dispos", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "Dispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "Dispos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispos(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispos::get_offset() as isize),
-            );
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_dispos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "IsDispos",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "IsDispos", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "IsDispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "IsDispos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_dispos(
-        this: GmapSpot,
-        ignore_exist_mob: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_dispos(this: GmapSpot, ignore_exist_mob: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_dispos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_dispos::get_method_info().method_ptr);
         inner(this, ignore_exist_mob, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_transform_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -2047,39 +1475,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "TransformDispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "TransformDispos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn transform_dispos(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn transform_dispos(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_transform_dispos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_transform_dispos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -2092,38 +1508,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "DeleteDispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "DeleteDispos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_dispos(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_dispos::get_offset() as isize),
-        );
+    pub unsafe fn delete_dispos(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_dispos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_mob_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -2136,38 +1541,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "UnloadMobUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "UnloadMobUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload_mob_unit(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_mob_unit::get_offset() as isize),
-        );
+    pub unsafe fn unload_mob_unit(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload_mob_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -2180,38 +1574,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "DestroyIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "DestroyIcon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_icon(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_icon::get_offset() as isize),
-        );
+    pub unsafe fn destroy_icon(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy_icon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_mob_unit_from_spot_mob {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -2224,38 +1607,27 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "CreateMobUnitFromSpotMob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "CreateMobUnitFromSpotMob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_mob_unit_from_spot_mob(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_mob_unit_from_spot_mob::get_offset() as isize),
-        );
+    pub unsafe fn create_mob_unit_from_spot_mob(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_mob_unit_from_spot_mob::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_place_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
@@ -2268,67 +1640,46 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetPlaceName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetPlaceName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_place_name(
-        this: GmapSpot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_place_name(this: GmapSpot, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(GmapSpot, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_place_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_place_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "GetJob",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "GetJob", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetJob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetJob",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_job(
@@ -2342,48 +1693,33 @@ mod __GmapSpot_unity2_raw {
             i32,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::app::jobdata::JobData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job::get_offset() as isize),
-        );
+        ) -> crate::app::jobdata::JobData = ::core::mem::transmute(__lookup_get_job::get_method_info().method_ptr);
         inner(random, level, ejid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_job_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::encountjobdata::EncountJobData as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "GetJob",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "GetJob", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetJob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetJob",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_job_2(
@@ -2397,23 +1733,16 @@ mod __GmapSpot_unity2_raw {
             i32,
             crate::app::encountjobdata::EncountJobData,
             ::unity2::OptionalMethod,
-        ) -> crate::app::jobdata::JobData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job_2::get_offset() as isize),
-        );
+        ) -> crate::app::jobdata::JobData = ::core::mem::transmute(__lookup_get_job_2::get_method_info().method_ptr);
         inner(random, level, encount_job, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pid_prefix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::gmapspot::GmapSpot_EncountPersonType as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gmapspot::GmapSpot_EncountPersonType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "GetPidPrefix",
@@ -2425,69 +1754,49 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetPidPrefix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetPidPrefix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pid_prefix(
         r#type: crate::app::gmapspot::GmapSpot_EncountPersonType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::gmapspot::GmapSpot_EncountPersonType,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pid_prefix::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::gmapspot::GmapSpot_EncountPersonType, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_pid_prefix::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_person {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
                 <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "GetPerson",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "GetPerson", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetPerson",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetPerson",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_person(
@@ -2501,21 +1810,19 @@ mod __GmapSpot_unity2_raw {
             crate::app::jobdata::JobData,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_person::get_offset() as isize),
-        );
+        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(__lookup_get_person::get_method_info().method_ptr);
         inner(random, job, pid_prefix, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rare_person {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: random_2 :: Random_2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: jobdata :: JobData as :: unity2 :: IlType > :: il_type () , < crate :: app :: encountunitdata :: EncountUnitData_RareType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+                <crate::app::encountunitdata::EncountUnitData_RareType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "GetRarePerson",
@@ -2527,18 +1834,15 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetRarePerson",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetRarePerson",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rare_person(
@@ -2552,44 +1856,34 @@ mod __GmapSpot_unity2_raw {
             crate::app::jobdata::JobData,
             crate::app::encountunitdata::EncountUnitData_RareType,
             ::unity2::OptionalMethod,
-        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rare_person::get_offset() as isize),
-        );
+        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(__lookup_get_rare_person::get_method_info().method_ptr);
         inner(random, job, rare_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_person_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: random_2 :: Random_2 as :: unity2 :: IlType > :: il_type () , < crate :: app :: jobdata :: JobData as :: unity2 :: IlType > :: il_type () , < crate :: app :: gmapspot :: GmapSpot_EncountPersonType as :: unity2 :: IlType > :: il_type () , < crate :: app :: encountunitdata :: EncountUnitData_RareType as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSpot as ::unity2::ClassIdentity>::class(),
-                "GetPerson",
-                4,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::random_2::Random_2 as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+                <crate::app::gmapspot::GmapSpot_EncountPersonType as ::unity2::IlType>::il_type(),
+                <crate::app::encountunitdata::EncountUnitData_RareType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<GmapSpot as ::unity2::ClassIdentity>::class(), "GetPerson", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetPerson",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetPerson",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_person_2(
@@ -2605,22 +1899,15 @@ mod __GmapSpot_unity2_raw {
             crate::app::gmapspot::GmapSpot_EncountPersonType,
             crate::app::encountunitdata::EncountUnitData_RareType,
             ::unity2::OptionalMethod,
-        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_person_2::get_offset() as isize),
-        );
+        ) -> crate::app::persondata::PersonData = ::core::mem::transmute(__lookup_get_person_2::get_method_info().method_ptr);
         inner(random, job, r#type, rare_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_gmap_direction {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpot as ::unity2::ClassIdentity>::class(),
                 "GetGmapDirection",
@@ -2632,29 +1919,20 @@ mod __GmapSpot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSpot as ::unity2::ClassIdentity>::NAME,
-                    "GetGmapDirection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapSpot as ::unity2::ClassIdentity>::NAME,
+                        "GetGmapDirection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_gmap_direction(
-        degree: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_gmap_direction::get_offset() as isize),
-        );
+    pub unsafe fn get_gmap_direction(degree: f32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_gmap_direction::get_method_info().method_ptr);
         inner(degree, __unity2_method_info)
     }
 }
@@ -2676,6 +1954,7 @@ impl GmapSpot {
             )
         }
     }
+
     #[doc = "`GetJob(crate::app::random_2::Random_2, i32, crate::app::encountjobdata::EncountJobData)` overload"]
     pub fn get_job_2(
         random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
@@ -2691,17 +1970,12 @@ impl GmapSpot {
             )
         }
     }
+
     #[doc = "`GetPidPrefix(crate::app::gmapspot::GmapSpot_EncountPersonType)` overload"]
-    pub fn get_pid_prefix(
-        r#type: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot_EncountPersonType>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __GmapSpot_unity2_raw::get_pid_prefix(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_pid_prefix(r#type: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot_EncountPersonType>) -> ::unity2::Il2CppString {
+        unsafe { __GmapSpot_unity2_raw::get_pid_prefix(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`GetPerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, ::unity2::Il2CppString)` overload"]
     pub fn get_person(
         random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
@@ -2717,6 +1991,7 @@ impl GmapSpot {
             )
         }
     }
+
     #[doc = "`GetRarePerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
     pub fn get_rare_person(
         random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
@@ -2732,6 +2007,7 @@ impl GmapSpot {
             )
         }
     }
+
     #[doc = "`GetPerson(crate::app::random_2::Random_2, crate::app::jobdata::JobData, crate::app::gmapspot::GmapSpot_EncountPersonType, crate::app::encountunitdata::EncountUnitData_RareType)` overload"]
     pub fn get_person_2(
         random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
@@ -2749,14 +2025,10 @@ impl GmapSpot {
             )
         }
     }
+
     #[doc = "`GetGmapDirection(f32)` overload"]
     pub fn get_gmap_direction(degree: impl ::core::convert::Into<f32>) -> i32 {
-        unsafe {
-            __GmapSpot_unity2_raw::get_gmap_direction(
-                ::core::convert::Into::into(degree),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GmapSpot_unity2_raw::get_gmap_direction(::core::convert::Into::into(degree), ::core::option::Option::None) }
     }
 }
 
@@ -2765,133 +2037,78 @@ pub trait IGmapSpotMethods: IGmapSpot {
     #[doc = "`get_SpotMob()` overload"]
     fn get_spot_mob(self) -> crate::app::encountmob::EncountMob {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_spot_mob(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SpotMob(crate::app::encountmob::EncountMob)` overload"]
-    fn set_spot_mob(
-        self,
-        value: impl ::core::convert::Into<crate::app::encountmob::EncountMob>,
-    ) -> () {
+    fn set_spot_mob(self, value: impl ::core::convert::Into<crate::app::encountmob::EncountMob>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::set_spot_mob(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::set_spot_mob(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ReserveDispos()` overload"]
     fn get_reserve_dispos(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_reserve_dispos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ReserveDispos(bool)` overload"]
     fn set_reserve_dispos(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::set_reserve_dispos(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::set_reserve_dispos(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ReserveDeleteMob()` overload"]
     fn get_reserve_delete_mob(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_reserve_delete_mob(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ReserveDeleteMob(bool)` overload"]
     fn set_reserve_delete_mob(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::set_reserve_delete_mob(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::set_reserve_delete_mob(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::app::chapterdata::ChapterData)` overload"]
     fn ctor(self, chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(chapter),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::ctor(__receiver, ::core::convert::Into::into(chapter), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SpotState()` overload"]
     fn get_spot_state(self) -> crate::app::gmapspot::GmapSpot_State {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_spot_state(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SpotState(crate::app::gmapspot::GmapSpot_State)` overload"]
-    fn set_spot_state(
-        self,
-        value: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot_State>,
-    ) -> () {
+    fn set_spot_state(self, value: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot_State>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::set_spot_state(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::set_spot_state(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SetupSpotController()` overload"]
     fn setup_spot_controller(self) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::setup_spot_controller(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupMapObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn setup_map_object(
-        self,
-        map_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn setup_map_object(self, map_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::setup_map_object(
-                __receiver,
-                ::core::convert::Into::into(map_object),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::setup_map_object(__receiver, ::core::convert::Into::into(map_object), ::core::option::Option::None)
         }
     }
     #[doc = "`SetNextSpot(crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString)` overload"]
@@ -2901,9 +2118,7 @@ pub trait IGmapSpotMethods: IGmapSpot {
         next_spot_id: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::set_next_spot(
                 __receiver,
                 ::core::convert::Into::into(next_spot_pos),
@@ -2913,343 +2128,219 @@ pub trait IGmapSpotMethods: IGmapSpot {
         }
     }
     #[doc = "`CheckNextSpot(crate::app::gmapspot::GmapSpot_Direction)` overload"]
-    fn check_next_spot(
-        self,
-        dir: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot_Direction>,
-    ) -> crate::app::gmapspot::GmapSpot {
+    fn check_next_spot(self, dir: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot_Direction>) -> crate::app::gmapspot::GmapSpot {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::check_next_spot(
-                __receiver,
-                ::core::convert::Into::into(dir),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::check_next_spot(__receiver, ::core::convert::Into::into(dir), ::core::option::Option::None)
         }
     }
     #[doc = "`ExistsEncountMob()` overload"]
     fn exists_encount_mob(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::exists_encount_mob(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ExistsTraining()` overload"]
     fn exists_training(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::exists_training(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddChapter(crate::app::chapterdata::ChapterData)` overload"]
-    fn add_chapter(
-        self,
-        chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>,
-    ) -> () {
+    fn add_chapter(self, chapter: impl ::core::convert::Into<crate::app::chapterdata::ChapterData>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::add_chapter(
-                __receiver,
-                ::core::convert::Into::into(chapter),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::add_chapter(__receiver, ::core::convert::Into::into(chapter), ::core::option::Option::None)
         }
     }
     #[doc = "`TryGetRootName(crate::app::gmapspot::GmapSpot)` overload"]
-    fn try_get_root_name(
-        self,
-        next_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>,
-    ) -> ::unity2::Il2CppString {
+    fn try_get_root_name(self, next_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::try_get_root_name(
-                __receiver,
-                ::core::convert::Into::into(next_spot),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::try_get_root_name(__receiver, ::core::convert::Into::into(next_spot), ::core::option::Option::None)
         }
     }
     #[doc = "`CheckChange()` overload"]
     fn check_change(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::check_change(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CheckAccess(crate::unity_engine::vector3::Vector3)` overload"]
-    fn check_access(
-        self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> bool {
+    fn check_access(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::check_access(
-                __receiver,
-                ::core::convert::Into::into(pos),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::check_access(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Position()` overload"]
     fn get_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`NextSpots()` overload"]
-    fn next_spots(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot> {
+    fn next_spots(self) -> crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot> {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::next_spots(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetDirectionToSpot(crate::app::gmapspot::GmapSpot)` overload"]
-    fn get_direction_to_spot(
-        self,
-        spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>,
-    ) -> crate::app::gmapspot::GmapSpot_Direction {
+    fn get_direction_to_spot(self, spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>) -> crate::app::gmapspot::GmapSpot_Direction {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::get_direction_to_spot(
-                __receiver,
-                ::core::convert::Into::into(spot),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::get_direction_to_spot(__receiver, ::core::convert::Into::into(spot), ::core::option::Option::None)
         }
     }
     #[doc = "`FixChange()` overload"]
     fn fix_change(self) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::fix_change(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetEnable()` overload"]
     fn set_enable(self) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::set_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartAppear()` overload"]
     fn start_appear(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::start_appear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FixChangeTick()` overload"]
     fn fix_change_tick(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::fix_change_tick(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateVisible()` overload"]
     fn update_visible(self) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::update_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMapObjectEnable(bool)` overload"]
     fn set_map_object_enable(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::set_map_object_enable(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::set_map_object_enable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SpotObject()` overload"]
     fn get_spot_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_spot_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SpotObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_spot_object(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn set_spot_object(self, value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::set_spot_object(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::set_spot_object(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Chapter()` overload"]
     fn get_chapter(self) -> crate::app::chapterdata::ChapterData {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_chapter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_GmapSpotID()` overload"]
     fn get_gmap_spot_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_gmap_spot_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsEqualCID(::unity2::Il2CppString)` overload"]
     fn is_equal_cid(self, cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::is_equal_cid(
-                __receiver,
-                ::core::convert::Into::into(cid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::is_equal_cid(__receiver, ::core::convert::Into::into(cid), ::core::option::Option::None)
         }
     }
     #[doc = "`IsCompleted()` overload"]
     fn is_completed(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::is_completed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsCompletedOpenCondSpot()` overload"]
     fn is_completed_open_cond_spot(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::is_completed_open_cond_spot(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::is_completed_open_cond_spot(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispos()` overload"]
     fn dispos(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::dispos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsDispos(bool)` overload"]
     fn is_dispos(self, ignore_exist_mob: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::is_dispos(
-                __receiver,
-                ::core::convert::Into::into(ignore_exist_mob),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::is_dispos(__receiver, ::core::convert::Into::into(ignore_exist_mob), ::core::option::Option::None)
         }
     }
     #[doc = "`TransformDispos()` overload"]
     fn transform_dispos(self) -> bool {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::transform_dispos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteDispos()` overload"]
     fn delete_dispos(self) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::delete_dispos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnloadMobUnit()` overload"]
     fn unload_mob_unit(self) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::unload_mob_unit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DestroyIcon()` overload"]
     fn destroy_icon(self) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::destroy_icon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateMobUnitFromSpotMob()` overload"]
     fn create_mob_unit_from_spot_mob(self) -> () {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapSpot_unity2_raw::create_mob_unit_from_spot_mob(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapSpot_unity2_raw::create_mob_unit_from_spot_mob(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetPlaceName()` overload"]
     fn get_place_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapSpot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GmapSpot_unity2_raw::get_place_name(__receiver, ::core::option::Option::None)
         }
     }
@@ -3262,13 +2353,8 @@ impl<__T: IGmapSpot> IGmapSpotMethods for __T {}
 impl GmapSpot {
     #[doc = "`.ctor(crate::app::chapterdata::ChapterData)` — overload selector"]
     pub fn new(chapter: crate::app::chapterdata::ChapterData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSpot),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GmapSpot), ::core::stringify!(new),));
         <Self as IGmapSpotMethods>::ctor(this, chapter);
         this
     }
@@ -3277,20 +2363,12 @@ impl GmapSpot {
 #[cfg(feature = "app-gmapspot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapSpot;
-    pub use super::GmapSpot_Direction;
-    pub use super::GmapSpot_EncountPersonType;
-    pub use super::GmapSpot_EncountType;
-    pub use super::GmapSpot_State;
-    pub use super::IGmapSpot;
-    pub use super::IGmapSpotMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{GmapSpot, GmapSpot_Direction, GmapSpot_EncountPersonType, GmapSpot_EncountType, GmapSpot_State, IGmapSpot, IGmapSpotMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

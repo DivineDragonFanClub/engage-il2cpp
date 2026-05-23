@@ -2,11 +2,35 @@
 
 #[cfg(feature = "app-aiinterruptattack-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiinterruptattack/AIInterruptAttack_AttackScoreResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIInterruptAttack_AttackScoreResult {}
+
+    impl ::unity2::ClassIdentity for AIInterruptAttack_AttackScoreResult {
+        const NAME: &'static str = "AIInterruptAttack.AttackScoreResult";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIInterruptAttack_AttackScoreResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack.md"))]
     #[::unity2::class(namespace = "App", name = "AIInterruptAttack")]
@@ -59,54 +83,538 @@ mod __types {
         pub m_as_result: crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiinterruptattack/AIInterruptAttack_AttackScoreResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIInterruptAttack_AttackScoreResult {}
-
-    impl ::unity2::ClassIdentity for AIInterruptAttack_AttackScoreResult {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AIInterruptAttack.AttackScoreResult";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIInterruptAttack_AttackScoreResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack_Candidate.md"))]
+    #[::unity2::class(namespace = "App", name = "AIInterruptAttack.Candidate")]
+    #[parent(crate::system::object::Object)]
+    pub struct AIInterruptAttack_Candidate {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack_CandidateList.md"))]
     #[::unity2::class(namespace = "App", name = "AIInterruptAttack.CandidateList")]
     #[parent(crate::system::object::Object)]
     pub struct AIInterruptAttack_CandidateList {
         #[rename(name = "m_Pool")]
-        pub m_pool: crate::system::collections::generic::list_1::List_1<
-            crate::app::aiinterruptattack::AIInterruptAttack_Candidate,
-        >,
+        pub m_pool: crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate>,
         #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::aiinterruptattack::AIInterruptAttack_Candidate,
-        >,
+        pub m_list: crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack_Candidate.md"))]
-    #[::unity2::class(namespace = "App", name = "AIInterruptAttack.Candidate")]
-    #[parent(crate::system::object::Object)]
-    pub struct AIInterruptAttack_Candidate {}
 }
 
 #[cfg(feature = "app-aiinterruptattack-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-aiinterruptattack")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIInterruptAttack_AttackScoreResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: AIInterruptAttack_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_Score",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_score(this: AIInterruptAttack_AttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIInterruptAttack_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_x(this: AIInterruptAttack_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIInterruptAttack_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_z(this: AIInterruptAttack_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIInterruptAttack_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_x(this: AIInterruptAttack_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIInterruptAttack_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_z(this: AIInterruptAttack_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_ItemIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_index(this: AIInterruptAttack_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_ItemIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_item_index(this: AIInterruptAttack_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item_index::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIInterruptAttack_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_AttackScoreResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aiinterruptattack")]
+impl AIInterruptAttack_AttackScoreResult {
+    #[doc = "`get_Score()` overload"]
+    pub fn get_score(self) -> u32 {
+        unsafe { __AIInterruptAttack_AttackScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Score(u32)` overload"]
+    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe { __AIInterruptAttack_AttackScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIInterruptAttack_AttackScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIInterruptAttack_AttackScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIInterruptAttack_AttackScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIInterruptAttack_AttackScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_ItemIndex()` overload"]
+    pub fn get_item_index(self) -> i32 {
+        unsafe { __AIInterruptAttack_AttackScoreResult_unity2_raw::get_item_index(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_ItemIndex(i32)` overload"]
+    pub fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_item_index(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIInterruptAttack_AttackScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "app-aiinterruptattack")]
 #[doc(hidden)]
@@ -117,9 +625,7 @@ mod __AIInterruptAttack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -132,39 +638,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_think {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -188,18 +682,15 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "Think",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "Think",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn think(
@@ -229,11 +720,7 @@ mod __AIInterruptAttack_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_think::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_think::get_method_info().method_ptr);
         inner(
             this,
             actor,
@@ -253,9 +740,7 @@ mod __AIInterruptAttack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_think_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -279,18 +764,15 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "ThinkImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "ThinkImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn think_impl(
@@ -320,11 +802,7 @@ mod __AIInterruptAttack_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_think_impl::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_think_impl::get_method_info().method_ptr);
         inner(
             this,
             actor,
@@ -344,9 +822,7 @@ mod __AIInterruptAttack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -359,39 +835,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "Attack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "Attack",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn attack(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn attack(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_attack::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_attack::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_reserved {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -404,39 +868,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "IsReserved",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "IsReserved",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_reserved(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_reserved(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_reserved::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_reserved::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -449,43 +901,29 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enumerate_candidates {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
                 "EnumerateCandidates",
@@ -497,18 +935,15 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateCandidates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateCandidates",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enumerate_candidates(
@@ -518,27 +953,15 @@ mod __AIInterruptAttack_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(AIInterruptAttack, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enumerate_candidates::get_offset() as isize),
-            );
-        inner(
-            this,
-            is_original_think_break,
-            is_original_think_chain,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_enumerate_candidates::get_method_info().method_ptr);
+        inner(this, is_original_think_break, is_original_think_chain, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_decide_attacker {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
                 "DecideAttacker",
@@ -550,42 +973,28 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "DecideAttacker",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "DecideAttacker",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn decide_attacker(
-        this: AIInterruptAttack,
-        is_add_moved_original: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn decide_attacker(this: AIInterruptAttack, is_add_moved_original: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AIInterruptAttack, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_decide_attacker::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_decide_attacker::get_method_info().method_ptr);
         inner(this, is_add_moved_original, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deploy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
                 "Deploy",
@@ -597,44 +1006,33 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "Deploy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "Deploy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deploy(
-        this: AIInterruptAttack,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deploy::get_offset() as isize),
-        );
+    pub unsafe fn deploy(this: AIInterruptAttack, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deploy::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attack_score {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: aiinterruptattack :: AIInterruptAttack_AttackScoreResult as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
                 "GetAttackScore",
@@ -646,18 +1044,15 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "GetAttackScore",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "GetAttackScore",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_attack_score(
@@ -675,29 +1070,15 @@ mod __AIInterruptAttack_unity2_raw {
             i32,
             *mut crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attack_score::get_offset() as isize),
-        );
-        inner(
-            this,
-            actor,
-            flag,
-            bullet_pattern,
-            result,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_get_attack_score::get_method_info().method_ptr);
+        inner(this, actor, flag, bullet_pattern, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
                 "GetRange",
@@ -709,43 +1090,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "GetRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "GetRange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_range(
-        this: AIInterruptAttack,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AIInterruptAttack,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_range::get_offset() as isize),
-        );
+    pub unsafe fn get_range(this: AIInterruptAttack, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIInterruptAttack, crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_range::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_attack_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -758,39 +1123,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxAttackCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxAttackCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_max_attack_count(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_max_attack_count(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_max_attack_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_max_attack_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_moved_original_to_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -803,39 +1156,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "AddMovedOriginalToImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "AddMovedOriginalToImage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_moved_original_to_image(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_moved_original_to_image(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_moved_original_to_image::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_moved_original_to_image::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_moved_original_from_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -848,39 +1189,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "DeleteMovedOriginalFromImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "DeleteMovedOriginalFromImage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_moved_original_from_image(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete_moved_original_from_image(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_moved_original_from_image::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete_moved_original_from_image::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -901,18 +1230,15 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "Mind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "Mind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn mind(
@@ -926,21 +1252,8 @@ mod __AIInterruptAttack_unity2_raw {
         bullet_pattern: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AIInterruptAttack, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_mind::get_method_info().method_ptr);
         inner(
             this,
             attacker,
@@ -957,11 +1270,8 @@ mod __AIInterruptAttack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_dbg_log {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
                 "DbgLog",
@@ -973,43 +1283,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "DbgLog",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "DbgLog",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dbg_log(
-        this: AIInterruptAttack,
-        msg: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dbg_log::get_offset() as isize),
-        );
+    pub unsafe fn dbg_log(this: AIInterruptAttack, msg: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dbg_log::get_method_info().method_ptr);
         inner(this, msg, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dbg_log_orignal_and_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -1022,39 +1316,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "DbgLogOrignalAndTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "DbgLogOrignalAndTarget",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dbg_log_orignal_and_target(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dbg_log_orignal_and_target(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dbg_log_orignal_and_target::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dbg_log_orignal_and_target::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dbg_log_candidates {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack as ::unity2::ClassIdentity>::class(),
@@ -1067,39 +1349,27 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "DbgLogCandidates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "DbgLogCandidates",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dbg_log_candidates(
-        this: AIInterruptAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dbg_log_candidates(this: AIInterruptAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dbg_log_candidates::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dbg_log_candidates::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dbg_log_attacker {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -1121,18 +1391,15 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "DbgLogAttacker",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "DbgLogAttacker",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dbg_log_attacker(
@@ -1158,11 +1425,7 @@ mod __AIInterruptAttack_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dbg_log_attacker::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_dbg_log_attacker::get_method_info().method_ptr);
         inner(
             this,
             msg,
@@ -1180,9 +1443,7 @@ mod __AIInterruptAttack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_dbg_log_exist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -1200,18 +1461,15 @@ mod __AIInterruptAttack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
-                    "DbgLogExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack as ::unity2::ClassIdentity>::NAME,
+                        "DbgLogExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dbg_log_exist(
@@ -1222,26 +1480,9 @@ mod __AIInterruptAttack_unity2_raw {
         move_z: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack,
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dbg_log_exist::get_offset() as isize),
-        );
-        inner(
-            this,
-            method_name,
-            attacker,
-            move_x,
-            move_z,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(AIInterruptAttack, ::unity2::Il2CppString, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dbg_log_exist::get_method_info().method_ptr);
+        inner(this, method_name, attacker, move_x, move_z, __unity2_method_info)
     }
 }
 
@@ -1250,9 +1491,7 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1271,9 +1510,7 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
         bullet_pattern: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::think(
                 __receiver,
                 ::core::convert::Into::into(actor),
@@ -1305,9 +1542,7 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
         bullet_pattern: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::think_impl(
                 __receiver,
                 ::core::convert::Into::into(actor),
@@ -1327,27 +1562,21 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
     #[doc = "`Attack()` overload"]
     fn attack(self) -> bool {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::attack(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsReserved()` overload"]
     fn is_reserved(self) -> bool {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::is_reserved(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
@@ -1358,9 +1587,7 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
         is_original_think_chain: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::enumerate_candidates(
                 __receiver,
                 ::core::convert::Into::into(is_original_think_break),
@@ -1372,9 +1599,7 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
     #[doc = "`DecideAttacker(bool)` overload"]
     fn decide_attacker(self, is_add_moved_original: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::decide_attacker(
                 __receiver,
                 ::core::convert::Into::into(is_add_moved_original),
@@ -1385,14 +1610,8 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
     #[doc = "`Deploy(crate::app::unit::Unit)` overload"]
     fn deploy(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIInterruptAttack_unity2_raw::deploy(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_unity2_raw::deploy(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`GetAttackScore(crate::app::unit::Unit, i32, i32, *mutcrate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult)` overload"]
@@ -1401,17 +1620,10 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
         actor: impl ::core::convert::Into<crate::app::unit::Unit>,
         flag: impl ::core::convert::Into<i32>,
         bullet_pattern: impl ::core::convert::Into<i32>,
-    ) -> (
-        bool,
-        crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult,
-    ) {
+    ) -> (bool, crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult) {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult,
-            >::uninit();
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult>::uninit();
             let __ret = {
                 __AIInterruptAttack_unity2_raw::get_attack_score(
                     __receiver,
@@ -1428,50 +1640,29 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
     #[doc = "`GetRange(crate::app::unit::Unit)` overload"]
     fn get_range(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIInterruptAttack_unity2_raw::get_range(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_unity2_raw::get_range(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`GetMaxAttackCount()` overload"]
     fn get_max_attack_count(self) -> i32 {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIInterruptAttack_unity2_raw::get_max_attack_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_unity2_raw::get_max_attack_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddMovedOriginalToImage()` overload"]
     fn add_moved_original_to_image(self) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIInterruptAttack_unity2_raw::add_moved_original_to_image(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_unity2_raw::add_moved_original_to_image(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteMovedOriginalFromImage()` overload"]
     fn delete_moved_original_from_image(self) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIInterruptAttack_unity2_raw::delete_moved_original_from_image(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_unity2_raw::delete_moved_original_from_image(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Mind(crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]
@@ -1486,9 +1677,7 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
         bullet_pattern: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::mind(
                 __receiver,
                 ::core::convert::Into::into(attacker),
@@ -1505,38 +1694,22 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
     #[doc = "`DbgLog(::unity2::Il2CppString)` overload"]
     fn dbg_log(self, msg: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIInterruptAttack_unity2_raw::dbg_log(
-                __receiver,
-                ::core::convert::Into::into(msg),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_unity2_raw::dbg_log(__receiver, ::core::convert::Into::into(msg), ::core::option::Option::None)
         }
     }
     #[doc = "`DbgLogOrignalAndTarget()` overload"]
     fn dbg_log_orignal_and_target(self) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIInterruptAttack_unity2_raw::dbg_log_orignal_and_target(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_unity2_raw::dbg_log_orignal_and_target(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DbgLogCandidates()` overload"]
     fn dbg_log_candidates(self) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIInterruptAttack_unity2_raw::dbg_log_candidates(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_unity2_raw::dbg_log_candidates(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DbgLogAttacker(::unity2::Il2CppString, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]
@@ -1552,9 +1725,7 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
         bullet_pattern: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::dbg_log_attacker(
                 __receiver,
                 ::core::convert::Into::into(msg),
@@ -1578,9 +1749,7 @@ pub trait IAIInterruptAttackMethods: IAIInterruptAttack {
         move_z: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIInterruptAttack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_unity2_raw::dbg_log_exist(
                 __receiver,
                 ::core::convert::Into::into(method_name),
@@ -1615,1319 +1784,13 @@ impl AIInterruptAttack {
 #[cfg(feature = "app-aiinterruptattack")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIInterruptAttack_AttackScoreResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Score",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "get_Score",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_score(
-        this: AIInterruptAttack_AttackScoreResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            ::unity2::OptionalMethod,
-        ) -> u32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_score::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_Score",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "set_Score",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_score(
-        this: AIInterruptAttack_AttackScoreResult,
-        value: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            u32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_score::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "get_MoveX",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_move_x(
-        this: AIInterruptAttack_AttackScoreResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_move_x::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "set_MoveX",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_move_x(
-        this: AIInterruptAttack_AttackScoreResult,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_move_x::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "get_MoveZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_move_z(
-        this: AIInterruptAttack_AttackScoreResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_move_z::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "set_MoveZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_move_z(
-        this: AIInterruptAttack_AttackScoreResult,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_move_z::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "get_AttackX",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_attack_x(
-        this: AIInterruptAttack_AttackScoreResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attack_x::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "set_AttackX",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_attack_x(
-        this: AIInterruptAttack_AttackScoreResult,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_attack_x::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "get_AttackZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_attack_z(
-        this: AIInterruptAttack_AttackScoreResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attack_z::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "set_AttackZ",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_attack_z(
-        this: AIInterruptAttack_AttackScoreResult,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_attack_z::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_ItemIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "get_ItemIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_item_index(
-        this: AIInterruptAttack_AttackScoreResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item_index::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_ItemIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "set_ItemIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_item_index(
-        this: AIInterruptAttack_AttackScoreResult,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item_index::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(
-        this: AIInterruptAttack_AttackScoreResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_AttackScoreResult,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-impl AIInterruptAttack_AttackScoreResult {
-    #[doc = "`get_Score()` overload"]
-    pub fn get_score(self) -> u32 {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::get_score(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Score(u32)` overload"]
-    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_score(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::get_move_x(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_MoveX(i32)` overload"]
-    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_move_x(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::get_move_z(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_MoveZ(i32)` overload"]
-    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_move_z(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::get_attack_x(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_AttackX(i32)` overload"]
-    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_attack_x(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::get_attack_z(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_AttackZ(i32)` overload"]
-    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_attack_z(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_ItemIndex()` overload"]
-    pub fn get_item_index(self) -> i32 {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::get_item_index(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_ItemIndex(i32)` overload"]
-    pub fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::set_item_index(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe {
-            __AIInterruptAttack_AttackScoreResult_unity2_raw::clear(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIInterruptAttack_CandidateList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AIInterruptAttack_CandidateList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "Add",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add(
-        this: AIInterruptAttack_CandidateList,
-        unit: crate::app::unit::Unit,
-        is_think_break: bool,
-        is_think_chain: bool,
-        dist: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_CandidateList,
-            crate::app::unit::Unit,
-            bool,
-            bool,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            is_think_break,
-            is_think_chain,
-            dist,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sort {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "Sort",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                    "Sort",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn sort(
-        this: AIInterruptAttack_CandidateList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_sort::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(
-        this: AIInterruptAttack_CandidateList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_attacker {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "HasAttacker",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                    "HasAttacker",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn has_attacker(
-        this: AIInterruptAttack_CandidateList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AIInterruptAttack_CandidateList,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_has_attacker::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attacker {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "GetAttacker",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                    "GetAttacker",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_attacker(
-        this: AIInterruptAttack_CandidateList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
-        let inner: extern "C" fn(
-            AIInterruptAttack_CandidateList,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attacker::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_count(
-        this: AIInterruptAttack_CandidateList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_item(
-        this: AIInterruptAttack_CandidateList,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
-        let inner: extern "C" fn(
-            AIInterruptAttack_CandidateList,
-            i32,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
-        inner(this, index, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-pub trait IAIInterruptAttack_CandidateListMethods: IAIInterruptAttack_CandidateList {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_CandidateList_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::app::unit::Unit, bool, bool, i32)` overload"]
-    fn add(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        is_think_break: impl ::core::convert::Into<bool>,
-        is_think_chain: impl ::core::convert::Into<bool>,
-        dist: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_CandidateList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(is_think_break),
-                ::core::convert::Into::into(is_think_chain),
-                ::core::convert::Into::into(dist),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Sort()` overload"]
-    fn sort(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_CandidateList_unity2_raw::sort(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_CandidateList_unity2_raw::clear(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`HasAttacker()` overload"]
-    fn has_attacker(self) -> bool {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_CandidateList_unity2_raw::has_attacker(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetAttacker()` overload"]
-    fn get_attacker(self) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_CandidateList_unity2_raw::get_attacker(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_CandidateList_unity2_raw::get_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Item(i32)` overload"]
-    fn get_item(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_CandidateList_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-impl<__T: IAIInterruptAttack_CandidateList> IAIInterruptAttack_CandidateListMethods for __T {}
-
-#[cfg(feature = "app-aiinterruptattack")]
-impl AIInterruptAttack_CandidateList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIInterruptAttack_CandidateList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIInterruptAttack_CandidateListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __AIInterruptAttack_Candidate_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -2940,43 +1803,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_Unit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_Unit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            AIInterruptAttack_Candidate,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit::get_offset() as isize),
-        );
+    pub unsafe fn get_unit(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_Unit",
@@ -2988,43 +1836,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_Unit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_Unit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_unit(
-        this: AIInterruptAttack_Candidate,
-        value: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_Candidate,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit::get_offset() as isize),
-        );
+    pub unsafe fn set_unit(this: AIInterruptAttack_Candidate, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_Candidate, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_think_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3037,41 +1869,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_IsThinkBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_IsThinkBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_think_break(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_think_break(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_think_break::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_think_break::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_think_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_IsThinkBreak",
@@ -3083,43 +1902,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_IsThinkBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_IsThinkBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_think_break(
-        this: AIInterruptAttack_Candidate,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_Candidate,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_think_break::get_offset() as isize),
-        );
+    pub unsafe fn set_is_think_break(this: AIInterruptAttack_Candidate, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_Candidate, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_think_break::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_think_chain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3132,41 +1935,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_IsThinkChain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_IsThinkChain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_think_chain(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_think_chain(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_think_chain::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_think_chain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_think_chain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_IsThinkChain",
@@ -3178,43 +1968,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_IsThinkChain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_IsThinkChain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_think_chain(
-        this: AIInterruptAttack_Candidate,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIInterruptAttack_Candidate,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_think_chain::get_offset() as isize),
-        );
+    pub unsafe fn set_is_think_chain(this: AIInterruptAttack_Candidate, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_Candidate, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_think_chain::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3227,41 +2001,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_Dist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_Dist",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_dist(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_dist(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_dist::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_dist::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_Dist",
@@ -3273,40 +2034,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_Dist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_Dist",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_dist(
-        this: AIInterruptAttack_Candidate,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_dist(this: AIInterruptAttack_Candidate, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_dist::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_dist::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bullet_pattern {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3319,41 +2067,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_BulletPattern",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_BulletPattern",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bullet_pattern(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_bullet_pattern(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_bullet_pattern::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_bullet_pattern::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_bullet_pattern {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_BulletPattern",
@@ -3365,40 +2100,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_BulletPattern",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_BulletPattern",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_bullet_pattern(
-        this: AIInterruptAttack_Candidate,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_bullet_pattern(this: AIInterruptAttack_Candidate, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_bullet_pattern::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_bullet_pattern::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_move_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3411,41 +2133,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_MoveX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_move_x(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_move_x(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_move_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_move_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_MoveX",
@@ -3457,40 +2166,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_MoveX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_move_x(
-        this: AIInterruptAttack_Candidate,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_move_x(this: AIInterruptAttack_Candidate, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_move_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_move_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3503,41 +2199,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_MoveZ",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_move_z(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_move_z(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_move_z::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_move_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_MoveZ",
@@ -3549,40 +2232,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_MoveZ",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_move_z(
-        this: AIInterruptAttack_Candidate,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_move_z(this: AIInterruptAttack_Candidate, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_move_z::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attack_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3595,41 +2265,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_AttackX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_attack_x(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_attack_x(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_attack_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_attack_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_AttackX",
@@ -3641,40 +2298,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_AttackX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_attack_x(
-        this: AIInterruptAttack_Candidate,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_attack_x(this: AIInterruptAttack_Candidate, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_attack_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attack_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3687,41 +2331,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_AttackZ",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_attack_z(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_attack_z(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_attack_z::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_attack_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_AttackZ",
@@ -3733,40 +2364,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_AttackZ",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_attack_z(
-        this: AIInterruptAttack_Candidate,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_attack_z(this: AIInterruptAttack_Candidate, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_attack_z::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3779,41 +2397,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_ItemIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_ItemIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item_index(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_item_index(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_item_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_ItemIndex",
@@ -3825,40 +2430,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_ItemIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_ItemIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item_index(
-        this: AIInterruptAttack_Candidate,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_item_index(this: AIInterruptAttack_Candidate, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_item_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_item_index::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_score {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3871,41 +2463,28 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "get_Score",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_score(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
+    pub unsafe fn get_score(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_score::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_score {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
                 "set_Score",
@@ -3917,40 +2496,27 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    "set_Score",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        "set_Score",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_score(
-        this: AIInterruptAttack_Candidate,
-        value: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_score(this: AIInterruptAttack_Candidate, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_score::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::class(),
@@ -3963,30 +2529,20 @@ mod __AIInterruptAttack_Candidate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_Candidate as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AIInterruptAttack_Candidate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AIInterruptAttack_Candidate, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AIInterruptAttack_Candidate, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -3997,306 +2553,183 @@ pub trait IAIInterruptAttack_CandidateMethods: IAIInterruptAttack_Candidate {
     fn get_unit(self) -> crate::app::unit::Unit {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_unit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
     fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_unit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsThinkBreak()` overload"]
     fn get_is_think_break(self) -> bool {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_is_think_break(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_is_think_break(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsThinkBreak(bool)` overload"]
     fn set_is_think_break(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_is_think_break(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_is_think_break(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsThinkChain()` overload"]
     fn get_is_think_chain(self) -> bool {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_is_think_chain(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_is_think_chain(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsThinkChain(bool)` overload"]
     fn set_is_think_chain(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_is_think_chain(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_is_think_chain(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Dist()` overload"]
     fn get_dist(self) -> i32 {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_dist(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_dist(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Dist(i32)` overload"]
     fn set_dist(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_dist(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_dist(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_BulletPattern()` overload"]
     fn get_bullet_pattern(self) -> i32 {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_bullet_pattern(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_bullet_pattern(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_BulletPattern(i32)` overload"]
     fn set_bullet_pattern(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_bullet_pattern(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_bullet_pattern(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_MoveX()` overload"]
     fn get_move_x(self) -> i32 {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_move_x(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_move_x(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MoveX(i32)` overload"]
     fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_move_x(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_move_x(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_MoveZ()` overload"]
     fn get_move_z(self) -> i32 {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_move_z(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_move_z(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MoveZ(i32)` overload"]
     fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_move_z(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_move_z(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AttackX()` overload"]
     fn get_attack_x(self) -> i32 {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_attack_x(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_attack_x(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AttackX(i32)` overload"]
     fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_attack_x(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_attack_x(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AttackZ()` overload"]
     fn get_attack_z(self) -> i32 {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_attack_z(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_attack_z(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AttackZ(i32)` overload"]
     fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_attack_z(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_attack_z(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ItemIndex()` overload"]
     fn get_item_index(self) -> i32 {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_item_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_item_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ItemIndex(i32)` overload"]
     fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_item_index(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_item_index(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Score()` overload"]
     fn get_score(self) -> u32 {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::get_score(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::get_score(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Score(u32)` overload"]
     fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AIInterruptAttack_Candidate_unity2_raw::set_score(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_Candidate_unity2_raw::set_score(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AIInterruptAttack_Candidate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIInterruptAttack_Candidate_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -4323,21 +2756,410 @@ impl AIInterruptAttack_Candidate {
 
 #[cfg(feature = "app-aiinterruptattack")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIInterruptAttack_CandidateList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "Add",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        this: AIInterruptAttack_CandidateList,
+        unit: crate::app::unit::Unit,
+        is_think_break: bool,
+        is_think_chain: bool,
+        dist: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, crate::app::unit::Unit, bool, bool, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, unit, is_think_break, is_think_chain, dist, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "Sort",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "Sort",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn sort(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sort::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_attacker {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "HasAttacker",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "HasAttacker",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn has_attacker(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_has_attacker::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attacker {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "GetAttacker",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "GetAttacker",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attacker(
+        this: AIInterruptAttack_CandidateList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
+        let inner: extern "C" fn(
+            AIInterruptAttack_CandidateList,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate = ::core::mem::transmute(__lookup_get_attacker::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_count(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item(
+        this: AIInterruptAttack_CandidateList,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
+        let inner: extern "C" fn(
+            AIInterruptAttack_CandidateList,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate = ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aiinterruptattack")]
+pub trait IAIInterruptAttack_CandidateListMethods: IAIInterruptAttack_CandidateList {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::unit::Unit, bool, bool, i32)` overload"]
+    fn add(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        is_think_break: impl ::core::convert::Into<bool>,
+        is_think_chain: impl ::core::convert::Into<bool>,
+        dist: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(is_think_break),
+                ::core::convert::Into::into(is_think_chain),
+                ::core::convert::Into::into(dist),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Sort()` overload"]
+    fn sort(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::sort(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HasAttacker()` overload"]
+    fn has_attacker(self) -> bool {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::has_attacker(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetAttacker()` overload"]
+    fn get_attacker(self) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::get_attacker(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-aiinterruptattack")]
+impl<__T: IAIInterruptAttack_CandidateList> IAIInterruptAttack_CandidateListMethods for __T {}
+
+#[cfg(feature = "app-aiinterruptattack")]
+impl AIInterruptAttack_CandidateList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIInterruptAttack_CandidateList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIInterruptAttack_CandidateListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-aiinterruptattack")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::AIInterruptAttack;
-    pub use super::AIInterruptAttack_AttackScoreResult;
-    pub use super::AIInterruptAttack_Candidate;
-    pub use super::AIInterruptAttack_CandidateList;
-    pub use super::IAIInterruptAttack;
-    pub use super::IAIInterruptAttackMethods;
-    pub use super::IAIInterruptAttack_Candidate;
-    pub use super::IAIInterruptAttack_CandidateList;
-    pub use super::IAIInterruptAttack_CandidateListMethods;
-    pub use super::IAIInterruptAttack_CandidateMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        AIInterruptAttack, AIInterruptAttack_AttackScoreResult, AIInterruptAttack_Candidate, AIInterruptAttack_CandidateList, IAIInterruptAttack,
+        IAIInterruptAttackMethods, IAIInterruptAttack_Candidate, IAIInterruptAttack_CandidateList, IAIInterruptAttack_CandidateListMethods,
+        IAIInterruptAttack_CandidateMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

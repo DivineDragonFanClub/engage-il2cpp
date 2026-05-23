@@ -2,33 +2,39 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{
-        AsyncOperationBase_1, IAsyncOperationBase_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/initializationoperation/InitializationOperation.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.Initialization",
-        name = "InitializationOperation"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Initialization", name = "InitializationOperation")]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >)]
     pub struct InitializationOperation {
-# [rename (name = "m_rtdOp")] pub m_rtd_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData > ,
-# [rename (name = "m_loadCatalogOp")] pub m_load_catalog_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ,
-# [rename (name = "m_ProviderSuffix")] pub m_provider_suffix : :: unity2 :: Il2CppString ,
-# [rename (name = "m_Addressables")] pub m_addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl ,
-# [rename (name = "m_Diagnostics")] pub m_diagnostics : crate :: unity_engine :: addressable_assets :: utility :: resourcemanagerdiagnostics :: ResourceManagerDiagnostics ,
-# [rename (name = "m_InitGroupOps")] pub m_init_group_ops : crate :: unity_engine :: resource_management :: async_operations :: initalizationobjectsoperation :: InitalizationObjectsOperation ,
-}
+        #[rename(name = "m_rtdOp")]
+        pub m_rtd_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData,
+        >,
+        #[rename(name = "m_loadCatalogOp")]
+        pub m_load_catalog_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+        >,
+        #[rename(name = "m_ProviderSuffix")]
+        pub m_provider_suffix: ::unity2::Il2CppString,
+        #[rename(name = "m_Addressables")]
+        pub m_addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        #[rename(name = "m_Diagnostics")]
+        pub m_diagnostics: crate::unity_engine::addressable_assets::utility::resourcemanagerdiagnostics::ResourceManagerDiagnostics,
+        #[rename(name = "m_InitGroupOps")]
+        pub m_init_group_ops:
+            crate::unity_engine::resource_management::async_operations::initalizationobjectsoperation::InitalizationObjectsOperation,
+    }
 }
 
-#[cfg(
-    feature = "unity_engine-addressable_assets-initialization-initializationoperation-types"
-)]
+#[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation")]
@@ -40,10 +46,9 @@ mod __InitializationOperation_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -55,18 +60,15 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -78,20 +80,14 @@ mod __InitializationOperation_unity2_raw {
             InitializationOperation,
             crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, aa, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_progress {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
@@ -104,39 +100,27 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "get_Progress",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "get_Progress",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_progress(
-        this: InitializationOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_progress(this: InitializationOperation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(InitializationOperation, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_progress::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_progress::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
@@ -149,42 +133,32 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "get_DebugName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "get_DebugName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_debug_name(
-        this: InitializationOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            InitializationOperation,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_debug_name::get_offset() as isize),
-        );
+    pub unsafe fn get_debug_name(this: InitializationOperation, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InitializationOperation, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_initialization_operation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
                 "CreateInitializationOperation",
@@ -196,35 +170,41 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "CreateInitializationOperation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "CreateInitializationOperation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn create_initialization_operation (aa : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , player_settings_location : :: unity2 :: Il2CppString , provider_suffix : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
-        let inner : extern "C" fn (crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_initialization_operation :: get_offset () as isize) ,) ;
-        inner(
-            aa,
-            player_settings_location,
-            provider_suffix,
-            __unity2_method_info,
+    }
+    pub unsafe fn create_initialization_operation(
+        aa: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        player_settings_location: ::unity2::Il2CppString,
+        provider_suffix: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
+        let inner: extern "C" fn(
+            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
         )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+        > = ::core::mem::transmute(__lookup_create_initialization_operation::get_method_info().method_ptr);
+        inner(aa, player_settings_location, provider_suffix, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_wait_for_completion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
@@ -237,39 +217,27 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "InvokeWaitForCompletion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "InvokeWaitForCompletion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke_wait_for_completion(
-        this: InitializationOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn invoke_wait_for_completion(this: InitializationOperation, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(InitializationOperation, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_wait_for_completion::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke_wait_for_completion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
@@ -282,40 +250,32 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn execute(
-        this: InitializationOperation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn execute(this: InitializationOperation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(InitializationOperation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_provider {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
                 "LoadProvider",
@@ -327,42 +287,44 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "LoadProvider",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "LoadProvider",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_provider(
         addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-        provider_data : crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData,
+        provider_data: crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
         provider_suffix: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_provider :: get_offset () as isize) ,) ;
-        inner(
-            addressables,
-            provider_data,
-            provider_suffix,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+            crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_load_provider::get_method_info().method_ptr);
+        inner(addressables, provider_data, provider_suffix, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_catalog_data_loaded {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                    crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData,
+                > as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
                 "OnCatalogDataLoaded",
@@ -374,37 +336,53 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "OnCatalogDataLoaded",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "OnCatalogDataLoaded",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn on_catalog_data_loaded (addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , provider_suffix : :: unity2 :: Il2CppString , remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
-        let inner : extern "C" fn (crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_on_catalog_data_loaded :: get_offset () as isize) ,) ;
-        inner(
-            addressables,
-            op,
-            provider_suffix,
-            remote_hash_location,
-            __unity2_method_info,
+    }
+    pub unsafe fn on_catalog_data_loaded(
+        addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData,
+        >,
+        provider_suffix: ::unity2::Il2CppString,
+        remote_hash_location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
+        let inner: extern "C" fn(
+            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData,
+            >,
+            ::unity2::Il2CppString,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::OptionalMethod,
         )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+        > = ::core::mem::transmute(__lookup_on_catalog_data_loaded::get_method_info().method_ptr);
+        inner(addressables, op, provider_suffix, remote_hash_location, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_content_catalog {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
                 "LoadContentCatalog",
@@ -416,37 +394,48 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "LoadContentCatalog",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "LoadContentCatalog",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn load_content_catalog (addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , provider_suffix : :: unity2 :: Il2CppString , remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
-        let inner : extern "C" fn (crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_content_catalog :: get_offset () as isize) ,) ;
-        inner(
-            addressables,
-            loc,
-            provider_suffix,
-            remote_hash_location,
-            __unity2_method_info,
+    }
+    pub unsafe fn load_content_catalog(
+        addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        loc: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        provider_suffix: ::unity2::Il2CppString,
+        remote_hash_location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
+        let inner: extern "C" fn(
+            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::Il2CppString,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::OptionalMethod,
         )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+        > = ::core::mem::transmute(__lookup_load_content_catalog::get_method_info().method_ptr);
+        inner(addressables, loc, provider_suffix, remote_hash_location, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_content_catalog_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
                 "LoadContentCatalog",
@@ -458,37 +447,51 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "LoadContentCatalog",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "LoadContentCatalog",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn load_content_catalog_2 (this : InitializationOperation , loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , provider_suffix : :: unity2 :: Il2CppString , remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
-        let inner : extern "C" fn (InitializationOperation , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: Il2CppString , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_content_catalog_2 :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            loc,
-            provider_suffix,
-            remote_hash_location,
-            __unity2_method_info,
+    }
+    pub unsafe fn load_content_catalog_2(
+        this: InitializationOperation,
+        loc: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        provider_suffix: ::unity2::Il2CppString,
+        remote_hash_location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
+        let inner: extern "C" fn(
+            InitializationOperation,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::Il2CppString,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::OptionalMethod,
         )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+        > = ::core::mem::transmute(__lookup_load_content_catalog_2::get_method_info().method_ptr);
+        inner(this, loc, provider_suffix, remote_hash_location, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_content_catalog_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
                 "LoadContentCatalogInternal",
@@ -500,38 +503,60 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "LoadContentCatalogInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "LoadContentCatalogInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn load_content_catalog_internal (this : InitializationOperation , catalogs : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , index : i32 , loc_map : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap , remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
-        let inner : extern "C" fn (InitializationOperation , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , i32 , crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_content_catalog_internal :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            catalogs,
-            index,
-            loc_map,
-            remote_hash_location,
-            __unity2_method_info,
+    }
+    pub unsafe fn load_content_catalog_internal(
+        this: InitializationOperation,
+        catalogs: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
+        index: i32,
+        loc_map: crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap,
+        remote_hash_location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
+        let inner: extern "C" fn(
+            InitializationOperation,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            >,
+            i32,
+            crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::OptionalMethod,
         )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+        > = ::core::mem::transmute(__lookup_load_content_catalog_internal::get_method_info().method_ptr);
+        inner(this, catalogs, index, loc_map, remote_hash_location, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_op_complete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                    crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+                > as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InitializationOperation as ::unity2::ClassIdentity>::class(),
                 "LoadOpComplete",
@@ -543,45 +568,57 @@ mod __InitializationOperation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InitializationOperation as ::unity2::ClassIdentity>::NAME,
-                    "LoadOpComplete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InitializationOperation as ::unity2::ClassIdentity>::NAME,
+                        "LoadOpComplete",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_op_complete(
         this: InitializationOperation,
-        op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >,
-        catalogs : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
-        loc_map : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap,
+        op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+        >,
+        catalogs: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
+        loc_map: crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap,
         index: i32,
-        remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        remote_hash_location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (InitializationOperation , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap , i32 , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_op_complete :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            op,
-            catalogs,
-            loc_map,
-            index,
-            remote_hash_location,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            InitializationOperation,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+            >,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            >,
+            crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap,
+            i32,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_load_op_complete::get_method_info().method_ptr);
+        inner(this, op, catalogs, loc_map, index, remote_hash_location, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation")]
 impl InitializationOperation {
-    #[doc = "`CreateInitializationOperation(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]    pub fn create_initialization_operation (aa : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl > , player_settings_location : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , provider_suffix : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
+    #[doc = "`CreateInitializationOperation(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn create_initialization_operation(
+        aa: impl ::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>,
+        player_settings_location: impl ::core::convert::Into<::unity2::Il2CppString>,
+        provider_suffix: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
         unsafe {
             __InitializationOperation_unity2_raw::create_initialization_operation(
                 ::core::convert::Into::into(aa),
@@ -591,12 +628,11 @@ impl InitializationOperation {
             )
         }
     }
+
     #[doc = "`LoadProvider(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData, ::unity2::Il2CppString)` overload"]
     pub fn load_provider(
-        addressables: impl ::core::convert::Into<
-            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-        >,
-        provider_data : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData >,
+        addressables: impl ::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>,
+        provider_data: impl ::core::convert::Into<crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData>,
         provider_suffix: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
@@ -608,7 +644,22 @@ impl InitializationOperation {
             )
         }
     }
-    #[doc = "`OnCatalogDataLoaded(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]    pub fn on_catalog_data_loaded (addressables : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl > , op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > > , provider_suffix : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , remote_hash_location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
+
+    #[doc = "`OnCatalogDataLoaded(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
+    pub fn on_catalog_data_loaded(
+        addressables: impl ::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>,
+        op: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData,
+            >,
+        >,
+        provider_suffix: impl ::core::convert::Into<::unity2::Il2CppString>,
+        remote_hash_location: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
         unsafe {
             __InitializationOperation_unity2_raw::on_catalog_data_loaded(
                 ::core::convert::Into::into(addressables),
@@ -619,7 +670,18 @@ impl InitializationOperation {
             )
         }
     }
-    #[doc = "`LoadContentCatalog(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]    pub fn load_content_catalog (addressables : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl > , loc : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , provider_suffix : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , remote_hash_location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
+
+    #[doc = "`LoadContentCatalog(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
+    pub fn load_content_catalog(
+        addressables: impl ::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>,
+        loc: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>,
+        provider_suffix: impl ::core::convert::Into<::unity2::Il2CppString>,
+        remote_hash_location: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
         unsafe {
             __InitializationOperation_unity2_raw::load_content_catalog(
                 ::core::convert::Into::into(addressables),
@@ -635,79 +697,59 @@ impl InitializationOperation {
 #[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation")]
 pub trait IInitializationOperationMethods: IInitializationOperation {
     #[doc = "`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"]
-    fn ctor(
-        self,
-        aa: impl ::core::convert::Into<
-            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-        >,
-    ) -> () {
+    fn ctor(self, aa: impl ::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>) -> () {
         unsafe {
             let __receiver =
-                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InitializationOperation_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(aa),
-                ::core::option::Option::None,
-            )
+                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InitializationOperation_unity2_raw::ctor(__receiver, ::core::convert::Into::into(aa), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Progress()` overload"]
     fn get_progress(self) -> f32 {
         unsafe {
             let __receiver =
-                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InitializationOperation_unity2_raw::get_progress(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InitializationOperation_unity2_raw::get_progress(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_DebugName()` overload"]
     fn get_debug_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InitializationOperation_unity2_raw::get_debug_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InitializationOperation_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InvokeWaitForCompletion()` overload"]
     fn invoke_wait_for_completion(self) -> bool {
         unsafe {
             let __receiver =
-                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InitializationOperation_unity2_raw::invoke_wait_for_completion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InitializationOperation_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Execute()` overload"]
     fn execute(self) -> () {
         unsafe {
             let __receiver =
-                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InitializationOperation_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`LoadContentCatalog(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]    fn load_content_catalog_2 (self , loc : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , provider_suffix : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , remote_hash_location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
+    #[doc = "`LoadContentCatalog(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
+    fn load_content_catalog_2(
+        self,
+        loc: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>,
+        provider_suffix: impl ::core::convert::Into<::unity2::Il2CppString>,
+        remote_hash_location: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
         unsafe {
             let __receiver =
-                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InitializationOperation_unity2_raw::load_content_catalog_2(
                 __receiver,
                 ::core::convert::Into::into(loc),
@@ -717,12 +759,25 @@ pub trait IInitializationOperationMethods: IInitializationOperation {
             )
         }
     }
-    #[doc = "`LoadContentCatalogInternal(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, i32, crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]    fn load_content_catalog_internal (self , catalogs : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , index : impl :: core :: convert :: Into < i32 > , loc_map : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap > , remote_hash_location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >{
+    #[doc = "`LoadContentCatalogInternal(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, i32, crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
+    fn load_content_catalog_internal(
+        self,
+        catalogs: impl ::core::convert::Into<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            >,
+        >,
+        index: impl ::core::convert::Into<i32>,
+        loc_map: impl ::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap>,
+        remote_hash_location: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+    > {
         unsafe {
             let __receiver =
-                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InitializationOperation_unity2_raw::load_content_catalog_internal(
                 __receiver,
                 ::core::convert::Into::into(catalogs),
@@ -736,17 +791,25 @@ pub trait IInitializationOperationMethods: IInitializationOperation {
     #[doc = "`LoadOpComplete(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator>, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, i32, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
     fn load_op_complete(
         self,
-        op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > >,
-        catalogs : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > >,
-        loc_map : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap >,
+        op: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
+            >,
+        >,
+        catalogs: impl ::core::convert::Into<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            >,
+        >,
+        loc_map: impl ::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap>,
         index: impl ::core::convert::Into<i32>,
-        remote_hash_location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        remote_hash_location: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        >,
     ) -> () {
         unsafe {
             let __receiver =
-                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <InitializationOperation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InitializationOperation_unity2_raw::load_op_complete(
                 __receiver,
                 ::core::convert::Into::into(op),
@@ -766,9 +829,7 @@ impl<__T: IInitializationOperation> IInitializationOperationMethods for __T {}
 #[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation")]
 impl InitializationOperation {
     #[doc = "`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` — overload selector"]
-    pub fn new(
-        aa: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
-    ) -> Self {
+    pub fn new(aa: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -784,13 +845,10 @@ impl InitializationOperation {
 #[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInitializationOperation;
-    pub use super::IInitializationOperationMethods;
-    pub use super::InitializationOperation;
-    pub use crate::system::object::IObject;
+    pub use super::{IInitializationOperation, IInitializationOperationMethods, InitializationOperation};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+    pub use crate::{system::object::IObject, unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1};
 }

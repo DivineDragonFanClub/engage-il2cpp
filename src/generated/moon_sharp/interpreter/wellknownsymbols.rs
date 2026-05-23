@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-wellknownsymbols-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/wellknownsymbols/WellKnownSymbols.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "WellKnownSymbols")]
@@ -26,8 +26,7 @@ pub use __types::*;
 #[cfg(feature = "moon_sharp-interpreter-wellknownsymbols")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IWellKnownSymbols;
-    pub use super::WellKnownSymbols;
+    pub use super::{IWellKnownSymbols, WellKnownSymbols};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

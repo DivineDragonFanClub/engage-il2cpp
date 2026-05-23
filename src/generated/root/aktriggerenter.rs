@@ -2,15 +2,19 @@
 
 #[cfg(feature = "root-aktriggerenter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::root::aktriggerbase::{AkTriggerBase, IAkTriggerBase};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        root::aktriggerbase::{AkTriggerBase, IAkTriggerBase},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggerenter/AkTriggerEnter.md"))]
     #[::unity2::class(namespace = "", name = "AkTriggerEnter")]
@@ -33,11 +37,8 @@ mod __AkTriggerEnter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_trigger_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriggerEnter as ::unity2::ClassIdentity>::class(),
                 "OnTriggerEnter",
@@ -49,18 +50,15 @@ mod __AkTriggerEnter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriggerEnter as ::unity2::ClassIdentity>::NAME,
-                    "OnTriggerEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriggerEnter as ::unity2::ClassIdentity>::NAME,
+                        "OnTriggerEnter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_trigger_enter(
@@ -68,24 +66,15 @@ mod __AkTriggerEnter_unity2_raw {
         in_other: crate::unity_engine::collider::Collider,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkTriggerEnter,
-            crate::unity_engine::collider::Collider,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_trigger_enter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkTriggerEnter, crate::unity_engine::collider::Collider, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_trigger_enter::get_method_info().method_ptr);
         inner(this, in_other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriggerEnter as ::unity2::ClassIdentity>::class(),
@@ -98,27 +87,20 @@ mod __AkTriggerEnter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriggerEnter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriggerEnter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: AkTriggerEnter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkTriggerEnter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -126,27 +108,16 @@ mod __AkTriggerEnter_unity2_raw {
 #[cfg(feature = "root-aktriggerenter")]
 pub trait IAkTriggerEnterMethods: IAkTriggerEnter {
     #[doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]
-    fn on_trigger_enter(
-        self,
-        in_other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>,
-    ) -> () {
+    fn on_trigger_enter(self, in_other: impl ::core::convert::Into<crate::unity_engine::collider::Collider>) -> () {
         unsafe {
-            let __receiver = <AkTriggerEnter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkTriggerEnter_unity2_raw::on_trigger_enter(
-                __receiver,
-                ::core::convert::Into::into(in_other),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkTriggerEnter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkTriggerEnter_unity2_raw::on_trigger_enter(__receiver, ::core::convert::Into::into(in_other), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AkTriggerEnter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriggerEnter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriggerEnter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -174,25 +145,22 @@ impl AkTriggerEnter {
 #[cfg(feature = "root-aktriggerenter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkTriggerEnter;
-    pub use super::IAkTriggerEnter;
-    pub use super::IAkTriggerEnterMethods;
-    pub use crate::root::aktriggerbase::IAkTriggerBase;
+    pub use super::{AkTriggerEnter, IAkTriggerEnter, IAkTriggerEnterMethods};
     #[cfg(feature = "root-aktriggerbase")]
     pub use crate::root::aktriggerbase::IAkTriggerBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        root::aktriggerbase::IAkTriggerBase,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

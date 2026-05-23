@@ -2,11 +2,13 @@
 
 #[cfg(feature = "root-akenumflagattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenumflagattribute/AkEnumFlagAttribute.md"))]
     #[::unity2::class(namespace = "", name = "AkEnumFlagAttribute")]
@@ -29,11 +31,8 @@ mod __AkEnumFlagAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkEnumFlagAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -45,34 +44,20 @@ mod __AkEnumFlagAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkEnumFlagAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkEnumFlagAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkEnumFlagAttribute,
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkEnumFlagAttribute,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AkEnumFlagAttribute, r#type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkEnumFlagAttribute, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
 }
@@ -82,14 +67,8 @@ pub trait IAkEnumFlagAttributeMethods: IAkEnumFlagAttribute {
     #[doc = "`.ctor(::unity2::SystemType)` overload"]
     fn ctor(self, r#type: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
-            let __receiver = <AkEnumFlagAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkEnumFlagAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkEnumFlagAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkEnumFlagAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
 }
@@ -116,13 +95,10 @@ impl AkEnumFlagAttribute {
 #[cfg(feature = "root-akenumflagattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkEnumFlagAttribute;
-    pub use super::IAkEnumFlagAttribute;
-    pub use super::IAkEnumFlagAttributeMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AkEnumFlagAttribute, IAkEnumFlagAttribute, IAkEnumFlagAttributeMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
     #[cfg(feature = "unity_engine-propertyattribute")]
     pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
 }

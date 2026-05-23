@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-listbufferextensions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listbufferextensions/ListBufferExtensions.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ListBufferExtensions")]
@@ -26,57 +26,39 @@ mod __ListBufferExtensions_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-listbufferextensions")]
 impl ListBufferExtensions {
     pub fn quick_sort<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        self_: impl ::core::convert::Into<
-            crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<M0>,
-        >,
+        self_: impl ::core::convert::Into<crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<M0>>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ListBufferExtensions as ::unity2::ClassIdentity>::class(),
-                "QuickSort",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ListBufferExtensions as ::unity2::ClassIdentity>::class(), "QuickSort", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ListBufferExtensions as ::unity2::ClassIdentity>::NAME,
-                "QuickSort",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ListBufferExtensions as ::unity2::ClassIdentity>::NAME,
+                    "QuickSort",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<M0>,
-                ::unity2::OptionalMethod,
-            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(crate::unity_engine::rendering::listbuffer_1::ListBuffer_1<M0>, ::unity2::OptionalMethod) -> () =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(self_),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(self_), ::core::option::Option::Some(__mi_opaque))
         }
     }
 }
@@ -84,8 +66,7 @@ impl ListBufferExtensions {
 #[cfg(feature = "unity_engine-rendering-listbufferextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IListBufferExtensions;
-    pub use super::ListBufferExtensions;
+    pub use super::{IListBufferExtensions, ListBufferExtensions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

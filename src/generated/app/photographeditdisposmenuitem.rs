@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-photographeditdisposmenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenuitem/PhotographEditDisposMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "PhotographEditDisposMenuItem")]
@@ -26,11 +28,8 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_character_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::class(),
                 "SetCharacterId",
@@ -42,18 +41,15 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetCharacterId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetCharacterId",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_character_id(
@@ -61,25 +57,19 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         character_id: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PhotographEditDisposMenuItem,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_character_id::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographEditDisposMenuItem, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_character_id::get_method_info().method_ptr);
         inner(this, character_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_body_acc_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: accessorydata :: AccessoryData as :: unity2 :: IlType > :: il_type () , < crate :: app :: accessoryshoputility :: AccessoryShopUtility_Female as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type(),
+                <crate::app::accessoryshoputility::AccessoryShopUtility_Female as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::class(),
                 "SetBodyAccData",
@@ -91,18 +81,15 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetBodyAccData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetBodyAccData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_body_acc_data(
@@ -116,22 +103,15 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
             crate::app::accessorydata::AccessoryData,
             crate::app::accessoryshoputility::AccessoryShopUtility_Female,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_body_acc_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_body_acc_data::get_method_info().method_ptr);
         inner(this, body_acc, gender, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_face_acc_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::class(),
                 "SetFaceAccData",
@@ -143,18 +123,15 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetFaceAccData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetFaceAccData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_face_acc_data(
@@ -162,28 +139,17 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         face_acc: crate::app::accessorydata::AccessoryData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PhotographEditDisposMenuItem,
-            crate::app::accessorydata::AccessoryData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_face_acc_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographEditDisposMenuItem, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_face_acc_data::get_method_info().method_ptr);
         inner(this, face_acc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pause_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::photographpausedata::PhotographPauseData as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::photographpausedata::PhotographPauseData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::class(),
                 "SetPauseData",
@@ -195,18 +161,15 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetPauseData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetPauseData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pause_data(
@@ -214,26 +177,16 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pause: crate::app::photographpausedata::PhotographPauseData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PhotographEditDisposMenuItem,
-            crate::app::photographpausedata::PhotographPauseData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pause_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographEditDisposMenuItem, crate::app::photographpausedata::PhotographPauseData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pause_data::get_method_info().method_ptr);
         inner(this, pause, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weapon_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::class(),
                 "SetWeaponData",
@@ -245,18 +198,15 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetWeaponData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetWeaponData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_weapon_data(
@@ -264,26 +214,16 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         weapon_data: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PhotographEditDisposMenuItem,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_weapon_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographEditDisposMenuItem, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_weapon_data::get_method_info().method_ptr);
         inner(this, weapon_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mascot_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::class(),
                 "SetMascotColor",
@@ -295,43 +235,27 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetMascotColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetMascotColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mascot_color(
-        this: PhotographEditDisposMenuItem,
-        color_idx: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographEditDisposMenuItem,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mascot_color::get_offset() as isize),
-        );
+    pub unsafe fn set_mascot_color(this: PhotographEditDisposMenuItem, color_idx: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographEditDisposMenuItem, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mascot_color::get_method_info().method_ptr);
         inner(this, color_idx, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::class(),
@@ -344,39 +268,27 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "UpdateColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "UpdateColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_color(
-        this: PhotographEditDisposMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_color(this: PhotographEditDisposMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographEditDisposMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::class(),
@@ -389,30 +301,20 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographEditDisposMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PhotographEditDisposMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PhotographEditDisposMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographEditDisposMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -420,15 +322,10 @@ mod __PhotographEditDisposMenuItem_unity2_raw {
 #[cfg(feature = "app-photographeditdisposmenuitem")]
 pub trait IPhotographEditDisposMenuItemMethods: IPhotographEditDisposMenuItem {
     #[doc = "`SetCharacterId(::unity2::Il2CppString)` overload"]
-    fn set_character_id(
-        self,
-        character_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_character_id(self, character_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographEditDisposMenuItem_unity2_raw::set_character_id(
                 __receiver,
                 ::core::convert::Into::into(character_id),
@@ -440,15 +337,11 @@ pub trait IPhotographEditDisposMenuItemMethods: IPhotographEditDisposMenuItem {
     fn set_body_acc_data(
         self,
         body_acc: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
-        gender: impl ::core::convert::Into<
-            crate::app::accessoryshoputility::AccessoryShopUtility_Female,
-        >,
+        gender: impl ::core::convert::Into<crate::app::accessoryshoputility::AccessoryShopUtility_Female>,
     ) -> () {
         unsafe {
             let __receiver =
-                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographEditDisposMenuItem_unity2_raw::set_body_acc_data(
                 __receiver,
                 ::core::convert::Into::into(body_acc),
@@ -458,15 +351,10 @@ pub trait IPhotographEditDisposMenuItemMethods: IPhotographEditDisposMenuItem {
         }
     }
     #[doc = "`SetFaceAccData(crate::app::accessorydata::AccessoryData)` overload"]
-    fn set_face_acc_data(
-        self,
-        face_acc: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>,
-    ) -> () {
+    fn set_face_acc_data(self, face_acc: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
         unsafe {
             let __receiver =
-                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographEditDisposMenuItem_unity2_raw::set_face_acc_data(
                 __receiver,
                 ::core::convert::Into::into(face_acc),
@@ -475,32 +363,18 @@ pub trait IPhotographEditDisposMenuItemMethods: IPhotographEditDisposMenuItem {
         }
     }
     #[doc = "`SetPauseData(crate::app::photographpausedata::PhotographPauseData)` overload"]
-    fn set_pause_data(
-        self,
-        pause: impl ::core::convert::Into<crate::app::photographpausedata::PhotographPauseData>,
-    ) -> () {
+    fn set_pause_data(self, pause: impl ::core::convert::Into<crate::app::photographpausedata::PhotographPauseData>) -> () {
         unsafe {
             let __receiver =
-                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographEditDisposMenuItem_unity2_raw::set_pause_data(
-                __receiver,
-                ::core::convert::Into::into(pause),
-                ::core::option::Option::None,
-            )
+                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographEditDisposMenuItem_unity2_raw::set_pause_data(__receiver, ::core::convert::Into::into(pause), ::core::option::Option::None)
         }
     }
     #[doc = "`SetWeaponData(crate::app::itemdata::ItemData)` overload"]
-    fn set_weapon_data(
-        self,
-        weapon_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> () {
+    fn set_weapon_data(self, weapon_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
         unsafe {
             let __receiver =
-                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographEditDisposMenuItem_unity2_raw::set_weapon_data(
                 __receiver,
                 ::core::convert::Into::into(weapon_data),
@@ -512,9 +386,7 @@ pub trait IPhotographEditDisposMenuItemMethods: IPhotographEditDisposMenuItem {
     fn set_mascot_color(self, color_idx: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographEditDisposMenuItem_unity2_raw::set_mascot_color(
                 __receiver,
                 ::core::convert::Into::into(color_idx),
@@ -526,26 +398,16 @@ pub trait IPhotographEditDisposMenuItemMethods: IPhotographEditDisposMenuItem {
     fn update_color(self) -> () {
         unsafe {
             let __receiver =
-                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographEditDisposMenuItem_unity2_raw::update_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographEditDisposMenuItem_unity2_raw::update_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographEditDisposMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PhotographEditDisposMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographEditDisposMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -572,13 +434,10 @@ impl PhotographEditDisposMenuItem {
 #[cfg(feature = "app-photographeditdisposmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPhotographEditDisposMenuItem;
-    pub use super::IPhotographEditDisposMenuItemMethods;
-    pub use super::PhotographEditDisposMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{IPhotographEditDisposMenuItem, IPhotographEditDisposMenuItemMethods, PhotographEditDisposMenuItem};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
 }

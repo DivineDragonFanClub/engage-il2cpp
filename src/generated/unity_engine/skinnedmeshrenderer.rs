@@ -2,13 +2,17 @@
 
 #[cfg(feature = "unity_engine-skinnedmeshrenderer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::renderer::{IRenderer, Renderer};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+            renderer::{IRenderer, Renderer},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/skinnedmeshrenderer/SkinnedMeshRenderer.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "SkinnedMeshRenderer")]
@@ -28,9 +32,7 @@ mod __SkinnedMeshRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_quality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -43,41 +45,30 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_quality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_quality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_quality(
         this: SkinnedMeshRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::skinquality::SkinQuality {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::skinquality::SkinQuality = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_quality::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::skinquality::SkinQuality =
+            ::core::mem::transmute(__lookup_get_quality::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_quality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::skinquality::SkinQuality as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -91,18 +82,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_quality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_quality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_quality(
@@ -110,24 +98,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         value: crate::unity_engine::skinquality::SkinQuality,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            crate::unity_engine::skinquality::SkinQuality,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_quality::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, crate::unity_engine::skinquality::SkinQuality, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_quality::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_update_when_offscreen {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -140,41 +119,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_updateWhenOffscreen",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_updateWhenOffscreen",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_update_when_offscreen(
-        this: SkinnedMeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_update_when_offscreen(this: SkinnedMeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_update_when_offscreen::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_update_when_offscreen::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_update_when_offscreen {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_updateWhenOffscreen",
@@ -186,40 +152,27 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_updateWhenOffscreen",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_updateWhenOffscreen",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_update_when_offscreen(
-        this: SkinnedMeshRenderer,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_update_when_offscreen(this: SkinnedMeshRenderer, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkinnedMeshRenderer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_update_when_offscreen::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_update_when_offscreen::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_force_matrix_recalculation_per_render {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -232,43 +185,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_forceMatrixRecalculationPerRender",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_forceMatrixRecalculationPerRender",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_force_matrix_recalculation_per_render(
-        this: SkinnedMeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_force_matrix_recalculation_per_render(this: SkinnedMeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_get_force_matrix_recalculation_per_render::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_get_force_matrix_recalculation_per_render::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_force_matrix_recalculation_per_render {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_forceMatrixRecalculationPerRender",
@@ -280,18 +218,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_forceMatrixRecalculationPerRender",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_forceMatrixRecalculationPerRender",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_force_matrix_recalculation_per_render(
@@ -300,22 +235,14 @@ mod __SkinnedMeshRenderer_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(SkinnedMeshRenderer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_set_force_matrix_recalculation_per_render::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_set_force_matrix_recalculation_per_render::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_root_bone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -328,43 +255,31 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_rootBone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_rootBone",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_root_bone(
         this: SkinnedMeshRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_root_bone::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_root_bone::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_root_bone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_rootBone",
@@ -376,18 +291,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_rootBone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_rootBone",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_root_bone(
@@ -395,24 +307,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         value: crate::unity_engine::transform::Transform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_root_bone::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_root_bone::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bones {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -425,46 +328,32 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_bones",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_bones",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_bones(
         this: SkinnedMeshRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::transform::Transform> {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::transform::Transform> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bones::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::transform::Transform> =
+            ::core::mem::transmute(__lookup_get_bones::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_bones {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::transform::Transform,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::transform::Transform> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_bones",
@@ -476,18 +365,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_bones",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_bones",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_bones(
@@ -495,24 +381,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         value: ::unity2::Array<crate::unity_engine::transform::Transform>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            ::unity2::Array<crate::unity_engine::transform::Transform>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_bones::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::Array<crate::unity_engine::transform::Transform>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_bones::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shared_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -525,43 +402,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_sharedMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_sharedMesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_shared_mesh(
-        this: SkinnedMeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shared_mesh::get_offset() as isize),
-        );
+    pub unsafe fn get_shared_mesh(this: SkinnedMeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(__lookup_get_shared_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shared_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_sharedMesh",
@@ -573,18 +435,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_sharedMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_sharedMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_shared_mesh(
@@ -592,24 +451,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         value: crate::unity_engine::mesh::Mesh,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            crate::unity_engine::mesh::Mesh,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_shared_mesh::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_shared_mesh::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_skinned_motion_vectors {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -622,41 +472,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_skinnedMotionVectors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_skinnedMotionVectors",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_skinned_motion_vectors(
-        this: SkinnedMeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_skinned_motion_vectors(this: SkinnedMeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_skinned_motion_vectors::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_skinned_motion_vectors::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_skinned_motion_vectors {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_skinnedMotionVectors",
@@ -668,42 +505,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_skinnedMotionVectors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_skinnedMotionVectors",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_skinned_motion_vectors(
-        this: SkinnedMeshRenderer,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_skinned_motion_vectors(this: SkinnedMeshRenderer, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkinnedMeshRenderer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_skinned_motion_vectors::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_skinned_motion_vectors::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_blend_shape_weight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "GetBlendShapeWeight",
@@ -715,44 +538,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetBlendShapeWeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetBlendShapeWeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_blend_shape_weight(
-        this: SkinnedMeshRenderer,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_blend_shape_weight(this: SkinnedMeshRenderer, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SkinnedMeshRenderer, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_blend_shape_weight::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_blend_shape_weight::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_blend_shape_weight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "SetBlendShapeWeight",
@@ -764,43 +571,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetBlendShapeWeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetBlendShapeWeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_blend_shape_weight(
-        this: SkinnedMeshRenderer,
-        index: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_blend_shape_weight(this: SkinnedMeshRenderer, index: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkinnedMeshRenderer, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_blend_shape_weight::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_blend_shape_weight::get_method_info().method_ptr);
         inner(this, index, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_bake_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "BakeMesh",
@@ -812,43 +604,27 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "BakeMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "BakeMesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn bake_mesh(
-        this: SkinnedMeshRenderer,
-        mesh: crate::unity_engine::mesh::Mesh,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            crate::unity_engine::mesh::Mesh,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_bake_mesh::get_offset() as isize),
-        );
+    pub unsafe fn bake_mesh(this: SkinnedMeshRenderer, mesh: crate::unity_engine::mesh::Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkinnedMeshRenderer, crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_bake_mesh::get_method_info().method_ptr);
         inner(this, mesh, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_bake_mesh_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -864,18 +640,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "BakeMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "BakeMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn bake_mesh_2(
@@ -884,25 +657,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         use_scale: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            crate::unity_engine::mesh::Mesh,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_bake_mesh_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, crate::unity_engine::mesh::Mesh, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_bake_mesh_2::get_method_info().method_ptr);
         inner(this, mesh, use_scale, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_aabb {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -915,43 +678,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetLocalAABB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetLocalAABB",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_local_aabb(
-        this: SkinnedMeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::bounds::Bounds {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_aabb::get_offset() as isize),
-        );
+    pub unsafe fn get_local_aabb(this: SkinnedMeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds =
+            ::core::mem::transmute(__lookup_get_local_aabb::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_aabb {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "SetLocalAABB",
@@ -963,18 +711,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetLocalAABB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetLocalAABB",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_aabb(
@@ -982,24 +727,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         b: crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_aabb::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_aabb::get_method_info().method_ptr);
         inner(this, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_bounds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -1012,43 +748,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_localBounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_localBounds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_local_bounds(
-        this: SkinnedMeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::bounds::Bounds {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_bounds::get_offset() as isize),
-        );
+    pub unsafe fn get_local_bounds(this: SkinnedMeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds =
+            ::core::mem::transmute(__lookup_get_local_bounds::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_bounds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "set_localBounds",
@@ -1060,18 +781,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "set_localBounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "set_localBounds",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_bounds(
@@ -1079,24 +797,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         value: crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_bounds::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_bounds::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
@@ -1109,41 +818,28 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SkinnedMeshRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SkinnedMeshRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkinnedMeshRenderer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_local_aabb_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "GetLocalAABB_Injected",
@@ -1155,18 +851,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetLocalAABB_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetLocalAABB_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_local_aabb_injected(
@@ -1174,26 +867,16 @@ mod __SkinnedMeshRenderer_unity2_raw {
         ret: *mut crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            *mut crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_local_aabb_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, *mut crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_local_aabb_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_local_aabb_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkinnedMeshRenderer as ::unity2::ClassIdentity>::class(),
                 "SetLocalAABB_Injected",
@@ -1205,18 +888,15 @@ mod __SkinnedMeshRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetLocalAABB_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkinnedMeshRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetLocalAABB_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_local_aabb_injected(
@@ -1224,15 +904,8 @@ mod __SkinnedMeshRenderer_unity2_raw {
         b: *mut crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkinnedMeshRenderer,
-            *mut crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_local_aabb_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkinnedMeshRenderer, *mut crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_local_aabb_injected::get_method_info().method_ptr);
         inner(this, b, __unity2_method_info)
     }
 }
@@ -1242,74 +915,42 @@ pub trait ISkinnedMeshRendererMethods: ISkinnedMeshRenderer {
     #[doc = "`get_quality()` overload"]
     fn get_quality(self) -> crate::unity_engine::skinquality::SkinQuality {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkinnedMeshRenderer_unity2_raw::get_quality(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_quality(crate::unity_engine::skinquality::SkinQuality)` overload"]
-    fn set_quality(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::skinquality::SkinQuality>,
-    ) -> () {
+    fn set_quality(self, value: impl ::core::convert::Into<crate::unity_engine::skinquality::SkinQuality>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::set_quality(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::set_quality(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_updateWhenOffscreen()` overload"]
     fn get_update_when_offscreen(self) -> bool {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::get_update_when_offscreen(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::get_update_when_offscreen(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_updateWhenOffscreen(bool)` overload"]
     fn set_update_when_offscreen(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::set_update_when_offscreen(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::set_update_when_offscreen(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_forceMatrixRecalculationPerRender()` overload"]
     fn get_force_matrix_recalculation_per_render(self) -> bool {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::get_force_matrix_recalculation_per_render(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::get_force_matrix_recalculation_per_render(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_forceMatrixRecalculationPerRender(bool)` overload"]
-    fn set_force_matrix_recalculation_per_render(
-        self,
-        value: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_force_matrix_recalculation_per_render(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkinnedMeshRenderer_unity2_raw::set_force_matrix_recalculation_per_render(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1320,132 +961,70 @@ pub trait ISkinnedMeshRendererMethods: ISkinnedMeshRenderer {
     #[doc = "`get_rootBone()` overload"]
     fn get_root_bone(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::get_root_bone(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::get_root_bone(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_rootBone(crate::unity_engine::transform::Transform)` overload"]
-    fn set_root_bone(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> () {
+    fn set_root_bone(self, value: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::set_root_bone(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::set_root_bone(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_bones()` overload"]
     fn get_bones(self) -> ::unity2::Array<crate::unity_engine::transform::Transform> {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkinnedMeshRenderer_unity2_raw::get_bones(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_bones(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]
-    fn set_bones(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::transform::Transform>>,
-    ) -> () {
+    fn set_bones(self, value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::transform::Transform>>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::set_bones(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::set_bones(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_sharedMesh()` overload"]
     fn get_shared_mesh(self) -> crate::unity_engine::mesh::Mesh {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::get_shared_mesh(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::get_shared_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_sharedMesh(crate::unity_engine::mesh::Mesh)` overload"]
-    fn set_shared_mesh(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-    ) -> () {
+    fn set_shared_mesh(self, value: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::set_shared_mesh(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::set_shared_mesh(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_skinnedMotionVectors()` overload"]
     fn get_skinned_motion_vectors(self) -> bool {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::get_skinned_motion_vectors(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::get_skinned_motion_vectors(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_skinnedMotionVectors(bool)` overload"]
     fn set_skinned_motion_vectors(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::set_skinned_motion_vectors(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::set_skinned_motion_vectors(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetBlendShapeWeight(i32)` overload"]
     fn get_blend_shape_weight(self, index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::get_blend_shape_weight(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::get_blend_shape_weight(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`SetBlendShapeWeight(i32, f32)` overload"]
-    fn set_blend_shape_weight(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_blend_shape_weight(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkinnedMeshRenderer_unity2_raw::set_blend_shape_weight(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -1457,26 +1036,14 @@ pub trait ISkinnedMeshRendererMethods: ISkinnedMeshRenderer {
     #[doc = "`BakeMesh(crate::unity_engine::mesh::Mesh)` overload"]
     fn bake_mesh(self, mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::bake_mesh(
-                __receiver,
-                ::core::convert::Into::into(mesh),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::bake_mesh(__receiver, ::core::convert::Into::into(mesh), ::core::option::Option::None)
         }
     }
     #[doc = "`BakeMesh(crate::unity_engine::mesh::Mesh, bool)` overload"]
-    fn bake_mesh_2(
-        self,
-        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-        use_scale: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn bake_mesh_2(self, mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>, use_scale: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkinnedMeshRenderer_unity2_raw::bake_mesh_2(
                 __receiver,
                 ::core::convert::Into::into(mesh),
@@ -1488,97 +1055,53 @@ pub trait ISkinnedMeshRendererMethods: ISkinnedMeshRenderer {
     #[doc = "`GetLocalAABB()` overload"]
     fn get_local_aabb(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::get_local_aabb(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::get_local_aabb(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetLocalAABB(crate::unity_engine::bounds::Bounds)` overload"]
-    fn set_local_aabb(
-        self,
-        b: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>,
-    ) -> () {
+    fn set_local_aabb(self, b: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::set_local_aabb(
-                __receiver,
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::set_local_aabb(__receiver, ::core::convert::Into::into(b), ::core::option::Option::None)
         }
     }
     #[doc = "`get_localBounds()` overload"]
     fn get_local_bounds(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::get_local_bounds(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::get_local_bounds(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_localBounds(crate::unity_engine::bounds::Bounds)` overload"]
-    fn set_local_bounds(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>,
-    ) -> () {
+    fn set_local_bounds(self, value: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkinnedMeshRenderer_unity2_raw::set_local_bounds(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkinnedMeshRenderer_unity2_raw::set_local_bounds(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkinnedMeshRenderer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetLocalAABB_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"]
     fn get_local_aabb_injected(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
-            __SkinnedMeshRenderer_unity2_raw::get_local_aabb_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            __SkinnedMeshRenderer_unity2_raw::get_local_aabb_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`SetLocalAABB_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"]
     fn set_local_aabb_injected(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
-            __SkinnedMeshRenderer_unity2_raw::set_local_aabb_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <SkinnedMeshRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            __SkinnedMeshRenderer_unity2_raw::set_local_aabb_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -1606,19 +1129,17 @@ impl SkinnedMeshRenderer {
 #[cfg(feature = "unity_engine-skinnedmeshrenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISkinnedMeshRenderer;
-    pub use super::ISkinnedMeshRendererMethods;
-    pub use super::SkinnedMeshRenderer;
-    pub use crate::system::object::IObject;
+    pub use super::{ISkinnedMeshRenderer, ISkinnedMeshRendererMethods, SkinnedMeshRenderer};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::renderer::IRenderer;
     #[cfg(feature = "unity_engine-renderer")]
     pub use crate::unity_engine::renderer::IRendererMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{component::IComponent, object_2::IObject_2, renderer::IRenderer},
+    };
 }

@@ -2,27 +2,27 @@
 
 #[cfg(feature = "app-hubmanualcullingmanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmanualcullingmanager/HubManualCullingManager.md"))]
     #[::unity2::class(namespace = "App", name = "HubManualCullingManager")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubManualCullingManager {
         #[rename(name = "m_CullGroups")]
-        pub m_cull_groups: ::unity2::Array<
-            crate::app::hubmanualcullingmanager::HubManualCullingManager_CullingGroup,
-        >,
+        pub m_cull_groups: ::unity2::Array<crate::app::hubmanualcullingmanager::HubManualCullingManager_CullingGroup>,
         #[rename(name = "m_ManualCullingStack")]
-        pub m_manual_culling_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::hubmanualculling::HubManualCulling,
-        >,
+        pub m_manual_culling_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::hubmanualculling::HubManualCulling>,
         #[rename(name = "m_Enable")]
         pub m_enable: bool,
     }
@@ -36,9 +36,7 @@ mod __types {
         #[rename(name = "m_CullTargets")]
         pub m_cull_targets: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_Renderers")]
-        pub m_renderers: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::renderer::Renderer,
-        >,
+        pub m_renderers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer>,
     }
 }
 
@@ -54,9 +52,7 @@ mod __HubManualCullingManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_stay_cullings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -69,49 +65,36 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "get_StayCullings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "get_StayCullings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_stay_cullings(
         this: HubManualCullingManager,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::hubmanualculling::HubManualCulling,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling> {
         let inner: extern "C" fn(
             HubManualCullingManager,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::hubmanualculling::HubManualCulling,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stay_cullings::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling> =
+            ::core::mem::transmute(__lookup_get_stay_cullings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_stay_cullings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::hubmanualculling::HubManualCulling,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::hubmanualculling::HubManualCulling,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
                 "set_StayCullings",
@@ -123,47 +106,34 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "set_StayCullings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "set_StayCullings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_stay_cullings(
         this: HubManualCullingManager,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::hubmanualculling::HubManualCulling,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             HubManualCullingManager,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubmanualculling::HubManualCulling,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_stay_cullings::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_stay_cullings::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_active_manual_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -176,41 +146,30 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "get_ActiveManualCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "get_ActiveManualCulling",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_active_manual_culling(
         this: HubManualCullingManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::hubmanualculling::HubManualCulling {
-        let inner: extern "C" fn(
-            HubManualCullingManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubmanualculling::HubManualCulling = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_active_manual_culling::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubManualCullingManager, ::unity2::OptionalMethod) -> crate::app::hubmanualculling::HubManualCulling =
+            ::core::mem::transmute(__lookup_get_active_manual_culling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_active_manual_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::hubmanualculling::HubManualCulling as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -224,18 +183,15 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "set_ActiveManualCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "set_ActiveManualCulling",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_active_manual_culling(
@@ -243,24 +199,15 @@ mod __HubManualCullingManager_unity2_raw {
         value: crate::app::hubmanualculling::HubManualCulling,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager,
-            crate::app::hubmanualculling::HubManualCulling,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_active_manual_culling::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubManualCullingManager, crate::app::hubmanualculling::HubManualCulling, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_active_manual_culling::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -273,39 +220,27 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: HubManualCullingManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: HubManualCullingManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubManualCullingManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::hubmanualculling::HubManualCulling as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -319,18 +254,15 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "Enter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "Enter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enter(
@@ -338,24 +270,15 @@ mod __HubManualCullingManager_unity2_raw {
         cull: crate::app::hubmanualculling::HubManualCulling,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager,
-            crate::app::hubmanualculling::HubManualCulling,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubManualCullingManager, crate::app::hubmanualculling::HubManualCulling, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enter::get_method_info().method_ptr);
         inner(this, cull, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_leave {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::hubmanualculling::HubManualCulling as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -369,18 +292,15 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "Leave",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "Leave",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn leave(
@@ -388,24 +308,15 @@ mod __HubManualCullingManager_unity2_raw {
         cull: crate::app::hubmanualculling::HubManualCulling,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager,
-            crate::app::hubmanualculling::HubManualCulling,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_leave::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubManualCullingManager, crate::app::hubmanualculling::HubManualCulling, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_leave::get_method_info().method_ptr);
         inner(this, cull, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -418,39 +329,27 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: HubManualCullingManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: HubManualCullingManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubManualCullingManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_visibility {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -463,39 +362,27 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVisibility",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVisibility",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_visibility(
-        this: HubManualCullingManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_visibility(this: HubManualCullingManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubManualCullingManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_visibility::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_visibility::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_visibility_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::hubmanualculling::HubManualCulling as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -509,18 +396,15 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVisibility",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVisibility",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_visibility_2(
@@ -528,24 +412,15 @@ mod __HubManualCullingManager_unity2_raw {
         next_manual_culling: crate::app::hubmanualculling::HubManualCulling,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager,
-            crate::app::hubmanualculling::HubManualCulling,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_visibility_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubManualCullingManager, crate::app::hubmanualculling::HubManualCulling, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_visibility_2::get_method_info().method_ptr);
         inner(this, next_manual_culling, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -558,39 +433,27 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "EnableCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "EnableCulling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_culling(
-        this: HubManualCullingManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enable_culling(this: HubManualCullingManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubManualCullingManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_culling::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enable_culling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -603,41 +466,28 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "DisableCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "DisableCulling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_culling(
-        this: HubManualCullingManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_culling(this: HubManualCullingManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubManualCullingManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_culling::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_culling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_push {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
                 "Push",
@@ -649,43 +499,27 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "Push",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "Push",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn push(
-        this: HubManualCullingManager,
-        culling_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push::get_offset() as isize),
-        );
+    pub unsafe fn push(this: HubManualCullingManager, culling_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubManualCullingManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_push::get_method_info().method_ptr);
         inner(this, culling_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_push_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -699,18 +533,15 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "Push",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "Push",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn push_2(
@@ -718,24 +549,15 @@ mod __HubManualCullingManager_unity2_raw {
         game_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubManualCullingManager, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_push_2::get_method_info().method_ptr);
         inner(this, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_push_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::hubmanualculling::HubManualCulling as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -749,18 +571,15 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "Push",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "Push",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn push_3(
@@ -768,24 +587,15 @@ mod __HubManualCullingManager_unity2_raw {
         culling: crate::app::hubmanualculling::HubManualCulling,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager,
-            crate::app::hubmanualculling::HubManualCulling,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubManualCullingManager, crate::app::hubmanualculling::HubManualCulling, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_push_3::get_method_info().method_ptr);
         inner(this, culling, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -798,39 +608,27 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    "Pop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        "Pop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn pop(
-        this: HubManualCullingManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn pop(this: HubManualCullingManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubManualCullingManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_pop::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_pop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager as ::unity2::ClassIdentity>::class(),
@@ -843,30 +641,20 @@ mod __HubManualCullingManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubManualCullingManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: HubManualCullingManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubManualCullingManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -874,66 +662,37 @@ mod __HubManualCullingManager_unity2_raw {
 #[cfg(feature = "app-hubmanualcullingmanager")]
 pub trait IHubManualCullingManagerMethods: IHubManualCullingManager {
     #[doc = "`get_StayCullings()` overload"]
-    fn get_stay_cullings(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::hubmanualculling::HubManualCulling,
-    > {
+    fn get_stay_cullings(self) -> crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling> {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::get_stay_cullings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::get_stay_cullings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_StayCullings(crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>)` overload"]
     fn set_stay_cullings(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubmanualculling::HubManualCulling,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>>,
     ) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::set_stay_cullings(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::set_stay_cullings(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ActiveManualCulling()` overload"]
     fn get_active_manual_culling(self) -> crate::app::hubmanualculling::HubManualCulling {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::get_active_manual_culling(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::get_active_manual_culling(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ActiveManualCulling(crate::app::hubmanualculling::HubManualCulling)` overload"]
-    fn set_active_manual_culling(
-        self,
-        value: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>,
-    ) -> () {
+    fn set_active_manual_culling(self, value: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubManualCullingManager_unity2_raw::set_active_manual_culling(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -945,53 +704,31 @@ pub trait IHubManualCullingManagerMethods: IHubManualCullingManager {
     fn start(self) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubManualCullingManager_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Enter(crate::app::hubmanualculling::HubManualCulling)` overload"]
-    fn enter(
-        self,
-        cull: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>,
-    ) -> () {
+    fn enter(self, cull: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::enter(
-                __receiver,
-                ::core::convert::Into::into(cull),
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::enter(__receiver, ::core::convert::Into::into(cull), ::core::option::Option::None)
         }
     }
     #[doc = "`Leave(crate::app::hubmanualculling::HubManualCulling)` overload"]
-    fn leave(
-        self,
-        cull: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>,
-    ) -> () {
+    fn leave(self, cull: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::leave(
-                __receiver,
-                ::core::convert::Into::into(cull),
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::leave(__receiver, ::core::convert::Into::into(cull), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubManualCullingManager_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
@@ -999,25 +736,15 @@ pub trait IHubManualCullingManagerMethods: IHubManualCullingManager {
     fn update_visibility(self) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::update_visibility(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::update_visibility(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateVisibility(crate::app::hubmanualculling::HubManualCulling)` overload"]
-    fn update_visibility_2(
-        self,
-        next_manual_culling: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>,
-    ) -> () {
+    fn update_visibility_2(self, next_manual_culling: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubManualCullingManager_unity2_raw::update_visibility_2(
                 __receiver,
                 ::core::convert::Into::into(next_manual_culling),
@@ -1029,83 +756,47 @@ pub trait IHubManualCullingManagerMethods: IHubManualCullingManager {
     fn enable_culling(self) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::enable_culling(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::enable_culling(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DisableCulling()` overload"]
     fn disable_culling(self) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::disable_culling(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::disable_culling(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Push(::unity2::Il2CppString)` overload"]
     fn push(self, culling_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::push(
-                __receiver,
-                ::core::convert::Into::into(culling_name),
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::push(__receiver, ::core::convert::Into::into(culling_name), ::core::option::Option::None)
         }
     }
     #[doc = "`Push(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn push_2(
-        self,
-        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn push_2(self, game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::push_2(
-                __receiver,
-                ::core::convert::Into::into(game_object),
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::push_2(__receiver, ::core::convert::Into::into(game_object), ::core::option::Option::None)
         }
     }
     #[doc = "`Push(crate::app::hubmanualculling::HubManualCulling)` overload"]
-    fn push_3(
-        self,
-        culling: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>,
-    ) -> () {
+    fn push_3(self, culling: impl ::core::convert::Into<crate::app::hubmanualculling::HubManualCulling>) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubManualCullingManager_unity2_raw::push_3(
-                __receiver,
-                ::core::convert::Into::into(culling),
-                ::core::option::Option::None,
-            )
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubManualCullingManager_unity2_raw::push_3(__receiver, ::core::convert::Into::into(culling), ::core::option::Option::None)
         }
     }
     #[doc = "`Pop()` overload"]
     fn pop(self) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubManualCullingManager_unity2_raw::pop(__receiver, ::core::option::Option::None)
         }
     }
@@ -1113,9 +804,7 @@ pub trait IHubManualCullingManagerMethods: IHubManualCullingManager {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <HubManualCullingManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubManualCullingManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1149,9 +838,7 @@ mod __HubManualCullingManager_CullingGroup_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::class(),
@@ -1164,43 +851,28 @@ mod __HubManualCullingManager_CullingGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_IsCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_IsCulling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_culling(
-        this: HubManualCullingManager_CullingGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            HubManualCullingManager_CullingGroup,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_culling::get_offset() as isize),
-        );
+    pub unsafe fn get_is_culling(this: HubManualCullingManager_CullingGroup, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(HubManualCullingManager_CullingGroup, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_culling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::class(),
                 "set_IsCulling",
@@ -1212,47 +884,29 @@ mod __HubManualCullingManager_CullingGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
-                    "set_IsCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
+                        "set_IsCulling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_culling(
-        this: HubManualCullingManager_CullingGroup,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager_CullingGroup,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_culling::get_offset() as isize),
-        );
+    pub unsafe fn set_is_culling(this: HubManualCullingManager_CullingGroup, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubManualCullingManager_CullingGroup, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_culling::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_culling_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::class(),
                 "ChangeCullingState",
@@ -1264,18 +918,15 @@ mod __HubManualCullingManager_CullingGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
-                    "ChangeCullingState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
+                        "ChangeCullingState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_culling_state(
@@ -1284,25 +935,15 @@ mod __HubManualCullingManager_CullingGroup_unity2_raw {
         force: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager_CullingGroup,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_culling_state::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubManualCullingManager_CullingGroup, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_culling_state::get_method_info().method_ptr);
         inner(this, is_next_culling, force, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_collect_renderers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::class(),
@@ -1315,41 +956,27 @@ mod __HubManualCullingManager_CullingGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
-                    "CollectRenderers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
+                        "CollectRenderers",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn collect_renderers(
-        this: HubManualCullingManager_CullingGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager_CullingGroup,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_collect_renderers::get_offset() as isize),
-        );
+    pub unsafe fn collect_renderers(this: HubManualCullingManager_CullingGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubManualCullingManager_CullingGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_collect_renderers::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::class(),
@@ -1362,54 +989,41 @@ mod __HubManualCullingManager_CullingGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubManualCullingManager_CullingGroup as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubManualCullingManager_CullingGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubManualCullingManager_CullingGroup,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: HubManualCullingManager_CullingGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubManualCullingManager_CullingGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-hubmanualcullingmanager")]
-pub trait IHubManualCullingManager_CullingGroupMethods:
-    IHubManualCullingManager_CullingGroup
-{
+pub trait IHubManualCullingManager_CullingGroupMethods: IHubManualCullingManager_CullingGroup {
     #[doc = "`get_IsCulling()` overload"]
     fn get_is_culling(self) -> bool {
         unsafe {
-            let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubManualCullingManager_CullingGroup_unity2_raw::get_is_culling(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubManualCullingManager_CullingGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubManualCullingManager_CullingGroup_unity2_raw::get_is_culling(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsCulling(bool)` overload"]
     fn set_is_culling(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <HubManualCullingManager_CullingGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __HubManualCullingManager_CullingGroup_unity2_raw::set_is_culling(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1418,13 +1032,11 @@ pub trait IHubManualCullingManager_CullingGroupMethods:
         }
     }
     #[doc = "`ChangeCullingState(bool, bool)` overload"]
-    fn change_culling_state(
-        self,
-        is_next_culling: impl ::core::convert::Into<bool>,
-        force: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn change_culling_state(self, is_next_culling: impl ::core::convert::Into<bool>, force: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <HubManualCullingManager_CullingGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __HubManualCullingManager_CullingGroup_unity2_raw::change_culling_state(
                 __receiver,
                 ::core::convert::Into::into(is_next_culling),
@@ -1436,30 +1048,25 @@ pub trait IHubManualCullingManager_CullingGroupMethods:
     #[doc = "`CollectRenderers()` overload"]
     fn collect_renderers(self) -> () {
         unsafe {
-            let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubManualCullingManager_CullingGroup_unity2_raw::collect_renderers(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubManualCullingManager_CullingGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubManualCullingManager_CullingGroup_unity2_raw::collect_renderers(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < HubManualCullingManager_CullingGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubManualCullingManager_CullingGroup_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubManualCullingManager_CullingGroup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubManualCullingManager_CullingGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-hubmanualcullingmanager")]
-impl<__T: IHubManualCullingManager_CullingGroup> IHubManualCullingManager_CullingGroupMethods
-    for __T
-{
-}
+impl<__T: IHubManualCullingManager_CullingGroup> IHubManualCullingManager_CullingGroupMethods for __T {}
 
 #[cfg(feature = "app-hubmanualcullingmanager")]
 impl HubManualCullingManager_CullingGroup {
@@ -1480,25 +1087,22 @@ impl HubManualCullingManager_CullingGroup {
 #[cfg(feature = "app-hubmanualcullingmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubManualCullingManager;
-    pub use super::HubManualCullingManager_CullingGroup;
-    pub use super::IHubManualCullingManager;
-    pub use super::IHubManualCullingManagerMethods;
-    pub use super::IHubManualCullingManager_CullingGroup;
-    pub use super::IHubManualCullingManager_CullingGroupMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        HubManualCullingManager, HubManualCullingManager_CullingGroup, IHubManualCullingManager, IHubManualCullingManagerMethods,
+        IHubManualCullingManager_CullingGroup, IHubManualCullingManager_CullingGroupMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,21 +2,33 @@
 
 #[cfg(feature = "unity_engine-guilayout-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::gui::{GUI_Scope, IGUI_Scope},
+    };
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::gui::{GUI_Scope, IGUI_Scope};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout")]
-    #[parent(crate::system::object::Object)]
-    pub struct GUILayout {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.ScrollViewScope")]
+    #[parent(crate::unity_engine::gui::GUI_Scope)]
+    pub struct GUILayout_ScrollViewScope {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_AreaScope.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.AreaScope")]
     #[parent(crate::unity_engine::gui::GUI_Scope)]
     pub struct GUILayout_AreaScope {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_HorizontalScope.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.HorizontalScope")]
+    #[parent(crate::unity_engine::gui::GUI_Scope)]
+    pub struct GUILayout_HorizontalScope {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout")]
+    #[parent(crate::system::object::Object)]
+    pub struct GUILayout {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_LayoutedWindow.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.LayoutedWindow")]
@@ -31,16 +43,6 @@ mod __types {
         #[rename(name = "m_Style")]
         pub m_style: crate::unity_engine::guistyle::GUIStyle,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_HorizontalScope.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.HorizontalScope")]
-    #[parent(crate::unity_engine::gui::GUI_Scope)]
-    pub struct GUILayout_HorizontalScope {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayout.ScrollViewScope")]
-    #[parent(crate::unity_engine::gui::GUI_Scope)]
-    pub struct GUILayout_ScrollViewScope {}
 }
 
 #[cfg(feature = "unity_engine-guilayout-types")]
@@ -49,1125 +51,291 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-guilayout")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUILayout_unity2_raw {
+mod __GUILayout_ScrollViewScope_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_label {
+    pub mod __lookup_get_scroll_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "Label",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "Label",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn label(
-        text: ::unity2::Il2CppString,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_label::get_offset() as isize),
-        );
-        inner(text, options, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_label_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "Label",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "Label",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn label_2(
-        text: ::unity2::Il2CppString,
-        style: crate::unity_engine::guistyle::GUIStyle,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::guistyle::GUIStyle,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_label_2::get_offset() as isize),
-        );
-        inner(text, style, options, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: guicontent :: GUIContent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "DoLabel",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "DoLabel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn do_label(
-        content: crate::unity_engine::guicontent::GUIContent,
-        style: crate::unity_engine::guistyle::GUIStyle,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::guicontent::GUIContent,
-            crate::unity_engine::guistyle::GUIStyle,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do_label::get_offset() as isize),
-        );
-        inner(content, style, options, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_horizontal_slider {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "HorizontalSlider",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "HorizontalSlider",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn horizontal_slider(
-        value: f32,
-        left_value: f32,
-        right_value: f32,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            f32,
-            f32,
-            f32,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_horizontal_slider::get_offset() as isize),
-        );
-        inner(
-            value,
-            left_value,
-            right_value,
-            options,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_horizontal_slider {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "DoHorizontalSlider",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "DoHorizontalSlider",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn do_horizontal_slider(
-        value: f32,
-        left_value: f32,
-        right_value: f32,
-        slider: crate::unity_engine::guistyle::GUIStyle,
-        thumb: crate::unity_engine::guistyle::GUIStyle,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            f32,
-            f32,
-            f32,
-            crate::unity_engine::guistyle::GUIStyle,
-            crate::unity_engine::guistyle::GUIStyle,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do_horizontal_slider::get_offset() as isize),
-        );
-        inner(
-            value,
-            left_value,
-            right_value,
-            slider,
-            thumb,
-            options,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::guilayoutoption::GUILayoutOption,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "BeginHorizontal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "BeginHorizontal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn begin_horizontal(
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_horizontal::get_offset() as isize),
-        );
-        inner(options, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_horizontal_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: guicontent :: GUIContent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "BeginHorizontal",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "BeginHorizontal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn begin_horizontal_2(
-        content: crate::unity_engine::guicontent::GUIContent,
-        style: crate::unity_engine::guistyle::GUIStyle,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::guicontent::GUIContent,
-            crate::unity_engine::guistyle::GUIStyle,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_horizontal_2::get_offset() as isize),
-        );
-        inner(content, style, options, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_horizontal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "EndHorizontal",
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "get_scrollPosition",
                 0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "EndHorizontal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                        "get_scrollPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn end_horizontal(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_horizontal::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
+    pub unsafe fn get_scroll_position(
+        this: GUILayout_ScrollViewScope,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_scroll_position::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_begin_area {
+    pub mod __lookup_set_scroll_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "BeginArea",
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "set_scrollPosition",
                 1,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "BeginArea",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                        "set_scrollPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn begin_area(
-        screen_rect: crate::unity_engine::rect::Rect,
+    pub unsafe fn set_scroll_position(
+        this: GUILayout_ScrollViewScope,
+        value: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_begin_area::get_offset() as isize),
-            );
-        inner(screen_rect, __unity2_method_info)
+        let inner: extern "C" fn(GUILayout_ScrollViewScope, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_scroll_position::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_begin_area_2 {
+    pub mod __lookup_get_handle_scroll_wheel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "get_handleScrollWheel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                        "get_handleScrollWheel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_handle_scroll_wheel(this: GUILayout_ScrollViewScope, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_handle_scroll_wheel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_handle_scroll_wheel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "set_handleScrollWheel",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                        "set_handleScrollWheel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_handle_scroll_wheel(this: GUILayout_ScrollViewScope, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUILayout_ScrollViewScope, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_handle_scroll_wheel::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "BeginArea",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "BeginArea",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn begin_area_2(
-        screen_rect: crate::unity_engine::rect::Rect,
-        content: crate::unity_engine::guicontent::GUIContent,
-        style: crate::unity_engine::guistyle::GUIStyle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rect::Rect,
-            crate::unity_engine::guicontent::GUIContent,
-            crate::unity_engine::guistyle::GUIStyle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_area_2::get_offset() as isize),
-        );
-        inner(screen_rect, content, style, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_area {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "EndArea",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "EndArea",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end_area(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_area::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_scroll_view {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "BeginScrollView",
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 4,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "BeginScrollView",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn begin_scroll_view(
+    pub unsafe fn ctor(
+        this: GUILayout_ScrollViewScope,
         scroll_position: crate::unity_engine::vector2::Vector2,
         always_show_horizontal: bool,
         always_show_vertical: bool,
         options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector2::Vector2,
-            bool,
-            bool,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_scroll_view::get_offset() as isize),
-        );
-        inner(
-            scroll_position,
-            always_show_horizontal,
-            always_show_vertical,
-            options,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_scroll_view_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "BeginScrollView",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "BeginScrollView",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn begin_scroll_view_2(
-        scroll_position: crate::unity_engine::vector2::Vector2,
-        always_show_horizontal: bool,
-        always_show_vertical: bool,
-        horizontal_scrollbar: crate::unity_engine::guistyle::GUIStyle,
-        vertical_scrollbar: crate::unity_engine::guistyle::GUIStyle,
-        background: crate::unity_engine::guistyle::GUIStyle,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector2::Vector2,
-            bool,
-            bool,
-            crate::unity_engine::guistyle::GUIStyle,
-            crate::unity_engine::guistyle::GUIStyle,
-            crate::unity_engine::guistyle::GUIStyle,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_scroll_view_2::get_offset() as isize),
-        );
-        inner(
-            scroll_position,
-            always_show_horizontal,
-            always_show_vertical,
-            horizontal_scrollbar,
-            vertical_scrollbar,
-            background,
-            options,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_scroll_view {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "EndScrollView",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "EndScrollView",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end_scroll_view(
-        handle_scroll_wheel: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_scroll_view::get_offset() as isize),
-        );
-        inner(handle_scroll_wheel, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_window {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gui :: GUI_WindowFunction as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "Window",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "Window",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn window(
-        id: i32,
-        screen_rect: crate::unity_engine::rect::Rect,
-        func: crate::unity_engine::gui::GUI_WindowFunction,
-        text: ::unity2::Il2CppString,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
         let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::rect::Rect,
-            crate::unity_engine::gui::GUI_WindowFunction,
-            ::unity2::Il2CppString,
+            GUILayout_ScrollViewScope,
+            crate::unity_engine::vector2::Vector2,
+            bool,
+            bool,
             ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_window::get_offset() as isize),
-        );
-        inner(id, screen_rect, func, text, options, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_window {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gui :: GUI_WindowFunction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guicontent :: GUIContent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "DoWindow",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "DoWindow",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn do_window(
-        id: i32,
-        screen_rect: crate::unity_engine::rect::Rect,
-        func: crate::unity_engine::gui::GUI_WindowFunction,
-        content: crate::unity_engine::guicontent::GUIContent,
-        style: crate::unity_engine::guistyle::GUIStyle,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::rect::Rect,
-            crate::unity_engine::gui::GUI_WindowFunction,
-            crate::unity_engine::guicontent::GUIContent,
-            crate::unity_engine::guistyle::GUIStyle,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do_window::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
-            id,
-            screen_rect,
-            func,
-            content,
-            style,
+            this,
+            scroll_position,
+            always_show_horizontal,
+            always_show_vertical,
             options,
             __unity2_method_info,
         )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_width {
+    pub mod __lookup_close_scope {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "Width",
-                1,
+                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
+                "CloseScope",
+                0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "Width",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
+                        "CloseScope",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn width(
-        width: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::guilayoutoption::GUILayoutOption {
-        let inner: extern "C" fn(
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::guilayoutoption::GUILayoutOption = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_width::get_offset() as isize),
-        );
-        inner(width, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout as ::unity2::ClassIdentity>::class(),
-                "Height",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout as ::unity2::ClassIdentity>::NAME,
-                    "Height",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn height(
-        height: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::guilayoutoption::GUILayoutOption {
-        let inner: extern "C" fn(
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::guilayoutoption::GUILayoutOption = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_height::get_offset() as isize),
-        );
-        inner(height, __unity2_method_info)
+    pub unsafe fn close_scope(this: GUILayout_ScrollViewScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_scope::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout {
-    #[doc = "`Label(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn label(
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> () {
+pub trait IGUILayout_ScrollViewScopeMethods: IGUILayout_ScrollViewScope {
+    #[doc = "`get_scrollPosition()` overload"]
+    fn get_scroll_position(self) -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            __GUILayout_unity2_raw::label(
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_ScrollViewScope_unity2_raw::get_scroll_position(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Label(::unity2::Il2CppString, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn label_2(
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> () {
+    #[doc = "`set_scrollPosition(crate::unity_engine::vector2::Vector2)` overload"]
+    fn set_scroll_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            __GUILayout_unity2_raw::label_2(
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(style),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_ScrollViewScope_unity2_raw::set_scroll_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
-    #[doc = "`DoLabel(crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn do_label(
-        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
-        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> () {
+    #[doc = "`get_handleScrollWheel()` overload"]
+    fn get_handle_scroll_wheel(self) -> bool {
         unsafe {
-            __GUILayout_unity2_raw::do_label(
-                ::core::convert::Into::into(content),
-                ::core::convert::Into::into(style),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_ScrollViewScope_unity2_raw::get_handle_scroll_wheel(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`HorizontalSlider(f32, f32, f32, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn horizontal_slider(
-        value: impl ::core::convert::Into<f32>,
-        left_value: impl ::core::convert::Into<f32>,
-        right_value: impl ::core::convert::Into<f32>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> f32 {
+    #[doc = "`set_handleScrollWheel(bool)` overload"]
+    fn set_handle_scroll_wheel(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            __GUILayout_unity2_raw::horizontal_slider(
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_ScrollViewScope_unity2_raw::set_handle_scroll_wheel(
+                __receiver,
                 ::core::convert::Into::into(value),
-                ::core::convert::Into::into(left_value),
-                ::core::convert::Into::into(right_value),
-                ::core::convert::Into::into(options),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`DoHorizontalSlider(f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn do_horizontal_slider(
-        value: impl ::core::convert::Into<f32>,
-        left_value: impl ::core::convert::Into<f32>,
-        right_value: impl ::core::convert::Into<f32>,
-        slider: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        thumb: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> f32 {
-        unsafe {
-            __GUILayout_unity2_raw::do_horizontal_slider(
-                ::core::convert::Into::into(value),
-                ::core::convert::Into::into(left_value),
-                ::core::convert::Into::into(right_value),
-                ::core::convert::Into::into(slider),
-                ::core::convert::Into::into(thumb),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BeginHorizontal(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn begin_horizontal(
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> () {
-        unsafe {
-            __GUILayout_unity2_raw::begin_horizontal(
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BeginHorizontal(crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn begin_horizontal_2(
-        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
-        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> () {
-        unsafe {
-            __GUILayout_unity2_raw::begin_horizontal_2(
-                ::core::convert::Into::into(content),
-                ::core::convert::Into::into(style),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EndHorizontal()` overload"]
-    pub fn end_horizontal() -> () {
-        unsafe { __GUILayout_unity2_raw::end_horizontal(::core::option::Option::None) }
-    }
-    #[doc = "`BeginArea(crate::unity_engine::rect::Rect)` overload"]
-    pub fn begin_area(
-        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-    ) -> () {
-        unsafe {
-            __GUILayout_unity2_raw::begin_area(
-                ::core::convert::Into::into(screen_rect),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BeginArea(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
-    pub fn begin_area_2(
-        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
-        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-    ) -> () {
-        unsafe {
-            __GUILayout_unity2_raw::begin_area_2(
-                ::core::convert::Into::into(screen_rect),
-                ::core::convert::Into::into(content),
-                ::core::convert::Into::into(style),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EndArea()` overload"]
-    pub fn end_area() -> () {
-        unsafe { __GUILayout_unity2_raw::end_area(::core::option::Option::None) }
-    }
-    #[doc = "`BeginScrollView(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn begin_scroll_view(
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    fn ctor(
+        self,
         scroll_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
         always_show_horizontal: impl ::core::convert::Into<bool>,
         always_show_vertical: impl ::core::convert::Into<bool>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> crate::unity_engine::vector2::Vector2 {
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> () {
         unsafe {
-            __GUILayout_unity2_raw::begin_scroll_view(
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_ScrollViewScope_unity2_raw::ctor(
+                __receiver,
                 ::core::convert::Into::into(scroll_position),
                 ::core::convert::Into::into(always_show_horizontal),
                 ::core::convert::Into::into(always_show_vertical),
@@ -1176,105 +344,37 @@ impl GUILayout {
             )
         }
     }
-    #[doc = "`BeginScrollView(crate::unity_engine::vector2::Vector2, bool, bool, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn begin_scroll_view_2(
-        scroll_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        always_show_horizontal: impl ::core::convert::Into<bool>,
-        always_show_vertical: impl ::core::convert::Into<bool>,
-        horizontal_scrollbar: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        vertical_scrollbar: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        background: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> crate::unity_engine::vector2::Vector2 {
+    #[doc = "`CloseScope()` overload"]
+    fn close_scope(self) -> () {
         unsafe {
-            __GUILayout_unity2_raw::begin_scroll_view_2(
-                ::core::convert::Into::into(scroll_position),
-                ::core::convert::Into::into(always_show_horizontal),
-                ::core::convert::Into::into(always_show_vertical),
-                ::core::convert::Into::into(horizontal_scrollbar),
-                ::core::convert::Into::into(vertical_scrollbar),
-                ::core::convert::Into::into(background),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_ScrollViewScope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`EndScrollView(bool)` overload"]
-    pub fn end_scroll_view(handle_scroll_wheel: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __GUILayout_unity2_raw::end_scroll_view(
-                ::core::convert::Into::into(handle_scroll_wheel),
-                ::core::option::Option::None,
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl<__T: IGUILayout_ScrollViewScope> IGUILayout_ScrollViewScopeMethods for __T {}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl GUILayout_ScrollViewScope {
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
+    pub fn new(
+        scroll_position: crate::unity_engine::vector2::Vector2,
+        always_show_horizontal: bool,
+        always_show_vertical: bool,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayout_ScrollViewScope),
+                ::core::stringify!(new),
             )
-        }
-    }
-    #[doc = "`Window(i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, ::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn window(
-        id: impl ::core::convert::Into<i32>,
-        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> crate::unity_engine::rect::Rect {
-        unsafe {
-            __GUILayout_unity2_raw::window(
-                ::core::convert::Into::into(id),
-                ::core::convert::Into::into(screen_rect),
-                ::core::convert::Into::into(func),
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DoWindow(i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    pub fn do_window(
-        id: impl ::core::convert::Into<i32>,
-        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
-        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
-        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> crate::unity_engine::rect::Rect {
-        unsafe {
-            __GUILayout_unity2_raw::do_window(
-                ::core::convert::Into::into(id),
-                ::core::convert::Into::into(screen_rect),
-                ::core::convert::Into::into(func),
-                ::core::convert::Into::into(content),
-                ::core::convert::Into::into(style),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Width(f32)` overload"]
-    pub fn width(
-        width: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::guilayoutoption::GUILayoutOption {
-        unsafe {
-            __GUILayout_unity2_raw::width(
-                ::core::convert::Into::into(width),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Height(f32)` overload"]
-    pub fn height(
-        height: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::guilayoutoption::GUILayoutOption {
-        unsafe {
-            __GUILayout_unity2_raw::height(
-                ::core::convert::Into::into(height),
-                ::core::option::Option::None,
-            )
-        }
+        });
+        <Self as IGUILayout_ScrollViewScopeMethods>::ctor(this, scroll_position, always_show_horizontal, always_show_vertical, options);
+        this
     }
 }
 
@@ -1287,11 +387,8 @@ mod __GUILayout_AreaScope_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GUILayout_AreaScope as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -1303,18 +400,15 @@ mod __GUILayout_AreaScope_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_AreaScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_AreaScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1322,24 +416,15 @@ mod __GUILayout_AreaScope_unity2_raw {
         screen_rect: crate::unity_engine::rect::Rect,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GUILayout_AreaScope,
-            crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GUILayout_AreaScope, crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, screen_rect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close_scope {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GUILayout_AreaScope as ::unity2::ClassIdentity>::class(),
@@ -1352,30 +437,20 @@ mod __GUILayout_AreaScope_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_AreaScope as ::unity2::ClassIdentity>::NAME,
-                    "CloseScope",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_AreaScope as ::unity2::ClassIdentity>::NAME,
+                        "CloseScope",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close_scope(
-        this: GUILayout_AreaScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close_scope(this: GUILayout_AreaScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GUILayout_AreaScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_scope::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close_scope::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1385,22 +460,14 @@ pub trait IGUILayout_AreaScopeMethods: IGUILayout_AreaScope {
     #[doc = "`.ctor(crate::unity_engine::rect::Rect)` overload"]
     fn ctor(self, screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> () {
         unsafe {
-            let __receiver = <GUILayout_AreaScope as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GUILayout_AreaScope_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(screen_rect),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GUILayout_AreaScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_AreaScope_unity2_raw::ctor(__receiver, ::core::convert::Into::into(screen_rect), ::core::option::Option::None)
         }
     }
     #[doc = "`CloseScope()` overload"]
     fn close_scope(self) -> () {
         unsafe {
-            let __receiver = <GUILayout_AreaScope as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GUILayout_AreaScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GUILayout_AreaScope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)
         }
     }
@@ -1428,16 +495,1120 @@ impl GUILayout_AreaScope {
 #[cfg(feature = "unity_engine-guilayout")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUILayout_HorizontalScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_HorizontalScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_HorizontalScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GUILayout_HorizontalScope,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GUILayout_HorizontalScope,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_scope {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout_HorizontalScope as ::unity2::ClassIdentity>::class(),
+                "CloseScope",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_HorizontalScope as ::unity2::ClassIdentity>::NAME,
+                        "CloseScope",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_scope(this: GUILayout_HorizontalScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUILayout_HorizontalScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_scope::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+pub trait IGUILayout_HorizontalScopeMethods: IGUILayout_HorizontalScope {
+    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    fn ctor(self, options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>) -> () {
+        unsafe {
+            let __receiver =
+                <GUILayout_HorizontalScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_HorizontalScope_unity2_raw::ctor(__receiver, ::core::convert::Into::into(options), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseScope()` overload"]
+    fn close_scope(self) -> () {
+        unsafe {
+            let __receiver =
+                <GUILayout_HorizontalScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_HorizontalScope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl<__T: IGUILayout_HorizontalScope> IGUILayout_HorizontalScopeMethods for __T {}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl GUILayout_HorizontalScope {
+    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
+    pub fn new(options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayout_HorizontalScope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUILayout_HorizontalScopeMethods>::ctor(this, options);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUILayout_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "Label", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "Label",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn label(
+        text: ::unity2::Il2CppString,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_label::get_method_info().method_ptr);
+        inner(text, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_label_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "Label", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "Label",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn label_2(
+        text: ::unity2::Il2CppString,
+        style: crate::unity_engine::guistyle::GUIStyle,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_label_2::get_method_info().method_ptr);
+        inner(text, style, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "DoLabel", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "DoLabel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn do_label(
+        content: crate::unity_engine::guicontent::GUIContent,
+        style: crate::unity_engine::guistyle::GUIStyle,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_do_label::get_method_info().method_ptr);
+        inner(content, style, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_horizontal_slider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout as ::unity2::ClassIdentity>::class(),
+                "HorizontalSlider",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "HorizontalSlider",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn horizontal_slider(
+        value: f32,
+        left_value: f32,
+        right_value: f32,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            f32,
+            f32,
+            f32,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(__lookup_horizontal_slider::get_method_info().method_ptr);
+        inner(value, left_value, right_value, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_horizontal_slider {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout as ::unity2::ClassIdentity>::class(),
+                "DoHorizontalSlider",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "DoHorizontalSlider",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn do_horizontal_slider(
+        value: f32,
+        left_value: f32,
+        right_value: f32,
+        slider: crate::unity_engine::guistyle::GUIStyle,
+        thumb: crate::unity_engine::guistyle::GUIStyle,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            f32,
+            f32,
+            f32,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(__lookup_do_horizontal_slider::get_method_info().method_ptr);
+        inner(value, left_value, right_value, slider, thumb, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_horizontal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout as ::unity2::ClassIdentity>::class(),
+                "BeginHorizontal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "BeginHorizontal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn begin_horizontal(
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_begin_horizontal::get_method_info().method_ptr);
+        inner(options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_horizontal_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout as ::unity2::ClassIdentity>::class(),
+                "BeginHorizontal",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "BeginHorizontal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn begin_horizontal_2(
+        content: crate::unity_engine::guicontent::GUIContent,
+        style: crate::unity_engine::guistyle::GUIStyle,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_begin_horizontal_2::get_method_info().method_ptr);
+        inner(content, style, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_horizontal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout as ::unity2::ClassIdentity>::class(),
+                "EndHorizontal",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "EndHorizontal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn end_horizontal(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_end_horizontal::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_area {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "BeginArea", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "BeginArea",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn begin_area(screen_rect: crate::unity_engine::rect::Rect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_begin_area::get_method_info().method_ptr);
+        inner(screen_rect, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_area_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "BeginArea", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "BeginArea",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn begin_area_2(
+        screen_rect: crate::unity_engine::rect::Rect,
+        content: crate::unity_engine::guicontent::GUIContent,
+        style: crate::unity_engine::guistyle::GUIStyle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_begin_area_2::get_method_info().method_ptr);
+        inner(screen_rect, content, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_area {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "EndArea", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "EndArea",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn end_area(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_end_area::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_scroll_view {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout as ::unity2::ClassIdentity>::class(),
+                "BeginScrollView",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "BeginScrollView",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn begin_scroll_view(
+        scroll_position: crate::unity_engine::vector2::Vector2,
+        always_show_horizontal: bool,
+        always_show_vertical: bool,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            bool,
+            bool,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(__lookup_begin_scroll_view::get_method_info().method_ptr);
+        inner(
+            scroll_position,
+            always_show_horizontal,
+            always_show_vertical,
+            options,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_scroll_view_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout as ::unity2::ClassIdentity>::class(),
+                "BeginScrollView",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "BeginScrollView",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn begin_scroll_view_2(
+        scroll_position: crate::unity_engine::vector2::Vector2,
+        always_show_horizontal: bool,
+        always_show_vertical: bool,
+        horizontal_scrollbar: crate::unity_engine::guistyle::GUIStyle,
+        vertical_scrollbar: crate::unity_engine::guistyle::GUIStyle,
+        background: crate::unity_engine::guistyle::GUIStyle,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            crate::unity_engine::vector2::Vector2,
+            bool,
+            bool,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(__lookup_begin_scroll_view_2::get_method_info().method_ptr);
+        inner(
+            scroll_position,
+            always_show_horizontal,
+            always_show_vertical,
+            horizontal_scrollbar,
+            vertical_scrollbar,
+            background,
+            options,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_scroll_view {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUILayout as ::unity2::ClassIdentity>::class(),
+                "EndScrollView",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "EndScrollView",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn end_scroll_view(handle_scroll_wheel: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end_scroll_view::get_method_info().method_ptr);
+        inner(handle_scroll_wheel, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gui::GUI_WindowFunction as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "Window", 5, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "Window",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn window(
+        id: i32,
+        screen_rect: crate::unity_engine::rect::Rect,
+        func: crate::unity_engine::gui::GUI_WindowFunction,
+        text: ::unity2::Il2CppString,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            i32,
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::gui::GUI_WindowFunction,
+            ::unity2::Il2CppString,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(__lookup_window::get_method_info().method_ptr);
+        inner(id, screen_rect, func, text, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gui::GUI_WindowFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "DoWindow", 6, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "DoWindow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn do_window(
+        id: i32,
+        screen_rect: crate::unity_engine::rect::Rect,
+        func: crate::unity_engine::gui::GUI_WindowFunction,
+        content: crate::unity_engine::guicontent::GUIContent,
+        style: crate::unity_engine::guistyle::GUIStyle,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(
+            i32,
+            crate::unity_engine::rect::Rect,
+            crate::unity_engine::gui::GUI_WindowFunction,
+            crate::unity_engine::guicontent::GUIContent,
+            crate::unity_engine::guistyle::GUIStyle,
+            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(__lookup_do_window::get_method_info().method_ptr);
+        inner(id, screen_rect, func, content, style, options, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "Width", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "Width",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn width(width: f32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::guilayoutoption::GUILayoutOption {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> crate::unity_engine::guilayoutoption::GUILayoutOption =
+            ::core::mem::transmute(__lookup_width::get_method_info().method_ptr);
+        inner(width, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GUILayout as ::unity2::ClassIdentity>::class(), "Height", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout as ::unity2::ClassIdentity>::NAME,
+                        "Height",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn height(height: f32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::guilayoutoption::GUILayoutOption {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> crate::unity_engine::guilayoutoption::GUILayoutOption =
+            ::core::mem::transmute(__lookup_height::get_method_info().method_ptr);
+        inner(height, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl GUILayout {
+    #[doc = "`Label(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn label(
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> () {
+        unsafe {
+            __GUILayout_unity2_raw::label(
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Label(::unity2::Il2CppString, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn label_2(
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> () {
+        unsafe {
+            __GUILayout_unity2_raw::label_2(
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`DoLabel(crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn do_label(
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> () {
+        unsafe {
+            __GUILayout_unity2_raw::do_label(
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`HorizontalSlider(f32, f32, f32, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn horizontal_slider(
+        value: impl ::core::convert::Into<f32>,
+        left_value: impl ::core::convert::Into<f32>,
+        right_value: impl ::core::convert::Into<f32>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> f32 {
+        unsafe {
+            __GUILayout_unity2_raw::horizontal_slider(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(left_value),
+                ::core::convert::Into::into(right_value),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`DoHorizontalSlider(f32, f32, f32, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn do_horizontal_slider(
+        value: impl ::core::convert::Into<f32>,
+        left_value: impl ::core::convert::Into<f32>,
+        right_value: impl ::core::convert::Into<f32>,
+        slider: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        thumb: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> f32 {
+        unsafe {
+            __GUILayout_unity2_raw::do_horizontal_slider(
+                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(left_value),
+                ::core::convert::Into::into(right_value),
+                ::core::convert::Into::into(slider),
+                ::core::convert::Into::into(thumb),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`BeginHorizontal(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn begin_horizontal(options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>) -> () {
+        unsafe { __GUILayout_unity2_raw::begin_horizontal(::core::convert::Into::into(options), ::core::option::Option::None) }
+    }
+
+    #[doc = "`BeginHorizontal(crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn begin_horizontal_2(
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> () {
+        unsafe {
+            __GUILayout_unity2_raw::begin_horizontal_2(
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`EndHorizontal()` overload"]
+    pub fn end_horizontal() -> () {
+        unsafe { __GUILayout_unity2_raw::end_horizontal(::core::option::Option::None) }
+    }
+
+    #[doc = "`BeginArea(crate::unity_engine::rect::Rect)` overload"]
+    pub fn begin_area(screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>) -> () {
+        unsafe { __GUILayout_unity2_raw::begin_area(::core::convert::Into::into(screen_rect), ::core::option::Option::None) }
+    }
+
+    #[doc = "`BeginArea(crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn begin_area_2(
+        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+    ) -> () {
+        unsafe {
+            __GUILayout_unity2_raw::begin_area_2(
+                ::core::convert::Into::into(screen_rect),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`EndArea()` overload"]
+    pub fn end_area() -> () {
+        unsafe { __GUILayout_unity2_raw::end_area(::core::option::Option::None) }
+    }
+
+    #[doc = "`BeginScrollView(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn begin_scroll_view(
+        scroll_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        always_show_horizontal: impl ::core::convert::Into<bool>,
+        always_show_vertical: impl ::core::convert::Into<bool>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            __GUILayout_unity2_raw::begin_scroll_view(
+                ::core::convert::Into::into(scroll_position),
+                ::core::convert::Into::into(always_show_horizontal),
+                ::core::convert::Into::into(always_show_vertical),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`BeginScrollView(crate::unity_engine::vector2::Vector2, bool, bool, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn begin_scroll_view_2(
+        scroll_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
+        always_show_horizontal: impl ::core::convert::Into<bool>,
+        always_show_vertical: impl ::core::convert::Into<bool>,
+        horizontal_scrollbar: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        vertical_scrollbar: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        background: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            __GUILayout_unity2_raw::begin_scroll_view_2(
+                ::core::convert::Into::into(scroll_position),
+                ::core::convert::Into::into(always_show_horizontal),
+                ::core::convert::Into::into(always_show_vertical),
+                ::core::convert::Into::into(horizontal_scrollbar),
+                ::core::convert::Into::into(vertical_scrollbar),
+                ::core::convert::Into::into(background),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`EndScrollView(bool)` overload"]
+    pub fn end_scroll_view(handle_scroll_wheel: impl ::core::convert::Into<bool>) -> () {
+        unsafe { __GUILayout_unity2_raw::end_scroll_view(::core::convert::Into::into(handle_scroll_wheel), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Window(i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, ::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn window(
+        id: impl ::core::convert::Into<i32>,
+        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __GUILayout_unity2_raw::window(
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(screen_rect),
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`DoWindow(i32, crate::unity_engine::rect::Rect, crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::guicontent::GUIContent, crate::unity_engine::guistyle::GUIStyle, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    pub fn do_window(
+        id: impl ::core::convert::Into<i32>,
+        screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+        func: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> crate::unity_engine::rect::Rect {
+        unsafe {
+            __GUILayout_unity2_raw::do_window(
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(screen_rect),
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(content),
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(options),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Width(f32)` overload"]
+    pub fn width(width: impl ::core::convert::Into<f32>) -> crate::unity_engine::guilayoutoption::GUILayoutOption {
+        unsafe { __GUILayout_unity2_raw::width(::core::convert::Into::into(width), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Height(f32)` overload"]
+    pub fn height(height: impl ::core::convert::Into<f32>) -> crate::unity_engine::guilayoutoption::GUILayoutOption {
+        unsafe { __GUILayout_unity2_raw::height(::core::convert::Into::into(height), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __GUILayout_LayoutedWindow_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gui :: GUI_WindowFunction as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rect :: Rect as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guicontent :: GUIContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: guistyle :: GUIStyle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gui::GUI_WindowFunction as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guicontent::GUIContent as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::guistyle::GUIStyle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GUILayout_LayoutedWindow as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -1449,18 +1620,15 @@ mod __GUILayout_LayoutedWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_LayoutedWindow as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_LayoutedWindow as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1480,30 +1648,15 @@ mod __GUILayout_LayoutedWindow_unity2_raw {
             ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
             crate::unity_engine::guistyle::GUIStyle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            f,
-            screen_rect,
-            content,
-            options,
-            style,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, f, screen_rect, content, options, style, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_do_window {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GUILayout_LayoutedWindow as ::unity2::ClassIdentity>::class(),
                 "DoWindow",
@@ -1515,31 +1668,20 @@ mod __GUILayout_LayoutedWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_LayoutedWindow as ::unity2::ClassIdentity>::NAME,
-                    "DoWindow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayout_LayoutedWindow as ::unity2::ClassIdentity>::NAME,
+                        "DoWindow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn do_window(
-        this: GUILayout_LayoutedWindow,
-        window_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn do_window(this: GUILayout_LayoutedWindow, window_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GUILayout_LayoutedWindow, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_do_window::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_do_window::get_method_info().method_ptr);
         inner(this, window_id, __unity2_method_info)
     }
 }
@@ -1552,16 +1694,12 @@ pub trait IGUILayout_LayoutedWindowMethods: IGUILayout_LayoutedWindow {
         f: impl ::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction>,
         screen_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
         content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
+        options: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
         style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
     ) -> () {
         unsafe {
             let __receiver =
-                <GUILayout_LayoutedWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <GUILayout_LayoutedWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GUILayout_LayoutedWindow_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(f),
@@ -1577,14 +1715,8 @@ pub trait IGUILayout_LayoutedWindowMethods: IGUILayout_LayoutedWindow {
     fn do_window(self, window_id: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <GUILayout_LayoutedWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_LayoutedWindow_unity2_raw::do_window(
-                __receiver,
-                ::core::convert::Into::into(window_id),
-                ::core::option::Option::None,
-            )
+                <GUILayout_LayoutedWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUILayout_LayoutedWindow_unity2_raw::do_window(__receiver, ::core::convert::Into::into(window_id), ::core::option::Option::None)
         }
     }
 }
@@ -1609,607 +1741,7 @@ impl GUILayout_LayoutedWindow {
                 ::core::stringify!(new),
             )
         });
-        <Self as IGUILayout_LayoutedWindowMethods>::ctor(
-            this,
-            f,
-            screen_rect,
-            content,
-            options,
-            style,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUILayout_HorizontalScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::guilayoutoption::GUILayoutOption,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_HorizontalScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_HorizontalScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GUILayout_HorizontalScope,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GUILayout_HorizontalScope,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, options, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_scope {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_HorizontalScope as ::unity2::ClassIdentity>::class(),
-                "CloseScope",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_HorizontalScope as ::unity2::ClassIdentity>::NAME,
-                    "CloseScope",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close_scope(
-        this: GUILayout_HorizontalScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GUILayout_HorizontalScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_scope::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-pub trait IGUILayout_HorizontalScopeMethods: IGUILayout_HorizontalScope {
-    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    fn ctor(
-        self,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_HorizontalScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_HorizontalScope_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CloseScope()` overload"]
-    fn close_scope(self) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_HorizontalScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_HorizontalScope_unity2_raw::close_scope(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl<__T: IGUILayout_HorizontalScope> IGUILayout_HorizontalScopeMethods for __T {}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout_HorizontalScope {
-    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
-    pub fn new(
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayout_HorizontalScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUILayout_HorizontalScopeMethods>::ctor(this, options);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUILayout_ScrollViewScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_scroll_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "get_scrollPosition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "get_scrollPosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_scroll_position(
-        this: GUILayout_ScrollViewScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            GUILayout_ScrollViewScope,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scroll_position::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_scroll_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "set_scrollPosition",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "set_scrollPosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_scroll_position(
-        this: GUILayout_ScrollViewScope,
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GUILayout_ScrollViewScope,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_scroll_position::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_handle_scroll_wheel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "get_handleScrollWheel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "get_handleScrollWheel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_handle_scroll_wheel(
-        this: GUILayout_ScrollViewScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_handle_scroll_wheel::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_handle_scroll_wheel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "set_handleScrollWheel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "set_handleScrollWheel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_handle_scroll_wheel(
-        this: GUILayout_ScrollViewScope,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GUILayout_ScrollViewScope, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_handle_scroll_wheel::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GUILayout_ScrollViewScope,
-        scroll_position: crate::unity_engine::vector2::Vector2,
-        always_show_horizontal: bool,
-        always_show_vertical: bool,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GUILayout_ScrollViewScope,
-            crate::unity_engine::vector2::Vector2,
-            bool,
-            bool,
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            scroll_position,
-            always_show_horizontal,
-            always_show_vertical,
-            options,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_scope {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::class(),
-                "CloseScope",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayout_ScrollViewScope as ::unity2::ClassIdentity>::NAME,
-                    "CloseScope",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close_scope(
-        this: GUILayout_ScrollViewScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_scope::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-pub trait IGUILayout_ScrollViewScopeMethods: IGUILayout_ScrollViewScope {
-    #[doc = "`get_scrollPosition()` overload"]
-    fn get_scroll_position(self) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::get_scroll_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_scrollPosition(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_scroll_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::set_scroll_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_handleScrollWheel()` overload"]
-    fn get_handle_scroll_wheel(self) -> bool {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::get_handle_scroll_wheel(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_handleScrollWheel(bool)` overload"]
-    fn set_handle_scroll_wheel(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::set_handle_scroll_wheel(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    fn ctor(
-        self,
-        scroll_position: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-        always_show_horizontal: impl ::core::convert::Into<bool>,
-        always_show_vertical: impl ::core::convert::Into<bool>,
-        options: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(scroll_position),
-                ::core::convert::Into::into(always_show_horizontal),
-                ::core::convert::Into::into(always_show_vertical),
-                ::core::convert::Into::into(options),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CloseScope()` overload"]
-    fn close_scope(self) -> () {
-        unsafe {
-            let __receiver =
-                <GUILayout_ScrollViewScope as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GUILayout_ScrollViewScope_unity2_raw::close_scope(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl<__T: IGUILayout_ScrollViewScope> IGUILayout_ScrollViewScopeMethods for __T {}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout_ScrollViewScope {
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
-    pub fn new(
-        scroll_position: crate::unity_engine::vector2::Vector2,
-        always_show_horizontal: bool,
-        always_show_vertical: bool,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayout_ScrollViewScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUILayout_ScrollViewScopeMethods>::ctor(
-            this,
-            scroll_position,
-            always_show_horizontal,
-            always_show_vertical,
-            options,
-        );
+        <Self as IGUILayout_LayoutedWindowMethods>::ctor(this, f, screen_rect, content, options, style);
         this
     }
 }
@@ -2217,24 +1749,14 @@ impl GUILayout_ScrollViewScope {
 #[cfg(feature = "unity_engine-guilayout")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GUILayout;
-    pub use super::GUILayout_AreaScope;
-    pub use super::GUILayout_HorizontalScope;
-    pub use super::GUILayout_LayoutedWindow;
-    pub use super::GUILayout_ScrollViewScope;
-    pub use super::IGUILayout;
-    pub use super::IGUILayout_AreaScope;
-    pub use super::IGUILayout_AreaScopeMethods;
-    pub use super::IGUILayout_HorizontalScope;
-    pub use super::IGUILayout_HorizontalScopeMethods;
-    pub use super::IGUILayout_LayoutedWindow;
-    pub use super::IGUILayout_LayoutedWindowMethods;
-    pub use super::IGUILayout_ScrollViewScope;
-    pub use super::IGUILayout_ScrollViewScopeMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        GUILayout, GUILayout_AreaScope, GUILayout_HorizontalScope, GUILayout_LayoutedWindow, GUILayout_ScrollViewScope, IGUILayout,
+        IGUILayout_AreaScope, IGUILayout_AreaScopeMethods, IGUILayout_HorizontalScope, IGUILayout_HorizontalScopeMethods, IGUILayout_LayoutedWindow,
+        IGUILayout_LayoutedWindowMethods, IGUILayout_ScrollViewScope, IGUILayout_ScrollViewScopeMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::gui::IGUI_Scope;
     #[cfg(feature = "unity_engine-gui")]
     pub use crate::unity_engine::gui::IGUI_ScopeMethods;
+    pub use crate::{system::object::IObject, unity_engine::gui::IGUI_Scope};
 }

@@ -2,9 +2,9 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/itaginfo/ITagInfo.md"))]
     #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "ITagInfo")]
@@ -23,9 +23,7 @@ mod __ITagInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_tag_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ITagInfo as ::unity2::ClassIdentity>::class(),
@@ -38,72 +36,46 @@ mod __ITagInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ITagInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_TagGroup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ITagInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_TagGroup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_tag_group(
-        this: ITagInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_tag_group(this: ITagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(ITagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_tag_group::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_tag_group::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ITagInfo as ::unity2::ClassIdentity>::class(),
-                "get_Tag",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ITagInfo as ::unity2::ClassIdentity>::class(), "get_Tag", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ITagInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_Tag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ITagInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_Tag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_tag(this: ITagInfo, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
-        let inner: extern "C" fn(ITagInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_tag::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ITagInfo, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(__lookup_get_tag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -113,18 +85,14 @@ pub trait IITagInfoMethods: IITagInfo {
     #[doc = "`get_TagGroup()` overload"]
     fn get_tag_group(self) -> u16 {
         unsafe {
-            let __receiver = <ITagInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ITagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ITagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Tag()` overload"]
     fn get_tag(self) -> u16 {
         unsafe {
-            let __receiver = <ITagInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ITagInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ITagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)
         }
     }
@@ -136,7 +104,5 @@ impl<__T: IITagInfo> IITagInfoMethods for __T {}
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IITagInfo;
-    pub use super::IITagInfoMethods;
-    pub use super::ITagInfo;
+    pub use super::{IITagInfo, IITagInfoMethods, ITagInfo};
 }

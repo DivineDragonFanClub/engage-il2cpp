@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-ui-ilayoutselfcontroller-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutselfcontroller/ILayoutSelfController.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ILayoutSelfController")]
@@ -17,6 +17,5 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-ui-ilayoutselfcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IILayoutSelfController;
-    pub use super::ILayoutSelfController;
+    pub use super::{IILayoutSelfController, ILayoutSelfController};
 }

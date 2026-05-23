@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-scalablebuffermanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scalablebuffermanager/ScalableBufferManager.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ScalableBufferManager")]
@@ -25,9 +25,7 @@ mod __ScalableBufferManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_width_scale_factor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScalableBufferManager as ::unity2::ClassIdentity>::class(),
@@ -40,35 +38,27 @@ mod __ScalableBufferManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScalableBufferManager as ::unity2::ClassIdentity>::NAME,
-                    "get_widthScaleFactor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScalableBufferManager as ::unity2::ClassIdentity>::NAME,
+                        "get_widthScaleFactor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_width_scale_factor(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_width_scale_factor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_width_scale_factor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_height_scale_factor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScalableBufferManager as ::unity2::ClassIdentity>::class(),
@@ -81,39 +71,28 @@ mod __ScalableBufferManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScalableBufferManager as ::unity2::ClassIdentity>::NAME,
-                    "get_heightScaleFactor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScalableBufferManager as ::unity2::ClassIdentity>::NAME,
+                        "get_heightScaleFactor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_height_scale_factor(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_height_scale_factor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_height_scale_factor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resize_buffers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScalableBufferManager as ::unity2::ClassIdentity>::class(),
                 "ResizeBuffers",
@@ -125,30 +104,20 @@ mod __ScalableBufferManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScalableBufferManager as ::unity2::ClassIdentity>::NAME,
-                    "ResizeBuffers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScalableBufferManager as ::unity2::ClassIdentity>::NAME,
+                        "ResizeBuffers",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn resize_buffers(
-        width_scale: f32,
-        height_scale: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resize_buffers::get_offset() as isize),
-        );
+    pub unsafe fn resize_buffers(width_scale: f32, height_scale: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_resize_buffers::get_method_info().method_ptr);
         inner(width_scale, height_scale, __unity2_method_info)
     }
 }
@@ -157,23 +126,16 @@ mod __ScalableBufferManager_unity2_raw {
 impl ScalableBufferManager {
     #[doc = "`get_widthScaleFactor()` overload"]
     pub fn get_width_scale_factor() -> f32 {
-        unsafe {
-            __ScalableBufferManager_unity2_raw::get_width_scale_factor(::core::option::Option::None)
-        }
+        unsafe { __ScalableBufferManager_unity2_raw::get_width_scale_factor(::core::option::Option::None) }
     }
+
     #[doc = "`get_heightScaleFactor()` overload"]
     pub fn get_height_scale_factor() -> f32 {
-        unsafe {
-            __ScalableBufferManager_unity2_raw::get_height_scale_factor(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScalableBufferManager_unity2_raw::get_height_scale_factor(::core::option::Option::None) }
     }
+
     #[doc = "`ResizeBuffers(f32, f32)` overload"]
-    pub fn resize_buffers(
-        width_scale: impl ::core::convert::Into<f32>,
-        height_scale: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn resize_buffers(width_scale: impl ::core::convert::Into<f32>, height_scale: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __ScalableBufferManager_unity2_raw::resize_buffers(
                 ::core::convert::Into::into(width_scale),
@@ -187,8 +149,7 @@ impl ScalableBufferManager {
 #[cfg(feature = "unity_engine-scalablebuffermanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScalableBufferManager;
-    pub use super::ScalableBufferManager;
+    pub use super::{IScalableBufferManager, ScalableBufferManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

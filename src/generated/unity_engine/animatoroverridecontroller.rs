@@ -2,35 +2,174 @@
 
 #[cfg(feature = "unity_engine-animatoroverridecontroller-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::runtimeanimatorcontroller::{
-        IRuntimeAnimatorController, RuntimeAnimatorController,
+    use super::*;
+    use crate::{
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            runtimeanimatorcontroller::{IRuntimeAnimatorController, RuntimeAnimatorController},
+        },
     };
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatoroverridecontroller/AnimatorOverrideController_OnOverrideControllerDirtyCallback.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "AnimatorOverrideController.OnOverrideControllerDirtyCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AnimatorOverrideController_OnOverrideControllerDirtyCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatoroverridecontroller/AnimatorOverrideController.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AnimatorOverrideController")]
     #[parent(crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)]
     pub struct AnimatorOverrideController {
-# [rename (name = "OnOverrideControllerDirty")] pub on_override_controller_dirty : crate :: unity_engine :: animatoroverridecontroller :: AnimatorOverrideController_OnOverrideControllerDirtyCallback ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatoroverridecontroller/AnimatorOverrideController_OnOverrideControllerDirtyCallback.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine",
-        name = "AnimatorOverrideController.OnOverrideControllerDirtyCallback"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AnimatorOverrideController_OnOverrideControllerDirtyCallback {}
+        #[rename(name = "OnOverrideControllerDirty")]
+        pub on_override_controller_dirty:
+            crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController_OnOverrideControllerDirtyCallback,
+    }
 }
 
 #[cfg(feature = "unity_engine-animatoroverridecontroller-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-animatoroverridecontroller")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimatorOverrideController_OnOverrideControllerDirtyCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimatorOverrideController_OnOverrideControllerDirtyCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController_OnOverrideControllerDirtyCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AnimatorOverrideController_OnOverrideControllerDirtyCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AnimatorOverrideController_OnOverrideControllerDirtyCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimatorOverrideController_OnOverrideControllerDirtyCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController_OnOverrideControllerDirtyCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: AnimatorOverrideController_OnOverrideControllerDirtyCallback, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AnimatorOverrideController_OnOverrideControllerDirtyCallback, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-animatoroverridecontroller")]
+pub trait IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods:
+    IAnimatorOverrideController_OnOverrideControllerDirtyCallback
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <AnimatorOverrideController_OnOverrideControllerDirtyCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimatorOverrideController_OnOverrideControllerDirtyCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = <AnimatorOverrideController_OnOverrideControllerDirtyCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AnimatorOverrideController_OnOverrideControllerDirtyCallback_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-animatoroverridecontroller")]
+impl<__T: IAnimatorOverrideController_OnOverrideControllerDirtyCallback> IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods
+    for __T
+{
+}
+
+#[cfg(feature = "unity_engine-animatoroverridecontroller")]
+impl AnimatorOverrideController_OnOverrideControllerDirtyCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimatorOverrideController_OnOverrideControllerDirtyCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-animatoroverridecontroller")]
 #[doc(hidden)]
@@ -41,9 +180,7 @@ mod __AnimatorOverrideController_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
@@ -56,40 +193,29 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AnimatorOverrideController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AnimatorOverrideController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AnimatorOverrideController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -101,18 +227,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -124,21 +247,18 @@ mod __AnimatorOverrideController_unity2_raw {
             AnimatorOverrideController,
             crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, controller, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animatoroverridecontroller :: AnimatorOverrideController as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "Internal_Create",
@@ -150,18 +270,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "Internal_Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "Internal_Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_create(
@@ -173,20 +290,14 @@ mod __AnimatorOverrideController_unity2_raw {
             crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController,
             crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_create::get_method_info().method_ptr);
         inner(self_, controller, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_runtime_animator_controller {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
@@ -199,35 +310,35 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "get_runtimeAnimatorController",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "get_runtimeAnimatorController",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_runtime_animator_controller(
         this: AnimatorOverrideController,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController {
-        let inner : extern "C" fn (AnimatorOverrideController , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_runtime_animator_controller :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AnimatorOverrideController,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController =
+            ::core::mem::transmute(__lookup_get_runtime_animator_controller::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_runtime_animator_controller {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "set_runtimeAnimatorController",
@@ -239,18 +350,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "set_runtimeAnimatorController",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "set_runtimeAnimatorController",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_runtime_animator_controller(
@@ -262,22 +370,15 @@ mod __AnimatorOverrideController_unity2_raw {
             AnimatorOverrideController,
             crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_runtime_animator_controller::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_runtime_animator_controller::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "get_Item",
@@ -289,18 +390,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item(
@@ -312,20 +410,14 @@ mod __AnimatorOverrideController_unity2_raw {
             AnimatorOverrideController,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
@@ -341,18 +433,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_item(
@@ -366,20 +455,14 @@ mod __AnimatorOverrideController_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::animationclip::AnimationClip,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
         inner(this, name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_clip_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -395,18 +478,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "Internal_GetClipByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "Internal_GetClipByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_get_clip_by_name(
@@ -420,20 +500,15 @@ mod __AnimatorOverrideController_unity2_raw {
             ::unity2::Il2CppString,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_clip_by_name::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::animationclip::AnimationClip =
+            ::core::mem::transmute(__lookup_internal_get_clip_by_name::get_method_info().method_ptr);
         inner(this, name, return_effective_clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_clip_by_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
@@ -449,18 +524,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "Internal_SetClipByName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "Internal_SetClipByName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_clip_by_name(
@@ -474,23 +546,16 @@ mod __AnimatorOverrideController_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::animationclip::AnimationClip,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_set_clip_by_name::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_set_clip_by_name::get_method_info().method_ptr);
         inner(this, name, clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "get_Item",
@@ -502,18 +567,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item_2(
@@ -525,20 +587,14 @@ mod __AnimatorOverrideController_unity2_raw {
             AnimatorOverrideController,
             crate::unity_engine::animationclip::AnimationClip,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(__lookup_get_item_2::get_method_info().method_ptr);
         inner(this, clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
@@ -554,18 +610,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_item_2(
@@ -579,20 +632,14 @@ mod __AnimatorOverrideController_unity2_raw {
             crate::unity_engine::animationclip::AnimationClip,
             crate::unity_engine::animationclip::AnimationClip,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_item_2::get_method_info().method_ptr);
         inner(this, clip, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -608,18 +655,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "GetClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "GetClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clip(
@@ -633,25 +677,14 @@ mod __AnimatorOverrideController_unity2_raw {
             crate::unity_engine::animationclip::AnimationClip,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clip::get_offset() as isize),
-        );
-        inner(
-            this,
-            original_clip,
-            return_effective_clip,
-            __unity2_method_info,
-        )
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(__lookup_get_clip::get_method_info().method_ptr);
+        inner(this, original_clip, return_effective_clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
@@ -668,18 +701,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "SetClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "SetClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_clip(
@@ -695,26 +725,14 @@ mod __AnimatorOverrideController_unity2_raw {
             crate::unity_engine::animationclip::AnimationClip,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_clip::get_offset() as isize),
-        );
-        inner(
-            this,
-            original_clip,
-            override_clip,
-            notify,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_clip::get_method_info().method_ptr);
+        inner(this, original_clip, override_clip, notify, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_notification {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
@@ -727,41 +745,28 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "SendNotification",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "SendNotification",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_notification(
-        this: AnimatorOverrideController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_notification(this: AnimatorOverrideController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AnimatorOverrideController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_notification::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_notification::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_original_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "GetOriginalClip",
@@ -773,18 +778,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "GetOriginalClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "GetOriginalClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_original_clip(
@@ -792,27 +794,17 @@ mod __AnimatorOverrideController_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationclip::AnimationClip {
-        let inner: extern "C" fn(
-            AnimatorOverrideController,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_original_clip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimatorOverrideController, i32, ::unity2::OptionalMethod) -> crate::unity_engine::animationclip::AnimationClip =
+            ::core::mem::transmute(__lookup_get_original_clip::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_override_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "GetOverrideClip",
@@ -824,18 +816,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "GetOverrideClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "GetOverrideClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_override_clip(
@@ -847,20 +836,14 @@ mod __AnimatorOverrideController_unity2_raw {
             AnimatorOverrideController,
             crate::unity_engine::animationclip::AnimationClip,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_override_clip::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(__lookup_get_override_clip::get_method_info().method_ptr);
         inner(this, original_clip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_overrides_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
@@ -873,46 +856,33 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "get_overridesCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "get_overridesCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_overrides_count(
-        this: AnimatorOverrideController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_overrides_count(this: AnimatorOverrideController, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AnimatorOverrideController, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_overrides_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_overrides_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_overrides {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
-                        crate::unity_engine::animationclip::AnimationClip,
-                        crate::unity_engine::animationclip::AnimationClip,
-                    >,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
+                    crate::unity_engine::animationclip::AnimationClip,
+                    crate::unity_engine::animationclip::AnimationClip,
+                >,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "GetOverrides",
@@ -924,18 +894,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "GetOverrides",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "GetOverrides",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_overrides(
@@ -957,28 +924,21 @@ mod __AnimatorOverrideController_unity2_raw {
                 >,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_overrides::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_overrides::get_method_info().method_ptr);
         inner(this, overrides, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_overrides {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
                     crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
                         crate::unity_engine::animationclip::AnimationClip,
                         crate::unity_engine::animationclip::AnimationClip,
                     >,
-                > as ::unity2::IlType>::il_type(),
-            ];
+                > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "ApplyOverrides",
@@ -990,18 +950,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "ApplyOverrides",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "ApplyOverrides",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn apply_overrides(
@@ -1023,20 +980,14 @@ mod __AnimatorOverrideController_unity2_raw {
                 >,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_apply_overrides::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_apply_overrides::get_method_info().method_ptr);
         inner(this, overrides, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clips {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
@@ -1049,18 +1000,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "get_clips",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "get_clips",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clips(
@@ -1070,26 +1018,17 @@ mod __AnimatorOverrideController_unity2_raw {
         let inner: extern "C" fn(
             AnimatorOverrideController,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::unity_engine::animationclippair::AnimationClipPair,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clips::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::animationclippair::AnimationClipPair> =
+            ::core::mem::transmute(__lookup_get_clips::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_clips {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::animationclippair::AnimationClipPair,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::animationclippair::AnimationClipPair> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "set_clips",
@@ -1101,18 +1040,15 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "set_clips",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "set_clips",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_clips(
@@ -1124,20 +1060,14 @@ mod __AnimatorOverrideController_unity2_raw {
             AnimatorOverrideController,
             ::unity2::Array<crate::unity_engine::animationclippair::AnimationClipPair>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_clips::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_clips::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perform_override_clip_list_cleanup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
@@ -1150,40 +1080,29 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "PerformOverrideClipListCleanup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "PerformOverrideClipListCleanup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn perform_override_clip_list_cleanup(
-        this: AnimatorOverrideController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn perform_override_clip_list_cleanup(this: AnimatorOverrideController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AnimatorOverrideController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_perform_override_clip_list_cleanup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_perform_override_clip_list_cleanup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_invalidate_override_controller {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animatoroverridecontroller :: AnimatorOverrideController as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimatorOverrideController as ::unity2::ClassIdentity>::class(),
                 "OnInvalidateOverrideController",
@@ -1195,32 +1114,23 @@ mod __AnimatorOverrideController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
-                    "OnInvalidateOverrideController",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorOverrideController as ::unity2::ClassIdentity>::NAME,
+                        "OnInvalidateOverrideController",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_invalidate_override_controller(
         controller: crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_invalidate_override_controller::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_invalidate_override_controller::get_method_info().method_ptr);
         inner(controller, __unity2_method_info)
     }
 }
@@ -1229,12 +1139,8 @@ mod __AnimatorOverrideController_unity2_raw {
 impl AnimatorOverrideController {
     #[doc = "`Internal_Create(crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController, crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)` overload"]
     pub fn internal_create(
-        self_: impl ::core::convert::Into<
-            crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController,
-        >,
-        controller: impl ::core::convert::Into<
-            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
-        >,
+        self_: impl ::core::convert::Into<crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController>,
+        controller: impl ::core::convert::Into<crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>,
     ) -> () {
         unsafe {
             __AnimatorOverrideController_unity2_raw::internal_create(
@@ -1244,11 +1150,10 @@ impl AnimatorOverrideController {
             )
         }
     }
+
     #[doc = "`OnInvalidateOverrideController(crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController)` overload"]
     pub fn on_invalidate_override_controller(
-        controller: impl ::core::convert::Into<
-            crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController,
-        >,
+        controller: impl ::core::convert::Into<crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController>,
     ) -> () {
         unsafe {
             __AnimatorOverrideController_unity2_raw::on_invalidate_override_controller(
@@ -1265,58 +1170,34 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)` overload"]
-    fn ctor_2(
-        self,
-        controller: impl ::core::convert::Into<
-            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
-        >,
-    ) -> () {
+    fn ctor_2(self, controller: impl ::core::convert::Into<crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(controller),
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(controller), ::core::option::Option::None)
         }
     }
     #[doc = "`get_runtimeAnimatorController()` overload"]
-    fn get_runtime_animator_controller(
-        self,
-    ) -> crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController {
+    fn get_runtime_animator_controller(self) -> crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::get_runtime_animator_controller(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::get_runtime_animator_controller(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_runtimeAnimatorController(crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)` overload"]
     fn set_runtime_animator_controller(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>,
     ) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::set_runtime_animator_controller(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1325,20 +1206,11 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
         }
     }
     #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
-    fn get_item(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::animationclip::AnimationClip {
+    fn get_item(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::get_item(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Item(::unity2::Il2CppString, crate::unity_engine::animationclip::AnimationClip)` overload"]
@@ -1349,9 +1221,7 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::set_item(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1368,9 +1238,7 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::internal_get_clip_by_name(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1387,9 +1255,7 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::internal_set_clip_by_name(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1405,14 +1271,8 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::get_item_2(
-                __receiver,
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::get_item_2(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Item(crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::animationclip::AnimationClip)` overload"]
@@ -1423,9 +1283,7 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::set_item_2(
                 __receiver,
                 ::core::convert::Into::into(clip),
@@ -1442,9 +1300,7 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::get_clip(
                 __receiver,
                 ::core::convert::Into::into(original_clip),
@@ -1462,9 +1318,7 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::set_clip(
                 __receiver,
                 ::core::convert::Into::into(original_clip),
@@ -1478,30 +1332,16 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     fn send_notification(self) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::send_notification(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::send_notification(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetOriginalClip(i32)` overload"]
-    fn get_original_clip(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::animationclip::AnimationClip {
+    fn get_original_clip(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::get_original_clip(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::get_original_clip(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetOverrideClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
@@ -1511,9 +1351,7 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AnimatorOverrideController_unity2_raw::get_override_clip(
                 __receiver,
                 ::core::convert::Into::into(original_clip),
@@ -1525,13 +1363,8 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     fn get_overrides_count(self) -> i32 {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::get_overrides_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::get_overrides_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetOverrides(crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::unity_engine::animationclip::AnimationClip,crate::unity_engine::animationclip::AnimationClip>>)` overload"]
@@ -1548,14 +1381,8 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::get_overrides(
-                __receiver,
-                ::core::convert::Into::into(overrides),
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::get_overrides(__receiver, ::core::convert::Into::into(overrides), ::core::option::Option::None)
         }
     }
     #[doc = "`ApplyOverrides(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::unity_engine::animationclip::AnimationClip,crate::unity_engine::animationclip::AnimationClip>>)` overload"]
@@ -1572,61 +1399,32 @@ pub trait IAnimatorOverrideControllerMethods: IAnimatorOverrideController {
     ) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::apply_overrides(
-                __receiver,
-                ::core::convert::Into::into(overrides),
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::apply_overrides(__receiver, ::core::convert::Into::into(overrides), ::core::option::Option::None)
         }
     }
     #[doc = "`get_clips()` overload"]
-    fn get_clips(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::animationclippair::AnimationClipPair> {
+    fn get_clips(self) -> ::unity2::Array<crate::unity_engine::animationclippair::AnimationClipPair> {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::get_clips(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::get_clips(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_clips(::unity2::Array<crate::unity_engine::animationclippair::AnimationClipPair>)` overload"]
-    fn set_clips(
-        self,
-        value: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::animationclippair::AnimationClipPair>,
-        >,
-    ) -> () {
+    fn set_clips(self, value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::animationclippair::AnimationClipPair>>) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::set_clips(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::set_clips(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`PerformOverrideClipListCleanup()` overload"]
     fn perform_override_clip_list_cleanup(self) -> () {
         unsafe {
             let __receiver =
-                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AnimatorOverrideController_unity2_raw::perform_override_clip_list_cleanup(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AnimatorOverrideController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AnimatorOverrideController_unity2_raw::perform_override_clip_list_cleanup(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1650,9 +1448,7 @@ impl AnimatorOverrideController {
     }
 
     #[doc = "`.ctor(crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)` — overload selector"]
-    pub fn new_2(
-        controller: crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
-    ) -> Self {
+    pub fn new_2(controller: crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -1667,162 +1463,24 @@ impl AnimatorOverrideController {
 
 #[cfg(feature = "unity_engine-animatoroverridecontroller")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimatorOverrideController_OnOverrideControllerDirtyCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorOverrideController_OnOverrideControllerDirtyCallback as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorOverrideController_OnOverrideControllerDirtyCallback as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AnimatorOverrideController_OnOverrideControllerDirtyCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimatorOverrideController_OnOverrideControllerDirtyCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimatorOverrideController_OnOverrideControllerDirtyCallback as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimatorOverrideController_OnOverrideControllerDirtyCallback as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AnimatorOverrideController_OnOverrideControllerDirtyCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AnimatorOverrideController_OnOverrideControllerDirtyCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-animatoroverridecontroller")]
-pub trait IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods:
-    IAnimatorOverrideController_OnOverrideControllerDirtyCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < AnimatorOverrideController_OnOverrideControllerDirtyCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AnimatorOverrideController_OnOverrideControllerDirtyCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < AnimatorOverrideController_OnOverrideControllerDirtyCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AnimatorOverrideController_OnOverrideControllerDirtyCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-animatoroverridecontroller")]
-impl<__T: IAnimatorOverrideController_OnOverrideControllerDirtyCallback>
-    IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods for __T
-{
-}
-
-#[cfg(feature = "unity_engine-animatoroverridecontroller")]
-impl AnimatorOverrideController_OnOverrideControllerDirtyCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AnimatorOverrideController_OnOverrideControllerDirtyCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-animatoroverridecontroller")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimatorOverrideController;
-    pub use super::AnimatorOverrideController_OnOverrideControllerDirtyCallback;
-    pub use super::IAnimatorOverrideController;
-    pub use super::IAnimatorOverrideControllerMethods;
-    pub use super::IAnimatorOverrideController_OnOverrideControllerDirtyCallback;
-    pub use super::IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        AnimatorOverrideController, AnimatorOverrideController_OnOverrideControllerDirtyCallback, IAnimatorOverrideController,
+        IAnimatorOverrideControllerMethods, IAnimatorOverrideController_OnOverrideControllerDirtyCallback,
+        IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::runtimeanimatorcontroller::IRuntimeAnimatorController;
     #[cfg(feature = "unity_engine-runtimeanimatorcontroller")]
     pub use crate::unity_engine::runtimeanimatorcontroller::IRuntimeAnimatorControllerMethods;
+    pub use crate::{
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::{object_2::IObject_2, runtimeanimatorcontroller::IRuntimeAnimatorController},
+    };
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-namespacedoc_7-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/namespacedoc_7/NamespaceDoc_7.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Diagnostics", name = "NamespaceDoc")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-namespacedoc_7")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INamespaceDoc_7;
-    pub use super::NamespaceDoc_7;
+    pub use super::{INamespaceDoc_7, NamespaceDoc_7};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

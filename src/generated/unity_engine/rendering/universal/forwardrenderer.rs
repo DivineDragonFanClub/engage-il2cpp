@@ -2,20 +2,19 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrenderer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::rendering::universal::scriptablerenderer::{
-        IScriptableRenderer, ScriptableRenderer,
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::rendering::universal::scriptablerenderer::{IScriptableRenderer, ScriptableRenderer},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_Profiling.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRenderer.Profiling"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ForwardRenderer.Profiling")]
     #[parent(crate::system::object::Object)]
     pub struct ForwardRenderer_Profiling {
         #[static_field]
@@ -23,66 +22,8 @@ mod __types {
         pub k_name: ::unity2::Il2CppString,
         #[static_field]
         #[rename(name = "createCameraRenderTarget")]
-        pub create_camera_render_target:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        pub create_camera_render_target: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRenderer"
-    )]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]
-    pub struct ForwardRenderer {
-# [static_field] # [rename (name = "k_DepthStencilBufferBits")] pub k_depth_stencil_buffer_bits : i32 ,
-# [rename (name = "m_ColorGradingLutPass")] pub m_color_grading_lut_pass : crate :: unity_engine :: rendering :: universal :: internal :: colorgradinglutpass :: ColorGradingLutPass ,
-# [rename (name = "m_DepthPrepass")] pub m_depth_prepass : crate :: unity_engine :: rendering :: universal :: internal :: depthonlypass :: DepthOnlyPass ,
-# [rename (name = "m_DepthNormalPrepass")] pub m_depth_normal_prepass : crate :: unity_engine :: rendering :: universal :: internal :: depthnormalonlypass :: DepthNormalOnlyPass ,
-# [rename (name = "m_MainLightShadowCasterPass")] pub m_main_light_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: mainlightshadowcasterpass :: MainLightShadowCasterPass ,
-# [rename (name = "m_AdditionalLightsShadowCasterPass")] pub m_additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass ,
-# [rename (name = "m_GBufferPass")] pub m_g_buffer_pass : crate :: unity_engine :: rendering :: universal :: internal :: gbufferpass :: GBufferPass ,
-# [rename (name = "m_GBufferCopyDepthPass")] pub m_g_buffer_copy_depth_pass : crate :: unity_engine :: rendering :: universal :: internal :: copydepthpass :: CopyDepthPass ,
-# [rename (name = "m_TileDepthRangePass")] pub m_tile_depth_range_pass : crate :: unity_engine :: rendering :: universal :: internal :: tiledepthrangepass :: TileDepthRangePass ,
-# [rename (name = "m_TileDepthRangeExtraPass")] pub m_tile_depth_range_extra_pass : crate :: unity_engine :: rendering :: universal :: internal :: tiledepthrangepass :: TileDepthRangePass ,
-# [rename (name = "m_DeferredPass")] pub m_deferred_pass : crate :: unity_engine :: rendering :: universal :: internal :: deferredpass :: DeferredPass ,
-# [rename (name = "m_RenderOpaqueForwardOnlyPass")] pub m_render_opaque_forward_only_pass : crate :: unity_engine :: rendering :: universal :: internal :: drawobjectspass :: DrawObjectsPass ,
-# [rename (name = "m_RenderOpaqueForwardPass")] pub m_render_opaque_forward_pass : crate :: unity_engine :: rendering :: universal :: internal :: drawobjectspass :: DrawObjectsPass ,
-# [rename (name = "m_DrawSkyboxPass")] pub m_draw_skybox_pass : crate :: unity_engine :: rendering :: universal :: drawskyboxpass :: DrawSkyboxPass ,
-# [rename (name = "m_CopyDepthPass")] pub m_copy_depth_pass : crate :: unity_engine :: rendering :: universal :: internal :: copydepthpass :: CopyDepthPass ,
-# [rename (name = "m_CopyColorPass")] pub m_copy_color_pass : crate :: unity_engine :: rendering :: universal :: internal :: copycolorpass :: CopyColorPass ,
-# [rename (name = "m_TransparentSettingsPass")] pub m_transparent_settings_pass : crate :: unity_engine :: rendering :: universal :: transparentsettingspass :: TransparentSettingsPass ,
-# [rename (name = "m_RenderTransparentForwardPass")] pub m_render_transparent_forward_pass : crate :: unity_engine :: rendering :: universal :: internal :: drawobjectspass :: DrawObjectsPass ,
-# [rename (name = "m_OnRenderObjectCallbackPass")] pub m_on_render_object_callback_pass : crate :: unity_engine :: rendering :: universal :: invokeonrenderobjectcallbackpass :: InvokeOnRenderObjectCallbackPass ,
-# [rename (name = "m_PostProcessPass")] pub m_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
-# [rename (name = "m_FinalPostProcessPass")] pub m_final_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
-# [rename (name = "m_FinalBlitPass")] pub m_final_blit_pass : crate :: unity_engine :: rendering :: universal :: internal :: finalblitpass :: FinalBlitPass ,
-# [rename (name = "m_CapturePass")] pub m_capture_pass : crate :: unity_engine :: rendering :: universal :: capturepass :: CapturePass ,
-# [rename (name = "m_XROcclusionMeshPass")] pub m_xr_occlusion_mesh_pass : crate :: unity_engine :: rendering :: universal :: xrocclusionmeshpass :: XROcclusionMeshPass ,
-# [rename (name = "m_XRCopyDepthPass")] pub m_xr_copy_depth_pass : crate :: unity_engine :: rendering :: universal :: internal :: copydepthpass :: CopyDepthPass ,
-# [rename (name = "m_ActiveCameraColorAttachment")] pub m_active_camera_color_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_ActiveCameraDepthAttachment")] pub m_active_camera_depth_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_CameraColorAttachment")] pub m_camera_color_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_CameraDepthAttachment")] pub m_camera_depth_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_DepthTexture")] pub m_depth_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_NormalsTexture")] pub m_normals_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_GBufferHandles")] pub m_g_buffer_handles : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle > ,
-# [rename (name = "m_OpaqueColor")] pub m_opaque_color : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_AfterPostProcessColor")] pub m_after_post_process_color : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_ColorGradingLut")] pub m_color_grading_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_DepthInfoTexture")] pub m_depth_info_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_TileDepthInfoTexture")] pub m_tile_depth_info_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_ForwardLights")] pub m_forward_lights : crate :: unity_engine :: rendering :: universal :: internal :: forwardlights :: ForwardLights ,
-# [rename (name = "m_DeferredLights")] pub m_deferred_lights : crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights ,
-# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
-# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: stencilstate :: StencilState ,
-# [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_CopyDepthMaterial")] pub m_copy_depth_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_SamplingMaterial")] pub m_sampling_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_ScreenspaceShadowsMaterial")] pub m_screenspace_shadows_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_TileDepthInfoMaterial")] pub m_tile_depth_info_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
-}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_RenderPassInputSummary.md"))]
     #[repr(C)]
@@ -95,9 +36,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for ForwardRenderer_RenderPassInputSummary {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
         const NAME: &'static str = "ForwardRenderer.RenderPassInputSummary";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -108,11 +48,114 @@ mod __types {
 
     impl ::unity2::IlType for ForwardRenderer_RenderPassInputSummary {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ForwardRenderer")]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]
+    pub struct ForwardRenderer {
+        #[static_field]
+        #[rename(name = "k_DepthStencilBufferBits")]
+        pub k_depth_stencil_buffer_bits: i32,
+        #[rename(name = "m_ColorGradingLutPass")]
+        pub m_color_grading_lut_pass: crate::unity_engine::rendering::universal::internal::colorgradinglutpass::ColorGradingLutPass,
+        #[rename(name = "m_DepthPrepass")]
+        pub m_depth_prepass: crate::unity_engine::rendering::universal::internal::depthonlypass::DepthOnlyPass,
+        #[rename(name = "m_DepthNormalPrepass")]
+        pub m_depth_normal_prepass: crate::unity_engine::rendering::universal::internal::depthnormalonlypass::DepthNormalOnlyPass,
+        #[rename(name = "m_MainLightShadowCasterPass")]
+        pub m_main_light_shadow_caster_pass:
+            crate::unity_engine::rendering::universal::internal::mainlightshadowcasterpass::MainLightShadowCasterPass,
+        #[rename(name = "m_AdditionalLightsShadowCasterPass")]
+        pub m_additional_lights_shadow_caster_pass:
+            crate::unity_engine::rendering::universal::internal::additionallightsshadowcasterpass::AdditionalLightsShadowCasterPass,
+        #[rename(name = "m_GBufferPass")]
+        pub m_g_buffer_pass: crate::unity_engine::rendering::universal::internal::gbufferpass::GBufferPass,
+        #[rename(name = "m_GBufferCopyDepthPass")]
+        pub m_g_buffer_copy_depth_pass: crate::unity_engine::rendering::universal::internal::copydepthpass::CopyDepthPass,
+        #[rename(name = "m_TileDepthRangePass")]
+        pub m_tile_depth_range_pass: crate::unity_engine::rendering::universal::internal::tiledepthrangepass::TileDepthRangePass,
+        #[rename(name = "m_TileDepthRangeExtraPass")]
+        pub m_tile_depth_range_extra_pass: crate::unity_engine::rendering::universal::internal::tiledepthrangepass::TileDepthRangePass,
+        #[rename(name = "m_DeferredPass")]
+        pub m_deferred_pass: crate::unity_engine::rendering::universal::internal::deferredpass::DeferredPass,
+        #[rename(name = "m_RenderOpaqueForwardOnlyPass")]
+        pub m_render_opaque_forward_only_pass: crate::unity_engine::rendering::universal::internal::drawobjectspass::DrawObjectsPass,
+        #[rename(name = "m_RenderOpaqueForwardPass")]
+        pub m_render_opaque_forward_pass: crate::unity_engine::rendering::universal::internal::drawobjectspass::DrawObjectsPass,
+        #[rename(name = "m_DrawSkyboxPass")]
+        pub m_draw_skybox_pass: crate::unity_engine::rendering::universal::drawskyboxpass::DrawSkyboxPass,
+        #[rename(name = "m_CopyDepthPass")]
+        pub m_copy_depth_pass: crate::unity_engine::rendering::universal::internal::copydepthpass::CopyDepthPass,
+        #[rename(name = "m_CopyColorPass")]
+        pub m_copy_color_pass: crate::unity_engine::rendering::universal::internal::copycolorpass::CopyColorPass,
+        #[rename(name = "m_TransparentSettingsPass")]
+        pub m_transparent_settings_pass: crate::unity_engine::rendering::universal::transparentsettingspass::TransparentSettingsPass,
+        #[rename(name = "m_RenderTransparentForwardPass")]
+        pub m_render_transparent_forward_pass: crate::unity_engine::rendering::universal::internal::drawobjectspass::DrawObjectsPass,
+        #[rename(name = "m_OnRenderObjectCallbackPass")]
+        pub m_on_render_object_callback_pass:
+            crate::unity_engine::rendering::universal::invokeonrenderobjectcallbackpass::InvokeOnRenderObjectCallbackPass,
+        #[rename(name = "m_PostProcessPass")]
+        pub m_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
+        #[rename(name = "m_FinalPostProcessPass")]
+        pub m_final_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
+        #[rename(name = "m_FinalBlitPass")]
+        pub m_final_blit_pass: crate::unity_engine::rendering::universal::internal::finalblitpass::FinalBlitPass,
+        #[rename(name = "m_CapturePass")]
+        pub m_capture_pass: crate::unity_engine::rendering::universal::capturepass::CapturePass,
+        #[rename(name = "m_XROcclusionMeshPass")]
+        pub m_xr_occlusion_mesh_pass: crate::unity_engine::rendering::universal::xrocclusionmeshpass::XROcclusionMeshPass,
+        #[rename(name = "m_XRCopyDepthPass")]
+        pub m_xr_copy_depth_pass: crate::unity_engine::rendering::universal::internal::copydepthpass::CopyDepthPass,
+        #[rename(name = "m_ActiveCameraColorAttachment")]
+        pub m_active_camera_color_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_ActiveCameraDepthAttachment")]
+        pub m_active_camera_depth_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_CameraColorAttachment")]
+        pub m_camera_color_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_CameraDepthAttachment")]
+        pub m_camera_depth_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_DepthTexture")]
+        pub m_depth_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_NormalsTexture")]
+        pub m_normals_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_GBufferHandles")]
+        pub m_g_buffer_handles: ::unity2::Array<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>,
+        #[rename(name = "m_OpaqueColor")]
+        pub m_opaque_color: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_AfterPostProcessColor")]
+        pub m_after_post_process_color: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_ColorGradingLut")]
+        pub m_color_grading_lut: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_DepthInfoTexture")]
+        pub m_depth_info_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_TileDepthInfoTexture")]
+        pub m_tile_depth_info_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_ForwardLights")]
+        pub m_forward_lights: crate::unity_engine::rendering::universal::internal::forwardlights::ForwardLights,
+        #[rename(name = "m_DeferredLights")]
+        pub m_deferred_lights: crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights,
+        #[rename(name = "m_RenderingMode")]
+        pub m_rendering_mode: crate::unity_engine::rendering::universal::renderingmode::RenderingMode,
+        #[rename(name = "m_DefaultStencilState")]
+        pub m_default_stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        #[rename(name = "m_BlitMaterial")]
+        pub m_blit_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_CopyDepthMaterial")]
+        pub m_copy_depth_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_SamplingMaterial")]
+        pub m_sampling_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_ScreenspaceShadowsMaterial")]
+        pub m_screenspace_shadows_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_TileDepthInfoMaterial")]
+        pub m_tile_depth_info_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_TileDeferredMaterial")]
+        pub m_tile_deferred_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_StencilDeferredMaterial")]
+        pub m_stencil_deferred_material: crate::unity_engine::material::Material,
     }
 }
 
@@ -128,9 +171,7 @@ mod __ForwardRenderer_Profiling_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer_Profiling as ::unity2::ClassIdentity>::class(),
@@ -143,26 +184,19 @@ mod __ForwardRenderer_Profiling_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer_Profiling as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer_Profiling as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -184,9 +218,7 @@ mod __ForwardRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_rendering_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
@@ -199,34 +231,33 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_renderingMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_renderingMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rendering_mode(
         this: ForwardRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode {
-        let inner : extern "C" fn (ForwardRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rendering_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ForwardRenderer,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode =
+            ::core::mem::transmute(__lookup_get_rendering_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_actual_rendering_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
@@ -239,34 +270,33 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_actualRenderingMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_actualRenderingMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_actual_rendering_mode(
         this: ForwardRenderer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode {
-        let inner : extern "C" fn (ForwardRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_actual_rendering_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ForwardRenderer,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode =
+            ::core::mem::transmute(__lookup_get_actual_rendering_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_accurate_gbuffer_normals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
@@ -279,40 +309,29 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "get_accurateGbufferNormals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "get_accurateGbufferNormals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_accurate_gbuffer_normals(
-        this: ForwardRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_accurate_gbuffer_normals(this: ForwardRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ForwardRenderer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_accurate_gbuffer_normals::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_accurate_gbuffer_normals::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -324,18 +343,15 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -347,22 +363,15 @@ mod __ForwardRenderer_unity2_raw {
             ForwardRenderer,
             crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "Dispose",
@@ -374,41 +383,31 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: ForwardRenderer,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: ForwardRenderer, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ForwardRenderer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, disposing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "Setup",
@@ -420,24 +419,21 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
         this: ForwardRenderer,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -445,21 +441,18 @@ mod __ForwardRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_lights {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "SetupLights",
@@ -471,24 +464,21 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetupLights",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetupLights",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_lights(
         this: ForwardRenderer,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -496,21 +486,18 @@ mod __ForwardRenderer_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_lights::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_lights::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_culling_parameters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "SetupCullingParameters",
@@ -522,37 +509,38 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "SetupCullingParameters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "SetupCullingParameters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_culling_parameters(
         this: ForwardRenderer,
-        culling_parameters : * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters,
+        culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
         camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ForwardRenderer , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_setup_culling_parameters :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ForwardRenderer,
+            *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
+            *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_setup_culling_parameters::get_method_info().method_ptr);
         inner(this, culling_parameters, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finish_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "FinishRendering",
@@ -564,18 +552,15 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "FinishRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "FinishRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn finish_rendering(
@@ -583,25 +568,21 @@ mod __ForwardRenderer_unity2_raw {
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ForwardRenderer,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_finish_rendering::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ForwardRenderer, crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_finish_rendering::get_method_info().method_ptr);
         inner(this, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enqueue_deferred {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "EnqueueDeferred",
@@ -613,23 +594,20 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "EnqueueDeferred",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "EnqueueDeferred",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enqueue_deferred(
         this: ForwardRenderer,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         has_depth_prepass: bool,
         apply_main_shadow: bool,
         apply_additional_shadow: bool,
@@ -642,11 +620,7 @@ mod __ForwardRenderer_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enqueue_deferred::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_enqueue_deferred::get_method_info().method_ptr);
         inner(
             this,
             rendering_data,
@@ -660,10 +634,9 @@ mod __ForwardRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_pass_inputs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "GetRenderPassInputs",
@@ -675,31 +648,41 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetRenderPassInputs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetRenderPassInputs",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_render_pass_inputs (this : ForwardRenderer , rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: forwardrenderer :: ForwardRenderer_RenderPassInputSummary{
-        let inner : extern "C" fn (ForwardRenderer , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: forwardrenderer :: ForwardRenderer_RenderPassInputSummary = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_render_pass_inputs :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_render_pass_inputs(
+        this: ForwardRenderer,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::forwardrenderer::ForwardRenderer_RenderPassInputSummary {
+        let inner: extern "C" fn(
+            ForwardRenderer,
+            *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::forwardrenderer::ForwardRenderer_RenderPassInputSummary =
+            ::core::mem::transmute(__lookup_get_render_pass_inputs::get_method_info().method_ptr);
         inner(this, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_camera_render_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "CreateCameraRenderTarget",
@@ -711,18 +694,15 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "CreateCameraRenderTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "CreateCameraRenderTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_camera_render_target(
@@ -740,27 +720,14 @@ mod __ForwardRenderer_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_camera_render_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            context,
-            descriptor,
-            create_color,
-            create_depth,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_create_camera_render_target::get_method_info().method_ptr);
+        inner(this, context, descriptor, create_color, create_depth, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_platform_requires_explicit_msaa_resolve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
@@ -773,42 +740,29 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "PlatformRequiresExplicitMsaaResolve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "PlatformRequiresExplicitMsaaResolve",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn platform_requires_explicit_msaa_resolve(
-        this: ForwardRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn platform_requires_explicit_msaa_resolve(this: ForwardRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ForwardRenderer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_platform_requires_explicit_msaa_resolve::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_platform_requires_explicit_msaa_resolve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_requires_intermediate_color_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "RequiresIntermediateColorTexture",
@@ -820,18 +774,15 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "RequiresIntermediateColorTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "RequiresIntermediateColorTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn requires_intermediate_color_texture(
@@ -843,21 +794,16 @@ mod __ForwardRenderer_unity2_raw {
             ForwardRenderer,
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_requires_intermediate_color_texture::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_requires_intermediate_color_texture::get_method_info().method_ptr);
         inner(this, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_copy_depth {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ForwardRenderer as ::unity2::ClassIdentity>::class(),
                 "CanCopyDepth",
@@ -869,18 +815,15 @@ mod __ForwardRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
-                    "CanCopyDepth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ForwardRenderer as ::unity2::ClassIdentity>::NAME,
+                        "CanCopyDepth",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_copy_depth(
@@ -892,11 +835,7 @@ mod __ForwardRenderer_unity2_raw {
             ForwardRenderer,
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_copy_depth::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_can_copy_depth::get_method_info().method_ptr);
         inner(this, camera_data, __unity2_method_info)
     }
 }
@@ -904,90 +843,48 @@ mod __ForwardRenderer_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
 pub trait IForwardRendererMethods: IForwardRenderer {
     #[doc = "`get_renderingMode()` overload"]
-    fn get_rendering_mode(
-        self,
-    ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode {
+    fn get_rendering_mode(self) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ForwardRenderer_unity2_raw::get_rendering_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ForwardRenderer_unity2_raw::get_rendering_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_actualRenderingMode()` overload"]
-    fn get_actual_rendering_mode(
-        self,
-    ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode {
+    fn get_actual_rendering_mode(self) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ForwardRenderer_unity2_raw::get_actual_rendering_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ForwardRenderer_unity2_raw::get_actual_rendering_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_accurateGbufferNormals()` overload"]
     fn get_accurate_gbuffer_normals(self) -> bool {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ForwardRenderer_unity2_raw::get_accurate_gbuffer_normals(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ForwardRenderer_unity2_raw::get_accurate_gbuffer_normals(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData)` overload"]
-    fn ctor(
-        self,
-        data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData,
-        >,
-    ) -> () {
+    fn ctor(self, data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData>) -> () {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ForwardRenderer_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ForwardRenderer_unity2_raw::ctor(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose(bool)` overload"]
     fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ForwardRenderer_unity2_raw::dispose(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ForwardRenderer_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
         }
     }
     #[doc = "`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn setup(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ForwardRenderer_unity2_raw::setup(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -1000,17 +897,11 @@ pub trait IForwardRendererMethods: IForwardRenderer {
     #[doc = "`SetupLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn setup_lights(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ForwardRenderer_unity2_raw::setup_lights(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -1028,13 +919,10 @@ pub trait IForwardRendererMethods: IForwardRenderer {
         crate::unity_engine::rendering::universal::cameradata::CameraData,
     ) {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ;
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
             __ForwardRenderer_unity2_raw::setup_culling_parameters(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -1045,19 +933,10 @@ pub trait IForwardRendererMethods: IForwardRenderer {
         }
     }
     #[doc = "`FinishRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn finish_rendering(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> () {
+    fn finish_rendering(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ForwardRenderer_unity2_raw::finish_rendering(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ForwardRenderer_unity2_raw::finish_rendering(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)
         }
     }
     #[doc = "`EnqueueDeferred(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData, bool, bool, bool)` overload"]
@@ -1068,12 +947,8 @@ pub trait IForwardRendererMethods: IForwardRenderer {
         apply_additional_shadow: impl ::core::convert::Into<bool>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ForwardRenderer_unity2_raw::enqueue_deferred(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -1085,40 +960,30 @@ pub trait IForwardRendererMethods: IForwardRenderer {
             __out_0.assume_init()
         }
     }
-    #[doc = "`GetRenderPassInputs(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]    fn get_render_pass_inputs (self ,) -> (crate :: unity_engine :: rendering :: universal :: forwardrenderer :: ForwardRenderer_RenderPassInputSummary , crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData){
+    #[doc = "`GetRenderPassInputs(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    fn get_render_pass_inputs(
+        self,
+    ) -> (
+        crate::unity_engine::rendering::universal::forwardrenderer::ForwardRenderer_RenderPassInputSummary,
+        crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
-            let __ret = {
-                __ForwardRenderer_unity2_raw::get_render_pass_inputs(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
+            let __ret = { __ForwardRenderer_unity2_raw::get_render_pass_inputs(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
     #[doc = "`CreateCameraRenderTarget(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, bool, bool)` overload"]
     fn create_camera_render_target(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         create_color: impl ::core::convert::Into<bool>,
         create_depth: impl ::core::convert::Into<bool>,
     ) -> crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
-            >::uninit();
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>::uninit();
             __ForwardRenderer_unity2_raw::create_camera_render_target(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -1133,60 +998,26 @@ pub trait IForwardRendererMethods: IForwardRenderer {
     #[doc = "`PlatformRequiresExplicitMsaaResolve()` overload"]
     fn platform_requires_explicit_msaa_resolve(self) -> bool {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ForwardRenderer_unity2_raw::platform_requires_explicit_msaa_resolve(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ForwardRenderer_unity2_raw::platform_requires_explicit_msaa_resolve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RequiresIntermediateColorTexture(*mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]
-    fn requires_intermediate_color_texture(
-        self,
-    ) -> (
-        bool,
-        crate::unity_engine::rendering::universal::cameradata::CameraData,
-    ) {
+    fn requires_intermediate_color_texture(self) -> (bool, crate::unity_engine::rendering::universal::cameradata::CameraData) {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
-            let __ret = {
-                __ForwardRenderer_unity2_raw::requires_intermediate_color_texture(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
+            let __ret =
+                { __ForwardRenderer_unity2_raw::requires_intermediate_color_texture(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
     #[doc = "`CanCopyDepth(*mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]
-    fn can_copy_depth(
-        self,
-    ) -> (
-        bool,
-        crate::unity_engine::rendering::universal::cameradata::CameraData,
-    ) {
+    fn can_copy_depth(self) -> (bool, crate::unity_engine::rendering::universal::cameradata::CameraData) {
         unsafe {
-            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
-            let __ret = {
-                __ForwardRenderer_unity2_raw::can_copy_depth(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
+            let __receiver = <ForwardRenderer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
+            let __ret = { __ForwardRenderer_unity2_raw::can_copy_depth(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
@@ -1198,9 +1029,7 @@ impl<__T: IForwardRenderer> IForwardRendererMethods for __T {}
 #[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
 impl ForwardRenderer {
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData)` — overload selector"]
-    pub fn new(
-        data: crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData,
-    ) -> Self {
+    pub fn new(data: crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -1216,19 +1045,18 @@ impl ForwardRenderer {
 #[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ForwardRenderer;
-    pub use super::ForwardRenderer_Profiling;
-    pub use super::ForwardRenderer_RenderPassInputSummary;
-    pub use super::IForwardRenderer;
-    pub use super::IForwardRendererMethods;
-    pub use super::IForwardRenderer_Profiling;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ForwardRenderer, ForwardRenderer_Profiling, ForwardRenderer_RenderPassInputSummary, IForwardRenderer, IForwardRendererMethods,
+        IForwardRenderer_Profiling,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer;
     #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
     pub use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRendererMethods;
+    pub use crate::{
+        system::{object::IObject, valuetype::IValueType},
+        unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer,
+    };
 }

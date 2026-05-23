@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-collections-generic-arraysorthelper_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/arraysorthelper_2/ArraySortHelper_2.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "ArraySortHelper`2")]
@@ -13,8 +13,7 @@ mod __types {
     pub struct ArraySortHelper_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
         #[static_field]
         #[rename(name = "s_defaultArraySortHelper")]
-        pub s_default_array_sort_helper:
-            crate::system::collections::generic::arraysorthelper_2::ArraySortHelper_2<T0, T1>,
+        pub s_default_array_sort_helper: crate::system::collections::generic::arraysorthelper_2::ArraySortHelper_2<T0, T1>,
     }
 }
 
@@ -26,13 +25,11 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2<T0, T1> {
     #[doc = "`get_Default()` overload"]
     #[method(name = "get_Default", args = 0)]
-    pub fn get_default(
-    ) -> crate::system::collections::generic::arraysorthelper_2::ArraySortHelper_2<T0, T1>;
+    pub fn get_default() -> crate::system::collections::generic::arraysorthelper_2::ArraySortHelper_2<T0, T1>;
 
     #[doc = "`CreateArraySortHelper()` overload"]
     #[method(name = "CreateArraySortHelper", args = 0)]
-    pub fn create_array_sort_helper(
-    ) -> crate::system::collections::generic::arraysorthelper_2::ArraySortHelper_2<T0, T1>;
+    pub fn create_array_sort_helper() -> crate::system::collections::generic::arraysorthelper_2::ArraySortHelper_2<T0, T1>;
 
     #[doc = "`Sort(::unity2::Array<T0>, ::unity2::Array<T1>, i32, i32, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
     #[method(name = "Sort", args = 5)]
@@ -42,9 +39,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
         values: ::unity2::Array<T1>,
         index: i32,
         length: i32,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> ();
 
     #[doc = "`SwapIfGreaterWithItems(::unity2::Array<T0>, ::unity2::Array<T1>, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>, i32, i32)` overload"]
@@ -52,9 +47,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
     pub fn swap_if_greater_with_items(
         keys: ::unity2::Array<T0>,
         values: ::unity2::Array<T1>,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
         a: i32,
         b: i32,
     ) -> ();
@@ -70,9 +63,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
         values: ::unity2::Array<T1>,
         left: i32,
         length: i32,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> ();
 
     #[doc = "`IntroSort(::unity2::Array<T0>, ::unity2::Array<T1>, i32, i32, i32, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
@@ -83,9 +74,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
         lo: i32,
         hi: i32,
         depth_limit: i32,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> ();
 
     #[doc = "`PickPivotAndPartition(::unity2::Array<T0>, ::unity2::Array<T1>, i32, i32, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
@@ -95,9 +84,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
         values: ::unity2::Array<T1>,
         lo: i32,
         hi: i32,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> i32;
 
     #[doc = "`Heapsort(::unity2::Array<T0>, ::unity2::Array<T1>, i32, i32, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
@@ -107,9 +94,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
         values: ::unity2::Array<T1>,
         lo: i32,
         hi: i32,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> ();
 
     #[doc = "`DownHeap(::unity2::Array<T0>, ::unity2::Array<T1>, i32, i32, i32, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
@@ -120,9 +105,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
         i: i32,
         n: i32,
         lo: i32,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> ();
 
     #[doc = "`InsertionSort(::unity2::Array<T0>, ::unity2::Array<T1>, i32, i32, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
@@ -132,9 +115,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
         values: ::unity2::Array<T1>,
         lo: i32,
         hi: i32,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> ();
 
     #[doc = "`.ctor()` overload"]
@@ -161,9 +142,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
 #[cfg(feature = "system-collections-generic-arraysorthelper_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArraySortHelper_2;
-    pub use super::IArraySortHelper_2;
-    pub use super::IArraySortHelper_2Methods;
+    pub use super::{ArraySortHelper_2, IArraySortHelper_2, IArraySortHelper_2Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

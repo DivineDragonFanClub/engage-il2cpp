@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-volumeparameter_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter, VolumeParameter};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::volumeparameter::{IVolumeParameter, VolumeParameter},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumeparameter_1/VolumeParameter_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "VolumeParameter`1")]
@@ -59,10 +61,7 @@ impl<T0: ::unity2::ClassIdentity> VolumeParameter_1<T0> {
 
     #[doc = "`SetValue(crate::unity_engine::rendering::volumeparameter::VolumeParameter)` overload"]
     #[method(name = "SetValue", args = 1)]
-    pub fn set_value_2(
-        self,
-        parameter: crate::unity_engine::rendering::volumeparameter::VolumeParameter,
-    ) -> ();
+    pub fn set_value_2(self, parameter: crate::unity_engine::rendering::volumeparameter::VolumeParameter) -> ();
 
     #[doc = "`GetHashCode()` overload"]
     #[method(name = "GetHashCode", args = 0)]
@@ -74,24 +73,15 @@ impl<T0: ::unity2::ClassIdentity> VolumeParameter_1<T0> {
 
     #[doc = "`op_Equality(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>, T0)` overload"]
     #[method(name = "op_Equality", args = 2)]
-    pub fn op_equality(
-        lhs: crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>,
-        rhs: T0,
-    ) -> bool;
+    pub fn op_equality(lhs: crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>, rhs: T0) -> bool;
 
     #[doc = "`op_Inequality(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>, T0)` overload"]
     #[method(name = "op_Inequality", args = 2)]
-    pub fn op_inequality(
-        lhs: crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>,
-        rhs: T0,
-    ) -> bool;
+    pub fn op_inequality(lhs: crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>, rhs: T0) -> bool;
 
     #[doc = "`Equals(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>)` overload"]
     #[method(name = "Equals", args = 1)]
-    pub fn equals(
-        self,
-        other: crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>,
-    ) -> bool;
+    pub fn equals(self, other: crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>) -> bool;
 
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     #[method(name = "Equals", args = 1)]
@@ -99,9 +89,7 @@ impl<T0: ::unity2::ClassIdentity> VolumeParameter_1<T0> {
 
     #[doc = "`op_Explicit(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>)` overload"]
     #[method(name = "op_Explicit", args = 1)]
-    pub fn op_explicit(
-        prop: crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>,
-    ) -> T0;
+    pub fn op_explicit(prop: crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<T0>) -> T0;
 }
 
 #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
@@ -136,13 +124,10 @@ impl<T0: ::unity2::ClassIdentity> VolumeParameter_1<T0> {
 #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IVolumeParameter_1;
-    pub use super::IVolumeParameter_1Methods;
-    pub use super::VolumeParameter_1;
-    pub use crate::system::object::IObject;
+    pub use super::{IVolumeParameter_1, IVolumeParameter_1Methods, VolumeParameter_1};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
     #[cfg(feature = "unity_engine-rendering-volumeparameter")]
     pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    pub use crate::{system::object::IObject, unity_engine::rendering::volumeparameter::IVolumeParameter};
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-animations-animationlayermixerplayable-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animationlayermixerplayable/AnimationLayerMixerPlayable.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for AnimationLayerMixerPlayable {
-        const NAMESPACE: &'static str = "UnityEngine.Animations";
-
         const NAME: &'static str = "AnimationLayerMixerPlayable";
+        const NAMESPACE: &'static str = "UnityEngine.Animations";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,10 +30,7 @@ mod __types {
 
     impl ::unity2::IlType for AnimationLayerMixerPlayable {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -49,10 +47,11 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -64,37 +63,39 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
         graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
         input_count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable
-    {
-        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable {
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(graph, input_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
                 "CreateHandle",
@@ -106,18 +107,15 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "CreateHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "CreateHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_handle(
@@ -129,23 +127,17 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             i32,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_handle::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(__lookup_create_handle::get_method_info().method_ptr);
         inner(graph, input_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -157,18 +149,15 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -180,20 +169,14 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
             AnimationLayerMixerPlayable,
             crate::unity_engine::playables::playablehandle::PlayableHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
@@ -206,18 +189,15 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "GetHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "GetHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_handle(
@@ -227,23 +207,17 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         let inner: extern "C" fn(
             AnimationLayerMixerPlayable,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playablehandle::PlayableHandle =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_handle::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::playables::playablehandle::PlayableHandle =
+            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
                 "op_Implicit",
@@ -255,35 +229,34 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit(
-        playable : crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable,
+        playable: crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playable::Playable {
-        let inner : extern "C" fn (crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_implicit :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(playable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
                 "Equals",
@@ -295,35 +268,34 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals(
         this: AnimationLayerMixerPlayable,
-        other : crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable,
+        other: crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (AnimationLayerMixerPlayable , crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_equals :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AnimationLayerMixerPlayable,
+            crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layer_mask_from_avatar_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::avatarmask::AvatarMask as ::unity2::IlType>::il_type(),
@@ -339,18 +311,15 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "SetLayerMaskFromAvatarMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "SetLayerMaskFromAvatarMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_layer_mask_from_avatar_mask(
@@ -359,26 +328,19 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         mask: crate::unity_engine::avatarmask::AvatarMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AnimationLayerMixerPlayable,
-            u32,
-            crate::unity_engine::avatarmask::AvatarMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_layer_mask_from_avatar_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AnimationLayerMixerPlayable, u32, crate::unity_engine::avatarmask::AvatarMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_layer_mask_from_avatar_mask::get_method_info().method_ptr);
         inner(this, layer_index, mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_handle_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
                 "CreateHandleInternal",
@@ -390,18 +352,15 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "CreateHandleInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "CreateHandleInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_handle_internal(
@@ -413,21 +372,19 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_handle_internal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_create_handle_internal::get_method_info().method_ptr);
         inner(graph, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layer_mask_from_avatar_mask_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: avatarmask :: AvatarMask as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::avatarmask::AvatarMask as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
                 "SetLayerMaskFromAvatarMaskInternal",
@@ -439,18 +396,15 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "SetLayerMaskFromAvatarMaskInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "SetLayerMaskFromAvatarMaskInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_layer_mask_from_avatar_mask_internal(
@@ -464,20 +418,14 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
             u32,
             crate::unity_engine::avatarmask::AvatarMask,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_layer_mask_from_avatar_mask_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_layer_mask_from_avatar_mask_internal::get_method_info().method_ptr);
         inner(handle, layer_index, mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
@@ -490,36 +438,30 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_handle_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::class(),
                 "CreateHandleInternal_Injected",
@@ -531,18 +473,15 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
-                    "CreateHandleInternal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationLayerMixerPlayable as ::unity2::ClassIdentity>::NAME,
+                        "CreateHandleInternal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_handle_internal_injected(
@@ -554,11 +493,7 @@ mod __AnimationLayerMixerPlayable_unity2_raw {
             *mut crate::unity_engine::playables::playablegraph::PlayableGraph,
             *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_handle_internal_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_create_handle_internal_injected::get_method_info().method_ptr);
         inner(graph, handle, __unity2_method_info)
     }
 }
@@ -569,8 +504,7 @@ impl AnimationLayerMixerPlayable {
     pub fn create(
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
         input_count: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable
-    {
+    ) -> crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable {
         unsafe {
             __AnimationLayerMixerPlayable_unity2_raw::create(
                 ::core::convert::Into::into(graph),
@@ -579,6 +513,7 @@ impl AnimationLayerMixerPlayable {
             )
         }
     }
+
     #[doc = "`CreateHandle(crate::unity_engine::playables::playablegraph::PlayableGraph, i32)` overload"]
     pub fn create_handle(
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
@@ -592,28 +527,20 @@ impl AnimationLayerMixerPlayable {
             )
         }
     }
+
     #[doc = "`op_Implicit(crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable)` overload"]
     pub fn op_implicit(
-        playable : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable >,
+        playable: impl ::core::convert::Into<crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable>,
     ) -> crate::unity_engine::playables::playable::Playable {
-        unsafe {
-            __AnimationLayerMixerPlayable_unity2_raw::op_implicit(
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimationLayerMixerPlayable_unity2_raw::op_implicit(::core::convert::Into::into(playable), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateHandleInternal(crate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
     pub fn create_handle_internal(
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
-    ) -> (
-        bool,
-        crate::unity_engine::playables::playablehandle::PlayableHandle,
-    ) {
+    ) -> (bool, crate::unity_engine::playables::playablehandle::PlayableHandle) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
             let __ret = {
                 __AnimationLayerMixerPlayable_unity2_raw::create_handle_internal(
                     ::core::convert::Into::into(graph),
@@ -624,15 +551,14 @@ impl AnimationLayerMixerPlayable {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`SetLayerMaskFromAvatarMaskInternal(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, u32, crate::unity_engine::avatarmask::AvatarMask)` overload"]
     pub fn set_layer_mask_from_avatar_mask_internal(
         layer_index: impl ::core::convert::Into<u32>,
         mask: impl ::core::convert::Into<crate::unity_engine::avatarmask::AvatarMask>,
     ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
             __AnimationLayerMixerPlayable_unity2_raw::set_layer_mask_from_avatar_mask_internal(
                 __out_0.as_mut_ptr(),
                 ::core::convert::Into::into(layer_index),
@@ -642,10 +568,12 @@ impl AnimationLayerMixerPlayable {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __AnimationLayerMixerPlayable_unity2_raw::cctor(::core::option::Option::None) }
     }
+
     #[doc = "`CreateHandleInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
     pub fn create_handle_internal_injected() -> (
         bool,
@@ -653,12 +581,8 @@ impl AnimationLayerMixerPlayable {
         crate::unity_engine::playables::playablehandle::PlayableHandle,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablegraph::PlayableGraph,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablegraph::PlayableGraph>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
             let __ret = {
                 __AnimationLayerMixerPlayable_unity2_raw::create_handle_internal_injected(
                     __out_0.as_mut_ptr(),
@@ -674,39 +598,23 @@ impl AnimationLayerMixerPlayable {
 #[cfg(feature = "unity_engine-animations-animationlayermixerplayable")]
 impl AnimationLayerMixerPlayable {
     #[doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
-    pub fn ctor(
-        self,
-        handle: impl ::core::convert::Into<
-            crate::unity_engine::playables::playablehandle::PlayableHandle,
-        >,
-    ) -> () {
-        unsafe {
-            __AnimationLayerMixerPlayable_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn ctor(self, handle: impl ::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>) -> () {
+        unsafe { __AnimationLayerMixerPlayable_unity2_raw::ctor(self, ::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHandle()` overload"]
     pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
-        unsafe {
-            __AnimationLayerMixerPlayable_unity2_raw::get_handle(self, ::core::option::Option::None)
-        }
+        unsafe { __AnimationLayerMixerPlayable_unity2_raw::get_handle(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable)` overload"]
     pub fn equals(
         self,
-        other : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable >,
+        other: impl ::core::convert::Into<crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable>,
     ) -> bool {
-        unsafe {
-            __AnimationLayerMixerPlayable_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimationLayerMixerPlayable_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`SetLayerMaskFromAvatarMask(u32, crate::unity_engine::avatarmask::AvatarMask)` overload"]
     pub fn set_layer_mask_from_avatar_mask(
         self,
@@ -728,10 +636,9 @@ impl AnimationLayerMixerPlayable {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationLayerMixerPlayable;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

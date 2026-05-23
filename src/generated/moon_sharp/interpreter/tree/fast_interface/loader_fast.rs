@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-fast_interface-loader_fast-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/fast_interface/loader_fast/Loader_Fast.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Tree.Fast_Interface",
-        name = "Loader_Fast"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Fast_Interface", name = "Loader_Fast")]
     #[parent(crate::system::object::Object)]
     pub struct Loader_Fast {}
 }
@@ -28,10 +25,11 @@ mod __Loader_Fast_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load_dynamic_expr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Loader_Fast as ::unity2::ClassIdentity>::class(),
                 "LoadDynamicExpr",
@@ -43,31 +41,39 @@ mod __Loader_Fast_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Loader_Fast as ::unity2::ClassIdentity>::NAME,
-                    "LoadDynamicExpr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Loader_Fast as ::unity2::ClassIdentity>::NAME,
+                        "LoadDynamicExpr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn load_dynamic_expr (script : crate :: moon_sharp :: interpreter :: script :: Script , source : crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: expressions :: dynamicexprexpression :: DynamicExprExpression{
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: script :: Script , crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: expressions :: dynamicexprexpression :: DynamicExprExpression = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_load_dynamic_expr :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn load_dynamic_expr(
+        script: crate::moon_sharp::interpreter::script::Script,
+        source: crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::tree::expressions::dynamicexprexpression::DynamicExprExpression {
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::script::Script,
+            crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::tree::expressions::dynamicexprexpression::DynamicExprExpression =
+            ::core::mem::transmute(__lookup_load_dynamic_expr::get_method_info().method_ptr);
         inner(script, source, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_loading_context {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Loader_Fast as ::unity2::ClassIdentity>::class(),
                 "CreateLoadingContext",
@@ -79,18 +85,15 @@ mod __Loader_Fast_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Loader_Fast as ::unity2::ClassIdentity>::NAME,
-                    "CreateLoadingContext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Loader_Fast as ::unity2::ClassIdentity>::NAME,
+                        "CreateLoadingContext",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_loading_context(
@@ -98,17 +101,24 @@ mod __Loader_Fast_unity2_raw {
         source: crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: script :: Script , crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_loading_context :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::script::Script,
+            crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext =
+            ::core::mem::transmute(__lookup_create_loading_context::get_method_info().method_ptr);
         inner(script, source, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_chunk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Loader_Fast as ::unity2::ClassIdentity>::class(),
                 "LoadChunk",
@@ -120,18 +130,15 @@ mod __Loader_Fast_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Loader_Fast as ::unity2::ClassIdentity>::NAME,
-                    "LoadChunk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Loader_Fast as ::unity2::ClassIdentity>::NAME,
+                        "LoadChunk",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_chunk(
@@ -145,21 +152,20 @@ mod __Loader_Fast_unity2_raw {
             crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
             crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_chunk::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_load_chunk::get_method_info().method_ptr);
         inner(script, source, bytecode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_function {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Loader_Fast as ::unity2::ClassIdentity>::class(),
                 "LoadFunction",
@@ -171,18 +177,15 @@ mod __Loader_Fast_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Loader_Fast as ::unity2::ClassIdentity>::NAME,
-                    "LoadFunction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Loader_Fast as ::unity2::ClassIdentity>::NAME,
+                        "LoadFunction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_function(
@@ -198,24 +201,18 @@ mod __Loader_Fast_unity2_raw {
             crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
             bool,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_function::get_offset() as isize),
-        );
-        inner(
-            script,
-            source,
-            bytecode,
-            uses_global_env,
-            __unity2_method_info,
-        )
+        ) -> i32 = ::core::mem::transmute(__lookup_load_function::get_method_info().method_ptr);
+        inner(script, source, bytecode, uses_global_env, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-fast_interface-loader_fast")]
 impl Loader_Fast {
-    #[doc = "`LoadDynamicExpr(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)` overload"]    pub fn load_dynamic_expr (script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , source : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode >) -> crate :: moon_sharp :: interpreter :: tree :: expressions :: dynamicexprexpression :: DynamicExprExpression{
+    #[doc = "`LoadDynamicExpr(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)` overload"]
+    pub fn load_dynamic_expr(
+        script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
+        source: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>,
+    ) -> crate::moon_sharp::interpreter::tree::expressions::dynamicexprexpression::DynamicExprExpression {
         unsafe {
             __Loader_Fast_unity2_raw::load_dynamic_expr(
                 ::core::convert::Into::into(script),
@@ -224,12 +221,11 @@ impl Loader_Fast {
             )
         }
     }
+
     #[doc = "`CreateLoadingContext(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)` overload"]
     pub fn create_loading_context(
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-        source: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
-        >,
+        source: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>,
     ) -> crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext {
         unsafe {
             __Loader_Fast_unity2_raw::create_loading_context(
@@ -239,15 +235,12 @@ impl Loader_Fast {
             )
         }
     }
+
     #[doc = "`LoadChunk(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
     pub fn load_chunk(
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-        source: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
-        >,
-        bytecode: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
+        source: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>,
+        bytecode: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>,
     ) -> i32 {
         unsafe {
             __Loader_Fast_unity2_raw::load_chunk(
@@ -258,15 +251,12 @@ impl Loader_Fast {
             )
         }
     }
+
     #[doc = "`LoadFunction(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, bool)` overload"]
     pub fn load_function(
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-        source: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
-        >,
-        bytecode: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
+        source: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>,
+        bytecode: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>,
         uses_global_env: impl ::core::convert::Into<bool>,
     ) -> i32 {
         unsafe {
@@ -284,8 +274,7 @@ impl Loader_Fast {
 #[cfg(feature = "moon_sharp-interpreter-tree-fast_interface-loader_fast")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILoader_Fast;
-    pub use super::Loader_Fast;
+    pub use super::{ILoader_Fast, Loader_Fast};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

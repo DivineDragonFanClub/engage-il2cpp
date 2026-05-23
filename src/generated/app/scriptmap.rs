@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-scriptmap-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::scriptutil::{IScriptUtil, ScriptUtil};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::scriptutil::{IScriptUtil, ScriptUtil},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmap/ScriptMap.md"))]
     #[::unity2::class(namespace = "App", name = "ScriptMap")]
@@ -26,13 +28,9 @@ mod __ScriptMap_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_mind_get_force {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MindGetForce",
@@ -44,18 +42,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MindGetForce",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MindGetForce",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn mind_get_force(
@@ -65,24 +60,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mind_get_force::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_mind_get_force::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mind_get_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MindGetUnit",
@@ -94,18 +81,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MindGetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MindGetUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn mind_get_unit(
@@ -115,24 +99,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mind_get_unit::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_mind_get_unit::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mind_get_target_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MindGetTargetUnit",
@@ -144,18 +120,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MindGetTargetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MindGetTargetUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn mind_get_target_unit(
@@ -165,24 +138,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mind_get_target_unit::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_mind_get_target_unit::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mind_get_event_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MindGetEventUnit",
@@ -194,18 +159,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MindGetEventUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MindGetEventUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn mind_get_event_unit(
@@ -215,47 +177,30 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mind_get_event_unit::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_mind_get_event_unit::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cursor_get_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "CursorGetX",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "CursorGetX", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "CursorGetX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "CursorGetX",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cursor_get_x(
@@ -265,47 +210,30 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cursor_get_x::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_cursor_get_x::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cursor_get_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "CursorGetZ",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "CursorGetZ", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "CursorGetZ",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "CursorGetZ",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cursor_get_z(
@@ -315,24 +243,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cursor_get_z::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_cursor_get_z::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cursor_set_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "CursorSetPos",
@@ -344,45 +264,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "CursorSetPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "CursorSetPos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cursor_set_pos(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cursor_set_pos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cursor_set_pos::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cursor_set_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "CursorSetVisible",
@@ -394,45 +301,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "CursorSetVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "CursorSetVisible",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cursor_set_visible(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cursor_set_visible::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cursor_set_visible::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cursor_get_distance_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "CursorGetDistanceMode",
@@ -444,18 +338,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "CursorGetDistanceMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "CursorGetDistanceMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cursor_get_distance_mode(
@@ -465,24 +356,17 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cursor_get_distance_mode::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_cursor_get_distance_mode::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cursor_set_distance_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "CursorSetDistanceMode",
@@ -494,45 +378,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "CursorSetDistanceMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "CursorSetDistanceMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cursor_set_distance_mode(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cursor_set_distance_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cursor_set_distance_mode::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cursor_set_distance_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "CursorSetDistanceScale",
@@ -544,68 +415,46 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "CursorSetDistanceScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "CursorSetDistanceScale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cursor_set_distance_scale(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cursor_set_distance_scale::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cursor_set_distance_scale::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "TerrainGet",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "TerrainGet", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TerrainGet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TerrainGet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terrain_get(
@@ -615,24 +464,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terrain_get::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_terrain_get::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_set_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "TerrainSetBegin",
@@ -644,45 +485,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TerrainSetBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TerrainSetBegin",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terrain_set_begin(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terrain_set_begin::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_terrain_set_begin::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_set_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "TerrainSetEnd",
@@ -694,95 +522,63 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TerrainSetEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TerrainSetEnd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terrain_set_end(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terrain_set_end::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_terrain_set_end::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "TerrainSet",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "TerrainSet", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TerrainSet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TerrainSet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terrain_set(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terrain_set::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_terrain_set::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_set_one {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "TerrainSetOne",
@@ -794,42 +590,34 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TerrainSetOne",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TerrainSetOne",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terrain_set_one(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terrain_set_one::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_terrain_set_one::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_set_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "TerrainSetImpl",
@@ -841,18 +629,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TerrainSetImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TerrainSetImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terrain_set_impl(
@@ -860,28 +645,17 @@ mod __ScriptMap_unity2_raw {
         is_multi: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terrain_set_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_terrain_set_impl::get_method_info().method_ptr);
         inner(args, is_multi, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_fill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "TerrainFill",
@@ -893,45 +667,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TerrainFill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TerrainFill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terrain_fill(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terrain_fill::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_terrain_fill::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_get_move_cost {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "TerrainGetMoveCost",
@@ -943,18 +704,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TerrainGetMoveCost",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TerrainGetMoveCost",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terrain_get_move_cost(
@@ -964,24 +722,17 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terrain_get_move_cost::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_terrain_get_move_cost::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_overlap_set_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapOverlapSetBegin",
@@ -993,45 +744,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapOverlapSetBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapOverlapSetBegin",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_overlap_set_begin(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_overlap_set_begin::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_overlap_set_begin::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_overlap_set_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapOverlapSetEnd",
@@ -1043,45 +781,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapOverlapSetEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapOverlapSetEnd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_overlap_set_end(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_overlap_set_end::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_overlap_set_end::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_overlap_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapOverlapSet",
@@ -1093,45 +818,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapOverlapSet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapOverlapSet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_overlap_set(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_overlap_set::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_overlap_set::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_overlap_set_one {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapOverlapSetOne",
@@ -1143,42 +855,34 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapOverlapSetOne",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapOverlapSetOne",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_overlap_set_one(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_overlap_set_one::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_overlap_set_one::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_overlap_set_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapOverlapSetImpl",
@@ -1190,18 +894,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapOverlapSetImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapOverlapSetImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_overlap_set_impl(
@@ -1209,28 +910,17 @@ mod __ScriptMap_unity2_raw {
         is_multi: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_overlap_set_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_overlap_set_impl::get_method_info().method_ptr);
         inner(args, is_multi, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_overlap_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapOverlapGet",
@@ -1242,18 +932,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapOverlapGet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapOverlapGet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_overlap_get(
@@ -1263,24 +950,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_overlap_get::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_map_overlap_get::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_overlap_remove {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapOverlapRemove",
@@ -1292,42 +971,34 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapOverlapRemove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapOverlapRemove",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_overlap_remove(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_overlap_remove::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_overlap_remove::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_overlap_remove_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapOverlapRemoveImpl",
@@ -1339,18 +1010,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapOverlapRemoveImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapOverlapRemoveImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_overlap_remove_impl(
@@ -1358,28 +1026,17 @@ mod __ScriptMap_unity2_raw {
         is_multi: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_overlap_remove_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_overlap_remove_impl::get_method_info().method_ptr);
         inner(args, is_multi, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_range_add_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapRangeAddBegin",
@@ -1391,45 +1048,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapRangeAddBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapRangeAddBegin",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_range_add_begin(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_range_add_begin::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_range_add_begin::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_range_add_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapRangeAddEnd",
@@ -1441,45 +1085,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapRangeAddEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapRangeAddEnd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_range_add_end(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_range_add_end::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_range_add_end::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_range_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapRangeAdd",
@@ -1491,45 +1122,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapRangeAdd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapRangeAdd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_range_add(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_range_add::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_range_add::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_range_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapRangeClear",
@@ -1541,95 +1159,63 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapRangeClear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapRangeClear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_range_clear(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_range_clear::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_range_clear::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "Dispos",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "Dispos", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "Dispos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "Dispos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispos(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispos::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispos_get_group_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "DisposGetGroupCount",
@@ -1641,18 +1227,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "DisposGetGroupCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "DisposGetGroupCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispos_get_group_count(
@@ -1662,24 +1245,17 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispos_get_group_count::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_dispos_get_group_count::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispos_get_unit_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "DisposGetUnitX",
@@ -1691,18 +1267,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "DisposGetUnitX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "DisposGetUnitX",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispos_get_unit_x(
@@ -1712,24 +1285,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispos_get_unit_x::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_dispos_get_unit_x::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispos_get_unit_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "DisposGetUnitZ",
@@ -1741,18 +1306,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "DisposGetUnitZ",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "DisposGetUnitZ",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispos_get_unit_z(
@@ -1762,20 +1324,14 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispos_get_unit_z::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_dispos_get_unit_z::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dispos_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1791,18 +1347,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "GetDisposData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "GetDisposData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_dispos_data(
@@ -1810,28 +1363,17 @@ mod __ScriptMap_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::disposdata::DisposData {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::disposdata::DisposData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dispos_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> crate::app::disposdata::DisposData =
+            ::core::mem::transmute(__lookup_get_dispos_data::get_method_info().method_ptr);
         inner(group, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_damage_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapDamageBegin",
@@ -1843,45 +1385,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapDamageBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapDamageBegin",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_damage_begin(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_damage_begin::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_damage_begin::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_damage_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapDamageAdd",
@@ -1893,45 +1422,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapDamageAdd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapDamageAdd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_damage_add(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_damage_add::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_damage_add::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_damage_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapDamageEnd",
@@ -1943,95 +1459,63 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapDamageEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapDamageEnd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_damage_end(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_damage_end::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_damage_end::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_battle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "Battle",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "Battle", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "Battle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "Battle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn battle(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_battle::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_battle::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_battle_set_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "BattleSetAttack",
@@ -2043,45 +1527,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "BattleSetAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "BattleSetAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn battle_set_attack(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_battle_set_attack::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_battle_set_attack::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_battle_add_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "BattleAddTarget",
@@ -2093,45 +1564,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "BattleAddTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "BattleAddTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn battle_add_target(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_battle_add_target::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_battle_add_target::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_battle_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "BattleStart",
@@ -2143,68 +1601,46 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "BattleStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "BattleStart",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn battle_start(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_battle_start::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_battle_start::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_get_turn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "MapGetTurn",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "MapGetTurn", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapGetTurn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapGetTurn",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_get_turn(
@@ -2214,24 +1650,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_get_turn::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_map_get_turn::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_get_phase {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapGetPhase",
@@ -2243,18 +1671,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapGetPhase",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapGetPhase",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_get_phase(
@@ -2264,24 +1689,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_get_phase::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_map_get_phase::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_get_average_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapGetAverageLevel",
@@ -2293,18 +1710,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapGetAverageLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapGetAverageLevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_get_average_level(
@@ -2314,24 +1728,17 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_get_average_level::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_map_get_average_level::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_get_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapGetPosition",
@@ -2343,18 +1750,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapGetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapGetPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_get_position(
@@ -2364,24 +1768,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_get_position::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_map_get_position::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_get_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapGetHeight",
@@ -2393,18 +1789,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapGetHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapGetHeight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_get_height(
@@ -2414,47 +1807,30 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_get_height::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_map_get_height::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_is_sight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "MapIsSight",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "MapIsSight", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapIsSight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapIsSight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_is_sight(
@@ -2464,24 +1840,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_is_sight::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_map_is_sight::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_set_sight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapSetSight",
@@ -2493,45 +1861,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapSetSight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapSetSight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_set_sight(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_set_sight::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_set_sight::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_is_recollection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapIsRecollection",
@@ -2543,18 +1898,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapIsRecollection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapIsRecollection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_is_recollection(
@@ -2564,47 +1916,32 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_is_recollection::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_map_is_recollection::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_win_rule_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::app::mapsituation::MapSituation_Status as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "WinRuleSet",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "WinRuleSet", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "WinRuleSet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "WinRuleSet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn win_rule_set(
@@ -2612,28 +1949,17 @@ mod __ScriptMap_unity2_raw {
         status: crate::app::mapsituation::MapSituation_Status,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            bool,
-            crate::app::mapsituation::MapSituation_Status,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_win_rule_set::get_offset() as isize),
-        );
+        let inner: extern "C" fn(bool, crate::app::mapsituation::MapSituation_Status, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_win_rule_set::get_method_info().method_ptr);
         inner(enable, status, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_win_rule_set_breakdown {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "WinRuleSetBreakdown",
@@ -2645,45 +1971,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "WinRuleSetBreakdown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "WinRuleSetBreakdown",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn win_rule_set_breakdown(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_win_rule_set_breakdown::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_win_rule_set_breakdown::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_win_rule_set_destroy_boss {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "WinRuleSetDestroyBoss",
@@ -2695,45 +2008,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "WinRuleSetDestroyBoss",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "WinRuleSetDestroyBoss",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn win_rule_set_destroy_boss(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_win_rule_set_destroy_boss::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_win_rule_set_destroy_boss::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_win_rule_set_enemy_number_less_than_or_equal_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "WinRuleSetEnemyNumberLessThanOrEqualTo",
@@ -2745,47 +2045,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "WinRuleSetEnemyNumberLessThanOrEqualTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "WinRuleSetEnemyNumberLessThanOrEqualTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn win_rule_set_enemy_number_less_than_or_equal_to(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_win_rule_set_enemy_number_less_than_or_equal_to::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_win_rule_set_enemy_number_less_than_or_equal_to::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_win_rule_set_limit_turn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "WinRuleSetLimitTurn",
@@ -2797,45 +2082,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "WinRuleSetLimitTurn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "WinRuleSetLimitTurn",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn win_rule_set_limit_turn(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_win_rule_set_limit_turn::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_win_rule_set_limit_turn::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_win_rule_set_mid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "WinRuleSetMID",
@@ -2847,45 +2119,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "WinRuleSetMID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "WinRuleSetMID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn win_rule_set_mid(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_win_rule_set_mid::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_win_rule_set_mid::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lose_rule_set_mid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "LoseRuleSetMID",
@@ -2897,42 +2156,36 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "LoseRuleSetMID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "LoseRuleSetMID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lose_rule_set_mid(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lose_rule_set_mid::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_lose_rule_set_mid::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_effect_arg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "TryGetEffectArg",
@@ -2944,18 +2197,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TryGetEffectArg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TryGetEffectArg",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_effect_arg(
@@ -2971,74 +2221,47 @@ mod __ScriptMap_unity2_raw {
             *mut crate::unity_engine::quaternion::Quaternion,
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_effect_arg::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_try_get_effect_arg::get_method_info().method_ptr);
         inner(name, position, rotation, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_effect_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "EffectPlay",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "EffectPlay", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EffectPlay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EffectPlay",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn effect_play(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_effect_play::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_effect_play::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_effect_is_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EffectIsPlaying",
@@ -3050,18 +2273,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EffectIsPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EffectIsPlaying",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn effect_is_playing(
@@ -3071,24 +2291,16 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_effect_is_playing::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_effect_is_playing::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_effect_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EffectCreate",
@@ -3100,45 +2312,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EffectCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EffectCreate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn effect_create(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_effect_create::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_effect_create::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_effect_delete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EffectDelete",
@@ -3150,45 +2349,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EffectDelete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EffectDelete",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn effect_delete(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_effect_delete::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_effect_delete::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_turn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryTurn",
@@ -3200,45 +2386,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryTurn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryTurn",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_turn(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_turn::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_turn::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_turn_after {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryTurnAfter",
@@ -3250,45 +2423,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryTurnAfter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryTurnAfter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_turn_after(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_turn_after::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_turn_after::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_turn_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryTurnEnd",
@@ -3300,45 +2460,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryTurnEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryTurnEnd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_turn_end(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_turn_end::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_turn_end::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_area {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryArea",
@@ -3350,45 +2497,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryArea",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryArea",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_area(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_area::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_area::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_die {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryDie",
@@ -3400,45 +2534,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryDie",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryDie",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_die(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_die::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_die::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_revive_before {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryReviveBefore",
@@ -3450,45 +2571,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryReviveBefore",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryReviveBefore",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_revive_before(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_revive_before::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_revive_before::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_revive_after {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryReviveAfter",
@@ -3500,45 +2608,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryReviveAfter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryReviveAfter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_revive_after(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_revive_after::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_revive_after::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_fixed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryFixed",
@@ -3550,45 +2645,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryFixed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryFixed",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_fixed(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_fixed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_fixed::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_talk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryTalk",
@@ -3600,45 +2682,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryTalk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryTalk",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_talk(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_talk::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_talk::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_battle_before {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryBattleBefore",
@@ -3650,45 +2719,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryBattleBefore",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryBattleBefore",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_battle_before(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_battle_before::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_battle_before::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_battle_talk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryBattleTalk",
@@ -3700,45 +2756,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryBattleTalk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryBattleTalk",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_battle_talk(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_battle_talk::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_battle_talk::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_battle_after {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryBattleAfter",
@@ -3750,45 +2793,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryBattleAfter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryBattleAfter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_battle_after(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_battle_after::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_battle_after::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_escape {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryEscape",
@@ -3800,45 +2830,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryEscape",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryEscape",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_escape(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_escape::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_escape::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_breakdown {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryBreakdown",
@@ -3850,45 +2867,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryBreakdown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryBreakdown",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_breakdown(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_breakdown::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_breakdown::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_breakdown_enemy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryBreakdownEnemy",
@@ -3900,45 +2904,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryBreakdownEnemy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryBreakdownEnemy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_breakdown_enemy(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_breakdown_enemy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_breakdown_enemy::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_waypoint {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryWaypoint",
@@ -3950,45 +2941,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryWaypoint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryWaypoint",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_waypoint(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_waypoint::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_waypoint::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_command {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryCommand",
@@ -4000,45 +2978,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryCommand",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryCommand",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_command(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_command::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_command::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_pickup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryPickup",
@@ -4050,45 +3015,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryPickup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryPickup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_pickup(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_pickup::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_pickup::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_target_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryTargetSelect",
@@ -4100,45 +3052,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryTargetSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryTargetSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_target_select(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_target_select::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_target_select::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_unit_command_prepare {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryUnitCommandPrepare",
@@ -4150,45 +3089,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryUnitCommandPrepare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryUnitCommandPrepare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_unit_command_prepare(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_unit_command_prepare::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_unit_command_prepare::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_unit_command_interrupt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryUnitCommandInterrupt",
@@ -4200,45 +3126,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryUnitCommandInterrupt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryUnitCommandInterrupt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_unit_command_interrupt(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_unit_command_interrupt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_unit_command_interrupt::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_tbox {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryTbox",
@@ -4250,45 +3163,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryTbox",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryTbox",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_tbox(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_tbox::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_tbox::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_visit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryVisit",
@@ -4300,45 +3200,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryVisit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryVisit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_visit(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_visit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_visit::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_door {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryDoor",
@@ -4350,45 +3237,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryDoor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryDoor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_door(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_door::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_door::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryDestroy",
@@ -4400,45 +3274,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryDestroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryDestroy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_destroy(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_destroy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_destroy::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_open_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventOpenObject",
@@ -4450,45 +3311,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventOpenObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventOpenObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_open_object(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_open_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_open_object::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_open_door {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventOpenDoor",
@@ -4500,45 +3348,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventOpenDoor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventOpenDoor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_open_door(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_open_door::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_open_door::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_broken_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventBrokenObject",
@@ -4550,45 +3385,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventBrokenObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventBrokenObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_broken_object(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_broken_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_broken_object::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_action_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventActionObject",
@@ -4600,45 +3422,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventActionObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventActionObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_action_object(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_action_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_action_object::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_action_move_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventActionMoveObject",
@@ -4650,45 +3459,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventActionMoveObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventActionMoveObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_action_move_object(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_action_move_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_action_move_object::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_state_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventStateObject",
@@ -4700,45 +3496,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventStateObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventStateObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_state_object(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_state_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_state_object::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_is_playing_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventIsPlayingObject",
@@ -4750,18 +3533,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventIsPlayingObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventIsPlayingObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_is_playing_object(
@@ -4771,24 +3551,17 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_is_playing_object::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_event_is_playing_object::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_is_playing_sky_castle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventIsPlayingSkyCastle",
@@ -4800,18 +3573,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventIsPlayingSkyCastle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventIsPlayingSkyCastle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_is_playing_sky_castle(
@@ -4821,24 +3591,17 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_is_playing_sky_castle::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue =
+            ::core::mem::transmute(__lookup_event_is_playing_sky_castle::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_engage_summon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEngageSummon",
@@ -4850,45 +3613,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEngageSummon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEngageSummon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_engage_summon(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_engage_summon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_engage_summon::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_engage_before {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryEngageBefore",
@@ -4900,45 +3650,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryEngageBefore",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryEngageBefore",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_engage_before(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_engage_before::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_engage_before::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_entry_engage_after {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "EventEntryEngageAfter",
@@ -4950,45 +3687,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "EventEntryEngageAfter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "EventEntryEngageAfter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn event_entry_engage_after(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_entry_engage_after::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_entry_engage_after::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_camera_is_scroll {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapCameraIsScroll",
@@ -5000,18 +3724,15 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapCameraIsScroll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapCameraIsScroll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_camera_is_scroll(
@@ -5021,74 +3742,47 @@ mod __ScriptMap_unity2_raw {
         let inner: extern "C" fn(
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_camera_is_scroll::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_map_camera_is_scroll::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_turn_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "TurnEnd",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "TurnEnd", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "TurnEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "TurnEnd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn turn_end(
         agrs: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_turn_end::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_turn_end::get_method_info().method_ptr);
         inner(agrs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_history_rewind_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapHistoryRewindEnable",
@@ -5100,45 +3794,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryRewindEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryRewindEnable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_history_rewind_enable(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_rewind_enable::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_rewind_enable::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_history_rewind_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapHistoryRewindDisable",
@@ -5150,45 +3831,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryRewindDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryRewindDisable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_history_rewind_disable(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_rewind_disable::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_rewind_disable::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_history_rewind_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapHistoryRewindReset",
@@ -5200,45 +3868,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryRewindReset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryRewindReset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_history_rewind_reset(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_rewind_reset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_rewind_reset::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_history_mind_done {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapHistoryMindDone",
@@ -5250,45 +3905,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryMindDone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryMindDone",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_history_mind_done(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_mind_done::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_mind_done::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_history_engage_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapHistoryEngageBreak",
@@ -5300,45 +3942,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryEngageBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryEngageBreak",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_history_engage_break(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_engage_break::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_engage_break::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_history_position_list_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapHistoryPositionListBegin",
@@ -5350,45 +3979,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryPositionListBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryPositionListBegin",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_history_position_list_begin(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_position_list_begin::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_position_list_begin::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_history_position_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapHistoryPositionList",
@@ -5400,45 +4016,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryPositionList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryPositionList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_history_position_list(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_position_list::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_position_list::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_history_position_list_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapHistoryPositionListEnd",
@@ -5450,45 +4053,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapHistoryPositionListEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapHistoryPositionListEnd",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_history_position_list_end(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_history_position_list_end::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_history_position_list_end::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_material_set_float {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapMaterialSetFloat",
@@ -5500,45 +4090,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapMaterialSetFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapMaterialSetFloat",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_material_set_float(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_material_set_float::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_material_set_float::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_material_set_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "MapMaterialSetColor",
@@ -5550,45 +4127,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "MapMaterialSetColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "MapMaterialSetColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_material_set_color(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_material_set_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_material_set_color::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_god_save_equip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "GodSaveEquip",
@@ -5600,45 +4164,32 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "GodSaveEquip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "GodSaveEquip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn god_save_equip(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_god_save_equip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_god_save_equip::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_god_load_equip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptMap as ::unity2::ClassIdentity>::class(),
                 "GodLoadEquip",
@@ -5650,122 +4201,76 @@ mod __ScriptMap_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "GodLoadEquip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "GodLoadEquip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn god_load_equip(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_god_load_equip::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_god_load_equip::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_regist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::eventscript::EventScript as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                "Regist",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::eventscript::EventScript as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), "Regist", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    "Regist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        "Regist",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn regist(
-        script: crate::app::eventscript::EventScript,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::eventscript::EventScript,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_regist::get_offset() as isize),
-        );
+    pub unsafe fn regist(script: crate::app::eventscript::EventScript, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::eventscript::EventScript, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_regist::get_method_info().method_ptr);
         inner(script, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMap as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptMap as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptMap as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMap as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: ScriptMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ScriptMap, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -5774,217 +4279,103 @@ mod __ScriptMap_unity2_raw {
 impl ScriptMap {
     #[doc = "`MindGetForce(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn mind_get_force(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::mind_get_force(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::mind_get_force(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MindGetUnit(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn mind_get_unit(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::mind_get_unit(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::mind_get_unit(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MindGetTargetUnit(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn mind_get_target_unit(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::mind_get_target_unit(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::mind_get_target_unit(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MindGetEventUnit(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn mind_get_event_unit(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::mind_get_event_unit(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::mind_get_event_unit(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`CursorGetX(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn cursor_get_x(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::cursor_get_x(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::cursor_get_x(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`CursorGetZ(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn cursor_get_z(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::cursor_get_z(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::cursor_get_z(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`CursorSetPos(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn cursor_set_pos(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::cursor_set_pos(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn cursor_set_pos(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::cursor_set_pos(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`CursorSetVisible(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn cursor_set_visible(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::cursor_set_visible(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn cursor_set_visible(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::cursor_set_visible(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`CursorGetDistanceMode(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn cursor_get_distance_mode(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::cursor_get_distance_mode(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::cursor_get_distance_mode(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`CursorSetDistanceMode(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn cursor_set_distance_mode(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::cursor_set_distance_mode(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn cursor_set_distance_mode(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::cursor_set_distance_mode(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`CursorSetDistanceScale(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn cursor_set_distance_scale(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::cursor_set_distance_scale(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn cursor_set_distance_scale(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::cursor_set_distance_scale(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TerrainGet(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn terrain_get(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::terrain_get(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::terrain_get(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TerrainSetBegin(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn terrain_set_begin(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::terrain_set_begin(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn terrain_set_begin(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::terrain_set_begin(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TerrainSetEnd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn terrain_set_end(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::terrain_set_end(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn terrain_set_end(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::terrain_set_end(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TerrainSet(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn terrain_set(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::terrain_set(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn terrain_set(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::terrain_set(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TerrainSetOne(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn terrain_set_one(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::terrain_set_one(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn terrain_set_one(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::terrain_set_one(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TerrainSetImpl(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, bool)` overload"]
     pub fn terrain_set_impl(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
         is_multi: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
@@ -5995,89 +4386,42 @@ impl ScriptMap {
             )
         }
     }
+
     #[doc = "`TerrainFill(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn terrain_fill(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::terrain_fill(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn terrain_fill(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::terrain_fill(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TerrainGetMoveCost(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn terrain_get_move_cost(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::terrain_get_move_cost(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::terrain_get_move_cost(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapOverlapSetBegin(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_overlap_set_begin(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_overlap_set_begin(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_overlap_set_begin(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_overlap_set_begin(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapOverlapSetEnd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_overlap_set_end(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_overlap_set_end(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_overlap_set_end(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_overlap_set_end(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapOverlapSet(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_overlap_set(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_overlap_set(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_overlap_set(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_overlap_set(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapOverlapSetOne(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_overlap_set_one(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_overlap_set_one(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_overlap_set_one(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_overlap_set_one(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapOverlapSetImpl(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, bool)` overload"]
     pub fn map_overlap_set_impl(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
         is_multi: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
@@ -6088,37 +4432,22 @@ impl ScriptMap {
             )
         }
     }
+
     #[doc = "`MapOverlapGet(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_overlap_get(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_overlap_get(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_overlap_get(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapOverlapRemove(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_overlap_remove(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_overlap_remove(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_overlap_remove(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_overlap_remove(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapOverlapRemoveImpl(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, bool)` overload"]
     pub fn map_overlap_remove_impl(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
         is_multi: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
@@ -6129,110 +4458,53 @@ impl ScriptMap {
             )
         }
     }
+
     #[doc = "`MapRangeAddBegin(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_range_add_begin(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_range_add_begin(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_range_add_begin(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_range_add_begin(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapRangeAddEnd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_range_add_end(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_range_add_end(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_range_add_end(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_range_add_end(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapRangeAdd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_range_add(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_range_add(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_range_add(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_range_add(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapRangeClear(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_range_clear(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_range_clear(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_range_clear(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_range_clear(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`Dispos(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn dispos(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::dispos(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn dispos(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::dispos(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`DisposGetGroupCount(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn dispos_get_group_count(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::dispos_get_group_count(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::dispos_get_group_count(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`DisposGetUnitX(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn dispos_get_unit_x(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::dispos_get_unit_x(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::dispos_get_unit_x(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`DisposGetUnitZ(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn dispos_get_unit_z(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::dispos_get_unit_z(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::dispos_get_unit_z(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`GetDisposData(::unity2::Il2CppString, i32)` overload"]
     pub fn get_dispos_data(
         group: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -6246,201 +4518,96 @@ impl ScriptMap {
             )
         }
     }
+
     #[doc = "`MapDamageBegin(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_damage_begin(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_damage_begin(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_damage_begin(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_damage_begin(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapDamageAdd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_damage_add(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_damage_add(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_damage_add(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_damage_add(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapDamageEnd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_damage_end(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_damage_end(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_damage_end(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_damage_end(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`Battle(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn battle(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::battle(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn battle(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::battle(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`BattleSetAttack(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn battle_set_attack(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::battle_set_attack(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn battle_set_attack(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::battle_set_attack(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`BattleAddTarget(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn battle_add_target(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::battle_add_target(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn battle_add_target(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::battle_add_target(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`BattleStart(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn battle_start(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::battle_start(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn battle_start(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::battle_start(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapGetTurn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_get_turn(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_get_turn(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_get_turn(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapGetPhase(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_get_phase(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_get_phase(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_get_phase(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapGetAverageLevel(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_get_average_level(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_get_average_level(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_get_average_level(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapGetPosition(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_get_position(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_get_position(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_get_position(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapGetHeight(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_get_height(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_get_height(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_get_height(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapIsSight(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_is_sight(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_is_sight(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_is_sight(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapSetSight(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_set_sight(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_set_sight(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_set_sight(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_set_sight(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapIsRecollection(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_is_recollection(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_is_recollection(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_is_recollection(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`WinRuleSet(bool, crate::app::mapsituation::MapSituation_Status)` overload"]
     pub fn win_rule_set(
         enable: impl ::core::convert::Into<bool>,
@@ -6454,89 +4621,44 @@ impl ScriptMap {
             )
         }
     }
+
     #[doc = "`WinRuleSetBreakdown(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn win_rule_set_breakdown(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::win_rule_set_breakdown(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn win_rule_set_breakdown(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::win_rule_set_breakdown(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`WinRuleSetDestroyBoss(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn win_rule_set_destroy_boss(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::win_rule_set_destroy_boss(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn win_rule_set_destroy_boss(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::win_rule_set_destroy_boss(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`WinRuleSetEnemyNumberLessThanOrEqualTo(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn win_rule_set_enemy_number_less_than_or_equal_to(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> () {
         unsafe {
-            __ScriptMap_unity2_raw::win_rule_set_enemy_number_less_than_or_equal_to(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            __ScriptMap_unity2_raw::win_rule_set_enemy_number_less_than_or_equal_to(::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
+
     #[doc = "`WinRuleSetLimitTurn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn win_rule_set_limit_turn(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::win_rule_set_limit_turn(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn win_rule_set_limit_turn(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::win_rule_set_limit_turn(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`WinRuleSetMID(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn win_rule_set_mid(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::win_rule_set_mid(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn win_rule_set_mid(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::win_rule_set_mid(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`LoseRuleSetMID(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn lose_rule_set_mid(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::lose_rule_set_mid(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn lose_rule_set_mid(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::lose_rule_set_mid(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetEffectArg(*mut::unity2::Il2CppString, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn try_get_effect_arg(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> (
         bool,
         ::unity2::Il2CppString,
@@ -6545,10 +4667,8 @@ impl ScriptMap {
     ) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
             let __ret = {
                 __ScriptMap_unity2_raw::try_get_effect_arg(
                     __out_0.as_mut_ptr(),
@@ -6558,724 +4678,299 @@ impl ScriptMap {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`EffectPlay(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn effect_play(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::effect_play(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn effect_play(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::effect_play(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EffectIsPlaying(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn effect_is_playing(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::effect_is_playing(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::effect_is_playing(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EffectCreate(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn effect_create(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::effect_create(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn effect_create(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::effect_create(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EffectDelete(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn effect_delete(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::effect_delete(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn effect_delete(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::effect_delete(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryTurn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_turn(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_turn(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_turn(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_turn(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryTurnAfter(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_turn_after(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_turn_after(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_turn_after(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_turn_after(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryTurnEnd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_turn_end(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_turn_end(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_turn_end(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_turn_end(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryArea(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_area(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_area(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_area(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_area(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryDie(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_die(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_die(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_die(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_die(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryReviveBefore(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_revive_before(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_revive_before(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_revive_before(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_revive_before(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryReviveAfter(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_revive_after(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_revive_after(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_revive_after(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_revive_after(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryFixed(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_fixed(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_fixed(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_fixed(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_fixed(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryTalk(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_talk(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_talk(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_talk(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_talk(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryBattleBefore(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_battle_before(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_battle_before(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_battle_before(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_battle_before(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryBattleTalk(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_battle_talk(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_battle_talk(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_battle_talk(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_battle_talk(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryBattleAfter(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_battle_after(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_battle_after(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_battle_after(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_battle_after(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryEscape(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_escape(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_escape(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_escape(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_escape(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryBreakdown(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_breakdown(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_breakdown(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_breakdown(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_breakdown(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryBreakdownEnemy(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_breakdown_enemy(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_breakdown_enemy(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_breakdown_enemy(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_breakdown_enemy(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryWaypoint(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_waypoint(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_waypoint(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_waypoint(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_waypoint(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryCommand(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_command(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_command(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_command(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_command(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryPickup(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_pickup(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_pickup(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_pickup(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_pickup(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryTargetSelect(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_target_select(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_target_select(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_target_select(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_target_select(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryUnitCommandPrepare(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn event_entry_unit_command_prepare(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_unit_command_prepare(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::event_entry_unit_command_prepare(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryUnitCommandInterrupt(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn event_entry_unit_command_interrupt(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_unit_command_interrupt(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::event_entry_unit_command_interrupt(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryTbox(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_tbox(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_tbox(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_tbox(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_tbox(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryVisit(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_visit(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_visit(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_visit(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_visit(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryDoor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_door(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_door(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_door(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_door(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryDestroy(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_destroy(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_destroy(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_destroy(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_destroy(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventOpenObject(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_open_object(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_open_object(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_open_object(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_open_object(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventOpenDoor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_open_door(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_open_door(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_open_door(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_open_door(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventBrokenObject(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_broken_object(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_broken_object(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_broken_object(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_broken_object(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventActionObject(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_action_object(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_action_object(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_action_object(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_action_object(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventActionMoveObject(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_action_move_object(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_action_move_object(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_action_move_object(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_action_move_object(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventStateObject(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_state_object(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_state_object(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_state_object(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_state_object(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventIsPlayingObject(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn event_is_playing_object(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::event_is_playing_object(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::event_is_playing_object(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventIsPlayingSkyCastle(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn event_is_playing_sky_castle(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::event_is_playing_sky_castle(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::event_is_playing_sky_castle(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEngageSummon(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_engage_summon(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_engage_summon(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_engage_summon(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_engage_summon(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryEngageBefore(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_engage_before(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_engage_before(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_engage_before(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_engage_before(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`EventEntryEngageAfter(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn event_entry_engage_after(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::event_entry_engage_after(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn event_entry_engage_after(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::event_entry_engage_after(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapCameraIsScroll(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_camera_is_scroll(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
-        unsafe {
-            __ScriptMap_unity2_raw::map_camera_is_scroll(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_camera_is_scroll(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`TurnEnd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn turn_end(
-        agrs: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::turn_end(
-                ::core::convert::Into::into(agrs),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn turn_end(agrs: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::turn_end(::core::convert::Into::into(agrs), ::core::option::Option::None) }
     }
+
     #[doc = "`MapHistoryRewindEnable(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_history_rewind_enable(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_history_rewind_enable(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_history_rewind_enable(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_history_rewind_enable(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapHistoryRewindDisable(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_history_rewind_disable(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_history_rewind_disable(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_history_rewind_disable(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_history_rewind_disable(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapHistoryRewindReset(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_history_rewind_reset(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_history_rewind_reset(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_history_rewind_reset(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_history_rewind_reset(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapHistoryMindDone(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_history_mind_done(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_history_mind_done(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_history_mind_done(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_history_mind_done(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapHistoryEngageBreak(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_history_engage_break(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_history_engage_break(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_history_engage_break(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_history_engage_break(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapHistoryPositionListBegin(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_history_position_list_begin(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_history_position_list_begin(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_history_position_list_begin(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapHistoryPositionList(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_history_position_list(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_history_position_list(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_history_position_list(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_history_position_list(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapHistoryPositionListEnd(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn map_history_position_list_end(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_history_position_list_end(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::map_history_position_list_end(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapMaterialSetFloat(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_material_set_float(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_material_set_float(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_material_set_float(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_material_set_float(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`MapMaterialSetColor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn map_material_set_color(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::map_material_set_color(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn map_material_set_color(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::map_material_set_color(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`GodSaveEquip(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn god_save_equip(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::god_save_equip(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn god_save_equip(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::god_save_equip(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`GodLoadEquip(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn god_load_equip(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::god_load_equip(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn god_load_equip(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptMap_unity2_raw::god_load_equip(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`Regist(crate::app::eventscript::EventScript)` overload"]
     pub fn regist(script: impl ::core::convert::Into<crate::app::eventscript::EventScript>) -> () {
-        unsafe {
-            __ScriptMap_unity2_raw::regist(
-                ::core::convert::Into::into(script),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptMap_unity2_raw::regist(::core::convert::Into::into(script), ::core::option::Option::None) }
     }
 }
 
@@ -7284,9 +4979,7 @@ pub trait IScriptMapMethods: IScriptMap {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ScriptMap as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptMap_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -7299,13 +4992,8 @@ impl<__T: IScriptMap> IScriptMapMethods for __T {}
 impl ScriptMap {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptMap),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ScriptMap), ::core::stringify!(new),));
         <Self as IScriptMapMethods>::ctor(this);
         this
     }
@@ -7314,13 +5002,10 @@ impl ScriptMap {
 #[cfg(feature = "app-scriptmap")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptMap;
-    pub use super::IScriptMapMethods;
-    pub use super::ScriptMap;
-    pub use crate::app::scriptutil::IScriptUtil;
+    pub use super::{IScriptMap, IScriptMapMethods, ScriptMap};
     #[cfg(feature = "app-scriptutil")]
     pub use crate::app::scriptutil::IScriptUtilMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::scriptutil::IScriptUtil, system::object::IObject};
 }

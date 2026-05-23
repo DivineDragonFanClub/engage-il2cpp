@@ -2,30 +2,39 @@
 
 #[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{
-        AsyncOperationBase_1, IAsyncOperationBase_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/chainoperationtypelessdepedency_1/ChainOperationTypelessDepedency_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement",
-        name = "ChainOperationTypelessDepedency`1"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "ChainOperationTypelessDepedency`1")]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < T0 >)]
     #[parent(crate::system::object::Object)]
-    pub struct ChainOperationTypelessDepedency_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_DepOp")] pub m_dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ,
-# [rename (name = "m_WrappedOp")] pub m_wrapped_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > ,
-# [rename (name = "m_depStatus")] pub m_dep_status : crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus ,
-# [rename (name = "m_wrapStatus")] pub m_wrap_status : crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus ,
-# [rename (name = "m_Callback")] pub m_callback : crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > > ,
-# [rename (name = "m_CachedOnWrappedCompleted")] pub m_cached_on_wrapped_completed : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > > ,
-# [rename (name = "m_ReleaseDependenciesOnFailure")] pub m_release_dependencies_on_failure : bool ,
-}
+    pub struct ChainOperationTypelessDepedency_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_DepOp")]
+        pub m_dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        #[rename(name = "m_WrappedOp")]
+        pub m_wrapped_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>,
+        #[rename(name = "m_depStatus")]
+        pub m_dep_status: crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus,
+        #[rename(name = "m_wrapStatus")]
+        pub m_wrap_status: crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus,
+        #[rename(name = "m_Callback")]
+        pub m_callback: crate::system::func_2::Func_2<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>,
+        >,
+        #[rename(name = "m_CachedOnWrappedCompleted")]
+        pub m_cached_on_wrapped_completed: crate::system::action_1::Action_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>,
+        >,
+        #[rename(name = "m_ReleaseDependenciesOnFailure")]
+        pub m_release_dependencies_on_failure: bool,
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1-types")]
@@ -46,15 +55,20 @@ impl<T0: ::unity2::ClassIdentity> ChainOperationTypelessDepedency_1<T0> {
     #[method(name = "GetDependencies", args = 1)]
     pub fn get_dependencies(
         self,
-        deps : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        deps: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        >,
     ) -> ();
 
     #[doc = "`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle, crate::system::func_2::Func_2<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>>, bool)` overload"]
     #[method(name = "Init", args = 3)]
     pub fn init(
         self,
-        dependent_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
-        callback : crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > >,
+        dependent_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        callback: crate::system::func_2::Func_2<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>,
+        >,
         release_dependencies_on_failure: bool,
     ) -> ();
 
@@ -70,7 +84,7 @@ impl<T0: ::unity2::ClassIdentity> ChainOperationTypelessDepedency_1<T0> {
     #[method(name = "OnWrappedCompleted", args = 1)]
     pub fn on_wrapped_completed(
         self,
-        x : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 >,
+        x: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>,
     ) -> ();
 
     #[doc = "`Destroy()` overload"]
@@ -85,19 +99,12 @@ impl<T0: ::unity2::ClassIdentity> ChainOperationTypelessDepedency_1<T0> {
     #[method(name = "GetDownloadStatus", args = 1)]
     pub fn get_download_status(
         self,
-        visited: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::system::object::Object,
-        >,
+        visited: crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>,
     ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
 
     #[doc = "`RefreshDownloadStatus(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)` overload"]
     #[method(name = "RefreshDownloadStatus", args = 1)]
-    pub fn refresh_download_status(
-        self,
-        visited: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::system::object::Object,
-        >,
-    ) -> ();
+    pub fn refresh_download_status(self, visited: crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>) -> ();
 
     #[doc = "`get_Progress()` overload"]
     #[method(name = "get_Progress", args = 0)]
@@ -123,13 +130,10 @@ impl<T0: ::unity2::ClassIdentity> ChainOperationTypelessDepedency_1<T0> {
 #[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ChainOperationTypelessDepedency_1;
-    pub use super::IChainOperationTypelessDepedency_1;
-    pub use super::IChainOperationTypelessDepedency_1Methods;
-    pub use crate::system::object::IObject;
+    pub use super::{ChainOperationTypelessDepedency_1, IChainOperationTypelessDepedency_1, IChainOperationTypelessDepedency_1Methods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+    pub use crate::{system::object::IObject, unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1};
 }

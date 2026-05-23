@@ -33,10 +33,7 @@ pub mod lightmapping;
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
 pub use lightmapping::ILightmapping_RequestLightsDelegateMethods;
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping-types")]
-pub use lightmapping::{
-    ILightmapping, ILightmapping_RequestLightsDelegate, Lightmapping,
-    Lightmapping_RequestLightsDelegate,
-};
+pub use lightmapping::{ILightmapping, ILightmapping_RequestLightsDelegate, Lightmapping, Lightmapping_RequestLightsDelegate};
 #[cfg(any(feature = "unity_engine-experimental-global_illumination-lightmode-types"))]
 pub mod lightmode;
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmode-types")]

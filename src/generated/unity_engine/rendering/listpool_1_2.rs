@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-listpool_1_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listpool_1_2/ListPool_1_2.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ListPool`1")]
@@ -13,9 +13,7 @@ mod __types {
     pub struct ListPool_1_2<T0: ::unity2::ClassIdentity> {
         #[static_field]
         #[rename(name = "s_Pool")]
-        pub s_pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<
-            crate::system::collections::generic::list_1::List_1<T0>,
-        >,
+        pub s_pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<crate::system::collections::generic::list_1::List_1<T0>>,
     }
 }
 
@@ -33,9 +31,7 @@ impl<T0: ::unity2::ClassIdentity> ListPool_1_2<T0> {
     #[method(name = "Get", args = 1)]
     pub fn get_2(
         value: *mut crate::system::collections::generic::list_1::List_1<T0>,
-    ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<
-        crate::system::collections::generic::list_1::List_1<T0>,
-    >;
+    ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<crate::system::collections::generic::list_1::List_1<T0>>;
 
     #[doc = "`Release(crate::system::collections::generic::list_1::List_1<T0>)` overload"]
     #[method(name = "Release", args = 1)]
@@ -49,8 +45,7 @@ impl<T0: ::unity2::ClassIdentity> ListPool_1_2<T0> {
 #[cfg(feature = "unity_engine-rendering-listpool_1_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IListPool_1_2;
-    pub use super::ListPool_1_2;
+    pub use super::{IListPool_1_2, ListPool_1_2};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

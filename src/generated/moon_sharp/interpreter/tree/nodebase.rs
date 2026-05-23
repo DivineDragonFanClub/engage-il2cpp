@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-nodebase-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/nodebase/NodeBase.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree", name = "NodeBase")]
@@ -25,81 +25,50 @@ mod __NodeBase_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_script {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NodeBase as ::unity2::ClassIdentity>::class(),
-                "get_Script",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<NodeBase as ::unity2::ClassIdentity>::class(), "get_Script", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "get_Script",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "get_Script",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_script(
-        this: NodeBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::moon_sharp::interpreter::script::Script {
-        let inner: extern "C" fn(
-            NodeBase,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::script::Script = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_script::get_offset() as isize),
-        );
+    pub unsafe fn get_script(this: NodeBase, __unity2_method_info: ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::script::Script {
+        let inner: extern "C" fn(NodeBase, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::script::Script =
+            ::core::mem::transmute(__lookup_get_script::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_script {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NodeBase as ::unity2::ClassIdentity>::class(),
-                "set_Script",
-                1,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<NodeBase as ::unity2::ClassIdentity>::class(), "set_Script", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "set_Script",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "set_Script",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_script(
@@ -107,24 +76,15 @@ mod __NodeBase_unity2_raw {
         value: crate::moon_sharp::interpreter::script::Script,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NodeBase,
-            crate::moon_sharp::interpreter::script::Script,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_script::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NodeBase, crate::moon_sharp::interpreter::script::Script, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_script::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_loading_context {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NodeBase as ::unity2::ClassIdentity>::class(),
@@ -137,35 +97,35 @@ mod __NodeBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "get_LoadingContext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "get_LoadingContext",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_loading_context(
         this: NodeBase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext {
-        let inner : extern "C" fn (NodeBase , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_loading_context :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            NodeBase,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext =
+            ::core::mem::transmute(__lookup_get_loading_context::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_loading_context {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NodeBase as ::unity2::ClassIdentity>::class(),
                 "set_LoadingContext",
@@ -177,116 +137,85 @@ mod __NodeBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "set_LoadingContext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "set_LoadingContext",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_loading_context(
         this: NodeBase,
-        value : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        value: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             NodeBase,
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_loading_context::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_loading_context::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NodeBase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<NodeBase as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: NodeBase,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             NodeBase,
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compile {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NodeBase as ::unity2::ClassIdentity>::class(),
-                "Compile",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<NodeBase as ::unity2::ClassIdentity>::class(), "Compile", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "Compile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "Compile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compile(
@@ -294,27 +223,17 @@ mod __NodeBase_unity2_raw {
         bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NodeBase,
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NodeBase, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
         inner(this, bc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unexpected_token_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NodeBase as ::unity2::ClassIdentity>::class(),
                 "UnexpectedTokenType",
@@ -326,18 +245,15 @@ mod __NodeBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "UnexpectedTokenType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "UnexpectedTokenType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unexpected_token_type(
@@ -347,21 +263,19 @@ mod __NodeBase_unity2_raw {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::tree::token::Token,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unexpected_token_type::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::tree::token::Token =
+            ::core::mem::transmute(__lookup_unexpected_token_type::get_method_info().method_ptr);
         inner(t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_token_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NodeBase as ::unity2::ClassIdentity>::class(),
                 "CheckTokenType",
@@ -373,22 +287,19 @@ mod __NodeBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "CheckTokenType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "CheckTokenType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_token_type(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::tree::token::Token {
@@ -396,21 +307,19 @@ mod __NodeBase_unity2_raw {
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             crate::moon_sharp::interpreter::tree::tokentype::TokenType,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_token_type::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(__lookup_check_token_type::get_method_info().method_ptr);
         inner(lcontext, token_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_token_type_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NodeBase as ::unity2::ClassIdentity>::class(),
                 "CheckTokenType",
@@ -422,22 +331,19 @@ mod __NodeBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "CheckTokenType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "CheckTokenType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_token_type_2(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         token_type1: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         token_type2: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -447,21 +353,20 @@ mod __NodeBase_unity2_raw {
             crate::moon_sharp::interpreter::tree::tokentype::TokenType,
             crate::moon_sharp::interpreter::tree::tokentype::TokenType,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_token_type_2::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(__lookup_check_token_type_2::get_method_info().method_ptr);
         inner(lcontext, token_type1, token_type2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_token_type_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NodeBase as ::unity2::ClassIdentity>::class(),
                 "CheckTokenType",
@@ -473,22 +378,19 @@ mod __NodeBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "CheckTokenType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "CheckTokenType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_token_type_3(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         token_type1: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         token_type2: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         token_type3: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
@@ -500,27 +402,18 @@ mod __NodeBase_unity2_raw {
             crate::moon_sharp::interpreter::tree::tokentype::TokenType,
             crate::moon_sharp::interpreter::tree::tokentype::TokenType,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_token_type_3::get_offset() as isize),
-        );
-        inner(
-            lcontext,
-            token_type1,
-            token_type2,
-            token_type3,
-            __unity2_method_info,
-        )
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(__lookup_check_token_type_3::get_method_info().method_ptr);
+        inner(lcontext, token_type1, token_type2, token_type3, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_token_type_not_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NodeBase as ::unity2::ClassIdentity>::class(),
                 "CheckTokenTypeNotNext",
@@ -532,22 +425,19 @@ mod __NodeBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "CheckTokenTypeNotNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "CheckTokenTypeNotNext",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_token_type_not_next(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -555,48 +445,38 @@ mod __NodeBase_unity2_raw {
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             crate::moon_sharp::interpreter::tree::tokentype::TokenType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_token_type_not_next::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_check_token_type_not_next::get_method_info().method_ptr);
         inner(lcontext, token_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_match {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NodeBase as ::unity2::ClassIdentity>::class(),
-                "CheckMatch",
-                4,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<NodeBase as ::unity2::ClassIdentity>::class(), "CheckMatch", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NodeBase as ::unity2::ClassIdentity>::NAME,
-                    "CheckMatch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NodeBase as ::unity2::ClassIdentity>::NAME,
+                        "CheckMatch",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_match(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         original_token: crate::moon_sharp::interpreter::tree::token::Token,
         expected_token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
         expected_token_text: ::unity2::Il2CppString,
@@ -608,18 +488,8 @@ mod __NodeBase_unity2_raw {
             crate::moon_sharp::interpreter::tree::tokentype::TokenType,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_match::get_offset() as isize),
-        );
-        inner(
-            lcontext,
-            original_token,
-            expected_token_type,
-            expected_token_text,
-            __unity2_method_info,
-        )
+        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(__lookup_check_match::get_method_info().method_ptr);
+        inner(lcontext, original_token, expected_token_type, expected_token_text, __unity2_method_info)
     }
 }
 
@@ -629,21 +499,13 @@ impl NodeBase {
     pub fn unexpected_token_type(
         t: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
     ) -> crate::moon_sharp::interpreter::tree::token::Token {
-        unsafe {
-            __NodeBase_unity2_raw::unexpected_token_type(
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __NodeBase_unity2_raw::unexpected_token_type(::core::convert::Into::into(t), ::core::option::Option::None) }
     }
+
     #[doc = "`CheckTokenType(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::tokentype::TokenType)` overload"]
     pub fn check_token_type(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-        token_type: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
+        token_type: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType>,
     ) -> crate::moon_sharp::interpreter::tree::token::Token {
         unsafe {
             __NodeBase_unity2_raw::check_token_type(
@@ -653,17 +515,12 @@ impl NodeBase {
             )
         }
     }
+
     #[doc = "`CheckTokenType(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::tokentype::TokenType, crate::moon_sharp::interpreter::tree::tokentype::TokenType)` overload"]
     pub fn check_token_type_2(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-        token_type1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
-        >,
-        token_type2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
+        token_type1: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType>,
+        token_type2: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType>,
     ) -> crate::moon_sharp::interpreter::tree::token::Token {
         unsafe {
             __NodeBase_unity2_raw::check_token_type_2(
@@ -674,20 +531,13 @@ impl NodeBase {
             )
         }
     }
+
     #[doc = "`CheckTokenType(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::tokentype::TokenType, crate::moon_sharp::interpreter::tree::tokentype::TokenType, crate::moon_sharp::interpreter::tree::tokentype::TokenType)` overload"]
     pub fn check_token_type_3(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-        token_type1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
-        >,
-        token_type2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
-        >,
-        token_type3: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
+        token_type1: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType>,
+        token_type2: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType>,
+        token_type3: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType>,
     ) -> crate::moon_sharp::interpreter::tree::token::Token {
         unsafe {
             __NodeBase_unity2_raw::check_token_type_3(
@@ -699,14 +549,11 @@ impl NodeBase {
             )
         }
     }
+
     #[doc = "`CheckTokenTypeNotNext(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::tokentype::TokenType)` overload"]
     pub fn check_token_type_not_next(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-        token_type: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
+        token_type: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType>,
     ) -> () {
         unsafe {
             __NodeBase_unity2_raw::check_token_type_not_next(
@@ -716,15 +563,12 @@ impl NodeBase {
             )
         }
     }
+
     #[doc = "`CheckMatch(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token, crate::moon_sharp::interpreter::tree::tokentype::TokenType, ::unity2::Il2CppString)` overload"]
     pub fn check_match(
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
         original_token: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
-        expected_token_type: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::tree::tokentype::TokenType,
-        >,
+        expected_token_type: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType>,
         expected_token_text: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::moon_sharp::interpreter::tree::token::Token {
         unsafe {
@@ -744,91 +588,46 @@ pub trait INodeBaseMethods: INodeBase {
     #[doc = "`get_Script()` overload"]
     fn get_script(self) -> crate::moon_sharp::interpreter::script::Script {
         unsafe {
-            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NodeBase_unity2_raw::get_script(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Script(crate::moon_sharp::interpreter::script::Script)` overload"]
-    fn set_script(
-        self,
-        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-    ) -> () {
+    fn set_script(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>) -> () {
         unsafe {
-            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NodeBase_unity2_raw::set_script(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NodeBase_unity2_raw::set_script(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LoadingContext()` overload"]
-    fn get_loading_context(
-        self,
-    ) -> crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext {
+    fn get_loading_context(self) -> crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext {
         unsafe {
-            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NodeBase_unity2_raw::get_loading_context(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LoadingContext(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     fn set_loading_context(
         self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
     ) -> () {
         unsafe {
-            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NodeBase_unity2_raw::set_loading_context(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NodeBase_unity2_raw::set_loading_context(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    fn ctor(
-        self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-    ) -> () {
+    fn ctor(self, lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>) -> () {
         unsafe {
-            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NodeBase_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NodeBase_unity2_raw::ctor(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
         }
     }
     #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(
-        self,
-        bc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
-    ) -> () {
+    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
         unsafe {
-            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NodeBase_unity2_raw::compile(
-                __receiver,
-                ::core::convert::Into::into(bc),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NodeBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NodeBase_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
         }
     }
 }
@@ -839,16 +638,9 @@ impl<__T: INodeBase> INodeBaseMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
 impl NodeBase {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]
-    pub fn new(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NodeBase),
-                ::core::stringify!(new),
-            )
-        });
+    pub fn new(lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(NodeBase), ::core::stringify!(new),));
         <Self as INodeBaseMethods>::ctor(this, lcontext);
         this
     }
@@ -857,9 +649,7 @@ impl NodeBase {
 #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INodeBase;
-    pub use super::INodeBaseMethods;
-    pub use super::NodeBase;
+    pub use super::{INodeBase, INodeBaseMethods, NodeBase};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
